@@ -1,0 +1,24 @@
+{
+  "name": "@randall-reilly/websites",
+  "description": "Websites for Randall Reilly",
+  "repository": "https://github.com/parameter1/website-randall-reilly.git",
+  "author": "Jacob Bare <jacob@parameter1.com>",
+  "license": "MIT",
+  "private": true,
+  "root": true,
+  "workspaces": [
+    "packages/*",
+    "sites/*"
+  ],
+  "scripts": {
+    "compile": "lerna run compile",
+    "lint": "lerna run lint",
+    "lint:css": "lerna run lint:css",
+    "lint:js": "lerna run lint:js",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "@base-cms/marko-compiler": "^1.36.0",
+    "lerna": "^3.16.4"
+  }
+}
