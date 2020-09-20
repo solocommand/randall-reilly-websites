@@ -1,0 +1,177 @@
+version: '3.7'
+
+x-node-defaults: &node
+  tty: true
+  init: true
+  image: node:10.15
+  entrypoint: ["node"]
+  working_dir: /root
+  restart: always
+  volumes:
+    - ./:/root:cached
+    - ./node_modules:/root/node_modules:delegated
+    - yarn-cache:/.yarn-cache
+
+x-env-defaults: &env
+  NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
+  NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+  NODE_ENV: development
+  # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
+  RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY-(unset)}
+  RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
+  # @todo the sendgrid values should be removed once the @base-cms/mailer service is created.
+  SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
+  SENDGRID_DEV_TO: contact@parameter1.com
+  YARN_CACHE_FOLDER: /.yarn-cache
+
+x-env-leonis: &env-leonis
+  GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://leonis.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://leonis.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://leonis.sitemaps.base.parameter1.com}
+
+x-env-tauron: &env-tauron
+  GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
+
+x-env-development: &env-development
+  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
+  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
+  RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
+  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
+
+x-site-command: &site-cmd
+  entrypoint: ["node_modules/.bin/basecms-website"]
+  command: ["dev", "index.js"]
+
+volumes:
+  yarn-cache: {}
+
+services:
+  terminal:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["/bin/bash"]
+    environment:
+      <<: *env
+
+  yarn:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["yarn"]
+    environment:
+      <<: *env
+
+  equipmentworld.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/equipmentworld.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9801
+      LIVERELOAD_PORT: 19801
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f679167d28860bc33a84f2f
+    ports:
+      - "9801:80"
+      - "19801:19801"
+
+  totallandscapecare.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/totallandscapecare.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9802
+      LIVERELOAD_PORT: 19802
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f67994ed28860bc33a8ba4b
+    ports:
+      - "9802:80"
+      - "19802:19802"
+
+  truckernews.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/truckernews.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9803
+      LIVERELOAD_PORT: 19803
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f678b5bd28860bc33a7fd20
+    ports:
+      - "9803:80"
+      - "19803:19803"
+
+  ccjdigital.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/ccjdigital.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9804
+      LIVERELOAD_PORT: 19804
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f67894dd28860bc33a7e0d1
+    ports:
+      - "9804:80"
+      - "19804:19804"
+
+  hardworkingtrucks.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/hardworkingtrucks.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9805
+      LIVERELOAD_PORT: 19805
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f67860dd28860bc33a7b482
+    ports:
+      - "9805:80"
+      - "19805:19805"
+
+  overdriveonline.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/overdriveonline.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9806
+      LIVERELOAD_PORT: 19806
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f66297dd28860bc33957787
+    ports:
+      - "9806:80"
+      - "19806:19806"
+
+  truckpartsandservice.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/truckpartsandservice.com
+    environment:
+      <<: *env
+      <<: *env-leonis
+      PORT: 80
+      EXPOSED_PORT: 9806
+      LIVERELOAD_PORT: 19806
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5f66295ad28860bc3395754e
+    ports:
+      - "9806:80"
+      - "19806:19806"
