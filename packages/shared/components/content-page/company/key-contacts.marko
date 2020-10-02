@@ -1,0 +1,14 @@
+import { getAsArray } from "@base-cms/object-path";
+
+$ const contacts = getAsArray(input, "contacts");
+$ let header = "Key Contact";
+$ if (contacts.length > 1) header = `${header}s`;
+
+<marko-web-node-list class=input.class>
+  <@header>${header}</@header>
+  <@nodes|{ nodes }| nodes=contacts>
+    <for|node| of=nodes>
+      <shared-key-contact-card-node node=node with-email=true />
+    </for>
+  </@nodes>
+</marko-web-node-list>

@@ -1,0 +1,56 @@
+import queryFragment from "../../graphql/fragments/content-contact-us";
+
+$ const { GAM } = out.global;
+$ const { id, alias, name, pageNode } = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
+});
+
+<shared-website-section-page-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+  ad-slots=adSlots
+  with-oop-ads=false
+  with-footer-ad=false
+>
+  <@in-head>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+  </@in-head>
+
+  <@page>
+    <shared-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <default-theme-website-section-breadcrumbs section=section />
+              <marko-web-website-section-name tag="h1" class="page-wrapper__title" obj=section />
+            </div>
+          </div>
+        </@section>
+
+        <@section>
+          <div class="row">
+            <default-theme-page-contents|{ blockName }| class="col-lg-8">
+              <marko-web-query|{ nodes }| name="website-scheduled-content" params={ sectionId: id, limit: 100, queryFragment }>
+                <for|node| of=nodes>
+                  <shared-contact-us-list-node node=node />
+                </for>
+              </marko-web-query>
+            </default-theme-page-contents>
+            <aside class="col-lg-4 page-rail">
+              <marko-web-browser-component name="ContactUsForm" />
+            </aside>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+
+  <@load-more enabled=false />
+</shared-website-section-page-default-layout>

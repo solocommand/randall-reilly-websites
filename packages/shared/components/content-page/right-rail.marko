@@ -1,0 +1,33 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { site } = out.global;
+$ const displayRelatedContent = defaultValue(input.displayRelatedContent, true);
+$ const displayAds = defaultValue(input.displayAds, true)
+$ const adLayout = defaultValue(input.adLayout, "standard");
+
+<if(displayAds)>
+  <shared-gam-display-ad id="gpt-ad-rail1" />
+  <if(adLayout === "variant-a")>
+    <shared-gam-display-ad id="gpt-ad-rail2" />
+  </if>
+</if>
+
+<marko-web-resolve-page|{ data: content, resolved }| node=input.pageNode>
+  $ const section = resolved.getAsObject("primarySection");
+  $ const aliases = hierarchyAliases(section);
+  <if(displayRelatedContent)>
+    <shared-related-content-block>
+      <@content id=content.id type=content.type />
+      <@section id=section.id name=section.name />
+      <@native-x index=4 name="default" aliases=aliases />
+    </shared-related-content-block>
+    <if(site.get("leaders.alias"))>
+      <leaders-contextual content-id=content.id />
+    </if>
+  </if>
+</marko-web-resolve-page>
+
+<if(displayAds && adLayout === "standard")>
+  <shared-gam-display-ad id="gpt-ad-rail2" />
+</if>

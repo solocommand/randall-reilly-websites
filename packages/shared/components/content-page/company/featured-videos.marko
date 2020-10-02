@@ -1,0 +1,32 @@
+import { getAsArray, getAsObject } from "@base-cms/object-path";
+
+$ const videos = getAsArray(input, "videos");
+$ const company = getAsObject(input, "company");
+$ const linkAttrs = {
+  "data-company-id": company.id,
+  "data-company-name": company.name,
+};
+$ const { href } = input;
+
+<marko-web-node-list class=input.class>
+  <@header>Featured Videos</@header>
+
+  <@nodes|{ nodes }| nodes=videos>
+    <default-theme-card-deck-flow
+      cols=3
+      nodes=nodes
+      modifiers=["featured-youtube-videos"]
+    >
+      <@slot|{ node }|>
+        <shared-youtube-card-node node=node link-attrs=linkAttrs />
+      </@slot>
+    </default-theme-card-deck-flow>
+  </@nodes>
+  <if(href)>
+    <@footer>
+      <a href=href target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+        View all videos &gt;
+      </a>
+    </@footer>
+  </if>
+  </marko-web-node-list>

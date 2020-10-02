@@ -1,0 +1,43 @@
+{
+  "name": "@randall-reilly/package-shared",
+  "version": "1.20.17",
+  "author": "Jacob Bare <jacob@parameter1.com>",
+  "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/packages/shared",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js --ext .vue --max-warnings 5 --ignore-path ../../.eslintignore ./",
+    "test": "yarn lint"
+  },
+  "dependencies": {
+    "@base-cms/env": "^1.0.0",
+    "@base-cms/image": "^1.34.0",
+    "@base-cms/marko-core": "^1.36.1",
+    "@base-cms/marko-web": "^1.36.3",
+    "@base-cms/marko-web-gam": "^1.30.0",
+    "@base-cms/marko-web-gcse": "^1.25.0",
+    "@base-cms/marko-web-gtm": "^1.34.0",
+    "@base-cms/marko-web-icons": "^1.29.6",
+    "@base-cms/marko-web-identity-x": "^1.29.4",
+    "@base-cms/marko-web-inquiry": "^1.36.3",
+    "@base-cms/marko-web-native-x": "^1.29.8",
+    "@base-cms/marko-web-photoswipe": "^1.34.0",
+    "@base-cms/marko-web-radix": "^1.33.1",
+    "@base-cms/marko-web-reveal-ad": "^1.26.3",
+    "@base-cms/marko-web-social-sharing": "^1.25.0",
+    "@base-cms/marko-web-theme-default": "^1.30.1",
+    "@base-cms/object-path": "^1.25.0",
+    "@base-cms/utils": "^1.25.0",
+    "@base-cms/web-cli": "^1.36.3",
+    "@randall-reilly/package-common": "^1.20.17",
+    "@randall-reilly/package-contact-us": "^1.20.13",
+    "@randall-reilly/package-directory": "^1.20.13",
+    "@randall-reilly/package-gam-prestitial": "^1.20.0",
+    "@randall-reilly/package-leaders": "^1.20.13",
+    "cheerio": "^1.0.0-rc.3",
+    "graphql": "^14.5.4",
+    "graphql-tag": "^2.10.1",
+    "lodash.merge": "^4.6.2",
+    "newrelic": "^6.4.1"
+  }
+}

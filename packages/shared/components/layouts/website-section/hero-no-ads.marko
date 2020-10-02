@@ -1,0 +1,44 @@
+import { getAsObject } from "@base-cms/object-path";
+import queryFragment from "@randall-reilly/package-shared/graphql/fragments/content-list";
+
+$ const { id, alias, name, pageNode } = input;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@page>
+    <if(input.page)>
+      <${input.page} />
+    </if>
+    <else>
+      <shared-content-hero-block id=id />
+
+      <marko-web-resolve-page|{ data: section }| node=pageNode>
+        <marko-web-page-wrapper class="mb-block">
+          <@section>
+            <div class="row">
+              <div class="col-lg-12 mb-block">
+                <marko-web-query|{ nodes }|
+                  name="website-scheduled-content"
+                  params={ sectionId: id, limit: 12, skip: 5, queryFragment }
+                >
+                  <shared-content-card-deck-flow nodes=nodes display-ads=false />
+                </marko-web-query>
+              </div>
+            </div>
+          </@section>
+        </marko-web-page-wrapper>
+      </marko-web-resolve-page>
+    </else>
+  </@page>
+
+  <@below-page>
+    <if(input.belowPage)>
+      <${input.belowPage} />
+    </if>
+    <else>
+      <shared-scheduled-content-load-more-block name="card-deck" section-id=id>
+        <@query-params limit=18 skip=17 />
+        <@component-input display-ads=false />
+      </shared-scheduled-content-load-more-block>
+    </else>
+  </@below-page>
+</marko-web-website-section-page-layout>

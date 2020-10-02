@@ -1,0 +1,143 @@
+import { get, getAsObject, getAsArray } from "@base-cms/object-path";
+import formatUsCurrency from "../../utils/format-us-currency";
+import getContentPreview from "../../utils/get-content-preview";
+
+$ const { site } = out.global;
+
+$ const content = getAsObject(input, "content");
+$ const images = getAsArray(content, "images.edges").map(edge => edge.node);
+$ const { id, type } = content;
+
+$ const displayPrimaryImage = ["media-gallery", "top100"].includes(type) ? false : true;
+$ const displayPhotoswipe = ["contact"].includes(type) ? false : true;
+$ const displayInquiry = (content) => {
+  if (type === "company" && get(content, "enableRmi")) return true;
+  if (type === "product" && get(content, "company.enableRmi")) return true;
+  return false;
+};
+$ const displayComments = ["contact", "document", "whitepaper", "product", "company"].includes(type) ? false : true;
+$ const displayNewsletterSignup = displayComments;
+
+$ const requiresRegistration = get(content, "userRegistration.isRequired");
+$ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
+
+<default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+  <if(content.embedCode)>
+    <marko-web-content-embed-code block-name=blockName obj=content />
+  </if>
+  <else-if(displayPrimaryImage)>
+    $ const isLogo = get(content, "primaryImage.isLogo");
+    <if(isLogo || type === "contact" || type === "whitepaper")>
+      <marko-web-page-image
+        modifiers=(type === "contact" ? [] : ["primary-image-inline"])
+        obj=content.primaryImage
+        fluid=false
+        width=250
+      />
+    </if>
+    <else>
+      <marko-web-page-image
+        width=720
+        obj=content.primaryImage
+      />
+      <if(images.length && images.length > 1 && displayPhotoswipe)>
+        <button class="btn btn-primary mb-3" data-gallery-button="true">View Image Gallery</button>
+      </if>
+    </else>
+  </else-if>
+
+  <default-theme-content-contact-details obj=content />
+
+  <if(type === "top100")>
+    <div class="mb-block">
+      <strong class="d-block">
+        Current Rank: <marko-web-obj-text type="content" block-name=blockName obj=content field="rank" tag=null modifiers="rank"/>
+      </strong>
+      <strong class="d-block">
+        Previously Ranked: <marko-web-obj-text type="content" block-name=blockName obj=content field="previousRank" tag=null modifiers="rank"/>
+      </strong>
+    </div>
+  </if>
+
+  <${input.beforeBody} />
+
+  <marko-web-identity-x-access|context|
+    enabled=requiresRegistration
+    required-access-level-ids=accessLevels
+  >
+    <if(!context.canAccess || requiresRegistration && context.isLoggedIn && context.requiresUserInput)>
+      $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+      <marko-web-content-body block-name=blockName obj={ body } />
+
+      <div class="content-page-preview-overlay" />
+      <shared-content-page-gate
+        can-access=context.canAccess
+        is-logged-in=context.isLoggedIn
+        has-required-access-level=context.hasRequiredAccessLevel
+        requires-access-level=context.requiresAccessLevel
+        requires-user-input=context.requiresUserInput
+        messages=context.messages
+      />
+    </if>
+    <else>
+      <marko-web-content-body block-name=blockName obj=content />
+      <marko-web-content-sidebars block-name=blockName obj=content />
+      <if(type === "media-gallery")>
+        <shared-image-list images=images />
+      </if>
+
+      <if(type === "document")>
+        <default-theme-content-download obj=content>
+          <@wufoo user-name=site.get("wufoo.userName") />
+          <@link class="btn btn-lg btn-primary" />
+        </default-theme-content-download>
+      </if>
+
+      <if(type === "webinar")>
+        $ const isUpcoming = content.startDate > Date.now();
+        <div class="mt-block">
+          <default-theme-content-link-url
+            obj=content
+            label=(isUpcoming ? "Register for Webinar" : "View Webinar")
+            target="_blank"
+          />
+        </div>
+      </if>
+
+      <if(displayInquiry(content))>
+        <marko-web-inquiry-form content=content modifiers=["margin-top"] />
+      </if>
+
+      <if(type === "podcast")>
+        <marko-web-content-audio block-name=blockName obj=content />
+      </if>
+
+      <if(type === "top100")>
+        <div class="page-contents__info">
+          <div class=`${blockName}__content-revenue-current`>${formatUsCurrency(content.revenueCurrent)}</div>
+          <marko-web-obj-text type="content" block-name=blockName obj=content field="companyExecutives" />
+          <marko-web-obj-text type="content" block-name=blockName obj=content field="founded" />
+          <marko-web-obj-text type="content" block-name=blockName obj=content field="marketsServing" />
+        </div>
+      </if>
+
+      <shared-content-page-comments should-display=displayComments>
+        <@content id=id name=content.name teaser=content.teaser url=content.siteContext.canonicalUrl />
+      </shared-content-page-comments>
+    </else>
+  </marko-web-identity-x-access>
+
+  <if(displayPhotoswipe)>
+    <marko-web-photoswipe-images images=images>
+      <@props
+        thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]`
+        button-selector=`[data-gallery-id="${id}"] [data-gallery-button]`
+      />
+    </marko-web-photoswipe-images>
+  </if>
+
+  <if(displayNewsletterSignup)>
+    <shared-newsletter-signup-block modifiers=["margin-top"] />
+  </if>
+
+</default-theme-page-contents>

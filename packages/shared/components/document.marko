@@ -1,0 +1,68 @@
+$ const {
+  site,
+  req,
+  nativeX,
+  GAM,
+} = out.global;
+
+$ const prestitial = GAM ? GAM.getAdUnit({ name: "wa" }) : {};
+$ const hasPrestitial = Boolean(prestitial.path);
+$ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
+
+$ const radix = site.getAsObject("radix");
+$ const isRadixEnabled = Boolean(radix.enabled && radix.appId);
+
+<marko-web-document ...input>
+  <@head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <if(GAM)>
+      <marko-web-gam-init />
+    </if>
+    <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+    <if(nativeX)>
+      <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() />
+    </if>
+    <if(hasPrestitial)>
+      <gam-prestitial init=true adunit=prestitial />
+    </if>
+    <${input.head} />
+    <marko-web-gtm-start />
+    <if(GAM)>
+      <marko-web-gam-enable>
+        <@lazy-load ...site.getAsObject("gam.lazyLoad") />
+      </marko-web-gam-enable>
+      <marko-web-gam-targeting key-values={ uri: req.path } />
+    </if>
+  </@head>
+  <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
+  <@above-wrapper>
+    <leaders-dropdown-portal />
+    <if(hasPrestitial)>
+      <gam-prestitial display=true adunit=prestitial />
+    </if>
+  </@above-wrapper>
+  <@above-container>
+    <if(GAM)>
+      <marko-web-reveal-ad-listener />
+    </if>
+    <marko-web-gtm-track-load-more />
+    <if(isRadixEnabled)>
+      <marko-web-radix-inquiry-listener app-id=radix.appId submission-field-ids=radix.submissionFieldIds />
+    </if>
+    <marko-web-identity-x-context|{ hasUser, isEnabled }|>
+      <default-theme-site-header has-user=hasUser reg-enabled=isEnabled />
+      <default-theme-site-menu has-user=hasUser reg-enabled=isEnabled />
+    </marko-web-identity-x-context>
+    <${input.aboveContainer} />
+  </@above-container>
+  <@below-container>
+    <${input.belowContainer} />
+    <default-theme-site-footer />
+    <if(isRadixEnabled)>
+      <marko-web-radix-identity-detector app-id=radix.appId />
+    </if>
+  </@below-container>
+</marko-web-document>

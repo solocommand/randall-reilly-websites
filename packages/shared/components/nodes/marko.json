@@ -1,0 +1,92 @@
+{
+  "<shared-content-list-node>": {
+    "template": "./content-list.marko",
+    "<image>": {},
+    "<title>": {},
+    "<attribution>": {},
+    "@node": "object",
+
+    "@image-position": "string",
+    "@card": "boolean",
+    "@flush": "boolean",
+    "@full-height": "boolean",
+
+    "@display-image": "boolean",
+    "@with-teaser": "boolean",
+
+    "@modifiers": "array",
+    "@attrs": "object",
+    "@link-attrs": "object"
+  },
+  "<shared-content-card-node>": {
+    "template": "./content-card.marko",
+    "<image>": {},
+    "<title>": {},
+    "<attribution>": {},
+    "@node": "object",
+
+    "@image-position": "string",
+    "@flush": "boolean",
+
+    "@display-image": "boolean",
+    "@with-teaser": "boolean",
+
+    "@modifiers": "array",
+    "@attrs": "object",
+    "@link-attrs": "object",
+    "@full-height": "boolean"
+  },
+  "<shared-magazine-latest-issue-node>": {
+    "template": "./magazine-latest-issue.marko",
+    "<image>": {},
+    "@node": "object",
+
+    "@image-position": "string",
+    "@card": "boolean",
+    "@flush": "boolean",
+    "@full-height": "boolean",
+
+    "@modifiers": "array",
+    "@attrs": "object"
+  },
+  "<shared-magazine-issue-archive-node>": {
+    "template": "./magazine-issue-archive.marko",
+    "<image>": {},
+    "<title>": {},
+    "@node": "object",
+
+    "@image-position": "string",
+    "@card": "boolean",
+    "@flush": "boolean",
+    "@full-height": "boolean",
+
+    "@modifiers": "array",
+    "@attrs": "object"
+  },
+  "<shared-contact-us-list-node>": {
+    "template": "./contact-us-list.marko",
+    "<image>": {},
+    "@node": "object",
+
+    "@image-position": "string",
+    "@card": "boolean",
+    "@flush": "boolean",
+    "@flush-x": "boolean",
+    "@flush-y": "boolean",
+    "@full-height": "boolean",
+
+    "@modifiers": "array",
+    "@attrs": "object",
+    "@link-attrs": "object"
+  },
+  "<shared-key-contact-card-node>": {
+    "template": "./key-contact-card.marko",
+    "@node": "object",
+    "@with-email": "boolean"
+  },
+  "<shared-youtube-card-node>": {
+    "template": "./youtube-card.marko",
+    "@node": "object",
+    "@link-attrs": "object"
+  }
+}

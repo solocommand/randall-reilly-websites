@@ -1,0 +1,26 @@
+{
+  "taglib-imports": [
+    "./content/marko.json",
+    "./published-content/marko.json",
+    "./website-section/marko.json"
+  ],
+  "<shared-subscribe-page-layout>": {
+    "template": "./subscribe.marko",
+    "<newsletter-section>": {},
+    "<magazine-section>": {},
+    "@description": "string"
+  },
+  "<shared-default-page-layout>": {
+    "template": "./default.marko",
+    "<section>": {},
+    "@title": {
+      "type": "string",
+      "required": true
+    },
+    "@type": {
+      "type": "string",
+      "required": true
+    },
+    "@description": "string"
+  }
+}

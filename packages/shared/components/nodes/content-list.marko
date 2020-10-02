@@ -1,0 +1,56 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const content = getAsObject(input, "node");
+$ const primaryImage = getAsObject(content, "primaryImage");
+$ const primarySection = getAsObject(content, "primarySection");
+
+$ const withTeaser = defaultValue(input.withTeaser, false);
+
+$ const { linkAttrs } = input;
+
+<marko-web-node
+  type=`${content.type}-content`
+  image-position=defaultValue(input.imagePosition, "right")
+  card=defaultValue(input.card, false)
+  flush=defaultValue(input.flush, true)
+  full-height=defaultValue(input.fullHeight, false)
+  attrs=input.attrs
+  modifiers=input.modifiers
+>
+  <if(defaultValue(input.displayImage, true))>
+    <@image
+      ar="1:1"
+      width=75
+      align="middle"
+      use-placeholder=false
+      fluid=false
+      ...input.image
+      src=primaryImage.src
+      alt=primaryImage.alt
+      is-logo=primaryImage.isLogo
+      link={ href: content.siteContext.path, attrs: linkAttrs }
+    />
+  </if>
+  <@body>
+    <@header>
+      <@left>
+        <marko-web-website-section-name obj=primarySection link=true />
+      </@left>
+    </@header>
+    <@title tag="h5" ...input.title>
+      <marko-web-content-short-name tag=null obj=content link={ attrs: linkAttrs } />
+    </@title>
+    <@text modifiers=["teaser"] show=(withTeaser && content.teaser)>
+      <marko-web-content-teaser tag=null obj=content link={ attrs: linkAttrs } />
+    </@text>
+    <@footer>
+      <@left>
+        <attribution ...input.attribution content=content />
+      </@left>
+      <@right|{ blockName }|>
+        <dates block-name=blockName content=content />
+      </@right>
+    </@footer>
+  </@body>
+</marko-web-node>

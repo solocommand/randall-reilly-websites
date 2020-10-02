@@ -1,0 +1,29 @@
+import { get, getAsArray } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const hasImage = Boolean(get(input, "node.primaryImage.src"));
+$ const modifiers = [...getAsArray(input, "modifiers")];
+$ if (!hasImage) modifiers.push("zoomed");
+
+<shared-content-list-node
+  node=input.node
+  image-position=defaultValue(input.imagePosition, "top")
+  display-image=defaultValue(input.displayImage, true)
+  flush=defaultValue(input.flush, false)
+  card=true
+  full-height=defaultValue(input.fullHeight, true)
+  attrs=input.attrs
+  link-attrs=input.linkAttrs
+  modifiers=modifiers
+  with-teaser=defaultValue(input.withTeaser, true)
+  title=input.title
+  attribution=input.attribution
+>
+  <@image
+    ar="16:9"
+    width=340
+    use-placeholder=false
+    ...input.image
+    fluid=true
+  />
+</shared-content-list-node>

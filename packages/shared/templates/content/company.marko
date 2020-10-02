@@ -1,0 +1,112 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+
+$ const { GAM } = out.global;
+$ const { id, type, pageNode } = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "company-takeover-lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "company-takeover-rail1", aliases }),
+});
+
+<shared-content-page-default-layout
+  id=id
+  type=type
+  page-node=pageNode
+  with-footer-ad=false
+  ad-slots=adSlots
+>
+  <@above-container>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      <shared-gam-out-of-page-ad name="company-takeover-reskin" aliases=aliases />
+    </marko-web-resolve-page>
+  </@above-container>
+
+  <@page>
+    <shared-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+
+    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+      $ const { socialLinks, ...contentSansSocial } = content;
+
+      <marko-web-page-wrapper class="mb-block">
+        <@section>
+          <div class="row">
+            <div class="col-md-9 col-sm-12 col-lg-10">
+              <div class="ldp">
+                <div class="ldp__logo">
+                  <shared-content-page-company-logo content=content />
+                </div>
+                <div class="ldp__title">
+                  <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
+                  <marko-web-content-city-state-zip tag="p" class="text-small text-muted" obj=content />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
+              <div class="ldp__social">
+                <leaders-company-website-link company=content />
+                <div class="mt-2 d-flex justify-content-around">
+                  <for|item| of=resolved.getAsArray("socialLinks")>
+                    <leaders-company-social-link company=content item=item />
+                  </for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+
+      <div class="row">
+        <div class="col-lg-8 mb-block">
+          <shared-content-page-company-overview content=content class="mb-block" />
+          <shared-content-page-company-details content=content class="mb-block" />
+
+          <shared-content-page-company-featured-videos
+            videos=resolved.getEdgeNodesFor("youtubeVideos")
+            href=resolved.get("youtube.url")
+            class="mb-block"
+          >
+            <@company id=id name=resolved.get("name") />
+          </shared-content-page-company-featured-videos>
+
+          <shared-company-content-list-block company-id=id>
+            <@header>Products & Press Releases</@header>
+            <@list class="mb-block" />
+            <@query-params include-content-types=["Product", "PressRelease"] />
+          </shared-company-content-list-block>
+
+          <shared-company-content-list-block company-id=id>
+            <@header>Articles & News</@header>
+            <@list class="mb-block" />
+            <@query-params include-content-types=["Article", "Blog", "News"] />
+          </shared-company-content-list-block>
+
+          <shared-company-content-list-block company-id=id>
+            <@header>Videos & Resources</@header>
+            <@list class="mb-block" />
+            <@query-params include-content-types=["Video", "Whitepaper", "Webinar", "Document", "MediaGallery", "Podcast"] />
+          </shared-company-content-list-block>
+
+        </div>
+
+        <div class="col-lg-4 mb-block page-rail">
+          <shared-content-page-company-key-contacts
+            contacts=resolved.getEdgeNodesFor("publicContacts")
+            class="mb-block"
+          />
+
+          <shared-gam-display-ad id="gpt-ad-rail1" />
+
+          <if(resolved.get("enableRmi"))>
+            <marko-web-node-list collapsible=false modifiers=["sticky-top"]>
+              <@header>Request More Information</@header>
+              <@body>
+                <marko-web-inquiry-form content=content with-header=false modifiers=["right-rail"] />
+              </@body>
+            </marko-web-node-list>
+          </if>
+        </div>
+      </div>
+    </marko-web-resolve-page>
+  </@page>
+</shared-content-page-default-layout>

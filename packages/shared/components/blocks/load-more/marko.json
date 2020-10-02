@@ -1,0 +1,88 @@
+{
+  "<shared-scheduled-content-load-more-block>": {
+    "template": "./scheduled-content.marko",
+    "<query-params>":  {},
+    "<component-input>": {
+      "<node>": {}
+    },
+    "@header": "string",
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@max-pages": "number",
+    "@fragment-name": "string"
+  },
+  "<shared-optioned-content-load-more-block>": {
+    "template": "./optioned-content.marko",
+    "<query-params>":  {},
+    "<component-input>": {
+      "<node>": {}
+    },
+    "@header": "string",
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@section-id": {
+      "type": "number",
+      "required": true
+    },
+    "@max-pages": "number",
+    "@fragment-name": "string"
+  },
+  "<shared-published-content-load-more-block>": {
+    "template": "./published-content.marko",
+    "<query-params>":  {},
+    "<component-input>": {},
+    "@header": "string",
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@max-pages": "number",
+    "@fragment-name": "string"
+  },
+  "<shared-content-page-load-more-block>": {
+    "template": "./content-page.marko",
+    "<content>": {
+      "@id": "string",
+      "@type": "string",
+      "@name": "string"
+    },
+    "<section>": {
+      "@id": "string",
+      "@name": "string"
+    },
+    "<component-input>": {},
+    "@flow": {
+      "type": "string",
+      "required": true
+    },
+    "@limit": "number",
+    "@skip": "number",
+    "@aliases": "array",
+    "@max-pages": "number",
+    "@fragment-name": "string"
+  },
+  "<shared-contact-page-load-more-block>": {
+    "template": "./contact-page.marko",
+    "<content>": {
+      "@id": "string",
+      "@type": "string",
+      "@name": "string"
+    }
+  },
+  "<shared-company-page-load-more-block>": {
+    "template": "./company-page.marko",
+    "<content>": {
+      "@id": "string",
+      "@type": "string",
+      "@name": "string"
+    }
+  }
+}

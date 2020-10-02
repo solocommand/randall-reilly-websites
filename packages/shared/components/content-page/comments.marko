@@ -1,0 +1,18 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { req, site } = out.global;
+$ const { identityX } = req;
+$ const isEnabled = Boolean(identityX && site.get('identityX.comments.enabled'));
+$ const shouldDisplay = defaultValue(input.shouldDisplay, true);
+
+$ const content = getAsObject(input, "content");
+
+<if(shouldDisplay && isEnabled)>
+  <marko-web-identity-x-comment-stream
+    identifier=content.id
+    title=content.name
+    description=content.teaser
+    url=content.url
+  />
+</if>

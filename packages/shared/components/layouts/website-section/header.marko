@@ -1,0 +1,128 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { getAsObject } from "@base-cms/object-path";
+import { isFunction } from "@base-cms/utils";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import merge from "lodash.merge";
+import queryFragment from "../../../graphql/fragments/content-list";
+
+$ const { config, GAM } = out.global;
+$ const { id, alias, name, pageNode } = input;
+
+$ const withOopAds = defaultValue(input.withOopAds, true);
+$ const withFooterAd = defaultValue(input.withFooterAd, true);
+
+$ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+});
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <if(input.head)>
+      <${input.head} />
+    </if>
+    <else>
+      <marko-web-gtm-website-section-context|{ context }| alias=alias>
+        <marko-web-gtm-push data=context />
+      </marko-web-gtm-website-section-context>
+      <marko-web-resolve-page|{ data: section }| node=pageNode>
+        $ const aliases = hierarchyAliases(section);
+        <shared-gam-define-slots builder=adSlots aliases=aliases />
+      </marko-web-resolve-page>
+      <if(input.inHead)>
+        <${input.inHead} />
+      </if>
+    </else>
+  </@head>
+
+  <@above-container>
+    <if(input.aboveContainer)>
+      <${input.aboveContainer} />
+    </if>
+    <else>
+      <if(withOopAds)>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          <shared-gam-out-of-page-ad name="reskin" aliases=aliases />
+        </marko-web-resolve-page>
+      </if>
+    </else>
+  </@above-container>
+
+  <@page>
+    <if(input.page)>
+      <${input.page} />
+    </if>
+    <else>
+      <shared-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+
+      <marko-web-page-wrapper class="mb-block">
+        <@section>
+          <marko-web-resolve-page|{ data: section }| node=pageNode>
+            <div class="row">
+              <div class="col">
+                <default-theme-breadcrumbs-with-home>
+                  <@item>${name}</@item>
+                </default-theme-breadcrumbs-with-home>
+                <h1 class="page-wrapper__title">${name}</h1>
+                <div class="page-wrapper__deck">${section.description}</div>
+              </div>
+            </div>
+          </marko-web-resolve-page>
+        </@section>
+        <@section>
+          <if(input.section)>
+            <${input.section} />
+          </if>
+        </@section>
+      </marko-web-page-wrapper>
+    </else>
+  </@page>
+
+  <@below-page>
+    <if(input.belowPage)>
+      <${input.belowPage} />
+    </if>
+    <else>
+      $ const loadMore = getAsObject(input, "loadMore");
+      <if(defaultValue(loadMore.enabled, true))>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          $ const adunit = { aliases };
+          $ const componentInput = merge({
+            cardDeck: { adunit, nativeX: { index: 0, name: "default", aliases } },
+            list: { adunit },
+          }, getAsObject(loadMore, "componentInput"));
+
+          <shared-scheduled-content-load-more-block
+            name=defaultValue(loadMore.name, "card-deck-list")
+            section-id=id
+            max-pages=loadMore.maxPages
+            fragment-name=loadMore.fragmentName
+            header=loadMore.header
+          >
+            <@query-params ...defaultValue(loadMore.queryParams, { limit: 14, skip: 12 }) />
+            <@component-input ...componentInput />
+          </shared-scheduled-content-load-more-block>
+        </marko-web-resolve-page>
+      </if>
+    </else>
+  </@below-page>
+
+  <@foot>
+    <if(input.foot)>
+      <${input.foot} />
+    </if>
+    <else>
+      <if(withFooterAd)>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          <shared-fixed-ad-bottom>
+            <@adunit aliases=aliases />
+          </shared-fixed-ad-bottom>
+        </marko-web-resolve-page>
+      </if>
+    </else>
+  </@foot>
+</marko-web-website-section-page-layout>

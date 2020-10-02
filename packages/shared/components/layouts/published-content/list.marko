@@ -1,0 +1,67 @@
+import defaultDescription from "@base-cms/marko-web/utils/published-content/description";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import { getAsObject } from "@base-cms/object-path";
+import { isFunction } from "@base-cms/utils";
+import queryFragment from "../../../graphql/fragments/content-list";
+
+$ const { config } = out.global;
+$ const type = "published-content";
+$ const { title } = input;
+$ const description = defaultValue(input.description, defaultDescription(title, config));
+
+$ const queryParams = {
+  limit: 18,
+  queryFragment,
+  ...getAsObject(input, "queryParams"),
+};
+
+$ const loadMoreParams = {
+  ...queryParams,
+  skip: queryParams.limit,
+};
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+  </@head>
+  <@above-container>
+    <shared-gam-out-of-page-ad name="reskin" />
+  </@above-container>
+  <@page>
+    <shared-gam-define-display-ad name="lb1" modifiers=["top-of-page"] />
+
+    <marko-web-page-wrapper class="mb-block">
+      <@section>
+        <div class="row">
+          <div class="col">
+            <default-theme-breadcrumbs-with-home>
+              <@item>${title}</@item>
+            </default-theme-breadcrumbs-with-home>
+            <h1 class="page-wrapper__title">${title}</h1>
+            <div class="page-wrapper__deck">${description}</div>
+          </div>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+
+    <div class="row">
+      <div class="col">
+        <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+          <shared-content-list-flow nodes=nodes />
+        </marko-web-query>
+      </div>
+    </div>
+  </@page>
+
+  <@below-page>
+    <shared-published-content-load-more-block name="list">
+      <@query-params ...loadMoreParams />
+    </shared-published-content-load-more-block>
+  </@below-page>
+
+  <@foot>
+    <shared-fixed-ad-bottom />
+  </@foot>
+</marko-web-default-page-layout>

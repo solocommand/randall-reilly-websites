@@ -1,0 +1,23 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import { getAsObject } from "@base-cms/object-path";
+
+$ const { aliases, limit, skip, maxPages, componentInput } = input;
+$ const content = getAsObject(input, "content");
+$ const section = getAsObject(input, "section");
+
+$ const flow = defaultValue(input.flow, "card-deck-list");
+$ const componentName = `shared-content-${flow}-flow`;
+$ const fragmentName = defaultValue(input.fragmentName, "shared-content-list");
+
+<if(section.id)>
+  <shared-scheduled-content-load-more-block
+    name=flow
+    section-id=section.id
+    header=`More in ${section.name}`
+    fragment-name=fragmentName
+    max-pages=maxPages
+  >
+    <@query-params exclude-content-ids=[content.id] limit=limit skip=skip />
+    <@component-input ...componentInput />
+  </shared-scheduled-content-load-more-block>
+</if>

@@ -1,0 +1,16 @@
+import { getAsObject, getAsArray } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { GAM } = out.global;
+$ const adunit = getAsObject(input, "adunit");
+
+$ const name = defaultValue(adunit.name, "lb2");
+$ const aliases = getAsArray(adunit, "aliases");
+
+<if(GAM)>
+  <marko-web-gam-fixed-ad-bottom
+    ...GAM.getAdUnit({ name, aliases })
+    refresh-interval=defaultValue(input.refreshInterval, 30)
+    scroll-offset=defaultValue(input.scrollOffset, 100)
+  />
+</if>

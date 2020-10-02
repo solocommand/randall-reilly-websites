@@ -1,0 +1,12 @@
+import { isFunction } from "@base-cms/utils";
+import { getAsObject } from "@base-cms/object-path";
+
+$ const { GAM } = out.global;
+$ const { builder, aliases } = input;
+
+<if(GAM)>
+  <marko-web-gam-targeting ...getAsObject(input, "targeting") />
+  <if(isFunction(builder))>
+    <marko-web-gam-slots slots=builder({ aliases }) />
+  </if>
+</if>

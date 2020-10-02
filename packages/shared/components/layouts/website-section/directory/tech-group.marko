@@ -1,0 +1,76 @@
+import { getAsObject, getAsArray } from "@base-cms/object-path";
+import { isFunction } from "@base-cms/utils";
+import queryFragment from "../../../../graphql/fragments/content-list";
+
+$ const { GAM } = out.global;
+$ const { id, alias, name, pageNode } = input;
+$ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+});
+
+$ const facets = getAsArray(input, "directory.facets");
+$ const directory = {
+  title: "Categories",
+  ...getAsObject(input, "directory"),
+  facets,
+};
+
+<shared-website-section-page-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+  ad-slots=adSlots
+>
+  <@page>
+    <shared-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-page-wrapper class="mb-block">
+        <@section>
+          <div class="row">
+            <div class="col">
+              <default-theme-website-section-breadcrumbs section=section display-self=false />
+              <marko-web-website-section-name tag="h1" class="page-wrapper__title" obj=section />
+              <marko-web-website-section-description tag="p" class="page-wrapper__deck" obj=section />
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+
+    <div class="row">
+      <div class="col-lg-4 page-rail mb-block">
+        <directory-facets ...directory active-id=id />
+        <shared-gam-display-ad id="gpt-ad-rail1" />
+        <shared-gam-display-ad id="gpt-ad-rail2" />
+      </div>
+      <div class="col-lg-8">
+        <shared-website-section-list-block alias=alias>
+          <@header>Featured Companies</@header>
+          <@query-params option-name="Featured" limit=3 include-content-types=["Company"] />
+          <@list inner-justified=false class="mb-block">
+            <@node image-position="left" with-teaser=true />
+          </@list>
+        </shared-website-section-list-block>
+
+        <shared-website-section-list-block alias=alias>
+          <@header>Latest Companies</@header>
+          <@query-params limit=5 include-content-types=["Company"] />
+          <@list inner-justified=false class="mb-block">
+            <@node image-position="left" with-teaser=true />
+          </@list>
+        </shared-website-section-list-block>
+      </div>
+    </div>
+  </@page>
+
+  <@below-page>
+    <shared-scheduled-content-load-more-block name="list" section-id=id>
+      <@query-params include-content-types=["Company"] limit=18 skip=5 />
+      <@component-input inner-justified=false class="mb-block" node={ imagePosition: "left", withTeaser: true } />
+    </shared-scheduled-content-load-more-block>
+  </@below-page>
+</shared-website-section-page-default-layout>

@@ -1,0 +1,81 @@
+{
+  "<shared-content-page-header>": {
+    "template": "./header.marko",
+    "@content": "object"
+  },
+  "<shared-content-page-contents>": {
+    "template": "./contents.marko",
+    "<before-body>": {},
+    "@content": "object"
+  },
+  "<shared-content-page-right-rail>": {
+    "template": "./right-rail.marko",
+    "@page-node": {
+      "type": "object",
+      "required": true
+    },
+    "@display-related-content": "boolean",
+    "@display-ads": "boolean",
+    "@ad-layout": "string"
+  },
+  "<shared-content-page-company-overview>": {
+    "template": "./company/overview.marko",
+    "@content": "object",
+    "@class": "string"
+  },
+  "<shared-content-page-company-details>": {
+    "template": "./company/details.marko",
+    "@content": "object",
+    "@class": "string"
+  },
+  "<shared-content-page-company-at-a-glance>": {
+    "template": "./company/at-a-glance.marko",
+    "<header>": {},
+    "@content": "object"
+  },
+  "<shared-content-page-company-logo>": {
+    "template": "./company/logo.marko",
+    "@content": "object"
+  },
+  "<shared-content-page-company-label>": {
+    "template": "./company/label.marko",
+    "@tag": "string",
+    "@modifiers": "array"
+  },
+  "<shared-content-page-company-key-contacts>": {
+    "template": "./company/key-contacts.marko",
+    "@contacts": "array",
+    "@class": "string"
+  },
+  "<shared-content-page-company-featured-videos>": {
+    "template": "./company/featured-videos.marko",
+    "<company>": {
+      "@id": "number",
+      "@name": "string"
+    },
+    "@videos": "array",
+    "@class": "string",
+    "@href": "string"
+  },
+  "<shared-content-page-gate>": {
+    "template": "./gate.marko",
+    "@can-access": "boolean",
+    "@is-logged-in": "boolean",
+    "@has-required-access-level": "boolean",
+    "@requires-access-level": "boolean",
+    "@requires-user-input": "boolean",
+    "@messages": "object",
+    "@title": "string",
+    "@user-input-title": "string"
+  },
+  "<shared-content-page-comments>": {
+    "template": "./comments.marko",
+    "<content>": {
+      "@id": "number",
+      "@name": "string",
+      "@teaser": "string",
+      "@url": "string"
+    },
+    "@should-display": "boolean"
+  }
+}

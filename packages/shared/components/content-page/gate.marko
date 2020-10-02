@@ -1,0 +1,53 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue  from "@base-cms/marko-core/utils/default-value";
+
+$ const { config } = out.global;
+
+$ const blockName = "content-page-gate";
+$ const {
+  canAccess,
+  isLoggedIn,
+  hasRequiredAccessLevel,
+  requiresAccessLevel,
+  requiresUserInput,
+} = input;
+$ const messages = getAsObject(input, "messages");
+$ const title = defaultValue(input.title, "Log in to view the full article");
+$ const userInputTitle = defaultValue(input.userInputTitle, "Complete your profile to view the full article");
+
+<marko-web-block name=blockName>
+  <if(!canAccess)>
+    <marko-web-element tag="h5" name="title" block-name=blockName>
+      ${title}
+    </marko-web-element>
+    <if(isLoggedIn && !hasRequiredAccessLevel)>
+      <marko-web-element name="body" block-name=blockName>
+        $!{messages.loggedInNoAccess}
+      </marko-web-element>
+    </if>
+    <else>
+      <marko-web-element name="body" block-name=blockName>
+        <if(!requiresAccessLevel)>
+          $!{messages.loggedOutNoAccess}
+        </if>
+        <else>
+          <p>Register on ${config.website("name")} and gain access to premium content, including this article and much more.</p>
+          <p>To log in or register, begin by entering your email address below.</p>
+        </else>
+      </marko-web-element>
+
+      <marko-web-element name="form-wrapper" block-name=blockName>
+        <marko-web-identity-x-form-register />
+      </marko-web-element>
+    </else>
+  </if>
+  <else-if(isLoggedIn && requiresUserInput)>
+    <marko-web-element tag="h5" name="title" block-name=blockName>
+      ${userInputTitle}
+    </marko-web-element>
+
+    <marko-web-element name="form-wrapper" block-name=blockName>
+      <marko-web-identity-x-form-profile reload-page-on-submit=true />
+    </marko-web-element>
+  </else-if>
+</marko-web-block>

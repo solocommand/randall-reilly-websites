@@ -1,0 +1,110 @@
+{
+  "<shared-content-card-deck-list-flow>": {
+    "template": "./card-deck-list.marko",
+    "@nodes": "array",
+    "<card-deck>": {
+      "<node>": {},
+      "<native-x>": {
+        "@index": "number",
+        "@name": "string",
+        "@aliases": "array"
+      },
+      "<adunit>": {
+        "@aliases": "array"
+      }
+    },
+    "<list>": {
+      "<node>": {},
+      "<native-x>": {
+        "@index": "number",
+        "@name": "string",
+        "@aliases": "array"
+      },
+      "<adunit>": {
+        "@aliases": "array"
+      }
+    }
+  },
+  "<shared-content-card-deck-flow>": {
+    "template": "./card-deck.marko",
+    "<node>": {
+      "<image>": {},
+      "<title>": {}
+    },
+    "<adunit>": {
+      "@aliases": "array"
+    },
+    "<native-x>": {
+      "@index": "number",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@nodes": "array",
+    "@display-ads": "boolean",
+    "@cols": "number",
+    "@tag": "string",
+    "@class": "string",
+    "@modifiers": "array",
+    "@attrs": "object"
+  },
+  "<shared-content-hero-flow>": {
+    "template": "./hero.marko",
+    "<card>": {},
+    "<below-card>": {},
+    "<list>": {
+      "<node>": {},
+      "<native-x>": {
+        "@index": "number",
+        "@name": "string",
+        "@aliases": "array"
+      }
+    },
+    "@nodes": "array"
+  },
+  "<shared-content-list-card-deck-flow>": {
+    "template": "./list-card-deck.marko",
+    "<card-deck>": {
+      "<node>": {},
+      "<native-x>": {
+        "@index": "number",
+        "@name": "string",
+        "@aliases": "array"
+      },
+      "<adunit>": {
+        "@aliases": "array"
+      }
+    },
+    "<list>": {
+      "<node>": {},
+      "<native-x>": {
+        "@index": "number",
+        "@name": "string",
+        "@aliases": "array"
+      },
+      "<adunit>": {
+        "@aliases": "array"
+      }
+    },
+    "@nodes": "array"
+  },
+  "<shared-content-list-flow>": {
+    "template": "./list.marko",
+    "<header>": {},
+    "<body>": {},
+    "<node>": {
+      "<attribution>": {},
+      "<image>": {}
+    },
+    "<native-x>": {
+      "@index": "number",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@nodes": "array",
+    "@inner-justified": "boolean",
+    "@flush-x": "boolean",
+    "@flush-y": "boolean",
+    "@class": "string",
+    "@modifiers": "array"
+  }
+}

@@ -1,0 +1,17 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const nodes = [];
+$ const { node } = input;
+$ if (node) nodes.push(node);
+
+<marko-web-node-list
+  inner-justified=defaultValue(input.innerJustified, true)
+  header=input.header
+>
+  <@nodes nodes=nodes>
+    <@slot|{ node: issue }| position="at" index=0>
+      <shared-magazine-latest-issue-node node=issue />
+    </@slot>
+  </@nodes>
+</marko-web-node-list>

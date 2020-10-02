@@ -1,0 +1,20 @@
+import { getAsArray } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { aliases } = input;
+$ const nodes = getAsArray(input, "nodes");
+
+<if(nodes.length)>
+  <default-theme-card-deck-flow
+    nodes=nodes
+    modifiers=input.modifiers
+    cols=defaultValue(input.cols, 4)
+  >
+    <@slot|{ node }|>
+      <shared-magazine-issue-archive-node
+        ...input.node
+        node=node
+      />
+    </@slot>
+  </default-theme-card-deck-flow>
+</if>

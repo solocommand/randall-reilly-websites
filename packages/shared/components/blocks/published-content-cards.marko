@@ -1,0 +1,28 @@
+import { getAsArray, getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const params = {
+  limit: 4,
+  ...getAsObject(input, "queryParams"),
+  sectionId: input.sectionId,
+  includeContentTypes: getAsArray(input, "contentTypes"),
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="all-published-content" params=params>
+  <marko-web-node-list inner-justified=defaultValue(input.innerJustified, true)>
+    <@header>
+      <${input.header} />
+    </@header>
+    <@nodes nodes=nodes>
+      <shared-content-card-deck-flow
+        nodes=nodes
+        cols=defaultValue(input.cols, 4)
+        display-ads=defaultValue(input.displayAds, false)
+      >
+        <@node with-teaser=defaultValue(input.withTeaser, false) />
+      </shared-content-card-deck-flow>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>

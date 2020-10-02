@@ -1,0 +1,31 @@
+$theme-card-header-background-color: #000 !default;
+
+$enable-rounded: false !default;
+$enable-shadows: false !default;
+
+$border-radius: none !default;
+$theme-box-shadow-sm: none !default;
+$theme-box-shadow-lg: none !default;
+$body-bg: #fff !default;
+
+@import "./core";
+
+
+.node {
+  &--sponsored {
+    background-color: transparent;
+  }
+}
+
+.node-list {
+  &--sponsored {
+    background-color: #f0f0f0;
+  }
+}
+
+// @todo confirm if this is still in use.
+.page-contents {
+  &__content-body a {
+    text-decoration: underline;
+  }
+}

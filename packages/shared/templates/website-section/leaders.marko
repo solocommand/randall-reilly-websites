@@ -1,0 +1,52 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { isFunction } from "@base-cms/utils";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const { GAM, site, config } = out.global;
+$ const { id, alias, name, pageNode } = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+});
+
+<shared-website-section-page-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+  ad-slots=adSlots
+  with-oop-ads=false
+  with-footer-ad=false
+>
+  <@page>
+    <shared-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+
+    <marko-web-page-wrapper>
+      <@section>
+        <div class="leaders-index-page">
+          <div class="leaders-index-page__header-wrapper">
+            <div class="leaders-index-page__logo">
+              <marko-web-img
+                src=site.get("leaders.header.imgSrc")
+                alt=site.get("leaders.title")
+              />
+            </div>
+            <div class="leaders-index-page__header">
+              <h1 class="leaders-index-page__title">
+                ${site.get("leaders.title")}
+              </h1>
+              <div class="leaders-index-page__description">
+                <p>Welcome to <em>${config.siteName()}'s</em> ${site.get("leaders.title")} program.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <leaders-all />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+
+  <@load-more enabled=false />
+</shared-website-section-page-default-layout>

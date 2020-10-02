@@ -1,0 +1,14 @@
+<default-theme-hero-flow nodes=input.nodes>
+  <@hero|{ node }|>
+    <shared-content-card-node ...input.card node=node>
+      <@image width=630 />
+      <@title modifiers=["large"] />
+    </shared-content-card-node>
+    <if(input.belowCard)>
+      <${input.belowCard} node=node />
+    </if>
+  </@hero>
+  <@list|{ nodes }|>
+    <shared-content-list-flow ...input.list nodes=nodes />
+  </@list>
+</default-theme-hero-flow>

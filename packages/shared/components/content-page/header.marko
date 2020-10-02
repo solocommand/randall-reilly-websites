@@ -1,0 +1,36 @@
+import { getAsObject } from "@base-cms/object-path";
+
+$ const content = getAsObject(input, "content");
+$ const primarySection = getAsObject(content, "primarySection");
+$ const { type } = content;
+
+$ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
+
+<default-theme-website-section-breadcrumbs section=primarySection />
+<marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
+<marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
+
+<if(type !== "contact")>
+  <default-theme-content-attribution obj=content />
+</if>
+
+<default-theme-page-dates|{ blockName }|>
+  <if(type === "event")>
+    <marko-web-content-starts block-name=blockName obj=content />
+    <marko-web-content-ends block-name=blockName obj=content />
+  </if>
+  <else-if(type === "webinar")>
+    <marko-web-content-starts block-name=blockName obj=content />
+  </else-if>
+  <else-if(displayPublishedDate)>
+    <marko-web-content-published block-name=blockName obj=content />
+  </else-if>
+</default-theme-page-dates>
+
+<if(type !== "contact")>
+  <marko-web-social-sharing
+    path=content.siteContext.path
+    providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+    print-path=`/print/content/${content.id}`
+  />
+</if>

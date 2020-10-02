@@ -1,0 +1,32 @@
+import { getAsArray, getAsObject } from "@base-cms/object-path";
+
+$ const nodes = getAsArray(input, "nodes");
+$ const cardDeck = getAsObject(input, "cardDeck");
+$ const list = getAsObject(input, "list");
+$ const aliases = getAsArray(list, "adunit.aliases");
+
+<if(nodes.length)>
+  <default-theme-column-list-flow nodes=nodes.slice(0, 4)>
+    <@column>
+      <shared-gam-define-display-ad
+        name="load-more"
+        size=[300, 600]
+        aliases=aliases
+        modifiers=["in-card"]
+      />
+    </@column>
+    <@list|{ nodes: listNodes }|>
+      <shared-content-list-flow
+        nodes=listNodes
+        native-x=list.nativeX
+      >
+        <@node with-teaser=true />
+      </shared-content-list-flow>
+    </@list>
+  </default-theme-column-list-flow>
+  <shared-content-card-deck-flow
+    nodes=nodes.slice(4)
+    adunit=cardDeck.adunit
+    native-x=cardDeck.nativeX
+  />
+</if>

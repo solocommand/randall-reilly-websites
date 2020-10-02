@@ -1,0 +1,207 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import { get, getAsObject } from "@base-cms/object-path";
+import { isFunction } from "@base-cms/utils";
+import merge from "lodash.merge";
+import contentKeyValues from "../../../utils/gam/content-key-values";
+import queryFragment from "../../../graphql/fragments/content-list";
+
+$ const { site, GAM } = out.global;
+$ const { id, type, pageNode } = input;
+
+$ const adSlots = isFunction(input.adSlots) ? input.adSlots : ({ aliases }) => ({
+  "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+});
+
+$ const leadersEnabled = Boolean(site.get("leaders.alias"));
+$ const displayLeaders = leadersEnabled && type !== "company";
+$ const displayAds = defaultValue(input.displayAds, true);
+$ const displayRelatedContent = defaultValue(input.displayRelatedContent, ["company", "contact", "webinar"].includes(type) ? false : true);
+$ const withFooterAd = defaultValue(input.withFooterAd, true);
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <if(input.head)>
+      <${input.head} />
+    </if>
+    <else>
+      <marko-web-gtm-content-context|{ context }| id=id>
+        <marko-web-gtm-push data=context />
+      </marko-web-gtm-content-context>
+      <if(displayAds)>
+        <marko-web-resolve-page|{ data: content }| node=pageNode>
+          $ const aliases = hierarchyAliases(content.primarySection);
+          <shared-gam-define-slots builder=adSlots aliases=aliases>
+            <@targeting key-values=contentKeyValues(content) />
+          </shared-gam-define-slots>
+        </marko-web-resolve-page>
+      </if>
+    </else>
+  </@head>
+
+  <@above-container>
+    <if(input.aboveContainer)>
+      <${input.aboveContainer} />
+    </if>
+    <else-if(displayAds)>
+      <marko-web-resolve-page|{ data: content }| node=pageNode>
+        $ const aliases = hierarchyAliases(content.primarySection);
+        <shared-gam-out-of-page-ad name="reskin" aliases=aliases />
+      </marko-web-resolve-page>
+    </else-if>
+  </@above-container>
+
+  <@page>
+    <marko-web-resolve-page|response| node=pageNode>
+      $ const { data: content, resolved } = response;
+      $ const section = resolved.getAsObject("primarySection");
+      $ const images = resolved.getEdgeNodesFor("images")
+      <if(input.page)>
+        <${input.page} ...response />
+      </if>
+      <else>
+        <if(displayAds)>
+          <shared-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+        </if>
+
+        <marko-web-page-wrapper class="mb-block">
+          <@section>
+            <if(input.sectionHeader)>
+              <${input.sectionHeader} ...response />
+            </if>
+            <else>
+              <div class="row">
+                <div class="col">
+                  <shared-content-page-header content=content />
+                </div>
+              </div>
+            </else>
+          </@section>
+          <@section>
+            <if(input.sectionBody)>
+              <${input.sectionBody} ...response />
+            </if>
+            <else>
+              <div class="row">
+                <div class="col-lg-8 mb-3 mb-lg-0">
+                  <if(input.bodyContents)>
+                    <${input.bodyContents} ...response />
+                  </if>
+                  <else>
+                    <shared-content-page-contents content=content before-body=get(input, "pageContents.beforeBody") />
+                  </else>
+                </div>
+
+                <aside class="col-lg-4 page-rail">
+                  <if(input.bodyRail)>
+                    <${input.bodyRail} block-name="page-rail" ...response />
+                  </if>
+                  <else>
+                    <if(type === "whitepaper")>
+                      <default-theme-content-download obj=content>
+                        <@wufoo user-name=site.get("wufoo.userName") />
+                        <@link class="btn btn-lg btn-primary" />
+                      </default-theme-content-download>
+                    </if>
+                    <else>
+                      <shared-content-page-right-rail
+                        display-ads=displayAds
+                        page-node=pageNode
+                        display-related-content=displayRelatedContent
+                        ...getAsObject(input, "rightRail")
+                      />
+                    </else>
+                  </else>
+                </aside>
+              </div>
+            </else>
+          </@section>
+        </marko-web-page-wrapper>
+
+        <if(type === "company")>
+          <shared-company-content-list-block company-id=id>
+            <@header>Products & Press Releases</@header>
+            <@list class="mb-block" />
+            <@query-params include-content-types=["Product", "PressRelease"] />
+          </shared-company-content-list-block>
+          <shared-company-content-list-block company-id=id>
+            <@header>Articles & News</@header>
+            <@list class="mb-block" />
+            <@query-params include-content-types=["Article", "Blog", "News"] />
+          </shared-company-content-list-block>
+          <shared-company-content-list-block company-id=id>
+            <@header>Videos & Resources</@header>
+            <@list class="mb-block" />
+            <@query-params include-content-types=["Video", "Whitepaper", "Webinar", "Document", "MediaGallery", "Podcast"] />
+          </shared-company-content-list-block>
+        </if>
+
+        <if(input.belowWrapper)>
+          <${input.belowWrapper} ...response />
+        </if>
+      </else>
+    </marko-web-resolve-page>
+  </@page>
+
+  <@below-page>
+    <if(input.belowPage)>
+      <${input.belowPage} />
+    </if>
+    <else>
+      $ const loadMore = getAsObject(input, "loadMore");
+      <if(defaultValue(loadMore.enabled, true))>
+        <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+          <if(type === "contact")>
+            <shared-contact-page-load-more-block>
+              <@content id=id type=type name=content.name />
+            </shared-contact-page-load-more-block>
+          </if>
+          <else-if(type === "company")>
+            <shared-company-page-load-more-block>
+              <@content id=id type=type name=content.name />
+            </shared-company-page-load-more-block>
+          </else-if>
+          <else>
+            $ const section = resolved.getAsObject("primarySection");
+            $ const aliases = hierarchyAliases(section);
+            $ const adunit = { aliases };
+            $ const componentInput = merge({
+              displayAds,
+              cardDeck: { adunit, nativeX: { index: 0, name: "default", aliases } },
+              list: { adunit },
+            }, getAsObject(loadMore, "componentInput"));
+
+            <shared-content-page-load-more-block
+              flow=loadMore.flow
+              max-pages=loadMore.maxPages
+              fragment-name=loadMore.fragmentName
+              aliases=aliases
+              limit=defaultValue(loadMore.limit, 14)
+              skip=defaultValue(loadMore.skip, 5)
+            >
+              <@content id=id type=type name=content.name />
+              <@section id=section.id name=section.name />
+              <@component-input ...componentInput />
+            </shared-content-page-load-more-block>
+          </else>
+        </marko-web-resolve-page>
+      </if>
+    </else>
+  </@below-page>
+
+  <@foot>
+    <if(input.foot)>
+      <${input.foot} />
+    </if>
+    <else-if(displayAds && withFooterAd)>
+      <marko-web-resolve-page|{ data: content }| node=pageNode>
+        $ const aliases = hierarchyAliases(content.primarySection);
+        <shared-fixed-ad-bottom>
+          <@adunit aliases=aliases />
+        </shared-fixed-ad-bottom>
+      </marko-web-resolve-page>
+    </else-if>
+  </@foot>
+</marko-web-content-page-layout>

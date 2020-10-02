@@ -1,0 +1,103 @@
+{
+  "<shared-website-section-page-default-layout>": {
+    "template": "./default.marko",
+    "<head>": {},
+    "<in-head>": {},
+    "<above-container>": {},
+
+    "<page>": {},
+    "<load-more>": {
+      "<query-params>":  {},
+      "<component-input>": {},
+      "@enabled": "boolean",
+      "@name": {
+        "type": "string",
+        "required": true
+      },
+      "@max-pages": "number",
+      "@fragment-name": "string",
+      "@header": "string"
+    },
+    "<below-page>": {},
+    "<foot>": {},
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    },
+    "@ad-slots": "function",
+    "@with-oop-ads": "boolean",
+    "@with-footer-ad": "boolean"
+  },
+  "<shared-website-section-page-latest-with-directory-layout>": {
+    "template": "./latest-with-directory.marko"
+  },
+  "<shared-website-section-page-card-deck-list-layout>": {
+    "template": "./card-deck-list.marko",
+    "<featured-companies>": {}
+  },
+  "<shared-website-section-page-hero-card-deck-list-layout>": {
+    "template": "./hero-card-deck-list.marko"
+  },
+  "<shared-website-section-page-header-layout>": {
+    "template": "./header.marko"
+  },
+  "<shared-website-section-page-feed-layout>": {
+    "template": "./feed.marko",
+    "<list-flow>": {
+      "<node>": {}
+    },
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "<shared-website-section-page-default-directory-layout>": {
+    "template": "./directory/default.marko"
+  },
+  "<shared-website-section-page-tech-group-directory-layout>": {
+    "template": "./directory/tech-group.marko"
+  },
+  "<shared-website-section-page-hero-no-ads-layout>": {
+    "template": "./hero-no-ads.marko",
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    }
+  }
+}

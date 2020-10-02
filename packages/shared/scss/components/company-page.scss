@@ -1,0 +1,21 @@
+.ldp {
+  display: flex;
+  align-items: center;
+  &__logo {
+    img {
+      margin-right: 2rem;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
+    }
+  }
+}
+
+.company-section-label {
+  display: block;
+  padding-bottom: .25rem;
+  color: $gray-600;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
