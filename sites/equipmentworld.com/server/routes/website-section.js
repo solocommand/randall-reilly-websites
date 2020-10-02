@@ -1,7 +1,5 @@
 const { withWebsiteSection } = require('@base-cms/marko-web/middleware');
-const leadersFragment = require('@randall-reilly/package-leaders/graphql/fragments/leaders-section');
 const contactUs = require('@randall-reilly/package-shared/templates/website-section/contact-us');
-const leaders = require('@randall-reilly/package-shared/templates/website-section/leaders');
 const queryFragment = require('@randall-reilly/package-shared/graphql/fragments/website-section-page');
 
 const directory = require('../templates/website-section/directory');
@@ -17,10 +15,6 @@ const channelAliases = [
 ];
 
 module.exports = (app) => {
-  app.get('/:alias(leaders)', withWebsiteSection({
-    template: leaders,
-    queryFragment: leadersFragment,
-  }));
   app.get('/:alias(contact-us)', withWebsiteSection({
     template: contactUs,
     queryFragment,

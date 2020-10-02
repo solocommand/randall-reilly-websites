@@ -33,7 +33,6 @@
     "@randall-reilly/package-contact-us": "^1.20.13",
     "@randall-reilly/package-directory": "^1.20.13",
     "@randall-reilly/package-gam-prestitial": "^1.20.0",
-    "@randall-reilly/package-leaders": "^1.20.13",
     "cheerio": "^1.0.0-rc.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
