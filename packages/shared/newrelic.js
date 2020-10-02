@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['parameter1/randall-reilly-websites'],
+  app_name: ['parameter1/website-randall-reilly'],
   /**
    * Your New Relic license key.
    */

@@ -1,8 +1,8 @@
 {
   "name": "@randall-reilly/websites",
   "description": "Websites for Randall Reilly",
-  "repository": "https://github.com/parameter1/randall-reilly-websites.git",
   "author": "Jacob Bare <jacob@parameter1.com>",
+  "repository": "https://github.com/parameter1/website-randall-reilly.git",
   "license": "MIT",
   "private": true,
   "root": true,

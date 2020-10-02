@@ -2,6 +2,14 @@ language: node_js
 node_js: "10.15"
 cache: yarn
 
+_production-job: &production-job
+  stage: production
+  name: SERVICE_NAME
+  script: scripts/deploy.js SERVICE_NAME
+  install: skip
+  env:
+    - "ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm"
+
 stages:
   - name: test
 
@@ -24,47 +32,77 @@ jobs:
     - stage: test
       env: [NODE_ENV=test]
 
-    - stage: production-started
+    - <<: *production-job
+      stage: production-started
       name: Deployment Started
       script: npx @base-cms/website-deployment-tool notify-started
-      install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=NOT-SET]
-
-    # - stage: staging-started
+    # - <<: *staging-job
+    #   stage: staging-started
     #   name: Deployment Started
     #   script: npx @base-cms/website-deployment-tool notify-started
-    #   install: skip
-    #   env: [ENVIRONMENT=staging RANCHER_CLUSTERID=NOT-SET]
 
     ##########################
     # vvv ADD SITES HERE vvv #
     ##########################
 
-    - stage: production
+    - <<: *production-job
+      name: ccjdigital.com
+      script: npx @base-cms/website-deployment-tool deploy ccjdigital.com leonis-websites
+    # - <<: *staging-job
+    #   name: ccjdigital.com
+    #   script: npx @base-cms/website-deployment-tool deploy ccjdigital.com staging-websites
+
+    - <<: *production-job
       name: equipmentworld.com
-      script: npx @base-cms/website-deployment-tool deploy equipmentworld.com websites
-      install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=NOT-SET]
-
-    # - stage: staging
+      script: npx @base-cms/website-deployment-tool deploy equipmentworld.com leonis-websites
+    # - <<: *staging-job
     #   name: equipmentworld.com
-    #   script: npx @base-cms/website-deployment-tool deploy equipmentworld.com websites
-    #   install: skip
-    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=NOT-SET]
+    #   script: npx @base-cms/website-deployment-tool deploy equipmentworld.com staging-websites
 
+    - <<: *production-job
+      name: hardworkingtrucks.com
+      script: npx @base-cms/website-deployment-tool deploy hardworkingtrucks.com leonis-websites
+    # - <<: *staging-job
+    #   name: hardworkingtrucks.com
+    #   script: npx @base-cms/website-deployment-tool deploy hardworkingtrucks.com staging-websites
+
+    - <<: *production-job
+      name: overdriveonline.com
+      script: npx @base-cms/website-deployment-tool deploy overdriveonline.com leonis-websites
+    # - <<: *staging-job
+    #   name: overdriveonline.com
+    #   script: npx @base-cms/website-deployment-tool deploy overdriveonline.com staging-websites
+
+    - <<: *production-job
+      name: totallandscapecare.com
+      script: npx @base-cms/website-deployment-tool deploy totallandscapecare.com leonis-websites
+    # - <<: *staging-job
+    #   name: totallandscapecare.com
+    #   script: npx @base-cms/website-deployment-tool deploy totallandscapecare.com staging-websites
+
+    - <<: *production-job
+      name: truckersnews.com
+      script: npx @base-cms/website-deployment-tool deploy truckersnews.com leonis-websites
+    # - <<: *staging-job
+    #   name: truckersnews.com
+    #   script: npx @base-cms/website-deployment-tool deploy truckersnews.com staging-websites
+
+    - <<: *production-job
+      name: truckpartsandservice.com
+      script: npx @base-cms/website-deployment-tool deploy truckpartsandservice.com leonis-websites
+    # - <<: *staging-job
+    #   name: truckpartsandservice.com
+    #   script: npx @base-cms/website-deployment-tool deploy truckpartsandservice.com staging-websites
 
     ##########################
     # ^^^ ADD SITES HERE ^^^ #
     ##########################
 
-    - stage: production-finished
+    - <<: *production-job
+      stage: production-finished
       name: Deployment Finished
       script: npx @base-cms/website-deployment-tool notify-finished
-      install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=NOT-SET]
-
-    # - stage: staging-finished
+    # - <<: *staging-job
+    #   stage: staging-finished
     #   name: Deployment Finished
     #   script: npx @base-cms/website-deployment-tool notify-finished
-    #   install: skip
-    #   env: [ENVIRONMENT=staging RANCHER_CLUSTERID=NOT-SET]
