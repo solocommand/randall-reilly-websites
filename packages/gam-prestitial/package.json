@@ -1,0 +1,12 @@
+{
+  "name": "@randall-reilly/package-gam-prestitial",
+  "version": "1.20.0",
+  "author": "Josh Worden <josh@limit0.io>",
+  "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/packages/gam-prestitial",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@base-cms/marko-web-gam": "^1.30.0",
+    "@base-cms/object-path": "^1.25.0"
+  }
+}
