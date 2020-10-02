@@ -23,24 +23,13 @@ x-env-defaults: &env
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: contact@parameter1.com
   YARN_CACHE_FOLDER: /.yarn-cache
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://identity-x.parameter1.com/graphql}
 
 x-env-leonis: &env-leonis
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://leonis.oembed.base.parameter1.com}
   RSS_URI: ${RSS_URI-https://leonis.rss.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://leonis.sitemaps.base.parameter1.com}
-
-x-env-tauron: &env-tauron
-  GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
-  RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
-
-x-env-development: &env-development
-  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
-  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
-  RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
-  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
 
 x-site-command: &site-cmd
   entrypoint: ["node_modules/.bin/basecms-website"]
