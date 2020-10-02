@@ -31,15 +31,12 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 
 @import "../../node_modules/@randall-reilly/package-gam-prestitial/scss/prestitial";
 @import "../../node_modules/@randall-reilly/package-contact-us/scss/index";
-@import "../../node_modules/@randall-reilly/package-directory/scss/index";
-@import "../../node_modules/@randall-reilly/package-leaders/scss/index";
 
 @import "./components/card-deck-flow";
 @import "./components/company-page";
 @import "./components/content-print";
 @import "./components/identity-x";
 @import "./components/inquiry";
-@import "./components/leaders";
 @import "./components/node";
 
 .social-sharing {
