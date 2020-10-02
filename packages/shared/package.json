@@ -31,7 +31,6 @@
     "@base-cms/web-cli": "^1.36.3",
     "@randall-reilly/package-common": "^1.20.17",
     "@randall-reilly/package-contact-us": "^1.20.13",
-    "@randall-reilly/package-directory": "^1.20.13",
     "@randall-reilly/package-gam-prestitial": "^1.20.0",
     "cheerio": "^1.0.0-rc.3",
     "graphql": "^14.5.4",
