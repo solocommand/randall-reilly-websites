@@ -1,4 +1,3 @@
-const dragonForms = require('./dragon-forms');
 
 module.exports = {
   primary: {
