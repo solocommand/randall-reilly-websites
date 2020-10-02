@@ -8,9 +8,6 @@ const directory = require('../templates/website-section/directory');
 const section = require('../templates/website-section');
 const channel = require('../templates/website-section/channel');
 
-const careers = require('../templates/website-section/careers');
-const careersSubmit = require('../templates/website-section/careers/submit');
-
 const channelAliases = [
   'tactical',
   'training-careers',
@@ -26,14 +23,6 @@ module.exports = (app) => {
   }));
   app.get('/:alias(contact-us)', withWebsiteSection({
     template: contactUs,
-    queryFragment,
-  }));
-  app.get('/:alias(careers)', withWebsiteSection({
-    template: careers,
-    queryFragment,
-  }));
-  app.get('/:alias(careers/submit)', withWebsiteSection({
-    template: careersSubmit,
     queryFragment,
   }));
   app.get('/:alias(directory)', withWebsiteSection({
