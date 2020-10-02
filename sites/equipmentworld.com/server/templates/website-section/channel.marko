@@ -1,5 +1,3 @@
-import categories from "../../categories";
-
 $ const { id, alias, name, pageNode } = data;
 
 <shared-website-section-page-latest-with-directory-layout
@@ -8,6 +6,5 @@ $ const { id, alias, name, pageNode } = data;
   name=name
   page-node=pageNode
 >
-  <@directory facets=categories />
   <@load-more name="list-card-deck" />
 </shared-website-section-page-latest-with-directory-layout>
