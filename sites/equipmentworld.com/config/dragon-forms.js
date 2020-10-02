@@ -3,8 +3,8 @@ const DragonFormsConfig = require('@randall-reilly/package-shared/config/dragon-
 const config = new DragonFormsConfig({ url: 'https://rrp.dragonforms.com' });
 
 config
-  .addForm('doNotSell', { omedasite: '' })
-  .addForm('newsletterPref', { omedasite: '' })
-  .addForm('newsletterSubscribe', { omedasite: '' })
-  .addForm('newsletterSignup', { omedasite: '', query: { pk: '' } });
+  .addForm('doNotSell', { omedasite: 'NOT-SET' })
+  .addForm('newsletterPref', { omedasite: 'NOT-SET' })
+  .addForm('newsletterSubscribe', { omedasite: 'NOT-SET' })
+  .addForm('newsletterSignup', { omedasite: 'NOT-SET', query: { pk: '' } });
 module.exports = config;

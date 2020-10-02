@@ -40,9 +40,6 @@
     "@with-oop-ads": "boolean",
     "@with-footer-ad": "boolean"
   },
-  "<shared-website-section-page-latest-with-directory-layout>": {
-    "template": "./latest-with-directory.marko"
-  },
   "<shared-website-section-page-card-deck-list-layout>": {
     "template": "./card-deck-list.marko",
     "<featured-companies>": {}
@@ -74,12 +71,6 @@
       "type": "object",
       "required": true
     }
-  },
-  "<shared-website-section-page-default-directory-layout>": {
-    "template": "./directory/default.marko"
-  },
-  "<shared-website-section-page-tech-group-directory-layout>": {
-    "template": "./directory/tech-group.marko"
   },
   "<shared-website-section-page-hero-no-ads-layout>": {
     "template": "./hero-no-ads.marko",

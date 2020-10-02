@@ -3,14 +3,12 @@ const gam = require('./gam');
 
 const nativeX = require('./native-x');
 const dragonForms = require('./dragon-forms');
-const leaders = require('./leaders');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
   dragonForms,
-  leaders,
   company: 'Randall Reilly, LLC',
   logos: {
     navbar: {
