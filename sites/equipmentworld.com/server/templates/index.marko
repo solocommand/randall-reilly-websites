@@ -3,10 +3,6 @@ $ const { id, alias, name, pageNode } = data;
 
 $ const adSlots = ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
-  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
-  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
-  "gpt-ad-rail3": GAM.getAdUnit({ name: "rail2", aliases }),
-  "gpt-ad-ms": GAM.getAdUnit({ name: "ms", aliases }),
 });
 
 <shared-website-section-page-default-layout
@@ -23,81 +19,15 @@ $ const adSlots = ({ aliases }) => ({
 
     <div class="row">
       <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias=alias>
-          <@query-params limit=4 skip=5 />
-          <@header>Latest</@header>
-        </shared-website-section-list-block>
+        <shared-website-section-list-block alias="home" />
       </div>
 
       <div class="col-lg-4 mb-block">
-        <shared-gam-display-ad id="gpt-ad-rail2" />
+        <shared-website-section-list-block alias="home" />
       </div>
 
       <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias=alias link-header=false>
-          <@query-params optionName="Sponsored" />
-          <@header>Sponsored Content</@header>
-          <@list modifiers=["sponsored"]>
-            <@node modifiers=["sponsored"] />
-            <@body>
-              <shared-gam-display-ad id="gpt-ad-ms" />
-            </@body>
-          </@list>
-          <@native-x enabled=false />
-        </shared-website-section-list-block>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias="tactical" />
-      </div>
-
-      <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias="training-careers" />
-      </div>
-
-      <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias="on-the-street" />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <shared-published-content-cards-block content-types=["Video"]>
-          <@header>
-            <marko-web-link href="/videos">Videos</marko-web-link>
-          </@header>
-          <@query-params limit=4 />
-        </shared-published-content-cards-block>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias="investigations" />
-      </div>
-
-      <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias="command-hq" />
-      </div>
-
-      <div class="col-lg-4 mb-block">
-        <shared-website-section-list-block alias="features/honoring-the-fallen">
-          <@native-x enabled=false />
-        </shared-website-section-list-block>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4 mb-block">
-        <shared-magazine-latest-issue-block publication-id="53f6823928ed57018875bb53" />
-      </div>
-      <div class="col-lg-4 mb-block">
-        <shared-gam-display-ad id="gpt-ad-rail3" />
-      </div>
-      <div class="col-lg-4 mb-block">
-        <shared-magazine-latest-issue-block publication-id="53f6824228ed57018875bb59" />
+        <shared-website-section-list-block alias="home" />
       </div>
     </div>
   </@page>
