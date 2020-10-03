@@ -43,7 +43,7 @@ module.exports = {
   //   ],
   // },
   gtm: {
-    containerId: 'NOT-SET',
+    containerId: '32817981',
   },
   // wufoo: {
   //   userName: 'NOT_SET',
