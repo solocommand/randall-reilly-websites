@@ -2,7 +2,7 @@
   "name": "@randall-reilly/truckpartsandservice.com",
   "version": "0.0.0",
   "author": "Jacob Bare <jacob@parameter1.com>",
-  "repository": "https://github.com/parameter1/website-randall-reilly/tree/master/sites/truckpartsandservice.com",
+  "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/sites/truckpartsandservice.com",
   "license": "MIT",
   "private": true,
   "scripts": {
