@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/totallandscapecare/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/TLCmagazine', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/total-landscape-care-partner-solutions/', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UC2oQucc3ULCnu09wude37-Q', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',

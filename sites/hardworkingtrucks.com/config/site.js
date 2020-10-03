@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/hardworkingtrucks/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/workingtrucks', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/hard-working-trucks-partner-solutions/', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/hardworkingtrucks', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',

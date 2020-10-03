@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: '', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/ccjdigital', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/commercial-carrier-journal/', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/CCJDigital', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',

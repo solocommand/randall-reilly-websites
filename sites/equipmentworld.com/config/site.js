@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/EquipmentWorld/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/Equipment_World', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/equipment-world/', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/EquipmentWorld', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',

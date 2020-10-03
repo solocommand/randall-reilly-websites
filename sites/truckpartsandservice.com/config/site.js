@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/truckpartsandservice/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/tpsmagazine', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/truck-parts-and-service-partner-solutions/', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCcBeotmXyiX_LLp7CYcjY_Q', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',

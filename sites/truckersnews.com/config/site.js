@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/truckersnewsmag/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/truckersnews', target: '_blank' },
+    // { provider: 'linkedin', href: '', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UC55CJCUhEdHwOcQ_A4c9U9g', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',
