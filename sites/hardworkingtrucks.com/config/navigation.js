@@ -1,8 +1,15 @@
+const topics = [
+  { href: '/construction', label: 'Construction & Landscaping' },
+  { href: '/pickup-delivery', label: 'Pickup & Delivery' },
+  { href: '/utilities', label: 'Utilities' },
+  { href: '/vans', label: 'Vans' },
+  { href: '/pickup-trucks', label: 'Pickup Trucks' },
+  { href: '/products', label: 'Products' },
+];
 
 module.exports = {
   primary: {
-    items: [
-    ],
+    items: topics,
   },
   secondary: {
     items: [
@@ -24,8 +31,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
-      ],
+      items: topics,
     },
     {
       label: 'Resources',

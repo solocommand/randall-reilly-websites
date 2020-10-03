@@ -1,8 +1,13 @@
+const topics = [
+  { href: '/aftermarket-truck-parts-service-news', label: 'Aftermarket Truck Parts & Service News' },
+  { href: '/commercial-truck-dealer-news', label: 'Commercial Truck Dealer News' },
+  { href: '/semi-truck-repair-service', label: 'Semi Truck Repair Service' },
+  { href: '/dealer-development', label: 'Dealer Development' },
+];
 
 module.exports = {
   primary: {
-    items: [
-    ],
+    items: topics,
   },
   secondary: {
     items: [
@@ -24,8 +29,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
-      ],
+      items: topics,
     },
     {
       label: 'Resources',

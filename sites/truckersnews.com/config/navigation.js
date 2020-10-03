@@ -1,8 +1,18 @@
+const topics = [
+  { href: '/trucks', label: 'Trucks' },
+  { href: '/news', label: 'News' },
+  { href: '/features', label: 'Features' },
+  { href: '/fun', label: 'Fun' },
+  { href: '/whats-hot', label: 'Whats Hot' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/jobs', label: 'Jobs' },
+  { href: '/she-drives', label: 'She Drives' },
+  { href: '/gear', label: 'Gear' },
+];
 
 module.exports = {
   primary: {
-    items: [
-    ],
+    items: topics,
   },
   secondary: {
     items: [
@@ -24,8 +34,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
-      ],
+      items: topics,
     },
     {
       label: 'Resources',

@@ -1,8 +1,17 @@
+const topics = [
+  { href: '/news', label: 'News' },
+  { href: '/blogs', label: 'Blogs' },
+  { href: '/life', label: 'Life' },
+  { href: '/custom-rigs', label: 'Custom Rigs' },
+  { href: '/equipment', label: 'Equipment' },
+  { href: '/business', label: 'Business' },
+  { href: '/regulations', label: 'Regulations' },
+  { href: '/gear', label: 'Gear' },
+];
 
 module.exports = {
   primary: {
-    items: [
-    ],
+    items: topics,
   },
   secondary: {
     items: [
@@ -24,8 +33,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [
-      ],
+      items: topics,
     },
     {
       label: 'Resources',
