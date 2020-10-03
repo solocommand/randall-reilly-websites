@@ -64,9 +64,8 @@ module.exports = {
   // inquiry: {
   //   enabled: true,
   //   directSend: true,
-  //   sendTo: 'jsimon@southcomm.com',
-  //   sendFrom: 'equipmentworld.com <noreply@baseplatform.io>',
-  //   sendBcc: 'emailactivity@cygnus.com',
+  //   sendTo: 'support@parameter1.com',
+  //   sendFrom: 'equipmentworld.com <noreply@parameter1.com>',
   //   logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/eqw_logo.png?h=60',
   //   bgColor: '#222222',
   // },

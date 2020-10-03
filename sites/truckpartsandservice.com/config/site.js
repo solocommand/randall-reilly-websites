@@ -64,9 +64,8 @@ module.exports = {
   // inquiry: {
   //   enabled: true,
   //   directSend: true,
-  //   sendTo: 'jsimon@southcomm.com',
-  //   sendFrom: 'truckpartsandservice.com <noreply@baseplatform.io>',
-  //   sendBcc: 'emailactivity@cygnus.com',
+  //   sendTo: 'support@parameter1.com',
+  //   sendFrom: 'truckpartsandservice.com <noreply@parameter1.com>',
   //   logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/tps_logo.png?h=60',
   //   bgColor: '#222222',
   // },
