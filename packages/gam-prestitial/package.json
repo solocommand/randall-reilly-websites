@@ -2,7 +2,7 @@
   "name": "@randall-reilly/package-gam-prestitial",
   "version": "0.0.0",
   "author": "Josh Worden <josh@parameter1.com>",
-  "repository": "https://github.com/parameter1/website-randall-reilly/tree/master/packages/gam-prestitial",
+  "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/packages/gam-prestitial",
   "license": "MIT",
   "private": true,
   "dependencies": {

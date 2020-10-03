@@ -25,6 +25,10 @@ module.exports = {
     },
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/EquipmentWorld/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/Equipment_World', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/equipment-world/', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/EquipmentWorld', target: '_blank' },
   ],
   // identityX: {
   //   appId: 'NOT-SET',
@@ -38,8 +42,11 @@ module.exports = {
   //     { name: 'comments', id: 'NOT-SET' },
   //   ],
   // },
+  gcse: {
+    id: '9e5417f72997170d6',
+  },
   gtm: {
-    containerId: 'NOT-SET',
+    containerId: '32817980',
   },
   // wufoo: {
   //   userName: 'NOT_SET',
@@ -57,9 +64,8 @@ module.exports = {
   // inquiry: {
   //   enabled: true,
   //   directSend: true,
-  //   sendTo: 'jsimon@southcomm.com',
-  //   sendFrom: 'equipmentworld.com <noreply@baseplatform.io>',
-  //   sendBcc: 'emailactivity@cygnus.com',
+  //   sendTo: 'support@parameter1.com',
+  //   sendFrom: 'equipmentworld.com <noreply@parameter1.com>',
   //   logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/eqw_logo.png?h=60',
   //   bgColor: '#222222',
   // },

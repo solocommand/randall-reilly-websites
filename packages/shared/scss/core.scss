@@ -15,9 +15,6 @@ $theme-content-heading-h5-margin-bottom-sm:     11px !default;
 $theme-content-heading-h6-margin-bottom:        11px !default;
 $theme-content-heading-h6-margin-bottom-sm:     $theme-content-heading-h6-margin-bottom !default;
 
-$leaders-promotion-card-count: 3 !default;
-$leaders-video-card-count: 2 !default;
-
 @import "../../node_modules/@base-cms/marko-web-gam/scss/fixed-ad-bottom";
 @import "../../node_modules/@base-cms/marko-web-reveal-ad/scss/reveal-ad";
 @import "../../node_modules/@base-cms/marko-web-social-sharing/scss/buttons";
