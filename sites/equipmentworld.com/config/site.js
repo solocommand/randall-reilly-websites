@@ -42,6 +42,9 @@ module.exports = {
   //     { name: 'comments', id: 'NOT-SET' },
   //   ],
   // },
+  gcse: {
+    id: '9e5417f72997170d6',
+  },
   gtm: {
     containerId: '32817980',
   },
