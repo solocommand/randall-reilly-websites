@@ -53,7 +53,7 @@ services:
     environment:
       <<: *env
 
-  equipmentworld.com:
+  eqw:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/equipmentworld.com
@@ -69,7 +69,7 @@ services:
       - "9801:80"
       - "19801:19801"
 
-  totallandscapecare.com:
+  tlc:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/totallandscapecare.com
@@ -85,7 +85,7 @@ services:
       - "9802:80"
       - "19802:19802"
 
-  truckernews.com:
+  tn:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/truckernews.com
@@ -101,7 +101,7 @@ services:
       - "9803:80"
       - "19803:19803"
 
-  ccjdigital.com:
+  ccj:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/ccjdigital.com
@@ -117,7 +117,7 @@ services:
       - "9804:80"
       - "19804:19804"
 
-  hardworkingtrucks.com:
+  hwt:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/hardworkingtrucks.com
@@ -133,7 +133,7 @@ services:
       - "9805:80"
       - "19805:19805"
 
-  overdriveonline.com:
+  ovd:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/overdriveonline.com
@@ -149,7 +149,7 @@ services:
       - "9806:80"
       - "19806:19806"
 
-  truckpartsandservice.com:
+  tps:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/truckpartsandservice.com
