@@ -10,17 +10,20 @@ const components = require('./components');
 const fragments = require('./fragments');
 const userRoutes = require('./routes/user');
 const contentPrintRoutes = require('./routes/content-print');
+const websiteSectionRoutes = require('./routes/website-section');
 
 const routes = siteRoutes => (app) => {
   // Handle submissions on /__inquiry
   loadInquiry(app);
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
-  // Load user routes.
+  // Load user routes
   userRoutes(app);
-  // Load content print routes.
+  // Load content print routes
   contentPrintRoutes(app);
-  // Load site routes.
+  // Load website section routes
+  websiteSectionRoutes(app);
+  // Load site routes
   siteRoutes(app);
 };
 
