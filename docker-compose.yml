@@ -157,10 +157,10 @@ services:
       <<: *env
       <<: *env-leonis
       PORT: 80
-      EXPOSED_PORT: 9806
-      LIVERELOAD_PORT: 19806
+      EXPOSED_PORT: 9807
+      LIVERELOAD_PORT: 19807
       TENANT_KEY: randallreilly_all
       SITE_ID: 5f66295ad28860bc3395754e
     ports:
-      - "9806:80"
-      - "19806:19806"
+      - "9807:80"
+      - "19807:19807"
