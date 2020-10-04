@@ -10,10 +10,10 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@base-cms/env": "^1.0.0",
-    "@base-cms/marko-core": "^1.36.1",
-    "@base-cms/marko-web": "^1.36.3",
-    "@base-cms/utils": "^1.25.0",
+    "@base-cms/env": "^1.37.0",
+    "@base-cms/marko-core": "^1.38.0",
+    "@base-cms/marko-web": "^1.37.0",
+    "@base-cms/utils": "^1.37.0",
     "@sendgrid/mail": "^6.4.0",
     "body-parser": "^1.19.0",
     "node-fetch": "^2.6.0",
