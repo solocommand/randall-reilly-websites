@@ -1,6 +1,6 @@
 const NativeXConfiguration = require('@base-cms/marko-web-native-x/config');
 
 module.exports = ({
-  uri = 'https://ebm.native-x.io',
-  enabled = true,
+  uri = 'https://randall-reilly.native-x.parameter1.com',
+  enabled = false,
 } = {}) => new NativeXConfiguration(uri, { enabled });
