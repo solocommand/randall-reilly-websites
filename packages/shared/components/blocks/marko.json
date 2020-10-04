@@ -107,5 +107,8 @@
   },
   "<shared-newsletter-signup-block>": {
     "template": "./omeda-newsletter-signup.marko"
+  },
+  "<shared-primary-image-block>": {
+    "template": "./primary-image.marko"
   }
 }

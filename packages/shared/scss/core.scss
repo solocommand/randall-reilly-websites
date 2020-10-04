@@ -35,6 +35,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 @import "./components/identity-x";
 @import "./components/inquiry";
 @import "./components/node";
+@import "./components/primary-image";
 
 .social-sharing {
   padding: 10px 0;
