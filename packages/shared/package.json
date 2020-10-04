@@ -32,6 +32,7 @@
     "@randall-reilly/package-common": "^0.0.4",
     "@randall-reilly/package-contact-us": "^0.0.4",
     "@randall-reilly/package-gam-prestitial": "^0.0.4",
+    "@randall-reilly/package-image-slider": "^0.0.4",
     "cheerio": "^1.0.0-rc.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
