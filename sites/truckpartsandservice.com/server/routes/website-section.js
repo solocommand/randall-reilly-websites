@@ -5,11 +5,10 @@ const section = require('../templates/website-section');
 const channel = require('../templates/website-section/channel');
 
 const channelAliases = [
-  'tactical',
-  'training-careers',
-  'on-the-street',
-  'investigations',
-  'command-hq',
+  'aftermarket-truck-parts-service-news',
+  'commercial-truck-dealer-news',
+  'semi-truck-repair-service',
+  'dealer-development',
 ];
 
 module.exports = (app) => {
