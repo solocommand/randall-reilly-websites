@@ -41,11 +41,11 @@ config
 
 config
   .setAliasAdUnits('default', [
-    { name: 'lb1', templateName: 'LB1', path: 'default/lb1' },
-    { name: 'lb2', templateName: 'LB2', path: 'default/lb2' },
-    { name: 'rail1', templateName: 'RAIL1', path: 'default/rail1' },
-    { name: 'rail2', templateName: 'RAIL2', path: 'default/rail2' },
-    { name: 'load-more', templateName: 'LM', path: 'default/load-more' },
+    { name: 'lb1', templateName: 'LB1', path: 'HWT_728x90_Pos1' },
+    { name: 'lb2', templateName: 'LB2', path: 'HWT_728x90_Pos2' },
+    { name: 'rail1', templateName: 'RAIL1', path: 'HWT_300x250_Pos1' },
+    { name: 'rail2', templateName: 'RAIL2', path: 'HWT_300x250_Pos3' },
+    { name: 'load-more', templateName: 'LM', path: 'HWT_300x250_Pos3' },
     { name: 'ms', templateName: 'MS', path: 'default/ms' },
     { name: 'reskin', path: 'default/reskin' },
     { name: 'wa', path: 'default/wa' },
