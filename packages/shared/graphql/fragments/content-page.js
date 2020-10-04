@@ -31,11 +31,15 @@ fragment ContentPageFragment on Content {
   }
   primaryImage {
     id
-    src
+    src(input: { useCropRectangle: true, options: { format: auto } })
     alt
     caption
     credit
     isLogo
+    cropDimensions {
+      aspectRatio
+    }
+    primaryImageDisplay
   }
   gating {
     surveyType
