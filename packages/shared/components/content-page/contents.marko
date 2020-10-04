@@ -25,25 +25,17 @@ $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
   <if(content.embedCode)>
     <marko-web-content-embed-code block-name=blockName obj=content />
   </if>
+  <else-if(type === "media-gallery")>
+    <marko-web-image-slider images=images />
+  </else-if>
   <else-if(displayPrimaryImage)>
-    $ const isLogo = get(content, "primaryImage.isLogo");
-    <if(isLogo || type === "contact" || type === "whitepaper")>
-      <marko-web-page-image
-        modifiers=(type === "contact" ? [] : ["primary-image-inline"])
-        obj=content.primaryImage
-        fluid=false
-        width=250
-      />
-    </if>
-    <else>
-      <marko-web-page-image
-        width=720
-        obj=content.primaryImage
-      />
-      <if(images.length && images.length > 1 && displayPhotoswipe)>
-        <button class="btn btn-primary mb-3" data-gallery-button="true">View Image Gallery</button>
-      </if>
-    </else>
+    $ let forceDisplay;
+    $ if (type === "contact") forceDisplay = "left";
+    $ if (type === "video") forceDisplay = "none";
+    <shared-primary-image-block
+      obj=content.primaryImage
+      force-display=forceDisplay;
+    />
   </else-if>
 
   <default-theme-content-contact-details obj=content />
