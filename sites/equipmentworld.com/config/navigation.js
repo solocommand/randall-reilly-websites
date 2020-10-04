@@ -1,7 +1,7 @@
 const topics = [
   { href: '/equipment', label: 'Equipment' },
   { href: '/better-roads', label: 'Better Roads' },
-  { href: '/big-iron-dealer', label: 'Big Iron Dealer' },
+  { href: '/dealer', label: 'Big Iron Dealer' },
   { href: '/business', label: 'Business' },
   { href: '/tech', label: 'Tech' },
   { href: '/workforce', label: 'Workforce' },
