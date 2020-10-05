@@ -26,8 +26,8 @@ $theme-site-navbar-primary-font-weight: 700 !default;
 $theme-site-navbar-primary-link-active-decoration: none !default;
 $theme-site-navbar-primary-link-hover-decoration: none !default;
 
-$theme-site-navbar-primary-link-active-background-color: #111 !default;
-$theme-site-navbar-primary-link-hover-background-color:  #111 !default;
+$theme-site-navbar-primary-link-active-background-color: $primary !default;
+$theme-site-navbar-primary-link-hover-background-color:  $primary !default;
 
 $marko-web-page-wrapper-padding:  1rem !default;
 $marko-web-page-wrapper-section-margin: 1.25rem !default;
