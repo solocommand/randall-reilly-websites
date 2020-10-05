@@ -124,19 +124,19 @@ $ if (withSection && alias && withPrimarySectionModifier) {
         ${content.linkText}
       </marko-web-link>
     </@text>
-    <if(withAttribution || withDates)>
-      <@footer>
-        <if(withAttribution)>
-          <@left>
-            <attribution ...input.attribution content=content />
-          </@left>
-        </if>
-        <if(withDates && !isEvent)>
-          <@right|{ blockName }|>
-            <marko-web-content-published obj=content />
-          </@right>
-        </if>
-      </@footer>
-    </if>
   </@body>
+  <if(withAttribution || withDates)>
+    <@footer>
+      <if(withAttribution)>
+        <@left>
+          <attribution ...input.attribution content=content />
+        </@left>
+      </if>
+      <if(withDates && !isEvent)>
+        <@right|{ blockName }|>
+          <marko-web-content-published obj=content />
+        </@right>
+      </if>
+    </@footer>
+  </if>
 </marko-web-node>
