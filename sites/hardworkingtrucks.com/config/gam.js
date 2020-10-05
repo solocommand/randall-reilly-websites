@@ -44,7 +44,7 @@ config
     { name: 'lb1', templateName: 'LB1', path: 'HWT_728x90_Pos1' },
     { name: 'lb2', templateName: 'LB2', path: 'HWT_728x90_Pos2' },
     { name: 'rail1', templateName: 'RAIL1', path: 'HWT_300x250_Pos1' },
-    { name: 'rail2', templateName: 'RAIL2', path: 'HWT_300x250_Pos3' },
+    { name: 'rail2', templateName: 'RAIL2', path: 'HWT_300x250_Pos2' },
     { name: 'load-more', templateName: 'LM', path: 'HWT_300x250_Pos3' },
     { name: 'ms', templateName: 'MS', path: 'default/ms' },
     { name: 'reskin', path: 'default/reskin' },
