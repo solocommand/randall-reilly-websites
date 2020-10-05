@@ -1,6 +1,6 @@
 const topics = [
-  { href: '/construction', label: 'Construction & Landscaping' },
-  { href: '/pickup-delivery', label: 'Pickup & Delivery' },
+  { href: '/construction-and-landscaping', label: 'Construction & Landscaping' },
+  { href: '/pickup-and-delivery', label: 'Pickup & Delivery' },
   { href: '/utilities', label: 'Utilities' },
   { href: '/vans', label: 'Vans' },
   { href: '/pickup-trucks', label: 'Pickup Trucks' },

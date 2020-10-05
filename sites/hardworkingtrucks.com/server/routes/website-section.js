@@ -5,8 +5,8 @@ const section = require('../templates/website-section');
 const channel = require('../templates/website-section/channel');
 
 const channelAliases = [
-  'construction',
-  'pickup-delivery',
+  'construction-and-landscaping',
+  'pickup-and-delivery',
   'utilities',
   'vans',
   'pickup-trucks',

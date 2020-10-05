@@ -10,7 +10,7 @@ const channelAliases = [
   'design-build',
   'equipment',
   'business',
-  'lawn-care',
+  'lawncare',
 ];
 
 module.exports = (app) => {

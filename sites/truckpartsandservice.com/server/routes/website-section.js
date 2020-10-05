@@ -5,7 +5,7 @@ const section = require('../templates/website-section');
 const channel = require('../templates/website-section/channel');
 
 const channelAliases = [
-  'aftermarket-truck-parts-service-news',
+  'aftermarket-truck-parts-and-service-news',
   'commercial-truck-dealer-news',
   'semi-truck-repair-service',
   'dealer-development',

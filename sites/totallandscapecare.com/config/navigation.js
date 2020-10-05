@@ -4,7 +4,7 @@ const topics = [
   { href: '/design-build', label: 'Design Build' },
   { href: '/equipment', label: 'Equipment' },
   { href: '/business', label: 'Business' },
-  { href: '/lawn-care', label: 'Lawn Care' },
+  { href: '/lawncare', label: 'Lawn Care' },
 ];
 
 module.exports = {
