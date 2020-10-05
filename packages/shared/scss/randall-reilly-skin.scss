@@ -33,12 +33,12 @@ $theme-item-title-font-weight: $font-weight-bold !default;
 $marko-web-page-wrapper-padding:  1rem !default;
 $marko-web-page-wrapper-section-margin: 1.25rem !default;
 
-$marko-web-node-spacer: .75rem !default;
-
+$theme-card-border: 1px solid rgba(239, 239, 239, .9) !default;
+$marko-web-node-list-border-color: $theme-card-border !default;
 
 // Item / Node
-$theme-item-title-font-size: 20px !default;
-$theme-item-title-font-size-sm: 20px !default;
+$theme-item-title-font-size: 19px !default;
+$theme-item-title-font-size-sm: 19px !default;
 $theme-item-title-font-weight: $font-weight-bold !default;
 $theme-item-title-line-height: 1.33 !default;
 $theme-item-title-line-height-sm: 1.33 !default;

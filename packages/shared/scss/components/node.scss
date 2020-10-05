@@ -1,7 +1,7 @@
 .node {
   $title-spacer: 6px;
   $title-spacer-sm: 4px;
-  $image-border: 1px solid rgba(239, 239, 239, .9);
+  $image-border: $theme-card-border;
   $self: &;
 
   &__title {
@@ -47,6 +47,10 @@
 
   &__content-link-url {
     font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+
+  &__header-left {
     text-transform: uppercase;
   }
 
