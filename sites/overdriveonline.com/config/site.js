@@ -12,15 +12,15 @@ module.exports = {
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo.png?h=45',
+      src: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo_white.png?h=45',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo.png?h=90 2x',
+        'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo_white.png?h=90 2x',
       ],
     },
     footer: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo.png?h=60',
+      src: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo_white.png?h=60',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo.png?h=120 2x',
+        'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo_white.png?h=120 2x',
       ],
     },
   },
@@ -57,7 +57,7 @@ module.exports = {
   contactUs: {
     branding: {
       bgColor: '#222222',
-      logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo.png?h=60',
+      logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo_white.png?h=60',
     },
     to: 'support@overdriveonline.com',
   },
@@ -66,7 +66,7 @@ module.exports = {
   //   directSend: true,
   //   sendTo: 'support@parameter1.com',
   //   sendFrom: 'overdriveonline.com <noreply@parameter1.com>',
-  //   logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo.png?h=60',
+  //   logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd_logo_white.png?h=60',
   //   bgColor: '#222222',
   // },
 };
