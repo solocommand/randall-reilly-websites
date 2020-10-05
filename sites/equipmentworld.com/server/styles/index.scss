@@ -8,9 +8,6 @@ $leaders-primary-color: $primary;
 $leaders-primary-color-light: lighten($leaders-primary-color, 10%);
 $leaders-accent-color: $primary;
 
-$theme-site-navbar-secondary-bg-color: #222;
-$theme-site-navbar-primary-bg-color: $primary;
-
 $theme-site-navbar-secondary-link-color: $light;
 $theme-site-navbar-secondary-link-hover-color: $light;
 $theme-site-navbar-secondary-link-active-color: $light;
@@ -23,11 +20,11 @@ $theme-newsletter-block-bg-color: $primary;
 $theme-newsletter-block-button-bg-color: #000;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 832px,
-  hide-secondary: 906px,
-  small-logo: 1015px,
-  small-text-primary: 932px,
-  small-text-secondary: 1105px
+  hide-primary: 750px,
+  hide-secondary: 0,
+  small-logo: 750px,
+  small-text-primary: 850px,
+  small-text-secondary: 0
 );
 
 @import "../../node_modules/@randall-reilly/package-shared/scss/randall-reilly-skin";

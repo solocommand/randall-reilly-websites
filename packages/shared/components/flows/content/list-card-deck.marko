@@ -16,12 +16,12 @@ $ const aliases = getAsArray(list, "adunit.aliases");
       />
     </@column>
     <@list|{ nodes: listNodes }|>
-      <shared-content-list-flow
+      <shared-content-card-deck-flow
         nodes=listNodes
         native-x=list.nativeX
-      >
-        <@node with-teaser=true />
-      </shared-content-list-flow>
+        display-ads=false
+        cols=2
+      />
     </@list>
   </default-theme-column-list-flow>
   <shared-content-card-deck-flow
