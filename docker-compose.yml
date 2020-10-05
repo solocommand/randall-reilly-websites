@@ -88,7 +88,7 @@ services:
   tn:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/truckernews.com
+    working_dir: /root/sites/truckersnews.com
     environment:
       <<: *env
       <<: *env-leonis
