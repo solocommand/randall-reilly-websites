@@ -1,15 +1,51 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+$theme-font-family-sans-serif: Roboto, sans-serif !default;
+$theme-font-family-serif: "Fira Sans", sans-serif !default;
+$theme-font-family-page-title: $theme-font-family-serif !default;
+
+$black:           #202022 !default;
+$body-bg:         #f6f6f6 !default;
+$font-weight-bold:      700 !default;
+
+$theme-page-bg-color: #fff;
+
 $theme-card-header-background-color: #000 !default;
+$theme-card-header-letter-spacing: 1px !default;
+
+$theme-site-navbar-secondary-bg-color: #2f3031 !default;
+$theme-site-navbar-primary-bg-color: #202022 !default;
+
+// Item descriptions
+$theme-item-description-font-size-sm:       13px !default;
+$theme-item-description-font-size:          13px !default;
+$theme-item-description-max-lines:          4 !default;
+$theme-item-description-line-height-sm-px:  19px !default;
+$theme-item-description-line-height-px:     19px !default;
+
+$theme-item-title-font-weight: $font-weight-bold !default;
+
+$marko-web-page-wrapper-padding:  1rem !default;
+$marko-web-page-wrapper-section-margin: 1.25rem !default;
+
+$theme-site-navbar-primary-font-weight: 700 !default;
 
 $enable-rounded: false !default;
 $enable-shadows: false !default;
 
-$border-radius: none !default;
-$theme-box-shadow-sm: none !default;
-$theme-box-shadow-lg: none !default;
-$body-bg: #fff !default;
-
 @import "./core";
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, .25);
+}
+
+.page {
+  box-shadow: $theme-box-shadow-sm;
+}
 
 .node {
   &--sponsored {
