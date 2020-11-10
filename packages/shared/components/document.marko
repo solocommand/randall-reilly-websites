@@ -44,9 +44,9 @@ $ const isRadixEnabled = Boolean(radix.enabled && radix.appId);
     </if>
   </@above-wrapper>
   <@above-container>
-    <if(GAM)>
+    <!-- <if(GAM)>
       <marko-web-reveal-ad-listener />
-    </if>
+    </if> -->
     <marko-web-gtm-track-load-more />
     <if(isRadixEnabled)>
       <marko-web-radix-inquiry-listener app-id=radix.appId submission-field-ids=radix.submissionFieldIds />
