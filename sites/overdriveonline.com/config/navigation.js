@@ -1,21 +1,14 @@
 const topics = [
-  { href: '/news', label: 'News' },
-  { href: '/blogs', label: 'Blogs' },
-  { href: '/life', label: 'Life' },
-  { href: '/custom-rigs', label: 'Custom Rigs' },
-  { href: '/equipment', label: 'Equipment' },
   { href: '/business', label: 'Business' },
-  { href: '/regulations', label: 'Regulations' },
-  { href: '/gear', label: 'Gear' },
+  { href: '/maintenance', label: 'Maintenance' },
 ];
 
 module.exports = {
   primary: {
-    items: topics,
+    items: [],
   },
   secondary: {
-    items: [
-    ],
+    items: topics,
   },
   tertiary: {
     items: [
