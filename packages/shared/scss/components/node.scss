@@ -95,11 +95,13 @@
     }
   }
 
-  // &--related-content {
-  //   background-color: $theme-related-content-bg-color;
-  // }
-
   &--image-left {
+    #{ $self } {
+      &__image-wrapper + #{ $self }__body {
+        margin-left: 1.25rem;
+      }
+    }
+
     @include media-breakpoint-down(xs) {
       #{ $self } {
         &__image-wrapper + #{ $self }__body {
