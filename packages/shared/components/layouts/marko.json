@@ -22,5 +22,33 @@
       "required": true
     },
     "@description": "string"
+  },
+  "<shared-home-page-layout>": {
+    "template": "./home.marko",
+    "<head>": {},
+    "<in-head>": {},
+    "<above-container>": {},
+    "<page>": {},
+    "<below-page>": {},
+    "<foot>": {},
+    "@id": {
+      "type": "string",
+      "required": true
+    },
+    "@alias": {
+      "type": "string",
+      "required": true
+    },
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@page-node": {
+      "type": "object",
+      "required": true
+    },
+    "@ad-slots": "function",
+    "@with-oop-ads": "boolean",
+    "@with-footer-ad": "boolean"
   }
 }

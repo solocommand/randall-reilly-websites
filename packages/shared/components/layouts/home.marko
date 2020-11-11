@@ -1,0 +1,67 @@
+import defaultDescription from "@base-cms/marko-web/utils/published-content/description";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const { config, GAM } = out.global;
+$ const { id, alias, name, pageNode } = input;
+$ const description = defaultDescription(name, config);
+$ const withOopAds = defaultValue(input.withOopAds, false);
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <if(input.head)>
+      <${input.head} />
+    </if>
+    <else>
+      <marko-web-gtm-website-section-context|{ context }| alias=alias>
+        <marko-web-gtm-push data=context />
+      </marko-web-gtm-website-section-context>
+      <if(input.inHead)>
+        <${input.inHead} />
+      </if>
+    </else>
+  </@head>
+
+  <@above-container>
+    <if(input.aboveContainer)>
+      <${input.aboveContainer} />
+    </if>
+    <else>
+      <marko-web-resolve-page|{ data: section }| node=pageNode>
+        $ const aliases = hierarchyAliases(section);
+        <!-- <if(withOopAds)>
+          <shared-gam-out-of-page-ad name="reskin" aliases=aliases />
+        </if> -->
+        <marko-web-gam-define-display-ad
+          ...GAM.getAdUnit({ name: "leaderboard", aliases })
+          modifiers=["top-of-page", "max-width-970", "center", "advertisement"]
+          collapse-before-ad-fetch=true
+          with-wrapper=true
+        />
+      </marko-web-resolve-page>
+    </else>
+  </@above-container>
+
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+
+      <!-- Home Page Hero block -->
+      <shared-content-hero-block query-params={ alias: "home" } />
+
+    </marko-web-resolve-page>
+  </@page>
+
+  <@below-page>
+    <if(input.belowPage)>
+      <${input.belowPage} />
+    </if>
+  </@below-page>
+
+  <@foot>
+    <if(input.foot)>
+      <${input.foot} />
+    </if>
+  </@foot>
+</marko-web-website-section-page-layout>
