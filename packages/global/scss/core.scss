@@ -1,19 +1,21 @@
-// @todo vet these vars
-// $theme-site-navbar-logo-height: 45px !default;
-// $theme-site-navbar-logo-height-sm: 25px !default;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@400;700&display=swap");
 
-// $theme-item-description-max-lines: 5 !default;
+$skin-font-family-open-sans: "Open Sans", sans-serif;
+$skin-font-family-open-sans-condensed: "Open Sans Condensed", sans-serif;
 
-// $theme-content-heading-large-margin-bottom:     11px !default;
-// $theme-content-heading-large-margin-bottom-sm:  11px !default;
+$theme-font-family-sans-serif: $skin-font-family-open-sans;
+$theme-font-family-page-title: $theme-font-family-sans-serif;
 
-// $theme-content-heading-h4-margin-bottom:        11px !default;
-// $theme-content-heading-h4-margin-bottom-sm:     11px !default;
+$black: #434146 !default;
+$secondary: #56545a !default;
 
-// $theme-content-heading-h5-margin-bottom:        11px !default;
-// $theme-content-heading-h5-margin-bottom-sm:     11px !default;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
 
-// $theme-content-heading-h6-margin-bottom:        11px !default;
-// $theme-content-heading-h6-margin-bottom-sm:     $theme-content-heading-h6-margin-bottom !default;
+$theme-page-title-font-weight: $font-weight-bold;
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
