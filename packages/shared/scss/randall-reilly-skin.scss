@@ -129,19 +129,13 @@ body {
   padding-top: 0;
   background-color: #fff;
   box-shadow: $theme-box-shadow-sm;
-}
-
-.node {
-  &--sponsored {
-    background-color: transparent;
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      padding-top: 0;
+    }
   }
 }
 
-.node-list {
-  &--sponsored {
-    background-color: #f0f0f0;
-  }
-}
 
 // @todo confirm if this is still in use.
 .page-contents {
