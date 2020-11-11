@@ -5,10 +5,10 @@ $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const primarySection = getAsObject(content, "primarySection");
 
-$ const withTeaser = defaultValue(input.withTeaser, false);
+$ const withTeaser = defaultValue(input.withTeaser, true);
 $ const withBody = defaultValue(input.withBody, false);
 $ const withSection = defaultValue(input.withSection, true);
-$ const withAttribution = defaultValue(input.withAttribution, true);
+$ const withAttribution = defaultValue(input.withAttribution, false);
 $ const withDates = defaultValue(input.withDates, true);
 $ const withPrimarySectionModifier = defaultValue(input.withPrimarySectionModifier, true);
 
@@ -18,7 +18,7 @@ $ const isPromotion = content.type === "promotion";
 $ const isEvent = ["event", "webinar"].includes(content.type);
 $ const isUpcoming = content.startDate > Date.now();
 
-$ let aspectRatio = get(input, "image.ar", "1:1");
+$ let aspectRatio = get(input, "image.ar", "3:2");
 $ if (isEbook) aspectRatio = "3:4";
 
 $ const { linkAttrs } = input;
@@ -33,7 +33,7 @@ $ if (withSection && alias && withPrimarySectionModifier) {
 
 <marko-web-node
   type=`${content.type}-content`
-  image-position=defaultValue(input.imagePosition, "right")
+  image-position=defaultValue(input.imagePosition, "left")
   card=defaultValue(input.card, false)
   flush=defaultValue(input.flush, true)
   full-height=defaultValue(input.fullHeight, false)
@@ -42,7 +42,7 @@ $ if (withSection && alias && withPrimarySectionModifier) {
 >
   <if(defaultValue(input.displayImage, true))>
     <@image
-      width=100
+      width=250
       align="top"
       use-placeholder=false
       fluid=false
@@ -124,8 +124,17 @@ $ if (withSection && alias && withPrimarySectionModifier) {
         ${content.linkText}
       </marko-web-link>
     </@text>
+    <@text show=(Boolean(withAttribution))>
+      <attribution ...input.attribution content=content />
+    </@text>
+    <@text
+      modifiers=["date"]
+      show=(Boolean(withDates && !isEvent))
+    >
+      <marko-web-content-published obj=content />
+    </@text>
   </@body>
-  <if(withAttribution || withDates)>
+  <!-- <if(withAttribution || withDates)>
     <@footer>
       <if(withAttribution)>
         <@left>
@@ -138,5 +147,5 @@ $ if (withSection && alias && withPrimarySectionModifier) {
         </@right>
       </if>
     </@footer>
-  </if>
+  </if> -->
 </marko-web-node>
