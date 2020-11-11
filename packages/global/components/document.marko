@@ -1,0 +1,44 @@
+$ const {
+  site,
+  req,
+  nativeX,
+  GAM,
+} = out.global;
+
+<marko-web-document ...input>
+  <@head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- init gam -->
+    <marko-web-gam-init />
+
+    <!-- init gtm -->
+    <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+
+    <!-- init native-x -->
+    <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() />
+
+    <${input.head} />
+
+    <!-- start gtm -->
+    <marko-web-gtm-start />
+
+    <!-- start gam -->
+    <marko-web-gam-enable>
+      <@lazy-load ...site.getAsObject("gam.lazyLoad") />
+    </marko-web-gam-enable>
+    <marko-web-gam-targeting key-values={ uri: req.path } />
+  </@head>
+  <@above-container>
+    <default-theme-site-header has-user=false reg-enabled=false />
+    <default-theme-site-menu has-user=false reg-enabled=false />
+    <${input.aboveContainer} />
+  </@above-container>
+  <@below-container>
+    <${input.belowContainer} />
+    <default-theme-site-footer />
+  </@below-container>
+</marko-web-document>
