@@ -1,1 +1,23 @@
-<h1>NYI: Content Page</h1>
+$ const { id, type, pageNode } = input;
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <marko-web-gtm-content-context|{ context }| id=id>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-content-context>
+  </@head>
+
+  <@page>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <h1 class="page-wrapper__title">NYI: ${content.name}</h1>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-content-page-layout>

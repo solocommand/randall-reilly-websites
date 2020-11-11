@@ -5,10 +5,10 @@ const topics = [
 
 module.exports = {
   primary: {
-    items: [],
+    items: topics,
   },
   secondary: {
-    items: topics,
+    items: [],
   },
   tertiary: {
     items: [
@@ -19,8 +19,8 @@ module.exports = {
     items: [
       { href: '/contact-us', label: 'Contact Us' },
       { href: '/page/advertise', label: 'Advertise' },
-      { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-      { href: '/page/terms-conditions', label: 'Terms & Conditions', target: '_blank' },
+      { href: '/page/privacy-policy', label: 'Privacy Policy' },
+      { href: '/page/terms-conditions', label: 'Terms & Conditions' },
     ],
   },
   menu: [
@@ -38,8 +38,8 @@ module.exports = {
       items: [
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions', target: '_blank' },
+        { href: '/page/privacy-policy', label: 'Privacy Policy' },
+        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       ],
     },
   ],

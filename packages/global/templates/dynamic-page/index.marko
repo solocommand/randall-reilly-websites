@@ -1,1 +1,22 @@
-<h1>NYI: Dynamic Page</h1>
+$ const { id, alias, pageNode } = data;
+
+<marko-web-dynamic-page-layout id=id alias=alias>
+  <@head>
+    <marko-web-gtm-dynamic-page-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-dynamic-page-context>
+  </@head>
+  <@page>
+    <marko-web-resolve-page|{ data: page }| node=pageNode>
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <h1 class="page-wrapper__title">NYI: ${page.name}</h1>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-dynamic-page-layout>
