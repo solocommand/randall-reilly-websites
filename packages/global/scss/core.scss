@@ -1,21 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@400;700&display=swap");
 
+// Fonts
 $skin-font-family-open-sans: "Open Sans", sans-serif;
 $skin-font-family-open-sans-condensed: "Open Sans Condensed", sans-serif;
 
 $theme-font-family-sans-serif: $skin-font-family-open-sans;
 $theme-font-family-page-title: $theme-font-family-sans-serif;
 
+// Bootstrap Low-Level
 $black: #434146 !default;
+$white: #fff;
 $secondary: #56545a !default;
-
 $font-weight-bold: 700;
 $font-weight-normal: 400;
+$body-bg: #f6f6f6;
 
+// Page
 $theme-page-title-font-weight: $font-weight-bold;
+
+// Header
+$theme-site-header-box-shadow: none;
+
+// Navbar
+$theme-site-navbar-brand-margin-x: 36px !default;
+
+$theme-site-navbar-logo-height: 40px !default;
+$theme-site-navbar-logo-height-sm: 35px !default;
+
+$theme-site-navbar-secondary-bg-color: $white;
+$theme-site-navbar-secondary-font-size: 18px;
+$theme-site-navbar-secondary-font-weight: $font-weight-bold;
+$theme-site-navbar-secondary-padding-y: 15px !default;
+$theme-site-navbar-secondary-type: light;
+$theme-site-navbar-secondary-link-active-decoration: none;
+$theme-site-navbar-secondary-link-hover-decoration: none;
+
+$theme-site-navbar-secondary-link-color: $secondary !default;
+$theme-site-navbar-secondary-link-active-color: $primary !default;
+$theme-site-navbar-secondary-link-hover-color: $primary !default;
+$theme-site-navbar-secondary-link-padding: 10px;
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 
 body {
   -webkit-font-smoothing: antialiased;
+}
+
+.site-navbar {
+  $self: &;
+  &__logo {
+    filter: none;
+  }
+
+  &__items {
+    text-transform: none;
+
+    &--secondary {
+      margin-top: auto;
+      margin-bottom: auto;
+
+      #{ $self } {
+        &__link {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
 }

@@ -9,9 +9,9 @@ module.exports = {
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd-logo.svg?h=45',
+      src: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd-logo.svg?h=40',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd-logo.svg?h=90 2x',
+        'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/ovd-logo.svg?h=80 2x',
       ],
     },
     footer: {

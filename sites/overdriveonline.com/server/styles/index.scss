@@ -9,3 +9,12 @@ $theme-site-header-breakpoints: (
 );
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
+
+.site-navbar {
+  &__items {
+    &--secondary {
+      // ensures the nav items are aligned to the offset overdrive logo
+      padding-top: 6px;
+    }
+  }
+}
