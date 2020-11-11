@@ -15,5 +15,8 @@
   },
   "<global-site-menu>": {
     "template": "./site-menu.marko"
+  },
+  "<global-site-footer>": {
+    "template": "./site-footer.marko"
   }
 }
