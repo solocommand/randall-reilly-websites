@@ -80,10 +80,7 @@
       "<below-card>": {},
       "<list>": {}
     },
-    "@id": {
-      "type": "number",
-      "required": true
-    }
+    "@id": "number"
   },
   "<shared-featured-companies-block>": {
     "template": "./featured-companies.marko",

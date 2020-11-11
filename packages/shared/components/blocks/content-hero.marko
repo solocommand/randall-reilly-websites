@@ -1,16 +1,48 @@
 import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/content-list";
 
-$ const { id } = input;
 $ const queryParams = {
-  optionName: "Pinned",
+  optionName: defaultValue(input.optionName, "Pinned"),
   limit: 5,
   requiresImage: true,
   queryFragment,
   ...getAsObject(input, "queryParams"),
-  sectionId: id,
+  ...input.id && { sectionId: id },
 };
 
 <marko-web-query|{ nodes }| name="website-optioned-content" params=queryParams>
-  <shared-content-hero-flow ...input.hero nodes=nodes />
+  <div class="row">
+    <div class="col">
+      <div class="hero-flow">
+        <div class="hero-flow__header">Top Stories</div>
+        <shared-content-list-node node=nodes.shift() modifiers=["large"]>
+            <@image width=630 />
+            <@title modifiers=["large"] />
+        </shared-content-list-node>
+      <!-- </div>
+      <div class="row"> -->
+        <marko-web-node-list inner-justified=true>
+          <@header>
+            <${input.header} />
+          </@header>
+          <@nodes nodes=nodes>
+            <shared-content-card-deck-flow
+              nodes=nodes
+              cols=4
+              display-ads=false
+            >
+              <@node
+                with-teaser=false
+                with-attribution=false
+                with-dates=false
+              >
+                <@title modifiers=["small"] />
+              </@node>
+            </shared-content-card-deck-flow>
+          </@nodes>
+        </marko-web-node-list>
+      </div>
+    </div>
+  </div>
 </marko-web-query>
