@@ -16,9 +16,15 @@ $secondary: #56545a !default;
 $font-weight-bold: 700;
 $font-weight-normal: 400;
 $body-bg: #f6f6f6;
+$breadcrumb-divider: "|";
 
 $enable-shadows: false;
 $enable-rounded: false;
+
+// Marko Web Settings
+$marko-web-document-container-max-width: 1060px;
+$marko-web-document-container-gutter: 0;
+$marko-web-page-wrapper-padding: .75rem;
 
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
@@ -70,6 +76,19 @@ $theme-site-navbar-menu-link-padding-y: 0;
 $theme-site-navbar-menu-link-color: $black !default;
 $theme-site-navbar-menu-link-hover-color: $primary !default;
 
+// Site Footer
+$theme-site-footer-font-size: 16px;
+$theme-site-footer-line-height: get-line-height($theme-site-footer-font-size, 30px);
+
+$theme-site-footer-secondary-bg-color: #343338 !default;
+$theme-site-footer-primary-bg-color: #1a1a1c !default;
+
+$theme-site-footer-copyright-color: $white;
+$theme-site-footer-copyright-font-size: $theme-site-footer-font-size;
+
+$theme-site-footer-spacer: 14px;
+$theme-site-footer-spacer-sm: 14px;
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 @import "../../node_modules/bootstrap/scss/input-group";
 
@@ -78,8 +97,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.document-container {
+  background-color: $white;
+}
+
 .site-navbar {
   $self: &;
+
+  &__container {
+    max-width: $marko-web-document-container-max-width;
+    @include media-breakpoint-up(xl, $grid-breakpoints) {
+      max-width: $marko-web-document-container-max-width;
+    }
+  }
 
   &__brand {
     @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
@@ -162,6 +192,64 @@ body {
     font-size: 18px;
     font-weight: $font-weight-bold;
     line-height: get-line-height(18px, 24px);
+  }
+}
+
+.site-footer {
+  margin-top: 0;
+
+  &__container {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  &__inner-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $marko-web-document-container-max-width;
+  }
+
+  &__items {
+    @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+      font-size: $theme-site-footer-copyright-font-size
+    }
+  }
+
+  &__link {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.breadcrumbs {
+  &--site-footer {
+    margin-bottom: $theme-site-footer-spacer;
+    text-transform: none;
+
+    @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+      font-size: $theme-site-footer-font-size;
+    }
+
+    .breadcrumb {
+      justify-content: center;
+      padding: 0;
+      background-color: transparent;
+    }
+
+    a {
+      color: $white;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .breadcrumb-item+.breadcrumb-item {
+      &::before {
+        color: $white;
+      }
+    }
   }
 }
 

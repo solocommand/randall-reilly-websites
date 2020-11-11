@@ -18,10 +18,10 @@ module.exports = {
   },
   footer: {
     items: [
+      { href: '/page/privacy-policy', label: 'Terms of User and Privacy Policy' },
+      { href: '#', label: 'Point of Collection Notice' },
+      { href: '#', label: 'Do Not Sell My Personal Information' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/advertise', label: 'Advertise' },
-      { href: '/page/privacy-policy', label: 'Privacy Policy' },
-      { href: '/page/terms-conditions', label: 'Terms & Conditions' },
     ],
   },
   menu: [

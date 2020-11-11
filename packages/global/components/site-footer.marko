@@ -1,3 +1,6 @@
+import getNavItems from "@base-cms/marko-web-theme-default/components/site-navbar/utils/get-nav-items";
+import { asObject } from "@base-cms/utils";
+
 $ const { config, site } = out.global;
 
 $ const blockName = input.blockName || "site-footer";
@@ -10,31 +13,38 @@ $ const blockName = input.blockName || "site-footer";
   attrs=input.attrs
 >
   <default-theme-site-footer-container block-name=blockName modifiers=["secondary"]>
-    <default-theme-site-navbar-brand block-name=blockName title=`${config.website("name")} Homepage`>
-      <default-theme-site-navbar-logo
-        block-name=blockName
-        alt=config.website("name")
-        src=site.get("logos.footer.src")
-        srcset=site.getAsArray("logos.footer.srcset").join(",")
-        lazyload=true
-      />
-    </default-theme-site-navbar-brand>
+    <marko-web-element block-name=blockName name="inner-container">
+
+      <!-- <default-theme-site-navbar-brand block-name=blockName title=`${config.website("name")} Homepage`>
+        <default-theme-site-navbar-logo
+          block-name=blockName
+          alt=config.website("name")
+          src=site.get("logos.footer.src")
+          srcset=site.getAsArray("logos.footer.srcset").join(",")
+          lazyload=true
+        />
+      </default-theme-site-navbar-brand> -->
+
+    </marko-web-element>
   </default-theme-site-footer-container>
   <default-theme-site-footer-container block-name=blockName modifiers=["primary"]>
-    <default-theme-site-footer-social-icons
-      block-name=blockName
-      items=site.getAsArray('socialMediaLinks')
-      icon-modifiers=["light", "xl", "shadow"]
-    />
-    <default-theme-site-navbar-items
-      block-name=blockName
-      items=site.getAsArray("navigation.footer.items")
-      reg-enabled=input.regEnabled
-      has-user=input.hasUser
-    />
-    <default-theme-site-footer-copyright
-      company=site.get("company")
-      notice=site.get("copyrightNotice")
-    />
+    <marko-web-element block-name=blockName name="inner-container">
+      $ const footerItems = site.getAsArray("navigation.footer.items");
+      <default-theme-breadcrumbs modifiers=["site-footer"]>
+        <for|item| of=getNavItems({ items: footerItems, hasUser: input.hasUser, regEnabled: input.regEnabled })>
+          <@item>
+            $ const obj = asObject(item);
+            <marko-web-link href=obj.href title=obj.title target=obj.target>
+              $!{obj.label}
+            </marko-web-link>
+          </@item>
+        </for>
+      </default-theme-breadcrumbs>
+
+      <default-theme-site-footer-copyright
+        company=site.get("company")
+        notice=site.get("copyrightNotice")
+      />
+    </marko-web-element>
   </default-theme-site-footer-container>
 </marko-web-block>
