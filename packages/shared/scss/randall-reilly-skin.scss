@@ -65,6 +65,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.hero-flow {
+  $self: &;
+  &__header {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    color: $black;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: transparent;
+    border-bottom: none;
+  }
+}
+
 .site-header {
   position: static;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, .25);
