@@ -103,6 +103,9 @@ body {
 
 .site-navbar {
   $self: &;
+  &__brand {
+    margin: 0 32px;
+  }
   &__items {
     &--primary {
       #{ $self } {
