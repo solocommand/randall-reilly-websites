@@ -107,8 +107,8 @@ body {
     &--primary {
       #{ $self } {
         &__item {
-          border-right: 1px solid $theme-site-navbar-secondary-bg-color;
           letter-spacing: .5px;
+          border-right: 1px solid $theme-site-navbar-secondary-bg-color;
           transition: background-color ease 300ms;
 
           &:first-child {
