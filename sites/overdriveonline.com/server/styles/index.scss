@@ -1,11 +1,11 @@
 $primary: #b91d21;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 832px,
-  hide-secondary: 906px,
-  small-logo: 1015px,
-  small-text-primary: 932px,
-  small-text-secondary: 1105px
+  hide-primary: 100000px, // effectively always hide the primary nav
+  hide-secondary: 700px,
+  small-logo: 775px,
+  small-text-primary: 0,
+  small-text-secondary: 830px
 );
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
@@ -14,7 +14,7 @@ $theme-site-header-breakpoints: (
   &__items {
     &--secondary {
       // ensures the nav items are aligned to the offset overdrive logo
-      padding-top: 6px;
+      padding-top: 2px;
     }
   }
 }

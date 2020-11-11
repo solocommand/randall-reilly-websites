@@ -1,3 +1,5 @@
+@import "../../node_modules/@base-cms/marko-web-theme-default/scss/functions";
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@400;700&display=swap");
 
 // Fonts
@@ -27,8 +29,13 @@ $theme-site-navbar-brand-margin-x: 36px !default;
 $theme-site-navbar-logo-height: 40px !default;
 $theme-site-navbar-logo-height-sm: 35px !default;
 
+$theme-site-navbar-primary-height-sm: 0;
+
 $theme-site-navbar-secondary-bg-color: $white;
 $theme-site-navbar-secondary-font-size: 18px;
+$theme-site-navbar-secondary-font-size-sm: $theme-site-navbar-secondary-font-size - 2;
+$theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 44px);
+$theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 42px);
 $theme-site-navbar-secondary-font-weight: $font-weight-bold;
 $theme-site-navbar-secondary-padding-y: 15px !default;
 $theme-site-navbar-secondary-type: light;
@@ -48,6 +55,21 @@ body {
 
 .site-navbar {
   $self: &;
+
+  &__brand {
+    @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
+      // reduce padding on small logo
+      margin-left: $theme-site-navbar-brand-margin-x / 2;
+      margin-right: $theme-site-navbar-brand-margin-x / 2;
+    }
+
+    @media (max-width: map-get($theme-site-header-breakpoints, hide-secondary)) {
+      // center the logo once nav items are hidden
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   &__logo {
     filter: none;
   }
