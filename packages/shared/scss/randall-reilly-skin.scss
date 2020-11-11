@@ -1,25 +1,33 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
-$theme-font-family-sans-serif: Roboto, sans-serif !default;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700");
+$theme-font-family-sans-serif: "Open Sans", sans-serif !default;
 $theme-font-family-serif: "Fira Sans", sans-serif !default;
-$theme-font-family-page-title: $theme-font-family-serif !default;
+$theme-font-family-page-title: $theme-font-family-sans-serif !default;
 
-$black:           #202022 !default;
+$black:           #434146 !default;
 $body-bg:         #f6f6f6 !default;
 $font-weight-bold:      700 !default;
 
 $theme-page-bg-color: #fff;
 
+$theme-page-title-font-weight: $font-weight-bold !default;
+
 // header
 $theme-card-header-background-color: $black !default;
 $theme-card-header-letter-spacing: 1px !default;
 $theme-card-header-font-weight: $font-weight-bold;
+$theme-card-border: none;
 
 // secondary nav
-$theme-site-navbar-secondary-bg-color: #2f3031 !default;
+$theme-site-navbar-secondary-bg-color: #fff !default;
+$theme-site-navbar-secondary-font-size: 18px !default;
+$theme-site-navbar-secondary-font-weight: $font-weight-bold !default;
+$theme-site-navbar-secondary-type: light !default;
+$theme-site-navbar-secondary-link-color: #56545a !default;
 
 // primary nav
-$theme-site-navbar-primary-font-family: "Fira Sans", sans-serif !default;
+$theme-site-navbar-primary-font-family: $theme-font-family-sans-serif !default;
 $theme-site-navbar-primary-font-size: 18px !default;
 $theme-site-navbar-primary-bg-color: #202022 !default;
 $theme-site-navbar-primary-font-weight: 700 !default;
