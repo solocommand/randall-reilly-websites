@@ -25,31 +25,80 @@ $ const blockName = input.blockName || "site-footer";
         />
       </default-theme-site-navbar-brand>
 
-      <div class="row text-white">
-        <div class="col-4">
-          Col 1
-        </div>
-        <div class="col-4">
+      <div class="row">
+        <marko-web-element block-name=blockName name="section">
+          $ const newsletter = site.getAsObject("navigation.footer.newsletter");
+          $ const newsletterBlock = "site-footer-newsletter";
+          <if(newsletter.formAction)>
+            <marko-web-block name=newsletterBlock>
+              <marko-web-element block-name=newsletterBlock name="header">
+                Newsletter
+              </marko-web-element>
+              <if(newsletter.cta)>
+                <marko-web-element block-name=newsletterBlock name="description">
+                  $!{newsletter.cta}
+                </marko-web-element>
+              </if>
+              <form action=newsletter.formAction method="GET">
+                <div class="form-group mt-2">
+                  <label for="footer-newsletter-signup-email" class="sr-only">Email address</label>
+                  <input id="footer-newsletter-signup-email" class="form-control" type="email" placeholder="Email address" required />
+                </div>
+                <button class="btn btn-dark site-footer-newsletter__btn" type="submit">Sign up</button>
+              </form>
+            </marko-web-block>
+          </if>
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="section">
           <global-social-follow dark=false />
-        </div>
-        <div class="col-4">
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="section">
 
           <div class="row">
-            <div class="col-6">
-              Col 3.1
-            </div>
-            <div class="col-6">
-              Col 3.2
-            </div>
+            $ const navBlockName = "site-footer-nav";
+            <marko-web-block name=navBlockName class="col-6">
+              $ const topics = site.getAsArray("navigation.footer.topics");
+              <if(topics.length)>
+                <default-theme-site-menu-section
+                  tag="nav"
+                  block-name=navBlockName
+                  label="Topics"
+                  items=topics
+                  reg-enabled=false
+                  has-user=false
+                />
+              </if>
+            </marko-web-block>
+            <marko-web-block name=navBlockName class="col-6">
+              $ const more = site.getAsArray("navigation.footer.more");
+              <if(more.length)>
+                <default-theme-site-menu-section
+                  tag="nav"
+                  block-name=navBlockName
+                  label="More"
+                  items=more
+                  reg-enabled=false
+                  has-user=false
+                />
+              </if>
+            </marko-web-block>
           </div>
 
-        </div>
+        </marko-web-element>
       </div>
 
     </marko-web-element>
   </default-theme-site-footer-container>
   <default-theme-site-footer-container block-name=blockName modifiers=["primary"]>
     <marko-web-element block-name=blockName name="inner-container">
+      <marko-web-img
+        alt="Randall-Reilly Logo"
+        src="https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/rr-logo.svg?w=200"
+        srcset="https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/rr-logo.svg?w=400 2x"
+        link={ href: "https://www.randallreilly.com", class: `${blockName}__corporate-link` }
+        class=`${blockName}__corporate-logo`
+      />
+
       $ const footerItems = site.getAsArray("navigation.footer.items");
       <default-theme-breadcrumbs modifiers=["site-footer"]>
         <for|item| of=getNavItems({ items: footerItems, hasUser: input.hasUser, regEnabled: input.regEnabled })>

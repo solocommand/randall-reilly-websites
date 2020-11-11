@@ -23,6 +23,17 @@ module.exports = {
       { href: '#', label: 'Do Not Sell My Personal Information' },
       { href: '/contact-us', label: 'Contact Us' },
     ],
+
+    topics,
+    more: [
+      { href: '/advertise', label: 'Advertise' },
+      { href: '/contact-us', label: 'Contact Us' },
+      { href: '#', label: 'Newsletters' },
+    ],
+    newsletter: {
+      formAction: '/newsletters',
+      cta: 'Sign up for the <strong>Overdrive Daily</strong> to keep up with trucking news, equipment and business information.',
+    },
   },
   menu: [
     {

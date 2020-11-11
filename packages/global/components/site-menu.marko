@@ -40,6 +40,7 @@ $ const hasUser = defaultValue(input.hasUser, false);
       <for|section| of=menu>
         $ const s = asObject(section);
         <default-theme-site-menu-section
+          tag="nav"
           block-name=blockName
           label=s.label
           modifiers=s.modifiers
