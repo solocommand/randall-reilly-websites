@@ -89,6 +89,9 @@ $theme-site-footer-copyright-font-size: $theme-site-footer-font-size;
 $theme-site-footer-spacer: 14px;
 $theme-site-footer-spacer-sm: 14px;
 
+$theme-site-footer-logo-height: 35px !default;
+$theme-site-footer-logo-height-sm: 35px !default;
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 @import "../../node_modules/bootstrap/scss/input-group";
 
@@ -178,20 +181,6 @@ body {
     &--search {
       padding-bottom: $theme-site-navbar-menu-link-padding-x * 3;
     }
-
-    &--social-icons {
-      padding-bottom: $theme-site-navbar-menu-link-padding-x * 3;
-      border-bottom: 1px solid #e9e9e9;
-      > .social-icon-link {
-        margin-right: 20px;
-      }
-    }
-  }
-
-  &__social-icon-header {
-    font-size: 18px;
-    font-weight: $font-weight-bold;
-    line-height: get-line-height(18px, 24px);
   }
 }
 
@@ -201,6 +190,7 @@ body {
   &__container {
     padding-top: 28px;
     padding-bottom: 28px;
+    text-align: left;
   }
 
   &__inner-container {
@@ -220,6 +210,20 @@ body {
     &:hover {
       color: $white;
     }
+  }
+
+  &__brand {
+    display: block;
+    margin-bottom: 33px;
+    text-align: center;
+  }
+
+  &__logo {
+    filter: brightness(0) invert(1);
+  }
+
+  &__copyright {
+    text-align: center;
   }
 }
 
@@ -254,10 +258,54 @@ body {
 }
 
 .marko-web-icon {
+  &--social-follow {
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
   &--site-menu-social {
     svg {
       width: 32px;
       height: 32px;
     }
+  }
+}
+
+.social-follow {
+  $self: &;
+  &__header {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    line-height: get-line-height(18px, 24px);
+  }
+
+  &__section {
+    > .social-icon-link {
+      margin-right: 20px;
+    }
+  }
+
+  &--dark {
+    #{ $self } {
+      &__header {
+        color: $black;
+      }
+    }
+  }
+
+  &--light {
+    #{ $self } {
+      &__header {
+        color: $white;
+      }
+    }
+  }
+
+  &--site-menu {
+    padding-bottom: $theme-site-navbar-menu-link-padding-x * 3;
+    border-bottom: 1px solid #e9e9e9;
   }
 }

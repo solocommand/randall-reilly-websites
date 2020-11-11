@@ -18,5 +18,8 @@
   },
   "<global-site-footer>": {
     "template": "./site-footer.marko"
+  },
+  "<global-social-follow>": {
+    "template": "./social-follow.marko"
   }
 }
