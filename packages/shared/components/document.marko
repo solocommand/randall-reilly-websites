@@ -55,7 +55,9 @@ $ const isRadixEnabled = Boolean(radix.enabled && radix.appId);
       <default-theme-site-header has-user=hasUser reg-enabled=isEnabled />
       <default-theme-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
-    <${input.aboveContainer} />
+    <div class="document-container-header">
+      <${input.aboveContainer} />
+    </div>
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
