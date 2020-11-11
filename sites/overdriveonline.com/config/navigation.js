@@ -26,16 +26,11 @@ module.exports = {
   },
   menu: [
     {
-      label: 'Topics',
+      modifiers: ['primary'],
       items: topics,
     },
     {
-      label: 'Resources',
-      items: [
-      ],
-    },
-    {
-      label: 'User Tools',
+      modifiers: ['secondary'],
       items: [
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/advertise', label: 'Advertise' },

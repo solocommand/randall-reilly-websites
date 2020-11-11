@@ -14,6 +14,7 @@
     "@base-cms/marko-web": "^1.37.0",
     "@base-cms/marko-web-gam": "^1.37.0",
     "@base-cms/marko-web-gtm": "^1.37.0",
+    "@base-cms/marko-web-icons": "^1.37.0",
     "@base-cms/marko-web-native-x": "^1.37.0",
     "@base-cms/marko-web-theme-default": "^1.41.1",
     "@base-cms/object-path": "^1.37.0",

@@ -17,11 +17,13 @@ $font-weight-bold: 700;
 $font-weight-normal: 400;
 $body-bg: #f6f6f6;
 
+$enable-shadows: false;
+$enable-rounded: false;
+
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
 
-// Header
-$theme-site-header-box-shadow: none;
+$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.025), 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, .08);
 
 // Navbar
 $theme-site-navbar-brand-margin-x: 36px !default;
@@ -34,8 +36,8 @@ $theme-site-navbar-primary-height-sm: 0;
 $theme-site-navbar-secondary-bg-color: $white;
 $theme-site-navbar-secondary-font-size: 18px;
 $theme-site-navbar-secondary-font-size-sm: $theme-site-navbar-secondary-font-size - 2;
-$theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 44px);
-$theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 42px);
+$theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 22px);
+$theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 20px);
 $theme-site-navbar-secondary-font-weight: $font-weight-bold;
 $theme-site-navbar-secondary-padding-y: 15px !default;
 $theme-site-navbar-secondary-type: light;
@@ -47,7 +49,30 @@ $theme-site-navbar-secondary-link-active-color: $primary !default;
 $theme-site-navbar-secondary-link-hover-color: $primary !default;
 $theme-site-navbar-secondary-link-padding: 10px;
 
+// Site Menu
+$theme-site-navbar-menu-width: 375px;
+$theme-site-navbar-menu-max-width: 100%;
+
+$theme-site-navbar-menu-box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+$theme-site-navbar-menu-padding-x: 24px;
+$theme-site-navbar-menu-padding-y: 24px;
+$theme-site-navbar-menu-bg-color: $white;
+$theme-site-navbar-menu-hover-background-color: $theme-site-navbar-menu-bg-color;
+
+$theme-site-navbar-menu-item-font-size: 24px;
+$theme-site-navbar-menu-item-font-weight: $font-weight-bold;
+$theme-site-navbar-menu-item-border-color: transparent;
+
+$theme-site-navbar-menu-active-item-font-weight: $font-weight-bold;
+
+$theme-site-navbar-menu-link-padding-x: 8px;
+$theme-site-navbar-menu-link-padding-y: 0;
+$theme-site-navbar-menu-link-color: $black !default;
+$theme-site-navbar-menu-link-hover-color: $primary !default;
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
+@import "../../node_modules/bootstrap/scss/input-group";
+
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -89,4 +114,62 @@ body {
     }
   }
 
+}
+
+.site-menu {
+  $self: &;
+
+  opacity: 1;
+
+  &__items {
+    line-height: 1.3;
+  }
+
+  &__section {
+    &--primary {
+      padding-top: $theme-site-navbar-menu-link-padding-x * 2;
+    }
+
+    &--secondary {
+      #{ $self } {
+        &__items {
+          line-height: 1.2;
+        }
+        &__item {
+          font-size: $theme-site-navbar-menu-item-font-size - 6;
+        }
+        &__link {
+          padding-top: $theme-site-navbar-menu-link-padding-x - 2;
+          padding-bottom: $theme-site-navbar-menu-link-padding-x - 2;
+        }
+      }
+    }
+
+    &--search {
+      padding-bottom: $theme-site-navbar-menu-link-padding-x * 3;
+    }
+
+    &--social-icons {
+      padding-bottom: $theme-site-navbar-menu-link-padding-x * 3;
+      border-bottom: 1px solid #e9e9e9;
+      > .social-icon-link {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__social-icon-header {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    line-height: get-line-height(18px, 24px);
+  }
+}
+
+.marko-web-icon {
+  &--site-menu-social {
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
