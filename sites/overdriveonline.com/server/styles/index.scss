@@ -4,16 +4,6 @@ $light: #e9ecef;
 $dark: #212529;
 $info: #6c757d;
 
-// $theme-site-navbar-secondary-link-hover-color: $light;
-// $theme-site-navbar-secondary-link-active-color: $light;
-
-// $theme-site-navbar-tertiary-link-active-color: $light;
-// $theme-site-navbar-tertiary-link-color: $light;
-// $theme-site-navbar-tertiary-link-hover-color: $light;
-
-$theme-newsletter-block-bg-color: $primary;
-$theme-newsletter-block-button-bg-color: #000;
-
 $theme-site-header-breakpoints: (
   hide-primary: 832px,
   hide-secondary: 906px,
@@ -22,4 +12,4 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 1105px
 );
 
-@import "../../node_modules/@randall-reilly/package-shared/scss/randall-reilly-skin";
+@import "../../node_modules/@randall-reilly/package-global/scss/core";

@@ -1,4 +1,4 @@
-const configureGAM = require('@randall-reilly/package-shared/config/gam');
+const configureGAM = require('@randall-reilly/package-global/config/gam');
 
 const config = configureGAM({ basePath: 'ovd' });
 
