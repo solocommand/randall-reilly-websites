@@ -120,7 +120,9 @@ $ const withOopAds = defaultValue(input.withOopAds, false);
         <hr>
 
         <!-- Home Page Hero block -->
-        <shared-content-hero-block query-params={ alias: "business" } />
+        <shared-content-hero-block query-params={ alias: "home" }>
+          <@header><div class="hero-flow__header">Top Stories</div></@header>
+        </shared-content-hero-block>
 
         <marko-web-gam-define-display-ad
           ...GAM.getAdUnit({ name: "rotation", aliases })
