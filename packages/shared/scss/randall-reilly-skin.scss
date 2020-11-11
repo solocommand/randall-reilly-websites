@@ -110,7 +110,6 @@ body {
           letter-spacing: .5px;
           border-right: 1px solid $theme-site-navbar-secondary-bg-color;
           transition: background-color ease 300ms;
-
           &:first-child {
             border-left: 1px solid $theme-site-navbar-secondary-bg-color;
           }
