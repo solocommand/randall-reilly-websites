@@ -42,7 +42,7 @@ $marko-web-page-wrapper-padding: .75rem;
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
 
-$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.025), 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, .08);
+$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .025), 0 3px 1px -2px rgba(0, 0, 0, .06), 0 1px 5px 0 rgba(0, 0, 0, .08);
 
 // Navbar
 $theme-site-navbar-brand-margin-x: 36px !default;
@@ -72,7 +72,7 @@ $theme-site-navbar-secondary-link-padding: 10px;
 $theme-site-navbar-menu-width: 375px;
 $theme-site-navbar-menu-max-width: 100%;
 
-$theme-site-navbar-menu-box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+$theme-site-navbar-menu-box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .1), 0 6px 20px 0 rgba(0, 0, 0, .15);
 $theme-site-navbar-menu-padding-x: 24px;
 $theme-site-navbar-menu-padding-y: 24px;
 $theme-site-navbar-menu-bg-color: $white;
@@ -237,6 +237,7 @@ a {
   text-align: left;
 
   &--inline {
+    padding-bottom: 30px;
     margin-bottom: 0;
   }
 
@@ -255,10 +256,6 @@ a {
   &--margin-auto-x {
     margin-right: auto;
     margin-left: auto;
-  }
-
-  &--inline {
-    padding-bottom: 30px;
   }
 
   > *:first-child {
@@ -294,8 +291,8 @@ a {
 
   &__section {
     &--ad {
-      margin-left: $marko-web-page-wrapper-padding * -1;
       margin-right: $marko-web-page-wrapper-padding * -1;
+      margin-left: $marko-web-page-wrapper-padding * -1;
       background-color: $body-bg;
     }
   }
@@ -314,14 +311,14 @@ a {
   &__brand {
     @media (max-width: map-get($theme-site-header-breakpoints, small-logo)) {
       // reduce padding on small logo
-      margin-left: $theme-site-navbar-brand-margin-x / 2;
       margin-right: $theme-site-navbar-brand-margin-x / 2;
+      margin-left: $theme-site-navbar-brand-margin-x / 2;
     }
 
     @media (max-width: map-get($theme-site-header-breakpoints, hide-secondary)) {
       // center the logo once nav items are hidden
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
     }
   }
 
@@ -383,8 +380,8 @@ a {
 
 .site-footer {
   $self: &;
-  color: $white;
   margin-top: 0;
+  color: $white;
 
   &__container {
     padding-top: 28px;
@@ -399,9 +396,9 @@ a {
   &__inner-container {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
     max-width: $marko-web-document-container-max-width;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   &__section {
@@ -415,7 +412,7 @@ a {
 
   &__items {
     @include media-breakpoint-down($theme-responsive-text-breakpoint) {
-      font-size: $theme-site-footer-copyright-font-size
+      font-size: $theme-site-footer-copyright-font-size;
     }
   }
 
@@ -427,9 +424,9 @@ a {
   }
 
   &__brand {
-    margin-left: auto;
     margin-right: auto;
     margin-bottom: 33px;
+    margin-left: auto;
   }
 
   &__logo {
@@ -441,9 +438,9 @@ a {
   }
 
   &__corporate-link {
-    margin-left: auto;
     margin-right: auto;
     margin-bottom: $theme-site-footer-spacer;
+    margin-left: auto;
   }
 
   &__corporate-logo {
@@ -473,7 +470,7 @@ a {
       }
     }
 
-    .breadcrumb-item+.breadcrumb-item {
+    .breadcrumb-item + .breadcrumb-item {
       &::before {
         color: $global-site-footer-color;
       }
@@ -680,13 +677,13 @@ a {
     position: absolute;
     width: $size;
     height: $size;
+    padding-top: ($size - $font-size) / 2;
+    font-family: $skin-font-family-open-sans-condensed;
     font-size: $font-size;
     font-weight: $font-weight-bold;
-    font-family: $skin-font-family-open-sans-condensed;
     line-height: 1;
-    background-color: #eee;
     text-align: center;
-    padding-top: ($size - $font-size) / 2;
+    background-color: #eee;
   }
 }
 
