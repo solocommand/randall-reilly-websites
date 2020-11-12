@@ -96,6 +96,24 @@ $ const { GAM } = out.global;
             </global-content-list-flow>
           </marko-web-query>
         </@section>
+
+        <!-- Top Stories -->
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <!-- OVD Radio + Resource Lib -->
+
+        <!-- Most Popular -->
+        <@section>
+          <global-most-popular-block />
+        </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>

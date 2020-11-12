@@ -137,6 +137,10 @@ body {
 .ad-container {
   text-align: left;
 
+  &--inline {
+    margin-bottom: 0;
+  }
+
   &--center {
     text-align: center;
   }
@@ -493,6 +497,15 @@ body {
       }
     }
   }
+
+  &--most-popular {
+    #{ $self } {
+      &__title {
+        font-size: 18px;
+        line-height: get-line-height(18px, 24px);
+      }
+    }
+  }
 }
 
 .node-list {
@@ -503,5 +516,15 @@ body {
         border-bottom: none;
       }
     }
+  }
+}
+
+.most-popular {
+  &__header {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    text-align: center;
   }
 }

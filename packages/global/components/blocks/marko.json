@@ -1,0 +1,5 @@
+{
+  "<global-most-popular-block>": {
+    "template": "./most-popular.marko"
+  }
+}
