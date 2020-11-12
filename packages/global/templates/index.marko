@@ -1,4 +1,8 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import queryFragment from "../graphql/fragments/content-list";
+
 $ const { id, alias, name, pageNode } = input;
+$ const { GAM } = out.global;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
   <@head>
@@ -9,13 +13,62 @@ $ const { id, alias, name, pageNode } = input;
 
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
       <marko-web-page-wrapper>
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
         <@section>
-          <div class="row">
-            <div class="col">
-              <h1 class="page-wrapper__title">NYI: ${section.name}</h1>
-            </div>
-          </div>
+          <global-top-stories-block />
+        </@section>
+
+        <!-- Opinion -->
+
+        <!-- 3 Column Section List Blocks -->
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <!-- Partners in Business -->
+
+        <!-- OVD Radio + Resource Lib -->
+
+        <@section>
+          <global-most-popular-block />
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <!-- Gear -->
+        <!-- Reader Rigs -->
+        <!-- Books, Guides, and Data -->
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
