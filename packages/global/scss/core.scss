@@ -63,6 +63,14 @@ a {
   }
 }
 
+.node-list {
+  padding-bottom: map-get($spacers, block);
+
+  &__header {
+    padding-bottom: 0;
+  }
+}
+
 .card-deck-flow {
   $self: &;
 

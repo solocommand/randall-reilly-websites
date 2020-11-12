@@ -31,6 +31,19 @@ $ const { GAM } = out.global;
         <!-- Opinion -->
 
         <!-- 3 Column Section List Blocks -->
+        <@section>
+          <div class="row">
+            <div class="col-md-4">
+              <global-section-list-block alias="business" />
+            </div>
+            <div class="col-md-4">
+              <global-section-list-block alias="equipment" />
+            </div>
+            <div class="col-md-4">
+              <global-section-list-block alias="custom-rigs" />
+            </div>
+          </div>
+        </@section>
 
         <@section modifiers=["ad"]>
           <marko-web-gam-define-display-ad
