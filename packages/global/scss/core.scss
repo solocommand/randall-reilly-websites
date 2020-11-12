@@ -475,6 +475,7 @@ body {
 
 .node {
   $self: &;
+  $image-border: 1px solid rgba(239, 239, 239, .9);
 
   &__header-left {
     text-transform: uppercase;
@@ -487,7 +488,15 @@ body {
   }
 
   &__image {
-    border: 1px solid hsla(0, 0%, 93.7%, 0.9);
+    border: $image-border;
+  }
+
+  &__image-inner-wrapper--fluid-3by2 {
+    #{ $self } {
+      &__image {
+        border: $image-border;
+      }
+    }
   }
 
   &--section-feed {
@@ -499,6 +508,15 @@ body {
   }
 
   &--most-popular {
+    #{ $self } {
+      &__title {
+        font-size: 18px;
+        line-height: get-line-height(18px, 24px);
+      }
+    }
+  }
+
+  &--top-stories {
     #{ $self } {
       &__title {
         font-size: 18px;
@@ -520,6 +538,16 @@ body {
 }
 
 .most-popular {
+  &__header {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+  }
+}
+
+.top-stories {
   &__header {
     margin-top: 24px;
     margin-bottom: 24px;

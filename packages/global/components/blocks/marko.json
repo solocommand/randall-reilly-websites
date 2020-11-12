@@ -1,5 +1,8 @@
 {
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
+  },
+  "<global-top-stories-block>": {
+    "template": "./top-stories.marko"
   }
 }
