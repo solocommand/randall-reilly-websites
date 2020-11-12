@@ -1,0 +1,136 @@
+// Fonts
+$skin-font-family-open-sans: "Open Sans", sans-serif;
+$skin-font-family-open-sans-condensed: "Open Sans Condensed", sans-serif;
+
+$theme-font-family-sans-serif: $skin-font-family-open-sans;
+$theme-font-family-page-title: $theme-font-family-sans-serif;
+
+// Bootstrap Low-Level
+$black: #434146 !default;
+$white: #fff;
+$secondary: #56545a !default;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$body-bg: #f6f6f6;
+$breadcrumb-divider: "|";
+
+$enable-shadows: false;
+$enable-rounded: false;
+
+// Skin Node Font Sizes / Line Heights
+$skin-node-text-font-size-xl: 38px !default;
+$skin-node-text-line-height-xl-px: 40px !default;
+$skin-node-text-line-height-xl: get-line-height($skin-node-text-font-size-xl, $skin-node-text-line-height-xl-px);
+
+$skin-node-text-font-size-lg: 24px !default;
+$skin-node-text-line-height-lg-px: 32px !default;
+$skin-node-text-line-height-lg: get-line-height($skin-node-text-font-size-lg, $skin-node-text-line-height-lg-px);
+
+$skin-node-text-font-size-md: 18px !default;
+$skin-node-text-line-height-md-px: 24px !default;
+$skin-node-text-line-height-md: get-line-height($skin-node-text-font-size-md, $skin-node-text-line-height-md-px);
+
+// Marko Web Settings
+$marko-web-document-container-max-width: 1060px;
+$marko-web-document-container-gutter: 0;
+$marko-web-page-wrapper-padding: .75rem;
+
+// Page
+$theme-page-title-font-weight: $font-weight-bold;
+
+$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .025), 0 3px 1px -2px rgba(0, 0, 0, .06), 0 1px 5px 0 rgba(0, 0, 0, .08);
+
+// Navbar
+$theme-site-navbar-brand-margin-x: 36px !default;
+
+$theme-site-navbar-logo-height: 40px !default;
+$theme-site-navbar-logo-height-sm: 35px !default;
+
+$theme-site-navbar-primary-height-sm: 0;
+
+$theme-site-navbar-secondary-bg-color: $white;
+$theme-site-navbar-secondary-font-size: 18px;
+$theme-site-navbar-secondary-font-size-sm: $theme-site-navbar-secondary-font-size - 2;
+$theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 22px);
+$theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 20px);
+$theme-site-navbar-secondary-font-weight: $font-weight-bold;
+$theme-site-navbar-secondary-padding-y: 15px !default;
+$theme-site-navbar-secondary-type: light;
+$theme-site-navbar-secondary-link-active-decoration: none;
+$theme-site-navbar-secondary-link-hover-decoration: none;
+
+$theme-site-navbar-secondary-link-color: $secondary !default;
+$theme-site-navbar-secondary-link-active-color: $primary !default;
+$theme-site-navbar-secondary-link-hover-color: $primary !default;
+$theme-site-navbar-secondary-link-padding: 10px;
+
+// Site Menu
+$theme-site-navbar-menu-width: 375px;
+$theme-site-navbar-menu-max-width: 100%;
+
+$theme-site-navbar-menu-box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .1), 0 6px 20px 0 rgba(0, 0, 0, .15);
+$theme-site-navbar-menu-padding-x: 24px;
+$theme-site-navbar-menu-padding-y: 24px;
+$theme-site-navbar-menu-bg-color: $white;
+$theme-site-navbar-menu-hover-background-color: $theme-site-navbar-menu-bg-color;
+
+$theme-site-navbar-menu-item-font-size: 24px;
+$theme-site-navbar-menu-item-font-weight: $font-weight-bold;
+$theme-site-navbar-menu-item-border-color: transparent;
+
+$theme-site-navbar-menu-active-item-font-weight: $font-weight-bold;
+
+$theme-site-navbar-menu-link-padding-x: 8px;
+$theme-site-navbar-menu-link-padding-y: 0;
+$theme-site-navbar-menu-link-color: $black !default;
+$theme-site-navbar-menu-link-hover-color: $primary !default;
+
+// Site Footer
+$global-site-footer-color: $white;
+
+$theme-site-footer-font-size: 16px;
+$theme-site-footer-line-height: get-line-height($theme-site-footer-font-size, 30px);
+
+$theme-site-footer-secondary-bg-color: #343338 !default;
+$theme-site-footer-primary-bg-color: #1a1a1c !default;
+
+$theme-site-footer-copyright-color: $white;
+$theme-site-footer-copyright-font-size: $theme-site-footer-font-size;
+
+$theme-site-footer-spacer: 14px;
+$theme-site-footer-spacer-sm: 14px;
+
+$theme-site-footer-logo-height: 35px !default;
+$theme-site-footer-logo-height-sm: 35px !default;
+
+// Core Marko Node
+$marko-web-node-padding: 20px;
+
+// Items/Nodes
+$theme-item-link-hover-decoration: none;
+
+$theme-item-header-color: $black;
+$theme-item-header-font-family: $skin-font-family-open-sans-condensed;
+$theme-item-header-font-size: 15px;
+$theme-item-header-font-weight: $font-weight-bold;
+
+$theme-item-header-link-hover-color: $primary !default;
+
+$theme-item-title-font-size: $skin-node-text-font-size-md;
+$theme-item-title-line-height: $skin-node-text-line-height-md;
+$theme-item-title-font-size-sm: $skin-node-text-font-size-md;
+$theme-item-title-line-height-sm: $skin-node-text-line-height-md;
+$theme-item-title-font-weight: $font-weight-bold;
+
+$theme-item-title-link-hover-color: $primary !default;
+
+$theme-item-description-font-family: $theme-font-family-sans-serif;
+$theme-item-description-font-size: $skin-node-text-font-size-md;
+$theme-item-description-line-height: $skin-node-text-line-height-md;
+$theme-item-description-font-size-sm: $skin-node-text-font-size-md;
+$theme-item-description-line-height-sm: $skin-node-text-line-height-md;
+$theme-item-description-max-lines: 3;
+$theme-item-description-margin: 10px;
+
+// Ads
+$theme-ad-box-shadow: none;

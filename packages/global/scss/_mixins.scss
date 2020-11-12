@@ -1,0 +1,82 @@
+@mixin skin-node-fonts(
+  $font-size,
+  $font-size-sm,
+  $line-height,
+  $line-height-sm,
+  $font-family: $font-family-sans-serif,
+  $max-lines: 3
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+
+  @include theme-apply-responsive-fonts(
+    $font-size: $font-size-sm,
+    $line-height: $line-height-sm,
+    $breakpoint: $theme-responsive-text-breakpoint
+  );
+
+  a {
+    @include theme-max-lines(
+      $font-size: $font-size,
+      $font-size-sm: $font-size-sm,
+      $line-height: $line-height,
+      $line-height-sm: $line-height-sm,
+      $num: $max-lines,
+      $breakpoint: $theme-responsive-text-breakpoint
+    );
+  }
+}
+
+@mixin skin-fonts-xl-md() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-xl,
+    $line-height: $skin-node-text-line-height-xl,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+}
+
+@mixin skin-fonts-lg-lg() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-lg,
+    $line-height: $skin-node-text-line-height-lg,
+
+    $font-size-sm: $skin-node-text-font-size-lg,
+    $line-height-sm: $skin-node-text-line-height-lg,
+  );
+}
+
+@mixin skin-fonts-lg-md() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-lg,
+    $line-height: $skin-node-text-line-height-lg,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+}
+
+@mixin skin-fonts-md-md() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-md,
+    $line-height: $skin-node-text-line-height-md,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+}
+
+@mixin skin-fonts-md-none() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-md,
+    $line-height: $skin-node-text-line-height-md,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+  @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+    display: none;
+  }
+}

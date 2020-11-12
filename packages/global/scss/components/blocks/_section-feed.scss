@@ -1,0 +1,31 @@
+.node {
+  $self: &;
+
+  &--section-feed {
+    #{ $self } {
+      &__title {
+        font-weight: $font-weight-bold;
+        @include skin-fonts-lg-md();
+      }
+
+      &__text--teaser {
+        @include skin-fonts-md-none();
+      }
+
+      &__body {
+        max-width: 700px;
+      }
+    }
+  }
+}
+
+.node-list {
+  $self: &;
+  &--section-feed {
+    #{ $self } {
+      &__node {
+        border-bottom: none;
+      }
+    }
+  }
+}

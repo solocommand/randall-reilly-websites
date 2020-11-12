@@ -1,0 +1,23 @@
+.node {
+  $self: &;
+
+  &--top-stories-hero {
+    margin-bottom: 16px;
+    #{ $self } {
+      &__title {
+        margin-bottom: 16px;
+        @include skin-fonts-xl-md();
+      }
+    }
+  }
+}
+
+.top-stories {
+  &__header {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+  }
+}
