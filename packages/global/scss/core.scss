@@ -21,6 +21,19 @@ $breadcrumb-divider: "|";
 $enable-shadows: false;
 $enable-rounded: false;
 
+// Skin Node Font Sizes / Line Heights
+$skin-node-text-font-size-xl: 38px !default;
+$skin-node-text-line-height-xl-px: 40px !default;
+$skin-node-text-line-height-xl: get-line-height($skin-node-text-font-size-xl, $skin-node-text-line-height-xl-px);
+
+$skin-node-text-font-size-lg: 24px !default;
+$skin-node-text-line-height-lg-px: 32px !default;
+$skin-node-text-line-height-lg: get-line-height($skin-node-text-font-size-lg, $skin-node-text-line-height-lg-px);
+
+$skin-node-text-font-size-md: 18px !default;
+$skin-node-text-line-height-md-px: 24px !default;
+$skin-node-text-line-height-md: get-line-height($skin-node-text-font-size-md, $skin-node-text-line-height-md-px);
+
 // Marko Web Settings
 $marko-web-document-container-max-width: 1060px;
 $marko-web-document-container-gutter: 0;
@@ -107,19 +120,19 @@ $theme-item-header-font-weight: $font-weight-bold;
 
 $theme-item-header-link-hover-color: $primary !default;
 
-$theme-item-title-font-size: 24px;
-$theme-item-title-line-height: get-line-height($theme-item-title-font-size, 32px);
-$theme-item-title-font-size-sm: 18px;
-$theme-item-title-line-height-sm: get-line-height($theme-item-title-font-size-sm, 24px);
+$theme-item-title-font-size: $skin-node-text-font-size-md;
+$theme-item-title-line-height: $skin-node-text-line-height-md;
+$theme-item-title-font-size-sm: $skin-node-text-font-size-md;
+$theme-item-title-line-height-sm: $skin-node-text-line-height-md;
 $theme-item-title-font-weight: $font-weight-bold;
 
 $theme-item-title-link-hover-color: $primary !default;
 
 $theme-item-description-font-family: $theme-font-family-sans-serif;
-$theme-item-description-font-size: 18px;
-$theme-item-description-font-size-sm: $theme-item-description-font-size;
-$theme-item-description-line-height: get-line-height($theme-item-description-font-size, 22px);
-$theme-item-description-line-height-sm: $theme-item-description-line-height;
+$theme-item-description-font-size: $skin-node-text-font-size-md;
+$theme-item-description-line-height: $skin-node-text-line-height-md;
+$theme-item-description-font-size-sm: $skin-node-text-font-size-md;
+$theme-item-description-line-height-sm: $skin-node-text-line-height-md;
 $theme-item-description-max-lines: 3;
 $theme-item-description-margin: 10px;
 
@@ -129,6 +142,88 @@ $theme-ad-box-shadow: none;
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 @import "../../node_modules/bootstrap/scss/input-group";
 
+@mixin skin-node-fonts(
+  $font-size,
+  $font-size-sm,
+  $line-height,
+  $line-height-sm,
+  $font-family: $font-family-sans-serif,
+  $max-lines: 3
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+
+  @include theme-apply-responsive-fonts(
+    $font-size: $font-size-sm,
+    $line-height: $line-height-sm,
+    $breakpoint: $theme-responsive-text-breakpoint
+  );
+
+  a {
+    @include theme-max-lines(
+      $font-size: $font-size,
+      $font-size-sm: $font-size-sm,
+      $line-height: $line-height,
+      $line-height-sm: $line-height-sm,
+      $num: $max-lines,
+      $breakpoint: $theme-responsive-text-breakpoint
+    );
+  }
+}
+
+@mixin skin-fonts-xl-md() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-xl,
+    $line-height: $skin-node-text-line-height-xl,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+}
+
+@mixin skin-fonts-lg-lg() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-lg,
+    $line-height: $skin-node-text-line-height-lg,
+
+    $font-size-sm: $skin-node-text-font-size-lg,
+    $line-height-sm: $skin-node-text-line-height-lg,
+  );
+}
+
+@mixin skin-fonts-lg-md() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-lg,
+    $line-height: $skin-node-text-line-height-lg,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+}
+
+@mixin skin-fonts-md-md() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-md,
+    $line-height: $skin-node-text-line-height-md,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+}
+
+@mixin skin-fonts-md-none() {
+  @include skin-node-fonts(
+    $font-size: $skin-node-text-font-size-md,
+    $line-height: $skin-node-text-line-height-md,
+
+    $font-size-sm: $skin-node-text-font-size-md,
+    $line-height-sm: $skin-node-text-line-height-md,
+  );
+  @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+    display: none;
+  }
+}
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -479,6 +574,7 @@ body {
 
   &__header-left {
     text-transform: uppercase;
+    // @todo figure out the line height crop
   }
 
   &__text {
@@ -501,6 +597,15 @@ body {
 
   &--section-feed {
     #{ $self } {
+      &__title {
+        font-weight: $font-weight-bold;
+        @include skin-fonts-lg-md();
+      }
+
+      &__text--teaser {
+        @include skin-fonts-md-none();
+      }
+
       &__body {
         max-width: 700px;
       }
@@ -509,20 +614,14 @@ body {
 
   &--most-popular {
     margin-left: 70px;
-
-    #{ $self } {
-      &__title {
-        font-size: 18px;
-        line-height: get-line-height(18px, 24px);
-      }
-    }
   }
 
-  &--top-stories {
+  &--top-stories-hero {
+    margin-bottom: 16px;
     #{ $self } {
       &__title {
-        font-size: 18px;
-        line-height: get-line-height(18px, 24px);
+        margin-bottom: 16px;
+        @include skin-fonts-xl-md();
       }
     }
   }
@@ -554,16 +653,18 @@ body {
   }
 
   &__position {
+    $size: 48px;
+    $font-size: 35px;
     position: absolute;
-    width: 48px;
-    height: 48px;
-    font-size: 35px;
+    width: $size;
+    height: $size;
+    font-size: $font-size;
     font-weight: $font-weight-bold;
     font-family: $skin-font-family-open-sans-condensed;
     line-height: 1;
     background-color: #eee;
     text-align: center;
-    padding-top: 7px;
+    padding-top: ($size - $font-size) / 2;
   }
 }
 
