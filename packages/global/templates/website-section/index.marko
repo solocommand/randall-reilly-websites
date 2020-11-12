@@ -1,6 +1,8 @@
 import queryFragment from "../../graphql/fragments/content-list";
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 
 $ const { id, alias, name, pageNode } = input;
+$ const { GAM } = out.global;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
   <@head>
@@ -11,7 +13,17 @@ $ const { id, alias, name, pageNode } = input;
 
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
       <marko-web-page-wrapper>
+        <@section>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
         <@section|{ blockName }|>
           <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
         </@section>

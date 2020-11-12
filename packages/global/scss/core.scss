@@ -119,12 +119,51 @@ $theme-item-description-line-height-sm: $theme-item-description-line-height;
 $theme-item-description-max-lines: 3;
 $theme-item-description-margin: 10px;
 
+// Ads
+$theme-ad-box-shadow: none;
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 @import "../../node_modules/bootstrap/scss/input-group";
 
 
 body {
   -webkit-font-smoothing: antialiased;
+}
+
+.ad-container {
+  text-align: left;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--max-width-300 {
+    max-width: 300px;
+  }
+
+  &--max-width-970 {
+    max-width: 970px;
+  }
+
+  &--margin-auto-x {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  > *:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .75rem;
+
+    &::before {
+      padding-bottom: .4rem;
+      font-size: .65rem;
+      color: $gray-600;
+      text-transform: uppercase;
+      content: "Advertisement";
+    }
+  }
 }
 
 .document-container {
