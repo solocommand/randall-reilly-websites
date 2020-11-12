@@ -106,6 +106,13 @@ body {
   background-color: $white;
 }
 
+.page-wrapper {
+  &__website-section-name {
+    font-size: 40px;
+    font-weight: $theme-page-title-font-weight;
+  }
+}
+
 .site-navbar {
   $self: &;
 

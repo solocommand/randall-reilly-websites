@@ -1,5 +1,7 @@
 {
   "taglib-imports": [
+    "./flows/marko.json",
+    "./nodes/marko.json"
   ],
   "<global-document>": {
     "template": "./document.marko",

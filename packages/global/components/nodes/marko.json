@@ -1,0 +1,29 @@
+{
+  "<global-content-node>": {
+    "template": "./content.marko",
+    "<image>": {},
+    "<title>": {},
+    "<teaser>": {
+      "@modifiers": "array"
+    },
+    "<attribution>": {},
+    "@node": "object",
+
+    "@display-image": "boolean",
+    "@image-position": "string",
+    "@card": "boolean",
+    "@flush": "boolean",
+    "@full-height": "boolean",
+
+    "@with-teaser": "boolean",
+    "@with-body": "boolean",
+    "@with-section": "boolean",
+    "@with-attribution": "boolean",
+    "@with-dates": "boolean",
+    "@with-primary-section-modifier": "boolean",
+
+    "@modifiers": "array",
+    "@attrs": "object",
+    "@link-attrs": "object"
+  }
+}
