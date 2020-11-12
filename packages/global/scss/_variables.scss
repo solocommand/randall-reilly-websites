@@ -142,3 +142,54 @@ $theme-card-header-font-size: 22px;
 $theme-card-header-font-weight: $font-weight-bold;
 $theme-card-header-text-transform: none;
 $theme-card-header-border: none;
+
+$theme-card-header-link-hover-color: $primary;
+$theme-card-header-link-hover-decoration: none;
+
+// Pages
+$theme-page-body-font-family: $theme-font-family-sans-serif;
+
+$theme-page-body-font-size: 19px;
+$theme-page-body-font-size-sm: $theme-page-body-font-size;
+$theme-page-body-line-height: get-line-height($theme-page-body-font-size, 25px);
+$theme-page-body-line-height-sm: $theme-page-body-line-height;
+
+// Caption / Credit / Media
+$theme-media-footer-font-size: 16px;
+
+$theme-media-footer-line-height: get-line-height($theme-media-footer-font-size, 22px);
+$theme-media-caption-color: #6c6972;
+
+// Headings
+$theme-heading-large-font-size:       28px !default;
+$theme-heading-large-font-size-sm:    28px !default;
+$theme-heading-large-line-height:     1.2 !default;
+$theme-heading-large-line-height-sm:  1.2 !default;
+
+$theme-heading-h4-font-size:          24px !default;
+$theme-heading-h4-font-size-sm:       24px !default;
+$theme-heading-h4-line-height:        1.2 !default;
+$theme-heading-h4-line-height-sm:     1.2 !default;
+
+$theme-heading-h5-font-size:          24px !default;
+$theme-heading-h5-font-size-sm:       24px !default;
+$theme-heading-h5-line-height:        1.2 !default;
+$theme-heading-h5-line-height-sm:     1.2 !default;
+
+$theme-heading-h6-font-size:          20px !default;
+$theme-heading-h6-font-size-sm:       20px !default;
+$theme-heading-h6-line-height:        1.2 !default;
+$theme-heading-h6-line-height-sm:     1.2 !default;
+
+// Content Headings
+$theme-content-heading-large-margin-bottom:     1rem !default;
+$theme-content-heading-large-margin-bottom-sm:  1rem !default;
+
+$theme-content-heading-h4-margin-bottom:        1rem !default;
+$theme-content-heading-h4-margin-bottom-sm:     1rem !default;
+
+$theme-content-heading-h5-margin-bottom:        1rem !default;
+$theme-content-heading-h5-margin-bottom-sm:     1rem !default;
+
+$theme-content-heading-h6-margin-bottom:        1rem !default;
+$theme-content-heading-h6-margin-bottom-sm:     1rem !default;

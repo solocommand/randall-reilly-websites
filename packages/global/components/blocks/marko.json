@@ -2,6 +2,9 @@
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
+  "<global-primary-image-block>": {
+    "template": "./primary-image.marko"
+  },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
   },

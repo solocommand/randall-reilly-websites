@@ -1,4 +1,10 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+
 $ const { id, type, pageNode } = input;
+$ const { GAM } = out.global;
+
+$ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
+$ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -9,13 +15,96 @@ $ const { id, type, pageNode } = input;
 
   <@page>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const { primarySection, primaryImage } = content;
+      $ const aliases = hierarchyAliases(primarySection);
+
       <marko-web-page-wrapper>
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section|{ blockName }| modifiers=["max-w-700", "content-page-header"]>
+          <default-theme-website-section-breadcrumbs display-home=false section=primarySection />
+          <marko-web-content-name tag="h1" block-name=blockName obj=content />
+
+          <if(type !== "contact")>
+            <default-theme-content-attribution obj=content elements=["authors"] />
+          </if>
+
+          <default-theme-page-dates|{ blockName }|>
+            <if(type === "event")>
+              <marko-web-content-starts block-name=blockName obj=content />
+              <marko-web-content-ends block-name=blockName obj=content />
+            </if>
+            <else-if(type === "webinar")>
+              <marko-web-content-starts block-name=blockName obj=content />
+            </else-if>
+            <else-if(displayPublishedDate)>
+              <marko-web-content-published block-name=blockName obj=content />
+            </else-if>
+          </default-theme-page-dates>
+        </@section>
+
+        <@section modifiers=["max-w-700"]>
+          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+            <if(content.embedCode)>
+              <marko-web-content-embed-code block-name=blockName obj=content />
+            </if>
+            <else-if(type === "media-gallery")>
+              <!-- <marko-web-image-slider images=images /> -->
+            </else-if>
+            <else-if(displayPrimaryImage)>
+              $ let forceDisplay;
+              $ if (type === "contact") forceDisplay = "left";
+              $ if (type === "video") forceDisplay = "none";
+              <global-primary-image-block
+                obj=content.primaryImage
+                force-display=forceDisplay;
+              />
+            </else-if>
+
+            <marko-web-content-body block-name=blockName obj=content />
+          </default-theme-page-contents>
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
         <@section>
-          <div class="row">
-            <div class="col">
-              <h1 class="page-wrapper__title">NYI: ${content.name}</h1>
-            </div>
-          </div>
+          <global-top-stories-block />
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section>
+          <global-most-popular-block />
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>

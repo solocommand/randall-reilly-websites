@@ -5,6 +5,9 @@
 // skin vars
 @import "./variables";
 
+$skin-aligned-image-width: 300px;
+$skin-aligned-body-image-spacer: .75rem;
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 @import "../../node_modules/bootstrap/scss/input-group";
 
@@ -19,6 +22,7 @@
 @import "./components/site-navbar";
 
 @import "./components/blocks/most-popular";
+@import "./components/blocks/primary-image";
 @import "./components/blocks/section-feed";
 @import "./components/blocks/social-follow";
 @import "./components/blocks/top-stories";
@@ -33,6 +37,20 @@ a {
 
 .document-container {
   background-color: $white;
+}
+
+[data-embed-type="image"] > :last-child:not(img) {
+  border-bottom: none;
+}
+
+[data-embed-type][data-embed-align="left"] {
+  width: $skin-aligned-image-width;
+  margin-right: $skin-aligned-body-image-spacer;
+}
+
+[data-embed-type][data-embed-align="right"] {
+  width: $skin-aligned-image-width;
+  margin-left: $skin-aligned-body-image-spacer;
 }
 
 .node {
@@ -98,5 +116,55 @@ a {
         }
       }
     }
+  }
+}
+
+.page-contents {
+  &__content-body {
+    padding-bottom: 24px;
+  }
+}
+
+.page-wrapper {
+  &__section {
+    &--max-w-700 {
+      max-width: 700px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &--max-w-880 {
+      max-width: 880px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &--content-page-header {
+      padding-top: 24px;
+      padding-bottom: 24px;
+
+      .breadcrumbs {
+        font-family: $skin-font-family-open-sans-condensed;
+        font-size: 15px;
+        font-weight: $font-weight-bold;
+        a {
+          color: $black;
+          &:hover {
+            color: $primary;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .breadcrumb {
+        padding-bottom: .5rem;
+      }
+    }
+  }
+
+  &__content-name {
+    font-size: 40px;
+    font-weight: $font-weight-bold;
+    line-height: get-line-height(40px, 44px);
   }
 }
