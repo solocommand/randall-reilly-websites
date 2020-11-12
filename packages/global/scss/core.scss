@@ -638,6 +638,24 @@ body {
   }
 }
 
+.card-deck-flow {
+  $self: &;
+
+  &--4-cols {
+    #{ $self } {
+      &__node {
+        // account for smaller container max-width and break earlier than normal
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col(3);
+        }
+      }
+    }
+  }
+}
+
 .most-popular {
   &__header {
     margin-top: 24px;
