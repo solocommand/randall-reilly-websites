@@ -13,24 +13,18 @@ $ const { id, alias, name, pageNode } = input;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <marko-web-page-wrapper>
         <@section|{ blockName }|>
-          <div class="row">
-            <div class="col">
-              <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
-            </div>
-          </div>
+          <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
         </@section>
 
         <@section>
-          <div class="row">
-            <div class="col">
-              <marko-web-query|{ nodes }|
-                name="website-scheduled-content"
-                params={ sectionId: id, limit: 3, queryFragment }
-              >
-                <global-content-list-flow nodes=nodes />
-              </marko-web-query>
-            </div>
-          </div>
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionId: id, limit: 3, queryFragment }
+          >
+            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
+              <@node modifiers=["section-feed"] />
+            </global-content-list-flow>
+          </marko-web-query>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
