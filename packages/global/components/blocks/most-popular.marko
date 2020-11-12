@@ -19,13 +19,18 @@ $ const blockName = "most-popular";
         nodes=nodes
       >
         <@slot|{ node, index }|>
-          <global-content-node
-            display-image=false
-            with-teaser=false
-            with-dates=false
-            modifiers=[blockName]
-            node=node
-          />
+          <marko-web-element block-name=blockName name="card-wrapper">
+            <marko-web-element block-name=blockName name="position">
+              ${index + 1}
+            </marko-web-element>
+            <global-content-node
+              display-image=false
+              with-teaser=false
+              with-dates=false
+              modifiers=[blockName]
+              node=node
+            />
+          </marko-web-element>
         </@slot>
       </default-theme-card-deck-flow>
     </marko-web-block>

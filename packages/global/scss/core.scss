@@ -508,6 +508,8 @@ body {
   }
 
   &--most-popular {
+    margin-left: 70px;
+
     #{ $self } {
       &__title {
         font-size: 18px;
@@ -544,6 +546,24 @@ body {
     font-size: 32px;
     font-weight: $font-weight-bold;
     text-align: center;
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__position {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    font-size: 35px;
+    font-weight: $font-weight-bold;
+    font-family: $skin-font-family-open-sans-condensed;
+    line-height: 1;
+    background-color: #eee;
+    text-align: center;
+    padding-top: 7px;
   }
 }
 
