@@ -5,6 +5,7 @@ $ const { GAM } = out.global;
 
 $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
+$ const shouldInjectAds = ["article"].includes(type);
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -19,16 +20,16 @@ $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(typ
       $ const aliases = hierarchyAliases(primarySection);
 
       <marko-web-page-wrapper>
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "leaderboard", aliases })
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline", "remove-gutter"]
             collapse-before-ad-fetch=true
             with-wrapper=true
           />
         </@section>
 
-        <@section|{ blockName }| modifiers=["max-w-700", "content-page-header"]>
+        <@section|{ blockName }| modifiers=["content-page-header"]>
           <default-theme-website-section-breadcrumbs display-home=false section=primarySection />
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
@@ -50,7 +51,7 @@ $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(typ
           </default-theme-page-dates>
         </@section>
 
-        <@section modifiers=["max-w-700"]>
+        <@section modifiers=["content-page-body"]>
           <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               <marko-web-content-embed-code block-name=blockName obj=content />
@@ -68,14 +69,28 @@ $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(typ
               />
             </else-if>
 
-            <marko-web-content-body block-name=blockName obj=content />
+            $ const bodyId = `content-body-${content.id}`;
+
+            <if(shouldInjectAds)>
+              <marko-web-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+                <@inject
+                  ...GAM.getAdUnit({ name: "rotation", aliases })
+                  at=900
+                  modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline-content", "remove-content-gutter"]
+                  collapse-before-ad-fetch=true
+                  with-wrapper=true
+                />
+              </marko-web-gam-inject-ads>
+            </if>
+
+            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
           </default-theme-page-contents>
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "leaderboard", aliases })
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline", "remove-gutter"]
             collapse-before-ad-fetch=true
             with-wrapper=true
           />
@@ -85,10 +100,10 @@ $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(typ
           <global-top-stories-block />
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "leaderboard", aliases })
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline", "remove-gutter"]
             collapse-before-ad-fetch=true
             with-wrapper=true
           />
@@ -98,10 +113,10 @@ $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(typ
           <global-most-popular-block />
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "leaderboard", aliases })
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline", "remove-gutter"]
             collapse-before-ad-fetch=true
             with-wrapper=true
           />

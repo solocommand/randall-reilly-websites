@@ -1,26 +1,58 @@
 .ad-container {
+  $self: &;
   text-align: left;
 
-  &--inline {
-    padding-bottom: 30px;
-    margin-bottom: 0;
+  &--body-bg {
+    background-color: $body-bg;
   }
 
-  &--center {
-    text-align: center;
+  &--inline {
+    margin-right: $marko-web-page-wrapper-padding * -1;
+    margin-bottom: 0;
+    margin-left: $marko-web-page-wrapper-padding * -1;
+  }
+
+  &--inline-content {
+    $margin: ($marko-web-document-container-max-width - $skin-content-body-max-width) / 2 * -1;
+    margin-right: $margin;
+    margin-bottom: 30px;
+    margin-left: $margin;
+    clear: both;
+  }
+
+  &--inline,
+  &--inline-content {
+    #{ $self } {
+      &__wrapper {
+        padding-bottom: 30px;
+      }
+    }
   }
 
   &--max-width-300 {
-    max-width: 300px;
+    #{ $self } {
+      &__wrapper {
+        max-width: 300px;
+      }
+    }
   }
 
   &--max-width-970 {
-    max-width: 970px;
+    #{ $self } {
+      &__wrapper {
+        max-width: 970px;
+      }
+    }
   }
 
   &--margin-auto-x {
-    margin-right: auto;
-    margin-left: auto;
+    #{ $self } {
+      &__wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+      }
+    }
   }
 
   > *:first-child {
