@@ -12,42 +12,45 @@ const topics = [
 
 module.exports = {
   primary: {
-    items: topics,
+    items: [],
   },
   secondary: {
-    items: [
-    ],
+    items: topics,
   },
   tertiary: {
-    items: [
-      { href: '/search', label: 'Search', icon: 'search' },
-    ],
+    items: [],
   },
   footer: {
     items: [
+      { href: '/page/privacy-policy', label: 'Terms of User and Privacy Policy' },
+      { href: '#', label: 'Point of Collection Notice' },
+      { href: '#', label: 'Do Not Sell My Personal Information' },
       { href: '/contact-us', label: 'Contact Us' },
-      { href: '/page/advertise', label: 'Advertise' },
-      { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-      { href: '/page/terms-conditions', label: 'Terms & Conditions', target: '_blank' },
     ],
+
+    topics,
+    more: [
+      { href: '/advertise', label: 'Advertise' },
+      { href: '/contact-us', label: 'Contact Us' },
+      { href: '#', label: 'Newsletters' },
+    ],
+    newsletter: {
+      formAction: '/newsletters',
+      cta: 'Sign up for the <strong>Truckers News Daily</strong> to keep up with ...',
+    },
   },
   menu: [
     {
-      label: 'Topics',
+      modifiers: ['primary'],
       items: topics,
     },
     {
-      label: 'Resources',
-      items: [
-      ],
-    },
-    {
-      label: 'User Tools',
+      modifiers: ['secondary'],
       items: [
         { href: '/contact-us', label: 'Contact Us' },
         { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions', target: '_blank' },
+        { href: '/page/privacy-policy', label: 'Privacy Policy' },
+        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       ],
     },
   ],
