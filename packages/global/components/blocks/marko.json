@@ -2,6 +2,9 @@
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
+  "<global-newsletter-signup-banner-block>": {
+    "template": "./newsletter-signup-banner.marko"
+  },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },

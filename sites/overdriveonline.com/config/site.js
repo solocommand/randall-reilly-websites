@@ -30,4 +30,8 @@ module.exports = {
   gtm: {
     containerId: 'GTM-NDC3FQX',
   },
+  newsletterSignupBanner: {
+    href: '#',
+    description: 'Sign up for the <strong>Overdrive Daily</strong> to keep up with trucking news, equipment and business information.',
+  },
 };

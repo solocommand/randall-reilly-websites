@@ -32,6 +32,7 @@ $skin-content-primary-image-max-width: 880px;
 @import "./components/site-navbar";
 
 @import "./components/blocks/most-popular";
+@import "./components/blocks/newsletter-signup-banner";
 @import "./components/blocks/primary-image";
 @import "./components/blocks/related-stories";
 @import "./components/blocks/section-feed";
@@ -170,5 +171,8 @@ a {
 }
 
 .social-sharing {
-  margin-bottom: 24px;
+  margin-bottom: $block-spacer;
+  &__button {
+    margin-right: $block-spacer / 2;
+  }
 }

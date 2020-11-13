@@ -1,0 +1,24 @@
+.newsletter-signup-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #eee;
+
+  &__description {
+    max-width: 467px;
+    margin-right: $block-spacer;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    min-width: 90px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: $font-weight-bold;
+  }
+}
