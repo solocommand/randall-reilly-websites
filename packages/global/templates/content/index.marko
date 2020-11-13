@@ -150,7 +150,10 @@ $ const shouldInjectAds = ["article"].includes(type);
         </@section>
 
         <@section>
-          <global-related-stories-block content-id=id />
+          <global-related-stories-block
+            content-id=id
+            section-id=primarySection.id
+          />
         </@section>
 
         <@section>

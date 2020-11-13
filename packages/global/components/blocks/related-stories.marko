@@ -1,8 +1,10 @@
 import queryFragment from "../../graphql/fragments/related-stories-block";
 
+$ const { contentId, sectionId } = input;
+$ const limit = 4;
 $ const queryParams = {
-  contentId: input.contentId,
-  limit: 4,
+  contentId,
+  limit,
   requiresImage: true,
   queryFragment,
 };
@@ -10,12 +12,30 @@ $ const queryParams = {
 $ const blockName = "related-stories";
 
 <marko-web-query|{ nodes }| name="related-published-content" params=queryParams>
-  <if(nodes.length)>
+  <if(nodes.length < limit)>
+    <!-- query for more content -->
+    $ const excludeContentIds = [contentId, ...nodes.map(node => node.id)];
+    <marko-web-query|{ nodes: related }|
+      name="website-scheduled-content"
+      params={ sectionId, limit: limit - nodes.length, excludeContentIds, requiresImage: true, queryFragment }
+    >
+      $ nodes.push(...related);
+      <if(nodes.length)>
+        <marko-web-block name=blockName>
+          <marko-web-element block-name=blockName name="header">
+            Related Stories
+          </marko-web-element>
+          <global-content-card-deck-4-col-flow nodes=nodes />
+        </marko-web-block>
+      </if>
+    </marko-web-query>
+  </if>
+  <else>
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="header">
         Related Stories
       </marko-web-element>
       <global-content-card-deck-4-col-flow nodes=nodes />
     </marko-web-block>
-  </if>
+  </else>
 </marko-web-query>
