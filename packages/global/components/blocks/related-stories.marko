@@ -9,6 +9,7 @@ $ const queryParams = {
   queryFragment,
 };
 
+$ const title = "Related Stories";
 $ const blockName = "related-stories";
 
 <marko-web-query|{ nodes }| name="related-published-content" params=queryParams>
@@ -23,7 +24,7 @@ $ const blockName = "related-stories";
       <if(nodes.length)>
         <marko-web-block name=blockName>
           <marko-web-element block-name=blockName name="header">
-            Related Stories
+            ${title}
           </marko-web-element>
           <global-content-card-deck-4-col-flow nodes=nodes />
         </marko-web-block>
@@ -33,7 +34,7 @@ $ const blockName = "related-stories";
   <else>
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="header">
-        Related Stories
+        ${title}
       </marko-web-element>
       <global-content-card-deck-4-col-flow nodes=nodes />
     </marko-web-block>
