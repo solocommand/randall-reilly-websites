@@ -114,6 +114,14 @@ $ const shouldInjectAds = ["article"].includes(type);
             </if>
 
             <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+            <if(type !== "contact")>
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                print-path=`/print/content/${content.id}`
+              />
+            </if>
           </default-theme-page-contents>
         </@section>
 

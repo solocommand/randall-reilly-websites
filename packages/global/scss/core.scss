@@ -18,6 +18,7 @@ $skin-content-primary-image-max-width: 880px;
 @import "./variables";
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
+@import "../../node_modules/@base-cms/marko-web-social-sharing/scss/buttons";
 @import "../../node_modules/bootstrap/scss/input-group";
 
 // skin mixins
@@ -52,19 +53,6 @@ a {
 [data-embed-type="image"] > :last-child:not(img) {
   border-bottom: none;
 }
-
-// [data-embed-type][data-embed-align="left"] {
-//   @include media-breakpoint-down(sm) {
-//     width: $skin-aligned-image-width;
-//     margin-right: $skin-aligned-body-image-spacer;
-//   }
-// }
-
-// [data-embed-type][data-embed-align="right"] {
-
-//   width: $skin-aligned-image-width;
-//   margin-left: $skin-aligned-body-image-spacer;
-// }
 
 .node {
   $self: &;
@@ -179,4 +167,8 @@ a {
     font-weight: $font-weight-bold;
     line-height: get-line-height(40px, 44px);
   }
+}
+
+.social-sharing {
+  margin-bottom: 24px;
 }
