@@ -13,11 +13,17 @@
   }
 
   &--inline-content {
-    $margin: ($marko-web-document-container-max-width - $skin-content-body-max-width) / 2 * -1;
-    margin-right: $margin;
+    margin-right: $marko-web-page-wrapper-padding * -1;
     margin-bottom: 30px;
-    margin-left: $margin;
+    margin-left: $marko-web-page-wrapper-padding * -1;
+
     clear: both;
+
+    @media (min-width: $skin-content-body-max-width) {
+      $margin: calc(((100vw - #{$skin-content-body-max-width}) / 2) * -1);
+      margin-right: $margin;
+      margin-left: $margin;
+    }
   }
 
   &--inline,
@@ -32,7 +38,9 @@
   &--max-width-300 {
     #{ $self } {
       &__wrapper {
-        max-width: 300px;
+        @media (min-width: 300px) {
+          max-width: 300px;
+        }
       }
     }
   }
@@ -40,7 +48,9 @@
   &--max-width-970 {
     #{ $self } {
       &__wrapper {
-        max-width: 970px;
+        @media (min-width: 970px) {
+          max-width: 970px;
+        }
       }
     }
   }
