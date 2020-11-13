@@ -5,6 +5,9 @@
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },
+  "<global-related-stories-block>": {
+    "template": "./related-stories.marko"
+  },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
   },

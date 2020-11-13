@@ -49,26 +49,7 @@ $ const blockName = "top-stories";
       </div>
 
       <if(cardNodes.length)>
-        <default-theme-card-deck-flow
-          modifiers=[blockName]
-          cols=4
-          nodes=cardNodes
-        >
-          <@slot|{ node, index }|>
-            <global-content-node
-              image-position="top"
-              card=true
-              flush=true
-              full-height=true
-              with-teaser=false
-              with-dates=false
-              modifiers=[blockName]
-              node=node
-            >
-              <@image ar="3:2" fluid=true />
-            </global-content-node>
-          </@slot>
-        </default-theme-card-deck-flow>
+        <global-content-card-deck-4-col-flow nodes=cardNodes />
       </if>
     </marko-web-block>
   </if>
