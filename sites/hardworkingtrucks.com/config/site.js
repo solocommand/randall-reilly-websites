@@ -31,6 +31,6 @@ module.exports = {
     id: '14c37f5dc982aa830',
   },
   gtm: {
-    containerId: '32817981',
+    containerId: 'GTM-KN35FTZ',
   },
 };

@@ -31,6 +31,6 @@ module.exports = {
     id: '9e5417f72997170d6',
   },
   gtm: {
-    containerId: '32817980',
+    containerId: 'GTM-WBB7QN7',
   },
 };

@@ -28,6 +28,6 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCCJiBY50M2ie-QBjdDU4p1A', target: '_blank' },
   ],
   gtm: {
-    containerId: '32817982',
+    containerId: 'GTM-NDC3FQX',
   },
 };
