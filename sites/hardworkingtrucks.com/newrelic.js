@@ -1,1 +1,1 @@
-module.exports = require('@randall-reilly/package-shared/newrelic');
+module.exports = require('@randall-reilly/package-global/newrelic');
