@@ -1,14 +1,11 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
-
 const nativeX = require('./native-x');
-const dragonForms = require('./dragon-forms');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
-  dragonForms,
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {
@@ -30,43 +27,10 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/hard-working-trucks-partner-solutions/', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/user/hardworkingtrucks', target: '_blank' },
   ],
-  // identityX: {
-  //   appId: 'NOT-SET',
-  //   enabled: true,
-  //   comments: { enabled: true },
-  // },
-  // radix: {
-  //   enabled: true,
-  //   appId: 'NOT-SET',
-  //   submissionFieldIds: [
-  //     { name: 'comments', id: 'NOT-SET' },
-  //   ],
-  // },
   gcse: {
     id: '14c37f5dc982aa830',
   },
   gtm: {
     containerId: '32817981',
   },
-  // wufoo: {
-  //   userName: 'NOT_SET',
-  // },
-  magazines: {
-    description: '',
-  },
-  contactUs: {
-    branding: {
-      bgColor: '#222222',
-      logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/hwt-logo.svg?h=60',
-    },
-    to: 'support@hardworkingtrucks.com',
-  },
-  // inquiry: {
-  //   enabled: true,
-  //   directSend: true,
-  //   sendTo: 'support@parameter1.com',
-  //   sendFrom: 'hardworkingtrucks.com <noreply@parameter1.com>',
-  //   logo: 'https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/hwt-logo.svg?h=60',
-  //   bgColor: '#222222',
-  // },
 };
