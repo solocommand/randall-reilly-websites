@@ -26,8 +26,9 @@ $ if (display === "center" && isLogo) {
 
 $ const modifiers = [...getAsArray(input, "modifiers")];
 $ if (["left", "right"].includes(display)) {
-  modifiers.push("aligned", `aligned-${display}`);
+  modifiers.push("aligned");
 }
+$ modifiers.push(`aligned-${display}`);
 
 $ const maxWidth = input.maxWidth || 700;
 $ const fluid = !["left", "right"].includes(display);

@@ -1,30 +1,20 @@
-$primary: #0271bb;
-$secondary: #f58220;
-$light: #e9ecef;
-$dark: #212529;
-$info: #6c757d;
-
-$leaders-primary-color: $primary;
-$leaders-primary-color-light: lighten($leaders-primary-color, 10%);
-$leaders-accent-color: $primary;
-
-$theme-site-navbar-secondary-link-color: $light;
-$theme-site-navbar-secondary-link-hover-color: $light;
-$theme-site-navbar-secondary-link-active-color: $light;
-
-$theme-site-navbar-tertiary-link-active-color: $light;
-$theme-site-navbar-tertiary-link-color: $light;
-$theme-site-navbar-tertiary-link-hover-color: $light;
-
-$theme-newsletter-block-bg-color: $primary;
-$theme-newsletter-block-button-bg-color: #000;
+$primary: #f58220;
 
 $theme-site-header-breakpoints: (
-  hide-primary: 750px,
-  hide-secondary: 0,
-  small-logo: 750px,
-  small-text-primary: 850px,
-  small-text-secondary: 0
+  hide-primary: 100000px, // effectively always hide the primary nav
+  hide-secondary: 700px,
+  small-logo: 775px,
+  small-text-primary: 0,
+  small-text-secondary: 830px
 );
 
-@import "../../node_modules/@randall-reilly/package-shared/scss/randall-reilly-skin";
+@import "../../node_modules/@randall-reilly/package-global/scss/core";
+
+.site-navbar {
+  &__items {
+    &--secondary {
+      // ensures the nav items are aligned to the offset logo
+      padding-top: 6px;
+    }
+  }
+}

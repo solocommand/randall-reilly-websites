@@ -9,6 +9,10 @@
     </if>
   </@hero>
   <@list|{ nodes }|>
-    <shared-content-list-flow ...input.list nodes=nodes />
+    <shared-content-list-flow ...input.list nodes=nodes>
+      <@node image-position="right" with-teaser=false>
+        <@image width=100 />
+      </@node>
+    </shared-content-list-flow>
   </@list>
 </default-theme-hero-flow>

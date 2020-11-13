@@ -1,25 +1,33 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
-$theme-font-family-sans-serif: Roboto, sans-serif !default;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700");
+$theme-font-family-sans-serif: "Open Sans", sans-serif !default;
 $theme-font-family-serif: "Fira Sans", sans-serif !default;
-$theme-font-family-page-title: $theme-font-family-serif !default;
+$theme-font-family-page-title: $theme-font-family-sans-serif !default;
 
-$black:           #202022 !default;
+$black:           #434146 !default;
 $body-bg:         #f6f6f6 !default;
 $font-weight-bold:      700 !default;
 
 $theme-page-bg-color: #fff;
 
+$theme-page-title-font-weight: $font-weight-bold !default;
+
 // header
 $theme-card-header-background-color: $black !default;
 $theme-card-header-letter-spacing: 1px !default;
 $theme-card-header-font-weight: $font-weight-bold;
+$theme-card-border: none;
 
 // secondary nav
-$theme-site-navbar-secondary-bg-color: #2f3031 !default;
+$theme-site-navbar-secondary-bg-color: #fff !default;
+$theme-site-navbar-secondary-font-size: 18px !default;
+$theme-site-navbar-secondary-font-weight: $font-weight-bold !default;
+$theme-site-navbar-secondary-type: light !default;
+$theme-site-navbar-secondary-link-color: #56545a !default;
 
 // primary nav
-$theme-site-navbar-primary-font-family: "Fira Sans", sans-serif !default;
+$theme-site-navbar-primary-font-family: $theme-font-family-sans-serif !default;
 $theme-site-navbar-primary-font-size: 18px !default;
 $theme-site-navbar-primary-bg-color: #202022 !default;
 $theme-site-navbar-primary-font-weight: 700 !default;
@@ -36,25 +44,33 @@ $theme-card-border: 1px solid rgba(239, 239, 239, .9) !default;
 $marko-web-node-list-border-color: $theme-card-border !default;
 
 // Item / Node
-$theme-item-title-font-size: 19px !default;
-$theme-item-title-font-size-sm: 19px !default;
+$theme-item-header-font-size: 15px !default;
+$theme-item-header-color: $black !default;
+$theme-item-header-font-family: "Open Sans Condensed", sans-serif !default;
+$theme-item-header-font-weight: $font-weight-bold !default;
+
+$theme-item-title-small-font-size: 18px !default;
+
+$theme-item-title-font-size: 24px !default;
+$theme-item-title-font-size-sm: 24px !default;
 $theme-item-title-font-weight: $font-weight-bold !default;
 $theme-item-title-line-height: 1.33 !default;
 $theme-item-title-line-height-sm: 1.33 !default;
 
-$theme-item-title-large-font-size: 24px;
-$theme-item-title-large-font-size-sm: 24px;
-$theme-item-title-large-line-height: 1.33 !default;
-$theme-item-title-large-line-height-sm: 1.33 !default;
+$theme-item-title-large-font-size: 38px !default;
+$theme-item-title-large-font-size-sm: 24px !default;
+$theme-item-title-large-line-height: 1.05 !default;
+$theme-item-title-large-line-height-sm: 1.05 !default;
+$theme-item-title-large-max-lines: 3 !default;
 
-$theme-item-description-font-size: 16px !default;
-$theme-item-description-font-size-sm: 16px !default;
+$theme-item-description-font-size: 18px !default;
+$theme-item-description-font-size-sm: 18px !default;
 $theme-item-description-line-height: 1.4 !default;
 $theme-item-description-line-height-sm: 1.4 !default;
 $theme-item-description-max-lines: 3 !default;
 
-$theme-item-header-font-size: 14px !default;
-$theme-item-footer-font-size: 14px !default;
+$theme-item-header-font-size: 15px !default;
+$theme-item-footer-font-size: 15px !default;
 
 $enable-rounded: false !default;
 $enable-shadows: false !default;
@@ -65,20 +81,38 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.hero-flow {
+  $self: &;
+  &__header {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    color: $black;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: transparent;
+    border-bottom: none;
+  }
+}
+
 .site-header {
+  position: static;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, .25);
 }
 
 .site-navbar {
   $self: &;
+  &__brand {
+    margin: 0 32px;
+  }
   &__items {
     &--primary {
       #{ $self } {
         &__item {
-          border-right: 1px solid $theme-site-navbar-secondary-bg-color;
           letter-spacing: .5px;
+          border-right: 1px solid $theme-site-navbar-secondary-bg-color;
           transition: background-color ease 300ms;
-
           &:first-child {
             border-left: 1px solid $theme-site-navbar-secondary-bg-color;
           }
@@ -92,21 +126,16 @@ body {
 }
 
 .document-container {
+  padding-top: 0;
   background-color: #fff;
   box-shadow: $theme-box-shadow-sm;
-}
-
-.node {
-  &--sponsored {
-    background-color: transparent;
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      padding-top: 0;
+    }
   }
 }
 
-.node-list {
-  &--sponsored {
-    background-color: #f0f0f0;
-  }
-}
 
 // @todo confirm if this is still in use.
 .page-contents {

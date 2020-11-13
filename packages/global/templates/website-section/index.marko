@@ -1,0 +1,123 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const { id, alias, name, pageNode } = input;
+$ const { GAM } = out.global;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+  </@head>
+
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-page-wrapper>
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section|{ blockName }|>
+          <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
+
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionId: id, limit: 3, queryFragment }
+          >
+            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
+              <@node modifiers=["section-feed"] />
+            </global-content-list-flow>
+          </marko-web-query>
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section>
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionId: id, limit: 5, skip: 3, queryFragment }
+          >
+            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
+              <@node modifiers=["section-feed"] />
+            </global-content-list-flow>
+          </marko-web-query>
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section>
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionId: id, limit: 5, skip: 8, queryFragment }
+          >
+            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
+              <@node modifiers=["section-feed"] />
+            </global-content-list-flow>
+          </marko-web-query>
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section>
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionId: id, limit: 5, skip: 13, queryFragment }
+          >
+            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
+              <@node modifiers=["section-feed"] />
+            </global-content-list-flow>
+          </marko-web-query>
+        </@section>
+
+        <!-- Top Stories -->
+        <@section>
+          <global-top-stories-block />
+        </@section>
+
+        <@section modifiers=["ad"]>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <!-- OVD Radio + Resource Lib -->
+
+        <!-- Most Popular -->
+        <@section>
+          <global-most-popular-block />
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-website-section-page-layout>

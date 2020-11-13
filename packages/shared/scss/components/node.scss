@@ -1,204 +1,29 @@
 .node {
-  $title-spacer: 6px;
-  $title-spacer-sm: 4px;
-  $image-border: $theme-card-border;
   $self: &;
-
-  &__title {
-    padding-bottom: $title-spacer;
-    &--small {
-      font-size: 16px;
-    }
-  }
-
-  &__title + &__text--event-details {
-    margin-top: -$title-spacer;
-    margin-bottom: .5rem;
-  }
-
-  &__title--small + &__text--event-details {
-    margin-top: -$title-spacer-sm;
-  }
-
-  &__text {
-    &--event-details {
-      font-size: 14px;
-      color: $theme-item-footer-color;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    &--body {
-      flex-grow: 1;
-    }
-
-    &--teaser-large {
-      font-size: 16px;
-    }
-
-    &--teaser a {
-      max-height: 70px;
-    }
-
-    &--spec-guide-link-button + &--spec-guide-link-button {
-      margin-top: .75rem;
-    }
-  }
-
-  &__content-link-url {
-    font-weight: $font-weight-bold;
+  &__header {
+    font-size: 15px;
     text-transform: uppercase;
   }
-
-  &__header-left {
-    text-transform: uppercase;
-  }
-
-  &__footer-left,
-  &__footer-right {
-    line-height: 1.5;
-    &:empty {
-      display: block;
-    }
-  }
-
-  &__footer-left {
-    max-width: 70%;
-  }
-
-  &__footer-left:not(:empty) + &__footer-right {
-    margin-left: .25rem;
-  }
-
-  &__image-inner-wrapper--fluid-16by9 {
-    #{ $self } {
-      &__image {
-        border: $image-border;
-      }
-    }
-  }
-
-  &__image {
-    border: $image-border;
-  }
-
-  &__upcoming-archived {
-    font-weight: $font-weight-bold;
-    color: #444;
-    text-transform: uppercase;
-  }
-
-  &__content-start-date {
-    &::before {
-      color: $black;
-      content: "Date: ";
-    }
-  }
-
-  // &--related-content {
-  //   background-color: $theme-related-content-bg-color;
-  // }
-
   &--image-left {
-    @include media-breakpoint-down(xs) {
-      #{ $self } {
-        &__image-wrapper + #{ $self }__body {
-          margin-top: $marko-web-node-spacer * 2;
-          margin-left: 0;
-        }
-        &__body {
-          &--overlay {
-            margin-top: 0;
-          }
-        }
-        &__contents {
-          flex-direction: column;
-          &--body {
-            flex-direction: column;
-          }
-        }
-      }
-    }
-  }
-
-  &--hero {
-    margin-bottom: 1.75rem;
-  }
-
-  &--content-card {
-    border: $image-border;
-    #{ $self } {
-      &__image-wrapper {
-        margin-top: -13px;
-        margin-right: -13px;
-        margin-left: -13px;
-      }
-
-      &__header {
-        margin-left: -12px;
-      }
-    }
-  }
-
-  &--section-tag {
     #{ $self } {
       &__image-wrapper + #{ $self }__body {
-        z-index: 1;
-        margin-top: -13px;
-      }
-
-      &__header + #{ $self }__contents {
-        margin-top: 8px;
-      }
-
-      &__header {
-        width: 70%;
-        padding-top: 2px;
-        padding-right: .75rem;
-        padding-bottom: 2px;
-        padding-left: .75rem;
-        // font-family: "Roboto Condensed", sans-serif;
-        font-size: 14px;
-        font-weight: $font-weight-bold;
-        line-height: 1.5;
-        color: #dfded4;
-        text-transform: uppercase;
-        letter-spacing: .2px;
-        background-color: $primary;
-
-        // stylelint-disable selector-max-compound-selectors
-        a {
-          color: #fff;
-          &:hover {
-            color: #fff;
-            text-decoration: none;
-          }
-        }
+        margin-left: 1.25rem;
       }
     }
   }
-
-  // @each $section, $color in $website-section-colors {
-  //   &--section-#{$section} {
-  //     #{ $self } {
-  //       &__header {
-  //         background-color: $color;
-  //       }
-  //     }
-  //   }
-
-  //   &__header {
-  //     &[data-section-alias^="#{$section}"] {
-  //       background-color: $color;
-  //     }
-  //   }
-  // }
-}
-
-
-.node {
-  $self: &;
-
+  &__title {
+    &--small {
+      font-size: $theme-item-title-small-font-size;
+    }
+  }
+  &--sponsored {
+    background-color: transparent;
+  }
+  &__text {
+    &--date {
+      font-size: 14px;
+    }
+  }
   &--zoomed {
     $title-font-size: 24px;
     $title-line-height: 1.3;

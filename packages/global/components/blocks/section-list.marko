@@ -1,0 +1,67 @@
+import gql from "graphql-tag";
+import { getAsObject } from "@base-cms/object-path";
+import queryFragment from "../../graphql/fragments/section-list-block";
+
+$ const { alias } = input;
+
+$ const queryParams = {
+  limit: 4,
+  queryFragment,
+  sectionFragment: gql`
+    fragment GlobalSectionListBlockSectionFragment on WebsiteSection {
+      id
+      name
+      fullName
+      canonicalPath
+    }
+  `,
+  ...getAsObject(input, "queryParams"),
+  sectionAlias: alias,
+};
+
+$ const blockName = "section-list";
+
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+  <marko-web-node-list
+    inner-justified=true
+    flush-x=true
+    flush-y=true
+    modifiers=[blockName]
+  >
+    <@header>
+      <marko-web-website-section-name obj=section link=true />
+    </@header>
+    <@nodes nodes=nodes>
+      <@slot|{ node, index }|>
+        <if(index === 0)>
+          <global-content-node
+            image-position="top"
+            card=true
+            flush=true
+            modifiers=[`${blockName}-card`]
+            with-teaser=false
+            with-dates=false
+            node=node
+          >
+            <@image fluid=true width=330 ar="3:2" />
+          </global-content-node>
+        </if>
+        <else>
+          <global-content-node
+            display-image=false
+            flush=true
+            modifiers=[`${blockName}-item`]
+            with-teaser=false
+            with-dates=false
+            node=node
+          />
+        </else>
+      </@slot>
+    </@nodes>
+    <@footer>
+      <marko-web-website-section-name obj=section link=true>
+        View More &raquo;
+      </marko-web-website-section-name>
+    </@footer>
+  </marko-web-node-list>
+</marko-web-query>

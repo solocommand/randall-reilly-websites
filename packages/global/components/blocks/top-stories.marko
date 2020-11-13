@@ -1,0 +1,56 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/top-stories-block";
+
+$ const queryParams = {
+  limit: 5,
+  requiresImage: true,
+  queryFragment,
+};
+$ const blockName = "top-stories";
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <if(nodes.length)>
+    $ const heroNode = nodes.slice(0, 1)[0];
+    $ const heroImageNode = {
+      id: heroNode.id,
+      type: heroNode.type,
+      siteContext: heroNode.siteContext,
+      primaryImage: heroNode.primaryImage,
+    };
+    $ const cardNodes = nodes.slice(1);
+
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="header">
+        Top Stories
+      </marko-web-element>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-7">
+          <global-content-node
+            image-position="top"
+            card=true
+            flush=true
+            modifiers=[`${blockName}-hero-image`]
+            node=heroImageNode
+          >
+            <@image fluid=true width=600 ar="3:2" />
+          </global-content-node>
+        </div>
+        <div class="col-md-6 col-lg-5">
+          <global-content-node
+            full-height=true
+            card=true
+            display-image=false
+            flush=true
+            modifiers=[`${blockName}-hero`]
+            node=heroNode
+          />
+        </div>
+      </div>
+
+      <if(cardNodes.length)>
+        <global-content-card-deck-4-col-flow nodes=cardNodes />
+      </if>
+    </marko-web-block>
+  </if>
+</marko-web-query>

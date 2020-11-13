@@ -1,0 +1,120 @@
+import getNavItems from "@base-cms/marko-web-theme-default/components/site-navbar/utils/get-nav-items";
+import { asObject } from "@base-cms/utils";
+
+$ const { config, site } = out.global;
+
+$ const blockName = input.blockName || "site-footer";
+
+<marko-web-block
+  name=blockName
+  tag=(input.tag || "footer")
+  class=input.class
+  modifiers=input.modifiers
+  attrs=input.attrs
+>
+  <default-theme-site-footer-container block-name=blockName modifiers=["secondary"]>
+    <marko-web-element block-name=blockName name="inner-container">
+
+      <default-theme-site-navbar-brand block-name=blockName title=`${config.website("name")} Homepage`>
+        <default-theme-site-navbar-logo
+          block-name=blockName
+          alt=config.website("name")
+          src=site.get("logos.footer.src")
+          srcset=site.getAsArray("logos.footer.srcset").join(",")
+          lazyload=true
+        />
+      </default-theme-site-navbar-brand>
+
+      <div class="row">
+        <marko-web-element block-name=blockName name="section">
+          $ const newsletter = site.getAsObject("navigation.footer.newsletter");
+          $ const newsletterBlock = "site-footer-newsletter";
+          <if(newsletter.formAction)>
+            <marko-web-block name=newsletterBlock>
+              <marko-web-element block-name=newsletterBlock name="header">
+                Newsletter
+              </marko-web-element>
+              <if(newsletter.cta)>
+                <marko-web-element block-name=newsletterBlock name="description">
+                  $!{newsletter.cta}
+                </marko-web-element>
+              </if>
+              <form action=newsletter.formAction method="GET">
+                <div class="form-group mt-2">
+                  <label for="footer-newsletter-signup-email" class="sr-only">Email address</label>
+                  <input id="footer-newsletter-signup-email" class="form-control" type="email" placeholder="Email address" required />
+                </div>
+                <button class="btn btn-dark site-footer-newsletter__btn" type="submit">Sign up</button>
+              </form>
+            </marko-web-block>
+          </if>
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="section">
+          <global-social-follow dark=false />
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="section">
+
+          <div class="row">
+            $ const navBlockName = "site-footer-nav";
+            <marko-web-block name=navBlockName class="col-6">
+              $ const topics = site.getAsArray("navigation.footer.topics");
+              <if(topics.length)>
+                <default-theme-site-menu-section
+                  tag="nav"
+                  block-name=navBlockName
+                  label="Topics"
+                  items=topics
+                  reg-enabled=false
+                  has-user=false
+                />
+              </if>
+            </marko-web-block>
+            <marko-web-block name=navBlockName class="col-6">
+              $ const more = site.getAsArray("navigation.footer.more");
+              <if(more.length)>
+                <default-theme-site-menu-section
+                  tag="nav"
+                  block-name=navBlockName
+                  label="More"
+                  items=more
+                  reg-enabled=false
+                  has-user=false
+                />
+              </if>
+            </marko-web-block>
+          </div>
+
+        </marko-web-element>
+      </div>
+
+    </marko-web-element>
+  </default-theme-site-footer-container>
+  <default-theme-site-footer-container block-name=blockName modifiers=["primary"]>
+    <marko-web-element block-name=blockName name="inner-container">
+      <marko-web-img
+        alt="Randall-Reilly Logo"
+        src="https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/rr-logo.svg?w=200"
+        srcset="https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/rr-logo.svg?w=400 2x"
+        link={ href: "https://www.randallreilly.com", class: `${blockName}__corporate-link` }
+        class=`${blockName}__corporate-logo`
+      />
+
+      $ const footerItems = site.getAsArray("navigation.footer.items");
+      <default-theme-breadcrumbs modifiers=["site-footer"]>
+        <for|item| of=getNavItems({ items: footerItems, hasUser: input.hasUser, regEnabled: input.regEnabled })>
+          <@item>
+            $ const obj = asObject(item);
+            <marko-web-link href=obj.href title=obj.title target=obj.target>
+              $!{obj.label}
+            </marko-web-link>
+          </@item>
+        </for>
+      </default-theme-breadcrumbs>
+
+      <default-theme-site-footer-copyright
+        company=site.get("company")
+        notice=site.get("copyrightNotice")
+      />
+    </marko-web-element>
+  </default-theme-site-footer-container>
+</marko-web-block>

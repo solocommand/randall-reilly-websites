@@ -50,28 +50,6 @@
   "<shared-website-section-page-header-layout>": {
     "template": "./header.marko"
   },
-  "<shared-website-section-page-feed-layout>": {
-    "template": "./feed.marko",
-    "<list-flow>": {
-      "<node>": {}
-    },
-    "@id": {
-      "type": "string",
-      "required": true
-    },
-    "@alias": {
-      "type": "string",
-      "required": true
-    },
-    "@name": {
-      "type": "string",
-      "required": true
-    },
-    "@page-node": {
-      "type": "object",
-      "required": true
-    }
-  },
   "<shared-website-section-page-hero-no-ads-layout>": {
     "template": "./hero-no-ads.marko",
     "@id": {

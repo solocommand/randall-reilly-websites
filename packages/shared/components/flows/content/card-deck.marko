@@ -5,7 +5,7 @@ $ const { nativeX: nxConfig } = out.global;
 
 $ const aliases = getAsArray(input, "adunit.aliases")
 $ const nativeX = getAsObject(input, "nativeX");
-$ const displayAds = defaultValue(input.displayAds, true);
+$ const displayAds = defaultValue(input.displayAds, false);
 
 <default-theme-card-deck-flow
   tag=input.tag

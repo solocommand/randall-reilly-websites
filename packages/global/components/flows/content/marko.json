@@ -1,0 +1,25 @@
+{
+  "<global-content-list-flow>": {
+    "template": "./list.marko",
+    "<header>": {},
+    "<body>": {},
+    "<node>": {
+      "<attribution>": {},
+      "<image>": {}
+    },
+    "<native-x>": {
+      "@index": "number",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@nodes": "array",
+    "@inner-justified": "boolean",
+    "@flush-x": "boolean",
+    "@flush-y": "boolean",
+    "@class": "string",
+    "@modifiers": "array"
+  },
+  "<global-content-card-deck-4-col-flow>": {
+    "template": "./card-deck-4-col.marko"
+  }
+}
