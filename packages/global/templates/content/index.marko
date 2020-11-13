@@ -73,12 +73,42 @@ $ const shouldInjectAds = ["article"].includes(type);
 
             <if(shouldInjectAds)>
               <marko-web-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+                <!-- mobile only -->
+                <@inject
+                  ...GAM.getAdUnit({ name: "rotation", aliases })
+                  at=350
+                  modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline-content", "remove-content-gutter"]
+                  collapse-before-ad-fetch=true
+                  with-wrapper=true
+                  size-mapping=[
+                    { viewport: [980, 0], size: [] },
+                    { viewport: [300, 0], size: [[300, 50], [320, 50], [320, 100]] },
+                  ]
+                />
+                <!-- desktop/tablet only -->
                 <@inject
                   ...GAM.getAdUnit({ name: "rotation", aliases })
                   at=900
                   modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline-content", "remove-content-gutter"]
                   collapse-before-ad-fetch=true
                   with-wrapper=true
+                  size-mapping=[
+                    { viewport: [980, 0], size: [[970, 250], [970, 90], [970, 66], [728, 90]] },
+                    { viewport: [750, 0], size: [728, 90] },
+                    { viewport: [0, 0], size: [] },
+                  ]
+                />
+                <!-- mobile only -->
+                <@inject
+                  ...GAM.getAdUnit({ name: "rotation", aliases })
+                  at=1200
+                  modifiers=["body-bg", "max-width-970", "margin-auto-x", "inline-content", "remove-content-gutter"]
+                  collapse-before-ad-fetch=true
+                  with-wrapper=true
+                  size-mapping=[
+                    { viewport: [980, 0], size: [] },
+                    { viewport: [300, 0], size: [[300, 50], [320, 50], [320, 100]] },
+                  ]
                 />
               </marko-web-gam-inject-ads>
             </if>
