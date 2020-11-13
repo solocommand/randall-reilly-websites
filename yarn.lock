@@ -816,10 +816,10 @@
     moment "^2.24.0"
     moment-timezone "^0.5.26"
 
-"@base-cms/marko-web-gam@^1.37.0":
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gam/-/marko-web-gam-1.37.0.tgz#7e0204b29f32dd58e25ff177c259abe505f2c799"
-  integrity sha512-RTI/RQYCN1t1JCe9J0et0b1x2B2YIQSZPmu4h/S5kodvBxD9oKcC4gWxUf0xDUq+qodQoelgZcO5lzxN/zIkaQ==
+"@base-cms/marko-web-gam@^1.46.0":
+  version "1.46.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gam/-/marko-web-gam-1.46.0.tgz#39a348ec0304c13cdd83bac8baa247c7e19cf5c4"
+  integrity sha512-k3Amnrid+qJeBXQkQsi6hkYKsa4eIxHeQNhLHBgFbvg4TXFJ+hu6MlxJ/Uq5ZXMLhlt0N9Daq+1tT2O4qStv6A==
   dependencies:
     "@base-cms/object-path" "^1.37.0"
     "@base-cms/utils" "^1.37.0"
@@ -866,10 +866,10 @@
     moment "^2.24.0"
     node-fetch "^2.6.1"
 
-"@base-cms/marko-web-inquiry@^1.38.0":
-  version "1.38.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-inquiry/-/marko-web-inquiry-1.38.0.tgz#97620094991230a5449d5c1664be9410ff9ba391"
-  integrity sha512-K+dlPyVNOgWlZAjP/7Kcx8JMewOCspgURuM/b+x/FXTWNgvdZv2C2X6Wn6q+Sq8hJ/glqs7C6O2kA4H8yUKC+g==
+"@base-cms/marko-web-inquiry@^1.45.1":
+  version "1.45.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-inquiry/-/marko-web-inquiry-1.45.1.tgz#e5eea9c66e0a608c2efc2aa1c8c404f013b8c289"
+  integrity sha512-PEssgoHlqWgpPTjl7fejeKMXxCxMk4xff8LoWeRza/Qx9oHlCnUNu/GdKstgDY8LZTCXHfTMMpR7kQHXOG5WIg==
   dependencies:
     "@base-cms/env" "^1.37.0"
     "@base-cms/marko-core" "^1.38.0"
