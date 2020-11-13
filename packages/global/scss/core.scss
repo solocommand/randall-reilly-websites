@@ -2,13 +2,20 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@400;700&display=swap");
 
-// skin vars
-@import "./variables";
-
 $skin-aligned-image-width: 300px;
 $skin-aligned-body-image-spacer: .75rem;
+
+$theme-embedded-media-align-left-width: $skin-aligned-image-width;
+$theme-embedded-media-align-left-margin: $skin-aligned-body-image-spacer;
+
+$theme-embedded-media-align-right-width: $skin-aligned-image-width;
+$theme-embedded-media-align-right-margin: $skin-aligned-body-image-spacer;
+
 $skin-content-body-max-width: 700px;
 $skin-content-primary-image-max-width: 880px;
+
+// skin vars
+@import "./variables";
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
 @import "../../node_modules/bootstrap/scss/input-group";
@@ -45,15 +52,18 @@ a {
   border-bottom: none;
 }
 
-[data-embed-type][data-embed-align="left"] {
-  width: $skin-aligned-image-width;
-  margin-right: $skin-aligned-body-image-spacer;
-}
+// [data-embed-type][data-embed-align="left"] {
+//   @include media-breakpoint-down(sm) {
+//     width: $skin-aligned-image-width;
+//     margin-right: $skin-aligned-body-image-spacer;
+//   }
+// }
 
-[data-embed-type][data-embed-align="right"] {
-  width: $skin-aligned-image-width;
-  margin-left: $skin-aligned-body-image-spacer;
-}
+// [data-embed-type][data-embed-align="right"] {
+
+//   width: $skin-aligned-image-width;
+//   margin-left: $skin-aligned-body-image-spacer;
+// }
 
 .node {
   $self: &;
