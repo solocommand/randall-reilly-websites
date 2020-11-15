@@ -124,6 +124,12 @@ $ const shouldInjectAds = ["article"].includes(type);
                 print-path=`/print/content/${content.id}`
               />
             </if>
+
+            <global-read-next-block
+              content-id=id
+              section-id=primarySection.id
+              published=content.published
+            />
           </default-theme-page-contents>
         </@section>
 
