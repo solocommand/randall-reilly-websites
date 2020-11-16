@@ -2,8 +2,14 @@
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
+  "<global-read-next-block>": {
+    "template": "./read-next.marko"
+  },
   "<global-newsletter-signup-banner-block>": {
     "template": "./newsletter-signup-banner.marko"
+  },
+  "<global-opinion-block>": {
+    "template": "./opinion.marko"
   },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"

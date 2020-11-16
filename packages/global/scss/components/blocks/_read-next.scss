@@ -1,11 +1,10 @@
-.related-stories {
+.read-next {
   padding-top: $block-spacer / 2;
   padding-bottom: $block-spacer / 2;
 
   &__header {
-    margin-bottom: $block-spacer;
-    font-size: 24px;
+    margin-bottom: 5px;
+    font-size: 20px;
     font-weight: $font-weight-bold;
-    text-align: center;
   }
 }

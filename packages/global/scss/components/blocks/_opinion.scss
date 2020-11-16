@@ -1,0 +1,30 @@
+.opinion {
+  padding-top: $block-spacer / 2;
+  padding-bottom: $block-spacer / 2;
+
+  margin-right: $marko-web-page-wrapper-padding * -1;
+  margin-left: $marko-web-page-wrapper-padding * -1;
+  background-color: $body-bg;
+
+  &__header {
+    padding-right: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+    margin-bottom: $block-spacer;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.node {
+  &--opinion {
+    background-color: $body-bg;
+  }
+}
+
+.card-deck-flow {
+  &--opinion {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: $body-bg;
+  }
+}

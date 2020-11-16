@@ -1,7 +1,9 @@
 .most-popular {
+  padding-top: $block-spacer / 2;
+  padding-bottom: $block-spacer / 2;
+
   &__header {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-bottom: $block-spacer;
     font-size: 32px;
     font-weight: $font-weight-bold;
     text-align: center;

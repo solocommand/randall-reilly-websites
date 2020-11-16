@@ -14,7 +14,7 @@
   },
   "peerDependencies": {
     "@base-cms/image": "^1.37.0",
-    "@base-cms/marko-core": "^1.38.0",
-    "@base-cms/marko-web": "^1.37.0"
+    "@base-cms/marko-core": "^1.46.1",
+    "@base-cms/marko-web": "^1.46.1"
   }
 }

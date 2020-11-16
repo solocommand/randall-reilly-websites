@@ -1,0 +1,34 @@
+import queryFragment from "../../graphql/fragments/opinion-block";
+
+<!-- @todo change this to be content type specific, not section specific -->
+$ const queryParams = {
+  sectionAlias: "blogs",
+  limit: 3,
+  queryFragment,
+};
+
+$ const blockName = "opinion";
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="header">
+      Opinion
+    </marko-web-element>
+    <default-theme-card-deck-flow
+      cols=3
+      nodes=nodes
+      modifiers=[blockName]
+    >
+      <@slot|{ node }|>
+        <global-content-node
+          card=true
+          flush=true
+          full-height=true
+          node=node
+          modifiers=[blockName]
+          with-attribution=true
+        />
+      </@slot>
+    </default-theme-card-deck-flow>
+  </marko-web-block>
+</marko-web-query>
