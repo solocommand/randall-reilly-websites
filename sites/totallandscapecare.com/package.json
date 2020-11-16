@@ -15,11 +15,11 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@base-cms/marko-core": "^1.38.0",
-    "@base-cms/marko-web": "^1.37.0",
+    "@base-cms/marko-core": "^1.46.1",
+    "@base-cms/marko-web": "^1.46.1",
     "@base-cms/object-path": "^1.37.0",
     "@base-cms/utils": "^1.37.0",
-    "@base-cms/web-cli": "^1.37.0",
+    "@base-cms/web-cli": "^1.46.1",
     "@randall-reilly/package-global": "^0.3.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
