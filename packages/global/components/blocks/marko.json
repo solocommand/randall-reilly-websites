@@ -8,6 +8,9 @@
   "<global-newsletter-signup-banner-block>": {
     "template": "./newsletter-signup-banner.marko"
   },
+  "<global-opinion-block>": {
+    "template": "./opinion.marko"
+  },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },

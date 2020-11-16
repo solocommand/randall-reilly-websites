@@ -33,6 +33,7 @@ $skin-content-primary-image-max-width: 880px;
 
 @import "./components/blocks/most-popular";
 @import "./components/blocks/newsletter-signup-banner";
+@import "./components/blocks/opinion";
 @import "./components/blocks/primary-image";
 @import "./components/blocks/read-next";
 @import "./components/blocks/related-stories";
@@ -70,6 +71,9 @@ a {
     &--date {
       font-size: 14px;
     }
+    &--attribution {
+      margin-top: auto;
+    }
   }
 
   &__image {
@@ -80,6 +84,30 @@ a {
     #{ $self } {
       &__image {
         border: $image-border;
+      }
+    }
+  }
+
+  &--author {
+    padding-top: 16px;
+    background-color: transparent;
+
+    #{ $self } {
+      &__title {
+        margin-bottom: 0;
+        font-size: 17px;
+      }
+
+      &__text {
+        font-size: 15px;
+      }
+
+      &__image {
+        border-radius: 50px;
+      }
+
+      &__image-wrapper + #{ $self}__body {
+        margin-left: 10px;
       }
     }
   }
