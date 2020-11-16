@@ -1,7 +1,9 @@
 .related-stories {
+  padding-top: $block-spacer / 2;
+  padding-bottom: $block-spacer / 2;
+
   &__header {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: $block-spacer;
     font-size: 24px;
     font-weight: $font-weight-bold;
     text-align: center;
