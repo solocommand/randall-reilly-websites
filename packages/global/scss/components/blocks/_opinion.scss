@@ -1,9 +1,10 @@
 .opinion {
   padding-top: $block-spacer / 2;
+  padding-right: $marko-web-page-wrapper-padding * 100;
   padding-bottom: $block-spacer / 2;
-
-  margin-right: $marko-web-page-wrapper-padding * -1;
-  margin-left: $marko-web-page-wrapper-padding * -1;
+  padding-left: $marko-web-page-wrapper-padding * 100;
+  margin-right: $marko-web-page-wrapper-padding * -100;
+  margin-left: $marko-web-page-wrapper-padding * -100;
   background-color: $gray-100;
 
   &__header {
