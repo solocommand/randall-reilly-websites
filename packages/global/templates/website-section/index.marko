@@ -11,6 +11,14 @@ $ const { GAM } = out.global;
     </marko-web-gtm-website-section-context>
   </@head>
 
+  <@above-container>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wallpaper", aliases }) />
+      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "interstitial", aliases }) />
+    </marko-web-resolve-page>
+  </@above-container>
+
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
