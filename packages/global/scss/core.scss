@@ -58,6 +58,10 @@ a {
   border-bottom: none;
 }
 
+.site-header {
+  position: static;
+}
+
 .node {
   $self: &;
   $image-border: 1px solid rgba(239, 239, 239, .9);
