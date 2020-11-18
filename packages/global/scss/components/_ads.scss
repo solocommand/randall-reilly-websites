@@ -7,9 +7,14 @@
   }
 
   &--inline {
-    margin-right: $marko-web-page-wrapper-padding * -100;
+    margin-right: $marko-web-page-wrapper-padding * -1;
     margin-bottom: 0;
-    margin-left: $marko-web-page-wrapper-padding * -100;
+    margin-left: $marko-web-page-wrapper-padding * -1;
+    @media (min-width: $marko-web-document-container-max-width) {
+      $margin: calc((100vw - ((#{$marko-web-document-container-max-width} / 2) + #{$marko-web-page-wrapper-padding})) * -1);
+      margin-right: $margin;
+      margin-left: $margin;
+    }
   }
 
   &--inline-content {
