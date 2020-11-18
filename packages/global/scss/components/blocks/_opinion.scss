@@ -1,11 +1,18 @@
 .opinion {
   padding-top: $block-spacer / 2;
-  padding-right: $marko-web-page-wrapper-padding * 100;
   padding-bottom: $block-spacer / 2;
-  padding-left: $marko-web-page-wrapper-padding * 100;
-  margin-right: $marko-web-page-wrapper-padding * -100;
-  margin-left: $marko-web-page-wrapper-padding * -100;
+  margin-right: $marko-web-page-wrapper-padding * -1;
+  margin-left: $marko-web-page-wrapper-padding * -1;
   background-color: $gray-100;
+
+  @media (min-width: $marko-web-document-container-max-width) {
+    $padding: calc(100vw - (#{$marko-web-document-container-max-width} / 2) + #{$marko-web-page-wrapper-padding});
+    $margin: calc(#{$padding} * -1);
+    padding-right: $padding;
+    padding-left: $padding;
+    margin-right: $margin;
+    margin-left: $margin;
+  }
 
   &__header {
     padding-right: $grid-gutter-width / 2;
