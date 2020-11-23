@@ -36,8 +36,10 @@
   }
 }
 
-@mixin skin-typography-header-1() {
-  @include skin-typography($name: "header-1");
+@mixin section-header-underline() {
+  margin-bottom: 30px;
+
+  @include skin-typography($style: "section-header");
 }
 
 @mixin skin-node-fonts(
