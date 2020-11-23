@@ -18,11 +18,22 @@
       }
     }
   }
+
+  &--top-stories-card {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+      }
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+      }
+    }
+  }
 }
 
 .top-stories {
-  padding-top: $block-spacer / 2;
-  padding-bottom: $block-spacer / 2;
+  padding-top: $block-spacer;
+  padding-bottom: $block-spacer;
   &__header {
     margin-bottom: $block-spacer;
     font-size: 32px;

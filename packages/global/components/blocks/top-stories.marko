@@ -52,7 +52,9 @@ $ const withHeader = defaultValue(input.withHeader, true);
       </div>
 
       <if(cardNodes.length)>
-        <global-content-card-deck-4-col-flow nodes=cardNodes />
+        <global-content-card-deck-4-col-flow nodes=cardNodes>
+          <@node modifiers=[`${blockName}-card`] />
+        </global-content-card-deck-4-col-flow>
       </if>
     </marko-web-block>
   </if>
