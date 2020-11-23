@@ -80,12 +80,12 @@ body {
 
     #{ $self } {
       &__title {
-        margin-bottom: 0;
-        font-size: 17px;
+        @include skin-typography($style: "author-name-list", $link-style: "primary");
+        margin-bottom: 5px;
       }
 
       &__text {
-        font-size: 15px;
+        @include skin-typography($style: "author-title-list");
       }
 
       &__image {
