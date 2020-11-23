@@ -348,7 +348,7 @@ $skin-node-text-line-height-md: get-line-height($skin-node-text-font-size-md, $s
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
 
-$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .025), 0 3px 1px -2px rgba(0, 0, 0, .06), 0 1px 5px 0 rgba(0, 0, 0, .08);
+$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .025), 0 3px 1px -2px rgba(0, 0, 0, .06), 0 1px 5px 0 rgba(0, 0, 0, .08) !default;
 
 // Navbar
 $theme-site-navbar-brand-margin-x: 36px !default;
@@ -359,11 +359,11 @@ $theme-site-navbar-logo-height-sm: 35px !default;
 $theme-site-navbar-primary-height-sm: 0;
 
 $theme-site-navbar-secondary-bg-color: $white;
-$theme-site-navbar-secondary-font-size: 18px;
+$theme-site-navbar-secondary-font-size: 18px !default;
 $theme-site-navbar-secondary-font-size-sm: $theme-site-navbar-secondary-font-size - 2;
-$theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 22px);
-$theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 20px);
-$theme-site-navbar-secondary-font-weight: $font-weight-bold;
+$theme-site-navbar-secondary-line-height: get-line-height($theme-site-navbar-secondary-font-size, 26px);
+$theme-site-navbar-secondary-line-height-sm: get-line-height($theme-site-navbar-secondary-font-size-sm, 24px);
+$theme-site-navbar-secondary-font-weight: $font-weight-semibold !default;
 $theme-site-navbar-secondary-padding-y: 15px !default;
 $theme-site-navbar-secondary-type: light;
 $theme-site-navbar-secondary-link-active-decoration: none;
@@ -372,7 +372,7 @@ $theme-site-navbar-secondary-link-hover-decoration: none;
 $theme-site-navbar-secondary-link-color: $secondary !default;
 $theme-site-navbar-secondary-link-active-color: $primary !default;
 $theme-site-navbar-secondary-link-hover-color: $primary !default;
-$theme-site-navbar-secondary-link-padding: 10px;
+$theme-site-navbar-secondary-link-padding: 10px !default;
 
 // Site Menu
 $theme-site-navbar-menu-width: 375px;

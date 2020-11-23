@@ -43,13 +43,28 @@ $colors: (
 $skin-primary-hover-color: #78080b;
 $skin-secondary-hover-color: $gray-900;
 
+// Navbar and Header
+$theme-site-header-box-shadow: none;
+$theme-site-navbar-logo-height: 46px;
+
+$theme-site-navbar-secondary-font-size: 18px;
+$theme-site-navbar-secondary-link-color: $gray-800;
+$theme-site-navbar-secondary-link-padding: 15px;
+
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
+
+.site-header {
+  // add bottom border per design
+  border-bottom: 1px solid $gray-400;
+}
 
 .site-navbar {
   &__items {
     &--secondary {
       // ensures the nav items are aligned to the offset logo
-      padding-top: 6px;
+      padding-top: 4px;
+      // set letter spacing per design
+      letter-spacing: .5px;
     }
   }
 }
