@@ -11,7 +11,7 @@
     margin-bottom: 0;
     margin-left: $marko-web-page-wrapper-padding * -1;
     @media (min-width: $marko-web-document-container-max-width) {
-      $margin: calc((100vw - ((#{$marko-web-document-container-max-width} / 2) + #{$marko-web-page-wrapper-padding})) * -1);
+      $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
       margin-right: $margin;
       margin-left: $margin;
     }
@@ -94,7 +94,7 @@
       background-color: $gray-100;
 
       @media (min-width: $marko-web-document-container-max-width) {
-        $margin: calc((100vw - ((#{$marko-web-document-container-max-width} / 2) + #{$marko-web-page-wrapper-padding})) * -1);
+        $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
         margin-right: $margin;
         margin-left: $margin;
       }
