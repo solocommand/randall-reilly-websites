@@ -18,10 +18,15 @@ $enable-shadows: false;
 $enable-rounded: false;
 // Override bredcrumb divider
 $breadcrumb-divider: "|" !default;
-// Set gutters
-$grid-gutter-width: 24px;
-// Set spacer size to match gutter
-$block-spacer: $grid-gutter-width;
+// Set gutter and block spacer
+$grid-gutter-width: 20px;
+$block-spacer: 24px;
+
+// Set document and page settings.
+$marko-web-document-container-max-width: 1060px;
+$marko-web-document-container-gutter: 0;
+$marko-web-page-wrapper-padding: 0;
+$marko-web-page-padding: 0;
 
 // Colors
 //
@@ -220,6 +225,14 @@ $typography-links: non-destructive-map-merge(
         "hover-text-decoration": underline,
       ),
     ),
+    "header-3": (
+      "primary": (
+        "max-lines": 3,
+        "text-decoration": none,
+        "hover-color": $primary,
+        "hover-text-decoration": underline,
+      ),
+    ),
     "article-text": (
       "primary": (
         "max-lines": 3,
@@ -259,11 +272,6 @@ $skin-node-text-line-height-lg: get-line-height($skin-node-text-font-size-lg, $s
 $skin-node-text-font-size-md: 18px !default;
 $skin-node-text-line-height-md-px: 24px !default;
 $skin-node-text-line-height-md: get-line-height($skin-node-text-font-size-md, $skin-node-text-line-height-md-px);
-
-// Marko Web Settings
-$marko-web-document-container-max-width: 1060px;
-$marko-web-document-container-gutter: 0;
-$marko-web-page-wrapper-padding: .75rem;
 
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
