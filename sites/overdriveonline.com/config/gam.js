@@ -10,6 +10,11 @@ config.lazyLoad = {
 };
 
 config
+  .setTemplate('GEAR', {
+    size: [300, 250],
+  });
+
+config
   .setAliasAdUnits('default', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'leaderboard' },
     { name: 'rotation', templateName: 'ROTATION', path: 'rotation' },
@@ -19,6 +24,15 @@ config
   .setAliasAdUnits('business', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
     { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
+    { name: 'wallpaper', path: 'wallpaper' },
+    { name: 'interstitial', path: 'interstitial' },
+  ])
+  .setAliasAdUnits('gear', [
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'gear-leaderboard' },
+    { name: 'leaderboard-2', templateName: 'LEADERBOARD', path: 'gear-leaderboard' },
+    { name: 'rotation-1', templateName: 'GEAR', path: 'gear-rotation-1' },
+    { name: 'rotation-2', templateName: 'GEAR', path: 'gear-rotation-2' },
+    { name: 'rotation-3', templateName: 'GEAR', path: 'gear-rotation-3' },
     { name: 'wallpaper', path: 'wallpaper' },
     { name: 'interstitial', path: 'interstitial' },
   ]);
