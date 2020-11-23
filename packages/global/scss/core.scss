@@ -1,20 +1,5 @@
-@import "../../node_modules/@base-cms/marko-web-theme-default/scss/functions";
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@400;700&display=swap");
-
-$skin-aligned-image-width: 300px;
-$skin-aligned-body-image-spacer: .75rem;
-
-$theme-embedded-media-align-left-width: $skin-aligned-image-width;
-$theme-embedded-media-align-left-margin: $skin-aligned-body-image-spacer;
-
-$theme-embedded-media-align-right-width: $skin-aligned-image-width;
-$theme-embedded-media-align-right-margin: $skin-aligned-body-image-spacer;
-
-$skin-content-body-max-width: 700px;
-$skin-content-primary-image-max-width: 880px;
-
-// skin vars
+// skin functions and vars (funcs must be first).
+@import "./functions";
 @import "./variables";
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";
@@ -44,10 +29,6 @@ $skin-content-primary-image-max-width: 880px;
 
 body {
   -webkit-font-smoothing: antialiased;
-}
-
-a {
-  transition: color 200ms ease-in;
 }
 
 .document-container {
@@ -180,7 +161,7 @@ a {
       margin-left: auto;
 
       .breadcrumbs {
-        font-family: $skin-font-family-open-sans-condensed;
+        font-family: $skin-font-family-primary;
         font-size: 15px;
         font-weight: $font-weight-bold;
         a {

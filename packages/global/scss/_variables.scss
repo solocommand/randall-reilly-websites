@@ -1,25 +1,251 @@
 // Fonts
-$skin-font-family-open-sans: "Open Sans", sans-serif;
-$skin-font-family-open-sans-condensed: "Open Sans Condensed", sans-serif;
+//
+// Skin primary + secondary fonts. By default, set secondary to primary.
+$skin-font-family-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$skin-font-family-secondary: $skin-font-family-primary !default;
+// Set bootstrap font to primary skin font
+$font-family-sans-serif: $skin-font-family-primary;
 
-$theme-font-family-sans-serif: $skin-font-family-open-sans;
-$theme-font-family-page-title: $theme-font-family-sans-serif;
+// Set theme's font family and page title to primary skin font.
+$theme-font-family-sans-serif: $skin-font-family-primary !default;
+$theme-font-family-page-title: $skin-font-family-primary !default;
 
-// Bootstrap Low-Level
-$black: #434146 !default;
-$white: #fff;
-$secondary: #56545a !default;
-$font-weight-bold: 700;
-$font-weight-normal: 400;
-$body-bg: $white;
-$breadcrumb-divider: "|";
 
+// Low-Level Vars
+//
+// Disable rounding and shadows
 $enable-shadows: false;
 $enable-rounded: false;
+// Override bredcrumb divider
+$breadcrumb-divider: "|" !default;
+// Set gutters
+$grid-gutter-width: 24px;
+// Set spacer size to match gutter
+$block-spacer: $grid-gutter-width;
 
-$block-spacer: 24px;
+// Colors
+//
+// Set default grayscale
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// Set default body bg, font color, and primary/secondary color
+$body-bg: $white !default;
+$body-color: $gray-800 !default;
+$blue: #007bff !default;
+// Primary/secondary
+$primary: $blue !default;
+$secondary: $gray-800 !default;
+// Default hover colors
+$skin-primary-hover-color: darken($primary, 15%) !default;
+$skin-secondary-hover-color: darken($secondary, 15%) !default;
+
+
+// Font Weights
+//
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-medium: 500;
+$font-weight-normal: 400;
+
+$typography: () !default;
+$typography: non-destructive-map-merge(
+  (
+    "header-1": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-secondary,
+      "font-weight": $font-weight-bold,
+      "font-size": 40px,
+      "font-size-mobile": 24px,
+      "line-height": 1.15,
+      "line-height-mobile": 1.25,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
+    "header-2": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 22px,
+      "font-size-mobile": 22px,
+      "line-height": 1.27,
+      "line-height-mobile": 1.27,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
+    "header-3": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 18px,
+      "font-size-mobile": 18px,
+      "line-height": 1.33,
+      "line-height-mobile": 1.33,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "article-text": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-normal,
+      "font-size": 20px,
+      "font-size-mobile": 18px,
+      "line-height": 1.5,
+      "line-height-mobile": 1.44,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "small-body-text": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-normal,
+      "font-size": 16px,
+      "font-size-mobile": 16px,
+      "line-height": 1.5,
+      "line-height-mobile": 1.5,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "credit-disclaimer": (
+      "color": $gray-700,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-normal,
+      "font-size": 14px,
+      "font-size-mobile": 14px,
+      "line-height": 1.28,
+      "line-height-mobile": 1.28,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "section-header": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 32px,
+      "font-size-mobile": 28px,
+      "line-height": 1.13,
+      "line-height-mobile": 1.14,
+      "letter-spacing": 1px,
+      "text-transform": uppercase,
+    ),
+    "section-header-small": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 22px,
+      "font-size-mobile": 22px,
+      "line-height": 1.27,
+      "line-height-mobile": 1.27,
+      "letter-spacing": .75px,
+      "text-transform": uppercase,
+    ),
+    "slug-medium": (
+      "color": $primary,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-semibold,
+      "font-size": 18px,
+      "font-size-mobile": 18px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .5px,
+      "text-transform": uppercase,
+    ),
+    "slug-small": (
+      "color": $primary,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-semibold,
+      "font-size": 14px,
+      "font-size-mobile": 14px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .5px,
+      "text-transform": uppercase,
+    ),
+    "sponsored-by": (
+      "color": $blue,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-medium,
+      "font-size": 14px,
+      "font-size-mobile": 14px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .5px,
+      "text-transform": uppercase,
+    ),
+    "input-label": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-medium,
+      "font-size": 16px,
+      "font-size-mobile": 16px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "date": (
+      "color": $gray-700,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-medium,
+      "font-size": 14px,
+      "font-size-mobile": 14px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .25px,
+      "text-transform": uppercase,
+    ),
+  ),
+  $typography
+);
+
+$typography-links: () !default;
+$typography-links: non-destructive-map-merge(
+  (
+    "header-1": (
+      "primary": (
+        "max-lines": 4,
+        "text-decoration": none,
+        "hover-color": $primary,
+        "hover-text-decoration": underline,
+      ),
+    ),
+    "article-text": (
+      "primary": (
+        "max-lines": 3,
+        "text-decoration": none,
+        "hover-color": map-deep-get($typography, "article-text", "color"),
+        "hover-text-decoration": none,
+      ),
+    ),
+    "slug-small": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $skin-primary-hover-color,
+        "hover-text-decoration": none,
+      ),
+    ),
+  ),
+  $typography-links,
+);
+
+// Skin content body and image widths
+$skin-aligned-image-width: 300px;
+$skin-aligned-body-image-spacer: .75rem;
+$skin-content-body-max-width: 700px;
+$skin-content-primary-image-max-width: 880px;
 
 // Skin Node Font Sizes / Line Heights
+// @todo remove these!!!
 $skin-node-text-font-size-xl: 38px !default;
 $skin-node-text-line-height-xl-px: 40px !default;
 $skin-node-text-line-height-xl: get-line-height($skin-node-text-font-size-xl, $skin-node-text-line-height-xl-px);
@@ -112,7 +338,7 @@ $marko-web-node-padding: 20px;
 $theme-item-link-hover-decoration: none;
 
 $theme-item-header-color: $black;
-$theme-item-header-font-family: $skin-font-family-open-sans-condensed;
+$theme-item-header-font-family: $skin-font-family-primary;
 $theme-item-header-font-size: 15px;
 $theme-item-header-font-weight: $font-weight-bold;
 
@@ -195,3 +421,11 @@ $theme-content-heading-h5-margin-bottom-sm:     1rem !default;
 
 $theme-content-heading-h6-margin-bottom:        1rem !default;
 $theme-content-heading-h6-margin-bottom-sm:     1rem !default;
+
+
+// Embedded media
+$theme-embedded-media-align-left-width: $skin-aligned-image-width;
+$theme-embedded-media-align-left-margin: $skin-aligned-body-image-spacer;
+
+$theme-embedded-media-align-right-width: $skin-aligned-image-width;
+$theme-embedded-media-align-right-margin: $skin-aligned-body-image-spacer;
