@@ -23,7 +23,7 @@ $ const { GAM } = out.global;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       <marko-web-page-wrapper>
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "leaderboard", aliases })
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
@@ -45,7 +45,7 @@ $ const { GAM } = out.global;
           </marko-web-query>
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "rotation", aliases })
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
@@ -65,7 +65,7 @@ $ const { GAM } = out.global;
           </marko-web-query>
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "rotation", aliases })
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
@@ -85,7 +85,7 @@ $ const { GAM } = out.global;
           </marko-web-query>
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "rotation", aliases })
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
@@ -110,7 +110,7 @@ $ const { GAM } = out.global;
           <global-top-stories-block />
         </@section>
 
-        <@section modifiers=["ad"]>
+        <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "rotation", aliases })
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
