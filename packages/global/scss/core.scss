@@ -18,6 +18,7 @@
 
 @import "./components/blocks/most-popular";
 @import "./components/blocks/newsletter-signup-banner";
+@import "./components/blocks/node-author";
 @import "./components/blocks/opinion";
 @import "./components/blocks/primary-image";
 @import "./components/blocks/read-next";
@@ -48,20 +49,6 @@ body {
   $self: &;
   $image-border: 1px solid rgba(239, 239, 239, .9);
 
-  &__header-left {
-    text-transform: uppercase;
-    // @todo figure out the line height crop
-  }
-
-  &__text {
-    &--date {
-      font-size: 14px;
-    }
-    &--attribution {
-      margin-top: auto;
-    }
-  }
-
   &__image {
     border: $image-border;
   }
@@ -73,48 +60,15 @@ body {
       }
     }
   }
-
-  &--author {
-    padding-top: 16px;
-    background-color: transparent;
-
-    #{ $self } {
-      &__title {
-        @include skin-typography($style: "author-name-list", $link-style: "primary");
-        margin-bottom: 5px;
-      }
-
-      &__text {
-        @include skin-typography($style: "author-title-list");
-      }
-
-      &__image {
-        border-radius: 50px;
-      }
-
-      &__image-wrapper + #{ $self}__body {
-        margin-left: 10px;
-      }
-    }
-  }
 }
 
 .node-list {
-  padding-bottom: map-get($spacers, block);
-
   &__header {
     padding-bottom: 0;
   }
-
   &__footer {
-    font-size: 15px;
-    font-weight: $font-weight-bold;
-    a {
-      color: $black;
-      &:hover {
-        color: $primary;
-        text-decoration: none;
-      }
+    &--view-more {
+      @include skin-typography($style: "view-more", $link-style: "primary");
     }
   }
 }

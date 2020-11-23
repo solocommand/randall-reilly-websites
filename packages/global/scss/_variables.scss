@@ -23,7 +23,8 @@ $grid-gutter-width: 20px;
 $block-spacer: 24px;
 $hr-margin-y: $grid-gutter-width / 2;
 
-// Set document and page settings.
+// Marko Web Document and Page Settings
+//
 $marko-web-document-container-max-width: 1080px;
 $marko-web-document-container-gutter: 0;
 $marko-web-page-wrapper-padding: 10px;
@@ -58,7 +59,17 @@ $skin-secondary-hover-color: darken($secondary, 15%) !default;
 $skin-ad-bg-color: $gray-100 !default;
 $skin-ad-label-color: $gray-700 !default;
 // HR color
-$hr-border-color: $gray-700;
+$hr-border-color: $gray-700 !default;
+
+// Marko Web Nodes
+//
+$marko-web-node-padding: 20px;
+
+
+// Marko Web Node Lists
+//
+$marko-web-node-list-padding: 16px;
+$marko-web-node-list-border-color: $gray-200 !default;
 
 // Font Weights
 //
@@ -202,6 +213,18 @@ $typography: non-destructive-map-merge(
       "letter-spacing": .25px,
       "text-transform": none,
     ),
+    "date": (
+      "color": $gray-700,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-medium,
+      "font-size": 14px,
+      "font-size-mobile": 14px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .25px,
+      "text-transform": uppercase,
+    ),
+    // added
     "author-name-list": (
       "color": $gray-800,
       "font-family": $skin-font-family-primary,
@@ -224,15 +247,15 @@ $typography: non-destructive-map-merge(
       "letter-spacing": .25px,
       "text-transform": none,
     ),
-    "date": (
-      "color": $gray-700,
+    "view-more": (
+      "color": $primary,
       "font-family": $skin-font-family-primary,
-      "font-weight": $font-weight-medium,
+      "font-weight": $font-weight-bold,
       "font-size": 14px,
       "font-size-mobile": 14px,
       "line-height": 1,
       "line-height-mobile": 1,
-      "letter-spacing": .25px,
+      "letter-spacing": .5px,
       "text-transform": uppercase,
     ),
   ),
@@ -258,6 +281,14 @@ $typography-links: non-destructive-map-merge(
         "hover-text-decoration": underline,
       ),
     ),
+    "section-header-small": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $primary,
+        "hover-text-decoration": none,
+      ),
+    ),
     "article-text": (
       "primary": (
         "max-lines": 3,
@@ -279,6 +310,14 @@ $typography-links: non-destructive-map-merge(
         "max-lines": false,
         "text-decoration": none,
         "hover-color": $primary,
+        "hover-text-decoration": none,
+      ),
+    ),
+    "view-more": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $skin-primary-hover-color,
         "hover-text-decoration": none,
       ),
     ),
@@ -373,9 +412,6 @@ $theme-site-footer-spacer-sm: 14px;
 
 $theme-site-footer-logo-height: 35px !default;
 $theme-site-footer-logo-height-sm: 35px !default;
-
-// Core Marko Node
-$marko-web-node-padding: 20px;
 
 // Items/Nodes
 $theme-item-link-hover-decoration: none;

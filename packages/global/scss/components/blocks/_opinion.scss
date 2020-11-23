@@ -1,6 +1,6 @@
 .opinion {
-  padding-top: $block-spacer;
-  padding-bottom: $block-spacer;
+  padding-top: 50px;
+  padding-bottom: 50px - map-get($spacers, block);
 
   &__header {
     padding-right: $grid-gutter-width / 2;

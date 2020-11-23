@@ -1,6 +1,43 @@
+.node {
+  $self: &;
+  &--section-list-card {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+        margin-bottom: 0;
+      }
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &--section-list-item {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+        margin-bottom: 0;
+      }
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
 .node-list {
+  $self: &;
   &--section-list {
-    padding-top: $block-spacer / 2;
-    padding-bottom: $block-spacer / 2;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    #{ $self } {
+      &__header {
+        @include skin-typography($style: "section-header-small", $link-style: "primary");
+        margin-bottom: 16px;
+      }
+    }
   }
 }
