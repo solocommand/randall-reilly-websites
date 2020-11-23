@@ -42,7 +42,9 @@ $ const { GAM } = out.global;
                 params={ sectionId: id, limit: 10, queryFragment }
               >
                 <global-content-list-flow nodes=nodes modifiers=["section-feed"] inner-justified=false>
-                  <@node modifiers=["section-feed"] />
+                  <@node modifiers=["section-feed", "gear"] image-position="right" with-dates=false>
+                    <@image width=175 ar="1:1" align="middle" />
+                  </@node>
                 </global-content-list-flow>
               </marko-web-query>
             </div>
