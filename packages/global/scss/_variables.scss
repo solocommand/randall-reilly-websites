@@ -21,11 +21,12 @@ $breadcrumb-divider: "|" !default;
 // Set gutter and block spacer
 $grid-gutter-width: 20px;
 $block-spacer: 24px;
+$hr-margin-y: $grid-gutter-width / 2;
 
 // Set document and page settings.
-$marko-web-document-container-max-width: 1060px;
+$marko-web-document-container-max-width: 1080px;
 $marko-web-document-container-gutter: 0;
-$marko-web-page-wrapper-padding: 0;
+$marko-web-page-wrapper-padding: 10px;
 $marko-web-page-padding: 0;
 
 // Colors
