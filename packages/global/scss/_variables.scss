@@ -48,7 +48,9 @@ $secondary: $gray-800 !default;
 // Default hover colors
 $skin-primary-hover-color: darken($primary, 15%) !default;
 $skin-secondary-hover-color: darken($secondary, 15%) !default;
-
+// Ad background colors
+$skin-ad-bg-color: $gray-100 !default;
+$skin-ad-label-color: $gray-700 !default;
 
 // Font Weights
 //
