@@ -1,4 +1,4 @@
-@mixin skin-typography($style, $link-style) {
+@mixin skin-typography($style, $link-style: false) {
   $vars: map-get($typography, $style);
   $props: font-family, font-size, font-weight, line-height, color, text-transform, letter-spacing;
 
