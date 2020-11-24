@@ -49,6 +49,10 @@ body {
   $self: &;
   $image-border: 1px solid rgba(239, 239, 239, .9);
 
+  &__content-published {
+    @include skin-typography($style: "date");
+  }
+
   &__image {
     border: $image-border;
   }

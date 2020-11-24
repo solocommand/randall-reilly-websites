@@ -5,9 +5,7 @@
   &__website-section-name {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 40px;
-    font-weight: $theme-page-title-font-weight;
-    text-transform: capitalize;
+    @include skin-typography($style: "section-header");
   }
 
   &__section {

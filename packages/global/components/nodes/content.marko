@@ -125,11 +125,8 @@ $ if (withSection && alias && withPrimarySectionModifier) {
     <@text modifiers=["attribution"] show=(Boolean(withAttribution))>
       <attribution ...input.attribution content=content />
     </@text>
-    <@text
-      modifiers=["date"]
-      show=(Boolean(withDates && !isEvent))
-    >
-      <marko-web-content-published obj=content />
+    <@text|{ blockName }| show=(Boolean(withDates && !isEvent))>
+      <marko-web-content-published block-name=blockName obj=content format="MMMM D, YYYY" />
     </@text>
   </@body>
   <!-- <if(withAttribution || withDates)>

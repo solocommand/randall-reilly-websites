@@ -37,8 +37,6 @@
   padding-bottom: 60px - map-get($spacers, block);
   &__header {
     margin-bottom: $block-spacer;
-    font-size: 32px;
-    font-weight: $font-weight-bold;
-    text-align: center;
+    @include skin-typography($style: "section-header");
   }
 }
