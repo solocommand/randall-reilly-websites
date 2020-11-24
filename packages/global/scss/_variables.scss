@@ -10,6 +10,9 @@ $font-family-sans-serif: $skin-font-family-primary;
 $theme-font-family-sans-serif: $skin-font-family-primary !default;
 $theme-font-family-page-title: $skin-font-family-primary !default;
 
+// Use secondary font for content body headings, by default.
+$theme-heading-font-family: $skin-font-family-secondary !default;
+
 
 // Low-Level Vars
 //
@@ -346,6 +349,21 @@ $typography-links: non-destructive-map-merge(
         "max-lines": 3,
         "text-decoration": none,
         "hover-color": map-deep-get($typography, "article-text", "color"),
+        "hover-text-decoration": none,
+      ),
+      "content-body": (
+        "max-lines": false,
+        "text-decoration": underline,
+        "color": $primary,
+        "hover-color": $skin-primary-hover-color,
+        "hover-text-decoration": underline,
+      ),
+    ),
+    "slug-medium": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $skin-primary-hover-color,
         "hover-text-decoration": none,
       ),
     ),

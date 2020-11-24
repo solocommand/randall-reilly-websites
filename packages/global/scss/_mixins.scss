@@ -15,7 +15,7 @@
   @if $link-style {
     $link: map-deep-get($typography-links, $style, $link-style);
     a {
-      @if map-get($link, max-lines){
+      @if map-get($link, max-lines) {
         @include theme-max-lines(
           $font-size: map-get($vars, font-size),
           $font-size-sm: map-get($vars, font-size-mobile),
@@ -26,7 +26,8 @@
         );
       }
 
-      color: map-get($vars, "color");
+      $link-color: map-get($link, "color");
+      color: if($link-color, $link-color, map-get($vars, "color"));
       text-decoration: map-get($link, text-decoration);
       &:hover {
         color: map-get($link, "hover-color");

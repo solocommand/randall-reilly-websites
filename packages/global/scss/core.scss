@@ -11,6 +11,7 @@
 
 // skin components
 @import "./components/ads";
+@import "./components/content-page";
 @import "./components/page-wrapper";
 @import "./components/site-footer";
 @import "./components/site-menu";
@@ -35,10 +36,6 @@ body {
 .document-container {
   padding-top: 0;
   background-color: $white;
-}
-
-[data-embed-type="image"] > :last-child:not(img) {
-  border-bottom: none;
 }
 
 .site-header {
@@ -92,61 +89,5 @@ body {
         }
       }
     }
-  }
-}
-
-.page-contents {
-  &__content-body {
-    padding-bottom: 24px;
-  }
-}
-
-.page-wrapper {
-  &__section {
-    &--content-page-body {
-      max-width: $skin-content-body-max-width;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    &--content-page-header {
-      max-width: $skin-content-body-max-width;
-
-      padding-top: 24px;
-      padding-bottom: 24px;
-
-      margin-right: auto;
-      margin-left: auto;
-
-      .breadcrumbs {
-        font-family: $skin-font-family-primary;
-        font-size: 15px;
-        font-weight: $font-weight-bold;
-        a {
-          color: $black;
-          &:hover {
-            color: $primary;
-            text-decoration: none;
-          }
-        }
-      }
-
-      .breadcrumb {
-        padding-bottom: .5rem;
-      }
-    }
-  }
-
-  &__content-name {
-    font-size: 40px;
-    font-weight: $font-weight-bold;
-    line-height: get-line-height(40px, 44px);
-  }
-}
-
-.social-sharing {
-  margin-bottom: $block-spacer;
-  &__button {
-    margin-right: $block-spacer / 2;
   }
 }
