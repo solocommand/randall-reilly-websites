@@ -1,0 +1,5 @@
+{
+  "<global-gam-define-display-ad>": {
+    "template": "./define-display-ad.marko"
+  }
+}

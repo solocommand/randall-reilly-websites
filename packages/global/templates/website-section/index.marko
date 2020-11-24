@@ -24,11 +24,10 @@ $ const { GAM } = out.global;
       $ const aliases = hierarchyAliases(section);
       <marko-web-page-wrapper>
         <@section>
-          <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "leaderboard", aliases })
+          <global-gam-define-display-ad
+            name="leaderboard"
+            aliases=aliases
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-            collapse-before-ad-fetch=true
-            with-wrapper=true
           />
         </@section>
 
@@ -46,11 +45,10 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "rotation", aliases })
+          <global-gam-define-display-ad
+            name="rotation"
+            aliases=aliases
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-            collapse-before-ad-fetch=true
-            with-wrapper=true
           />
         </@section>
 
@@ -66,11 +64,10 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "rotation", aliases })
+          <global-gam-define-display-ad
+            name="rotation"
+            aliases=aliases
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-            collapse-before-ad-fetch=true
-            with-wrapper=true
           />
         </@section>
 
@@ -86,11 +83,10 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "rotation", aliases })
+          <global-gam-define-display-ad
+            name="rotation"
+            aliases=aliases
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-            collapse-before-ad-fetch=true
-            with-wrapper=true
           />
         </@section>
 
@@ -111,11 +107,10 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-gam-define-display-ad
-            ...GAM.getAdUnit({ name: "rotation", aliases })
+          <global-gam-define-display-ad
+            name="rotation"
+            aliases=aliases
             modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-            collapse-before-ad-fetch=true
-            with-wrapper=true
           />
         </@section>
 
