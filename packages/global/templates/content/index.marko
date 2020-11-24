@@ -17,8 +17,8 @@ $ const shouldInjectAds = ["article"].includes(type);
   <@above-container>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wallpaper", aliases }) />
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "interstitial", aliases }) />
+      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wallpaper", aliases }) /> -->
+      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "interstitial", aliases }) /> -->
     </marko-web-resolve-page>
   </@above-container>
 
