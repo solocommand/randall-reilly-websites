@@ -258,6 +258,28 @@ $typography: non-destructive-map-merge(
       "letter-spacing": .5px,
       "text-transform": uppercase,
     ),
+    "footer-header-1": (
+      "color": $white,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 18px,
+      "font-size-mobile": 18px,
+      "line-height": 1.33,
+      "line-height-mobile": 1.33,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
+    "footer-text": (
+      "color": $white,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-normal,
+      "font-size": 16px,
+      "font-size-mobile": 16px,
+      "line-height": 1.5,
+      "line-height-mobile": 1.5,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
   ),
   $typography
 );
@@ -401,8 +423,8 @@ $global-site-footer-color: $white;
 $theme-site-footer-font-size: 16px;
 $theme-site-footer-line-height: get-line-height($theme-site-footer-font-size, 30px);
 
-$theme-site-footer-secondary-bg-color: #343338 !default;
-$theme-site-footer-primary-bg-color: #1a1a1c !default;
+$theme-site-footer-secondary-bg-color: $gray-800 !default;
+$theme-site-footer-primary-bg-color: $gray-900 !default;
 
 $theme-site-footer-copyright-color: $white;
 $theme-site-footer-copyright-font-size: $theme-site-footer-font-size;

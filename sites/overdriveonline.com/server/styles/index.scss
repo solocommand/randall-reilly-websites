@@ -53,6 +53,11 @@ $theme-site-navbar-secondary-link-padding: 15px;
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
 
+body {
+  // set a default letter spacing of .25px, since most fonts in OVD have some form of spacing
+  letter-spacing: .25px;
+}
+
 .site-header {
   // add bottom border per design
   border-bottom: 1px solid $gray-400;
