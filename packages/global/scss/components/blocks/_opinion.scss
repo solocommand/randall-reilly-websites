@@ -1,31 +1,29 @@
 .opinion {
-  padding-top: $block-spacer / 2;
-  padding-bottom: $block-spacer / 2;
-  margin-right: $marko-web-page-wrapper-padding * -1;
-  margin-left: $marko-web-page-wrapper-padding * -1;
-  background-color: $gray-100;
-
-  @media (min-width: $marko-web-document-container-max-width) {
-    $padding: calc(((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding});
-    $margin: calc(#{$padding} * -1);
-    padding-right: $padding;
-    padding-left: $padding;
-    margin-right: $margin;
-    margin-left: $margin;
-  }
+  padding-top: 50px;
+  padding-bottom: 50px - map-get($spacers, block);
 
   &__header {
     padding-right: $grid-gutter-width / 2;
     padding-left: $grid-gutter-width / 2;
-    margin-bottom: $block-spacer;
-    font-size: 32px;
-    font-weight: $font-weight-bold;
+
+    @include section-header-underline();
   }
 }
 
 .node {
+  $self: &;
   &--opinion {
     background-color: $gray-100;
+
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+        margin-bottom: 0;
+      }
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+      }
+    }
   }
 }
 

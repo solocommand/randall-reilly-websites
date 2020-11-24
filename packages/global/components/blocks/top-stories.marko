@@ -7,6 +7,7 @@ $ const queryParams = {
   queryFragment,
 };
 $ const blockName = "top-stories";
+$ const withHeader = defaultValue(input.withHeader, true);
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
   <if(nodes.length)>
@@ -20,9 +21,11 @@ $ const blockName = "top-stories";
     $ const cardNodes = nodes.slice(1);
 
     <marko-web-block name=blockName>
-      <marko-web-element block-name=blockName name="header">
-        Top Stories
-      </marko-web-element>
+      <if(withHeader)>
+        <marko-web-element block-name=blockName name="header">
+          Top Stories
+        </marko-web-element>
+      </if>
 
       <div class="row">
         <div class="col-md-6 col-lg-7">
@@ -49,7 +52,9 @@ $ const blockName = "top-stories";
       </div>
 
       <if(cardNodes.length)>
-        <global-content-card-deck-4-col-flow nodes=cardNodes />
+        <global-content-card-deck-4-col-flow nodes=cardNodes>
+          <@node modifiers=[`${blockName}-card`] />
+        </global-content-card-deck-4-col-flow>
       </if>
     </marko-web-block>
   </if>

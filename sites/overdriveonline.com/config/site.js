@@ -32,6 +32,6 @@ module.exports = {
   },
   newsletterSignupBanner: {
     href: '#',
-    description: 'Sign up for the <strong>Overdrive Daily</strong> to keep up with trucking news, equipment and business information.',
+    description: 'Sign up for the Overdrive Daily to keep up with trucking news, equipment and business information.',
   },
 };

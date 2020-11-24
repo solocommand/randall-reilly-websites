@@ -1,12 +1,22 @@
+$most-popular-position-size: 40px;
+
+.card-deck-flow {
+  $self: &;
+  &--most-popular {
+    #{ $self } {
+      &__node {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
 .most-popular {
-  padding-top: $block-spacer / 2;
-  padding-bottom: $block-spacer / 2;
+  padding-top: 60px;
+  padding-bottom: 60px - map-get($spacers, block);
 
   &__header {
-    margin-bottom: $block-spacer;
-    font-size: 32px;
-    font-weight: $font-weight-bold;
-    text-align: center;
+    @include section-header-underline();
   }
 
   &__card-wrapper {
@@ -15,23 +25,35 @@
   }
 
   &__position {
-    $size: 48px;
-    $font-size: 35px;
+    $font-size: 30px;
     position: absolute;
-    width: $size;
-    height: $size;
-    padding-top: ($size - $font-size) / 2;
-    font-family: $skin-font-family-open-sans-condensed;
+    width: $most-popular-position-size;
+    height: $most-popular-position-size;
+    padding-top: 1px;
+    font-family: $skin-font-family-primary;
     font-size: $font-size;
     font-weight: $font-weight-bold;
     line-height: 1;
+    color: $gray-800;
     text-align: center;
-    background-color: #eee;
+    border: 2px solid $gray-800;
   }
 }
 
 .node {
+  $self: &;
   &--most-popular {
-    margin-left: 70px;
+    margin-left: $most-popular-position-size + 20px;
+
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+        margin-bottom: 0;
+      }
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+        margin-bottom: 1px;
+      }
+    }
   }
 }

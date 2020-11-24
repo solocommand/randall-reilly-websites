@@ -70,10 +70,8 @@
 
 .site-footer-nav {
   &__header {
-    margin-bottom: 4px;
-    font-size: 18px;
-    font-weight: $font-weight-bold;
-    line-height: get-line-height(18px, 24px);
+    @include skin-typography($style: "footer-header-1");
+    margin-bottom: 8px;
   }
 
   &__items {
@@ -84,10 +82,15 @@
     list-style: none;
   }
 
+  &__item {
+    @include skin-typography($style: "footer-text");
+    margin-bottom: 8px;
+  }
+
   &__link {
-    color: $global-site-footer-color;
+    color: $gray-100;
     &:hover {
-      color: $global-site-footer-color;
+      color: $gray-100;
     }
   }
 }
@@ -95,15 +98,13 @@
 .site-footer-newsletter {
   padding-right: 20px;
   &__header {
-    margin-bottom: 4px;
-    font-size: 18px;
-    font-weight: $font-weight-bold;
-    line-height: get-line-height(18px, 24px);
+    @include skin-typography($style: "footer-header-1");
+    margin-bottom: 8px;
   }
 
   &__description {
-    font-size: 16px;
-    line-height: get-line-height(16px, 24px);
+    @include skin-typography($style: "footer-text");
+    margin-bottom: 16px;
   }
 
   &__btn {

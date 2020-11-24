@@ -26,7 +26,9 @@ $ const blockName = "related-stories";
           <marko-web-element block-name=blockName name="header">
             ${title}
           </marko-web-element>
-          <global-content-card-deck-4-col-flow nodes=nodes />
+          <global-content-card-deck-4-col-flow nodes=nodes>
+            <@node modifiers=[blockName] />
+          </global-content-card-deck-4-col-flow>
         </marko-web-block>
       </if>
     </marko-web-query>
@@ -36,7 +38,9 @@ $ const blockName = "related-stories";
       <marko-web-element block-name=blockName name="header">
         ${title}
       </marko-web-element>
-      <global-content-card-deck-4-col-flow nodes=nodes />
+      <global-content-card-deck-4-col-flow nodes=nodes>
+        <@node modifiers=[blockName] />
+      </global-content-card-deck-4-col-flow>
     </marko-web-block>
   </else>
 </marko-web-query>

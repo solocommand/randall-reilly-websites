@@ -6,20 +6,37 @@
     #{ $self } {
       &__title {
         margin-bottom: 16px;
-        @include skin-fonts-xl-md();
+        @include skin-typography($style: "header-1", $link-style: "primary");
+      }
+
+      &__text--teaser {
+        @include skin-typography($style: "article-text", $link-style: "primary");
+      }
+
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+      }
+    }
+  }
+
+  &--top-stories-card {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+        margin-bottom: 5px;
+      }
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
       }
     }
   }
 }
 
 .top-stories {
-  padding-top: $block-spacer / 2;
-  padding-bottom: $block-spacer / 2;
-
+  padding-top: 60px;
+  padding-bottom: 60px - map-get($spacers, block);
   &__header {
     margin-bottom: $block-spacer;
-    font-size: 32px;
-    font-weight: $font-weight-bold;
-    text-align: center;
+    @include skin-typography($style: "section-header");
   }
 }

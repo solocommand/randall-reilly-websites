@@ -1,21 +1,26 @@
 .node {
   $self: &;
+
   &--section-feed {
     #{ $self } {
       &__title {
-        font-weight: $font-weight-bold;
-        @include skin-fonts-lg-md();
+        @include skin-typography($style: "header-1.5", $link-style: "primary");
       }
 
       &__text--teaser {
-        @include skin-fonts-md-none();
+        @include skin-typography($style: "teaser-text-1", $link-style: "primary");
       }
 
       &__body {
         max-width: 700px;
       }
+
+      &__website-section-name {
+        @include skin-typography($style: "slug-small", $link-style: "primary");
+      }
     }
   }
+
   &--gear {
     padding: 1rem;
     background-color: $gray-100;

@@ -1,9 +1,54 @@
+@mixin skin-typography($style, $link-style: false) {
+  $vars: map-get($typography, $style);
+  $props: font-family, font-size, font-weight, line-height, color, text-transform, letter-spacing;
+
+  @each $prop in $props {
+    #{ $prop }: map-get($vars, $prop);
+  }
+
+  @include theme-apply-responsive-fonts(
+    $font-size: map-get($vars, font-size-mobile),
+    $line-height: map-get($vars, line-height-mobile),
+    $breakpoint: $theme-responsive-text-breakpoint
+  );
+
+  @if $link-style {
+    $link: map-deep-get($typography-links, $style, $link-style);
+    a {
+      @if map-get($link, max-lines) {
+        @include theme-max-lines(
+          $font-size: map-get($vars, font-size),
+          $font-size-sm: map-get($vars, font-size-mobile),
+          $line-height: map-get($vars, line-height),
+          $line-height-sm: map-get($vars, line-height-mobile),
+          $num: map-get($link, max-lines),
+          $breakpoint: $theme-responsive-text-breakpoint
+        );
+      }
+
+      $link-color: map-get($link, "color");
+      color: if($link-color, $link-color, map-get($vars, "color"));
+      text-decoration: map-get($link, text-decoration);
+      &:hover {
+        color: map-get($link, "hover-color");
+        text-decoration: map-get($link, hover-text-decoration);
+      }
+    }
+  }
+}
+
+@mixin section-header-underline() {
+  margin-bottom: 30px;
+
+  @include skin-typography($style: "section-header");
+}
+
 @mixin skin-node-fonts(
   $font-size,
   $font-size-sm,
   $line-height,
   $line-height-sm,
-  $font-family: $font-family-sans-serif,
+  $font-family: $skin-font-family-primary,
   $max-lines: 3
 ) {
   font-family: $font-family;

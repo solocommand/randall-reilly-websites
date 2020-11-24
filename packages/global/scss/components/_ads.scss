@@ -2,14 +2,11 @@
   $self: &;
   text-align: left;
 
-  &--body-bg {
-    background-color: $gray-100;
-  }
-
   &--inline {
     margin-right: $marko-web-page-wrapper-padding * -1;
     margin-bottom: 0;
     margin-left: $marko-web-page-wrapper-padding * -1;
+    background-color: $skin-ad-bg-color;
     @media (min-width: $marko-web-document-container-max-width) {
       $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
       margin-right: $margin;
@@ -23,6 +20,7 @@
     margin-left: $marko-web-page-wrapper-padding * -1;
 
     clear: both;
+    background-color: $skin-ad-bg-color;
 
     @media (min-width: $skin-content-body-max-width) {
       $margin: calc(((100vw - #{$skin-content-body-max-width}) / 2) * -1);
@@ -74,30 +72,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: .75rem;
+    padding-top: 16px;
 
     &::before {
-      padding-bottom: .4rem;
-      font-size: .65rem;
-      color: $gray-600;
+      padding-bottom: 4px;
+      font-size: 10px;
+      line-height: 1;
+      color: $skin-ad-label-color;
       text-transform: uppercase;
       content: "Advertisement";
-    }
-  }
-}
-
-.page-wrapper {
-  &__section {
-    &--ad {
-      margin-right: $marko-web-page-wrapper-padding * -1;
-      margin-left: $marko-web-page-wrapper-padding * -1;
-      background-color: $gray-100;
-
-      @media (min-width: $marko-web-document-container-max-width) {
-        $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
-        margin-right: $margin;
-        margin-left: $margin;
-      }
     }
   }
 }
