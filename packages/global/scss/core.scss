@@ -41,6 +41,10 @@ body {
   @include skin-button($style: "secondary");
 }
 
+.btn-light {
+  @include skin-button($style: "light");
+}
+
 .document-container {
   padding-top: 0;
   background-color: $white;
