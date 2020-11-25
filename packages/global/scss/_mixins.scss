@@ -19,6 +19,10 @@
   }
 
   &:hover {
+    $hover-border: map-get($vars, "hover-border");
+    @if $hover-border {
+      border: $hover-border;
+    }
     color: map-get($vars, "hover-color");
     background-color: map-get($vars, "hover-background-color");
   }
@@ -27,6 +31,10 @@
   &.focus {
     $focus-color: map-get($vars, "focus-color");
     $focus-background-color: map-get($vars, "focus-background-color");
+    $focus-border: if(map-get($vars, "focus-border"), map-get($vars, "focus-border"), map-get($vars, "hover-border"));
+    @if $focus-border {
+      border: $focus-border;
+    }
     color: if($focus-color, $focus-color, map-get($vars, "hover-color"));
     background-color: if($focus-background-color, $focus-background-color, map-get($vars, "hover-background-color"));
     outline: 0;
