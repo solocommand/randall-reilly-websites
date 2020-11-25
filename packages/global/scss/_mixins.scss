@@ -84,11 +84,14 @@
     );
   }
 
-  $link-color: map-get($link, "color");
-  color: if($link-color, $link-color, map-get($vars, "color"));
+  // if no link color specified, fallback to the main color.
+  $link-color: if(map-get($link, "color"), map-get($link, "color"), map-get($vars, "color"));
+  color: $link-color;
   text-decoration: map-get($link, text-decoration);
   &:hover {
-    color: map-get($link, "hover-color");
+    // if no hover color specified, fallback to the link color
+    $hover-color: if(map-get($link, "hover-color"), map-get($link, "hover-color"), $link-color);
+    color: $hover-color;
     text-decoration: map-get($link, hover-text-decoration);
   }
 }
