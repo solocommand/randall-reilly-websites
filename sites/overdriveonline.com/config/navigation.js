@@ -8,7 +8,7 @@ const topics = [
 ];
 
 const menuSecondary = [
-  { href: '/readers-rigs', label: 'Reader Rigs' },
+  { href: '/reader-rigs', label: 'Reader Rigs' },
   { href: '/overdrive-radio', label: 'Overdrive Radio' },
   { href: '/whitepapers', label: 'Whitepapers' },
   { href: '/newsletters', label: 'Newsletters' },
