@@ -18,3 +18,12 @@
   }
   @return $result;
 }
+
+@function skin-typography-prop($style, $prop) {
+  @return map-deep-get($typography, $style, $prop);
+}
+
+@function skin-typography-link-prop($style, $link-style, $prop) {
+  $link: map-deep-get($typography-links, $style, $link-style);
+  @return map-get($link, $prop);
+}

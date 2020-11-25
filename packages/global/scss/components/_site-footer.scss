@@ -143,3 +143,21 @@
     }
   }
 }
+
+.social-follow {
+  $self: &;
+  &--site-footer {
+    #{ $self } {
+      &__header {
+        color: skin-typography-prop("footer-header-1", "color");
+      }
+
+      &__section {
+        // stylelint-disable-next-line
+        > .social-icon-link {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}

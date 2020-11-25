@@ -316,6 +316,39 @@ $typography: non-destructive-map-merge(
       "letter-spacing": .75px,
       "text-transform": uppercase,
     ),
+    "social-follow-header": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 18px,
+      "font-size-mobile": 18px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
+    "menu-item-primary": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-semibold,
+      "font-size": 20px,
+      "font-size-mobile": 20px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "menu-item-secondary": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-medium,
+      "font-size": 16px,
+      "font-size-mobile": 16px,
+      "line-height": 1,
+      "line-height-mobile": 1,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
   ),
   $typography
 );
@@ -418,9 +451,29 @@ $typography-links: non-destructive-map-merge(
         "hover-text-decoration": underline,
       ),
     ),
+    "menu-item-primary": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $primary,
+        "hover-text-decoration": none,
+      ),
+    ),
+    "menu-item-secondary": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $primary,
+        "hover-text-decoration": none,
+      ),
+    ),
   ),
   $typography-links,
 );
+
+// Marko Icons
+$marko-web-icon-fill-dark: $gray-800 !default;
+$marko-web-icon-fill-light: $white !default;
 
 // Skin content body and image widths
 $skin-aligned-image-width: 300px;
@@ -487,7 +540,7 @@ $theme-site-navbar-menu-item-border-color: transparent;
 
 $theme-site-navbar-menu-active-item-font-weight: $font-weight-bold;
 
-$theme-site-navbar-menu-link-padding-x: 8px;
+$theme-site-navbar-menu-link-padding-x: 10px !default;
 $theme-site-navbar-menu-link-padding-y: 0;
 $theme-site-navbar-menu-link-color: $black !default;
 $theme-site-navbar-menu-link-hover-color: $primary !default;
