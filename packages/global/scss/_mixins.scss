@@ -1,3 +1,44 @@
+@mixin skin-button($style) {
+  $vars: map-get($skin-buttons, $style);
+  $props: background-color, border-radius, color, font-family, font-weight, font-size, letter-spacing, line-height, padding, text-transform;
+
+  @each $prop in $props {
+    #{ $prop }: map-get($vars, $prop);
+  }
+
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+
+  $border: map-get($vars, "border");
+  @if $border {
+    border: $border;
+  } @else {
+    border: none;
+  }
+
+  &:hover {
+    color: map-get($vars, "hover-color");
+    background-color: map-get($vars, "hover-background-color");
+  }
+
+  &:focus,
+  &.focus {
+    $focus-color: map-get($vars, "focus-color");
+    $focus-background-color: map-get($vars, "focus-background-color");
+    color: if($focus-color, $focus-color, map-get($vars, "hover-color"));
+    background-color: if($focus-background-color, $focus-background-color, map-get($vars, "hover-background-color"));
+    outline: 0;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+  }
+
+}
+
 @mixin skin-typography($style, $link-style: false) {
   $vars: map-get($typography, $style);
   $props: font-family, font-size, font-weight, line-height, color, text-transform, letter-spacing;

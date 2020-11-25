@@ -1,0 +1,20 @@
+$skin-buttons: () !default;
+$skin-buttons: non-destructive-map-merge(
+  (
+    "primary": (
+      "background-color": $primary,
+      "border-radius": 4px,
+      "color": $white,
+      "hover-background-color": $skin-primary-hover-color,
+      "hover-color": $white,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 16px,
+      "letter-spacing": .8px,
+      "line-height": 1.25,
+      "padding": 12px 27px 12px 27px,
+      "text-transform": uppercase,
+    ),
+  ),
+  $skin-buttons
+);

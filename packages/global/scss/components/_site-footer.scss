@@ -106,12 +106,6 @@
     @include skin-typography($style: "footer-text");
     margin-bottom: 16px;
   }
-
-  &__btn {
-    font-weight: $font-weight-bold;
-    color: $white;
-    background-color: #45434c;
-  }
 }
 
 .breadcrumbs {

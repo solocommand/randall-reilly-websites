@@ -14,11 +14,4 @@
     display: flex;
     flex-direction: column;
   }
-
-  &__btn {
-    min-width: 90px;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-weight: $font-weight-bold;
-  }
 }
