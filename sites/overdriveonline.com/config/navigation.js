@@ -1,9 +1,19 @@
 const topics = [
-  { href: '/equipment', label: 'Equipment' },
+  { href: '/trucks', label: 'Trucks' },
   { href: '/business', label: 'Business' },
-  { href: '/regulation', label: 'Regulation' },
+  { href: '/regulations', label: 'Regulations' },
+  { href: '/lifestyle', label: 'Lifestyle' },
   { href: '/custom-rigs', label: 'Custom Rigs' },
   { href: '/gear', label: 'Gear' },
+];
+
+const menuSecondary = [
+  { href: '/readers-rigs', label: 'Reader Rigs' },
+  { href: '/overdrive-radio', label: 'Overdrive Radio' },
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 module.exports = {
@@ -25,29 +35,24 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>Overdrive Daily</strong> to keep up with trucking news, equipment and business information.',
+      cta: 'Sign up for the Overdrive Daily to keep up with trucking news, equipment and business information.',
     },
   },
   menu: [
     {
       modifiers: ['primary'],
-      items: topics,
+      items: [
+        ...topics,
+        { href: '/channel-19', label: 'Channel 19' },
+        { href: '/partners-in-business', label: 'Partners in Business' },
+      ],
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };
