@@ -29,6 +29,7 @@
   &--reader-rigs {
     #{ $self } {
       &__title {
+        margin-top: 2px;
         @include skin-typography($style: "header-3", $link-style: "primary");
       }
     }
