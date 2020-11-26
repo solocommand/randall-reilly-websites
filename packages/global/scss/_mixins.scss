@@ -47,7 +47,7 @@
 
 }
 
-@mixin skin-typography($style, $link-style: false) {
+@mixin skin-typography($style, $link-style: false, $max-lines: null) {
   $vars: map-get($typography, $style);
   $props: font-family, font-size, font-weight, line-height, color, text-transform, letter-spacing;
 
@@ -64,22 +64,22 @@
   @if $link-style {
     $link: map-deep-get($typography-links, $style, $link-style);
     a {
-      @include skin-typography-link($style, $link-style);
+      @include skin-typography-link($style, $link-style, $max-lines);
     }
   }
 }
 
-@mixin skin-typography-link($style, $link-style) {
+@mixin skin-typography-link($style, $link-style, $max-lines: null) {
   $vars: map-get($typography, $style);
   $link: map-deep-get($typography-links, $style, $link-style);
 
-  @if map-get($link, max-lines) {
+  @if map-get($link, max-lines) or $max-lines {
     @include theme-max-lines(
       $font-size: map-get($vars, font-size),
       $font-size-sm: map-get($vars, font-size-mobile),
       $line-height: map-get($vars, line-height),
       $line-height-sm: map-get($vars, line-height-mobile),
-      $num: map-get($link, max-lines),
+      $num: if($max-lines, $max-lines, map-get($link, max-lines)),
       $breakpoint: $theme-responsive-text-breakpoint
     );
   }
