@@ -46,6 +46,19 @@
 
     &--search {
       padding-bottom: $theme-site-navbar-menu-link-padding-x * 2 + 4px;
+
+      .input-group {
+        .form-control {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        .btn {
+          padding-right: 18px;
+          padding-left: 18px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
     }
   }
 }
