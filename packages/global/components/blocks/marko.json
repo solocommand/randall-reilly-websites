@@ -14,6 +14,9 @@
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },
+  "<global-reader-rigs-block>": {
+    "template": "./reader-rigs.marko"
+  },
   "<global-related-stories-block>": {
     "template": "./related-stories.marko"
   },

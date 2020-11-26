@@ -40,4 +40,10 @@
       }
     }
   }
+
+  &__footer {
+    &--view-more {
+      @include skin-typography($style: "view-more", $link-style: "primary");
+    }
+  }
 }
