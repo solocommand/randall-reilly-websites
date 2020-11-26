@@ -84,7 +84,10 @@ $font-weight-semibold: 600;
 $font-weight-medium: 500;
 $font-weight-normal: 400;
 
+// Buttons, Inputs, and Typography
+//
 @import "./variables/buttons";
+@import "./variables/inputs";
 @import "./variables/typography";
 
 // Marko Icons

@@ -33,6 +33,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+label {
+  @include skin-typography($style: "input-label");
+}
+
+.form-control {
+  letter-spacing: $skin-input-letter-spacing;
+  border-radius: $input-border-radius; // must force this value since radius is disabled
+  &:hover:not(:focus) {
+    border-color: $skin-input-hover-border-color;
+  }
+}
+
 .btn-primary {
   @include skin-button($style: "primary");
 }

@@ -33,7 +33,7 @@ $skin-buttons: non-destructive-map-merge(
     ),
     "light": (
       "background-color": $white,
-      "border": 1px solid #91939c,
+      "border": 1px solid $gray-500,
       "border-radius": 6px,
       "color": $gray-800,
       "hover-background-color": $white,
