@@ -40,9 +40,15 @@ $ const blockName = input.blockName || "site-footer";
                 </marko-web-element>
               </if>
               <form action=newsletter.formAction method="GET">
-                <div class="form-group mt-2">
-                  <label for="footer-newsletter-signup-email" class="sr-only">Email address</label>
-                  <input id="footer-newsletter-signup-email" class="form-control" type="email" placeholder="Email address" required />
+                <div class="form-group">
+                  <label for="footer-newsletter-signup-email">Email</label>
+                  <input
+                    id="footer-newsletter-signup-email"
+                    class="form-control"
+                    type="email"
+                    placeholder="example@gmail.com"
+                    required
+                  />
                 </div>
                 <button class="btn btn-primary" type="submit">Signup</button>
               </form>
