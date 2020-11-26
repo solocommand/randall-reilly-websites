@@ -1,0 +1,43 @@
+.partners-in-business {
+  padding-top: 60px;
+
+  &__header {
+    margin-bottom: 6px;
+    @include skin-typography($style: "section-header");
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    @include skin-typography($style: "article-text");
+  }
+
+  &__btn-wrapper {
+    padding-top: $marko-web-node-list-padding;
+    margin-top: $marko-web-node-list-padding;
+    @include marko-web-node-list-border($property: border-top);
+  }
+}
+
+.node {
+  $self: &;
+
+  &--partners-in-business-hero {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-2", $link-style: "primary");
+      }
+
+      &__text--teaser {
+        @include skin-typography($style: "teaser-text-1", $link-style: "primary", $max-lines: 4);
+      }
+    }
+  }
+
+  &--partners-in-business-item {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "header-3", $link-style: "primary");
+      }
+    }
+  }
+}

@@ -11,6 +11,9 @@
   "<global-opinion-block>": {
     "template": "./opinion.marko"
   },
+  "<global-partners-in-business-block>": {
+    "template": "./partners-in-business.marko"
+  },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },

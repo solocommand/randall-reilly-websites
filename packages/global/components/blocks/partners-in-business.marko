@@ -1,0 +1,82 @@
+import queryFragment from "../../graphql/fragments/partners-in-business-block";
+
+<!-- @todo this should move to the website, or be converted into a generic component -->
+$ const queryParams = {
+  limit: 3,
+  requiresImage: true,
+  sectionAlias: "partners-in-business",
+  queryFragment,
+};
+$ const blockName = "partners-in-business";
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  $ const heroNode = nodes.slice(0, 1)[0];
+  $ const heroImageNode = {
+    id: heroNode.id,
+    type: heroNode.type,
+    siteContext: heroNode.siteContext,
+    primaryImage: heroNode.primaryImage,
+  };
+  $ const listNodes = nodes.slice(1);
+
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="header">
+      Partners in Business
+    </marko-web-element>
+    <marko-web-element block-name=blockName name="description">
+      The leading business training program for owner-operators
+    </marko-web-element>
+
+    <div class="row">
+      <div class="col-md-4">
+        <global-content-node
+          image-position="top"
+          card=true
+          flush=true
+          modifiers=[`${blockName}-hero-image`]
+          node=heroImageNode
+        >
+          <@image fluid=true width=340 ar="3:2" />
+        </global-content-node>
+      </div>
+      <div class="col-md-4">
+        <global-content-node
+          full-height=true
+          card=true
+          display-image=false
+          flush=true
+          modifiers=[`${blockName}-hero`]
+          with-dates=false
+          with-section=false
+          node=heroNode
+        />
+      </div>
+      <div class="col-md-4">
+        <marko-web-node-list
+          flush-x=true
+          flush-y=true
+          modifiers=[blockName]
+        >
+          <@nodes nodes=listNodes>
+            <@slot|{ node }|>
+              <global-content-node
+                display-image=false
+                flush=true
+                modifiers=[`${blockName}-item`]
+                with-teaser=false
+                with-dates=false
+                with-section=false
+                node=node
+              />
+            </@slot>
+          </@nodes>
+        </marko-web-node-list>
+        <marko-web-element block-name=blockName name="btn-wrapper">
+          <marko-web-link href="/partners-in-business" class="btn btn-secondary">
+            More Partners in Business
+          </marko-web-link>
+        </marko-web-element>
+      </div>
+    </div>
+  </marko-web-block>
+</marko-web-query>
