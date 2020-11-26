@@ -1,0 +1,48 @@
+import queryFragment from "../../graphql/fragments/gear-block";
+
+<!-- @todo this should move to OVD or be made generic -->
+<!-- @tod determine how to display the sponsor logo -->
+$ const queryParams = {
+  sectionAlias: "gear",
+  limit: 3,
+  queryFragment,
+};
+
+$ const blockName = "gear-block";
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="header">
+      Gear
+    </marko-web-element>
+    <marko-web-element block-name=blockName name="description-wrapper">
+      <marko-web-element block-name=blockName name="description">
+        The leading business training program for owner-operators
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="view-more">
+        <marko-web-link href="/gear">
+          View more &raquo;
+        </marko-web-link>
+      </marko-web-element>
+    </marko-web-element>
+    <default-theme-card-deck-flow
+      cols=3
+      nodes=nodes
+      modifiers=[blockName]
+    >
+      <@slot|{ node }|>
+        <global-content-node
+          image-position="right"
+          card=true
+          flush=false
+          modifiers=[blockName]
+          node=node
+          with-teaser=false
+          with-dates=false
+        >
+          <@image width=112 ar="1:1" />
+        </global-content-node>
+      </@slot>
+    </default-theme-card-deck-flow>
+  </marko-web-block>
+</marko-web-query>

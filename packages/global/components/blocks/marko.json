@@ -1,4 +1,7 @@
 {
+  "<global-gear-block>": {
+    "template": "./gear.marko"
+  },
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
