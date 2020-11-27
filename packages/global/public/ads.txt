@@ -1,0 +1,47 @@
+google.com, pub-5642385512695035, DIRECT, f08c47fec0942fa0
+google.com, pub-3760561780175838, DIRECT, f08c47fec0942fa0
+google.com, pub-3760561780175838, RESELLER, f08c47fec0942fa0
+media.adfrontiers.com,670, DIRECT
+indexexchange.com, 184284, RESELLER
+openx.com, 128220, RESELLER, 6a698e2ec38604c6
+openx.com, 537126623, RESELLER, 6a698e2ec38604c6
+openx.com, 537108715, RESELLER, 6a698e2ec38604c6
+adtech.com, 9402, RESELLER
+aolcloud.net, 9402, RESELLER
+adtech.com, 10452, RESELLER
+aolcloud.net, 10452, RESELLER
+adtech.com, 11022, RESELLER
+aolcloud.net, 11022, RESELLER
+33across.com, 33, DIRECT
+appnexus.com, 1001, RESELLER
+appnexus.com, 3135, RESELLER
+spotxchange.com, 139883, RESELLER, 7842df1d2fe2db34
+spotx.tv, 139883, RESELLER, 7842df1d2fe2db34
+openx.com, 537120563, RESELLER, 6a698e2ec38604c6
+amazon.com, 3411, RESELLER
+lkqd.com, 293, RESELLER
+lkqd.net, 293, RESELLER
+adtech.com, 9993, RESELLER
+aolcloud.net, 9993, RESELLER
+rubiconproject.com, 16414, RESELLER
+criteo.com, 3450, RESELLER
+indexexchange.com, 185506, RESELLER
+coxmt.com, 2000067907202, RESELLER
+pubmatic.com, 156078, RESELLER #banner
+pubmatic.com, 156377, RESELLER, 5d62403b186f2ace
+openx.com, 537143344, RESELLER #banner
+indexexchange.com, 175407, RESELLER, 50b1c356f2c5c8fc
+conversantmedia.com, 37638, Direct
+conversantmedia.com, 39140, Direct
+conversantmedia.com, 40087, Direct
+conversantmedia.com, 40374, Direct
+sovrn.com, 252318, DIRECT, fafdf38b16bf6b2b
+lijit.com, 252318, DIRECT, fafdf38b16bf6b2b
+gumgum.com, 11645, RESELLER, ffdef49475d318a9
+openx.com, 537120960, RESELLER
+openx.com, 83499, RESELLER
+openx.com, 538959099, RESELLER
+pubmatic.com, 137711, RESELLER
+pubmatic.com, 156212, RESELLER
+pubmatic.com, 62483, RESELLER
+contextweb.com, 558511, RESELLER
