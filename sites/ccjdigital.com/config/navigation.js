@@ -7,6 +7,15 @@ const topics = [
   { href: '/blogs', label: 'Blogs' },
 ];
 
+const menuSecondary = [
+  { href: '/ccj-innovators', label: 'CCJ Innovators' },
+  { href: '/ccj-symposiums', label: 'CCJ Symposiums' },
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
+];
+
 module.exports = {
   primary: {
     items: [],
@@ -26,11 +35,7 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
       cta: 'Sign up for the <strong>CCJ Daily</strong> to keep up with ...',

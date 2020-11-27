@@ -1,11 +1,19 @@
 const topics = [
-  { href: '/equipment', label: 'Equipment' },
+  { href: '/heavy-equipment', label: 'Heavy Equipment' },
   { href: '/better-roads', label: 'Better Roads' },
-  { href: '/dealer', label: 'Big Iron Dealer' },
+  { href: '/big-iron-dealer', label: 'Big Iron Dealer' },
   { href: '/business', label: 'Business' },
-  { href: '/tech', label: 'Tech' },
+  { href: '/technology', label: 'Technology' },
   { href: '/workforce', label: 'Workforce' },
   { href: '/safety', label: 'Safety' },
+];
+
+const menuSecondary = [
+  { href: '/safety-watch', label: 'Safety Watch' },
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 module.exports = {
@@ -27,11 +35,7 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
       cta: 'Sign up for the <strong>Equipment World Daily</strong> to keep up with ...',
@@ -40,16 +44,13 @@ module.exports = {
   menu: [
     {
       modifiers: ['primary'],
-      items: topics,
+      items: [
+        ...topics,
+      ],
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };
