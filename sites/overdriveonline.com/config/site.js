@@ -27,6 +27,13 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/overdrive-partner-solutions/', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCCJiBY50M2ie-QBjdDU4p1A', target: '_blank' },
   ],
+  podcastLinks: [
+    { label: 'Apple Podcasts', href: '#' },
+    { label: 'Google Podcasts', href: '#' },
+    { label: 'Spotify', href: '#' },
+    { label: 'Stitcher', href: '#' },
+    { label: 'Soundcloud', href: '#' },
+  ],
   gtm: {
     containerId: 'GTM-NDC3FQX',
   },

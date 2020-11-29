@@ -2,6 +2,9 @@
   "<global-gear-block>": {
     "template": "./gear.marko"
   },
+  "<global-latest-podcast-block>": {
+    "template": "./latest-podcast.marko"
+  },
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
