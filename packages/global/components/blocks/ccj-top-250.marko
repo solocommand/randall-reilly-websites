@@ -1,0 +1,59 @@
+<!-- @todo this should move to OVD or be made generic -->
+<!-- @todo need to determine how this is queried -->
+<!-- $ const queryParams = {
+  requiresImage: true,
+  limit: 1,
+  queryFragment,
+}; -->
+$ const node = {
+  type: "promotion",
+  shortName: "Get all the info on the top 250 trucking companies in America",
+  teaser: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  siteContext: {
+    path: "https://www.ccjdigital.com/ccj-top-250",
+  },
+};
+
+$ const blockName = "ccj-top-250";
+$ const imagePath = "files/base/randallreilly/transportation/static/top-250-logo-2013.png";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="header">
+    <marko-web-img
+      class=`${blockName}__logo`
+      link={ href: node.siteContext.path, target: "_blank" }
+      src=`https://p1-cms-assets.imgix.net/${imagePath}?w=151`
+      srcset=`https://p1-cms-assets.imgix.net/${imagePath}?w=151&dpr=2 2x`
+      alt="CCJ Top 250"
+    />
+  </marko-web-element>
+
+  <marko-web-node
+    type=`${node.type}-content`
+    card=true
+    flush=true
+    full-height=false
+    modifiers=[blockName]
+  >
+    <@body>
+      <@title tag="h5">
+        <marko-web-content-short-name tag=null obj=node link=true />
+      </@title>
+      <@text modifiers=["teaser"] show=(Boolean(node.teaser))>
+        <marko-web-content-teaser tag=null obj=node link=true />
+      </@text>
+      <@footer modifiers=["buttons"]>
+        <@left>
+          <marko-web-link
+            class="btn btn-primary"
+            href=node.siteContext.path
+            title="Get the free report"
+            target="_blank"
+          >
+            Get the free report
+          </marko-web-link>
+        </@left>
+      </@footer>
+    </@body>
+  </marko-web-node>
+</marko-web-block>

@@ -1,4 +1,7 @@
 {
+  "<global-ccj-top-250-block>": {
+    "template": "./ccj-top-250.marko"
+  },
   "<global-gear-block>": {
     "template": "./gear.marko"
   },

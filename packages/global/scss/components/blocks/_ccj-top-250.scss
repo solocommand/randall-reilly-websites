@@ -1,0 +1,41 @@
+.ccj-top-250 {
+  height: 100%;
+  padding: 24px;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__header {
+    margin-bottom: 16px;
+    @include skin-typography($style: "section-header-small");
+  }
+
+  &__logo {
+    width: 151px;
+    filter: invert(.8);
+  }
+}
+
+.node {
+  $self: &;
+
+  &--ccj-top-250 {
+    background-color: $gray-100;
+
+    #{ $self } {
+      &__title {
+        margin-bottom: 0;
+        @include skin-typography($style: "header-2", $link-style: "primary");
+      }
+
+      &__contents--body {
+        margin-bottom: 24px;
+      }
+
+      &__text--teaser {
+        margin-top: 8px;
+        margin-bottom: 0;
+        @include skin-typography($style: "small-body-text", $link-style: "primary");
+      }
+    }
+  }
+}
