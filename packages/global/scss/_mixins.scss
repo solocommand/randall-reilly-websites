@@ -18,25 +18,44 @@
     border: none;
   }
 
+  $hover-background-color: map-get($vars, "hover-background-color");
+  $hover-border: map-get($vars, "hover-border");
+  $hover-color: map-get($vars, "hover-color");
+
+  $focus-background-color: if(map-get($vars, "focus-background-color"), map-get($vars, "focus-background-color"), $hover-background-color);
+  $focus-color: if(map-get($vars, "focus-color"), map-get($vars, "focus-color"), $hover-color);
+  $focus-border: if(map-get($vars, "focus-border"), map-get($vars, "focus-border"), $hover-border);
+
+  $active-background-color: if(map-get($vars, "active-background-color"), map-get($vars, "active-background-color"), $focus-background-color);
+  $active-color: if(map-get($vars, "active-color"), map-get($vars, "active-color"), $focus-color);
+  $active-border: if(map-get($vars, "active-border"), map-get($vars, "active-border"), $focus-border);
+
   &:hover {
-    $hover-border: map-get($vars, "hover-border");
     @if $hover-border {
       border: $hover-border;
     }
-    color: map-get($vars, "hover-color");
-    background-color: map-get($vars, "hover-background-color");
+    color: $hover-color;
+    background-color: $hover-background-color;
   }
 
   &:focus,
   &.focus {
-    $focus-color: map-get($vars, "focus-color");
-    $focus-background-color: map-get($vars, "focus-background-color");
-    $focus-border: if(map-get($vars, "focus-border"), map-get($vars, "focus-border"), map-get($vars, "hover-border"));
     @if $focus-border {
       border: $focus-border;
     }
-    color: if($focus-color, $focus-color, map-get($vars, "hover-color"));
-    background-color: if($focus-background-color, $focus-background-color, map-get($vars, "hover-background-color"));
+    color: $focus-color;
+    background-color: $focus-background-color;
+    outline: 0;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    @if $active-border {
+      border: $active-border;
+    }
+    color: $active-color;
+    background-color: $active-background-color;
     outline: 0;
   }
 
