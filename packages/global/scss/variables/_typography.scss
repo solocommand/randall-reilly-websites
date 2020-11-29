@@ -317,6 +317,14 @@ $typography-links: non-destructive-map-merge(
         "hover-text-decoration": underline,
       ),
     ),
+    "small-body-text": (
+      "primary": (
+        "max-lines": 3,
+        "text-decoration": none,
+        "hover-color": map-deep-get($typography, "small-body-text", "color"),
+        "hover-text-decoration": none,
+      ),
+    ),
     "slug-medium": (
       "primary": (
         "max-lines": false,

@@ -26,6 +26,9 @@
   "<global-related-stories-block>": {
     "template": "./related-stories.marko"
   },
+  "<global-resource-library-block>": {
+    "template": "./resource-library.marko"
+  },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
   },
