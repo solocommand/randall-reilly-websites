@@ -16,11 +16,11 @@ $skin-buttons: non-destructive-map-merge(
       "text-transform": uppercase,
     ),
     "secondary": (
-      "background-color": $white,
+      "background-color": transparent,
       "border": 2px solid $gray-700,
       "border-radius": 4px,
       "color": $gray-700,
-      "hover-background-color": $white,
+      "hover-background-color": transparent,
       "hover-border": 2px solid $skin-primary-hover-color,
       "hover-color": $skin-primary-hover-color,
       "font-family": $skin-font-family-primary,
