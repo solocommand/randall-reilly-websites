@@ -38,6 +38,11 @@
     }
   }
 
+  &--rail {
+    padding-bottom: 30px;
+    background-color: $skin-ad-bg-color;
+  }
+
   &--max-width-300 {
     #{ $self } {
       &__wrapper {
