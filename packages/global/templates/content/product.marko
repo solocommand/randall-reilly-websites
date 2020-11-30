@@ -63,6 +63,44 @@ $ const { GAM } = out.global;
             </div>
           </div>
         </@section>
+
+        <@section>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
+
+        <@section>
+          <global-top-stories-block />
+        </@section>
+
+        <!-- CCJ Top 250 + Resource Lib -->
+        <@section>
+          <div class="row row--resources">
+            <div class="col-md-6">
+              <global-ccj-top-250-block />
+            </div>
+            <div class="col-md-6">
+              <global-resource-library-block />
+            </div>
+          </div>
+        </@section>
+
+        <@section>
+          <global-most-popular-block />
+        </@section>
+
+        <@section>
+          <marko-web-gam-define-display-ad
+            ...GAM.getAdUnit({ name: "rotation", aliases })
+            modifiers=["max-width-970", "margin-auto-x", "inline"]
+            collapse-before-ad-fetch=true
+            with-wrapper=true
+          />
+        </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
