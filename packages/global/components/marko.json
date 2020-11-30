@@ -6,6 +6,9 @@
     "./layouts/marko.json",
     "./nodes/marko.json"
   ],
+  "<global-content-page-breadcrumbs>": {
+    "template": "./content-page-breadcrumbs.marko"
+  },
   "<global-document>": {
     "template": "./document.marko",
     "<head>": {},
