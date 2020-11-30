@@ -28,11 +28,11 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCCJiBY50M2ie-QBjdDU4p1A', target: '_blank' },
   ],
   podcastLinks: [
-    { label: 'Apple Podcasts', href: '#' },
-    { label: 'Google Podcasts', href: '#' },
-    { label: 'Spotify', href: '#' },
-    { label: 'Stitcher', href: '#' },
-    { label: 'Soundcloud', href: '#' },
+    { label: 'Apple Podcasts', href: 'https://podcasts.apple.com/us/podcast/overdrive-online/id736806291' },
+    // { label: 'Google Podcasts', href: '#' },
+    { label: 'Spotify', href: 'https://open.spotify.com/show/1XLBDhZg7BpJ0HVdwb4GBI?si=z4BTY9e1R7au197r3YUeQQ' },
+    { label: 'Stitcher', href: 'https://www.stitcher.com/show/overdrive-radio' },
+    { label: 'Soundcloud', href: 'https://soundcloud.com/overdriveradio' },
   ],
   oneTrust: [
     { path: '/collection', id: 'c04235aa-e9e0-4ff9-b558-5e21aa892d20' },
