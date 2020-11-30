@@ -34,7 +34,6 @@
 
 .top-stories {
   padding-top: 60px;
-  padding-bottom: 60px - map-get($spacers, block);
   &__header {
     margin-bottom: $block-spacer;
     @include skin-typography($style: "section-header");
