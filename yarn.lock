@@ -916,10 +916,10 @@
     "@base-cms/object-path" "^1.37.0"
     "@base-cms/utils" "^1.37.0"
 
-"@base-cms/marko-web-social-sharing@^1.41.0":
-  version "1.41.0"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-social-sharing/-/marko-web-social-sharing-1.41.0.tgz#433a6092e0dffba0e31ff1d999cc93a5f65ea9e2"
-  integrity sha512-PthMZs2uSZSJ46cIAqPVTD1+BOt+DtLa2vL1BsPGxtkgJRtoFworjNu93jYORboJnsMNGvPfBU1Su05q/UnFeQ==
+"@base-cms/marko-web-social-sharing@^1.47.0":
+  version "1.47.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-social-sharing/-/marko-web-social-sharing-1.47.0.tgz#d4dc4e4541fffc94c4bc48e281b7e675eaff1c5b"
+  integrity sha512-ip59Bd/rK5dvT8qAMd163VxTEQMItWAKEJewgyaf8uMiVRNMDddaXcDHZ/mslC0Okm/yL6diRBhxkSMnakj7Pg==
   dependencies:
     "@base-cms/utils" "^1.37.0"
 
