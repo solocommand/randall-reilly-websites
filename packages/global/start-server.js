@@ -6,8 +6,11 @@ const cleanResponse = require('@base-cms/marko-core/middleware/clean-marko-respo
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
+const staticPageRoutes = require('./routes/static-page');
 
 const routes = siteRoutes => (app) => {
+  // Load static page routes
+  staticPageRoutes(app);
   // Load site routes
   siteRoutes(app);
 };
