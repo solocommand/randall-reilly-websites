@@ -33,7 +33,7 @@ $ const { GAM } = out.global;
 
         <@section|{ blockName }|>
           <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
-          <global-section-feed-block params={ alias, limit: 3 } />
+          <global-section-feed-block alias=alias params={ limit: 3 } />
         </@section>
 
         <@section>
@@ -45,7 +45,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <global-section-feed-block params={ alias, limit: 5, skip: 3 } />
+          <global-section-feed-block alias=alias params={ limit: 5, skip: 3 } />
         </@section>
 
         <@section>
@@ -57,7 +57,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <global-section-feed-block params={ alias, limit: 5, skip: 8 } />
+          <global-section-feed-block alias=alias params={ limit: 5, skip: 8 } />
         </@section>
 
         <@section>
@@ -69,7 +69,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <global-section-feed-block params={ alias, limit: 5, skip: 13 } />
+          <global-section-feed-block alias=alias params={ limit: 5, skip: 13 } />
         </@section>
 
         <!-- Top Stories -->
