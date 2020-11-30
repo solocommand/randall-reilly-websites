@@ -30,6 +30,10 @@ module.exports = {
   gcse: {
     id: '9e5417f72997170d6',
   },
+  oneTrust: [
+    { path: '/collection', id: 'c04235aa-e9e0-4ff9-b558-5e21aa892d20' },
+    { path: '/termsandprivacy', id: 'd8f2d6c5-d9af-4d60-a93f-7441ca9ad94c' },
+  ],
   gtm: {
     containerId: 'GTM-WBB7QN7',
   },
