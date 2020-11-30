@@ -33,15 +33,7 @@ $ const { GAM } = out.global;
 
         <@section|{ blockName }|>
           <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
-
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionId: id, limit: 3, queryFragment }
-          >
-            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
-              <@node modifiers=["section-feed"] />
-            </global-content-list-flow>
-          </marko-web-query>
+          <global-section-feed-block params={ alias, limit: 3 } />
         </@section>
 
         <@section>
@@ -53,14 +45,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionId: id, limit: 5, skip: 3, queryFragment }
-          >
-            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
-              <@node modifiers=["section-feed"] />
-            </global-content-list-flow>
-          </marko-web-query>
+          <global-section-feed-block params={ alias, limit: 5, skip: 3 } />
         </@section>
 
         <@section>
@@ -72,14 +57,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionId: id, limit: 5, skip: 8, queryFragment }
-          >
-            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
-              <@node modifiers=["section-feed"] />
-            </global-content-list-flow>
-          </marko-web-query>
+          <global-section-feed-block params={ alias, limit: 5, skip: 8 } />
         </@section>
 
         <@section>
@@ -91,14 +69,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <@section>
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionId: id, limit: 5, skip: 13, queryFragment }
-          >
-            <global-content-list-flow nodes=nodes modifiers=["section-feed"]>
-              <@node modifiers=["section-feed"] />
-            </global-content-list-flow>
-          </marko-web-query>
+          <global-section-feed-block params={ alias, limit: 5, skip: 13 } />
         </@section>
 
         <!-- Top Stories -->

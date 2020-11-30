@@ -35,6 +35,9 @@
   "<global-resource-library-block>": {
     "template": "./resource-library.marko"
   },
+  "<global-section-feed-block>": {
+    "template": "./section-feed.marko"
+  },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
   },

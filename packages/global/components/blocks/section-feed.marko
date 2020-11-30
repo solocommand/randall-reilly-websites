@@ -1,0 +1,27 @@
+import queryFragment from "../../graphql/fragments/section-feed-block";
+
+$ const queryParams = {
+  ...input.params,
+  sectionAlias: input.alias,
+  queryFragment,
+};
+
+$ const blockName = "section-feed";
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <marko-web-node-list
+    inner-justified=true
+    flush-x=true
+    flush-y=false
+    modifiers=[blockName]
+  >
+    <@nodes nodes=nodes>
+      <@slot|{ node }|>
+        <global-content-node
+          node=node
+          modifiers=[blockName]
+        />
+      </@slot>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>
