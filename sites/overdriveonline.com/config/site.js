@@ -34,6 +34,10 @@ module.exports = {
     { label: 'Stitcher', href: 'https://www.stitcher.com/show/overdrive-radio' },
     { label: 'Soundcloud', href: 'https://soundcloud.com/overdriveradio' },
   ],
+  oneTrust: [
+    { path: '/collection', id: 'c04235aa-e9e0-4ff9-b558-5e21aa892d20' },
+    { path: '/termsandprivacy', id: '45d9b939-c3de-4b71-8cbf-e2ffe621ff9c' },
+  ],
   gtm: {
     containerId: 'GTM-NDC3FQX',
   },

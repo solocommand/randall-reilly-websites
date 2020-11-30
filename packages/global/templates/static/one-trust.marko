@@ -1,0 +1,38 @@
+$ const { site } = out.global;
+
+$ const type = "static";
+$ const title = "Terms of User and Privacy Policy";
+$ const description = "";
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+    <script src="https://appds8093.blob.core.windows.net/privacy-notice-scripts/otnotice-1.0.min.js" id="otprivacy-notice-script">
+      settings="eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyJ9";
+    </script>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          aliases=[]
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </@section>
+      <@section>
+        $ const { oneTrustId } = data;
+        $ const oneTrustURL = `https://appds8093.blob.core.windows.net/49a9a972-547e-4c49-b23c-4cc77554cacb/privacy-notices/${oneTrustId}.json`;
+        <div id=`otnotice-${oneTrustId}` class="otnotice mt-4"></div>
+        <script>
+          // To ensure external settings are loaded, use the Initialized promise:
+          OneTrust.NoticeApi.Initialized.then(function() {
+            OneTrust.NoticeApi.LoadNotices(['${oneTrustURL}']);
+          });
+        </script>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
