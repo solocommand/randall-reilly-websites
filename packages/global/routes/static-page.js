@@ -4,8 +4,8 @@ module.exports = (app) => {
   const oneTrust = app.locals.site.getAsArray('oneTrust');
 
   oneTrust.forEach((item) => {
-    if (item.href && item.id) {
-      app.get(item.href, (_, res) => { res.marko(oneTrustTemplate, { oneTrustId: item.id }); });
+    if (item.path && item.id) {
+      app.get(item.path, (_, res) => { res.marko(oneTrustTemplate, { oneTrustId: item.id }); });
     }
   });
 };
