@@ -165,6 +165,18 @@ $ const shouldInjectAds = ["article"].includes(type);
           <global-top-stories-block />
         </@section>
 
+        <!-- CCJ Top 250 + Resource Lib -->
+        <@section>
+          <div class="row row--resources">
+            <div class="col-md-6">
+              <global-ccj-top-250-block />
+            </div>
+            <div class="col-md-6">
+              <global-resource-library-block />
+            </div>
+          </div>
+        </@section>
+
         <@section>
           <marko-web-gam-define-display-ad
             ...GAM.getAdUnit({ name: "rotation", aliases })
@@ -179,18 +191,6 @@ $ const shouldInjectAds = ["article"].includes(type);
             content-id=id
             section-id=primarySection.id
           />
-        </@section>
-
-        <!-- CCJ Top 250 + Resource Lib -->
-        <@section>
-          <div class="row row--resources">
-            <div class="col-md-6">
-              <global-ccj-top-250-block />
-            </div>
-            <div class="col-md-6">
-              <global-resource-library-block />
-            </div>
-          </div>
         </@section>
 
         <@section>
