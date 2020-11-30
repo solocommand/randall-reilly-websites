@@ -1,7 +1,10 @@
 .node {
   $self: &;
 
-  &--section-feed {
+  &--latest-products-feed {
+    padding: 16px;
+    background-color: $gray-100;
+    border-radius: 4px;
     #{ $self } {
       &__title {
         @include skin-typography($style: "header-1.5", $link-style: "primary");
@@ -9,10 +12,6 @@
 
       &__text--teaser {
         @include skin-typography($style: "teaser-text-1", $link-style: "primary");
-      }
-
-      &__body {
-        max-width: 700px;
       }
 
       &__website-section-name {
@@ -24,10 +23,19 @@
 
 .node-list {
   $self: &;
-  &--section-feed {
+  $node-spacer: 12px;
+  &--latest-products-feed {
+    padding-bottom: 40px;
     #{ $self } {
       &__node {
+        padding-top: $node-spacer;
+        padding-bottom: $node-spacer;
         border-bottom: none;
+      }
+
+      &__nodes {
+        padding-top: $node-spacer;
+        padding-bottom: $node-spacer;
       }
     }
   }

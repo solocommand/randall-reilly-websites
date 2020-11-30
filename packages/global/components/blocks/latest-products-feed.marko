@@ -1,0 +1,30 @@
+import queryFragment from "../../graphql/fragments/latest-products-feed-block";
+
+$ const queryParams = {
+  ...input.params,
+  sectionAlias: input.alias,
+  queryFragment,
+};
+
+$ const blockName = "latest-products-feed";
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <marko-web-node-list
+    inner-justified=false
+    flush-x=true
+    flush-y=false
+    modifiers=[blockName]
+  >
+    <@nodes nodes=nodes>
+      <@slot|{ node }|>
+        <global-content-node
+          node=node
+          image-position="right"
+          modifiers=[blockName]
+        >
+          <@image width=176 ar="1:1" align="middle" />
+        </global-content-node>
+      </@slot>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>

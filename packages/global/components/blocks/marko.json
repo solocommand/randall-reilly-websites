@@ -8,6 +8,9 @@
   "<global-latest-podcast-block>": {
     "template": "./latest-podcast.marko"
   },
+  "<global-latest-products-feed-block>": {
+    "template": "./latest-products-feed.marko"
+  },
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },

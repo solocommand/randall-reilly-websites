@@ -37,7 +37,9 @@ $ const { GAM } = out.global;
             <div class="col-lg-8">
               <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
 
-              <marko-web-query|{ nodes }|
+              <global-latest-products-feed-block alias=alias params={ limit: 10 } />
+
+              <!-- <marko-web-query|{ nodes }|
                 name="website-scheduled-content"
                 params={ sectionId: id, limit: 10, queryFragment }
               >
@@ -46,7 +48,7 @@ $ const { GAM } = out.global;
                     <@image width=175 ar="1:1" align="middle" />
                   </@node>
                 </global-content-list-flow>
-              </marko-web-query>
+              </marko-web-query> -->
             </div>
             <div class="col-lg-4">
               <marko-web-gam-define-display-ad
@@ -96,6 +98,16 @@ $ const { GAM } = out.global;
         </@section>
 
         <!-- OVD Radio + Resource Lib -->
+        <@section>
+          <div class="row row--resources">
+            <div class="col-md-6">
+              <global-latest-podcast-block alias="overdrive-radio" />
+            </div>
+            <div class="col-md-6">
+              <global-resource-library-block />
+            </div>
+          </div>
+        </@section>
 
         <!-- Most Popular -->
         <@section>
