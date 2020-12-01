@@ -57,6 +57,10 @@
   }
 }
 
+.content-download {
+  padding-bottom: map-get($spacers, block);
+}
+
 [data-embed-type="image"] > :last-child:not(img) {
   border-bottom: none;
 }
