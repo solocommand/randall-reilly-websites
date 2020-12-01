@@ -1,0 +1,45 @@
+$ const { id, type, pageNode } = input;
+
+<global-content-default-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+  <@section modifiers=["my-block-lg"]>
+    <div class="row row--block">
+      <div class="col-md-6">
+        <global-ccj-top-250-block />
+      </div>
+      <div class="col-md-6">
+        <global-resource-library-block />
+      </div>
+    </div>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section|{ content }| modifiers=["my-block-lg"]>
+    <global-related-stories-block
+      content-id=content.id
+      section-id=content.primarySection.id
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-most-popular-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+</global-content-default-layout>

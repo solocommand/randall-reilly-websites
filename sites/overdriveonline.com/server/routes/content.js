@@ -1,7 +1,7 @@
 const { withContent } = require('@base-cms/marko-web/middleware');
 const queryFragment = require('@randall-reilly/package-global/graphql/fragments/content-page');
-const content = require('@randall-reilly/package-global/templates/content');
 const product = require('@randall-reilly/package-global/templates/content/product');
+const content = require('../templates/content');
 
 module.exports = (app) => {
   app.get('/*?product/:id(\\d{8})*', withContent({
