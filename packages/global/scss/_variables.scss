@@ -1,8 +1,13 @@
 // Fonts
 //
 // Skin primary + secondary fonts. By default, set secondary to primary.
-$skin-font-family-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$skin-font-family-secondary: $skin-font-family-primary !default;
+// $skin-font-family-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $skin-font-family-secondary: $skin-font-family-primary !default;
+
+@import url("https://use.typekit.net/eae7fel.css");
+$skin-font-family-primary: solitaire-mvb-pro, sans-serif;
+$skin-font-family-secondary: informapro, sans-serif;
+
 // Set bootstrap font to primary skin font
 $font-family-sans-serif: $skin-font-family-primary;
 
@@ -47,33 +52,45 @@ $marko-web-page-padding: 0;
 // Colors
 //
 // Set default grayscale
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
 $black:    #000 !default;
+$gray-900: #232325 !default;
+$gray-800: #3f4043 !default;
+$gray-700: #68686c !default;
+$gray-600: #8c8e97 !default;
+$gray-500: #91939c !default;
+$gray-400: #c4c6cb !default;
+$gray-300: #dee2e6 !default;
+$gray-200: #e3e4e5 !default;
+$gray-100: #f0f1f2 !default;
+$white:    #fff !default;
 
 // Set default body bg, font color, and primary/secondary color
 $body-bg: $white !default;
 $body-color: $gray-800 !default;
-$blue: #007bff !default;
+$blue: #134f8c !default;
 // Primary/secondary
 $primary: $blue !default;
 $secondary: $gray-800 !default;
 // Default hover colors
-$skin-primary-hover-color: darken($primary, 15%) !default;
-$skin-secondary-hover-color: darken($secondary, 15%) !default;
+$skin-primary-hover-color: darken($primary, 13%) !default;
+$skin-secondary-hover-color: $gray-900 !default;
 // Ad background colors
 $skin-ad-bg-color: $gray-100 !default;
 $skin-ad-label-color: $gray-700 !default;
 // HR color
 $hr-border-color: $gray-700 !default;
+
+$colors: (
+  "blue": $blue,
+  "tar-black": $gray-900,
+  "charcoal": $gray-800,
+  "smokey-gray": $gray-700,
+  "silver-fox": $gray-600,
+  "cloud": $gray-400,
+  "concrete": $gray-200,
+  "fog": $gray-100,
+  "sponsor-blue": $blue,
+);
 
 // Marko Web Nodes
 //
@@ -125,12 +142,13 @@ $skin-node-text-line-height-md: get-line-height($skin-node-text-font-size-md, $s
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
 
-$theme-site-header-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .025), 0 3px 1px -2px rgba(0, 0, 0, .06), 0 1px 5px 0 rgba(0, 0, 0, .08) !default;
+// Header
+$theme-site-header-box-shadow: none !default;
 
 // Navbar
 $theme-site-navbar-brand-margin-x: 36px !default;
 
-$theme-site-navbar-logo-height: 40px !default;
+$theme-site-navbar-logo-height: 46px !default;
 $theme-site-navbar-logo-height-sm: 35px !default;
 
 $theme-site-navbar-primary-height-sm: 0;
@@ -146,10 +164,10 @@ $theme-site-navbar-secondary-type: light;
 $theme-site-navbar-secondary-link-active-decoration: none;
 $theme-site-navbar-secondary-link-hover-decoration: none;
 
-$theme-site-navbar-secondary-link-color: $secondary !default;
+$theme-site-navbar-secondary-link-color: $gray-800 !default;
 $theme-site-navbar-secondary-link-active-color: $primary !default;
 $theme-site-navbar-secondary-link-hover-color: $primary !default;
-$theme-site-navbar-secondary-link-padding: 10px !default;
+$theme-site-navbar-secondary-link-padding: 15px !default;
 
 // Site Menu
 $theme-site-navbar-menu-width: 375px;
