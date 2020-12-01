@@ -4,7 +4,6 @@ import sectionFragment from "../../graphql/fragments/section-info";
 <!-- @todo determine how to display the sponsor logo -->
 $ const queryParams = {
   sectionAlias: input.alias,
-  requiresImage: true,
   limit: 3,
   queryFragment,
   sectionFragment,
@@ -35,6 +34,7 @@ $ const blockName = "gear-block";
       <@slot|{ node }|>
         <global-content-node
           image-position="right"
+          full-height=true
           card=true
           flush=false
           modifiers=[blockName]

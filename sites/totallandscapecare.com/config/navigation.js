@@ -1,10 +1,16 @@
 const topics = [
-  { href: '/news', label: 'News' },
-  { href: '/how-to', label: 'How To' },
-  { href: '/design-build', label: 'Design Build' },
-  { href: '/equipment', label: 'Equipment' },
   { href: '/business', label: 'Business' },
-  { href: '/lawncare', label: 'Lawn Care' },
+  { href: '/trucks', label: 'Trucks' },
+  { href: '/maintenance', label: 'Maintenance' },
+  { href: '/landscaping-equipment', label: 'Landscaping Equipment' },
+  { href: '/products', label: 'Products' },
+];
+
+const menuSecondary = [
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 module.exports = {
@@ -26,11 +32,7 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
       cta: 'Sign up for the <strong>Total Landscape Care Daily</strong> to keep up with ...',
@@ -43,12 +45,7 @@ module.exports = {
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };
