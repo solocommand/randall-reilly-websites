@@ -1,5 +1,6 @@
-import gql from "graphql-tag";
 import queryFragment from "../../graphql/fragments/reader-rigs-block";
+import sectionFragment from "../../graphql/fragments/section-info";
+
 
 <!-- @todo likely should change the name of this component -->
 $ const queryParams = {
@@ -7,13 +8,7 @@ $ const queryParams = {
   requiresImage: true,
   limit: 3,
   queryFragment,
-  sectionFragment: gql`
-    fragment GlobalSectionListBlockSectionFragment on WebsiteSection {
-      id
-      name
-      canonicalPath
-    }
-  `,
+  sectionFragment,
 };
 
 $ const blockName = "reader-rigs";

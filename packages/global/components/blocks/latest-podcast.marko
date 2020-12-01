@@ -1,19 +1,12 @@
-import gql from "graphql-tag";
 import queryFragment from "../../graphql/fragments/latest-podcast-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
 $ const queryParams = {
   sectionAlias: input.alias,
   includeContentTypes: ["Podcast"],
   limit: 1,
   queryFragment,
-  sectionFragment: gql`
-    fragment GlobalSectionListBlockSectionFragment on WebsiteSection {
-      id
-      name
-      fullName
-      canonicalPath
-    }
-  `,
+  sectionFragment,
 };
 
 $ const { site } = out.global;

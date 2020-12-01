@@ -1,5 +1,5 @@
-import gql from "graphql-tag";
 import queryFragment from "../../graphql/fragments/partners-in-business-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
 <!-- @todo likely should change the name of this component -->
 $ const queryParams = {
@@ -7,13 +7,7 @@ $ const queryParams = {
   requiresImage: true,
   sectionAlias: input.alias,
   queryFragment,
-  sectionFragment: gql`
-    fragment GlobalSectionListBlockSectionFragment on WebsiteSection {
-      id
-      name
-      canonicalPath
-    }
-  `,
+  sectionFragment,
 };
 $ const blockName = "partners-in-business";
 

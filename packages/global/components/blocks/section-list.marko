@@ -1,20 +1,13 @@
-import gql from "graphql-tag";
 import { getAsObject } from "@base-cms/object-path";
 import queryFragment from "../../graphql/fragments/section-list-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
 $ const { alias } = input;
 
 $ const queryParams = {
   limit: 4,
   queryFragment,
-  sectionFragment: gql`
-    fragment GlobalSectionListBlockSectionFragment on WebsiteSection {
-      id
-      name
-      fullName
-      canonicalPath
-    }
-  `,
+  sectionFragment,
   ...getAsObject(input, "queryParams"),
   sectionAlias: alias,
 };
