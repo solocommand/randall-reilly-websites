@@ -12,6 +12,7 @@
 
       &__text {
         @include skin-typography($style: "author-title-list");
+        text-transform: capitalize;
       }
 
       &__image {
