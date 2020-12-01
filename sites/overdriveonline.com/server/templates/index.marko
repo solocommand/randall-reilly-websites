@@ -1,5 +1,4 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import queryFragment from "@randall-reilly/package-global/graphql/fragments/content-list";
 
 $ const { id, alias, name, pageNode } = input;
 $ const { GAM } = out.global;
@@ -37,7 +36,7 @@ $ const { GAM } = out.global;
 
         <!-- Opinion -->
         <@section modifiers=["break-container"]>
-          <global-opinion-block />
+          <global-opinion-block alias="channel-19" />
         </@section>
 
         <!-- 3 Column Section List Blocks -->
@@ -65,10 +64,10 @@ $ const { GAM } = out.global;
 
         <!-- Partners in Business -->
         <@section modifiers=["my-block-lg"]>
-          <global-partners-in-business-block />
+          <global-partners-in-business-block alias="partners-in-business" />
         </@section>
 
-        <!-- OVD Radio + Resource Lib -->
+        <!-- Podcasts + Resource Lib -->
         <@section modifiers=["my-block-lg"]>
           <div class="row row--block">
             <div class="col-md-6">
@@ -94,11 +93,11 @@ $ const { GAM } = out.global;
 
         <!-- Gear -->
         <@section modifiers=["my-block-lg"]>
-          <global-gear-block />
+          <global-gear-block alias="gear" />
         </@section>
         <!-- Reader Rigs -->
         <@section modifiers=["my-block-lg"]>
-          <global-reader-rigs-block />
+          <global-reader-rigs-block alias="reader-rigs" />
         </@section>
         <!-- Books, Guides, and Data -->
 
