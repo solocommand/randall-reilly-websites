@@ -15,6 +15,14 @@
     "@name": "string",
     "@page-node": "object"
   },
+  "<global-website-section-home-layout>": {
+    "template": "./home.marko",
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
   "<global-website-section-products-layout>": {
     "template": "./products.marko",
     "<rail-slot-a>": {},

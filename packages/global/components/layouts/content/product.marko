@@ -63,7 +63,7 @@ $ const sections = getAsArray(input, "sections");
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
     <global-top-stories-block />
   </@section>
 
@@ -76,16 +76,4 @@ $ const sections = getAsArray(input, "sections");
       />
     </@section>
   </for>
-
-  <@section modifiers=["my-block-lg"]>
-    <global-most-popular-block />
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-    />
-  </@section>
 </global-content-wrapper-layout>

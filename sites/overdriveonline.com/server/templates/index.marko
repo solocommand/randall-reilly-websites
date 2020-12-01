@@ -2,24 +2,12 @@ import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 
 $ const { id, alias, name, pageNode } = input;
 
-<global-website-section-default-layout
+<global-website-section-home-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
 >
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="leaderboard"
-      aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-    />
-  </@section>
-
-  <@section modifiers=["my-block-lg"]>
-    <global-top-stories-block with-header=false />
-  </@section>
-
   <@section modifiers=["break-container"]>
     <global-opinion-block alias="channel-19" />
   </@section>
@@ -46,11 +34,11 @@ $ const { id, alias, name, pageNode } = input;
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
     <global-partners-in-business-block alias="partners-in-business" />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["my-block-sm"]>
     <div class="row row--block">
       <div class="col-md-6">
         <global-latest-podcast-block alias="overdrive-radio" />
@@ -61,7 +49,7 @@ $ const { id, alias, name, pageNode } = input;
     </div>
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
     <global-most-popular-block />
   </@section>
 
@@ -73,11 +61,11 @@ $ const { id, alias, name, pageNode } = input;
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
     <global-gear-block alias="gear" />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
     <global-reader-rigs-block alias="reader-rigs" />
   </@section>
 
@@ -88,4 +76,4 @@ $ const { id, alias, name, pageNode } = input;
       modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
     />
   </@section>
-</global-website-section-default-layout>
+</global-website-section-home-layout>

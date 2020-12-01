@@ -27,6 +27,25 @@
       }
     }
 
+    &--my-block-sm {
+      margin-top: map-get($spacers, block-sm);
+      margin-bottom: map-get($spacers, block-sm);
+      &:last-child {
+        margin-bottom: map-get($spacers, block-sm);
+      }
+    }
+
+    &--mt-block-sm {
+      margin-top: map-get($spacers, block-sm);
+    }
+
+    &--mb-block-sm {
+      margin-bottom: map-get($spacers, block-sm);
+      &:last-child {
+        margin-bottom: map-get($spacers, block-sm);
+      }
+    }
+
     &--my-block-lg {
       margin-top: map-get($spacers, block-lg);
       margin-bottom: map-get($spacers, block-lg);
