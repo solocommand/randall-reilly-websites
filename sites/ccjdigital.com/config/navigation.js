@@ -1,10 +1,11 @@
 const topics = [
-  { href: '/news', label: 'News' },
-  { href: '/equipment', label: 'Equipment' },
+  { href: '/trucks', label: 'Trucks' },
   { href: '/business', label: 'Business' },
-  { href: '/technology', label: 'Tech' },
+  { href: '/technology', label: 'Technology' },
+  { href: '/workforce', label: 'Workforce' },
   { href: '/products', label: 'Products' },
-  { href: '/blogs', label: 'Blogs' },
+  { href: '/opinion', label: 'Opinion' },
+  { href: '/ccj-top-250', label: 'Top 250' },
 ];
 
 const menuSecondary = [
@@ -48,12 +49,7 @@ module.exports = {
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };
