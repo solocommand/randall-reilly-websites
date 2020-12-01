@@ -1,5 +1,3 @@
-$primary: #f58220;
-
 $theme-site-header-breakpoints: (
   hide-primary: 100000px, // effectively always hide the primary nav
   hide-secondary: 700px,
@@ -8,13 +6,7 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 830px
 );
 
-@import "../../node_modules/@randall-reilly/package-global/scss/core";
+// Colors
+$primary: #b94909;
 
-.site-navbar {
-  &__items {
-    &--secondary {
-      // ensures the nav items are aligned to the offset logo
-      padding-top: 6px;
-    }
-  }
-}
+@import "../../node_modules/@randall-reilly/package-global/scss/core";

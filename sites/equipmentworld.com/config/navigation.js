@@ -38,15 +38,13 @@ module.exports = {
     more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>Equipment World Daily</strong> to keep up with ...',
+      cta: 'Sign up for the Equipment World Daily to keep up with ...',
     },
   },
   menu: [
     {
       modifiers: ['primary'],
-      items: [
-        ...topics,
-      ],
+      items: topics,
     },
     {
       modifiers: ['secondary'],

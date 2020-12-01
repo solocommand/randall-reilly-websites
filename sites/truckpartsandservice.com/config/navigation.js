@@ -1,8 +1,16 @@
 const topics = [
-  { href: '/aftermarket-truck-parts-and-service-news', label: 'Aftermarket Truck Parts & Service News' },
-  { href: '/commercial-truck-dealer-news', label: 'Commercial Truck Dealer News' },
-  { href: '/semi-truck-repair-service', label: 'Semi Truck Repair Service' },
-  { href: '/dealer-development', label: 'Dealer Development' },
+  { href: '/business', label: 'Business' },
+  { href: '/workforce', label: 'Workforce' },
+  { href: '/economic-trends', label: 'Economic Trends' },
+  { href: '/maintenance', label: 'Maintenance' },
+  { href: '/products', label: 'Products' },
+];
+
+const menuSecondary = [
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 module.exports = {
@@ -24,14 +32,10 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>TPS Daily</strong> to keep up with ...',
+      cta: 'Sign up for the TPS Daily to keep up with ...',
     },
   },
   menu: [
@@ -41,12 +45,7 @@ module.exports = {
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };

@@ -1,0 +1,37 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { getAsArray } from "@base-cms/object-path";
+
+$ const { id, type, pageNode } = input;
+$ const { GAM } = out.global;
+$ const sections = getAsArray(input, "sections");
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <marko-web-gtm-content-context|{ context }| id=id>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-content-context>
+  </@head>
+  <@above-container>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wallpaper", aliases }) /> -->
+      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "interstitial", aliases }) /> -->
+    </marko-web-resolve-page>
+  </@above-container>
+  <@page>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      <marko-web-page-wrapper>
+        <for|s| of=sections>
+          <@section|{ blockName }| modifiers=s.modifiers>
+            <${s.renderBody}
+              block-name=blockName
+              content=content
+              aliases=aliases
+            />
+          </@section>
+        </for>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-content-page-layout>

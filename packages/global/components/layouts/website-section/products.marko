@@ -1,0 +1,78 @@
+import { getAsArray } from "@base-cms/object-path";
+
+$ const { id, alias, name, pageNode } = input;
+$ const sections = getAsArray(input, "sections");
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section|{ blockName, section, aliases }|>
+    <div class="row">
+      <div class="col-lg-8">
+        <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
+        <global-latest-products-feed-block alias=alias params={ limit: 10 } />
+      </div>
+      <div class="col-lg-4 pt-block">
+        <global-gam-define-display-ad
+          name="rotation-1"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+
+        <${input.railSlotA}
+          block-name=blockName
+          section=section
+          aliases=aliases
+        />
+
+        <global-gam-define-display-ad
+          name="rotation-2"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+
+        <global-gam-define-display-ad
+          name="rotation-3"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        />
+      </div>
+    </div>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard-2"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-top-stories-block />
+  </@section>
+
+  <for|s| of=sections>
+    <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
+      <${s.renderBody}
+        block-name=blockName
+        section=section
+        aliases=aliases
+      />
+    </@section>
+  </for>
+</global-website-section-default-layout>

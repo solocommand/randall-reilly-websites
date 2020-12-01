@@ -1,8 +1,7 @@
 import queryFragment from "../../graphql/fragments/opinion-block";
 
-<!-- @todo change this to be content type specific, not section specific -->
 $ const queryParams = {
-  sectionAlias: "channel-19",
+  sectionAlias: input.alias,
   limit: 3,
   queryFragment,
 };

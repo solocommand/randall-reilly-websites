@@ -1,115 +1,79 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import queryFragment from "@randall-reilly/package-global/graphql/fragments/content-list";
 
 $ const { id, alias, name, pageNode } = input;
-$ const { GAM } = out.global;
 
-<marko-web-website-section-page-layout id=id alias=alias name=name>
-  <@head>
-    <marko-web-gtm-website-section-context|{ context }| alias=alias>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-website-section-context>
-  </@head>
+<global-website-section-home-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section modifiers=["break-container"]>
+    <global-opinion-block alias="channel-19" />
+  </@section>
 
-  <@above-container>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ const aliases = hierarchyAliases(section);
-      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wallpaper", aliases }) /> -->
-      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "interstitial", aliases }) /> -->
-    </marko-web-resolve-page>
-  </@above-container>
+  <@section modifiers=["my-block-lg"]>
+    <div class="row">
+      <div class="col-md-4">
+        <global-section-list-block alias="business" />
+      </div>
+      <div class="col-md-4">
+        <global-section-list-block alias="trucks" />
+      </div>
+      <div class="col-md-4">
+        <global-section-list-block alias="lifestyle" />
+      </div>
+    </div>
+  </@section>
 
-  <@page>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ const aliases = hierarchyAliases(section);
-      <marko-web-page-wrapper>
-        <@section>
-          <global-gam-define-display-ad
-            name="leaderboard"
-            aliases=aliases
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-          />
-        </@section>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
 
-        <@section modifiers=["my-block-lg"]>
-          <global-top-stories-block with-header=false />
-        </@section>
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
+    <global-partners-in-business-block alias="partners-in-business" />
+  </@section>
 
-        <!-- Opinion -->
-        <@section modifiers=["break-container"]>
-          <global-opinion-block />
-        </@section>
+  <@section modifiers=["my-block-sm"]>
+    <div class="row row--block">
+      <div class="col-md-6">
+        <global-latest-podcast-block alias="overdrive-radio" />
+      </div>
+      <div class="col-md-6">
+        <global-resource-library-block />
+      </div>
+    </div>
+  </@section>
 
-        <!-- 3 Column Section List Blocks -->
-        <@section modifiers=["my-block-lg"]>
-          <div class="row">
-            <div class="col-md-4">
-              <global-section-list-block alias="business" />
-            </div>
-            <div class="col-md-4">
-              <global-section-list-block alias="trucks" />
-            </div>
-            <div class="col-md-4">
-              <global-section-list-block alias="lifestyle" />
-            </div>
-          </div>
-        </@section>
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+    <global-most-popular-block />
+  </@section>
 
-        <@section>
-          <global-gam-define-display-ad
-            name="rotation"
-            aliases=aliases
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-          />
-        </@section>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
 
-        <!-- Partners in Business -->
-        <@section modifiers=["my-block-lg"]>
-          <global-partners-in-business-block />
-        </@section>
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
+    <global-gear-block alias="gear" />
+  </@section>
 
-        <!-- OVD Radio + Resource Lib -->
-        <@section modifiers=["my-block-lg"]>
-          <div class="row row--block">
-            <div class="col-md-6">
-              <global-latest-podcast-block alias="overdrive-radio" />
-            </div>
-            <div class="col-md-6">
-              <global-resource-library-block />
-            </div>
-          </div>
-        </@section>
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+    <global-reader-rigs-block alias="reader-rigs" />
+  </@section>
 
-        <@section modifiers=["my-block-lg"]>
-          <global-most-popular-block />
-        </@section>
-
-        <@section>
-          <global-gam-define-display-ad
-            name="rotation"
-            aliases=aliases
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-          />
-        </@section>
-
-        <!-- Gear -->
-        <@section modifiers=["my-block-lg"]>
-          <global-gear-block />
-        </@section>
-        <!-- Reader Rigs -->
-        <@section modifiers=["my-block-lg"]>
-          <global-reader-rigs-block />
-        </@section>
-        <!-- Books, Guides, and Data -->
-
-        <@section>
-          <global-gam-define-display-ad
-            name="rotation"
-            aliases=aliases
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-          />
-        </@section>
-      </marko-web-page-wrapper>
-    </marko-web-resolve-page>
-  </@page>
-</marko-web-website-section-page-layout>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+</global-website-section-home-layout>

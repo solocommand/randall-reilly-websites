@@ -10,6 +10,13 @@ const topics = [
   { href: '/gear', label: 'Gear' },
 ];
 
+const menuSecondary = [
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
+];
+
 module.exports = {
   primary: {
     items: [],
@@ -29,14 +36,10 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>Truckers News Daily</strong> to keep up with ...',
+      cta: 'Sign up for the Trucker\'s News Daily to keep up with ...',
     },
   },
   menu: [
@@ -46,12 +49,7 @@ module.exports = {
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };

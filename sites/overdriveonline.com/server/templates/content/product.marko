@@ -1,0 +1,34 @@
+$ const { id, type, pageNode } = input;
+
+<global-content-product-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+  <@after-body|{ content }|>
+    <global-more-gear-block alias="gear" params={ excludeContentIds: [content.id] } />
+  </@after-body>
+
+  <@section modifiers=["my-block-sm"]>
+    <div class="row row--block">
+      <div class="col-md-6">
+        <global-ccj-top-250-block />
+      </div>
+      <div class="col-md-6">
+        <global-resource-library-block />
+      </div>
+    </div>
+  </@section>
+
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+    <global-most-popular-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+</global-content-product-layout>

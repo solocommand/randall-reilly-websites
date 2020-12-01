@@ -27,6 +27,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/commercial-carrier-journal/', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/user/CCJDigital', target: '_blank' },
   ],
+  podcastLinks: [],
   gcse: {
     id: 'e121ab2d7edb3a172',
   },
@@ -36,5 +37,9 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-PHDPM24',
+  },
+  newsletterSignupBanner: {
+    href: '#',
+    description: 'Sign up for the <span class="newsletter-name">CCJ Daily</span> to keep up with...',
   },
 };

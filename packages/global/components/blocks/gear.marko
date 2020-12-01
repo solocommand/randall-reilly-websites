@@ -1,27 +1,27 @@
 import queryFragment from "../../graphql/fragments/gear-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
-<!-- @todo this should move to OVD or be made generic -->
-<!-- @tod determine how to display the sponsor logo -->
+<!-- @todo determine how to display the sponsor logo -->
 $ const queryParams = {
-  sectionAlias: "gear",
-  requiresImage: true,
+  sectionAlias: input.alias,
   limit: 3,
   queryFragment,
+  sectionFragment,
 };
 
 $ const blockName = "gear-block";
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
     <marko-web-element block-name=blockName name="header">
-      Gear
+      ${section.name}
     </marko-web-element>
     <marko-web-element block-name=blockName name="description-wrapper">
       <marko-web-element block-name=blockName name="description">
-        The leading business training program for owner-operators
+        $!{section.description || input.defaultDescription}
       </marko-web-element>
       <marko-web-element block-name=blockName name="view-more">
-        <marko-web-link href="/gear">
+        <marko-web-link href=section.canonicalPath>
           View more &raquo;
         </marko-web-link>
       </marko-web-element>
@@ -34,6 +34,7 @@ $ const blockName = "gear-block";
       <@slot|{ node }|>
         <global-content-node
           image-position="right"
+          full-height=true
           card=true
           flush=false
           modifiers=[blockName]

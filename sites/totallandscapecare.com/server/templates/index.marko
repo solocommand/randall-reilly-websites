@@ -1,15 +1,79 @@
-<global-home-layout ...input>
-  <@section-list-blocks>
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+
+$ const { id, alias, name, pageNode } = input;
+
+<global-website-section-home-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section modifiers=["break-container"]>
+    <global-opinion-block alias="opinion" />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
     <div class="row">
-      <div class="col-md-4">
-        <global-section-list-block alias="equipment" />
-      </div>
       <div class="col-md-4">
         <global-section-list-block alias="business" />
       </div>
       <div class="col-md-4">
-        <global-section-list-block alias="lawncare" />
+        <global-section-list-block alias="trucks" />
+      </div>
+      <div class="col-md-4">
+        <global-section-list-block alias="maintenance" />
       </div>
     </div>
-  </@section-list-blocks>
-</global-home-layout>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
+    <global-partners-in-business-block alias="job-design-and-management" default-description="Lorem ipsum dolor sit amet" />
+  </@section>
+
+  <@section modifiers=["my-block-sm"]>
+    <div class="row row--block">
+      <div class="col-md-6">
+        <global-ccj-top-250-block />
+      </div>
+      <div class="col-md-6">
+        <global-resource-library-block />
+      </div>
+    </div>
+  </@section>
+
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+    <global-most-popular-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
+    <global-gear-block alias="products" default-description="Lorem ipsum dolor sit amet" />
+  </@section>
+
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+    <global-reader-rigs-block alias="compact-equipment" default-description="Lorem ipsum dolor sit amet" />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+</global-website-section-home-layout>

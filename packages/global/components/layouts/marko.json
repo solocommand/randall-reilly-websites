@@ -1,5 +1,6 @@
 {
-  "<global-home-layout>": {
-    "template": "./home.marko"
-  }
+  "taglib-imports": [
+    "./content/marko.json",
+    "./website-section/marko.json"
+  ]
 }

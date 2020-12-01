@@ -33,6 +33,9 @@
       margin-top: auto;
       margin-bottom: auto;
 
+      // set letter spacing per design
+      letter-spacing: .5px;
+
       #{ $self } {
         &__link {
           padding-top: 0;

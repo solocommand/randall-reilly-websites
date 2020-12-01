@@ -1,25 +1,26 @@
 import queryFragment from "../../graphql/fragments/gear-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
-<!-- @todo this should move to OVD or be made generic -->
-<!-- @tod determine how to display the sponsor logo -->
+<!-- @todo likely should change the name of this component -->
 $ const queryParams = {
-  sectionAlias: "gear",
   requiresImage: true,
-  limit: 6,
   ...input.params,
+  sectionAlias: input.alias,
+  limit: 6,
   queryFragment,
+  sectionFragment,
 };
 
 $ const blockName = "more-gear";
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
     <marko-web-element block-name=blockName name="header-wrapper">
       <marko-web-element block-name=blockName name="header">
-        More Gear
+        More ${section.name}
       </marko-web-element>
       <marko-web-element block-name=blockName name="view-more">
-        <marko-web-link href="/gear">
+        <marko-web-link href=section.canonicalPath>
           View more &raquo;
         </marko-web-link>
       </marko-web-element>

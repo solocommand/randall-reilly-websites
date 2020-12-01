@@ -6,70 +6,16 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 830px
 );
 
-// Fonts
-@import url("https://use.typekit.net/eae7fel.css");
-$skin-font-family-primary: solitaire-mvb-pro, sans-serif;
-$skin-font-family-secondary: informapro, sans-serif;
-
 // Colors
-$red: #b9161b;
-$blue: #134f8c;
-
-$gray-900: #232325;
-$gray-800: #3f4043;
-$gray-700: #68686c;
-$gray-600: #8c8e97;
-$gray-500: #91939c;
-$gray-400: #c4c6cb;
-
-$gray-200: #e3e4e5;
-$gray-100: #f0f1f2;
-
-$primary: $red;
-$secondary: $gray-800;
-
-$colors: (
-  "red": $red,
-  "tar-black": $gray-900,
-  "charcoal": $gray-800,
-  "smokey-gray": $gray-700,
-  "silver-fox": $gray-600,
-  "cloud": $gray-400,
-  "concrete": $gray-200,
-  "fog": $gray-100,
-  "sponsor-blue": $blue,
-);
-
-$skin-primary-hover-color: #78080b;
-$skin-secondary-hover-color: $gray-900;
-
-// Navbar and Header
-$theme-site-header-box-shadow: none;
-$theme-site-navbar-logo-height: 46px;
-
-$theme-site-navbar-secondary-font-size: 18px;
-$theme-site-navbar-secondary-link-color: $gray-800;
-$theme-site-navbar-secondary-link-padding: 15px;
+$primary: #b9161b;
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
-
-body {
-  // set a default letter spacing of .25px, since most fonts in OVD have some form of spacing
-  letter-spacing: .25px;
-}
-
-.site-header {
-  // add bottom border per design
-  border-bottom: 1px solid $gray-400;
-}
 
 .site-navbar {
   &__items {
     &--secondary {
       // ensures the nav items are aligned to the offset logo
       padding-top: 4px;
-      // set letter spacing per design
-      letter-spacing: .5px;
     }
   }
 }

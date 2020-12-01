@@ -1,10 +1,15 @@
 const topics = [
-  { href: '/construction-and-landscaping', label: 'Construction & Landscaping' },
-  { href: '/pickup-and-delivery', label: 'Pickup & Delivery' },
-  { href: '/utilities', label: 'Utilities' },
-  { href: '/vans', label: 'Vans' },
-  { href: '/pickup-trucks', label: 'Pickup Trucks' },
+  { href: '/trucks', label: 'Trucks' },
+  { href: '/alternative-power', label: 'Alternative Power' },
+  { href: '/maintenance', label: 'Maintenance' },
   { href: '/products', label: 'Products' },
+];
+
+const menuSecondary = [
+  { href: '/whitepapers', label: 'Whitepapers' },
+  { href: '/newsletters', label: 'Newsletters' },
+  { href: '/page/advertise', label: 'Advertise' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 module.exports = {
@@ -26,14 +31,10 @@ module.exports = {
     ],
 
     topics,
-    more: [
-      { href: '/advertise', label: 'Advertise' },
-      { href: '/contact-us', label: 'Contact Us' },
-      { href: '#', label: 'Newsletters' },
-    ],
+    more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>Hard Working Trucks Daily</strong> to keep up with ...',
+      cta: 'Sign up for the Hard Working Trucks Daily to keep up with ...',
     },
   },
   menu: [
@@ -43,12 +44,7 @@ module.exports = {
     },
     {
       modifiers: ['secondary'],
-      items: [
-        { href: '/contact-us', label: 'Contact Us' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/privacy-policy', label: 'Privacy Policy' },
-        { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-      ],
+      items: menuSecondary,
     },
   ],
 };
