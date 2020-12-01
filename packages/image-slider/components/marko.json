@@ -1,7 +1,0 @@
-{
-  "<marko-web-image-slider>": {
-    "template": "./image-slider.marko",
-    "@images": "array",
-    "@image-options": "object"
-  }
-}

@@ -1,7 +1,0 @@
-import defaultValue from "@base-cms/marko-core/utils/default-value";
-
-$ const title = defaultValue(data.title, "Webcasts");
-
-<shared-published-content-page-list-layout title=title>
-  <@query-params content-types=["Webinar"] sort-field="startDate" sort-order="desc" />
-</shared-published-content-page-list-layout>
