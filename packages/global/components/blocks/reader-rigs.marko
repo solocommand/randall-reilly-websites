@@ -1,26 +1,35 @@
+import gql from "graphql-tag";
 import queryFragment from "../../graphql/fragments/reader-rigs-block";
 
-<!-- @todo this should move to OVD -->
+<!-- @todo likely should change the name of this component -->
 $ const queryParams = {
-  sectionAlias: "reader-rigs",
+  sectionAlias: input.alias,
   requiresImage: true,
   limit: 3,
   queryFragment,
+  sectionFragment: gql`
+    fragment GlobalSectionListBlockSectionFragment on WebsiteSection {
+      id
+      name
+      canonicalPath
+    }
+  `,
 };
 
 $ const blockName = "reader-rigs";
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
     <marko-web-element block-name=blockName name="header">
-      Reader Rigs
+      ${section.name}
     </marko-web-element>
     <marko-web-element block-name=blockName name="description-wrapper">
       <marko-web-element block-name=blockName name="description">
-        Custom rigs submitted by our readers
+        $!{section.description || input.defaultDescription}
+        <!-- Custom rigs submitted by our readers -->
       </marko-web-element>
       <marko-web-element block-name=blockName name="view-more">
-        <marko-web-link href="/reader-rigs">
+        <marko-web-link href=section.canonicalPath>
           View more &raquo;
         </marko-web-link>
       </marko-web-element>
