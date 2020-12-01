@@ -37,4 +37,8 @@ module.exports = {
   gtm: {
     containerId: 'GTM-KN35FTZ',
   },
+  newsletterSignupBanner: {
+    href: '#',
+    description: 'Sign up for the <span class="newsletter-name">Hardworking Trucks Daily</span> to keep up with...',
+  },
 };
