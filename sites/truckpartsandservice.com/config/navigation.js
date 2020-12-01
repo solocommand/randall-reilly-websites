@@ -35,7 +35,7 @@ module.exports = {
     more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>TPS Daily</strong> to keep up with ...',
+      cta: 'Sign up for the TPS Daily to keep up with ...',
     },
   },
   menu: [

@@ -35,7 +35,7 @@ module.exports = {
     more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>Total Landscape Care Daily</strong> to keep up with ...',
+      cta: 'Sign up for the Total Landscape Care Daily to keep up with ...',
     },
   },
   menu: [

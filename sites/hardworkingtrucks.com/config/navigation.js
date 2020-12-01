@@ -34,7 +34,7 @@ module.exports = {
     more: menuSecondary,
     newsletter: {
       formAction: '/newsletters',
-      cta: 'Sign up for the <strong>Hard Working Trucks Daily</strong> to keep up with ...',
+      cta: 'Sign up for the Hard Working Trucks Daily to keep up with ...',
     },
   },
   menu: [
