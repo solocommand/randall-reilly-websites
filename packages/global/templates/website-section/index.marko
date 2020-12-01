@@ -31,7 +31,7 @@ $ const { GAM } = out.global;
           />
         </@section>
 
-        <@section|{ blockName }|>
+        <@section|{ blockName }| modifiers=["mb-block-lg"]>
           <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
           <global-section-feed-block alias=alias params={ limit: 3 } />
         </@section>
@@ -44,7 +44,7 @@ $ const { GAM } = out.global;
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-section-feed-block alias=alias params={ limit: 5, skip: 3 } />
         </@section>
 
@@ -56,7 +56,7 @@ $ const { GAM } = out.global;
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-section-feed-block alias=alias params={ limit: 5, skip: 8 } />
         </@section>
 
@@ -68,12 +68,12 @@ $ const { GAM } = out.global;
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-section-feed-block alias=alias params={ limit: 5, skip: 13 } />
         </@section>
 
         <!-- Top Stories -->
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-top-stories-block />
         </@section>
 
@@ -86,8 +86,8 @@ $ const { GAM } = out.global;
         </@section>
 
         <!-- OVD Radio + Resource Lib -->
-        <@section>
-          <div class="row row--resources">
+        <@section modifiers=["my-block-lg"]>
+          <div class="row row--block">
             <div class="col-md-6">
               <global-latest-podcast-block alias="overdrive-radio" />
             </div>
@@ -98,7 +98,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <!-- Most Popular -->
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-most-popular-block />
         </@section>
       </marko-web-page-wrapper>

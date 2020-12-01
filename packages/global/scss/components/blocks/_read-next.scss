@@ -15,8 +15,8 @@
 }
 
 .read-next {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: map-get($spacers, block);
+  padding-bottom: map-get($spacers, block);
 
   &__header {
     margin-bottom: 16px;

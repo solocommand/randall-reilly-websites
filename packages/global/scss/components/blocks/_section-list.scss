@@ -30,8 +30,8 @@
 .node-list {
   $self: &;
   &--section-list {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: map-get($spacers, block);
+    padding-bottom: map-get($spacers, block);
 
     #{ $self } {
       &__header {

@@ -1,3 +1,4 @@
+@debug map-get($spacers, block);
 .opinion {
   padding-top: 50px;
   padding-bottom: 50px - map-get($spacers, block);

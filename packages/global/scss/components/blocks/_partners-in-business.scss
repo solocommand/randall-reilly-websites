@@ -1,5 +1,6 @@
 .partners-in-business {
-  padding-top: 60px;
+  padding-top: map-get($spacers, block);
+  padding-bottom: map-get($spacers, block);
 
   &__header {
     margin-bottom: 6px;

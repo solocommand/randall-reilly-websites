@@ -21,8 +21,8 @@
 .content-page-header {
   max-width: $skin-content-body-max-width;
 
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: map-get($spacers, block);
+  padding-bottom: map-get($spacers, block);
 
   margin-right: auto;
   margin-left: auto;
@@ -45,13 +45,13 @@
 
 .page-contents {
   &__content-body {
-    padding-bottom: 24px;
+    padding-bottom: map-get($spacers, block);
     @include skin-typography($style: "article-text", $link-style: "content-body");
   }
 }
 
 .social-sharing {
-  margin-bottom: $block-spacer;
+  padding-bottom: map-get($spacers, block);
   &__button {
     margin-right: $block-spacer / 2;
   }

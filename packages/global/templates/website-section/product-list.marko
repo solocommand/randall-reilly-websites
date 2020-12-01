@@ -81,13 +81,13 @@ $ const { GAM } = out.global;
         </@section>
 
         <!-- Top Stories -->
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-top-stories-block />
         </@section>
 
         <!-- OVD Radio + Resource Lib -->
-        <@section>
-          <div class="row row--resources">
+        <@section modifiers=["my-block-lg"]>
+          <div class="row row--block">
             <div class="col-md-6">
               <global-latest-podcast-block alias="overdrive-radio" />
             </div>
@@ -98,7 +98,7 @@ $ const { GAM } = out.global;
         </@section>
 
         <!-- Most Popular -->
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-most-popular-block />
         </@section>
       </marko-web-page-wrapper>

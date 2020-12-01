@@ -15,7 +15,7 @@
 }
 
 .related-stories {
-  padding-top: 60px;
+  padding-top: map-get($spacers, block);
 
   &__header {
     margin-bottom: $block-spacer;

@@ -33,7 +33,7 @@ $ const { GAM } = out.global;
           />
         </@section>
 
-        <@section|{ blockName }|>
+        <@section|{ blockName }| modifiers=["mb-block-lg"]>
           <div class="row">
             <div class="col-lg-8">
               <div class="content-page-header">
@@ -73,13 +73,13 @@ $ const { GAM } = out.global;
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-top-stories-block />
         </@section>
 
         <!-- CCJ Top 250 + Resource Lib -->
-        <@section>
-          <div class="row row--resources">
+        <@section modifiers=["my-block-lg"]>
+          <div class="row row--block">
             <div class="col-md-6">
               <global-ccj-top-250-block />
             </div>
@@ -89,7 +89,7 @@ $ const { GAM } = out.global;
           </div>
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-most-popular-block />
         </@section>
 

@@ -64,7 +64,7 @@ $ const shouldInjectAds = ["article"].includes(type);
           </div>
         </@section>
 
-        <@section>
+        <@section modifiers=["mb-block-lg"]>
           <div class="content-page-body">
             <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
               <if(content.embedCode)>
@@ -161,13 +161,13 @@ $ const shouldInjectAds = ["article"].includes(type);
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-top-stories-block />
         </@section>
 
         <!-- CCJ Top 250 + Resource Lib -->
-        <@section>
-          <div class="row row--resources">
+        <@section modifiers=["my-block-lg"]>
+          <div class="row row--block">
             <div class="col-md-6">
               <global-ccj-top-250-block />
             </div>
@@ -186,14 +186,14 @@ $ const shouldInjectAds = ["article"].includes(type);
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-related-stories-block
             content-id=id
             section-id=primarySection.id
           />
         </@section>
 
-        <@section>
+        <@section modifiers=["my-block-lg"]>
           <global-most-popular-block />
         </@section>
 

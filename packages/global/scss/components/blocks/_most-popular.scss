@@ -12,8 +12,7 @@ $most-popular-position-size: 40px;
 }
 
 .most-popular {
-  padding-top: 60px;
-  padding-bottom: 60px - map-get($spacers, block);
+  padding-top: map-get($spacers, block);
 
   &__header {
     @include section-header-underline();

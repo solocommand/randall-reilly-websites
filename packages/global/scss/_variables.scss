@@ -27,6 +27,14 @@ $breadcrumb-divider: "|" !default;
 // Set gutter and block spacer
 $grid-gutter-width: 20px;
 $block-spacer: 24px;
+$spacers: (
+  block-xl: $block-spacer * 2.5,
+  block-lg: $block-spacer * 1.5,
+  block: $block-spacer,
+  block-sm: $block-spacer / 2,
+  block-xs: $block-spacer / 4,
+);
+
 $hr-margin-y: $grid-gutter-width / 2;
 
 // Marko Web Document and Page Settings
