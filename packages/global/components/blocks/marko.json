@@ -11,6 +11,9 @@
   "<global-latest-products-feed-block>": {
     "template": "./latest-products-feed.marko"
   },
+  "<global-more-gear-block>": {
+    "template": "./more-gear.marko"
+  },
   "<global-most-popular-block>": {
     "template": "./most-popular.marko"
   },
