@@ -44,9 +44,7 @@ module.exports = {
   menu: [
     {
       modifiers: ['primary'],
-      items: [
-        ...topics,
-      ],
+      items: topics,
     },
     {
       modifiers: ['secondary'],
