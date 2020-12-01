@@ -32,6 +32,8 @@ $ const {
         <@lazy-load ...site.getAsObject("gam.lazyLoad") />
       </marko-web-gam-enable>
       <marko-web-gam-targeting key-values={ uri: req.path } />
+      $ const logoSrc = site.get("logos.prestitial.src", site.get("logos.footer.src"));
+      <div id="wl_flogop_div" data-interstitial-prop="logo-url" data-interstitial-value=logoSrc style="display: none;" />
     </if>
   </@head>
   <@above-container>
