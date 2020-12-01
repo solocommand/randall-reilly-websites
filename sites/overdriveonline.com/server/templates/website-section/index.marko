@@ -1,5 +1,3 @@
-import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-
 $ const { id, alias, name, pageNode } = input;
 
 <global-website-section-default-layout
@@ -16,26 +14,9 @@ $ const { id, alias, name, pageNode } = input;
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
-    <global-top-stories-block with-header=false />
-  </@section>
-
-  <@section modifiers=["break-container"]>
-    <global-opinion-block alias="channel-19" />
-  </@section>
-
-  <@section modifiers=["my-block-lg"]>
-    <div class="row">
-      <div class="col-md-4">
-        <global-section-list-block alias="business" />
-      </div>
-      <div class="col-md-4">
-        <global-section-list-block alias="trucks" />
-      </div>
-      <div class="col-md-4">
-        <global-section-list-block alias="lifestyle" />
-      </div>
-    </div>
+  <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
+    <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
+    <global-section-feed-block alias=alias params={ limit: 3 } />
   </@section>
 
   <@section|{ aliases }|>
@@ -47,7 +28,43 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section modifiers=["my-block-lg"]>
-    <global-partners-in-business-block alias="partners-in-business" />
+    <global-section-feed-block alias=alias params={ limit: 5, skip: 3 } />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-feed-block alias=alias params={ limit: 5, skip: 8 } />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-feed-block alias=alias params={ limit: 5, skip: 13 } />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-top-stories-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
   </@section>
 
   <@section modifiers=["my-block-lg"]>
@@ -63,29 +80,5 @@ $ const { id, alias, name, pageNode } = input;
 
   <@section modifiers=["my-block-lg"]>
     <global-most-popular-block />
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-    />
-  </@section>
-
-  <@section modifiers=["my-block-lg"]>
-    <global-gear-block alias="gear" />
-  </@section>
-
-  <@section modifiers=["my-block-lg"]>
-    <global-reader-rigs-block alias="reader-rigs" />
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-    />
   </@section>
 </global-website-section-default-layout>

@@ -1,0 +1,10 @@
+{
+  "<global-website-section-default-layout>": {
+    "template": "./default.marko",
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  }
+}
