@@ -129,6 +129,13 @@ $ const shouldInjectAds = ["article"].includes(type);
 
               <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
+              <if(type === "document" || type === "whitepaper")>
+                <default-theme-content-download obj=content>
+                  <@wufoo user-name="parameter1" />
+                  <@link class="btn btn-lg btn-primary" />
+                </default-theme-content-download>
+              </if>
+
               <if(displayNewsletterSignup)>
                 <global-newsletter-signup-banner-block />
               </if>
