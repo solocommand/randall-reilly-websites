@@ -1,23 +1,50 @@
-const topics = [
-  { href: '/trucks', label: 'Trucks' },
-  { href: '/alternative-power', label: 'Alternative Power' },
-  { href: '/maintenance', label: 'Maintenance' },
-  { href: '/products', label: 'Products' },
-];
+const topics = {
+  primary: [
+    { href: '/trucks', label: 'Trucks' },
+    { href: '/alternative-power', label: 'Alternative Power' },
+    { href: '/maintenance', label: 'Maintenance' },
+    { href: '/products', label: 'Products' },
+  ],
+  expanded: [
+  ],
+  secondary: [
+  ],
+};
 
-const menuSecondary = [
-  { href: '/whitepapers', label: 'Whitepapers' },
-  { href: '/newsletters', label: 'Newsletters' },
+const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
   { href: '/contact-us', label: 'Contact Us' },
+  { href: '/newsletters', label: 'Newsletters' },
 ];
 
+const mobileMenu = {
+  primary: [
+    ...topics.primary,
+    ...topics.expanded,
+  ],
+  secondary: [
+    ...topics.secondary,
+    { href: '/newsletters', label: 'Newsletters' },
+  ],
+};
+
+const desktopMenu = {
+  about: [...utilities],
+  sections: [
+    ...topics.primary,
+    ...topics.expanded,
+    ...topics.secondary,
+  ],
+};
+
 module.exports = {
+  desktopMenu,
+  mobileMenu,
   primary: {
     items: [],
   },
   secondary: {
-    items: topics,
+    items: topics.primary,
   },
   tertiary: {
     items: [],
@@ -30,21 +57,11 @@ module.exports = {
       { href: '/contact-us', label: 'Contact Us' },
     ],
 
-    topics,
-    more: menuSecondary,
+    topics: topics.primary,
+    more: utilities,
     newsletter: {
       formAction: '/newsletters',
       cta: 'Sign up for the Hard Working Trucks Daily to keep up with ...',
     },
   },
-  menu: [
-    {
-      modifiers: ['primary'],
-      items: topics,
-    },
-    {
-      modifiers: ['secondary'],
-      items: menuSecondary,
-    },
-  ],
 };

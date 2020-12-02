@@ -1,27 +1,53 @@
-const topics = [
-  { href: '/heavy-equipment', label: 'Heavy Equipment' },
-  { href: '/better-roads', label: 'Better Roads' },
-  { href: '/big-iron-dealer', label: 'Big Iron Dealer' },
-  { href: '/business', label: 'Business' },
-  { href: '/technology', label: 'Technology' },
-  { href: '/workforce', label: 'Workforce' },
-  { href: '/safety', label: 'Safety' },
-];
+const topics = {
+  primary: [
+    { href: '/heavy-equipment', label: 'Heavy Equipment' },
+    { href: '/better-roads', label: 'Better Roads' },
+    { href: '/big-iron-dealer', label: 'Big Iron Dealer' },
+    { href: '/business', label: 'Business' },
+    { href: '/technology', label: 'Technology' },
+    { href: '/workforce', label: 'Workforce' },
+    { href: '/safety', label: 'Safety' },
+  ],
+  expanded: [
+  ],
+  secondary: [
+  ],
+};
 
-const menuSecondary = [
-  { href: '/safety-watch', label: 'Safety Watch' },
-  { href: '/whitepapers', label: 'Whitepapers' },
-  { href: '/newsletters', label: 'Newsletters' },
+const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
   { href: '/contact-us', label: 'Contact Us' },
+  { href: '/newsletters', label: 'Newsletters' },
 ];
 
+const mobileMenu = {
+  primary: [
+    ...topics.primary,
+    ...topics.expanded,
+  ],
+  secondary: [
+    ...topics.secondary,
+    { href: '/newsletters', label: 'Newsletters' },
+  ],
+};
+
+const desktopMenu = {
+  about: [...utilities],
+  sections: [
+    ...topics.primary,
+    ...topics.expanded,
+    ...topics.secondary,
+  ],
+};
+
 module.exports = {
+  desktopMenu,
+  mobileMenu,
   primary: {
     items: [],
   },
   secondary: {
-    items: topics,
+    items: topics.primary,
   },
   tertiary: {
     items: [],
@@ -34,21 +60,11 @@ module.exports = {
       { href: '/contact-us', label: 'Contact Us' },
     ],
 
-    topics,
-    more: menuSecondary,
+    topics: topics.primary,
+    more: utilities,
     newsletter: {
       formAction: '/newsletters',
       cta: 'Sign up for the Equipment World Daily to keep up with ...',
     },
   },
-  menu: [
-    {
-      modifiers: ['primary'],
-      items: topics,
-    },
-    {
-      modifiers: ['secondary'],
-      items: menuSecondary,
-    },
-  ],
 };

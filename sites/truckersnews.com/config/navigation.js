@@ -1,28 +1,55 @@
-const topics = [
-  { href: '/trucks', label: 'Trucks' },
-  { href: '/news', label: 'News' },
-  { href: '/features', label: 'Features' },
-  { href: '/fun', label: 'Fun' },
-  { href: '/whats-hot', label: 'Whats Hot' },
-  { href: '/videos', label: 'Videos' },
-  { href: '/jobs', label: 'Jobs' },
-  { href: '/she-drives', label: 'She Drives' },
-  { href: '/gear', label: 'Gear' },
-];
+const topics = {
+  primary: [
+    { href: '/trucks', label: 'Trucks' },
+    { href: '/news', label: 'News' },
+    { href: '/features', label: 'Features' },
+    { href: '/fun', label: 'Fun' },
+    { href: '/whats-hot', label: 'Whats Hot' },
+    { href: '/videos', label: 'Videos' },
+    { href: '/jobs', label: 'Jobs' },
+    { href: '/she-drives', label: 'She Drives' },
+    { href: '/gear', label: 'Gear' },
+  ],
+  expanded: [
+  ],
+  secondary: [
+  ],
+};
 
-const menuSecondary = [
-  { href: '/whitepapers', label: 'Whitepapers' },
-  { href: '/newsletters', label: 'Newsletters' },
+const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
   { href: '/contact-us', label: 'Contact Us' },
+  { href: '/newsletters', label: 'Newsletters' },
 ];
 
+const mobileMenu = {
+  primary: [
+    ...topics.primary,
+    ...topics.expanded,
+  ],
+  secondary: [
+    ...topics.secondary,
+    { href: '/newsletters', label: 'Newsletters' },
+  ],
+};
+
+const desktopMenu = {
+  about: [...utilities],
+  sections: [
+    ...topics.primary,
+    ...topics.expanded,
+    ...topics.secondary,
+  ],
+};
+
 module.exports = {
+  desktopMenu,
+  mobileMenu,
   primary: {
     items: [],
   },
   secondary: {
-    items: topics,
+    items: topics.primary,
   },
   tertiary: {
     items: [],
@@ -35,21 +62,11 @@ module.exports = {
       { href: '/contact-us', label: 'Contact Us' },
     ],
 
-    topics,
-    more: menuSecondary,
+    topics: topics.primary,
+    more: utilities,
     newsletter: {
       formAction: '/newsletters',
       cta: 'Sign up for the Trucker\'s News Daily to keep up with ...',
     },
   },
-  menu: [
-    {
-      modifiers: ['primary'],
-      items: topics,
-    },
-    {
-      modifiers: ['secondary'],
-      items: menuSecondary,
-    },
-  ],
 };
