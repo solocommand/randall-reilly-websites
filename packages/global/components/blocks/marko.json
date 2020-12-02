@@ -62,4 +62,8 @@
   "<global-top-stories-block>": {
     "template": "./top-stories.marko"
   }
+  ,
+  "<global-top-stories-menu-block>": {
+    "template": "./top-stories-menu.marko"
+  }
 }

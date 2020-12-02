@@ -1,5 +1,6 @@
 .site-header {
   position: static;
+  border-bottom: 1px solid $gray-400;
 }
 
 // prevents the page from scrolling when the nav is open
@@ -14,7 +15,6 @@ body.site-menu--open {
 
 .site-menu {
   $self: &;
-  border-top: 1px solid $gray-400;
   opacity: 1;
 
   @media (min-width: $skin-desktop-menu-breakpoint) {

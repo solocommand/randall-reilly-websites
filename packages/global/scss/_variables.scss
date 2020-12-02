@@ -229,7 +229,7 @@ $theme-item-description-margin: 10px;
 // Ads
 $theme-ad-box-shadow: none;
 
-// Card Header
+// Cards and Card Headers
 $theme-card-header-background-color: transparent;
 $theme-card-header-color: $black;
 $theme-card-header-font-size: 22px;
@@ -239,6 +239,9 @@ $theme-card-header-border: none;
 
 $theme-card-header-link-hover-color: $primary;
 $theme-card-header-link-hover-decoration: none;
+
+$marko-web-node-bg-color: transparent;
+$theme-card-background-color: transparent;
 
 // Pages
 $theme-page-body-font-family: $theme-font-family-sans-serif;
