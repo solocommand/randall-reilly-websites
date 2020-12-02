@@ -1,7 +1,7 @@
 import { getAsArray } from "@base-cms/object-path";
+import DefineDisplayAd from "../../gam/define-display-ad";
 
 $ const { id, type, pageNode } = input;
-$ const { GAM } = out.global;
 $ const sections = getAsArray(input, "sections");
 
 $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
@@ -72,47 +72,29 @@ $ const shouldInjectAds = ["article"].includes(type);
         $ const bodyId = `content-body-${content.id}`;
 
         <if(shouldInjectAds)>
-          <marko-web-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+          <global-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
             <!-- mobile only -->
-            <!-- @todo collapsing will now show this add temporarily -->
             <@inject
-              ...GAM.getAdUnit({ name: "rotation", aliases })
               at=350
-              modifiers=["max-width-970", "margin-auto-x", "inline-content-mobile", "name-rotation"]
-              collapse-before-ad-fetch=false
-              with-wrapper=true
-              size-mapping=[
-                { viewport: [980, 0], size: [] },
-                { viewport: [300, 0], size: [[300, 50], [320, 50], [320, 100]] },
-              ]
+              name="inline-content-mobile"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
             />
             <!-- desktop/tablet only -->
             <@inject
-              ...GAM.getAdUnit({ name: "rotation", aliases })
               at=900
-              modifiers=["max-width-970", "margin-auto-x", "inline-content-desktop", "name-rotation"]
-              collapse-before-ad-fetch=false
-              with-wrapper=true
-              size-mapping=[
-                { viewport: [980, 0], size: [[970, 250], [970, 90], [970, 66], [728, 90]] },
-                { viewport: [750, 0], size: [728, 90] },
-                { viewport: [0, 0], size: [] },
-              ]
+              name="inline-content-desktop"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
             />
             <!-- mobile only -->
-            <!-- @todo collapsing will now show this add temporarily -->
             <@inject
-              ...GAM.getAdUnit({ name: "rotation", aliases })
               at=1200
-              modifiers=["max-width-970", "margin-auto-x", "inline-content-mobile", "name-rotation"]
-              collapse-before-ad-fetch=false
-              with-wrapper=true
-              size-mapping=[
-                { viewport: [980, 0], size: [] },
-                { viewport: [300, 0], size: [[300, 50], [320, 50], [320, 100]] },
-              ]
+              name="inline-content-mobile"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
             />
-          </marko-web-gam-inject-ads>
+          </global-gam-inject-ads>
         </if>
 
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
