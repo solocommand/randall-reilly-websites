@@ -1,0 +1,4 @@
+// @todo Verify this. Reduced the z-index to prevent overlaying the welcome ad.
+// Currently, the ad template is z-indexing at 20000, so setting this lower.
+// The default value was 50000
+$theme-site-header-z-index: 15000;
