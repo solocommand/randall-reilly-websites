@@ -1,4 +1,5 @@
 import { getAsArray } from "@base-cms/object-path";
+import { dasherize } from "@base-cms/inflector";
 
 $ const { GAM, req } = out.global;
 
@@ -7,9 +8,14 @@ $ if (req.query['gam-collapse-before-fetch']) {
   collapseBeforeAdFetch = Boolean(parseInt(req.query['gam-collapse-before-fetch'], 10));
 }
 
+$ const adUnit = GAM.getAdUnit({ name: input.name, aliases: input.aliases });
+$ const { templateName } = adUnit;
+$ const modifiers = [...getAsArray(input.modifiers)];
+$ if (templateName) modifiers.push(`template-${dasherize(templateName)}`);
+
 <marko-web-gam-define-display-ad
-  ...GAM.getAdUnit({ name: input.name, aliases: input.aliases })
-  modifiers=[...getAsArray(input.modifiers), `name-${input.name}`]
+  ...adUnit
+  modifiers=modifiers
   collapse-before-ad-fetch=collapseBeforeAdFetch
   with-wrapper=true
   class=input.class
