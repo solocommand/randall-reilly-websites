@@ -3,12 +3,25 @@ import { getAsArray } from "@base-cms/object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
+$ const { pagination: p } = out.global;
+$ const perPage = 18;
+
 <global-website-section-default-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
 >
+  <@head>
+    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+        as-rels=true
+      />
+    </global-section-feed-block>
+  </@head>
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="leaderboard"
@@ -18,8 +31,14 @@ $ const sections = getAsArray(input, "sections");
   </@section>
 
   <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
-    <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
-    <global-section-feed-block alias=alias params={ limit: 3 } />
+    <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+      <if(p.page > 1)>${value}: Page ${p.page}</if>
+      <else>${value}</else>
+    </marko-web-website-section-name>
+
+    <global-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage }) />
+    </global-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -31,7 +50,9 @@ $ const sections = getAsArray(input, "sections");
   </@section>
 
   <@section modifiers=["my-block-lg"]>
-    <global-section-feed-block alias=alias params={ limit: 5, skip: 3 } />
+    <global-section-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 3 }) />
+    </global-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -43,7 +64,9 @@ $ const sections = getAsArray(input, "sections");
   </@section>
 
   <@section modifiers=["my-block-lg"]>
-    <global-section-feed-block alias=alias params={ limit: 5, skip: 8 } />
+    <global-section-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
+    </global-section-feed-block>
   </@section>
 
   <@section|{ aliases }|>
@@ -55,7 +78,16 @@ $ const sections = getAsArray(input, "sections");
   </@section>
 
   <@section modifiers=["my-block-lg"]>
-    <global-section-feed-block alias=alias params={ limit: 5, skip: 13 } />
+    <global-section-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
+    </global-section-feed-block>
+    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-feed-block>
   </@section>
 
   <@section modifiers=["my-block-lg"]>
