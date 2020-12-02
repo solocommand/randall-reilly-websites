@@ -29,6 +29,8 @@ $ if (withSection && alias && withPrimarySectionModifier) {
   modifiers.push(`section-${primarySection.alias}`);
 }
 
+$ const imageLink = primaryImage.src ? { href: content.siteContext.path, attrs: linkAttrs } : false;
+
 <marko-web-node
   type=`${content.type}-content`
   image-position=defaultValue(input.imagePosition, "left")
@@ -49,7 +51,7 @@ $ if (withSection && alias && withPrimarySectionModifier) {
       src=primaryImage.src
       alt=primaryImage.alt
       is-logo=primaryImage.isLogo
-      link={ href: content.siteContext.path, attrs: linkAttrs }
+      link=imageLink
     />
   </if>
   <@body>
