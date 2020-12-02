@@ -7,6 +7,7 @@ const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const staticPageRoutes = require('./routes/static-page');
+const paginated = require('./middleware/paginated');
 
 const routes = siteRoutes => (app) => {
   // Load static page routes
@@ -26,6 +27,9 @@ module.exports = (options = {}) => {
     onStart: async (app) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
+
+      // Use pagianted middleware
+      app.use(paginated());
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
