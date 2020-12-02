@@ -1,0 +1,45 @@
+.books-guides-data {
+  padding-top: map-get($spacers, block);
+
+  &__header {
+    margin-bottom: 6px;
+    @include skin-typography($style: "section-header");
+  }
+
+  &__description-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    @include skin-typography($style: "article-text");
+  }
+
+  &__view-more {
+    @include skin-typography($style: "view-more", $link-style: "primary");
+  }
+}
+
+.node {
+  $self: &;
+
+  &--books-guides-data {
+    #{ $self } {
+      &__title {
+        @include skin-typography($style: "overlay-header-2", $link-style: "primary");
+      }
+
+      &__body--overlay {
+        padding: 16px;
+      }
+
+      &__contents--body {
+        padding: 16px 10px;
+        text-align: center;
+        background-color: rgba($gray-900, .9);
+      }
+    }
+  }
+}

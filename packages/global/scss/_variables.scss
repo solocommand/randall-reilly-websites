@@ -99,6 +99,9 @@ $marko-web-node-padding: 20px;
 $marko-web-node-placeholder-image: none;
 $marko-web-node-placeholder-image-bg-color: transparent;
 
+$marko-web-node-overlay-image-text-shadow: none;
+$marko-web-node-overlay-image-gradient: linear-gradient(to top, rgba($gray-800, .1), rgba($gray-800, .1));
+
 // Marko Web Node Lists
 //
 $marko-web-node-list-padding: 16px;

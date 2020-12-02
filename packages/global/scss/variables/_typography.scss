@@ -266,6 +266,17 @@ $typography: non-destructive-map-merge(
       "letter-spacing": .25px,
       "text-transform": none,
     ),
+    "overlay-header-2": (
+      "color": $white,
+      "font-family": $skin-font-family-secondary,
+      "font-weight": $font-weight-bold,
+      "font-size": 22px,
+      "font-size-mobile": 22px,
+      "line-height": 1.27,
+      "line-height-mobile": 1.27,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
   ),
   $typography
 );
@@ -283,6 +294,13 @@ $typography-links: non-destructive-map-merge(
     "header-2": (
       "primary": (
         "max-lines": 3,
+        "text-decoration": none,
+        "hover-text-decoration": underline,
+      ),
+    ),
+    "overlay-header-2": (
+      "primary": (
+        "max-lines": 2,
         "text-decoration": none,
         "hover-text-decoration": underline,
       ),
