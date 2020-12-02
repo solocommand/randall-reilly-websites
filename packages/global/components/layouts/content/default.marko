@@ -78,7 +78,7 @@ $ const shouldInjectAds = ["article"].includes(type);
             <@inject
               ...GAM.getAdUnit({ name: "rotation", aliases })
               at=350
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+              modifiers=["max-width-970", "margin-auto-x", "inline-content-mobile", "name-rotation"]
               collapse-before-ad-fetch=false
               with-wrapper=true
               size-mapping=[
@@ -90,7 +90,7 @@ $ const shouldInjectAds = ["article"].includes(type);
             <@inject
               ...GAM.getAdUnit({ name: "rotation", aliases })
               at=900
-              modifiers=["max-width-970", "margin-auto-x", "inline-content", "name-rotation"]
+              modifiers=["max-width-970", "margin-auto-x", "inline-content-desktop", "name-rotation"]
               collapse-before-ad-fetch=false
               with-wrapper=true
               size-mapping=[
@@ -104,7 +104,7 @@ $ const shouldInjectAds = ["article"].includes(type);
             <@inject
               ...GAM.getAdUnit({ name: "rotation", aliases })
               at=1200
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+              modifiers=["max-width-970", "margin-auto-x", "inline-content-mobile", "name-rotation"]
               collapse-before-ad-fetch=false
               with-wrapper=true
               size-mapping=[

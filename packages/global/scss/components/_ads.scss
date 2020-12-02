@@ -21,7 +21,9 @@
     }
   }
 
-  &--inline-content {
+  &--inline-content,
+  &--inline-content-desktop,
+  &--inline-content-mobile {
     margin-right: $marko-web-page-wrapper-padding * -1;
     margin-bottom: 30px;
     margin-left: $marko-web-page-wrapper-padding * -1;
@@ -37,7 +39,9 @@
   }
 
   &--inline,
-  &--inline-content {
+  &--inline-content,
+  &--inline-content-desktop,
+  &--inline-content-mobile {
     #{ $self } {
       &__wrapper {
         padding-bottom: $container-bottom-padding;
@@ -86,6 +90,19 @@
     min-height: 50px + $container-height;
     @media (min-width: 750px) {
       min-height: 90px + $container-height;
+    }
+  }
+
+  &--inline-content-desktop#{&}--name-rotation {
+    display: none;
+    @media (min-width: 750px) {
+      display: block;
+    }
+  }
+
+  &--inline-content-mobile#{&}--name-rotation {
+    @media (min-width: 750px) {
+      display: none;
     }
   }
 
