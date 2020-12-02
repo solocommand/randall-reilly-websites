@@ -25,7 +25,6 @@
   $self: &;
   $node-spacer: 12px;
   &--latest-products-feed {
-    padding-bottom: 40px;
     #{ $self } {
       &__node {
         padding-top: $node-spacer;
