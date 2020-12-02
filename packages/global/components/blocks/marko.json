@@ -29,6 +29,9 @@
   "<global-newsletter-signup-banner-block>": {
     "template": "./newsletter-signup-banner.marko"
   },
+  "<global-newsletter-signup-banner-large-block>": {
+    "template": "./newsletter-signup-banner-large.marko"
+  },
   "<global-opinion-block>": {
     "template": "./opinion.marko"
   },

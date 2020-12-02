@@ -50,9 +50,19 @@ $ const perPage = 18;
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
     <global-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 3 }) />
+      <@query-params limit=2 skip=p.skip({ perPage, skip: 3 }) />
+    </global-section-feed-block>
+  </@section>
+
+  <@section modifiers=["my-block-sm"]>
+    <global-newsletter-signup-banner-large-block />
+  </@section>
+
+  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+    <global-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
     </global-section-feed-block>
   </@section>
 
