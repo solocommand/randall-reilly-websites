@@ -19,7 +19,7 @@ $ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
     <!-- init gam -->
     <marko-web-gam-init />
     <if(hasPrestitial)>
-      <gam-prestitial init=true adunit=prestitial />
+      <global-gam-prestitial init=true adunit=prestitial />
     </if>
 
     <!-- init gtm -->
@@ -44,7 +44,7 @@ $ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
   <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
   <@above-wrapper>
     <if(hasPrestitial)>
-      <gam-prestitial display=true adunit=prestitial />
+      <global-gam-prestitial display=true adunit=prestitial />
     </if>
   </@above-wrapper>
   <@above-container>
