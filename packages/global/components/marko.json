@@ -21,6 +21,9 @@
     "<below-container>": {},
     "<foot>": {}
   },
+  "<global-pagination-controls>": {
+    "template": "./pagination-controls.marko"
+  },
   "<global-site-menu>": {
     "template": "./site-menu.marko"
   },

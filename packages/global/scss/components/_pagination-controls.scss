@@ -1,0 +1,18 @@
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  padding-top: map-get($spacers, block);
+
+  &__prev {
+    margin-right: map-get($spacers, block);
+  }
+
+  &__next {
+    margin-left: map-get($spacers, block);
+  }
+
+  &__pages {
+    @include skin-typography($style: "teaser-text-1");
+    line-height: 1;
+  }
+}

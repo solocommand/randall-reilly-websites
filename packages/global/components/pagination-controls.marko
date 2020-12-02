@@ -1,0 +1,47 @@
+import { cleanPath } from "@base-cms/utils";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const { perPage, totalCount, path } = input;
+$ const asRels = defaultValue(input.asRels, false);
+$ const { pagination: p } = out.global;
+
+$ const totalPages = p.totalPages({ perPage, totalCount });
+$ const nextPage = p.nextPage({ perPage, totalCount });
+$ const prevPage = p.prevPage();
+
+$ const nextHref = `/${cleanPath(path)}?page=${nextPage}`;
+$ const prevHref = `/${cleanPath(path)}?page=${prevPage}`;
+
+$ const blockName = "pagination-controls";
+
+<if(asRels)>
+  <if(prevPage)>
+    <link rel="prev" href=prevHref />
+  </if>
+  <if(nextPage)>
+    <link rel="next" href=nextHref />
+  </if>
+</if>
+<else>
+  <marko-web-block name=blockName>
+    <if(prevPage)>
+      <marko-web-link
+        class=`btn btn-primary ${blockName}__prev`
+        href=prevHref
+      >
+        Previous Page
+      </marko-web-link>
+    </if>
+    <marko-web-element block-name=blockName name="pages">
+      Page ${p.page} of ${totalPages}
+    </marko-web-element>
+    <if(nextPage)>
+      <marko-web-link
+        class=`btn btn-primary ${blockName}__next`
+        href=nextHref
+      >
+        Next Page
+      </marko-web-link>
+    </if>
+  </marko-web-block>
+</else>
