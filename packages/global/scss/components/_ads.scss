@@ -2,6 +2,13 @@
   $self: &;
   text-align: left;
 
+  $container-bottom-padding: 30px;
+  $wrapper-first-child-padding: 16px;
+  $label-bottom-padding: 4px;
+  $label-font-size: 10px;
+  $label-line-height: 1;
+  $container-height: $container-bottom-padding + $wrapper-first-child-padding + ($label-font-size * $label-line-height) + $label-bottom-padding;
+
   &--inline {
     margin-right: $marko-web-page-wrapper-padding * -1;
     margin-bottom: 0;
@@ -33,13 +40,13 @@
   &--inline-content {
     #{ $self } {
       &__wrapper {
-        padding-bottom: 30px;
+        padding-bottom: $container-bottom-padding;
       }
     }
   }
 
   &--rail {
-    padding-bottom: 30px;
+    padding-bottom: $container-bottom-padding;
     background-color: $skin-ad-bg-color;
   }
 
@@ -73,16 +80,25 @@
     }
   }
 
+  &--name-leaderboard,
+  &--name-leaderboard-2,
+  &--name-rotation {
+    min-height: 50px + $container-height;
+    @media (min-width: 750px) {
+      min-height: 90px + $container-height;
+    }
+  }
+
   > *:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 16px;
+    padding-top: $wrapper-first-child-padding;
 
     &::before {
-      padding-bottom: 4px;
-      font-size: 10px;
-      line-height: 1;
+      padding-bottom: $label-bottom-padding;
+      font-size: $label-font-size;
+      line-height: $label-line-height;
       color: $skin-ad-label-color;
       text-transform: uppercase;
       content: "Advertisement";

@@ -1,3 +1,5 @@
+import { getAsArray } from "@base-cms/object-path";
+
 $ const { GAM, req } = out.global;
 
 $ let { collapseBeforeAdFetch = false } = input;
@@ -7,7 +9,7 @@ $ if (req.query['gam-collapse-before-fetch']) {
 
 <marko-web-gam-define-display-ad
   ...GAM.getAdUnit({ name: input.name, aliases: input.aliases })
-  modifiers=input.modifiers
+  modifiers=[...getAsArray(input.modifiers), `name-${input.name}`]
   collapse-before-ad-fetch=collapseBeforeAdFetch
   with-wrapper=true
   class=input.class

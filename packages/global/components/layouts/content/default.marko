@@ -74,6 +74,7 @@ $ const shouldInjectAds = ["article"].includes(type);
         <if(shouldInjectAds)>
           <marko-web-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
             <!-- mobile only -->
+            <!-- @todo collapsing will now show this add temporarily -->
             <@inject
               ...GAM.getAdUnit({ name: "rotation", aliases })
               at=350
@@ -89,7 +90,7 @@ $ const shouldInjectAds = ["article"].includes(type);
             <@inject
               ...GAM.getAdUnit({ name: "rotation", aliases })
               at=900
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+              modifiers=["max-width-970", "margin-auto-x", "inline-content", "name-rotation"]
               collapse-before-ad-fetch=false
               with-wrapper=true
               size-mapping=[
@@ -99,6 +100,7 @@ $ const shouldInjectAds = ["article"].includes(type);
               ]
             />
             <!-- mobile only -->
+            <!-- @todo collapsing will now show this add temporarily -->
             <@inject
               ...GAM.getAdUnit({ name: "rotation", aliases })
               at=1200
