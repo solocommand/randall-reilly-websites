@@ -1,17 +1,20 @@
 import queryFragment from "../../graphql/fragments/opinion-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
+<!-- @todo likely should change the name of this component -->
 $ const queryParams = {
   sectionAlias: input.alias,
   limit: 3,
   queryFragment,
+  sectionFragment,
 };
 
 $ const blockName = "opinion";
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
     <marko-web-element block-name=blockName name="header">
-      Opinion
+      ${section.name}
       <hr />
     </marko-web-element>
     <default-theme-card-deck-flow
