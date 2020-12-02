@@ -3,12 +3,26 @@ import { getAsArray } from "@base-cms/object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
+$ const { pagination: p } = out.global;
+$ const perPage = 10;
+
 <global-website-section-default-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
 >
+  <@head>
+    <global-latest-products-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+        as-rels=true
+      />
+    </global-latest-products-feed-block>
+  </@head>
+
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="leaderboard"
@@ -21,7 +35,17 @@ $ const sections = getAsArray(input, "sections");
     <div class="row">
       <div class="col-lg-8">
         <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
-        <global-latest-products-feed-block alias=alias params={ limit: 10 } />
+        <global-latest-products-feed-block alias=alias>
+          <@query-params limit=perPage skip=p.skip({ perPage }) />
+        </global-latest-products-feed-block>
+        <global-latest-products-feed-block|{ totalCount }| alias=alias count-only=true>
+          <global-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=alias
+            class="mb-block"
+          />
+        </global-latest-products-feed-block>
       </div>
       <div class="col-lg-4 pt-block">
         <global-gam-define-display-ad
