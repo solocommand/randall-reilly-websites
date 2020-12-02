@@ -25,7 +25,10 @@
     "template": "./pagination-controls.marko"
   },
   "<global-site-menu>": {
-    "template": "./site-menu.marko"
+    "template": "./site-menu/index.marko"
+  },
+  "<global-site-header>": {
+    "template": "./site-header.marko"
   },
   "<global-site-footer>": {
     "template": "./site-footer.marko"

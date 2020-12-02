@@ -82,12 +82,6 @@ label {
   background-color: $white;
 }
 
-.site-header {
-  position: static;
-  // add bottom border per design
-  border-bottom: 1px solid $gray-400;
-}
-
 .node {
   $self: &;
   $image-border: 1px solid rgba(239, 239, 239, .9);

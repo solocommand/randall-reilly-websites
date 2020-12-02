@@ -130,27 +130,25 @@ $skin-aligned-body-image-spacer: .75rem;
 $skin-content-body-max-width: 700px;
 $skin-content-primary-image-max-width: 880px;
 
-// Skin Node Font Sizes / Line Heights
-// @todo remove these!!!
-$skin-node-text-font-size-xl: 38px !default;
-$skin-node-text-line-height-xl-px: 40px !default;
-$skin-node-text-line-height-xl: get-line-height($skin-node-text-font-size-xl, $skin-node-text-line-height-xl-px);
-
-$skin-node-text-font-size-lg: 24px !default;
-$skin-node-text-line-height-lg-px: 32px !default;
-$skin-node-text-line-height-lg: get-line-height($skin-node-text-font-size-lg, $skin-node-text-line-height-lg-px);
-
-$skin-node-text-font-size-md: 18px !default;
-$skin-node-text-line-height-md-px: 24px !default;
-$skin-node-text-line-height-md: get-line-height($skin-node-text-font-size-md, $skin-node-text-line-height-md-px);
-
 // Page
 $theme-page-title-font-weight: $font-weight-bold;
 
 // Header
 $theme-site-header-box-shadow: none !default;
+$theme-site-header-breakpoints: () !default;
+$theme-site-header-breakpoints: map-merge(
+  (
+    hide-primary: 100000px, // effectively always hide the primary nav
+    hide-secondary: 700px,
+    small-logo: 775px,
+    small-text-primary: 0,
+    small-text-secondary: 830px
+  ),
+  $theme-site-header-breakpoints
+);
 
 // Navbar
+$skin-desktop-menu-breakpoint: map-get($theme-site-header-breakpoints, hide-secondary);
 $theme-site-navbar-brand-margin-x: 36px !default;
 
 $theme-site-navbar-logo-height: 46px !default;
@@ -175,14 +173,14 @@ $theme-site-navbar-secondary-link-hover-color: $primary !default;
 $theme-site-navbar-secondary-link-padding: 15px !default;
 
 // Site Menu
-$theme-site-navbar-menu-width: 375px;
+$theme-site-navbar-menu-width: 500px;
 $theme-site-navbar-menu-max-width: 100%;
 
 $theme-site-navbar-menu-box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .1), 0 6px 20px 0 rgba(0, 0, 0, .15);
 $theme-site-navbar-menu-padding-x: 24px;
 $theme-site-navbar-menu-padding-y: 24px;
 $theme-site-navbar-menu-bg-color: $white;
-$theme-site-navbar-menu-hover-background-color: $theme-site-navbar-menu-bg-color;
+$theme-site-navbar-menu-hover-background-color: transparent;
 
 $theme-site-navbar-menu-item-font-size: 24px;
 $theme-site-navbar-menu-item-font-weight: $font-weight-bold;
@@ -223,19 +221,8 @@ $theme-item-header-font-weight: $font-weight-bold;
 
 $theme-item-header-link-hover-color: $primary !default;
 
-$theme-item-title-font-size: $skin-node-text-font-size-md;
-$theme-item-title-line-height: $skin-node-text-line-height-md;
-$theme-item-title-font-size-sm: $skin-node-text-font-size-md;
-$theme-item-title-line-height-sm: $skin-node-text-line-height-md;
-$theme-item-title-font-weight: $font-weight-bold;
-
 $theme-item-title-link-hover-color: $primary !default;
 
-$theme-item-description-font-family: $theme-font-family-sans-serif;
-$theme-item-description-font-size: $skin-node-text-font-size-md;
-$theme-item-description-line-height: $skin-node-text-line-height-md;
-$theme-item-description-font-size-sm: $skin-node-text-font-size-md;
-$theme-item-description-line-height-sm: $skin-node-text-line-height-md;
 $theme-item-description-max-lines: 3;
 $theme-item-description-margin: 10px;
 
