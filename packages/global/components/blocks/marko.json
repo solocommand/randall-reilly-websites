@@ -42,7 +42,10 @@
     "template": "./resource-library.marko"
   },
   "<global-section-feed-block>": {
-    "template": "./section-feed.marko"
+    "template": "./section-feed.marko",
+    "<query-params>": {},
+    "@alias": "string",
+    "@count-only": "boolean"
   },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
