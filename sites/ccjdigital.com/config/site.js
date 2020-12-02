@@ -42,4 +42,9 @@ module.exports = {
     href: '#',
     description: 'Sign up for the <span class="newsletter-name">CCJ Daily</span> to keep up with...',
   },
+  newsletterSignupBannerLarge: {
+    href: '#',
+    name: 'CCJ Daily',
+    description: 'Sign up for the CCJ Daily to keep up with...',
+  },
 };

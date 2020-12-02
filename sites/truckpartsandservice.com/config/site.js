@@ -41,4 +41,9 @@ module.exports = {
     href: '#',
     description: 'Sign up for the <span class="newsletter-name">TPS Daily</span> to keep up with...',
   },
+  newsletterSignupBannerLarge: {
+    href: '#',
+    name: 'TPS Daily',
+    description: 'Sign up for the TPS Daily to keep up with...',
+  },
 };

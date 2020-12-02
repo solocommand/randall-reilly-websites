@@ -41,4 +41,9 @@ module.exports = {
     href: '#',
     description: 'Sign up for the <span class="newsletter-name">Total Landscape Care Daily</span> to keep up with...',
   },
+  newsletterSignupBannerLarge: {
+    href: '#',
+    name: 'Total Landscape Care Daily',
+    description: 'Sign up for the Total Landscape Care Daily to keep up with...',
+  },
 };
