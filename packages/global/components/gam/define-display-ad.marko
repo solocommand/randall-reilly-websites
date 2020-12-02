@@ -1,6 +1,6 @@
 $ const { GAM, req } = out.global;
 
-$ let { collapseBeforeAdFetch = true } = input;
+$ let { collapseBeforeAdFetch = false } = input;
 $ if (req.query['gam-collapse-before-fetch']) {
   collapseBeforeAdFetch = Boolean(parseInt(req.query['gam-collapse-before-fetch'], 10));
 }
