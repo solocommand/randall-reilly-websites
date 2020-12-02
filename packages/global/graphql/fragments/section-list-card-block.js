@@ -2,7 +2,7 @@ const gql = require('graphql-tag');
 
 module.exports = gql`
 
-fragment SectionListBlockContentFragment on Content {
+fragment SectionListCardBlockContentFragment on Content {
   id
   type
   shortName
@@ -14,6 +14,12 @@ fragment SectionListBlockContentFragment on Content {
     name
     fullName
     canonicalPath
+  }
+  primaryImage {
+    id
+    src
+    alt
+    isLogo
   }
 }
 
