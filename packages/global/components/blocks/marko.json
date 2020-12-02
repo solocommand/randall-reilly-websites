@@ -9,7 +9,10 @@
     "template": "./latest-podcast.marko"
   },
   "<global-latest-products-feed-block>": {
-    "template": "./latest-products-feed.marko"
+    "template": "./latest-products-feed.marko",
+    "<query-params>": {},
+    "@alias": "string",
+    "@count-only": "boolean"
   },
   "<global-more-gear-block>": {
     "template": "./more-gear.marko"
