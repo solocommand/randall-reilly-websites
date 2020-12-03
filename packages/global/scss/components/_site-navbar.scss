@@ -14,22 +14,44 @@
       margin-right: $theme-site-navbar-brand-margin-x / 2;
       margin-left: $theme-site-navbar-brand-margin-x / 2;
     }
-
-    @media (max-width: map-get($theme-site-header-breakpoints, hide-secondary)) {
-      // center the logo once nav items are hidden
-      margin-right: auto;
-      margin-left: auto;
-    }
   }
 
   &__logo {
     filter: none;
   }
 
+  &__newsletter-toggler {
+    @include theme-toggle-button();
+    padding: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media (min-width: map-get($theme-site-header-breakpoints, hide-secondary)) {
+      margin-left: auto;
+    }
+
+    & > .marko-web-icon {
+      @include theme-navbar-link-color($theme-site-navbar-secondary-colors);
+    }
+  }
+
+  &--secondary {
+    #{ $self } {
+      &__container {
+        @media (max-width: map-get($theme-site-header-breakpoints, hide-secondary)) {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
   &__items {
     text-transform: none;
 
     &--secondary {
+      @media (max-width: map-get($theme-site-header-breakpoints, hide-secondary)) {
+        display: none;
+      }
       margin-top: auto;
       margin-bottom: auto;
 

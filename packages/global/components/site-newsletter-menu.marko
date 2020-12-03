@@ -1,0 +1,51 @@
+$ const blockName = "site-newsletter-menu";
+
+$ const { site } = out.global;
+$ const { name, action, description } = site.getAsObject("newsletterPushdown")
+
+<if(name && action)>
+  <marko-web-block tag="aside" name=blockName>
+    <marko-web-element block-name=blockName name="container">
+      <div class="row">
+        <div class="col-4">
+          Image
+        </div>
+        <div class="col-5">
+          <marko-web-element block-name=blockName name="name">
+            ${name}
+          </marko-web-element>
+          <marko-web-element block-name=blockName name="description">
+            $!{description}
+          </marko-web-element>
+
+          <form method="GET" action=action class=`${blockName}__form`>
+            <label for="newsletter-menu-email">Email</label>
+            <input
+              id="newsletter-menu-email"
+              class="form-control"
+              placeholder="example@gmail.com"
+              type="email"
+              name="email"
+              required
+            />
+            <marko-web-element block-name=blockName name="privacy-policy">
+              By providing your email, you agree to our <marko-web-link href="/termsandprivacy" target="_blank">Privacy Policy</marko-web-link>.
+            </marko-web-element>
+            <button class="btn btn-primary" type="submit">Signup</button>
+          </form>
+        </div>
+      </div>
+
+      <marko-web-element block-name=blockName name="nub-container">
+        <marko-web-browser-component
+          name="GlobalNewsletterNub"
+          props={
+            className: `${blockName}__nub`,
+            targetButton: ".site-navbar__newsletter-toggler",
+            iconModifiers: ["lg"],
+          }
+        />
+      </marko-web-element>
+    </marko-web-element>
+  </marko-web-block>
+</if>

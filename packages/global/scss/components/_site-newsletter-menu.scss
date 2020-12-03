@@ -1,0 +1,94 @@
+.site-newsletter-menu {
+  max-height: 0;
+
+  will-change: visibility, max-height;
+  visibility: hidden;
+  background: linear-gradient($gray-100, $white);
+
+  transition: max-height .25s cubic-bezier(.4, 0, .2, 1), visibility 0s linear .25s;
+
+  &__container {
+    position: relative;
+    max-width: $marko-web-document-container-max-width;
+    padding-top: 30px;
+    padding-right: $marko-web-page-wrapper-padding;
+    padding-bottom: 30px;
+    padding-left: $marko-web-page-wrapper-padding;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: $marko-web-document-container-max-width) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &__name {
+    @include skin-typography($style: "section-header");
+    margin-bottom: 6px;
+    line-height: 1.25;
+    text-transform: none;
+  }
+
+  &__description {
+    @include skin-typography($style: "teaser-text-1");
+    margin-bottom: 16px;
+  }
+
+  &__privacy-policy {
+    @include skin-typography($style: "credit-disclaimer");
+    max-width: 220px;
+    margin-top: 10px;
+    margin-bottom: 14px;
+
+    line-height: 1.428;
+  }
+
+  &__form {
+    input {
+      max-width: 312px;
+    }
+  }
+
+  &__nub-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+
+  $skin-nub-size: 50px;
+  &__nub {
+    @include theme-toggle-button();
+    width: $skin-nub-size;
+    height: $skin-nub-size / 2;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $gray-800;
+
+    border-top-left-radius: $skin-nub-size / 2;
+    border-top-right-radius: $skin-nub-size / 2;
+
+
+    > .marko-web-icon {
+      position: relative;
+      top: -1px;
+      @include theme-navbar-link-color($theme-site-navbar-secondary-colors);
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  .newsletter-name {
+    font-weight: $font-weight-bold;
+  }
+
+  &--open {
+    max-height: 500px;
+    visibility: visible;
+
+    transition: max-height .25s cubic-bezier(.4, 0, .2, 1), visibility 0s linear 0s;
+  }
+}
