@@ -1,16 +1,27 @@
+import { buildImgixUrl } from "@base-cms/image";
+
 $ const blockName = "site-newsletter-menu";
 
 $ const { site } = out.global;
-$ const { name, action, description } = site.getAsObject("newsletterPushdown")
+$ const pushdown = site.getAsObject("newsletterPushdown");
+$ const { name, action, description } = pushdown;
+$ const imageSrc = pushdown.imageSrc || "https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/iphone-x-mockup-noshadow-2x.png"
 
 <if(name && action)>
   <marko-web-block tag="aside" name=blockName>
     <marko-web-element block-name=blockName name="container">
       <div class="row">
-        <div class="col-4">
-          Image
+        <div class=`col-4 ${blockName}__image-wrapper`>
+          $ const src = buildImgixUrl(imageSrc, { w: 280, auto: 'format' });
+          $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+          <marko-web-img
+            src=src
+            srcset=srcset
+            alt=name
+            class=`${blockName}__image`
+          />
         </div>
-        <div class="col-5">
+        <div class=`col-5 ${blockName}__form-wrapper`>
           <marko-web-element block-name=blockName name="name">
             ${name}
           </marko-web-element>

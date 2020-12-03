@@ -10,6 +10,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
+    "@base-cms/image": "^1.37.0",
     "@base-cms/inflector": "^1.37.0",
     "@base-cms/marko-core": "^1.46.1",
     "@base-cms/marko-web": "^1.48.0",

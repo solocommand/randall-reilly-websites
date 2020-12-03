@@ -12,7 +12,6 @@
     max-width: $marko-web-document-container-max-width;
     padding-top: 30px;
     padding-right: $marko-web-page-wrapper-padding;
-    padding-bottom: 30px;
     padding-left: $marko-web-page-wrapper-padding;
     margin-right: auto;
     margin-left: auto;
@@ -21,6 +20,22 @@
       padding-right: 0;
       padding-left: 0;
     }
+  }
+
+  &__form-wrapper {
+    padding-bottom: 30px;
+  }
+
+  &__image-wrapper {
+    display: flex;
+  }
+
+  &__image {
+    width: 280px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, .4));
   }
 
   &__name {
