@@ -5,6 +5,8 @@ $ const queryParams = {
   limit: 5,
   requiresImage: true,
   queryFragment,
+  sectionAlias: "home",
+  ...input.queryParams,
 };
 $ const blockName = "top-stories";
 $ const withHeader = defaultValue(input.withHeader, true);
