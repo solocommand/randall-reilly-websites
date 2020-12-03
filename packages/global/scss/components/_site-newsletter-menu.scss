@@ -20,10 +20,19 @@
       padding-right: 0;
       padding-left: 0;
     }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 24px;
+    }
   }
 
   &__form-wrapper {
     padding-bottom: 30px;
+    @include media-breakpoint-down(sm) {
+      max-width: 450px;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 
   &__image-wrapper {
