@@ -29,7 +29,6 @@ config
     { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
     { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
     { name: 'wallpaper', path: 'wallpaper' },
-    { name: 'interstitial', path: 'interstitial' },
   ])
   .setAliasAdUnits('gear', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'gear-leaderboard' },
@@ -38,7 +37,6 @@ config
     { name: 'rotation-2', templateName: 'GEAR', path: 'gear-rotation-2' },
     { name: 'rotation-3', templateName: 'GEAR', path: 'gear-rotation-3' },
     { name: 'wallpaper', path: 'wallpaper' },
-    { name: 'interstitial', path: 'interstitial' },
   ]);
 
 module.exports = config;
