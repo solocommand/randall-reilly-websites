@@ -103,28 +103,20 @@
     }
   }
 
-  > *:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: $wrapper-first-child-padding;
-
-    &::before {
-      padding-bottom: $label-bottom-padding;
-      font-size: $label-font-size;
-      line-height: $label-line-height;
-      color: $skin-ad-label-color;
-      text-transform: uppercase;
-      content: "Advertisement";
-    }
-  }
-
-  &--no-callout {
+  &--with-label {
     > *:first-child {
-      padding-top: initial;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: $wrapper-first-child-padding;
+
       &::before {
-        padding-bottom: initial;
-        content: initial;
+        padding-bottom: $label-bottom-padding;
+        font-size: $label-font-size;
+        line-height: $label-line-height;
+        color: $skin-ad-label-color;
+        text-transform: uppercase;
+        content: "Advertisement";
       }
     }
   }
