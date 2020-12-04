@@ -22,7 +22,7 @@ $ const withHeader = defaultValue(input.withHeader, true);
     };
     $ const cardNodes = nodes.slice(1);
 
-    <marko-web-block name=blockName>
+    <marko-web-block name=blockName modifiers=[...(withHeader ? ["with-header"] : [])]>
       <if(withHeader)>
         <marko-web-element block-name=blockName name="header">
           Top Stories
