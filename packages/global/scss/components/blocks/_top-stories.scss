@@ -33,12 +33,12 @@
 }
 
 .top-stories {
-  padding-top: map-get($spacers, block-lg) + map-get($spacers, block);
+  padding-top: map-get($spacers, block);
   &__header {
     margin-bottom: $block-spacer;
     @include skin-typography($style: "section-header");
   }
-  &--with-header {
-    padding-top: map-get($spacers, block);
+  &--on-homepage {
+    padding-top: map-get($spacers, block-lg) + map-get($spacers, block);
   }
 }
