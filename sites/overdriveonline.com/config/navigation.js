@@ -3,7 +3,7 @@ const topics = {
     { href: '/trucks', label: 'Trucks' },
     { href: '/business', label: 'Business' },
     { href: '/regulations', label: 'Regulations' },
-    { href: '/lifestyle', label: 'Lifestyle' },
+    { href: '/life', label: 'Life' },
     { href: '/custom-rigs', label: 'Custom Rigs' },
     { href: '/gear', label: 'Gear' },
   ],
