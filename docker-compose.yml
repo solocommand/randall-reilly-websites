@@ -63,8 +63,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9801
       LIVERELOAD_PORT: 19801
-      TENANT_KEY: randallreilly_construction
-      SITE_ID: 5fc66176d28860bc33d4950b
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce562fd28860bc33b826d6
     ports:
       - "9801:80"
       - "19801:19801"
@@ -79,8 +79,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9802
       LIVERELOAD_PORT: 19802
-      TENANT_KEY: randallreilly_construction
-      SITE_ID: 5fc660b2d28860bc33d16a88
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce563dd28860bc33b829c5
     ports:
       - "9802:80"
       - "19802:19802"
@@ -95,8 +95,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9803
       LIVERELOAD_PORT: 19803
-      TENANT_KEY: randallreilly_transportation
-      SITE_ID: 5fc65ae7d28860bc33cebe04
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce6131d28860bc33c5b786
     ports:
       - "9803:80"
       - "19803:19803"
@@ -111,8 +111,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9804
       LIVERELOAD_PORT: 19804
-      TENANT_KEY: randallreilly_transportation
-      SITE_ID: 5fc65a43d28860bc33ceaecf
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce5519d28860bc33b80a42
     ports:
       - "9804:80"
       - "19804:19804"
@@ -127,8 +127,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9805
       LIVERELOAD_PORT: 19805
-      TENANT_KEY: randallreilly_transportation
-      SITE_ID: 5fc65ad7d28860bc33cebc86
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce557bd28860bc33b8140d
     ports:
       - "9805:80"
       - "19805:19805"
@@ -143,8 +143,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9806
       LIVERELOAD_PORT: 19806
-      TENANT_KEY: randallreilly_transportation
-      SITE_ID: 5fbd95a0d28860bc3302ed14
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce561dd28860bc33b823ce
     ports:
       - "9806:80"
       - "19806:19806"
@@ -159,8 +159,8 @@ services:
       PORT: 80
       EXPOSED_PORT: 9807
       LIVERELOAD_PORT: 19807
-      TENANT_KEY: randallreilly_transportation
-      SITE_ID: 5fc65b14d28860bc33cec214
+      TENANT_KEY: randallreilly_all
+      SITE_ID: 5fce55abd28860bc33b818d0
     ports:
       - "9807:80"
       - "19807:19807"
