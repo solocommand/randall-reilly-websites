@@ -46,4 +46,9 @@ module.exports = {
     name: 'TPS Daily',
     description: 'Sign up for the TPS Daily to keep up with...',
   },
+  newsletterPushdown: {
+    action: '#',
+    name: 'TPS Daily',
+    description: 'Sign up for the <span class="newsletter-name">TPS Daily</span> to keep up with...',
+  },
 };

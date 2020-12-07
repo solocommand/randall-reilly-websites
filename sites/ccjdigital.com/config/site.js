@@ -47,4 +47,9 @@ module.exports = {
     name: 'CCJ Daily',
     description: 'Sign up for the CCJ Daily to keep up with...',
   },
+  newsletterPushdown: {
+    action: '#',
+    name: 'CCJ Daily',
+    description: 'Sign up for the <span class="newsletter-name">CCJ Daily</span> to keep up with...',
+  },
 };
