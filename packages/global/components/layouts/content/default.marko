@@ -74,6 +74,35 @@ $ const shouldInjectAds = ["article"].includes(type);
 
         <if(shouldInjectAds)>
           <global-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+
+            <!-- desktop/tablet only -->
+            <@inject
+              at=1000
+              name="inline-content-desktop"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+            />
+            <!-- desktop/tablet only -->
+            <@inject
+              at=2500
+              name="inline-content-desktop"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+            />
+            <!-- desktop/tablet only -->
+            <@inject
+              at=4000
+              name="inline-content-desktop"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+            />
+            <!-- desktop/tablet only -->
+            <@inject
+              at=5500
+              name="inline-content-desktop"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+            />
             <!-- mobile only -->
             <@inject
               at=350
@@ -81,51 +110,30 @@ $ const shouldInjectAds = ["article"].includes(type);
               aliases=aliases
               modifiers=["max-width-970", "margin-auto-x", "inline-content"]
             />
-            <!-- desktop/tablet only -->
-            <@inject
-              at=900
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
             <!-- mobile only -->
             <@inject
-              at=1000
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- desktop/tablet only -->
-            <@inject
-              at=1600
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=1500
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- desktop/tablet only -->
-            <@inject
-              at=2400
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=2000
+              at=1550
               name="inline-content-mobile"
               aliases=aliases
               modifiers=["max-width-970", "margin-auto-x", "inline-content"]
             />
             <!-- mobile only -->
             <@inject
-              at=2500
+              at=2750
+              name="inline-content-mobile"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+            />
+            <!-- mobile only -->
+            <@inject
+              at=3950
+              name="inline-content-mobile"
+              aliases=aliases
+              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+            />
+            <!-- mobile only -->
+            <@inject
+              at=5150
               name="inline-content-mobile"
               aliases=aliases
               modifiers=["max-width-970", "margin-auto-x", "inline-content"]
