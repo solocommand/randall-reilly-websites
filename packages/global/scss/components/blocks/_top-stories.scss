@@ -38,4 +38,7 @@
     margin-bottom: $block-spacer;
     @include skin-typography($style: "section-header");
   }
+  &--on-homepage {
+    padding-top: map-get($spacers, block-lg) + map-get($spacers, block);
+  }
 }

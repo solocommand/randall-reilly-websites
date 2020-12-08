@@ -1,5 +1,6 @@
 import { getAsArray } from "@base-cms/object-path";
 import { dasherize } from "@base-cms/inflector";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const { GAM, req } = out.global;
 
@@ -10,7 +11,11 @@ $ if (req.query['gam-collapse-before-fetch']) {
 
 $ const adUnit = GAM.getAdUnit({ name: input.name, aliases: input.aliases });
 $ const { templateName } = adUnit;
-$ const modifiers = [...getAsArray(input.modifiers)];
+$ const showLabel = defaultValue(input.showLabel, true);
+$ const modifiers = [
+  ...(showLabel ? ["with-label"] : []),
+  ...getAsArray(input.modifiers),
+];
 $ if (templateName) modifiers.push(`template-${dasherize(templateName)}`);
 
 <marko-web-gam-define-display-ad

@@ -25,6 +25,7 @@ $ const shouldInjectAds = ["article"].includes(type);
   </@section>
 
   <@section|{ blockName, content }|>
+    <global-gam-wallpaper-ad />
     $ const { primarySection } = content;
     <div class="content-page-header">
       <global-content-page-breadcrumbs section=primarySection />

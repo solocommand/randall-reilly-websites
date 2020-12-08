@@ -4,7 +4,7 @@
   padding-bottom: 0;
 
   &__website-section-name {
-    margin-top: 20px;
+    padding-top: 20px;
     margin-bottom: 20px;
     @include skin-typography($style: "section-header");
   }
