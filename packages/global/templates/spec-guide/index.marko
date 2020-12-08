@@ -1,0 +1,47 @@
+$ const { GAM, specGuides } = out.global;
+
+$ const type = "spec-guide-index";
+$ const { title, description } = specGuides;
+$ console.log(title, description);
+$ const adSlots = () => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1" }),
+});
+
+$ const nodes = Object.keys(specGuides.guides).map((alias) => {
+  const node = specGuides.guides[alias];
+  return { ...node, alias };
+});
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+    <marko-web-gam-slots slots=adSlots() />
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <marko-web-gam-display-ad
+          id="gpt-ad-lb1"
+          slots=adSlots()
+          modifiers=["max-width-970", "center"]
+        />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__title">$!{title}</h1>
+            <if(description)>
+              <div class="page-wrapper__deck">$!{description}</div>
+            </if>
+          </div>
+        </div>
+      </@section>
+      <@section modifiers=["card-deck"]>
+        <default-theme-card-deck-flow cols=3 nodes=nodes>
+        </default-theme-card-deck-flow>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
