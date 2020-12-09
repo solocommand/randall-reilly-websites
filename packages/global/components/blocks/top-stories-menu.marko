@@ -1,11 +1,15 @@
 import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/top-stories-menu-block";
 
 $ const { alias } = input;
 
+$ const sectionAlias = defaultValue(input.sectionAlias, 'home');
+
 $ const queryParams = {
   limit: 5,
   queryFragment,
+  sectionAlias,
 };
 
 $ const blockName = "top-stories-menu";
