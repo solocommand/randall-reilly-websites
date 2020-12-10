@@ -4,10 +4,11 @@ import queryFragment from "../../graphql/fragments/most-popular-block";
 $ const queryParams = {
   limit: 6,
   queryFragment,
+  contentTypes: ['Article', 'Video']
 };
 $ const blockName = "most-popular";
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+<marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
   <if(nodes.length)>
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="header">

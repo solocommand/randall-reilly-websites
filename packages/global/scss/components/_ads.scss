@@ -103,19 +103,64 @@
     }
   }
 
-  > *:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: $wrapper-first-child-padding;
+  &--with-label {
+    > *:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: $wrapper-first-child-padding;
 
-    &::before {
-      padding-bottom: $label-bottom-padding;
-      font-size: $label-font-size;
-      line-height: $label-line-height;
-      color: $skin-ad-label-color;
-      text-transform: uppercase;
-      content: "Advertisement";
+      &::before {
+        padding-bottom: $label-bottom-padding;
+        font-size: $label-font-size;
+        line-height: $label-line-height;
+        color: $skin-ad-label-color;
+        text-transform: uppercase;
+        content: "Advertisement";
+      }
+    }
+  }
+}
+
+.wallpaper-ad {
+  position: absolute;
+  width: 100%;
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 0;
+  }
+  &__left {
+    left: -310px;
+  }
+  &__right {
+    right: -290px;
+  }
+
+  &__fade {
+    position: absolute;
+    pointer-events: none;
+    &--bottom {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 40px;
+      background: linear-gradient(to top, #fff, transparent);
+    }
+    &--left,
+    &--right {
+      top: 0;
+      bottom: 0;
+      width: 40px;
+    }
+    &--left {
+      left: 0;
+      background: linear-gradient(to right, #fff, transparent);
+    }
+    &--right {
+      right: 0;
+      background: linear-gradient(to left, #fff, transparent);
     }
   }
 }

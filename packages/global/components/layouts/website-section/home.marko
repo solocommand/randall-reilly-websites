@@ -17,8 +17,9 @@ $ const sections = getAsArray(input, "sections");
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
-    <global-top-stories-block with-header=false />
+  <@section modifiers=["mb-block-lg"]>
+    <global-gam-wallpaper-ad />
+    <global-top-stories-block with-header=false on-homepage=true />
   </@section>
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>

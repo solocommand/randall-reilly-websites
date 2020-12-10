@@ -2,6 +2,9 @@
   "<global-gam-define-display-ad>": {
     "template": "./define-display-ad.marko"
   },
+  "<global-gam-wallpaper-ad>": {
+    "template": "./wallpaper-ad.marko"
+  },
   "<global-gam-inject-ads>": {
     "template": "./inject-ads.marko",
     "@inject <inject>[]": {},

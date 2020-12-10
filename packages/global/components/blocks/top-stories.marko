@@ -10,6 +10,7 @@ $ const queryParams = {
 };
 $ const blockName = "top-stories";
 $ const withHeader = defaultValue(input.withHeader, true);
+$ const onHomepage = defaultValue(input.onHomepage, false);
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
   <if(nodes.length)>
@@ -22,7 +23,7 @@ $ const withHeader = defaultValue(input.withHeader, true);
     };
     $ const cardNodes = nodes.slice(1);
 
-    <marko-web-block name=blockName>
+    <marko-web-block name=blockName modifiers=[...(onHomepage ? ["on-homepage"] : [])]>
       <if(withHeader)>
         <marko-web-element block-name=blockName name="header">
           Top Stories

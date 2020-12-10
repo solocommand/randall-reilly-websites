@@ -1,6 +1,6 @@
 const topics = {
   primary: [
-    { href: '/trucks', label: 'Trucks' },
+    { href: '/equipment', label: 'Equipment' },
     { href: '/business', label: 'Business' },
     { href: '/regulations', label: 'Regulations' },
     { href: '/life', label: 'Life' },
@@ -10,6 +10,7 @@ const topics = {
   expanded: [
     { href: '/channel-19', label: 'Channel 19' },
     { href: '/partners-in-business', label: 'Partners in Business' },
+    { href: '/overdrive-extra', label: 'Overdrive Extra' },
   ],
   secondary: [
     { href: '/reader-rigs', label: 'Reader Rigs' },
