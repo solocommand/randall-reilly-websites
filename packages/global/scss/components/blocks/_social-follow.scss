@@ -7,7 +7,7 @@
 
   &__section {
     > .social-icon-link {
-      margin-right: 20px;
+      margin-right: 15px;
     }
   }
 }
@@ -17,6 +17,12 @@
     svg {
       width: 36px;
       height: 36px;
+    }
+    @media (max-width: 1080px) {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }
