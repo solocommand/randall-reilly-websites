@@ -1,4 +1,4 @@
-.books-guides-data {
+.resource-library {
   padding-top: map-get($spacers, block);
 
   &__header {
@@ -25,7 +25,7 @@
 .node {
   $self: &;
 
-  &--books-guides-data {
+  &--resource-library {
     #{ $self } {
       &__title {
         @include skin-typography($style: "overlay-header-2", $link-style: "primary");

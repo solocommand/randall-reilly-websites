@@ -1,6 +1,6 @@
 {
-  "<global-books-guides-data-block>": {
-    "template": "./books-guides-data.marko"
+  "<global-resource-library-block>": {
+    "template": "./resource-library.marko"
   },
   "<global-ccj-top-250-block>": {
     "template": "./ccj-top-250.marko"

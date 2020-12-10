@@ -1,4 +1,4 @@
-import queryFragment from "../../graphql/fragments/books-guides-data-block";
+import queryFragment from "../../graphql/fragments/resource-library-block";
 import sectionFragment from "../../graphql/fragments/section-info";
 
 <!-- @todo likely should change the name of this component -->
@@ -10,7 +10,7 @@ $ const queryParams = {
   sectionFragment,
 };
 
-$ const blockName = "books-guides-data";
+$ const blockName = "resource-library";
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
