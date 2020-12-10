@@ -1,69 +1,74 @@
-<!-- @todo this should move to OVD or be made generic -->
-<!-- @todo need to determine how this is queried -->
-<!-- $ const queryParams = {
+import queryFragment from "../../graphql/fragments/resource-library-block";
+import sectionFragment from "../../graphql/fragments/section-info";
+
+<!-- @todo likely should change the name of this component -->
+$ const queryParams = {
+  sectionAlias: input.alias,
   requiresImage: true,
-  limit: 1,
+  limit: 4,
   queryFragment,
-}; -->
-$ const node = {
-  type: "promotion",
-  shortName: "What Fleet Managers (Really) Do",
-  teaser: "A good fleet manager deals with driver issues and training and keeps track of vehicle maintenance. Download this eBook to learn what makes a great fleet manager, and how technology can help",
-  company: {
-    name: "Verizon Connect",
-  },
-  siteContext: {
-    path: "/404",
-  },
+  sectionFragment,
 };
 
 $ const blockName = "resource-library";
 
-<marko-web-block name=blockName>
-  <marko-web-element block-name=blockName name="header">
-    <marko-web-icon name="file" modifiers=[blockName] />
-    Resource Library
-  </marko-web-element>
-
-  <marko-web-node
-    type=`${node.type}-content`
-    card=true
-    flush=true
-    full-height=false
-    modifiers=[blockName]
-  >
-    <@body>
-      <@header>
-        <@left modifiers=["company-name"]>
-          <marko-web-content-name|{ value }| obj=node.company>
-            Sponsored by ${value}
-          </marko-web-content-name>
-        </@left>
-      </@header>
-      <@title tag="h5">
-        <marko-web-content-short-name tag=null obj=node link=true />
-      </@title>
-      <@text modifiers=["teaser"] show=(Boolean(node.teaser))>
-        <marko-web-content-teaser tag=null obj=node link=true />
-      </@text>
-      <@footer modifiers=["buttons"]>
-        <@left>
-          <marko-web-link
-            class=`btn btn-primary ${blockName}__download-btn`
-            href=node.siteContext.path
-            title="Download"
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="header">
+      ${section.name}
+    </marko-web-element>
+    <marko-web-element block-name=blockName name="description-wrapper">
+      <marko-web-element block-name=blockName name="description">
+        $!{section.description || input.defaultDescription}
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="view-more">
+        <marko-web-link href=section.canonicalPath>
+          View more &raquo;
+        </marko-web-link>
+      </marko-web-element>
+    </marko-web-element>
+    <default-theme-card-deck-flow
+      cols=4
+      nodes=nodes
+      modifiers=[blockName]
+    >
+      <@slot|{ node }|>
+        <marko-web-node
+          type=`${node.type}-content`
+          image-position="top"
+          card=true
+          flush=true
+          modifiers=[blockName]
+        >
+          <@image
+            fluid=true
+            gradient=true
+            width=250
+            ar="3:4"
+            src=node.primaryImage.src
+            alt=node.primaryImage.alt
+            link=true
           >
-            Download
-          </marko-web-link>
-          <marko-web-link
-            class="btn btn-secondary"
-            href="/resource-library"
-            title="View All"
-          >
-            View All
-          </marko-web-link>
-        </@left>
-      </@footer>
-    </@body>
-  </marko-web-node>
-</marko-web-block>
+            <@body>
+              <@title tag="h5">
+                <marko-web-content-short-name tag=null obj=node link=true />
+              </@title>
+            </@body>
+          </@image>
+        </marko-web-node>
+        <!-- <global-content-node
+          image-position="top"
+          card=true
+          flush=true
+          modifiers=[blockName]
+          node=node
+          with-section=false
+          with-teaser=false
+          with-dates=false
+        >
+          <@image fluid=true width=250 ar="3:4" />
+        </global-content-node> -->
+      </@slot>
+    </default-theme-card-deck-flow>
+  </marko-web-block>
+</marko-web-query>

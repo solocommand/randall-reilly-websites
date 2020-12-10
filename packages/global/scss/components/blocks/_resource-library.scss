@@ -1,28 +1,24 @@
 .resource-library {
-  height: 100%;
-  padding: 24px;
-  background-color: $gray-100;
-  border-radius: 4px;
+  padding-top: map-get($spacers, block);
 
   &__header {
-    margin-bottom: 24px;
-    @include skin-typography($style: "section-header-small");
+    margin-bottom: 6px;
+    @include skin-typography($style: "section-header");
   }
 
-  &__download-btn {
-    margin-right: 16px;
+  &__description-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 30px;
   }
-}
 
-.marko-web-icon {
-  $self: &;
-  &--resource-library {
-    margin-right: 5px;
-    svg {
-      width: 20px;
-      height: 20px;
-      fill: map-deep-get($typography, "section-header-small", "color");
-    }
+  &__description {
+    @include skin-typography($style: "article-text");
+  }
+
+  &__view-more {
+    @include skin-typography($style: "view-more", $link-style: "primary");
   }
 }
 
@@ -30,30 +26,19 @@
   $self: &;
 
   &--resource-library {
-    background-color: $gray-100;
-
     #{ $self } {
       &__title {
-        margin-bottom: 0;
-        @include skin-typography($style: "header-2", $link-style: "primary");
+        @include skin-typography($style: "overlay-header-2", $link-style: "primary");
       }
 
-      &__header {
-        margin-bottom: 10px;
+      &__body--overlay {
+        padding: 16px;
       }
 
       &__contents--body {
-        margin-bottom: 24px;
-      }
-
-      &__text--teaser {
-        margin-top: 8px;
-        margin-bottom: 0;
-        @include skin-typography($style: "small-body-text", $link-style: "primary");
-      }
-
-      &__header-left--company-name {
-        @include skin-typography($style: "sponsored-by");
+        padding: 16px 10px;
+        text-align: center;
+        background-color: rgba($gray-900, .9);
       }
     }
   }
