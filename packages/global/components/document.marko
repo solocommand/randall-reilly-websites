@@ -5,6 +5,10 @@ $ const {
   GAM,
 } = out.global;
 
+$ const prestitial = GAM ? GAM.getAdUnit({ name: "interstitial" }) : {};
+$ const hasPrestitial = Boolean(prestitial.path);
+$ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
+
 <marko-web-document ...input>
   <@head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -14,6 +18,9 @@ $ const {
 
     <!-- init gam -->
     <marko-web-gam-init />
+    <if(hasPrestitial)>
+      <global-gam-prestitial init=true adunit=prestitial />
+    </if>
 
     <!-- init gtm -->
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
@@ -34,6 +41,12 @@ $ const {
       <marko-web-gam-targeting key-values={ uri: req.path } />
     </if>
   </@head>
+  <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
+  <@above-wrapper>
+    <if(hasPrestitial)>
+      <global-gam-prestitial display=true adunit=prestitial />
+    </if>
+  </@above-wrapper>
   <@above-container>
     <global-site-header has-user=false reg-enabled=false />
     <global-site-menu has-user=false reg-enabled=false />

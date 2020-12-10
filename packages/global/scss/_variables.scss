@@ -18,6 +18,8 @@ $theme-font-family-page-title: $skin-font-family-primary !default;
 // Use secondary font for content body headings, by default.
 $theme-heading-font-family: $skin-font-family-secondary !default;
 
+// Reduced the z-index to prevent overlaying the welcome ad.
+$theme-site-header-z-index: 15000;
 
 // Low-Level Vars
 //
