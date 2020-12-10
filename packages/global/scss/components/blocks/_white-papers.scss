@@ -1,4 +1,4 @@
-.resource-library {
+.white-papers {
   height: 100%;
   padding: 24px;
   background-color: $gray-100;
@@ -16,7 +16,7 @@
 
 .marko-web-icon {
   $self: &;
-  &--resource-library {
+  &--white-papers {
     margin-right: 5px;
     svg {
       width: 20px;
@@ -29,7 +29,7 @@
 .node {
   $self: &;
 
-  &--resource-library {
+  &--white-papers {
     background-color: $gray-100;
 
     #{ $self } {

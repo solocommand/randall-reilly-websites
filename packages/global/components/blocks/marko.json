@@ -47,8 +47,8 @@
   "<global-related-stories-block>": {
     "template": "./related-stories.marko"
   },
-  "<global-resource-library-block>": {
-    "template": "./resource-library.marko"
+  "<global-white-papers-block>": {
+    "template": "./white-papers.marko"
   },
   "<global-section-feed-block>": {
     "template": "./section-feed.marko",
