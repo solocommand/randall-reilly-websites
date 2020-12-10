@@ -2,7 +2,7 @@ const gql = require('graphql-tag');
 
 module.exports = gql`
 
-fragment BooksGuidesDataBlockContentFragment on Content {
+fragment ResourceLibraryBlockContentFragment on Content {
   id
   type
   shortName
