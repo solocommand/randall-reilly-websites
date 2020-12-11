@@ -31,6 +31,12 @@ x-env-leonis: &env-leonis
   RSS_URI: ${RSS_URI-https://leonis.rss.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://leonis.sitemaps.base.parameter1.com}
 
+x-env-virgon: &env-virgon
+  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://virgon.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://virgon.sitemaps.base.parameter1.com}
+
 x-site-command: &site-cmd
   entrypoint: ["node_modules/.bin/basecms-website"]
   command: ["dev", "index.js"]
@@ -59,7 +65,7 @@ services:
     working_dir: /root/sites/equipmentworld.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9801
       LIVERELOAD_PORT: 19801
@@ -75,7 +81,7 @@ services:
     working_dir: /root/sites/totallandscapecare.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9802
       LIVERELOAD_PORT: 19802
@@ -91,7 +97,7 @@ services:
     working_dir: /root/sites/truckersnews.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9803
       LIVERELOAD_PORT: 19803
@@ -107,7 +113,7 @@ services:
     working_dir: /root/sites/ccjdigital.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9804
       LIVERELOAD_PORT: 19804
@@ -123,7 +129,7 @@ services:
     working_dir: /root/sites/hardworkingtrucks.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9805
       LIVERELOAD_PORT: 19805
@@ -139,7 +145,7 @@ services:
     working_dir: /root/sites/overdriveonline.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9806
       LIVERELOAD_PORT: 19806
@@ -155,7 +161,7 @@ services:
     working_dir: /root/sites/truckpartsandservice.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9807
       LIVERELOAD_PORT: 19807
