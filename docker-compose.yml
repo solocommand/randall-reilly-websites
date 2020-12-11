@@ -31,7 +31,7 @@ x-env-leonis: &env-leonis
   RSS_URI: ${RSS_URI-https://leonis.rss.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://leonis.sitemaps.base.parameter1.com}
 
-x-env-leonis: &env-virgon
+x-env-virgon: &env-virgon
   GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.base.parameter1.com}
   RSS_URI: ${RSS_URI-https://virgon.rss.base.parameter1.com}
