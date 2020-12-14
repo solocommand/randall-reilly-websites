@@ -1,9 +1,28 @@
+const csv = require('csvtojson');
+const path = require('path');
+
+// process.on('unhandledRejection', (e) => {
+//   throw e;
+// });
+
+// const csvFile = require('./top250.csv');
+// const tableRows = csv({
+//   trim: true,
+//   ignoreEmpty: true,
+// })
+// .fromFile(csvFile)
+// .then((jsonObj)=> {
+//   console.log(jsonObj);
+// });
+
+
 module.exports = {
   title: 'CCJ Top 250',
   teaser: 'Get all the info on the top 250 trucking companies in America',
   description: '<h2>Get the data how you want it</h2> <p>Want to sort the CCJ Top 250 by revenues or number of trucks, tractors, trailers or drivers? Want to see and sort carriers by type of haul or geographic region? Want a copy of the CCJ Top 250 data sent to you in a PDF file? All of that is available completely free by providing the requested information below.</p> <p>By clicking the button below, I agree to the Terms & Conditions and Privacy Policy, and consent to receive automated marketing calls or text messages from Randall-Reilly. Consent is not a condition of any purchase. You may opt out at any time.</p>',
   downloadLink: '/##########',
   // initialMeasureKey: 'standard',
+  // tableRows,
   tableRows: [
     {
       "rank": 1,

@@ -1,10 +1,10 @@
-const top250 = require('./top-250');
+const all = require('./all');
 
 module.exports = {
-  rootPath: '/specguide',
-  title: 'OEM Off-Highway Spec Guides',
-  description: '<em>OEM Off-Highway Spec Guides</em> are essential industry tools to help engineers specify the products they need for the next generation of heavy-duty on- and off-road mobile equipment. The Engine Spec Guide, Pump Spec Guide, and Motor Spec Guide are the industry’s first and only completely interactive component specifier that was custom built <strong>by engineers, for engineers.</strong>',
+  rootPath: '/top250-category',
+  title: 'CCJ Top 250',
+  description: 'Want to sort the CCJ Top 250 by revenues or number of trucks, tractors, trailers or drivers? Want to see and sort carriers by type of haul or geographic region? Want a copy of the CCJ Top 250 data sent to you in a PDF file? All of that is available completely free by providing the requested information below.',
   guides: {
-    top250,
+    all,
   },
 };

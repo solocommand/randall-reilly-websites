@@ -6,7 +6,7 @@ const { keys } = Object;
 module.exports = (app) => {
   const { specGuides } = app.locals;
   if (specGuides) {
-    const { rootPath = '/specguide' } = specGuides;
+    const { rootPath = '/top250-category' } = specGuides;
     app.get(rootPath, (req, res) => {
       res.marko(index);
     });
