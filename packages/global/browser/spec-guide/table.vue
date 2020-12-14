@@ -11,7 +11,7 @@
           @phrase-change="setSearchPhrase"
         />
         <primary-operation-select
-          :primaryOperations="primaryOperations"
+          :primary-operations="primaryOperations"
           :selected="selectedPrimaryOperation"
           :disabled="isLoading"
           @change="setSelectedPrimaryOperation"
@@ -109,7 +109,7 @@ export default {
     },
     tableRows: {
       type: Array,
-      default: [],
+      default: () => ([]),
     },
     columns: {
       type: Object,
@@ -156,7 +156,6 @@ export default {
     selectedPrimaryOperation() {
       const { activePrimaryOperation } = this;
       if (activePrimaryOperation) return activePrimaryOperation;
-      console.log(this.initialPrimaryOperation);
       return this.initialPrimaryOperation;
     },
 
@@ -185,23 +184,32 @@ export default {
      *
      */
     filteredRows() {
-      this.isLoading = true;
-      const {rows, searchPhrase, selectedSearchKey, selectedPrimaryOperation } = this;
+      const {
+        rows,
+        searchPhrase,
+        selectedSearchKey,
+        selectedPrimaryOperation,
+      } = this;
       let filteredRows = rows;
       if (selectedPrimaryOperation !== 'All') filteredRows = this.filterByPrimaryOperation(filteredRows, selectedPrimaryOperation);
       if (!searchPhrase) {
-        this.isLoading = false;
         return filteredRows;
       }
       const column = this.getColumn(selectedSearchKey);
       if (column.type === 'number') {
-        filteredRows = this.filterByNumber({ rows: filteredRows, key: selectedSearchKey, phrase: searchPhrase });
-        this.isLoading = false;
+        filteredRows = this.filterByNumber({
+          rows: filteredRows,
+          key: selectedSearchKey,
+          phrase: searchPhrase,
+        });
         return filteredRows;
       }
 
-      filteredRows = this.filterByRegex({ rows: filteredRows, key: selectedSearchKey, phrase: searchPhrase });
-      this.isLoading = false;
+      filteredRows = this.filterByRegex({
+        rows: filteredRows,
+        key: selectedSearchKey,
+        phrase: searchPhrase,
+      });
       return filteredRows;
     },
 
@@ -246,15 +254,14 @@ export default {
     /**
      *
      */
-    toUSD (num) {
-      return `$${num.toLocaleString()}`
+    toUSD(num) {
+      return `$${num.toLocaleString()}`;
     },
 
     /**
      *
      */
     setSelectedPrimaryOperation(primaryOperation) {
-      console.log(primaryOperation);
       this.activePrimaryOperation = primaryOperation;
       const { selectedSearchKey } = this;
       if (selectedSearchKey) {
@@ -326,9 +333,7 @@ export default {
      */
     filterByPrimaryOperation(rows, selectedPrimaryOperation) {
       if (!selectedPrimaryOperation) return rows;
-      return this.rows.filter((row) => {
-        return row.primaryOperation.raw === selectedPrimaryOperation;
-      });
+      return this.rows.filter(row => row.primaryOperation.raw === selectedPrimaryOperation);
     },
 
     /**
