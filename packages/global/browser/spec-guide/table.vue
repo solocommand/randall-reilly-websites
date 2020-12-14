@@ -60,6 +60,12 @@
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="row[col.key].htmlValue" />
               </template>
+              <template v-else-if="(col.key === 'revenue2019' || col.key === 'revenue2018')">
+                {{ toUSD(row[col.key].displayValue) }}
+              </template>
+              <template v-else-if="col.type === 'number'">
+                {{ Number(row[col.key].displayValue).toLocaleString() }}
+              </template>
               <template v-else>
                 {{ row[col.key].displayValue }}
               </template>
@@ -237,6 +243,13 @@ export default {
    *
    */
   methods: {
+    /**
+     *
+     */
+    toUSD (num) {
+      return `$${num.toLocaleString()}`
+    },
+
     /**
      *
      */
