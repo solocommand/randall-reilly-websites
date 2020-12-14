@@ -60,7 +60,7 @@
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="row[col.key].htmlValue" />
               </template>
-              <template v-else-if="(col.key === 'revenue2019' || col.key === 'revenue2018')">
+              <template v-else-if="(col.type === 'number' && col.numberType === 'usCurrency')">
                 {{ toUSD(row[col.key].displayValue) }}
               </template>
               <template v-else-if="col.type === 'number'">

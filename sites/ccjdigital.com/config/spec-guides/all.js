@@ -489,10 +489,12 @@ module.exports = {
     revenue2019: {
       label: "2019 Revenue",
       type: 'number',
+      numberType: 'usCurrency',
     },
     revenue2018: {
       label: "2018 Revenue",
       type: 'number',
+      numberType: 'usCurrency',
     },
     leasedTrucks: {
       label: "Leased Trucks",
