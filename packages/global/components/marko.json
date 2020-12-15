@@ -4,7 +4,8 @@
     "./flows/marko.json",
     "./gam/marko.json",
     "./layouts/marko.json",
-    "./nodes/marko.json"
+    "./nodes/marko.json",
+    "./spec-guide/marko.json"
   ],
   "<global-content-page-breadcrumbs>": {
     "template": "./content-page-breadcrumbs.marko"

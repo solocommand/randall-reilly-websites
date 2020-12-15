@@ -3,7 +3,7 @@ import GAM from '@base-cms/marko-web-gam/browser';
 import SocialSharing from '@base-cms/marko-web-social-sharing/browser';
 import MenuToggleButton from './menu-toggle-button.vue';
 import NewsletterNub from './newsletter-nub.vue';
-
+import SpecGuideTable from './spec-guide/table.vue';
 
 export default (Browser) => {
   GTM(Browser);
@@ -12,4 +12,5 @@ export default (Browser) => {
 
   Browser.register('GlobalMenuToggleButton', MenuToggleButton);
   Browser.register('GlobalNewsletterNub', NewsletterNub);
+  Browser.registerComponent('CommonSpecGuideTable', SpecGuideTable);
 };

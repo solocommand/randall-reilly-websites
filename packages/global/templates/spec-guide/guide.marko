@@ -1,0 +1,42 @@
+import { get, getAsArray } from "@base-cms/object-path";
+
+$ const { specGuides } = out.global;
+$ const type = "spec-guide";
+$ const { title, description, alias } = data;
+
+$ const config = get(specGuides, `guides.${alias}`);
+
+<marko-web-default-page-layout type=type title=config.title description=config.description>
+  <@head>
+    <marko-web-gtm-dynamic-page-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-dynamic-page-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <div class="spec-guide-container">
+          <div class="row">
+            <div class="col">
+              <h1 class="page-wrapper__title">${config.title}</h1>
+              <p>$!{config.description}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <if(config)>
+                <common-spec-guide-table
+                  initial-primary-operation=config.initialPrimaryOperation
+                  columns=config.columns
+                  table-rows=config.tableRows
+                  sheet-src=config.sheetSrc
+                  alias=alias
+                />
+              </if>
+            </div>
+          </div>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>

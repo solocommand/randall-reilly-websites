@@ -1,6 +1,6 @@
 const newrelic = require('newrelic');
 const { startServer } = require('@base-cms/marko-web');
-const { set, get } = require('@base-cms/object-path');
+const { set, get, getAsObject } = require('@base-cms/object-path');
 const cleanResponse = require('@base-cms/marko-core/middleware/clean-marko-response');
 
 const document = require('./components/document');
@@ -18,6 +18,7 @@ const routes = siteRoutes => (app) => {
 
 module.exports = (options = {}) => {
   const { onStart } = options;
+  const specGuideConfig = getAsObject(options, 'siteConfig.specGuides');
   return startServer({
     ...options,
     routes: routes(options.routes),
@@ -38,6 +39,11 @@ module.exports = (options = {}) => {
       // Setup NativeX.
       const nativeXConfig = get(options, 'siteConfig.nativeX');
       set(app.locals, 'nativeX', nativeXConfig);
+
+      // Setup Spec Guides
+      if (specGuideConfig.guides && Object.keys(specGuideConfig.guides).length) {
+        set(app.locals, 'specGuides', specGuideConfig);
+      }
 
       // Clean all response bodies.
       app.use(cleanResponse());
