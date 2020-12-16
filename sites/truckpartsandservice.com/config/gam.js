@@ -18,54 +18,24 @@ config
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
     { name: 'interstitial', path: 'interstitial' },
-  ])
-  .setAliasAdUnits('business', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('workforce', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('economic-trends', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('regulations', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('trucks', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('alternative-power', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('maintenance', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
-  ])
-  .setAliasAdUnits('technology', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
   ]);
+
+const aliases = [
+  'business',
+  'workforce',
+  'economic-trends',
+  'regulations',
+  'trucks',
+  'alternative-power',
+  'maintenance',
+  'technology',
+];
+
+aliases.forEach(alias => config.setAliasAdUnits(alias, [
+  { name: 'leaderboard', templateName: 'LEADERBOARD', path: `${alias}-leaderboard` },
+  { name: 'rotation', templateName: 'ROTATION', path: `${alias}-rotation` },
+  { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: `${alias}-rotation` },
+  { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: `${alias}-rotation` },
+]));
 
 module.exports = config;
