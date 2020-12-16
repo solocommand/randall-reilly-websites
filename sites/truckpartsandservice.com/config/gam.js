@@ -26,46 +26,46 @@ config
     { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
   ])
   .setAliasAdUnits('workforce', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'workforce-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'workforce-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'workforce-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'workforce-rotation' },
   ])
   .setAliasAdUnits('economic-trends', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'economic-trends-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'economic-trends-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'economic-trends-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'economic-trends-rotation' },
   ])
   .setAliasAdUnits('regulations', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'regulations-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'regulations-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'regulations-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'regulations-rotation' },
   ])
   .setAliasAdUnits('trucks', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'trucks-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'trucks-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'trucks-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'trucks-rotation' },
   ])
   .setAliasAdUnits('alternative-power', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'alternative-power-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'alternative-power-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'alternative-power-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'alternative-power-rotation' },
   ])
   .setAliasAdUnits('maintenance', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'maintenance-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'maintenance-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'maintenance-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'maintenance-rotation' },
   ])
   .setAliasAdUnits('technology', [
-    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'business-leaderboard' },
-    { name: 'rotation', templateName: 'ROTATION', path: 'business-rotation' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'business-rotation' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'business-rotation' },
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'technology-leaderboard' },
+    { name: 'rotation', templateName: 'ROTATION', path: 'technology-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'technology-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'technology-rotation' },
   ]);
 
 module.exports = config;
