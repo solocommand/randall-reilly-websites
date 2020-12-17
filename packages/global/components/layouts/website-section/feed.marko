@@ -32,7 +32,7 @@ $ const perPage = 18;
   </@section>
 
   <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
-    <global-gam-wallpaper-ad />
+    <global-gam-wallpaper-ad aliases=aliases />
     <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
       <if(p.page > 1)>${value}: Page ${p.page}</if>
       <else>${value}</else>

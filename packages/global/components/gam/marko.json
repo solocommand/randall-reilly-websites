@@ -3,7 +3,8 @@
     "template": "./define-display-ad.marko"
   },
   "<global-gam-wallpaper-ad>": {
-    "template": "./wallpaper-ad.marko"
+    "template": "./wallpaper-ad.marko",
+    "@aliases": "array"
   },
   "<global-gam-inject-ads>": {
     "template": "./inject-ads.marko",
