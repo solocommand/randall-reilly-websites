@@ -21,8 +21,6 @@ $ const perPage = 18;
     </global-section-feed-block>
   </@head>
 
-
-
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="leaderboard"
@@ -31,25 +29,23 @@ $ const perPage = 18;
     />
   </@section>
   <@section>
-    <global-gam-wallpaper-ad />
     <if(p.page === 1)>
       <div class="spec-guide-container">
         <div class="row">
           <div class="col">
-            <h1 class="page-wrapper__title">${specGuides.title}</h1>
-            <p>$!{specGuides.description}</p>
-            <p>
+            <h1 class="page-wrapper__website-section-name">${specGuides.title}</h1>
+            <p>$!{specGuides.teaser}</p>
+            <!-- <p>
               By clicking the button below, I agree to the Terms & Conditions and Privacy Policy,
               and consent to receive automated marketing calls or text messages from Randall-Reilly.
               Consent is not a condition of any purchase. You may opt out at any time.
-            </p>
+            </p> -->
             <marko-web-link
-              class="mb-block btn btn-primary"
-              href="#not-implemented-yet"
+              class="mb-block btn btn-primary uppercase"
+              href="javascript: void(0)"
               title="Get the full report"
-              target="_blank"
             >
-              EMAIL ME THE ENTIRE REPORT
+              Download the entire report
             </marko-web-link>
           </div>
         </div>
