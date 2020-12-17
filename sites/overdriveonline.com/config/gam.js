@@ -30,6 +30,8 @@ config
     { name: 'rotation-1', templateName: 'GEAR', path: 'gear-rotation-1' },
     { name: 'rotation-2', templateName: 'GEAR', path: 'gear-rotation-2' },
     { name: 'rotation-3', templateName: 'GEAR', path: 'gear-rotation-3' },
+    { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
+    { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
   ]);
 
 const aliases = [
