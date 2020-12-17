@@ -1,6 +1,6 @@
 {
   "name": "@randall-reilly/overdriveonline.com",
-  "version": "0.15.10",
+  "version": "0.15.11",
   "author": "Jacob Bare <jacob@parameter1.com>",
   "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/sites/overdriveonline.com",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "@base-cms/object-path": "^1.37.0",
     "@base-cms/utils": "^1.37.0",
     "@base-cms/web-cli": "^1.48.0",
-    "@randall-reilly/package-global": "^0.15.9",
+    "@randall-reilly/package-global": "^0.15.11",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
