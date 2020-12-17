@@ -1,13 +1,15 @@
+$ const { aliases } = input;
+
 $ const blockName = "wallpaper-ad";
 
 <marko-web-block name=blockName>
   <marko-web-element block-name=blockName name="left">
-    <global-gam-define-display-ad name="wallpaper-left" show-label=false />
+    <global-gam-define-display-ad name="wallpaper-left" aliases=aliases show-label=false />
     <marko-web-element block-name=blockName name="fade" modifiers=["left"]>&nbsp;</marko-web-element>
     <marko-web-element block-name=blockName name="fade" modifiers=["bottom"]>&nbsp;</marko-web-element>
   </marko-web-element>
   <marko-web-element block-name=blockName name="right">
-    <global-gam-define-display-ad name="wallpaper-right" show-label=false />
+    <global-gam-define-display-ad name="wallpaper-right" aliases=aliases show-label=false />
     <marko-web-element block-name=blockName name="fade" modifiers=["right"]>&nbsp;</marko-web-element>
     <marko-web-element block-name=blockName name="fade" modifiers=["bottom"]>&nbsp;</marko-web-element>
   </marko-web-element>
