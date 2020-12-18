@@ -21,18 +21,11 @@ $ const config = get(specGuides, `guides.${alias}`);
           modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
         />
       </@section>
-      <@section|{ blockName }| modifiers=["mb-block-lg"]>
-        <marko-web-website-section-name tag="h1" block-name=blockName>
-          ${specGuides.title}
-        </marko-web-website-section-name>
-      </@section>
       <@section>
         <div class="spec-guide-container">
-          <div class="row">
+          <div class="row mb-3">
             <div class="col">
               <h1 class="page-wrapper__website-section-name">${config.title}</h1>
-              <p>$!{config.teaser}</p>
-              $!{config.description}
             </div>
           </div>
           <div class="row">
