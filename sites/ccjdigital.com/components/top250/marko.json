@@ -1,5 +1,8 @@
 {
   "<top250-table>": {
     "template": "./table.marko"
+  },
+  "<top250-download-button>": {
+    "template": "./download-button.marko"
   }
 }
