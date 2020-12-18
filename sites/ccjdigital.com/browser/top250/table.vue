@@ -16,14 +16,6 @@
           :disabled="isLoading"
           @change="setSelectedPrimaryOperation"
         />
-        <field-sort
-          :columns="columnList"
-          :selected="selectedSortKey"
-          :direction="sortDirection"
-          :disabled="isLoading"
-          @field-change="setSelectedSortKey"
-          @direction-change="setSortDirection"
-        />
       </div>
     </form>
     <div class="table-responsive">
@@ -34,6 +26,7 @@
               v-for="col in columnList"
               :key="`${col.key}-header`"
               class="text-center align-middle"
+              @click.prevent="setSelectedSortKey(col.key)"
             >
               {{ col.label }}
             </th>
@@ -94,7 +87,6 @@ import escapeRegex from './utils/escape-regex';
 import parseNumber from './utils/parse-number';
 import PrimaryOperationSelect from './primary-operation-select.vue';
 import FieldSearch from './field-search.vue';
-import FieldSort from './field-sort.vue';
 
 const { isArray } = Array;
 const { keys } = Object;
@@ -106,7 +98,6 @@ export default {
   components: {
     PrimaryOperationSelect,
     FieldSearch,
-    FieldSort,
   },
 
   /**
@@ -298,7 +289,9 @@ export default {
      *
      */
     setSelectedSortKey(key) {
+      const direction = (this.selectedSortKey !== key) ? 1 : this.sortDirection * -1;
       this.selectedSortKey = key;
+      this.setSortDirection(direction);
     },
 
     /**
