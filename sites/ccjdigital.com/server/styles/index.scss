@@ -10,3 +10,10 @@ $theme-site-header-breakpoints: (
 $primary: #103a57;
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
+
+.spec-guide-container {
+  .table-responsive {
+    max-height: 500px;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,62 @@
+import { get, getAsArray } from "@base-cms/object-path";
+
+$ const { specGuides } = out.global;
+$ const type = "spec-guide";
+$ const { title, description, alias } = data;
+
+$ const config = get(specGuides, `guides.${alias}`);
+
+<marko-web-default-page-layout type=type title=config.title description=config.description>
+  <@head>
+    <marko-web-gtm-dynamic-page-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-dynamic-page-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          aliases=aliases
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </@section>
+      <@section>
+        <div class="spec-guide-container">
+          <div class="row mb-3">
+            <div class="col">
+              <h1 class="page-wrapper__website-section-name">${config.title}</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-block">
+                <if(config)>
+                  <marko-web-resolve|{ resolved }| promise=config.tableRows>
+                    <top250-table
+                      initial-primary-operation=config.initialPrimaryOperation
+                      columns=config.columns
+                      table-rows=resolved
+                      sheet-src=config.sheetSrc
+                      alias=alias
+                    />
+                  </marko-web-resolve>
+                </if>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <!-- <p>
+                By clicking the button below, I agree to the Terms & Conditions and Privacy Policy,
+                and consent to receive automated marketing calls or text messages from Randall-Reilly.
+                Consent is not a condition of any purchase. You may opt out at any time.
+              </p> -->
+              <top250-download-button />
+            </div>
+          </div>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>

@@ -60,6 +60,16 @@
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="row[col.key].htmlValue" />
               </template>
+              <!-- @TODO Fix link logig -->
+              <template v-else-if="(col.key === 'website')">
+                <a
+                  :href="`https://${row[col.key].displayValue}`"
+                  target="_blank"
+                  :title="row[col.key].displayValue"
+                >
+                  {{ row[col.key].displayValue }}
+                </a>
+              </template>
               <template v-else-if="(col.type === 'number' && col.numberType === 'usCurrency')">
                 {{ toUSD(row[col.key].displayValue) }}
               </template>
