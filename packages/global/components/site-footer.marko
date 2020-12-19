@@ -4,6 +4,7 @@ import { asObject } from "@base-cms/utils";
 $ const { config, site } = out.global;
 
 $ const blockName = input.blockName || "site-footer";
+$ const tagline = site.get("tagline");
 
 <marko-web-block
   name=blockName
@@ -24,6 +25,10 @@ $ const blockName = input.blockName || "site-footer";
           lazyload=true
         />
       </default-theme-site-navbar-brand>
+
+      <if(tagline)>
+        <marko-web-element block-name=blockName name="tagline" modifiers="tagline">${tagline}</marko-web-element>
+      </if>
 
       <div class="row">
         <marko-web-element block-name=blockName name="section">
