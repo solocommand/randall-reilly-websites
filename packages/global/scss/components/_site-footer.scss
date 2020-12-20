@@ -66,6 +66,14 @@
   &__corporate-logo {
     width: 200px;
   }
+
+  &__tagline {
+    margin-bottom: 33px;
+    font-size: 22px;
+    font-style: italic;
+    color: $white;
+    text-align: center;
+  }
 }
 
 .site-footer-nav {
