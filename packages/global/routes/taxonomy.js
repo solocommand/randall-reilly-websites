@@ -8,6 +8,7 @@ const query = gql`
     taxonomy(input: $input) {
       id
       name
+      type
       description
     }
   }

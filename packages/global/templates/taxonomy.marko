@@ -2,7 +2,7 @@ import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import { getAsArray } from "@base-cms/object-path";
 import queryFragment from "../graphql/fragments/section-feed-block";
 
-$ const { id, name, description } = input;
+$ const { id, name, type, description } = input;
 $ const { GAM, req } = out.global;
 
 $ const { pagination: p } = out.global;
@@ -14,7 +14,9 @@ $ const queryParams = {
   queryFragment,
 };
 
-<marko-web-default-page-layout type="taxonomy" title=name description=description>
+$ const title = `${type}: ${name}`;
+
+<marko-web-default-page-layout type="taxonomy" title=title description=description>
   <@page>
     <marko-web-page-wrapper>
       <@section>
@@ -25,7 +27,7 @@ $ const queryParams = {
       </@section>
 
       <@section|{ blockName }| modifiers=["mb-block-lg"]>
-        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name }>
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name: title }>
           <if(p.page > 1)>${value}: Page ${p.page}</if>
           <else>${value}</else>
         </marko-web-website-section-name>
