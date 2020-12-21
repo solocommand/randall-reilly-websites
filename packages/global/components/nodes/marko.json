@@ -25,5 +25,8 @@
     "@modifiers": "array",
     "@attrs": "object",
     "@link-attrs": "object"
+  },
+  "<global-author-node>": {
+    "template": "./author.marko"
   }
 }

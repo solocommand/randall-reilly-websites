@@ -3,49 +3,5 @@ import { getAsObject } from "@base-cms/object-path";
 $ const blockName = "node-author";
 
 <marko-web-content-authors|{ node: author }| obj=input.content>
-  $ const primaryImage = getAsObject(author, "primaryImage");
-  <marko-web-node
-    type="contact-content"
-    image-position="left"
-    card=false
-    flush=true
-    full-height=false
-    modifiers=["author"]
-  >
-    <@image
-      width=48
-      align="top"
-      use-placeholder=false
-      fluid=false
-      ar="1:1"
-      src=primaryImage.src
-      alt=primaryImage.alt
-      link={ href: author.siteContext.path }
-      options={ fit: "facearea", facepad: 3 }
-    />
-
-    <@body>
-      <@title>
-        <marko-web-content-name tag=null obj=author link=true />
-      </@title>
-      <@text>
-        <marko-web-content-title tag=null obj=author />
-      </@text>
-    </@body>
-  </marko-web-node>
-
-  <!-- $ const primaryImage = getAsObject(author, "primaryImage");
-  <marko-web-block name=blockName>
-    $ console.log({ primaryImage });
-    <if(primaryImage.src)>
-      <marko-web-element block-name=blockName name="image">
-
-      </marko-web-element>
-    </if>
-
-    <marko-web-element block-name=blockName name="details">
-      <marko-web-content-name block-name=blockName obj=author link=true />
-      <marko-web-content-title block-name=blockName obj=author />
-    </marko-web-element>
-  </marko-web-block> -->
+  <global-author-node author=author />
 </marko-web-content-authors>
