@@ -57,4 +57,7 @@ module.exports = {
     name: 'Inbox Overdrive',
     description: 'Sign up for the <span class="newsletter-name">Overdrive Daily</span> to keep up with trucking news, equipment and business information.',
   },
+  wufoo: {
+    userName: 'randallreilly',
+  },
 };

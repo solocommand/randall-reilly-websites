@@ -51,4 +51,7 @@ module.exports = {
     name: 'Total Landscape Care Daily',
     description: 'Sign up for the <span class="newsletter-name">Total Landscape Care Daily</span> to keep up with...',
   },
+  wufoo: {
+    userName: 'randallreilly',
+  },
 };

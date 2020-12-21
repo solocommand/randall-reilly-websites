@@ -50,4 +50,7 @@ module.exports = {
     name: 'Trucker\'s News Daily',
     description: 'Sign up for the <span class="newsletter-name">Trucker\'s News Daily</span> to keep up with...',
   },
+  wufoo: {
+    userName: 'randallreilly',
+  },
 };
