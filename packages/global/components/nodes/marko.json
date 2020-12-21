@@ -28,5 +28,8 @@
   },
   "<global-author-node>": {
     "template": "./author.marko"
+  },
+  "<global-author-published-node>": {
+    "template": "./author-published.marko"
   }
 }

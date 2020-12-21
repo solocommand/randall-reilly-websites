@@ -1,0 +1,24 @@
+.author-published-node {
+  display: flex;
+  align-items: center;
+  margin-top: 17px;
+
+  &__image {
+    $size: 48px;
+    width: $size;
+    height: $size;
+    margin-right: 10px;
+    border-radius: $size;
+  }
+
+  &__content-name {
+    @include skin-typography($style: "author-content-page", $link-style: "primary");
+  }
+
+  &__content-published {
+    margin-top: 2px;
+    @include skin-typography($style: "date-content-page");
+    text-transform: none;
+
+  }
+}
