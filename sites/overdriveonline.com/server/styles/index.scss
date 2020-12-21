@@ -19,3 +19,9 @@ $primary: #b9161b;
     }
   }
 }
+
+.site-footer {
+  &__brand {
+    margin-bottom: 0;
+  }
+}
