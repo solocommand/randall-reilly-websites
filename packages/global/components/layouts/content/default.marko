@@ -1,6 +1,7 @@
 import { getAsArray } from "@base-cms/object-path";
 import DefineDisplayAd from "../../gam/define-display-ad";
 
+$ const { site } = out.global;
 $ const { id, type, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
@@ -145,7 +146,7 @@ $ const shouldInjectAds = ["article"].includes(type);
 
         <if(type === "document" || type === "whitepaper")>
           <default-theme-content-download obj=content>
-            <@wufoo user-name="parameter1" />
+            <@wufoo user-name=site.get("wufoo.userName") />
             <@link class="btn btn-primary" />
           </default-theme-content-download>
         </if>
