@@ -3,9 +3,11 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/white-papers-block";
 
 $ const sectionAlias = defaultValue(input.sectionAlias, "white-papers");
+$ const contentTypes = defaultValue(input.contentTypes, ["Whitepaper"]);
 
 $ const queryParams = {
   sectionAlias,
+  includeContentTypes: contentTypes,
   ...input.queryParams,
   limit: 1,
   queryFragment,
