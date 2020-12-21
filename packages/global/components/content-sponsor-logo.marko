@@ -1,0 +1,24 @@
+$ const { site } = out.global;
+$ const sponsorLogo = site.getAsObject(`sponsoredSectionLogos.${input.alias}`);
+$ const blockName = "content-sponsor-logo";
+
+$ const { src, width, height } = sponsorLogo;
+$ const style = {
+  ...(width && { width }),
+  ...(height && { height }),
+};
+
+<if(src)>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="label">
+      Sponsored By
+    </marko-web-element>
+    <marko-web-img
+      class=`${blockName}__logo`
+      src=src
+      srcset=[`${src}&dpr=2 2x`]
+      alt="Sponsor Logo"
+      attrs={ style }
+    />
+  </marko-web-block>
+</if>

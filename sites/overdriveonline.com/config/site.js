@@ -60,4 +60,11 @@ module.exports = {
   wufoo: {
     userName: 'randallreilly',
   },
+  sponsoredSectionLogos: {
+    'partners-in-business': {
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/pib-tbs-logo.png?auto=format&w=88&fit=crop',
+      width: '88px',
+      height: '55px',
+    },
+  },
 };
