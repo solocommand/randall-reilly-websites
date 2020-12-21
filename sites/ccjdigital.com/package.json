@@ -15,12 +15,12 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@base-cms/marko-core": "^1.46.1",
-    "@base-cms/marko-web": "^1.48.0",
+    "@base-cms/marko-core": "^1.49.0",
+    "@base-cms/marko-web": "^1.51.1",
     "@base-cms/marko-web-gtm": "^1.37.0",
     "@base-cms/object-path": "^1.37.0",
     "@base-cms/utils": "^1.37.0",
-    "@base-cms/web-cli": "^1.48.0",
+    "@base-cms/web-cli": "^1.51.1",
     "@randall-reilly/package-global": "^0.15.13",
     "csvtojson": "^2.0.10",
     "debounce": "^1.2.0",
