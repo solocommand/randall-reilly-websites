@@ -118,7 +118,7 @@ export default {
     },
     initialRegion: {
       type: String,
-      default: 'all',
+      default: 'Regions',
     },
     initialSearchKey: {
       type: String,
@@ -149,8 +149,8 @@ export default {
   data: () => ({
     isLoading: false,
     error: null,
-    activePrimaryOperation: 'all',
-    activeRegion: 'Regions',
+    activePrimaryOperation: null,
+    activeRegion: null,
     activeSearchKey: null,
     selectedSortKey: null,
     searchPhrase: null,
@@ -212,13 +212,9 @@ export default {
         selectedPrimaryOperation,
         selectedRegion,
       } = this;
-      console.log(selectedRegion, selectedPrimaryOperation);
       let filteredRows = rows;
-      console.log(filteredRows.length);
       if (selectedPrimaryOperation !== 'all') filteredRows = this.filterByPrimaryOperation(filteredRows, selectedPrimaryOperation);
-      console.log(filteredRows.length);
       if (selectedRegion !== 'Regions') filteredRows = this.filterByRegion(filteredRows, selectedRegion);
-      console.log(filteredRows.length);
       if (!searchPhrase) {
         return filteredRows;
       }
