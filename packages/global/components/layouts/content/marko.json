@@ -16,8 +16,6 @@
   },
   "<global-content-whitepaper-layout>": {
     "template": "./whitepaper.marko",
-    "<after-body>": {},
-    "@sections <section>[]": {},
     "@id": "number",
     "@type": "string",
     "@page-node": "object"
