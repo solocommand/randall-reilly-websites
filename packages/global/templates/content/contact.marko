@@ -1,6 +1,10 @@
 import { buildImgixUrl } from "@base-cms/image";
+import queryFragment from "../../graphql/fragments/section-feed-block";
 
 $ const { id, type, pageNode } = data;
+
+$ const { pagination: p, req } = out.global;
+$ const perPage = 10;
 
 <global-content-wrapper-layout
   id=id
@@ -44,5 +48,48 @@ $ const { id, type, pageNode } = data;
       </marko-web-element>
       <hr>
     </marko-web-block>
+  </@section>
+
+  <@section modifiers=["mt-block-sm mb-block-lg"]>
+    $ const queryParams = {
+      contactId: id,
+      limit: 10,
+      skip: p.skip({ perPage }),
+      queryFragment,
+    };
+    <marko-web-query|{ nodes }| name="all-author-content" params=queryParams>
+      <marko-web-node-list
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=["section-feed"]
+      >
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            <global-content-node
+              node=node
+              modifiers=["section-feed"]
+            >
+              <@image width=250 ar="3:2" use-placeholder=true />
+            </global-content-node>
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+    <global-query-total-count|{ totalCount }| name="all-author-content" params={ contactId: id }>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=req.path
+      />
+    </global-query-total-count>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
   </@section>
 </global-content-wrapper-layout>
