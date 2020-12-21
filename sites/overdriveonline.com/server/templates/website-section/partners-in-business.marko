@@ -101,7 +101,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
   </@section>
   <@section>
     <if(p.page === 1)>
-      <h3>Featured</h3>
+      <global-pib-featured-block alias="partners-in-business" />
     </if>
   </@section>
   <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
@@ -111,7 +111,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
     </marko-web-element>
 
     <global-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage }) />
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
     </global-section-feed-block>
   </@section>
 
@@ -125,7 +125,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
 
   <@section modifiers=["my-block-lg"]>
     <global-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 3 }) />
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 6 }) />
     </global-section-feed-block>
   </@section>
 
@@ -139,7 +139,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
 
   <@section modifiers=["my-block-lg"]>
     <global-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 11 }) />
     </global-section-feed-block>
   </@section>
 
@@ -153,7 +153,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
 
   <@section modifiers=["my-block-lg"]>
     <global-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 16 }) />
     </global-section-feed-block>
   </@section>
 
@@ -167,7 +167,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
 
   <@section modifiers=["my-block-lg"]>
     <global-section-feed-block alias=alias>
-      <@query-params limit=2 skip=p.skip({ perPage, skip: 18 }) />
+      <@query-params limit=2 skip=p.skip({ perPage, skip: 21 }) />
     </global-section-feed-block>
 
     <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
