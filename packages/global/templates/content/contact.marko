@@ -1,0 +1,48 @@
+import { buildImgixUrl } from "@base-cms/image";
+
+$ const { id, type, pageNode } = data;
+
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section|{ content }|>
+    $ const { primaryImage } = content;
+    $ const blockName = "contact-page";
+    <marko-web-block name=blockName>
+      <marko-web-content-name tag="h1" block-name=blockName obj=content />
+      <marko-web-element block-name=blockName name="wrapper">
+        <if(primaryImage && primaryImage.src)>
+          $ const src = buildImgixUrl(primaryImage.src, {
+            w: 160,
+            h: 160,
+            crop: "faces",
+            fit: "crop",
+          });
+          $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+          <marko-web-img
+            src=src
+            srcset=srcset
+            alt=primaryImage.alt
+            class=`${blockName}__image`
+          />
+        </if>
+
+        <default-theme-page-contents|{ blockName }| modifiers=["contact"]>
+          <marko-web-content-body block-name=blockName obj=content />
+        </default-theme-page-contents>
+
+      </marko-web-element>
+      <hr>
+    </marko-web-block>
+  </@section>
+</global-content-wrapper-layout>

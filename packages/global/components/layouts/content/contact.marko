@@ -1,0 +1,35 @@
+$ const { id, type, pageNode } = input;
+
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section|{ blockName, content }| modifiers="contact">
+    $ const { primaryImage } = content;
+    <marko-web-content-name tag="h1" block-name=blockName obj=content />
+
+    <marko-web-element block-name=blockName name="contact-wrapper">
+
+      <if(primaryImage)>
+        <global-primary-image-block
+          obj=content.primaryImage
+          force-display="left";
+        />
+      </if>
+
+      <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+        <marko-web-content-body block-name=blockName obj=content />
+      </default-theme-page-contents>
+
+    </marko-web-element>
+  </@section>
+</global-content-wrapper-layout>

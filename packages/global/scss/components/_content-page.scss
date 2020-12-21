@@ -43,10 +43,40 @@
   }
 }
 
+.contact-page {
+  padding-bottom: map-get($spacers, block);
+
+  &__content-name {
+    margin-top: map-get($spacers, block-lg);
+    margin-bottom: map-get($spacers, block);
+    @include skin-typography($style: "header-1");
+  }
+  &__wrapper {
+    display: flex;
+    margin-bottom: map-get($spacers, block);
+  }
+  &__image {
+    $size: 160px;
+    width: $size;
+    height: $size;
+    margin-right: 20px;
+    border-radius: $size;
+  }
+}
+
 .page-contents {
+  $self: &;
   &__content-body {
     padding-bottom: map-get($spacers, block);
     @include skin-typography($style: "article-text", $link-style: "content-body");
+  }
+
+  &--contact {
+    #{ $self } {
+      &__content-body {
+        max-width: 790px;
+      }
+    }
   }
 }
 
