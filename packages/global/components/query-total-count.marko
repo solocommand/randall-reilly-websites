@@ -27,6 +27,16 @@ $ const optionsMap = {
       }
     `,
     variables: { input: params },
+  },
+  "all-published-content": {
+    query: gql`
+      query AllPublishedContentCount($input: AllPublishedContentQueryInput!) {
+        result: allPublishedContent(input: $input) {
+          totalCount
+        }
+      }
+    `,
+    variables: { input: params },
   }
 };
 $ const options = optionsMap[input.name];
