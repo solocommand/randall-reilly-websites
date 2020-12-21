@@ -1,12 +1,4 @@
 {
-  "<global-content-contact-layout>": {
-    "template": "./contact.marko",
-    "<after-body>": {},
-    "@sections <section>[]": {},
-    "@id": "number",
-    "@type": "string",
-    "@page-node": "object"
-  },
   "<global-content-default-layout>": {
     "template": "./default.marko",
     "@sections <section>[]": {},
