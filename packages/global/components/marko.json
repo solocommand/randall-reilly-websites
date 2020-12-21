@@ -10,6 +10,9 @@
   "<global-content-page-breadcrumbs>": {
     "template": "./content-page-breadcrumbs.marko"
   },
+  "<global-content-sponsor-logo>": {
+    "template": "./content-sponsor-logo.marko"
+  },
   "<global-document>": {
     "template": "./document.marko",
     "<head>": {},
