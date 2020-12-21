@@ -14,6 +14,14 @@
     "@type": "string",
     "@page-node": "object"
   },
+  "<global-content-whitepaper-layout>": {
+    "template": "./whitepaper.marko",
+    "<after-body>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@type": "string",
+    "@page-node": "object"
+  },
   "<global-content-wrapper-layout>": {
     "template": "./wrapper.marko",
     "@sections <section>[]": {},

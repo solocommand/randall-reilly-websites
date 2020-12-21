@@ -1,0 +1,57 @@
+import { getAsArray } from "@base-cms/object-path";
+
+$ const { site } = out.global;
+$ const { id, type, pageNode } = input;
+$ const sections = getAsArray(input, "sections");
+
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+
+  <@section|{ aliases, blockName, content }| modifiers=["mb-block-lg"]>
+    $ const { primarySection } = content;
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="content-page-header">
+          <global-content-page-breadcrumbs section=primarySection />
+          <marko-web-content-name tag="h1" block-name=blockName obj=content />
+          <default-theme-content-attribution obj=content elements=["company"] />
+
+          <default-theme-page-dates|{ blockName }|>
+            <marko-web-content-published block-name=blockName obj=content format="MMMM D, YYYY" />
+          </default-theme-page-dates>
+        </div>
+
+        <div class="content-page-body">
+          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+            $ const bodyId = `content-body-${content.id}`;
+            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+            <default-theme-content-download obj=content>
+              <@wufoo user-name=site.get("wufoo.userName") />
+              <@link class="btn btn-lg btn-primary" />
+            </default-theme-content-download>
+
+          </default-theme-page-contents>
+        </div>
+        <${input.afterBody}
+          aliases=aliases
+          block-name=blockName
+          content=content
+        />
+      </div>
+
+      <div class="col-lg-4 pt-block">
+        <!-- <global-gam-define-display-ad
+          name="rotation"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-block"
+        /> -->
+      </div>
+    </div>
+  </@section>
+
+</global-content-wrapper-layout>
