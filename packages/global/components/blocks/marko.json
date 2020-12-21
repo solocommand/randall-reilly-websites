@@ -38,6 +38,9 @@
   "<global-partners-in-business-block>": {
     "template": "./partners-in-business.marko"
   },
+  "<global-pib-featured-block>": {
+    "template": "./pib-featured.marko"
+  },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },
