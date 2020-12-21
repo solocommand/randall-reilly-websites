@@ -14,34 +14,36 @@ $ const prevHref = `/${cleanPath(path)}?page=${prevPage}`;
 
 $ const blockName = "pagination-controls";
 
-<if(asRels)>
-  <if(prevPage)>
-    <link rel="prev" href=prevHref />
-  </if>
-  <if(nextPage)>
-    <link rel="next" href=nextHref />
-  </if>
-</if>
-<else>
-  <marko-web-block name=blockName class=input.class>
+<if(totalCount)>
+  <if(asRels)>
     <if(prevPage)>
-      <marko-web-link
-        class=`btn btn-primary ${blockName}__prev`
-        href=prevHref
-      >
-        Previous Page
-      </marko-web-link>
+      <link rel="prev" href=prevHref />
     </if>
-    <marko-web-element block-name=blockName name="pages">
-      Page ${p.page} of ${totalPages}
-    </marko-web-element>
     <if(nextPage)>
-      <marko-web-link
-        class=`btn btn-primary ${blockName}__next`
-        href=nextHref
-      >
-        Next Page
-      </marko-web-link>
+      <link rel="next" href=nextHref />
     </if>
-  </marko-web-block>
-</else>
+  </if>
+  <else>
+    <marko-web-block name=blockName class=input.class>
+      <if(prevPage)>
+        <marko-web-link
+          class=`btn btn-primary ${blockName}__prev`
+          href=prevHref
+        >
+          Previous Page
+        </marko-web-link>
+      </if>
+      <marko-web-element block-name=blockName name="pages">
+        Page ${p.page} of ${totalPages}
+      </marko-web-element>
+      <if(nextPage)>
+        <marko-web-link
+          class=`btn btn-primary ${blockName}__next`
+          href=nextHref
+        >
+          Next Page
+        </marko-web-link>
+      </if>
+    </marko-web-block>
+  </else>
+</if>

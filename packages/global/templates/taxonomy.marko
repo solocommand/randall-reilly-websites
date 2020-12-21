@@ -1,0 +1,72 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { getAsArray } from "@base-cms/object-path";
+import queryFragment from "../graphql/fragments/section-feed-block";
+
+$ const { id, name, type, description } = input;
+$ const { GAM, req } = out.global;
+
+$ const { pagination: p } = out.global;
+$ const perPage = 12;
+
+$ const queryParams = {
+  limit: perPage,
+  includeTaxonomyIds: [id],
+  queryFragment,
+};
+
+$ const title = `${type}: ${name}`;
+
+<marko-web-default-page-layout type="taxonomy" title=title description=description>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </@section>
+
+      <@section|{ blockName }| modifiers=["mb-block-lg"]>
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name: title }>
+          <if(p.page > 1)>${value}: Page ${p.page}</if>
+          <else>${value}</else>
+        </marko-web-website-section-name>
+
+        <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+          <marko-web-node-list
+            inner-justified=true
+            flush-x=true
+            flush-y=false
+            modifiers=["section-feed"]
+          >
+            <@nodes nodes=nodes>
+              <@slot|{ node }|>
+                <global-content-node
+                  node=node
+                  modifiers=["section-feed"]
+                >
+                  <@image width=250 ar="3:2" use-placeholder=true />
+                </global-content-node>
+              </@slot>
+            </@nodes>
+          </marko-web-node-list>
+        </marko-web-query>
+
+        <global-query-total-count|{ totalCount }| name="all-published-content" params={ includeTaxonomyIds: [id] }>
+          <global-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=req.path
+          />
+        </global-query-total-count>
+      </@section>
+
+      <@section>
+        <global-gam-define-display-ad
+          name="rotation"
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
