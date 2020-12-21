@@ -9,7 +9,7 @@ $ const queryParams = {
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
   <if(nodes.length)>
-    $ const node = nodes.slice(0, 1)[0];
+    $ const node = nodes[0];
     $ const blockName = "white-papers";
 
     <marko-web-block name=blockName>
