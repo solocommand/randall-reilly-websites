@@ -1,0 +1,103 @@
+$ const { id, alias, name, pageNode } = input;
+
+$ const blockName = "pib-page";
+$ const cardBlock = "pib-page-card";
+
+$ const logoRoot = "https://img.overdriveonline.com/files/base/randallreilly/all/image/static";
+$ const logoSrcs = [
+  "pib-tbs-logo.png?auto=format&w=88&fit=crop",
+  "pib-atbs-logo.png?auto=format&w=148&fit=crop",
+];
+$ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+  <@section|{ section }|>
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-element block-name=blockName name="description" tag="h2">
+          The leading business training program for owner-operators.
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="partners">
+          <marko-web-element block-name=blockName name="partners-label">
+            In partnership with
+          </marko-web-element>
+           <marko-web-element block-name=blockName name="partner-logos">
+            <marko-web-img
+              class=`${blockName}__partner-logo-1`
+              src=`${logoRoot}/${logoSrcs[0]}`
+              srcset=[`${logoRoot}/${logoSrcs[0]}&dpr=2 2x`]
+              alt="TBS Factoring Service Logo"
+            />
+            <marko-web-img
+              class=`${blockName}__partner-logo-2`
+              src=`${logoRoot}/${logoSrcs[1]}`
+              srcset=[`${logoRoot}/${logoSrcs[1]}&dpr=2 2x`]
+              alt="TBS Logo"
+            />
+          </marko-web-element>
+        </marko-web-element>
+      </marko-web-element>
+    </marko-web-block>
+
+    <div class="row">
+      <div class="col-md-6 mb-block-lg">
+        <marko-web-block name=cardBlock>
+          <marko-web-element block-name=cardBlock name="title">
+            Welcome
+          </marko-web-element>
+          <marko-web-element block-name=cardBlock name="description">
+            You won’t find a more in-depth and comprehensive source of information for running an owner-operator business than our current manual (updated annually), produced by the editors of Overdrive and owner-operator business services provider ATBS.
+          </marko-web-element>
+        </marko-web-block>
+      </div>
+      <div class="col-md-6 mb-block-lg">
+        <marko-web-block name=cardBlock>
+          <marko-web-element block-name=cardBlock name="inner-wrapper">
+            <div>
+              <marko-web-element block-name=cardBlock name="title">
+                The Business Manual for Owner-Operators
+              </marko-web-element>
+              <marko-web-element block-name=cardBlock name="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </marko-web-element>
+              <marko-web-link
+                class=`btn btn-primary ${cardBlock}__download-btn`
+                href="#"
+                title="Free Download"
+              >
+                Free Download
+              </marko-web-link>
+            </div>
+            <marko-web-img
+              class=`${cardBlock}__issue-cover`
+              src=`${logoRoot}/${manualSrc}`
+              srcset=[`${logoRoot}/${manualSrc}&dpr=2 2x`]
+              alt="Partners in Business Issue Cover"
+            />
+          </marko-web-element>
+        </marko-web-block>
+      </div>
+    </div>
+  </@section>
+  <@section>
+    <h3>Featured</h3>
+  </@section>
+  <@section>
+    <h3>Latest Stories</h3>
+  </@section>
+</global-website-section-default-layout>
