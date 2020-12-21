@@ -1,10 +1,13 @@
 import { get } from 'object-path';
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/white-papers-block";
 
+$ const sectionAlias = defaultValue(input.sectionAlias, "white-papers");
+
 $ const queryParams = {
+  sectionAlias,
   limit: 1,
   queryFragment,
-  sectionAlias: "white-papers",
   ...input.queryParams,
 };
 
