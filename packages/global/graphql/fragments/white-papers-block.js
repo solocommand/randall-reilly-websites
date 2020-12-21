@@ -18,6 +18,9 @@ fragment WhitePapersBlockFragment on Content {
       path
     }
   }
+  primarySection {
+    name
+  }
 }
 
 `;

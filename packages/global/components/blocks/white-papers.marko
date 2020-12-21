@@ -1,3 +1,4 @@
+import { get } from 'object-path';
 import queryFragment from "../../graphql/fragments/white-papers-block";
 
 $ const queryParams = {
@@ -15,7 +16,7 @@ $ const queryParams = {
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="header">
         <marko-web-icon name="file" modifiers=[blockName] />
-        White Papers
+        ${get(node, 'primarySection.name')}
       </marko-web-element>
 
       <marko-web-node
