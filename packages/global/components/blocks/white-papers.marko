@@ -1,6 +1,7 @@
 import { get } from 'object-path';
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/white-papers-block";
+import sectionFragment from "../../graphql/fragments/section-info";
 
 $ const sectionAlias = defaultValue(input.sectionAlias, "white-papers");
 $ const contentTypes = defaultValue(input.contentTypes, ["Whitepaper"]);
@@ -11,9 +12,10 @@ $ const queryParams = {
   ...input.queryParams,
   limit: 1,
   queryFragment,
+  sectionFragment,
 };
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <if(nodes.length)>
     $ const node = nodes[0];
     $ const blockName = "white-papers";
@@ -21,7 +23,7 @@ $ const queryParams = {
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="header">
         <marko-web-icon name="file" modifiers=[blockName] />
-        ${get(node, 'primarySection.name')}
+        ${section.name}
       </marko-web-element>
 
       <marko-web-node
