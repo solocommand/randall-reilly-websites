@@ -6,9 +6,9 @@ $ const sectionAlias = defaultValue(input.sectionAlias, "white-papers");
 
 $ const queryParams = {
   sectionAlias,
+  ...input.queryParams,
   limit: 1,
   queryFragment,
-  ...input.queryParams,
 };
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
