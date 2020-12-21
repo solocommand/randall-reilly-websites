@@ -7,9 +7,12 @@ const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const staticPageRoutes = require('./routes/static-page');
+const taxonomyRoutes = require('./routes/taxonomy');
 const paginated = require('./middleware/paginated');
 
 const routes = siteRoutes => (app) => {
+  // Handle taxonomy redirects
+  taxonomyRoutes(app);
   // Load static page routes
   staticPageRoutes(app);
   // Load site routes
