@@ -16,6 +16,8 @@ $ const queryParams = {
     $ const node = nodes[0];
     $ const blockName = "white-papers";
 
+    $ console.log(node);
+
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="header">
         <marko-web-icon name="file" modifiers=[blockName] />
@@ -54,7 +56,7 @@ $ const queryParams = {
               </marko-web-link>
               <marko-web-link
                 class="btn btn-secondary"
-                href="/white-papers"
+                href=`/${sectionAlias}`
                 title="View All"
               >
                 View All
