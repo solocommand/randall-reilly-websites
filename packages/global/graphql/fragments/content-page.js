@@ -124,7 +124,14 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
+          primaryImage {
+            id
+            src(input: { options: { format: auto } })
+            alt
+          }
         }
       }
     }
