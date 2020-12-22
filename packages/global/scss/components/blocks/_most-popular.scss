@@ -6,6 +6,9 @@ $most-popular-position-size: 40px;
     #{ $self } {
       &__node {
         margin-bottom: 30px;
+        @media (max-width: $skin-small-spacer-breakpoint) {
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -13,6 +16,9 @@ $most-popular-position-size: 40px;
 
 .most-popular {
   padding-top: map-get($spacers, block);
+  @media (max-width: $skin-small-spacer-breakpoint) {
+    padding-top: calc(#{map-get($spacers, block)} / 2);
+  }
 
   &__header {
     @include section-header-underline();
