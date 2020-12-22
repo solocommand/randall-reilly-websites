@@ -7,11 +7,21 @@
     padding-bottom: calc(25px - (#{map-get($spacers, block)} / 2));
   }
 
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: $white;
+  }
+
   &__header {
     padding-right: $grid-gutter-width / 2;
     padding-left: $grid-gutter-width / 2;
 
     @include section-header-underline();
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -19,6 +29,12 @@
   $self: &;
   &--opinion {
     background-color: $gray-100;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 16px;
+      background-color: $white;
+      @include marko-web-node-list-border(border-bottom);
+    }
 
     #{ $self } {
       &__title {
@@ -33,9 +49,22 @@
 }
 
 .card-deck-flow {
+  $self: &;
   &--opinion {
     margin-right: 0;
     margin-left: 0;
     background-color: $gray-100;
+
+    @include media-breakpoint-down(sm) {
+      background-color: $white;
+    }
+
+    #{ $self } {
+      &__node {
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 16px;
+        }
+      }
+    }
   }
 }
