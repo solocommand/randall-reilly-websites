@@ -52,7 +52,7 @@ $grid-breakpoints: (
 // Determine the response text breakpoint
 $theme-responsive-text-breakpoint: md;
 // Determine the breakpoint when spacers shrink
-$skin-small-spacer-breakpoint: map-get($grid-breakpoints, sm);
+$skin-small-spacer-breakpoint: map-get($grid-breakpoints, md);
 
 $hr-margin-y: $grid-gutter-width / 2;
 
