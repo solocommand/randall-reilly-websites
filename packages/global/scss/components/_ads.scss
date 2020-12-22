@@ -123,8 +123,23 @@
 }
 
 .wallpaper-ad {
+  $width: 300px;
+
   position: absolute;
-  width: 100%;
+  right: -#{$width};
+  left: -#{$width};
+
+  display: none;
+
+  @media (min-width: calc(#{$marko-web-document-container-max-width} + (#{$width} * 2))) {
+    $position: calc((100vw - #{$marko-web-document-container-max-width}) / -2);
+    right: $position;
+    left: $position;
+  }
+
+  @media (min-width: 1400px) {
+    display: block;
+  }
 
   &__left,
   &__right {
@@ -132,35 +147,9 @@
     top: 0;
   }
   &__left {
-    left: -310px;
+    left: 0;
   }
   &__right {
-    right: -290px;
-  }
-
-  &__fade {
-    position: absolute;
-    pointer-events: none;
-    &--bottom {
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 40px;
-      background: linear-gradient(to top, #fff, transparent);
-    }
-    &--left,
-    &--right {
-      top: 0;
-      bottom: 0;
-      width: 40px;
-    }
-    &--left {
-      left: 0;
-      background: linear-gradient(to right, #fff, transparent);
-    }
-    &--right {
-      right: 0;
-      background: linear-gradient(to left, #fff, transparent);
-    }
+    right: 0;
   }
 }
