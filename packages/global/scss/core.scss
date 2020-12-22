@@ -136,11 +136,18 @@ label {
     #{ $self } {
       &__node {
         // account for smaller container max-width and break earlier than normal
+        @include media-breakpoint-up(sm) {
+          @include make-col(12);
+        }
         @include media-breakpoint-up(md) {
           @include make-col(6);
         }
         @include media-breakpoint-up(lg) {
           @include make-col(3);
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 16px;
         }
       }
     }
