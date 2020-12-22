@@ -55,7 +55,7 @@ $ const onHomepage = defaultValue(input.onHomepage, false);
       </div>
 
       <if(cardNodes.length)>
-        <global-content-card-deck-4-col-flow nodes=cardNodes>
+        <global-content-card-deck-4-col-flow nodes=cardNodes modifiers=[blockName]>
           <@node modifiers=[`${blockName}-card`] />
         </global-content-card-deck-4-col-flow>
       </if>
