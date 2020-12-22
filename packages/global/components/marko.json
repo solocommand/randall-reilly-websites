@@ -7,6 +7,9 @@
     "./nodes/marko.json",
     "./spec-guide/marko.json"
   ],
+  "<global-client-side-block-loader>": {
+    "template": "./client-side-block-loader.marko"
+  },
   "<global-content-page-breadcrumbs>": {
     "template": "./content-page-breadcrumbs.marko"
   },
