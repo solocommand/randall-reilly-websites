@@ -6,15 +6,12 @@ const cleanResponse = require('@base-cms/marko-core/middleware/clean-marko-respo
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
-const staticPageRoutes = require('./routes/static-page');
-const taxonomyRoutes = require('./routes/taxonomy');
+const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
 
 const routes = siteRoutes => (app) => {
-  // Handle taxonomy redirects
-  taxonomyRoutes(app);
-  // Load static page routes
-  staticPageRoutes(app);
+  // Shared/global routes (all sites)
+  sharedRoutes(app);
   // Load site routes
   siteRoutes(app);
 };
