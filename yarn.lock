@@ -833,6 +833,23 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.37.0.tgz#eda757d610836a7e8dc4219b5398488b19982146"
   integrity sha512-4MuM4LZo0hlxOJcyu4xTEGqgdz2xbnIcvyc+O79BM8qeb+23GgtqWVfs15TsQSNT4w6YoJCBCJjb77+EkLi1xg==
 
+"@base-cms/marko-web-identity-x@^1.37.0":
+  version "1.37.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-identity-x/-/marko-web-identity-x-1.37.0.tgz#c92d1b60a991a8b53fabce6b0978e16fd2d03559"
+  integrity sha512-8JTMynHthfXyw0izRcv6flcZTri8zgA3CaigN/IiTUv14+skVGYUE2tX6/Q70dx9H0z3ApVp5RM5kvrT9fpQ4Q==
+  dependencies:
+    "@base-cms/object-path" "^1.37.0"
+    "@base-cms/utils" "^1.37.0"
+    apollo-cache-inmemory "^1.6.3"
+    apollo-client "^2.6.4"
+    apollo-link-http "^1.5.16"
+    body-parser "^1.19.0"
+    cookie "0.3.1"
+    express "^4.17.1"
+    graphql-tag "^2.10.1"
+    moment "^2.24.0"
+    node-fetch "^2.6.1"
+
 "@base-cms/marko-web-native-x@^1.37.0":
   version "1.37.0"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.37.0.tgz#16d0a000d98d3dadbd8d09cf7f008037defbe978"
@@ -2734,7 +2751,7 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.9.tgz#26d556829458f9d1e81fc48952493d0ba3507828"
   integrity sha512-E6QoYqCKZfgatHTdHzs1RRKP7ip4vvm+EyRUeE2RF0NblwVvb0p6jSVeNTOFxPn26QXN2o6SMfNxKp6kU8zQaw==
 
-body-parser@1.19.0:
+body-parser@1.19.0, body-parser@^1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
