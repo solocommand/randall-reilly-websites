@@ -1,7 +1,7 @@
 <template>
   <div>
     <form class="row">
-      <div class="col-2">
+      <div class="col-sm-12 col-md-2">
         <region-select
           :regions="Object.keys(regions)"
           :selected="selectedRegion"
@@ -9,7 +9,7 @@
           @change="setSelectedRegion"
         />
       </div>
-      <div class="col-3">
+      <div class="col-sm-12 col-md-3">
         <primary-operation-select
           :primary-operations="primaryOperations"
           :selected="selectedPrimaryOperation"
