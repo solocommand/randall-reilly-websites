@@ -1,0 +1,16 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const expanded = defaultValue(input.expanded, false);
+$ const content = getAsObject(input, "content");
+
+<div id="comment-stream">
+  <!-- @todo replace this with an expandable Vue component wrapping the stream -->
+  <p>Expanded: ${expanded}</p>
+  <marko-web-identity-x-comment-stream
+    identifier=`${content.id}`
+    title=content.name
+    description=content.teaser
+    url=content.url
+  />
+</div>
