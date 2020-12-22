@@ -1,3 +1,4 @@
+const identityX = require('./identity-x');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const renderBlock = require('./render-block');
@@ -5,6 +6,9 @@ const staticPage = require('./static-page');
 const taxonomy = require('./taxonomy');
 
 module.exports = (app) => {
+  // IdentityX (user routing and app context)
+  identityX(app);
+
   // Shared Public Files (e.g. ads.txt)
   publicFiles(app);
 
