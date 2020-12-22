@@ -20,13 +20,13 @@ $primary: #103a57;
     &:focus,
     &:hover {
       color: $gray-700;
-      border-color: $gray-700;
       background-color: #fff;
+      border-color: $gray-700;
     }
   }
   @include media-breakpoint-down(md) {
     .custom-select {
-      margin-bottom:  map-get($spacers, 2);
+      margin-bottom: map-get($spacers, 2);
     }
   }
 }
