@@ -1,0 +1,49 @@
+import { get } from "@base-cms/object-path";
+
+$ const { site, config } = out.global;
+
+$ const type = "submission";
+$ const title = "New Reader Reg Submission";
+$ const description = `Submit Reader Reg content to ${config.siteName()}`;
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          aliases=aliases
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </@section>
+      <@section>
+        <h1 class="page-wrapper__website-section-name">Submit Your Rig!</h1>
+      </@section>
+      <@section>
+        <marko-web-block name='wufoo-submission-form'>
+          <marko-web-element block-name='wufoo-submission-form' name="wufoo-form">
+            <marko-web-browser-component
+              name="WufooForm"
+              props={
+                userName: site.get("wufoo.userName"),
+                formHash: 's1nhfzge1mfev3n',
+              }
+            />
+          </marko-web-element>
+        </marko-web-block>
+      </@section>
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="rotation"
+          aliases=aliases
+          modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>

@@ -3,6 +3,7 @@ import GAM from '@base-cms/marko-web-gam/browser';
 import SocialSharing from '@base-cms/marko-web-social-sharing/browser';
 import MenuToggleButton from './menu-toggle-button.vue';
 import NewsletterNub from './newsletter-nub.vue';
+import WufooForm from './wufoo-form.vue';
 import SpecGuideTable from './spec-guide/table.vue';
 import TopStoriesMenu from './top-stories-menu.vue';
 
@@ -15,4 +16,5 @@ export default (Browser) => {
   Browser.register('GlobalNewsletterNub', NewsletterNub);
   Browser.register('CommonSpecGuideTable', SpecGuideTable);
   Browser.register('GlobalTopStoriesMenu', TopStoriesMenu);
+  Browser.register('WufooForm', WufooForm);
 };
