@@ -49,7 +49,8 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px
 );
-
+// Determine the response text breakpoint
+$theme-responsive-text-breakpoint: md;
 // Determine the breakpoint when spacers shrink
 $skin-small-spacer-breakpoint: map-get($grid-breakpoints, sm);
 
