@@ -47,8 +47,8 @@ $ const hasUser = defaultValue(input.hasUser, false);
         />
       </div>
       <div class="d-none d-md-flex col-md-4">
-        <!-- top stories -->
-        <global-top-stories-menu-block />
+        <!-- top stories (defer to client-side loader) -->
+        <marko-web-browser-component name="GlobalTopStoriesMenu" />
       </div>
     </div>
   </marko-web-element>
