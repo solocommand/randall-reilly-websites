@@ -1,24 +1,31 @@
 <template>
-  <div>
+  <div :class="classes">
     <div v-if="isLoading">
-      Loading top stories...
+      Loading {{ label }}...
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-else-if="html" v-html="html" />
     <div v-if="error">
-      {{ error.message }}
+      <h5>Unable to load {{ label }} block.</h5>
+      <p>{{ error.message }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import EventBus from '@base-cms/marko-web/browser/event-bus';
-
 export default {
   props: {
-    sectionAlias: {
+    label: {
       type: String,
-      default: 'home',
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    input: {
+      type: Object,
+      default: () => ({}),
     },
   },
 
@@ -27,12 +34,11 @@ export default {
     hasLoaded: false,
     html: null,
     isLoading: false,
+    classes: ['lazyload'],
   }),
 
   created() {
-    EventBus.$on('site-menu-expanded', (expanded) => {
-      if (expanded) this.load();
-    });
+    document.addEventListener('lazybeforeunveil', this.load.bind(this));
   },
 
   methods: {
@@ -41,8 +47,8 @@ export default {
         try {
           this.error = null;
           this.isLoading = true;
-          const input = JSON.stringify({ sectionAlias: this.sectionAlias });
-          const href = `/__render-block/top-stories-menu?input=${encodeURIComponent(input)}`;
+          const input = JSON.stringify(this.input);
+          const href = `/__render-block/${this.name}?input=${encodeURIComponent(input)}`;
           const res = await fetch(href, { credentials: 'same-origin' });
           this.html = await res.text();
           this.hasLoaded = true;

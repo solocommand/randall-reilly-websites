@@ -1,6 +1,7 @@
 import GTM from '@base-cms/marko-web-gtm/browser';
 import GAM from '@base-cms/marko-web-gam/browser';
 import SocialSharing from '@base-cms/marko-web-social-sharing/browser';
+import BlockLoader from './block-loader.vue';
 import MenuToggleButton from './menu-toggle-button.vue';
 import NewsletterNub from './newsletter-nub.vue';
 import SpecGuideTable from './spec-guide/table.vue';
@@ -11,6 +12,7 @@ export default (Browser) => {
   GAM(Browser);
   SocialSharing(Browser);
 
+  Browser.register('GlobalBlockLoader', BlockLoader);
   Browser.register('GlobalMenuToggleButton', MenuToggleButton);
   Browser.register('GlobalNewsletterNub', NewsletterNub);
   Browser.register('CommonSpecGuideTable', SpecGuideTable);
