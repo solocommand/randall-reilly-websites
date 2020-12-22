@@ -1,6 +1,3 @@
-import { getAsArray } from "@base-cms/object-path";
-
-$ const { site } = out.global;
 $ const { id, type, pageNode } = input;
 
 <global-content-wrapper-layout
@@ -17,7 +14,7 @@ $ const { id, type, pageNode } = input;
     />
   </@section>
 
-  <@section|{ blockName, content, aliases }|>
+  <@section|{ blockName, content }|>
     $ const { primarySection } = content;
     <div class="content-page-header">
       <global-content-page-breadcrumbs section=primarySection />
@@ -25,7 +22,7 @@ $ const { id, type, pageNode } = input;
     </div>
   </@section>
 
-  <@section|{ aliases, blockName, content }| modifiers=["mb-block-lg"]>
+  <@section|{ blockName, content }| modifiers=["mb-block-lg"]>
     $ const { primarySection } = content;
     <div class="content-page-body">
       <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
