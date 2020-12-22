@@ -3,6 +3,13 @@
 
   &--top-stories-hero {
     margin-bottom: 16px;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 16px;
+      margin-bottom: 0;
+      @include marko-web-node-list-border(border-bottom);
+    }
+
     #{ $self } {
       &__title {
         margin-bottom: 16px;
@@ -20,6 +27,8 @@
   }
 
   &--top-stories-card {
+    @include skin-fluid-to-list($parent: $self, $breakpoint: md);
+
     #{ $self } {
       &__title {
         @include skin-typography($style: "header-3", $link-style: "primary");
@@ -28,6 +37,14 @@
       &__website-section-name {
         @include skin-typography($style: "slug-small", $link-style: "primary");
       }
+    }
+  }
+}
+
+.card-deck-flow {
+  &--top-stories {
+    @include media-breakpoint-down(sm) {
+      margin-top: 16px;
     }
   }
 }
