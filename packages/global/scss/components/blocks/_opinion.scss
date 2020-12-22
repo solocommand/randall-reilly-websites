@@ -2,6 +2,11 @@
   padding-top: 50px;
   padding-bottom: 50px - map-get($spacers, block);
 
+  @media (max-width: $skin-small-spacer-breakpoint) {
+    padding-top: 25px;
+    padding-bottom: calc(25px - (#{map-get($spacers, block)} / 2));
+  }
+
   &__header {
     padding-right: $grid-gutter-width / 2;
     padding-left: $grid-gutter-width / 2;

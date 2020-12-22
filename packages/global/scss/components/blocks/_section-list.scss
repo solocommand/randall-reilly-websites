@@ -33,6 +33,11 @@
     padding-top: map-get($spacers, block);
     padding-bottom: map-get($spacers, block);
 
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      padding-top: calc(#{map-get($spacers, block)} / 2);
+      padding-bottom: calc(#{map-get($spacers, block)} / 2);
+    }
+
     #{ $self } {
       &__header {
         @include skin-typography($style: "section-header-small", $link-style: "primary");

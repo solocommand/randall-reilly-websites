@@ -1,6 +1,10 @@
 .reader-rigs {
   padding-top: map-get($spacers, block);
 
+  @media (max-width: $skin-small-spacer-breakpoint) {
+    padding-top: calc(#{map-get($spacers, block)} / 2);
+  }
+
   &__header {
     margin-bottom: 6px;
     @include skin-typography($style: "section-header");
