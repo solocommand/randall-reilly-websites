@@ -27,7 +27,6 @@ export default {
     hasLoaded: false,
     html: null,
     isLoading: false,
-    classes: ['lazyload'],
   }),
 
   created() {
