@@ -3,6 +3,7 @@ import sectionsFragment from "../../graphql/fragments/safety-watch-sections"
 
 $ const { id, alias, name, pageNode } = input;
 $ const { apollo, req, pagination: p } = out.global;
+
 $ const parentAlias = 'safety-watch';
 $ const perPage = 18;
 
@@ -66,5 +67,40 @@ $ const perPage = 18;
         path=alias
       />
     </global-section-body-feed-block>
+  </@section>
+
+  <@section>
+    <global-top-stories-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <global-callout-cards-block>
+      <@slot>
+        <global-ccj-top-250-block />
+      </@slot>
+      <@slot>
+        <global-white-papers-block />
+      </@slot>
+    </global-callout-cards-block>
+  </@section>
+
+  <@section>
+    <global-client-side-most-popular-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
   </@section>
 </global-website-section-default-layout>
