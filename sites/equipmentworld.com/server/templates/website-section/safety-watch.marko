@@ -3,21 +3,25 @@ import { defaultValue } from "@base-cms/marko-web/utils"
 import config from "../safety-watch"
 
 $ const { id, alias, name, pageNode } = input;
-$ const { req } = out.global;
+$ const { req, pagination: p } = out.global;
 $ const filter = defaultValue(get(req, "query.filter"), "all");
 $ const content = get(config, `${filter}.content`);
+$ const perPage = 18;
 
 <global-website-section-default-layout
   id=id
   alias=alias
   name=name
-  page-node=pageNode>
+  page-node=pageNode
+>
+
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
       modifiers=["max-width-970", "center", "margin-auto-x", "inline"]/>
   </@section>
+
   <@section>
     <h1 class="page-wrapper__website-section-name">${name}</h1>
     <div class="card-deck-flow card-deck-flow--3-cols">
@@ -27,7 +31,7 @@ $ const content = get(config, `${filter}.content`);
           <marko-web-link
             class=`node btn btn-${btnStyle}`
             href=`${alias}?filter=${key}`
-            title=`View the ${value.displayValue}.`>
+            title=`View ${value.displayValue}`>
             ${value.displayValue}
           </marko-web-link>
         </div>
@@ -35,51 +39,19 @@ $ const content = get(config, `${filter}.content`);
     </div>
     <hr/>
   </@section>
-  <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
-    <div class="page-wrapper__section page-wrapper__section--mb-block-lg">
-      <div class="node-list node-list--section-feed node-list--flush-x node-list--inner-justified">
-        <div class="node-list__nodes">
-          <for|i| from=0 to=(content.length - 1)>
-            <div class="node-list__node">
-              <div class="node node--section-feed node--image-left node--flush node--promotion-content-type">
-                <div class="node__contents">
-                  <div style="width: 250px;min-width: 250px;height: 167px;" class="node__image-wrapper node__image-wrapper--align-top text-center">
-                    <img
-                      style="max-width: 100%; max-height: 100%;"
-                      src=`${content[i].primaryImage.src}`
-                      data-src=`${content[i].primaryImage.src}`
-                    />
-                  </div>
-                  <div class="node__body">
-                    <div class="node__contents node__contents--body">
-                      <h5 class="node__title">
-                        ${content[i].name}
-                      </h5>
-                      <div class="node__text node__text--teaser">
-                        $!{content[i].teaser}
-                      </div>
-                      <div class="node__text">
-                        <marko-web-link
-                          class="mx-2 mb-2 btn btn-primary"
-                          href=`${content[1]['download-en']}`
-                          title=`Download English Version`>
-                          Download English Version
-                        </marko-web-link>
-                        <marko-web-link
-                          class="mx-2 mb-2 btn btn-primary"
-                          href=`${content[1]['download-sp']}`
-                          title=`Descargue la versión española`>
-                          Descargue la versión española
-                        </marko-web-link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </for>
-        </div>
-      </div>
-    </div>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-body-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
+      <@node with-section=false with-dates=false />
+    </global-section-body-feed-block>
+    <global-section-body-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-body-feed-block>
   </@section>
+
 </global-website-section-default-layout>
