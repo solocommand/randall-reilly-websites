@@ -24,6 +24,14 @@ $ const sections = getAsArray(input, "sections");
             />
           </@section>
         </for>
+
+        <@section|{ aliases }|>
+          <global-gam-define-display-ad
+            name="rotation"
+            aliases=aliases
+            modifiers=["inter-block"]
+          />
+        </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
