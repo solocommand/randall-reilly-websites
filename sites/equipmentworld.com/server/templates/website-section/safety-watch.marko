@@ -28,7 +28,7 @@ $ const perPage = 18;
         name="website-section"
         params={ alias: parentAlias, queryFragment: sectionsFragment }
       >
-        <h1 class="page-wrapper__website-section-name">${node.name}</h1>
+        <h1 class="page-wrapper__website-section-name">${(parentAlias === alias) ? node.name : `${node.name}: ${name}`}</h1>
         <div class="card-deck-flow card-deck-flow--3-cols">
           <div class="card-deck-flow__node">
             <marko-web-link
