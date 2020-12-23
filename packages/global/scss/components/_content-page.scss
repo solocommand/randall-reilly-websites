@@ -21,9 +21,6 @@
 .content-page-header {
   max-width: $skin-content-body-max-width;
 
-  padding-top: map-get($spacers, block);
-  padding-bottom: map-get($spacers, block);
-
   margin-right: auto;
   margin-left: auto;
 }

@@ -36,8 +36,19 @@
       }
     }
 
+    &--first-sm {
+      margin-bottom: 30px;
+    }
+
     &--first {
       margin-bottom: 40px;
+    }
+
+    &--content-header {
+      margin-bottom: 20px;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 30px;
+      }
     }
 
     &--no-spacer {

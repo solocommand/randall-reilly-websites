@@ -9,15 +9,15 @@ $ const { id, type, pageNode } = input;
   page-node=pageNode
 >
 
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section|{ blockName, content, aliases }|>
+  <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
     <div class="content-page-header">
       <global-content-page-breadcrumbs section=primarySection />
@@ -31,7 +31,7 @@ $ const { id, type, pageNode } = input;
     </div>
   </@section>
 
-  <@section|{ aliases, blockName, content }| modifiers=["mb-block-lg"]>
+  <@section|{ aliases, blockName, content }|>
     $ const { primarySection } = content;
     <div class="content-page-body">
       <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
