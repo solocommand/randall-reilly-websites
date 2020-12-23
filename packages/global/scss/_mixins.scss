@@ -4,10 +4,10 @@
   $breakpoint: md
 ) {
   // verify this should be on all nodes???
-  @include media-breakpoint-down($breakpoint) {
-    padding-bottom: 16px;
-    @include marko-web-node-list-border(border-bottom);
-  }
+  // @include media-breakpoint-down($breakpoint) {
+  //   padding-bottom: 16px;
+  //   @include marko-web-node-list-border(border-bottom);
+  // }
 
   #{ $parent } {
     &__title {

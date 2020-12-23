@@ -30,19 +30,20 @@ $ const onHomepage = defaultValue(input.onHomepage, false);
         </marko-web-element>
       </if>
 
-      <div class="row">
-        <div class="col-md-6 col-lg-7">
+      <marko-web-element block-name=blockName name="row">
+        <marko-web-element block-name=blockName name="col" modifiers=["hero"]>
           <global-content-node
             image-position="top"
             card=true
             flush=true
+            image-only=true
             modifiers=[`${blockName}-hero-image`]
             node=heroImageNode
           >
             <@image fluid=true width=600 ar="3:2" />
           </global-content-node>
-        </div>
-        <div class="col-md-6 col-lg-5">
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="col" modifiers=["list"]>
           <global-content-node
             full-height=true
             card=true
@@ -51,8 +52,8 @@ $ const onHomepage = defaultValue(input.onHomepage, false);
             modifiers=[`${blockName}-hero`]
             node=heroNode
           />
-        </div>
-      </div>
+        </marko-web-element>
+      </marko-web-element>
 
       <if(cardNodes.length)>
         <global-content-card-deck-4-col-flow nodes=cardNodes modifiers=[blockName]>
