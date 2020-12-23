@@ -1,7 +1,6 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/section-feed-block";
 
-
 $ const queryParams = {
   ...input.queryParams,
   sectionAlias: input.alias,
@@ -29,6 +28,7 @@ $ const countOnly = defaultValue(input.countOnly, false);
           <global-content-node
             node=node
             modifiers=[blockName]
+            ...input.node
           >
             <@image width=250 ar="3:2" use-placeholder=true />
           </global-content-node>
