@@ -86,6 +86,10 @@ label {
   $self: &;
   $image-border: 1px solid rgba(239, 239, 239, .9);
 
+  &__header {
+    margin-bottom: 6px;
+  }
+
   &__content-published {
     @include skin-typography($style: "date");
   }
