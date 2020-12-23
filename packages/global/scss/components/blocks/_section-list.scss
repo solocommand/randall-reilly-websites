@@ -49,3 +49,21 @@
     }
   }
 }
+
+.section-list-deck {
+  &__row {
+    @include make-row();
+  }
+
+  &__col {
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+      margin-bottom: 0;
+    }
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

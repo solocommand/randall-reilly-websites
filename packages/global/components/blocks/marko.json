@@ -70,6 +70,9 @@
   "<global-section-list-block>": {
     "template": "./section-list.marko"
   },
+  "<global-section-list-deck-block>": {
+    "template": "./section-list-deck.marko"
+  },
   "<global-top-stories-block>": {
     "template": "./top-stories.marko"
   }
