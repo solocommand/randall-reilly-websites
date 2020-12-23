@@ -3,7 +3,8 @@
     <div class="input-group">
       <select
         v-if="primaryOperations.length"
-        class="custom-select btn btn-secondary"
+        class="custom-select btn"
+        :class="(!selected) ? 'btn-secondary' : 'btn-primary'"
         :disabled="disabled"
         @change="emitChange"
       >
