@@ -1,0 +1,60 @@
+import { getAsArray } from "@base-cms/object-path"
+import sectionsFragment from "../../graphql/fragments/safety-watch-sections"
+
+$ const { id, alias, name, pageNode } = input;
+$ const { apollo, req, pagination: p } = out.global;
+$ const parentAlias = 'safety-watch';
+$ const perPage = 18;
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section|{ blockName, section }|>
+    <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+      ${value}
+    </marko-web-website-section-name>
+    <div id="content-body" class="page-contents__content-body">
+      <marko-web-block
+        name='primary-image'
+        modifiers=[]
+      >
+        <div class=`${blockName}__wrapper text-center`>
+          <marko-web-img
+            src='https://img.equipmentworld.com/files/base/randallreilly/all/image//static/eqw-trench-safety-primary-image.jpg'
+            srcset='https://img.equipmentworld.com/files/base/randallreilly/all/image//static/eqw-trench-safety-primary-image.jpg'
+            alt=name
+            class=`${blockName}__image`
+            attrs={}
+          />
+          <marko-web-image-credit block-name=blockName obj={ credit: 'Photo by David Dow, TrenchSafety and Supply'} />
+        </div>
+      </marko-web-block>
+      <marko-web-block>
+        <p>When it comes to construction fatalities, trench deaths can be easy to overlook. The number of deaths – 49 in the 2016 to 2017 time period – falls far below the top four culprits of construction deaths: falls, electrocution, struck by object and caught-in/between.</p>
+        <p>But trench fatalities usually mean prolonged efforts to recover a victim, exacerbating the experience for co-workers and family. They require advanced expertise by first responders. Many times, even partially buried victims don’t survive. And they deal a staggering loss to families and to crews that sometimes have worked together for years.</p>
+        <p>Then there’s the cost. OSHA fines are just the beginning. A trench death stops work, increases workers’ compensation costs, hikes your insurance premiums and makes you ineligible to work for certain owners. And all of that is before the legal fees.<br>
+        Most frustrating of all: every death could have been prevented by using methods that have been known for decades.</p>
+        <p>In preparing this report, the editors of Equipment World wanted to examine the human side of the trench fatality statistics. We talked to survivors, co-workers, victims’ families and first responders. We heard from victims’ advocates and lawyers. We asked trench protection experts and contractors for best practices.</p>
+        <p>These deaths delivered immeasurable loss. They all began with the decision that a trench didn’t require worker protection.</p>
+      </marko-web-block>
+    </div>
+  </@section>
+
+  <@section>
+    <hr />
+    <global-section-title-feed-block alias=alias>
+      <@query-params limit=1000 />
+    </global-section-title-feed-block>
+  </@section>
+</global-website-section-default-layout>
