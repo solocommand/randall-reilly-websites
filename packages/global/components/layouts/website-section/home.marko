@@ -15,11 +15,11 @@ $ const sections = getAsArray(input, "sections");
       aliases=aliases
       modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
     />
+    <global-gam-wallpaper-ad aliases=aliases />
   </@section>
 
   <@section|{ aliases }|>
-    <global-gam-wallpaper-ad aliases=aliases />
-    <global-top-stories-block with-header=false on-homepage=true />
+    <global-top-stories-block with-header=false />
   </@section>
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
