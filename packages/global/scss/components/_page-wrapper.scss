@@ -15,10 +15,15 @@
   }
 
   &__section {
+    margin-bottom: 30px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 60px;
+    }
+
     &--break-container {
       margin-right: $marko-web-page-wrapper-padding * -1;
       margin-left: $marko-web-page-wrapper-padding * -1;
-      background-color: $gray-100; // change this to a specific var
+      background-color: $gray-100;
       @media (min-width: $marko-web-document-container-max-width) {
         $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
         margin-right: $margin;
@@ -32,124 +37,12 @@
       }
     }
 
-    $block-sm: map-get($spacers, block-sm);
-    $block-sm-mobile: calc(#{$block-sm} / 2);
-    $block-lg: map-get($spacers, block-lg);
-    $block-lg-mobile: calc(#{$block-lg} / 2);
-    $block-xl: map-get($spacers, block-xl);
-    $block-xl-mobile: calc(#{$block-xl} / 2);
-
-    &--my-block-sm {
-      margin-top: $block-sm;
-      margin-bottom: $block-sm;
-      &:last-child {
-        margin-bottom: $block-sm;
-      }
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-top: $block-sm-mobile;
-        margin-bottom: $block-sm-mobile;
-        &:last-child {
-          margin-bottom: $block-sm-mobile;
-        }
-      }
+    &--first {
+      margin-bottom: 40px;
     }
 
-    &--mt-block-sm {
-      margin-top: $block-sm;
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-top: $block-sm-mobile;
-      }
-    }
-
-    &--mb-block-sm {
-      margin-bottom: $block-sm;
-      &:last-child {
-        margin-bottom: $block-sm;
-      }
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-bottom: $block-sm-mobile;
-        &:last-child {
-          margin-bottom: $block-sm-mobile;
-        }
-      }
-    }
-
-    &--my-block-lg {
-      margin-top: $block-lg;
-      margin-bottom: $block-lg;
-      &:last-child {
-        margin-bottom: $block-lg;
-      }
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-top: $block-lg-mobile;
-        margin-bottom: $block-lg-mobile;
-        &:last-child {
-          margin-bottom: $block-lg-mobile;
-        }
-      }
-    }
-
-    &--mt-block-lg {
-      margin-top: $block-lg;
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-top: $block-lg-mobile;
-      }
-    }
-
-    &--mb-block-lg {
-      margin-bottom: $block-lg;
-      &:last-child {
-        margin-bottom: $block-lg;
-      }
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-bottom: $block-lg-mobile;
-        &:last-child {
-          margin-bottom: $block-lg-mobile;
-        }
-      }
-    }
-
-    &--my-block-xl {
-      margin-top: $block-xl;
-      margin-bottom: $block-xl;
-      &:last-child {
-        margin-bottom: $block-xl;
-      }
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-top: $block-xl-mobile;
-        margin-bottom: $block-xl-mobile;
-        &:last-child {
-          margin-bottom: $block-xl-mobile;
-        }
-      }
-    }
-
-    &--mt-block-xl {
-      margin-top: $block-xl;
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-top: $block-xl-mobile;
-      }
-    }
-
-    &--mb-block-xl {
-      margin-bottom: $block-xl;
-      &:last-child {
-        margin-bottom: $block-xl;
-      }
-
-      @media (max-width: $skin-small-spacer-breakpoint) {
-        margin-bottom: $block-xl-mobile;
-        &:last-child {
-          margin-bottom: $block-xl-mobile;
-        }
-      }
+    &--no-spacer {
+      margin-bottom: 0;
     }
   }
 }

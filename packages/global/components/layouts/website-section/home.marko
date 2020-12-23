@@ -9,7 +9,7 @@ $ const sections = getAsArray(input, "sections");
   name=name
   page-node=pageNode
 >
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
@@ -17,7 +17,7 @@ $ const sections = getAsArray(input, "sections");
     />
   </@section>
 
-  <@section|{ aliases }| modifiers=["mb-block-lg"]>
+  <@section|{ aliases }|>
     <global-gam-wallpaper-ad aliases=aliases />
     <global-top-stories-block with-header=false on-homepage=true />
   </@section>

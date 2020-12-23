@@ -57,6 +57,13 @@ label {
   @include skin-typography($style: "input-label");
 }
 
+.col-spacer {
+  margin-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
+
 .form-control {
   letter-spacing: $skin-input-letter-spacing;
   border-radius: $input-border-radius; // must force this value since radius is disabled
@@ -156,9 +163,14 @@ label {
           @include make-col(3);
         }
 
-        @include media-breakpoint-down(sm) {
-          margin-bottom: 16px;
-        }
+        // @include media-breakpoint-down(sm) {
+        //   margin-bottom: 16px;
+        // }
+        // &:last-child {
+        //   @include media-breakpoint-down(sm) {
+        //     margin-bottom: 0;
+        //   }
+        // }
       }
     }
   }
