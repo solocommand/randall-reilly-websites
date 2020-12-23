@@ -4,7 +4,7 @@
       <select
         v-if="primaryOperations.length"
         class="custom-select btn"
-        :class="(!selected) ? 'btn-secondary' : 'btn-primary'"
+        :class="(!selected || selected === 'all') ? 'btn-secondary' : 'btn-primary'"
         :disabled="disabled"
         @change="emitChange"
       >
