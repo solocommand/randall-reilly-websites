@@ -32,5 +32,8 @@
   },
   "<global-author-published-node>": {
     "template": "./author-published.marko"
+  },
+  "<global-section-feed-content-node>": {
+    "template": "./section-feed-content.marko"
   }
 }
