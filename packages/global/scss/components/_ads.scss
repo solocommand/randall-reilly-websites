@@ -9,6 +9,31 @@
   $label-line-height: 1;
   $container-height: $container-bottom-padding + $wrapper-first-child-padding + ($label-font-size * $label-line-height) + $label-bottom-padding;
 
+  &--inter-block {
+    margin-right: -#{$marko-web-page-wrapper-padding};
+    margin-bottom: 0;
+    margin-left: -#{$marko-web-page-wrapper-padding};
+    background-color: $skin-ad-bg-color;
+    @media (min-width: $marko-web-document-container-max-width) {
+      $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
+      margin-right: $margin;
+      margin-left: $margin;
+    }
+
+    #{ $self } {
+      &__wrapper {
+        padding-bottom: $container-bottom-padding;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+
+        @media (min-width: 970px) {
+          max-width: 970px;
+        }
+      }
+    }
+  }
+
   &--inline {
     margin-right: $marko-web-page-wrapper-padding * -1;
     margin-bottom: 0;
