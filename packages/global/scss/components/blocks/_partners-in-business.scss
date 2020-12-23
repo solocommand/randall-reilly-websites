@@ -4,7 +4,7 @@
 
   @media (max-width: $skin-small-spacer-breakpoint) {
     padding-top: calc(#{map-get($spacers, block)} / 2);
-    padding-bottom: calc(#{map-get($spacers, block)} / 2);
+    padding-bottom: 0;
   }
 
   &__header {
@@ -15,12 +15,20 @@
   &__description {
     margin-bottom: 30px;
     @include skin-typography($style: "article-text");
+
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      margin-bottom: 24px;
+    }
   }
 
   &__btn-wrapper {
     padding-top: $marko-web-node-list-padding;
     margin-top: $marko-web-node-list-padding;
     @include marko-web-node-list-border($property: border-top);
+
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      padding-top: 24px;
+    }
   }
 }
 
@@ -28,6 +36,11 @@
   $self: &;
 
   &--partners-in-business-hero {
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      padding-bottom: 16px;
+      @include marko-web-node-list-border(border-bottom);
+    }
+
     #{ $self } {
       &__title {
         @include skin-typography($style: "header-2", $link-style: "primary");
@@ -45,5 +58,11 @@
         @include skin-typography($style: "header-3", $link-style: "primary");
       }
     }
+  }
+}
+
+.node-list {
+  @media (max-width: $skin-small-spacer-breakpoint) {
+    margin-top: 16px;
   }
 }
