@@ -13,6 +13,10 @@ module.exports = (app) => {
     template: safetyWatch,
     queryFragment,
   }));
+  app.get('/:alias(safety-watch/[a-z0-9-/]+)', withWebsiteSection({
+    template: safetyWatch,
+    queryFragment,
+  }));
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({
     template: section,
     queryFragment,
