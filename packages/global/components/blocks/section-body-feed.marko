@@ -11,9 +11,9 @@ $ const blockName = "section-feed";
 $ const countOnly = defaultValue(input.countOnly, false);
 
 <if(countOnly)>
-  <query-total-count|data| name="website-scheduled-content" params=queryParams>
+  <global-query-total-count|data| name="website-scheduled-content" params=queryParams>
     <${input.renderBody} ...data />
-  </query-total-count>
+  </global-query-total-count>
 </if>
 <else>
   <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
@@ -25,15 +25,13 @@ $ const countOnly = defaultValue(input.countOnly, false);
     >
       <@nodes nodes=nodes>
         <@slot|{ node }|>
-          <global-content-node
+          <global-section-feed-content-node
             node=node
-            modifiers=[blockName]
+            with-section=false
             with-teaser=false
+            with-dates=false
             with-body=true
-            ...input.node
-          >
-            <@image width=250 ar="3:2" use-placeholder=true />
-          </global-content-node>
+          />
         </@slot>
       </@nodes>
     </marko-web-node-list>
