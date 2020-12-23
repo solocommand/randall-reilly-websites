@@ -3,6 +3,11 @@
   padding-top: 0;
   padding-bottom: 0;
 
+  @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+    padding-right: $marko-web-page-wrapper-padding;
+    padding-left: $marko-web-page-wrapper-padding;
+  }
+
   &__website-section-name {
     padding-top: 20px;
     margin-bottom: 20px;
