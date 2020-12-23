@@ -57,17 +57,6 @@ label {
   @include skin-typography($style: "input-label");
 }
 
-.row {
-  &--block {
-    padding-top: map-get($spacers, block);
-    padding-bottom: map-get($spacers, block);
-
-    .col-md-6 {
-      margin-bottom: map-get($spacers, block);
-    }
-  }
-}
-
 .form-control {
   letter-spacing: $skin-input-letter-spacing;
   border-radius: $input-border-radius; // must force this value since radius is disabled
