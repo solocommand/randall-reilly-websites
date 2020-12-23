@@ -10,8 +10,6 @@ $ const queryParams = {
 $ const blockName = "section-feed";
 $ const countOnly = defaultValue(input.countOnly, false);
 
-$ console.log(queryParams);
-
 <if(countOnly)>
   <query-total-count|data| name="website-scheduled-content" params=queryParams>
     <${input.renderBody} ...data />
