@@ -58,6 +58,11 @@
     }
 
     #{ $self } {
+      &__header {
+        @include media-breakpoint-up(md) {
+          margin-bottom: 12px;
+        }
+      }
       &__title {
         margin-bottom: 0;
         @include skin-typography($style: "header-1", $link-style: "primary");
@@ -66,6 +71,9 @@
       &__text--teaser {
         margin-top: 10px;
         margin-bottom: 0;
+        @include media-breakpoint-up(lg) {
+          margin-top: 16px;
+        }
         @include skin-typography($style: "article-text", $link-style: "primary");
       }
 
@@ -89,6 +97,7 @@
     }
 
     @include media-breakpoint-up(lg) {
+      padding-top: 0;
       border-top: none;
     }
 
@@ -111,6 +120,9 @@
         @include media-breakpoint-up(md) {
           margin-top: 16px;
           margin-bottom: 0;
+        }
+        @include media-breakpoint-up(lg) {
+          margin-top: 20px;
         }
       }
     }
