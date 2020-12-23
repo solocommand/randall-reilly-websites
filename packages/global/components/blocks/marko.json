@@ -54,7 +54,7 @@
     "template": "./white-papers.marko"
   },
   "<global-section-body-feed-block>": {
-    "template": "./section-feed.marko",
+    "template": "./section-body-feed.marko",
     "<query-params>": {},
     "<node>": {},
     "@alias": "string",
