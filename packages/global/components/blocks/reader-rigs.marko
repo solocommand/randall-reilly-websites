@@ -31,32 +31,31 @@ $ const blockName = "reader-rigs";
     </marko-web-element>
 
     <marko-web-element block-name=blockName name="deck-wrapper">
-      <default-theme-card-deck-flow
-        cols=3
-        nodes=nodes
-        modifiers=[blockName]
-      >
-        <@slot|{ node }|>
-          <global-content-node
-            image-position="top"
-            card=true
-            flush=true
-            modifiers=[blockName]
-            node=node
-            with-section=false
-            with-teaser=false
-            with-dates=false
-          >
-            <@image fluid=true width=330 ar="4:3" />
-          </global-content-node>
-        </@slot>
-      </default-theme-card-deck-flow>
 
-      <marko-web-element block-name=blockName name="view-more-bottom">
-        <marko-web-link href=section.canonicalPath>
-          View more &raquo;
-        </marko-web-link>
+      <marko-web-element block-name=blockName name="row">
+        <for|node| of=nodes>
+          <marko-web-element block-name=blockName name="col">
+            <global-content-node
+              image-position="top"
+              card=true
+              flush=true
+              modifiers=[blockName]
+              node=node
+              with-section=false
+              with-teaser=false
+              with-dates=false
+            >
+              <@image fluid=true width=330 ar="4:3" />
+            </global-content-node>
+          </marko-web-element>
+        </for>
       </marko-web-element>
+    </marko-web-element>
+
+    <marko-web-element block-name=blockName name="view-more-bottom">
+      <marko-web-link href=section.canonicalPath>
+        View more &raquo;
+      </marko-web-link>
     </marko-web-element>
   </marko-web-block>
 </marko-web-query>
