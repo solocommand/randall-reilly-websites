@@ -1,0 +1,43 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/section-body-feed-block";
+
+$ const queryParams = {
+  ...input.queryParams,
+  sectionAlias: input.alias,
+  queryFragment,
+};
+
+$ const blockName = "section-feed";
+$ const countOnly = defaultValue(input.countOnly, false);
+
+$ console.log(queryParams);
+
+<if(countOnly)>
+  <query-total-count|data| name="website-scheduled-content" params=queryParams>
+    <${input.renderBody} ...data />
+  </query-total-count>
+</if>
+<else>
+  <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+    <marko-web-node-list
+      inner-justified=true
+      flush-x=true
+      flush-y=false
+      modifiers=[blockName]
+    >
+      <@nodes nodes=nodes>
+        <@slot|{ node }|>
+          <global-content-node
+            node=node
+            modifiers=[blockName]
+            with-teaser=false
+            with-body=true
+            ...input.node
+          >
+            <@image width=250 ar="3:2" use-placeholder=true />
+          </global-content-node>
+        </@slot>
+      </@nodes>
+    </marko-web-node-list>
+  </marko-web-query>
+</else>

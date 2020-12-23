@@ -50,9 +50,17 @@
   "<global-white-papers-block>": {
     "template": "./white-papers.marko"
   },
+  "<global-section-body-feed-block>": {
+    "template": "./section-feed.marko",
+    "<query-params>": {},
+    "<node>": {},
+    "@alias": "string",
+    "@count-only": "boolean"
+  },
   "<global-section-feed-block>": {
     "template": "./section-feed.marko",
     "<query-params>": {},
+    "<node>": {},
     "@alias": "string",
     "@count-only": "boolean"
   },
