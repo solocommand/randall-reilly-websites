@@ -1,0 +1,73 @@
+import { getAsArray } from "@base-cms/object-path"
+import sectionsFragment from "../../graphql/fragments/safety-watch-sections"
+
+$ const { id, alias, name, pageNode } = input;
+$ const { apollo, req, pagination: p } = out.global;
+$ const parentAlias = 'safety-watch';
+$ const perPage = 18;
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]/>
+  </@section>
+
+  <@section|{ section }|>
+
+    <div class="safety-watch">
+
+      <marko-web-query|{ node }|
+        name="website-section"
+        params={ alias: parentAlias, queryFragment: sectionsFragment }
+      >
+        <h1 class="page-wrapper__website-section-name">${(parentAlias === alias) ? node.name : `${node.name}: ${name}`}</h1>
+        <div class="card-deck-flow card-deck-flow--3-cols">
+          <div class="card-deck-flow__node">
+            <marko-web-link
+              class=`node btn btn-${(parentAlias === alias) ? 'primary' : 'secondary'}`
+              href=`/${parentAlias}`
+              title=`View the all ${node.name}.`>
+              All
+            </marko-web-link>
+          </div>
+          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+          $ children.sort((a, b) => a.name.localeCompare(b.name));
+          <for|child| of=children>
+            <div class="card-deck-flow__node">
+              <marko-web-link
+                class=`node btn btn-${(child.alias === alias) ? 'primary' : 'secondary'}`
+                href=`/${(child.alias === alias) ? parentAlias : child.alias}`
+                title=`View the ${child.name}.`>
+                ${child.name}
+              </marko-web-link>
+            </div>
+          </for>
+        </div>
+      </marko-web-query>
+      <hr/>
+    </div>
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-body-feed-block alias=alias>
+      <@query-params limit=perPage skip=p.skip({ perPage }) />
+      <@node with-section=false with-dates=false />
+    </global-section-body-feed-block>
+    <global-section-body-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-body-feed-block>
+  </@section>
+
+</global-website-section-default-layout>
