@@ -15,11 +15,11 @@
   }
 
   &__header {
-    margin-bottom: 6px;
     @include skin-typography($style: "section-header");
   }
 
   &__description {
+    margin-top: 6px;
     @include skin-typography($style: "article-text");
   }
 
