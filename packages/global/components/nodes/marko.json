@@ -15,6 +15,7 @@
     "@flush": "boolean",
     "@full-height": "boolean",
 
+    "@image-only": "boolean",
     "@with-teaser": "boolean",
     "@with-body": "boolean",
     "@with-section": "boolean",
