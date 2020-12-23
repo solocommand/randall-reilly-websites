@@ -15,18 +15,18 @@ $ const { id, alias, name, pageNode } = input;
       </blockquote>
     </div>
   </@rail-slot-a>
-  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
-    <div class="row row--block">
-      <div class="col-md-6">
+  <@section>
+    <global-callout-cards-block>
+      <@slot>
         <global-latest-podcast-block alias="overdrive-radio" />
-      </div>
-      <div class="col-md-6">
+      </@slot>
+      <@slot>
         <global-white-papers-block />
-      </div>
-    </div>
+      </@slot>
+    </global-callout-cards-block>
   </@section>
 
-  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+  <@section>
     <global-client-side-most-popular-block />
   </@section>
 </global-website-section-products-layout>
