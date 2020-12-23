@@ -14,6 +14,9 @@
   "<global-content-page-breadcrumbs>": {
     "template": "./content-page-breadcrumbs.marko"
   },
+  "<global-website-section-page-breadcrumbs>": {
+    "template": "./website-section-page-breadcrumbs.marko"
+  },
   "<global-content-sponsor-logo>": {
     "template": "./content-sponsor-logo.marko"
   },

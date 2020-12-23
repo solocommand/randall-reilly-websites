@@ -22,7 +22,8 @@ $ const perPage = 18;
       modifiers=["max-width-970", "center", "margin-auto-x", "inline"]/>
   </@section>
 
-  <@section>
+  <@section|{ section }|>
+    <global-website-section-page-breadcrumbs section=section />
     <h1 class="page-wrapper__website-section-name">${name}</h1>
     <div class="card-deck-flow card-deck-flow--3-cols">
       <for|key, value| in=config>
