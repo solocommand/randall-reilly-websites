@@ -1,21 +1,19 @@
 <template>
-  <div v-if="primaryOperations.length" class="form-group">
+  <div v-if="regions.length" class="form-group">
     <div class="input-group">
       <select
-        v-if="primaryOperations.length"
+        v-if="regions.length"
         class="custom-select btn"
-        :class="(!selected || selected === 'all') ? 'btn-secondary' : 'btn-primary'"
+        :class="(selected !== 'Regions') ? 'btn-primary' : 'btn-secondary'"
         :disabled="disabled"
         @change="emitChange"
       >
         <option
-          v-for="primaryOperation in primaryOperations"
-          :key="primaryOperation"
-          :value="primaryOperation"
-          :selected="primaryOperation === selected"
+          v-for="region in regions"
+          :key="region"
+          :value="region"
         >
-          <span v-if="primaryOperation !== 'all'">{{ primaryOperation }}</span>
-          <span v-else>Primary Operation</span>
+          {{ region }}
         </option>
       </select>
     </div>
@@ -29,7 +27,7 @@ export default {
       type: String,
       default: null,
     },
-    primaryOperations: {
+    regions: {
       type: Array,
       default: () => [],
     },

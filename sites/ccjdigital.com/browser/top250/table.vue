@@ -1,15 +1,15 @@
 <template>
   <div>
     <form class="row">
-      <div class="col-12">
-        <field-search
-          :columns="columnList"
-          :selected="selectedSearchKey"
+      <div class="col-sm-12 col-md-2">
+        <region-select
+          :regions="Object.keys(regions)"
+          :selected="selectedRegion"
           :disabled="isLoading"
-          :phrase="searchPhrase"
-          @field-change="setSelectedSearchKey"
-          @phrase-change="setSearchPhrase"
+          @change="setSelectedRegion"
         />
+      </div>
+      <div class="col-sm-12 col-md-3">
         <primary-operation-select
           :primary-operations="primaryOperations"
           :selected="selectedPrimaryOperation"
@@ -86,7 +86,7 @@ import { get } from 'object-path';
 import escapeRegex from './utils/escape-regex';
 import parseNumber from './utils/parse-number';
 import PrimaryOperationSelect from './primary-operation-select.vue';
-import FieldSearch from './field-search.vue';
+import RegionSelect from './region-select.vue';
 
 const { isArray } = Array;
 const { keys } = Object;
@@ -97,7 +97,7 @@ export default {
    */
   components: {
     PrimaryOperationSelect,
-    FieldSearch,
+    RegionSelect,
   },
 
   /**
@@ -114,7 +114,11 @@ export default {
     },
     initialPrimaryOperation: {
       type: String,
-      default: 'All',
+      default: 'all',
+    },
+    initialRegion: {
+      type: String,
+      default: 'Regions',
     },
     initialSearchKey: {
       type: String,
@@ -127,6 +131,16 @@ export default {
       default: 0.1,
       validate: v => v >= 0 && v <= 1,
     },
+    regions: {
+      type: Object,
+      default: () => ({
+        Regions: [],
+        'Mid West': ['ND', 'SD', 'NE', 'KS', 'MN', 'IA', 'MO', 'WI', 'IL', 'MI', 'IN', 'OH'],
+        'North East': ['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NJ', 'DE', 'MD', 'DC', 'NY', 'PA'],
+        'North West': ['AK', 'HI', 'WA', 'OR', 'CA', 'ID', 'NV', 'MT', 'UT', 'WY', 'CO'],
+        'South East': ['AR', 'LA', 'TN', 'MS', 'KY', 'AL', 'GA', 'WV', 'VA', 'NC', 'SC', 'FL'],
+      }),
+    },
   },
 
   /**
@@ -136,6 +150,7 @@ export default {
     isLoading: false,
     error: null,
     activePrimaryOperation: null,
+    activeRegion: null,
     activeSearchKey: null,
     selectedSortKey: null,
     searchPhrase: null,
@@ -154,6 +169,15 @@ export default {
       const { activePrimaryOperation } = this;
       if (activePrimaryOperation) return activePrimaryOperation;
       return this.initialPrimaryOperation;
+    },
+
+    /**
+     *
+     */
+    selectedRegion() {
+      const { activeRegion } = this;
+      if (activeRegion) return activeRegion;
+      return this.initialRegion;
     },
 
     /**
@@ -186,9 +210,11 @@ export default {
         searchPhrase,
         selectedSearchKey,
         selectedPrimaryOperation,
+        selectedRegion,
       } = this;
       let filteredRows = rows;
-      if (selectedPrimaryOperation !== 'All') filteredRows = this.filterByPrimaryOperation(filteredRows, selectedPrimaryOperation);
+      if (selectedPrimaryOperation !== 'all') filteredRows = this.filterByPrimaryOperation(filteredRows, selectedPrimaryOperation);
+      if (selectedRegion !== 'Regions') filteredRows = this.filterByRegion(filteredRows, selectedRegion);
       if (!searchPhrase) {
         return filteredRows;
       }
@@ -273,6 +299,21 @@ export default {
     /**
      *
      */
+    setSelectedRegion(region) {
+      this.activeRegion = region;
+      const { selectedSearchKey } = this;
+      if (selectedSearchKey) {
+        const col = this.getColumn(selectedSearchKey);
+        if (col && col.measure) {
+          this.searchPhrase = null;
+          this.selectedSortKey = null;
+        }
+      }
+    },
+
+    /**
+     *
+     */
     setSelectedSearchKey(key) {
       this.activeSearchKey = key;
       this.searchPhrase = null;
@@ -332,7 +373,16 @@ export default {
      */
     filterByPrimaryOperation(rows, selectedPrimaryOperation) {
       if (!selectedPrimaryOperation) return rows;
-      return this.rows.filter(row => row.primaryOperation.raw === selectedPrimaryOperation);
+      return rows.filter(row => row.primaryOperation.raw === selectedPrimaryOperation);
+    },
+
+    /**
+     *
+     */
+    filterByRegion(rows, selectedRegion) {
+      if (!selectedRegion || selectedRegion === 'Regions') return rows;
+      const states = this.regions[selectedRegion];
+      return rows.filter(row => states.includes(row.state.raw));
     },
 
     /**
@@ -378,7 +428,7 @@ export default {
       this.isLoading = true;
 
       let rows = this.tableRows;
-      const primaryOperations = ['All'];
+      const primaryOperations = ['all'];
 
       // Format/simplify the raw data.
       this.rows = isArray(rows) ? rows.map((row) => {
