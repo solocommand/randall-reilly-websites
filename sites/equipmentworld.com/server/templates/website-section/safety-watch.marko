@@ -42,7 +42,7 @@ $ const perPage = 18;
 
   <@section modifiers=["my-block-lg"]>
     <global-section-body-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
+      <@query-params limit=perPage skip=p.skip({ perPage }) />
       <@node with-section=false with-dates=false />
     </global-section-body-feed-block>
     <global-section-body-feed-block|{ totalCount }| alias=alias count-only=true>
