@@ -39,12 +39,14 @@ $ const blockName = "product-feed-content-node";
     <if(primaryImage.src)>
       $ const src = buildImgixUrl(primaryImage.src, imageOptions);
       $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
-      <marko-web-img
-        src=src
-        srcset=srcset
-        alt=primaryImage.alt
-        class=[`${blockName}__image`]
-      />
+      <marko-web-link href=get(content, "siteContext.path")>
+        <marko-web-img
+          src=src
+          srcset=srcset
+          alt=primaryImage.alt
+          class=[`${blockName}__image`]
+        />
+      </marko-web-link>
     </if>
   </marko-web-element>
 </marko-web-block>
