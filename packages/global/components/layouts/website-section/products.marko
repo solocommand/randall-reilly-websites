@@ -23,11 +23,11 @@ $ const perPage = 10;
     </global-latest-products-feed-block>
   </@head>
 
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
     <global-gam-wallpaper-ad aliases=aliases />
   </@section>
@@ -83,7 +83,7 @@ $ const perPage = 10;
     <global-gam-define-display-ad
       name="leaderboard-2"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
@@ -100,4 +100,12 @@ $ const perPage = 10;
       />
     </@section>
   </for>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard-2"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 </global-website-section-default-layout>
