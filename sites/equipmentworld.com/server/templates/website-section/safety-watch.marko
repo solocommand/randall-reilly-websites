@@ -1,11 +1,10 @@
 import { get, getAsArray } from "@base-cms/object-path"
 import { defaultValue } from "@base-cms/marko-web/utils"
-import config from "../safety-watch"
+import sectionsFragment from "../../graphql/fragments/safety-watch-sections"
 
 $ const { id, alias, name, pageNode } = input;
-$ const { req, pagination: p } = out.global;
-$ const filter = defaultValue(get(req, "query.filter"), "all");
-$ const content = get(config, `${filter}.content`);
+$ const { apollo, req, pagination: p } = out.global;
+$ const parentAlias = 'safety-watch';
 $ const perPage = 18;
 
 <global-website-section-default-layout
@@ -23,22 +22,40 @@ $ const perPage = 18;
   </@section>
 
   <@section|{ section }|>
-    <global-website-section-page-breadcrumbs section=section />
-    <h1 class="page-wrapper__website-section-name">${name}</h1>
-    <div class="card-deck-flow card-deck-flow--3-cols">
-      <for|key, value| in=config>
-        $ const btnStyle = (key === filter) ? 'primary' : 'secondary';
-        <div class="card-deck-flow__node">
-          <marko-web-link
-            class=`node btn btn-${btnStyle}`
-            href=`${alias}?filter=${key}`
-            title=`View ${value.displayValue}`>
-            ${value.displayValue}
-          </marko-web-link>
+
+    <div class="safety-watch">
+
+      <marko-web-query|{ node }|
+        name="website-section"
+        params={ alias: parentAlias, queryFragment: sectionsFragment }
+      >
+        <global-website-section-page-breadcrumbs section=section />
+        <h1 class="page-wrapper__website-section-name">${node.name}</h1>
+        <div class="card-deck-flow card-deck-flow--3-cols">
+          <div class="card-deck-flow__node">
+            <marko-web-link
+              class=`node btn btn-${(parentAlias === alias) ? 'primary' : 'secondary'}`
+              href=`/${parentAlias}`
+              title=`View the all ${node.name}.`>
+              All
+            </marko-web-link>
+          </div>
+          $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
+          $ children.sort((a, b) => a.name.localeCompare(b.name));
+          <for|child| of=children>
+            <div class="card-deck-flow__node">
+              <marko-web-link
+                class=`node btn btn-${(child.alias === alias) ? 'primary' : 'secondary'}`
+                href=`/${(child.alias === alias) ? parentAlias : child.alias}`
+                title=`View the ${child.name}.`>
+                ${child.name}
+              </marko-web-link>
+            </div>
+          </for>
         </div>
-      </for>
+      </marko-web-query>
+      <hr/>
     </div>
-    <hr/>
   </@section>
 
   <@section modifiers=["my-block-lg"]>

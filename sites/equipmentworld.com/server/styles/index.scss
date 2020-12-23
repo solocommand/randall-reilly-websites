@@ -10,3 +10,14 @@ $theme-site-header-breakpoints: (
 $primary: #b94909;
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
+
+.safety-watch {
+  .btn-secondary,
+  .btn-primary {
+    &:hover {
+      color: #fff;
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+}
