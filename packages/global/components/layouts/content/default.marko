@@ -23,10 +23,10 @@ $ const shouldInjectAds = ["article"].includes(type);
       aliases=aliases
       modifiers=["inter-block"]
     />
+    <global-gam-wallpaper-ad aliases=aliases />
   </@section>
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
-    <global-gam-wallpaper-ad aliases=aliases />
     $ const { primarySection } = content;
     <div class="content-page-header">
       <global-content-page-breadcrumbs section=primarySection />

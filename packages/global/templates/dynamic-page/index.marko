@@ -6,11 +6,11 @@ $ const { id, type, pageNode } = input;
   page-node=pageNode
 >
 
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
@@ -22,7 +22,7 @@ $ const { id, type, pageNode } = input;
     </div>
   </@section>
 
-  <@section|{ blockName, content }| modifiers=["mb-block-lg"]>
+  <@section|{ blockName, content }|>
     $ const { primarySection } = content;
     <div class="content-page-body">
       <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
