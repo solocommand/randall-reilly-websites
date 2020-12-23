@@ -11,9 +11,9 @@ $ const blockName = "section-feed";
 $ const countOnly = defaultValue(input.countOnly, false);
 
 <if(countOnly)>
-  <query-total-count|data| name="website-scheduled-content" params=queryParams>
+  <global-query-total-count|data| name="website-scheduled-content" params=queryParams>
     <${input.renderBody} ...data />
-  </query-total-count>
+  </global-query-total-count>
 </if>
 <else>
   <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>

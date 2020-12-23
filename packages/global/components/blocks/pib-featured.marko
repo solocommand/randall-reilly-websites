@@ -1,0 +1,36 @@
+import queryFragment from "../../graphql/fragments/pib-featured-block";
+
+<!-- @todo likely should change the name of this component -->
+$ const queryParams = {
+  limit: 3,
+  requiresImage: true,
+  sectionAlias: input.alias,
+  queryFragment,
+};
+
+$ const blockName = "pib-featured";
+
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="title">
+      Featured
+    </marko-web-element>
+  </marko-web-block>
+  <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=[blockName]>
+    <@slot|{ node }|>
+      <global-content-node
+        image-position="top"
+        card=true
+        flush=true
+        full-height=true
+        with-teaser=true
+        with-dates=false
+        modifiers=[blockName]
+        node=node
+      >
+        <@image ar="3:2" fluid=true />
+      </global-content-node>
+    </@slot>
+  </default-theme-card-deck-flow>
+</marko-web-query>

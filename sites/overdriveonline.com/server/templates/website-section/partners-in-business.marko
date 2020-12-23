@@ -1,0 +1,181 @@
+$ const { id, alias, name, pageNode } = input;
+
+$ const blockName = "pib-page";
+$ const cardBlock = "pib-page-card";
+
+$ const { pagination: p } = out.global;
+$ const perPage = 20;
+
+$ const logoRoot = "https://img.overdriveonline.com/files/base/randallreilly/all/image/static";
+$ const logoSrcs = [
+  "pib-tbs-logo.png?auto=format&w=88&fit=crop",
+  "pib-atbs-logo.png?auto=format&w=148&fit=crop",
+];
+$ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+  <@section|{ section }|>
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="header">
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+          ${value}
+        </marko-web-website-section-name>
+        <marko-web-element block-name=blockName name="description" tag="h2">
+          The leading business training program for owner-operators.
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="partners">
+          <marko-web-element block-name=blockName name="partners-label">
+            In partnership with
+          </marko-web-element>
+           <marko-web-element block-name=blockName name="partner-logos">
+            <marko-web-img
+              class=`${blockName}__partner-logo-1`
+              src=`${logoRoot}/${logoSrcs[0]}`
+              srcset=[`${logoRoot}/${logoSrcs[0]}&dpr=2 2x`]
+              alt="TBS Factoring Service Logo"
+            />
+            <marko-web-img
+              class=`${blockName}__partner-logo-2`
+              src=`${logoRoot}/${logoSrcs[1]}`
+              srcset=[`${logoRoot}/${logoSrcs[1]}&dpr=2 2x`]
+              alt="TBS Logo"
+            />
+          </marko-web-element>
+        </marko-web-element>
+      </marko-web-element>
+    </marko-web-block>
+
+    <if(p.page === 1)>
+      <div class="row">
+        <div class="col-md-6 mb-block-lg">
+          <marko-web-block name=cardBlock>
+            <marko-web-element block-name=cardBlock name="title">
+              Welcome
+            </marko-web-element>
+            <marko-web-element block-name=cardBlock name="description">
+              You won’t find a more in-depth and comprehensive source of information for running an owner-operator business than our current manual (updated annually), produced by the editors of Overdrive and owner-operator business services provider ATBS.
+            </marko-web-element>
+          </marko-web-block>
+        </div>
+        <div class="col-md-6 mb-block-lg">
+          <marko-web-block name=cardBlock>
+            <marko-web-element block-name=cardBlock name="inner-wrapper">
+              <div>
+                <marko-web-element block-name=cardBlock name="title">
+                  The Business Manual for Owner-Operators
+                </marko-web-element>
+                <marko-web-element block-name=cardBlock name="description">
+                  Overdrive editors and the experts at ATBS again have updated the industry’s best manual for prospective and committed owner-operators. You’ll find exceptional depth on many issues in the 2020 edition of Partners in Business, reflecting much of the best research and advice from ATBS and Overdrive, which has 50-plus years of experience publishing articles to help the owner-operator.
+                </marko-web-element>
+                <marko-web-link
+                  class=`btn btn-primary ${cardBlock}__download-btn`
+                  href="https://register.overdriveonline.com/pib-manual-preview/"
+                  title="Free Download"
+                >
+                  Free Download
+                </marko-web-link>
+              </div>
+              <marko-web-img
+                class=`${cardBlock}__issue-cover`
+                src=`${logoRoot}/${manualSrc}`
+                srcset=[`${logoRoot}/${manualSrc}&dpr=2 2x`]
+                alt="Partners in Business Issue Cover"
+              />
+            </marko-web-element>
+          </marko-web-block>
+        </div>
+      </div>
+    </if>
+  </@section>
+  <@section>
+    <if(p.page === 1)>
+      <global-pib-featured-block alias="partners-in-business" />
+    </if>
+  </@section>
+  <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
+    <marko-web-element block-name=blockName name="website-section-name">
+      <if(p.page > 1)>Latest Stories: Page ${p.page}</if>
+      <else>Latest Stories</else>
+    </marko-web-element>
+
+    <global-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
+    </global-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 6 }) />
+    </global-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 11 }) />
+    </global-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-feed-block alias=alias>
+      <@query-params limit=5 skip=p.skip({ perPage, skip: 16 }) />
+    </global-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+    />
+  </@section>
+
+  <@section modifiers=["my-block-lg"]>
+    <global-section-feed-block alias=alias>
+      <@query-params limit=2 skip=p.skip({ perPage, skip: 21 }) />
+    </global-section-feed-block>
+
+    <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <global-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </global-section-feed-block>
+  </@section>
+</global-website-section-default-layout>

@@ -11,11 +11,19 @@ $primary: #b9161b;
 
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
 
+@import "./components/partners-in-business-page";
+
 .site-navbar {
   &__items {
     &--secondary {
       // ensures the nav items are aligned to the offset logo
       padding-top: 4px;
     }
+  }
+}
+
+.site-footer {
+  &__brand {
+    margin-bottom: 0;
   }
 }

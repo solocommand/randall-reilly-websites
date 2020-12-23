@@ -1,5 +1,6 @@
 {
   "taglib-imports": [
+    "./client-side-blocks/marko.json",
     "./blocks/marko.json",
     "./flows/marko.json",
     "./gam/marko.json",
@@ -7,8 +8,14 @@
     "./nodes/marko.json",
     "./spec-guide/marko.json"
   ],
+  "<global-client-side-block-loader>": {
+    "template": "./client-side-block-loader.marko"
+  },
   "<global-content-page-breadcrumbs>": {
     "template": "./content-page-breadcrumbs.marko"
+  },
+  "<global-content-sponsor-logo>": {
+    "template": "./content-sponsor-logo.marko"
   },
   "<global-document>": {
     "template": "./document.marko",
@@ -39,5 +46,8 @@
   },
   "<global-social-follow>": {
     "template": "./social-follow.marko"
+  },
+  "<global-query-total-count>": {
+    "template": "./query-total-count.marko"
   }
 }

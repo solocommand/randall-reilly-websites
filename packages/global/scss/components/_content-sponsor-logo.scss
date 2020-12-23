@@ -1,0 +1,10 @@
+.content-sponsor-logo {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+
+  &__label {
+    margin-right: 8px;
+    @include skin-typography($style: "pib-partners");
+  }
+}

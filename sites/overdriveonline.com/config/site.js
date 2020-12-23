@@ -21,6 +21,7 @@ module.exports = {
       ],
     },
   },
+  tagline: 'The Voice of the American Trucker',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/OverdriveTrucking/', target: '_blank' },
     { provider: 'twitter', href: 'https://twitter.com/overdriveupdate', target: '_blank' },
@@ -55,5 +56,15 @@ module.exports = {
     action: '#',
     name: 'Inbox Overdrive',
     description: 'Sign up for the <span class="newsletter-name">Overdrive Daily</span> to keep up with trucking news, equipment and business information.',
+  },
+  wufoo: {
+    userName: 'randallreilly',
+  },
+  sponsoredSectionLogos: {
+    'partners-in-business': {
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/pib-tbs-logo.png?auto=format&w=88&fit=crop',
+      width: '88px',
+      height: '55px',
+    },
   },
 };

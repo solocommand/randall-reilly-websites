@@ -145,6 +145,28 @@ $typography: non-destructive-map-merge(
       "text-transform": uppercase,
     ),
     // added
+    "date-content-page": (
+      "color": $gray-700,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-normal,
+      "font-size": 16px,
+      "font-size-mobile": 16px,
+      "line-height": 1.3125,
+      "line-height-mobile": 1.3125,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
+    "author-content-page": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-medium,
+      "font-size": 16px,
+      "font-size-mobile": 16px,
+      "line-height": 1.3125,
+      "line-height-mobile": 1.3125,
+      "letter-spacing": .25px,
+      "text-transform": none,
+    ),
     "author-name-list": (
       "color": $gray-800,
       "font-family": $skin-font-family-primary,
@@ -299,6 +321,39 @@ $typography: non-destructive-map-merge(
       "letter-spacing": .5px,
       "text-transform": none,
     ),
+    "pib-title": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 40px,
+      "font-size-mobile": 40px,
+      "line-height": 1.1,
+      "line-height-mobile": 1.1,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
+    "pib-description": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-primary,
+      "font-weight": $font-weight-bold,
+      "font-size": 22px,
+      "font-size-mobile": 22px,
+      "line-height": 1.1,
+      "line-height-mobile": 1.1,
+      "letter-spacing": .5px,
+      "text-transform": none,
+    ),
+    "pib-partners": (
+      "color": $gray-800,
+      "font-family": $skin-font-family-secondary,
+      "font-weight": $font-weight-bold,
+      "font-size": 15px,
+      "font-size-mobile": 15px,
+      "line-height": 1.33,
+      "line-height-mobile": 1.33,
+      "letter-spacing": .25px,
+      "text-transform": uppercase,
+    ),
   ),
   $typography
 );
@@ -382,6 +437,14 @@ $typography-links: non-destructive-map-merge(
       ),
     ),
     "author-name-list": (
+      "primary": (
+        "max-lines": false,
+        "text-decoration": none,
+        "hover-color": $primary,
+        "hover-text-decoration": none,
+      ),
+    ),
+    "author-content-page": (
       "primary": (
         "max-lines": false,
         "text-decoration": none,
