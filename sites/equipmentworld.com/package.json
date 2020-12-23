@@ -18,6 +18,8 @@
     "@base-cms/marko-core": "^1.49.0",
     "@base-cms/marko-web": "^1.51.1",
     "@base-cms/marko-web-gtm": "^1.37.0",
+    "@base-cms/marko-web-social-sharing": "^1.47.0",
+    "@base-cms/marko-web-theme-default": "^1.41.1",
     "@base-cms/object-path": "^1.37.0",
     "@base-cms/utils": "^1.37.0",
     "@base-cms/web-cli": "^1.51.1",
