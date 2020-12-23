@@ -1,3 +1,26 @@
+.node-list {
+  $self: &;
+  &--section-list {
+    #{ $self } {
+      &__header {
+        @include skin-typography($style: "section-header-small", $link-style: "primary");
+        margin-bottom: 16px;
+      }
+
+      &__nodes {
+        padding-top: 0;
+        padding-bottom: 16px;
+      }
+    }
+  }
+
+  &__footer {
+    &--view-more {
+      @include skin-typography($style: "view-more", $link-style: "primary");
+    }
+  }
+}
+
 .node {
   $self: &;
   &--section-list-card {
@@ -6,9 +29,9 @@
         @include skin-typography($style: "header-3", $link-style: "primary");
         margin-bottom: 0;
       }
+
       &__website-section-name {
         @include skin-typography($style: "slug-small", $link-style: "primary");
-        margin-bottom: 4px;
       }
     }
   }
@@ -19,43 +42,10 @@
         @include skin-typography($style: "header-3", $link-style: "primary");
         margin-bottom: 0;
       }
+
       &__website-section-name {
         @include skin-typography($style: "slug-small", $link-style: "primary");
-        margin-bottom: 1px;
       }
-    }
-  }
-}
-
-.node-list {
-  $self: &;
-  &--section-list {
-    padding-top: map-get($spacers, block);
-    padding-bottom: map-get($spacers, block);
-
-    @media (max-width: $skin-small-spacer-breakpoint) {
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
-
-    #{ $self } {
-      &__header {
-        @include skin-typography($style: "section-header-small", $link-style: "primary");
-        margin-bottom: 16px;
-      }
-
-      &__nodes {
-        @media (max-width: $skin-small-spacer-breakpoint) {
-          padding-top: 0;
-          padding-bottom: 16px;
-        }
-      }
-    }
-  }
-
-  &__footer {
-    &--view-more {
-      @include skin-typography($style: "view-more", $link-style: "primary");
     }
   }
 }
