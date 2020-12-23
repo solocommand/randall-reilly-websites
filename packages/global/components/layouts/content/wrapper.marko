@@ -11,12 +11,6 @@ $ const sections = getAsArray(input, "sections");
       <marko-web-gtm-push data=context />
     </marko-web-gtm-content-context>
   </@head>
-  <@above-container>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-      <!-- <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wallpaper", aliases }) /> -->
-    </marko-web-resolve-page>
-  </@above-container>
   <@page>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
@@ -30,6 +24,14 @@ $ const sections = getAsArray(input, "sections");
             />
           </@section>
         </for>
+
+        <@section|{ aliases }|>
+          <global-gam-define-display-ad
+            name="rotation"
+            aliases=aliases
+            modifiers=["inter-block"]
+          />
+        </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>

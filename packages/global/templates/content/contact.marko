@@ -11,11 +11,11 @@ $ const perPage = 10;
   type=type
   page-node=pageNode
 >
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
@@ -46,11 +46,10 @@ $ const perPage = 10;
         </default-theme-page-contents>
 
       </marko-web-element>
-      <hr>
     </marko-web-block>
   </@section>
 
-  <@section modifiers=["mt-block-sm mb-block-lg"]>
+  <@section>
     $ const queryParams = {
       contactId: id,
       limit: 10,
@@ -66,12 +65,7 @@ $ const perPage = 10;
       >
         <@nodes nodes=nodes>
           <@slot|{ node }|>
-            <global-content-node
-              node=node
-              modifiers=["section-feed"]
-            >
-              <@image width=250 ar="3:2" use-placeholder=true />
-            </global-content-node>
+            <global-section-feed-content-node node=node />
           </@slot>
         </@nodes>
       </marko-web-node-list>
@@ -89,7 +83,7 @@ $ const perPage = 10;
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 </global-content-wrapper-layout>

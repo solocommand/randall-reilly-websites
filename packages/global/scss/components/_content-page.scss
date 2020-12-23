@@ -21,9 +21,6 @@
 .content-page-header {
   max-width: $skin-content-body-max-width;
 
-  padding-top: map-get($spacers, block);
-  padding-bottom: map-get($spacers, block);
-
   margin-right: auto;
   margin-left: auto;
 }
@@ -44,23 +41,26 @@
 }
 
 .contact-page {
-  padding-bottom: map-get($spacers, block);
-
   &__content-name {
-    margin-top: map-get($spacers, block-lg);
-    margin-bottom: map-get($spacers, block);
+    margin-bottom: 16px;
     @include skin-typography($style: "header-1");
   }
   &__wrapper {
     display: flex;
-    margin-bottom: map-get($spacers, block);
   }
   &__image {
     $size: 160px;
-    width: $size;
-    height: $size;
+    $size-small: 112px;
+    width: $size-small;
+    height: $size-small;
     margin-right: 20px;
-    border-radius: $size;
+    border-radius: $size-small;
+
+    @include media-breakpoint-up(md) {
+      width: $size;
+      height: $size;
+      border-radius: $size;
+    }
   }
 }
 

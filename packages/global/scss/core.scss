@@ -23,7 +23,7 @@
 @import "./components/site-newsletter-menu";
 @import "./components/spec-guide";
 
-@import "./components/blocks/resource-library";
+@import "./components/blocks/callout-cards";
 @import "./components/blocks/ccj-top-250";
 @import "./components/blocks/gear";
 @import "./components/blocks/latest-podcast";
@@ -40,6 +40,7 @@
 @import "./components/blocks/read-next";
 @import "./components/blocks/reader-rigs";
 @import "./components/blocks/related-stories";
+@import "./components/blocks/resource-library";
 @import "./components/blocks/white-papers";
 @import "./components/blocks/section-feed";
 @import "./components/blocks/section-list";
@@ -57,10 +58,10 @@ label {
   @include skin-typography($style: "input-label");
 }
 
-.row {
-  &--block {
-    padding-top: map-get($spacers, block);
-    padding-bottom: map-get($spacers, block);
+.col-spacer {
+  margin-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
   }
 }
 
@@ -92,6 +93,10 @@ label {
 .node {
   $self: &;
   $image-border: 1px solid rgba(239, 239, 239, .9);
+
+  &__header {
+    margin-bottom: 6px;
+  }
 
   &__content-published {
     @include skin-typography($style: "date");
@@ -132,16 +137,41 @@ label {
 .card-deck-flow {
   $self: &;
 
+  &--3-cols {
+    #{ $self } {
+      &__node {
+        @include media-breakpoint-up(md) {
+          @include make-col(4);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col(4);
+        }
+      }
+    }
+  }
+
   &--4-cols {
     #{ $self } {
       &__node {
         // account for smaller container max-width and break earlier than normal
+        @include media-breakpoint-up(sm) {
+          @include make-col(12);
+        }
         @include media-breakpoint-up(md) {
           @include make-col(6);
         }
         @include media-breakpoint-up(lg) {
           @include make-col(3);
         }
+
+        // @include media-breakpoint-down(sm) {
+        //   margin-bottom: 16px;
+        // }
+        // &:last-child {
+        //   @include media-breakpoint-down(sm) {
+        //     margin-bottom: 0;
+        //   }
+        // }
       }
     }
   }

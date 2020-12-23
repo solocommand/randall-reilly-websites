@@ -1,6 +1,7 @@
 {
-  "<global-resource-library-block>": {
-    "template": "./resource-library.marko"
+  "<global-callout-cards-block>": {
+    "template": "./callout-cards.marko",
+    "@slots <slot>[]": {}
   },
   "<global-ccj-top-250-block>": {
     "template": "./ccj-top-250.marko"
@@ -50,6 +51,9 @@
   "<global-related-stories-block>": {
     "template": "./related-stories.marko"
   },
+  "<global-resource-library-block>": {
+    "template": "./resource-library.marko"
+  },
   "<global-white-papers-block>": {
     "template": "./white-papers.marko"
   },
@@ -69,6 +73,9 @@
   },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
+  },
+  "<global-section-list-deck-block>": {
+    "template": "./section-list-deck.marko"
   },
   "<global-top-stories-block>": {
     "template": "./top-stories.marko"

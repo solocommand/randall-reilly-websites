@@ -1,8 +1,5 @@
 .gear-block {
-  padding-top: map-get($spacers, block);
-
   &__header {
-    margin-bottom: 6px;
     @include skin-typography($style: "section-header");
   }
 
@@ -10,7 +7,11 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 30px;
+    }
   }
 
   &__description {
@@ -19,6 +20,35 @@
 
   &__view-more {
     @include skin-typography($style: "view-more", $link-style: "primary");
+
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &__view-more-bottom {
+    @include skin-typography($style: "view-more", $link-style: "primary");
+
+    display: block;
+    margin-top: 4px;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+.card-deck-flow {
+  $self: &;
+  &--gear-block {
+    #{ $self } {
+      &__node {
+        margin-bottom: 20px;
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
 

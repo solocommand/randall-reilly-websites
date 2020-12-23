@@ -66,7 +66,12 @@
 
 }
 
-@mixin skin-typography($style, $link-style: false, $max-lines: null) {
+@mixin skin-typography(
+  $style,
+  $link-style: false,
+  $max-lines: null,
+  $breakpoint: $theme-responsive-text-breakpoint
+) {
   $vars: map-get($typography, $style);
   $props: font-family, font-size, font-weight, line-height, color, text-transform, letter-spacing;
 
@@ -77,7 +82,7 @@
   @include theme-apply-responsive-fonts(
     $font-size: map-get($vars, font-size-mobile),
     $line-height: map-get($vars, line-height-mobile),
-    $breakpoint: $theme-responsive-text-breakpoint
+    $breakpoint: $breakpoint
   );
 
   @if $link-style {
@@ -88,7 +93,12 @@
   }
 }
 
-@mixin skin-typography-link($style, $link-style, $max-lines: null) {
+@mixin skin-typography-link(
+  $style,
+  $link-style,
+  $max-lines: null,
+  $breakpoint: $theme-responsive-text-breakpoint
+) {
   $vars: map-get($typography, $style);
   $link: map-deep-get($typography-links, $style, $link-style);
 
@@ -99,7 +109,7 @@
       $line-height: map-get($vars, line-height),
       $line-height-sm: map-get($vars, line-height-mobile),
       $num: if($max-lines, $max-lines, map-get($link, max-lines)),
-      $breakpoint: $theme-responsive-text-breakpoint
+      $breakpoint: $breakpoint
     );
   }
 

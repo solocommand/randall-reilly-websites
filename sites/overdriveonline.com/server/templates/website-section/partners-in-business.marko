@@ -4,7 +4,7 @@ $ const blockName = "pib-page";
 $ const cardBlock = "pib-page-card";
 
 $ const { pagination: p } = out.global;
-$ const perPage = 20;
+$ const perPage = 18;
 
 $ const logoRoot = "https://img.overdriveonline.com/files/base/randallreilly/all/image/static";
 $ const logoSrcs = [
@@ -19,11 +19,11 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
   name=name
   page-node=pageNode
 >
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
   <@section|{ section }|>
@@ -59,7 +59,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
 
     <if(p.page === 1)>
       <div class="row">
-        <div class="col-md-6 mb-block-lg">
+        <div class="col-md-6">
           <marko-web-block name=cardBlock>
             <marko-web-element block-name=cardBlock name="title">
               Welcome
@@ -69,7 +69,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
             </marko-web-element>
           </marko-web-block>
         </div>
-        <div class="col-md-6 mb-block-lg">
+        <div class="col-md-6 mt-md-0 mt-block">
           <marko-web-block name=cardBlock>
             <marko-web-element block-name=cardBlock name="inner-wrapper">
               <div>
@@ -104,7 +104,8 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
       <global-pib-featured-block alias="partners-in-business" />
     </if>
   </@section>
-  <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
+
+  <@section|{ blockName, section }|>
     <marko-web-element block-name=blockName name="website-section-name">
       <if(p.page > 1)>Latest Stories: Page ${p.page}</if>
       <else>Latest Stories</else>
@@ -119,11 +120,11 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 6 }) />
     </global-section-feed-block>
@@ -133,11 +134,11 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 11 }) />
     </global-section-feed-block>
@@ -147,27 +148,13 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 16 }) />
-    </global-section-feed-block>
-  </@section>
-
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
-    />
-  </@section>
-
-  <@section modifiers=["my-block-lg"]>
-    <global-section-feed-block alias=alias>
-      <@query-params limit=2 skip=p.skip({ perPage, skip: 21 }) />
     </global-section-feed-block>
 
     <global-section-feed-block|{ totalCount }| alias=alias count-only=true>

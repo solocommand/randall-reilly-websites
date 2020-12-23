@@ -21,11 +21,11 @@ $ const nodes = Object.keys(specGuides.guides).map((alias) => {
   </@head>
   <@page>
     <marko-web-page-wrapper>
-      <@section>
+      <@section modifiers=["first"]>
         <marko-web-gam-display-ad
           id="gpt-ad-lb1"
           slots=adSlots()
-          modifiers=["max-width-970", "center"]
+          modifiers=["inter-block"]
         />
       </@section>
       <@section>

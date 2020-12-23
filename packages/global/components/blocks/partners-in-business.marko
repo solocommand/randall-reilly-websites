@@ -30,19 +30,20 @@ $ const blockName = "partners-in-business";
       ${section.description || input.defaultDescription}
     </marko-web-element>
 
-    <div class="row">
-      <div class="col-md-4">
+    <marko-web-element block-name=blockName name="row">
+      <marko-web-element block-name=blockName name="col">
         <global-content-node
           image-position="top"
           card=true
           flush=true
+          image-only=true
           modifiers=[`${blockName}-hero-image`]
           node=heroImageNode
         >
           <@image fluid=true width=340 ar="3:2" />
         </global-content-node>
-      </div>
-      <div class="col-md-4">
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="col">
         <global-content-node
           full-height=true
           card=true
@@ -53,8 +54,8 @@ $ const blockName = "partners-in-business";
           with-section=false
           node=heroNode
         />
-      </div>
-      <div class="col-md-4">
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="col">
         <marko-web-node-list
           flush-x=true
           flush-y=true
@@ -79,7 +80,7 @@ $ const blockName = "partners-in-business";
             More ${section.name}
           </marko-web-link>
         </marko-web-element>
-      </div>
-    </div>
+      </marko-web-element>
+    </marko-web-element>
   </marko-web-block>
 </marko-web-query>

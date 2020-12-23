@@ -21,11 +21,11 @@ $ const perPage = 18;
     </global-section-feed-block>
   </@head>
 
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
   <@section>
@@ -88,21 +88,21 @@ $ const perPage = 18;
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=2 skip=p.skip({ perPage, skip: 3 }) />
     </global-section-feed-block>
   </@section>
 
-  <@section modifiers=["my-block-sm"]>
+  <@section>
     <global-newsletter-signup-banner-large-block />
   </@section>
 
-  <@section modifiers=["mt-block-sm", "mb-block-lg"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
     </global-section-feed-block>
@@ -112,11 +112,11 @@ $ const perPage = 18;
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
     </global-section-feed-block>
@@ -126,11 +126,11 @@ $ const perPage = 18;
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["my-block-lg"]>
+  <@section>
     <global-section-feed-block alias=alias>
       <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
     </global-section-feed-block>
@@ -142,5 +142,4 @@ $ const perPage = 18;
       />
     </global-section-feed-block>
   </@section>
-
 </global-website-section-default-layout>

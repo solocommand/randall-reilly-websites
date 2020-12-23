@@ -3,17 +3,26 @@
   padding-top: 0;
   padding-bottom: 0;
 
+  @include media-breakpoint-down($theme-responsive-text-breakpoint) {
+    padding-right: $marko-web-page-wrapper-padding;
+    padding-left: $marko-web-page-wrapper-padding;
+  }
+
   &__website-section-name {
-    padding-top: 20px;
     margin-bottom: 20px;
     @include skin-typography($style: "section-header");
   }
 
   &__section {
+    margin-bottom: 30px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 60px;
+    }
+
     &--break-container {
       margin-right: $marko-web-page-wrapper-padding * -1;
       margin-left: $marko-web-page-wrapper-padding * -1;
-      background-color: $gray-100; // change this to a specific var
+      background-color: $gray-100;
       @media (min-width: $marko-web-document-container-max-width) {
         $margin: calc((((100vw - #{$marko-web-document-container-max-width}) / 2) + #{$marko-web-page-wrapper-padding}) * -1);
         margin-right: $margin;
@@ -27,61 +36,23 @@
       }
     }
 
-    &--my-block-sm {
-      margin-top: map-get($spacers, block-sm);
-      margin-bottom: map-get($spacers, block-sm);
-      &:last-child {
-        margin-bottom: map-get($spacers, block-sm);
+    &--first-sm {
+      margin-bottom: 30px;
+    }
+
+    &--first {
+      margin-bottom: 40px;
+    }
+
+    &--content-header {
+      margin-bottom: 20px;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 30px;
       }
     }
 
-    &--mt-block-sm {
-      margin-top: map-get($spacers, block-sm);
-    }
-
-    &--mb-block-sm {
-      margin-bottom: map-get($spacers, block-sm);
-      &:last-child {
-        margin-bottom: map-get($spacers, block-sm);
-      }
-    }
-
-    &--my-block-lg {
-      margin-top: map-get($spacers, block-lg);
-      margin-bottom: map-get($spacers, block-lg);
-      &:last-child {
-        margin-bottom: map-get($spacers, block-lg);
-      }
-    }
-
-    &--mt-block-lg {
-      margin-top: map-get($spacers, block-lg);
-    }
-
-    &--mb-block-lg {
-      margin-bottom: map-get($spacers, block-lg);
-      &:last-child {
-        margin-bottom: map-get($spacers, block-lg);
-      }
-    }
-
-    &--my-block-xl {
-      margin-top: map-get($spacers, block-xl);
-      margin-bottom: map-get($spacers, block-xl);
-      &:last-child {
-        margin-bottom: map-get($spacers, block-xl);
-      }
-    }
-
-    &--mt-block-xl {
-      margin-top: map-get($spacers, block-xl);
-    }
-
-    &--mb-block-xl {
-      margin-bottom: map-get($spacers, block-xl);
-      &:last-child {
-        margin-bottom: map-get($spacers, block-xl);
-      }
+    &--no-spacer {
+      margin-bottom: 0;
     }
   }
 }

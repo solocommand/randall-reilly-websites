@@ -15,6 +15,7 @@
     "@flush": "boolean",
     "@full-height": "boolean",
 
+    "@image-only": "boolean",
     "@with-teaser": "boolean",
     "@with-body": "boolean",
     "@with-section": "boolean",
@@ -31,5 +32,11 @@
   },
   "<global-author-published-node>": {
     "template": "./author-published.marko"
+  },
+  "<global-product-feed-content-node>": {
+    "template": "./product-feed-content.marko"
+  },
+  "<global-section-feed-content-node>": {
+    "template": "./section-feed-content.marko"
   }
 }

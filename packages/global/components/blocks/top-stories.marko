@@ -10,7 +10,6 @@ $ const queryParams = {
 };
 $ const blockName = "top-stories";
 $ const withHeader = defaultValue(input.withHeader, true);
-$ const onHomepage = defaultValue(input.onHomepage, false);
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
   <if(nodes.length)>
@@ -23,26 +22,27 @@ $ const onHomepage = defaultValue(input.onHomepage, false);
     };
     $ const cardNodes = nodes.slice(1);
 
-    <marko-web-block name=blockName modifiers=[...(onHomepage ? ["on-homepage"] : [])]>
+    <marko-web-block name=blockName>
       <if(withHeader)>
         <marko-web-element block-name=blockName name="header">
           Top Stories
         </marko-web-element>
       </if>
 
-      <div class="row">
-        <div class="col-md-6 col-lg-7">
+      <marko-web-element block-name=blockName name="row">
+        <marko-web-element block-name=blockName name="col" modifiers=["hero"]>
           <global-content-node
             image-position="top"
             card=true
             flush=true
+            image-only=true
             modifiers=[`${blockName}-hero-image`]
             node=heroImageNode
           >
             <@image fluid=true width=600 ar="3:2" />
           </global-content-node>
-        </div>
-        <div class="col-md-6 col-lg-5">
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="col" modifiers=["list"]>
           <global-content-node
             full-height=true
             card=true
@@ -51,11 +51,11 @@ $ const onHomepage = defaultValue(input.onHomepage, false);
             modifiers=[`${blockName}-hero`]
             node=heroNode
           />
-        </div>
-      </div>
+        </marko-web-element>
+      </marko-web-element>
 
       <if(cardNodes.length)>
-        <global-content-card-deck-4-col-flow nodes=cardNodes>
+        <global-content-card-deck-4-col-flow nodes=cardNodes modifiers=[blockName]>
           <@node modifiers=[`${blockName}-card`] />
         </global-content-card-deck-4-col-flow>
       </if>

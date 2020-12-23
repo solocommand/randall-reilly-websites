@@ -66,6 +66,10 @@
     margin-bottom: 14px;
 
     line-height: 1.428;
+
+    a {
+      text-decoration: underline;
+    }
   }
 
   &__form {

@@ -42,6 +42,9 @@ $spacers: (
   block-xs: $block-spacer / 4,
 );
 
+// Determine the response text breakpoint
+$theme-responsive-text-breakpoint: md;
+
 $hr-margin-y: $grid-gutter-width / 2;
 
 // Marko Web Document and Page Settings

@@ -8,15 +8,15 @@ $ const sections = getAsArray(input, "sections");
   type=type
   page-node=pageNode
 >
-  <@section|{ aliases }|>
+  <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section|{ aliases, blockName, content }| modifiers=["mb-block-lg"]>
+  <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
     <global-gam-wallpaper-ad aliases=aliases />
     $ const { primarySection } = content;
     <div class="row">
@@ -60,11 +60,11 @@ $ const sections = getAsArray(input, "sections");
     <global-gam-define-display-ad
       name="rotation"
       aliases=aliases
-      modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+      modifiers=["inter-block"]
     />
   </@section>
 
-  <@section modifiers=["mt-block-lg", "mb-block-sm"]>
+  <@section>
     <global-top-stories-block />
   </@section>
 
