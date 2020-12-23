@@ -63,7 +63,9 @@
           margin-bottom: 12px;
         }
       }
+
       &__title {
+        width: 100%;
         margin-bottom: 0;
         @include skin-typography($style: "header-1", $link-style: "primary");
       }
@@ -84,8 +86,6 @@
   }
 
   &--top-stories-card {
-    @include skin-fluid-to-list($parent: $self, $breakpoint: md);
-
     padding-bottom: 16px;
     @include marko-web-node-list-border(border-bottom);
 
@@ -103,8 +103,54 @@
 
     #{ $self } {
       &__title {
+        width: 100%;
         @include skin-typography($style: "header-3", $link-style: "primary");
       }
+
+      &__contents {
+        flex-direction: row-reverse;
+        @include media-breakpoint-up(lg) {
+          flex-direction: column;
+        }
+      }
+
+      $image-size: 112px;
+      &__node-image {
+        width: $image-size;
+        height: $image-size;
+        @include media-breakpoint-up(lg) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__image-inner-wrapper--fluid-3by2 {
+        width: $image-size;
+        min-width: $image-size;
+        height: $image-size;
+        @include media-breakpoint-up(lg) {
+          width: 100%;
+          min-width: 100%;
+          height: auto;
+        }
+
+        &::before {
+          // use bp-down (max-width) instead, since the padding is a calculated % at all widths by default
+          @include media-breakpoint-down(md) {
+            padding-top: 0;
+          }
+        }
+      }
+
+      &__image-wrapper + #{ $self }__body {
+        margin-top: 0;
+        margin-right: 15px;
+        @include media-breakpoint-up(lg) {
+          margin-top: 14px;
+          margin-right: 0;
+        }
+      }
+
       &__website-section-name {
         @include skin-typography($style: "slug-small", $link-style: "primary");
       }
