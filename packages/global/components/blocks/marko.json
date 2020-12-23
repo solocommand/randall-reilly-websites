@@ -71,6 +71,12 @@
     "@alias": "string",
     "@count-only": "boolean"
   },
+  "<global-section-title-feed-block>": {
+    "template": "./section-title-feed.marko",
+    "<query-params>": {},
+    "@alias": "string",
+    "@count-only": "boolean"
+  },
   "<global-section-list-block>": {
     "template": "./section-list.marko"
   },
