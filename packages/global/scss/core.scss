@@ -61,6 +61,10 @@ label {
   &--block {
     padding-top: map-get($spacers, block);
     padding-bottom: map-get($spacers, block);
+
+    .col-md-6 {
+      margin-bottom: map-get($spacers, block);
+    }
   }
 }
 

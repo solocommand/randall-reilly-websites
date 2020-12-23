@@ -15,6 +15,10 @@
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      margin-bottom: 24px;
+    }
   }
 
   &__description {
@@ -23,6 +27,31 @@
 
   &__view-more {
     @include skin-typography($style: "view-more", $link-style: "primary");
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__view-more-bottom {
+    @include skin-typography($style: "view-more", $link-style: "primary");
+
+    display: none;
+    @media (max-width: $skin-small-spacer-breakpoint) {
+      display: block;
+    }
+  }
+}
+
+.card-deck-flow {
+  $self: &;
+  &--gear-block {
+    #{ $self } {
+      &__node {
+        @media (max-width: $skin-small-spacer-breakpoint) {
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
 }
 
