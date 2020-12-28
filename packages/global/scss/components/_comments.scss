@@ -5,8 +5,19 @@
   margin-top: 16px;
 
   &__toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 265px;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+.comment-toggle-arrow {
+  margin-left: 5px;
+  svg {
+    fill: $primary;
   }
 }
 
