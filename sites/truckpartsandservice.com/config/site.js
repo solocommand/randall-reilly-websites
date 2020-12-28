@@ -1,11 +1,13 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
+const identityX = require('./identity-x');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
+  identityX,
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {

@@ -40,6 +40,10 @@ module.exports = (options = {}) => {
       const nativeXConfig = get(options, 'siteConfig.nativeX');
       set(app.locals, 'nativeX', nativeXConfig);
 
+      // Setup IdentityX.
+      const identityXConfig = get(options, 'siteConfig.identityX');
+      set(app.locals, 'identityX', identityXConfig);
+
       // Setup Spec Guides
       if (specGuideConfig.guides && Object.keys(specGuideConfig.guides).length) {
         set(app.locals, 'specGuides', specGuideConfig);

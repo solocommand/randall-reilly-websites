@@ -1,0 +1,22 @@
+import { getAsObject } from "@base-cms/object-path";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const content = getAsObject(input, "content");
+
+<div class="comment-stream">
+  <marko-web-browser-component
+    name="GlobalCommentToggleButton"
+    props={
+      identifier: `${content.id}`,
+      classes: "btn btn-secondary comment-stream__toggle-btn",
+      targets: [".idx-comment-stream"],
+      toggleClass: "idx-comment-stream--open",
+    }
+  />
+  <marko-web-identity-x-comment-stream
+    identifier=`${content.id}`
+    title=content.name
+    description=content.teaser
+    url=content.siteContext.canonicalUrl
+  />
+</div>

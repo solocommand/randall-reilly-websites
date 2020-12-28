@@ -1,0 +1,5 @@
+{
+  "<global-native-x-comment-stream>": {
+    "template": "./comment-stream.marko"
+  }
+}

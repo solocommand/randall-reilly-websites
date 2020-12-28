@@ -2,11 +2,13 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const specGuides = require('./spec-guides');
+const identityX = require('./identity-x');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
+  identityX,
   specGuides,
   company: 'Randall-Reilly, LLC',
   logos: {
