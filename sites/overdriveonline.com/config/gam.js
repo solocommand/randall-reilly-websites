@@ -46,6 +46,7 @@ const aliases = [
   'life',
   'maintenance',
   'technology',
+  'reader-rigs',
 ];
 
 aliases.forEach(alias => config.setAliasAdUnits(alias, [
