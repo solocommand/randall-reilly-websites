@@ -9,12 +9,13 @@ import WufooForm from './wufoo-form.vue';
 import SpecGuideTable from './spec-guide/table.vue';
 import TopStoriesMenu from './top-stories-menu.vue';
 import CommentToggleButton from './comment-toggle-button.vue';
+import IdentityXAuthenticate from './identity-x/authenticate.vue';
 
 export default (Browser) => {
   GTM(Browser);
   GAM(Browser);
   SocialSharing(Browser);
-  IdentityX(Browser);
+  IdentityX(Browser, { CustomAuthenticateComponent: IdentityXAuthenticate });
 
   Browser.register('GlobalBlockLoader', BlockLoader);
   Browser.register('GlobalMenuToggleButton', MenuToggleButton);
