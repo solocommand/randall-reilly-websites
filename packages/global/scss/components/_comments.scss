@@ -1,0 +1,125 @@
+.idx-comment-stream {
+  &__header {
+    display: none;
+  }
+
+  &__latest-comments {
+    font-family: $skin-font-family-primary;
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    line-height: 1;
+    color: $gray-800;
+    letter-spacing: .25px;
+  }
+
+  &__post {
+    .btn {
+      margin-top: 24px;
+    }
+  }
+
+  &__posts {
+    margin-top: 6px;
+  }
+
+  &__login-message {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+  }
+
+  &__login-form-wrapper {
+    margin-bottom: 24px;
+  }
+
+  &__login-form {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $gray-200;
+
+    .form-control {
+      margin-bottom: 14px;
+    }
+
+    h4 {
+      font-size: 20px;
+      font-weight: $font-weight-semibold;
+      line-height: 1;
+      color: $gray-800;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: $font-weight-normal;
+      line-height: 1.44;
+      color: $gray-800;
+    }
+
+    em {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__close-form-wrapper {
+    display: flex;
+  }
+
+  &__close-form {
+    @include theme-toggle-button();
+    margin-left: auto;
+  }
+}
+
+.idx-comment-post {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid $gray-200;
+
+  &__flagged {
+    margin-bottom: 19px !important; // stylelint-disable-line
+    font-weight: $font-weight-medium;
+    color: $gray-900;
+  }
+
+  &__header {
+    margin-bottom: 19px;
+
+    :nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__display-name {
+    margin-bottom: 2px;
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    line-height: 1.3125;
+    color: $gray-800;
+  }
+
+  &__created-at {
+    font-size: 16px;
+    line-height: 1.3125;
+    color: $gray-700;
+  }
+
+  &__body {
+    font-family: $skin-font-family-primary;
+    font-size: 18px;
+    font-weight: $font-weight-normal;
+    line-height: 1.44;
+    color: $gray-800;
+    letter-spacing: .25px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.idx-create-comment {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid $gray-200;
+}
