@@ -1,25 +1,13 @@
 $ const { config } = out.global;
 
 $ const type = "authenticate";
-$ const title = "Complete your profile";
-$ const description = `Complete your ${config.siteName()} profile`;
+$ const title = "Authenticate";
 
-<marko-web-default-page-layout type=type title=title description=description>
+<marko-web-default-page-layout type=type title=title description=title>
   <@page>
     <marko-web-page-wrapper>
       <@section>
-        <div class="row">
-          <div class="col">
-            <h1 class="page-wrapper__title">${description}</h1>
-          </div>
-        </div>
-      </@section>
-      <@section>
-        <div class="row">
-          <div class="col mb-block">
-            <marko-web-identity-x-form-authenticate />
-          </div>
-        </div>
+        <marko-web-identity-x-form-authenticate />
       </@section>
     </marko-web-page-wrapper>
   </@page>
