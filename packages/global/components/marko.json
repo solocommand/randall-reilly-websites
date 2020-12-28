@@ -5,6 +5,7 @@
     "./flows/marko.json",
     "./gam/marko.json",
     "./layouts/marko.json",
+    "./native-x/marko.json",
     "./nodes/marko.json",
     "./spec-guide/marko.json"
   ],

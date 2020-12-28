@@ -79,14 +79,8 @@
   },
   "<global-top-stories-block>": {
     "template": "./top-stories.marko"
-  }
-  ,
+  },
   "<global-top-stories-menu-block>": {
     "template": "./top-stories-menu.marko"
-  },
-  "<global-comment-stream-block>": {
-    "template": "./comment-stream.marko",
-    "@content": "object",
-    "@expanded": "boolean"
   }
 }

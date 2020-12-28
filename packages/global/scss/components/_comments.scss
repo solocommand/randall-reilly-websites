@@ -1,4 +1,23 @@
+.comment-stream {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  margin-top: 16px;
+
+  &__toggle-btn {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .idx-comment-stream {
+  display: none;
+  margin-top: 24px;
+
+  &--open {
+    display: block;
+  }
+
   &__header {
     display: none;
   }

@@ -8,6 +8,7 @@ import NewsletterNub from './newsletter-nub.vue';
 import WufooForm from './wufoo-form.vue';
 import SpecGuideTable from './spec-guide/table.vue';
 import TopStoriesMenu from './top-stories-menu.vue';
+import CommentToggleButton from './comment-toggle-button.vue';
 
 export default (Browser) => {
   GTM(Browser);
@@ -20,5 +21,6 @@ export default (Browser) => {
   Browser.register('GlobalNewsletterNub', NewsletterNub);
   Browser.register('CommonSpecGuideTable', SpecGuideTable);
   Browser.register('GlobalTopStoriesMenu', TopStoriesMenu);
+  Browser.register('GlobalCommentToggleButton', CommentToggleButton);
   Browser.register('WufooForm', WufooForm);
 };
