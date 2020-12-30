@@ -1,10 +1,23 @@
 {
   "<global-content-default-layout>": {
     "template": "./default.marko",
+    "<after-body>": {},
     "@sections <section>[]": {},
     "@id": "number",
     "@type": "string",
-    "@page-node": "object"
+    "@page-node": "object",
+    "@show-read-next-block": {
+      "type": "boolean",
+      "default-value": true
+    },
+    "@show-bottom-ad-block": {
+      "type": "boolean",
+      "default-value": true
+    },
+    "@show-top-story-block": {
+      "type": "boolean",
+      "default-value": true
+    }
   },
   "<global-content-product-layout>": {
     "template": "./product.marko",

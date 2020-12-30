@@ -1,11 +1,17 @@
 const { withContent } = require('@base-cms/marko-web/middleware');
 const queryFragment = require('@randall-reilly/package-global/graphql/fragments/content-page');
 const contact = require('@randall-reilly/package-global/templates/content/contact');
+const deathByTrench = require('../templates/content/death-by-trench');
 const product = require('../templates/content/product');
 const whitepaper = require('../templates/content/whitepaper');
 const content = require('../templates/content');
 
 module.exports = (app) => {
+  app.get('/death-by-trench/*?:id(\\d{8})*', withContent({
+    template: deathByTrench,
+    queryFragment,
+  }));
+
   app.get('/*?contact/:id(\\d{8})*', withContent({
     template: contact,
     queryFragment,

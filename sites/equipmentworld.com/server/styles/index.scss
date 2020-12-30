@@ -21,3 +21,22 @@ $primary: #b94909;
     }
   }
 }
+.content-page-body {
+  .node-list {
+    &--section-feed {
+      .node-list {
+        &__node {
+          padding: .5rem;
+          margin: .5rem 0;
+          background-color: $gray-700;
+          &:hover {
+            background-color: #000;
+          }
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
