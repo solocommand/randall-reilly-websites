@@ -1,9 +1,11 @@
 import { get, getAsObject } from "@base-cms/object-path";
 import { buildImgixUrl } from "@base-cms/image";
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const primarySection = getAsObject(content, "primarySection");
+$ const withSection = defaultValue(input.withSection, true);
 
 $ const imageOptions = {
   w: 176,
