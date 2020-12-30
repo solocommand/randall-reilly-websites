@@ -1,7 +1,7 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
-const specGuides = require('./spec-guides');
+const top250 = require('./top250');
 const identityX = require('./identity-x');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
   gam,
   nativeX,
   identityX,
-  specGuides,
+  top250,
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {

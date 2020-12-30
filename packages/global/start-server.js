@@ -18,7 +18,6 @@ const routes = siteRoutes => (app) => {
 
 module.exports = (options = {}) => {
   const { onStart } = options;
-  const specGuideConfig = getAsObject(options, 'siteConfig.specGuides');
   return startServer({
     ...options,
     routes: routes(options.routes),
@@ -43,11 +42,6 @@ module.exports = (options = {}) => {
       // Setup IdentityX.
       const identityXConfig = get(options, 'siteConfig.identityX');
       set(app.locals, 'identityX', identityXConfig);
-
-      // Setup Spec Guides
-      if (specGuideConfig.guides && Object.keys(specGuideConfig.guides).length) {
-        set(app.locals, 'specGuides', specGuideConfig);
-      }
 
       // Clean all response bodies.
       app.use(cleanResponse());
