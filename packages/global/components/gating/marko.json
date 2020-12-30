@@ -1,0 +1,13 @@
+{
+  "<global-content-gate>": {
+    "template": "./content-gate.marko",
+    "@can-access": "boolean",
+    "@is-logged-in": "boolean",
+    "@has-required-access-level": "boolean",
+    "@requires-access-level": "boolean",
+    "@requires-user-input": "boolean",
+    "@messages": "object",
+    "@title": "string",
+    "@user-input-title": "string"
+  }
+}
