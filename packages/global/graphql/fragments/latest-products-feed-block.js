@@ -6,6 +6,7 @@ fragment LatestProductsFeedBlockContentFragment on Content {
   id
   type
   shortName
+  labels
   teaser(input: { useFallback: false, maxLength: null })
   siteContext {
     path
