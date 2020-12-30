@@ -6,6 +6,7 @@ fragment TopStoriesMenuBlockContentFragment on Content {
   id
   type
   shortName
+  labels
   siteContext {
     path
   }

@@ -5,6 +5,7 @@ fragment ContentPageFragment on Content {
   id
   name
   teaser(input: { useFallback: false, maxLength: null })
+  labels
   body
   published
   siteContext {

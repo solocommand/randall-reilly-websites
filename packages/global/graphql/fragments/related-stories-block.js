@@ -6,6 +6,7 @@ fragment RelatedStoriesBlockFragment on Content {
   id
   type
   shortName
+  labels
   siteContext {
     path
   }

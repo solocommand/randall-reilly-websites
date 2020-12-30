@@ -6,6 +6,7 @@ fragment ReadNextBlockContentFragment on Content {
   id
   type
   shortName
+  labels
   published
   siteContext {
     path

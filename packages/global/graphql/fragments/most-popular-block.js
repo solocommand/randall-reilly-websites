@@ -6,6 +6,7 @@ fragment MostPopularBlockFragment on Content {
   id
   type
   shortName
+  labels
   siteContext {
     path
   }

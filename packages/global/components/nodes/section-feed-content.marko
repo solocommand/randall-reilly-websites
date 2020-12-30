@@ -23,11 +23,7 @@ $ const blockName = "section-feed-content-node";
   <marko-web-element block-name=blockName name="contents">
     <marko-web-element block-name=blockName name="body">
       <if(withSection)>
-        <marko-web-website-section-name
-          block-name=blockName
-          obj=primarySection
-          link=true
-        />
+        <section-sponsor block-name=blockName section=primarySection labels=content.labels />
       </if>
       <marko-web-content-short-name
         tag="h5"

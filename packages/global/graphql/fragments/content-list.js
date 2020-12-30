@@ -7,6 +7,7 @@ fragment WebsiteContentListFragment on Content {
   type
   shortName
   teaser(input: { useFallback: false, maxLength: null })
+  labels
   siteContext {
     path
   }

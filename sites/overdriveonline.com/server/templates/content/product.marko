@@ -1,3 +1,5 @@
+import { getAsArray } from "@base-cms/object-path";
+
 $ const { id, type, pageNode } = input;
 
 <global-content-product-layout
@@ -5,6 +7,18 @@ $ const { id, type, pageNode } = input;
   type=type
   page-node=pageNode
 >
+  <@right-rail|{ content }|>
+    <global-gam-define-display-ad
+      name="rotation-1"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+    $ const labels = getAsArray(content, "labels");
+    <if(labels.includes("Sponsored by RoadPro"))>
+      <site-road-pro-facebook />
+    </if>
+  </@right-rail>
   <@after-body|{ content }|>
     <global-more-gear-block alias="gear" params={ excludeContentIds: [content.id] } />
   </@after-body>
