@@ -6,7 +6,6 @@ $ const type = "top250";
 $ const { title, description, alias } = data;
 
 $ const config = get(top250, `guides.${alias}`);
-$ console.log(site, config)
 
 <marko-web-default-page-layout type=type title=config.title description=config.description>
   <@head>

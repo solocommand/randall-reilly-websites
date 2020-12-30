@@ -3,7 +3,6 @@ import { getAsArray, getAsObject } from "@base-cms/object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const { site, pagination: p } = out.global;
 $ const top250 = getAsObject(site, 'config.top250');
-$ console.log(site, top250)
 $ const perPage = 18;
 
 <global-website-section-default-layout
