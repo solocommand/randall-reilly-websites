@@ -61,7 +61,7 @@ $ const imageLink = primaryImage.src ? { href: content.siteContext.path, attrs: 
         <@header attrs=headerAttributes>
           <@left|{ blockName }|>
             <if(withSection)>
-              <marko-web-website-section-name block-name=blockName obj=primarySection link=true />
+              <section-sponsor block-name=blockName section=primarySection labels=content.labels />
             </if>
             <else-if(isEvent)>
               <marko-web-element tag="span" name="upcoming-archived" block-name=blockName>

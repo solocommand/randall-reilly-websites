@@ -16,11 +16,9 @@ $ const blockName = "product-feed-content-node";
 <marko-web-block name=blockName>
   <marko-web-element block-name=blockName name="contents">
     <marko-web-element block-name=blockName name="body">
-      <marko-web-website-section-name
-        block-name=blockName
-        obj=primarySection
-        link=true
-      />
+      <if(withSection)>
+        <section-sponsor block-name=blockName section=primarySection labels=content.labels />
+      </if>
       <marko-web-content-short-name
         tag="h5"
         block-name=blockName
