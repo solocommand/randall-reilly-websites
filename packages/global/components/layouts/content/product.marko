@@ -36,22 +36,29 @@ $ const sections = getAsArray(input, "sections");
             <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
           </default-theme-page-contents>
         </div>
-        <!-- needs input -->
         <${input.afterBody}
           aliases=aliases
           block-name=blockName
           content=content
         />
-        <!-- <global-more-gear-block params={ excludeContentIds: [id] } /> -->
       </div>
 
       <div class="col-lg-4 pt-block">
-        <global-gam-define-display-ad
-          name="rotation-1"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
+        <if(input.rightRail)>
+          <${input.rightRail}
+            aliases=aliases
+            block-name=blockName
+            content=content
+          />
+        </if>
+        <else>
+          <global-gam-define-display-ad
+            name="rotation-1"
+            aliases=aliases
+            modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+            class="mb-block"
+          />
+        </else>
       </div>
     </div>
   </@section>
