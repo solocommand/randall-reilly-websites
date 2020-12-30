@@ -2,7 +2,7 @@ import { getAsArray } from "@base-cms/object-path";
 import DefineDisplayAd from "../../gam/define-display-ad";
 
 $ const { site } = out.global;
-$ const { id, type, pageNode } = input;
+$ const { id, type, pageNode, showBottomAdBlock, showTopStoryBlock } = input;
 $ const sections = getAsArray(input, "sections");
 
 $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
@@ -155,6 +155,15 @@ $ const shouldInjectAds = ["article"].includes(type);
 
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
+        <!-- needs input -->
+        <if(input.afterBody)>
+          <${input.afterBody}
+            aliases=aliases
+            block-name=blockName
+            content=content
+          />
+        </if>
+
         <if(type === "document" || type === "whitepaper")>
           <default-theme-content-download obj=content>
             <@wufoo user-name=site.get("wufoo.userName") />
@@ -188,18 +197,21 @@ $ const shouldInjectAds = ["article"].includes(type);
       </default-theme-page-contents>
     </div>
   </@section>
+  <if(showBottomAdBlock)>
+    <@section|{ aliases }|>
+      <global-gam-define-display-ad
+        name="rotation"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+    </@section>
+  </if>
 
-  <@section|{ aliases }|>
-    <global-gam-define-display-ad
-      name="rotation"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <global-top-stories-block />
-  </@section>
+  <if(showTopStoryBlock)>
+    <@section>
+      <global-top-stories-block />
+    </@section>
+  </if>
 
   <for|s| of=sections>
     <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
