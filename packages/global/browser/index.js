@@ -10,12 +10,16 @@ import SpecGuideTable from './spec-guide/table.vue';
 import TopStoriesMenu from './top-stories-menu.vue';
 import CommentToggleButton from './comment-toggle-button.vue';
 import IdentityXAuthenticate from './identity-x/authenticate.vue';
+import IdentityXCommentStream from './identity-x/comments/stream.vue';
 
 export default (Browser) => {
   GTM(Browser);
   GAM(Browser);
   SocialSharing(Browser);
-  IdentityX(Browser, { CustomAuthenticateComponent: IdentityXAuthenticate });
+  IdentityX(Browser, {
+    CustomAuthenticateComponent: IdentityXAuthenticate,
+    CustomCommentStreamComponent: IdentityXCommentStream,
+  });
 
   Browser.register('GlobalBlockLoader', BlockLoader);
   Browser.register('GlobalMenuToggleButton', MenuToggleButton);
