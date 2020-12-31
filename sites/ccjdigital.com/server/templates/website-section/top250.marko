@@ -1,7 +1,8 @@
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray, getAsObject } from "@base-cms/object-path";
 
 $ const { id, alias, name, pageNode } = input;
-$ const { specGuides, pagination: p } = out.global;
+$ const { site, pagination: p } = out.global;
+$ const top250 = getAsObject(site, 'config.top250');
 $ const perPage = 18;
 
 <global-website-section-default-layout
@@ -33,8 +34,8 @@ $ const perPage = 18;
       <div class="spec-guide-container">
         <div class="row">
           <div class="col">
-            <h1 class="page-wrapper__website-section-name">${specGuides.title}</h1>
-            <p>$!{specGuides.teaser}</p>
+            <h1 class="page-wrapper__website-section-name">${top250.title}</h1>
+            <p>$!{top250.teaser}</p>
             <!-- <p>
               By clicking the button below, I agree to the Terms & Conditions and Privacy Policy,
               and consent to receive automated marketing calls or text messages from Randall-Reilly.
@@ -55,7 +56,7 @@ $ const perPage = 18;
           </div>
         </div>
         <div class="card-deck-flow card-deck-flow--3-cols">
-          <for|key, value| in=specGuides.guides>
+          <for|key, value| in=top250.guides>
             <if(key !== 'all')>
               <div class="card-deck-flow__node">
                 <marko-web-link

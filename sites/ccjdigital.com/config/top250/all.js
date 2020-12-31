@@ -102,7 +102,7 @@ process.on('unhandledRejection', (e) => {
 });
 
 const getTableRows = async () => {
-  const csvFile = path.resolve(process.cwd(), 'config/spec-guides/_csv/top250.csv');
+  const csvFile = path.resolve(process.cwd(), 'config/top250/_csv/top250.csv');
   return csv({
     noheader: false,
     headers: headerLabels,

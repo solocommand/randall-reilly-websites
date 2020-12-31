@@ -6,7 +6,6 @@ import BlockLoader from './block-loader.vue';
 import MenuToggleButton from './menu-toggle-button.vue';
 import NewsletterNub from './newsletter-nub.vue';
 import WufooForm from './wufoo-form.vue';
-import SpecGuideTable from './spec-guide/table.vue';
 import TopStoriesMenu from './top-stories-menu.vue';
 import CommentToggleButton from './comment-toggle-button.vue';
 import IdentityXAuthenticate from './identity-x/authenticate.vue';
@@ -24,7 +23,6 @@ export default (Browser) => {
   Browser.register('GlobalBlockLoader', BlockLoader);
   Browser.register('GlobalMenuToggleButton', MenuToggleButton);
   Browser.register('GlobalNewsletterNub', NewsletterNub);
-  Browser.register('CommonSpecGuideTable', SpecGuideTable);
   Browser.register('GlobalTopStoriesMenu', TopStoriesMenu);
   Browser.register('GlobalCommentToggleButton', CommentToggleButton);
   Browser.register('WufooForm', WufooForm);

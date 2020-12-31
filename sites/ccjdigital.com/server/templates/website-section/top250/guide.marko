@@ -1,10 +1,11 @@
-import { get, getAsArray } from "@base-cms/object-path";
+import { get, getAsArray, getAsObject } from "@base-cms/object-path";
 
-$ const { specGuides } = out.global;
-$ const type = "spec-guide";
+$ const { site } = out.global;
+$ const top250 = getAsObject(site, 'config.top250');
+$ const type = "top250";
 $ const { title, description, alias } = data;
 
-$ const config = get(specGuides, `guides.${alias}`);
+$ const config = get(top250, `guides.${alias}`);
 
 <marko-web-default-page-layout type=type title=config.title description=config.description>
   <@head>
