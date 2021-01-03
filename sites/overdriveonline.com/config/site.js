@@ -68,5 +68,9 @@ module.exports = {
       width: '88px',
       height: '55px',
     },
+    'gear/sponsored': {
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/road-pro-logo.png?auto=format&w=109&fit=crop',
+      width: '109px',
+    },
   },
 };
