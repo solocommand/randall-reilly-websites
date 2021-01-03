@@ -24,6 +24,9 @@ $ const sections = getAsArray(input, "sections");
         <div class="content-page-header">
           $ const displaySelf = (primarySection.name === 'Sponsored by RoadPro') ? false : true;
           <global-content-page-breadcrumbs section=primarySection display-self=displaySelf />
+
+          <global-sponsor-logo alias=primarySection.alias label="Presented By" modifiers=["content"] />
+
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
           <default-theme-page-dates|{ blockName }|>
