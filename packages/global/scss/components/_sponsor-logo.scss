@@ -1,0 +1,26 @@
+.sponsor-logo {
+  $self: &;
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+
+  &--content {
+    margin-top: 0;
+  }
+
+  &--section {
+    margin-bottom: 30px;
+    @media (max-width: 970px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__label {
+    margin-right: 8px;
+    @include skin-typography($style: "pib-partners");
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+
+}
