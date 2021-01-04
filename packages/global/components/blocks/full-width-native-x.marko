@@ -13,6 +13,7 @@ $ const withHeader = defaultValue(input.withHeader, true);
   <if(nodes.length)>
     <marko-web-block name=blockName>
       <global-content-list-flow nodes=nodes modifiers=[blockName]>
+        <@native-x index=0 name="default" />
         <@node modifiers=[`${blockName}`] />
       </global-content-list-flow>
     </marko-web-block>
