@@ -1,0 +1,20 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/top-stories-block";
+
+$ const queryParams = {
+  limit: 1,
+  requiresImage: true,
+  queryFragment,
+};
+$ const blockName = "full-width-native-x";
+$ const withHeader = defaultValue(input.withHeader, true);
+
+<marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+  <if(nodes.length)>
+    <marko-web-block name=blockName>
+      <global-content-list-flow nodes=nodes modifiers=[blockName]>
+        <@node modifiers=[`${blockName}`] />
+      </global-content-list-flow>
+    </marko-web-block>
+  </if>
+</marko-web-query>
