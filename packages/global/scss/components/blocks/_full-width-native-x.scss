@@ -1,0 +1,46 @@
+.full-width-native-x {
+  height: 100%;
+  padding: 24px;
+  background-color: $gray-100;
+  border-radius: 4px;
+  .node-list {
+    &__nodes {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.node {
+  $self: &;
+
+  &--full-width-native-x {
+    background-color: $gray-100;
+
+    #{ $self } {
+      &__title {
+        margin-bottom: 0;
+        @include skin-typography($style: "header-2", $link-style: "primary");
+      }
+
+      &__header {
+        margin-bottom: 10px;
+      }
+
+      &__contents--body {
+        margin-bottom: 24px;
+      }
+
+      &__text--teaser {
+        margin-top: 8px;
+        margin-bottom: 0;
+        @include skin-typography($style: "small-body-text", $link-style: "primary");
+      }
+
+      &__website-section-name a {
+        color: $primary;
+        @include skin-typography($style: "sponsored-by");
+      }
+    }
+  }
+}
