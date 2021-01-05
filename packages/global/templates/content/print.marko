@@ -58,131 +58,93 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
         $ const isSponsored = getAsArray(content, "labels").includes("Sponsored");
 
         <default-theme-page-contents|{ blockName: contentsBlock }|>
-          <marko-web-identity-x-access|context| enabled=true>
-            <if(!context.canAccess || context.requiresUserInput)>
-              <if(isSponsored)>
-                <div class=`${cardBlock}__sponsored-content`>Sponsored Content</div>
-              </if>
-              <default-theme-website-section-breadcrumbs
-                section=primarySection
-                display-home=false
-                modifiers=[cardBlock]
-              />
-              <marko-web-content-name
-                tag="h1"
-                block-name=cardBlock
-                obj=content
-              />
-              <marko-web-content-teaser
-                tag="p"
-                block-name=cardBlock
-                obj=content
-              />
-              <global-content-gate
-                can-access=context.canAccess
-                is-logged-in=context.isLoggedIn
-                has-required-access-level=true
-                requires-access-level=false
-                requires-user-input=context.requiresUserInput
-                messages=context.messages
-                title="Log in to print this article"
-                user-input-title="Complete your profile to print this article"
-              />
-            </if>
-            <else>
-              <if(displayPrimaryImage)>
-                <div class="mb-block">
-                  <marko-web-node-element name="header" block-name=cardBlock>
-                    <marko-web-node-element name="header-image-wrapper" block-name=cardBlock>
-                      <marko-web-node-element
-                        name="image-inner-wrapper"
-                        block-name=cardBlock
-                        modifiers=["16by9"]
-                      >
-                        <marko-web-img
-                          src=src
-                          srcset=srcset
-                          alt=primaryImage.alt
-                          class=`${cardBlock}__image mb-block`
-                          lazyload=false
-                        />
-                        <marko-web-image-credit block-name=cardBlock obj=primaryImage />
-                      </marko-web-node-element>
-                    </marko-web-node-element>
+          <if(displayPrimaryImage)>
+            <div class="mb-block">
+              <marko-web-node-element name="header" block-name=cardBlock>
+                <marko-web-node-element name="header-image-wrapper" block-name=cardBlock>
+                  <marko-web-node-element
+                    name="image-inner-wrapper"
+                    block-name=cardBlock
+                    modifiers=["16by9"]
+                  >
+                    <marko-web-img
+                      src=src
+                      srcset=srcset
+                      alt=primaryImage.alt
+                      class=`${cardBlock}__image mb-block`
+                      lazyload=false
+                    />
+                    <marko-web-image-credit block-name=cardBlock obj=primaryImage />
                   </marko-web-node-element>
-                </div>
+                </marko-web-node-element>
+              </marko-web-node-element>
+            </div>
+          </if>
+
+          <if(isSponsored)>
+            <div class=`${cardBlock}__sponsored-content`>Sponsored Content</div>
+          </if>
+          <default-theme-website-section-breadcrumbs
+            section=primarySection
+            display-home=false
+            modifiers=[cardBlock]
+          />
+          <marko-web-content-name
+            tag="h1"
+            block-name=cardBlock
+            obj=content
+          />
+          <marko-web-content-teaser
+            tag="p"
+            block-name=cardBlock
+            obj=content
+          />
+
+          <if(primaryImage.isLogo)>
+            <marko-web-page-image
+              obj=primaryImage
+              fluid=false
+              width=250
+            />
+          </if>
+
+          <if(type !== "contact")>
+            <default-theme-content-attribution obj=content />
+            <default-theme-page-dates|{ blockName }|>
+              <if(type === "event")>
+                <marko-web-content-start-date block-name=blockName obj=content />
+                <marko-web-content-end-date block-name=blockName obj=content />
               </if>
-
-              <if(isSponsored)>
-                <div class=`${cardBlock}__sponsored-content`>Sponsored Content</div>
+              <if(type === "webinar")>
+                <marko-web-content-start-date block-name=blockName obj=content />
               </if>
-              <default-theme-website-section-breadcrumbs
-                section=primarySection
-                display-home=false
-                modifiers=[cardBlock]
-              />
-              <marko-web-content-name
-                tag="h1"
-                block-name=cardBlock
-                obj=content
-              />
-              <marko-web-content-teaser
-                tag="p"
-                block-name=cardBlock
-                obj=content
-              />
-
-              <if(primaryImage.isLogo)>
-                <marko-web-page-image
-                  obj=primaryImage
-                  fluid=false
-                  width=250
-                />
+              <if(displayPublishedDate)>
+                <marko-web-content-published block-name=blockName obj=content />
               </if>
+            </default-theme-page-dates>
+          </if>
 
-              <if(type !== "contact")>
-                <default-theme-content-attribution obj=content />
-                <default-theme-page-dates|{ blockName }|>
-                  <if(type === "event")>
-                    <marko-web-content-start-date block-name=blockName obj=content />
-                    <marko-web-content-end-date block-name=blockName obj=content />
-                  </if>
-                  <if(type === "webinar")>
-                    <marko-web-content-start-date block-name=blockName obj=content />
-                  </if>
-                  <if(displayPublishedDate)>
-                    <marko-web-content-published block-name=blockName obj=content />
-                  </if>
-                </default-theme-page-dates>
-              </if>
+          <hr>
 
-              <hr>
+          <default-theme-content-contact-details obj=content />
+          <marko-web-content-body block-name=contentsBlock obj=content>
+            <@embed-options lazyload-images=false />
+          </marko-web-content-body>
+          <marko-web-content-sidebars block-name=contentsBlock obj=content />
 
-              <default-theme-content-contact-details obj=content />
-              <marko-web-content-body block-name=contentsBlock obj=content>
-                <@embed-options lazyload-images=false />
-              </marko-web-content-body>
-              <marko-web-content-sidebars block-name=contentsBlock obj=content />
-
-              <hr>
-              <div>
-                <strong>Source URL:</strong> ${content.siteContext.canonicalUrl}
-              </div>
-            </else>
-          </marko-web-identity-x-access>
+          <hr>
+          <div>
+            <strong>Source URL:</strong> ${content.siteContext.canonicalUrl}
+          </div>
         </default-theme-page-contents>
       </marko-web-resolve-page>
     </div>
   </@above-container>
   <@below-container>
-    <marko-web-identity-x-access|context| enabled=true>
-      <if(context.canAccess && !context.requiresUserInput)>
-        <script>
-          (function() {
-            window.print();
-          })(window);
-        </script>
-      </if>
-    </marko-web-identity-x-access>
+    <script>
+      (function() {
+        window.print();
+      })(window);
+    </script>
   </@below-container>
 </marko-web-document>
