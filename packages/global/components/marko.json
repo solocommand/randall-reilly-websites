@@ -4,7 +4,6 @@
     "./blocks/marko.json",
     "./flows/marko.json",
     "./gam/marko.json",
-    "./gating/marko.json",
     "./layouts/marko.json",
     "./native-x/marko.json",
     "./nodes/marko.json",
