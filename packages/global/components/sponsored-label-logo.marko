@@ -3,7 +3,7 @@ import { getAsObject } from "@base-cms/object-path";
 
 $ const { site } = out.global;
 $ const sponsoredLabelLogos = site.getAsObject("sponsoredLabelLogos");
-$ const sponsorLogo = getAsObject(sponsoredLabelLogos, "Sponsored by RoadPro");
+$ const sponsorLogo = getAsObject(sponsoredLabelLogos, input.logoLabel);
 $ const blockName = defaultValue(input.blockName, "sponsor-logo");
 $ const label = defaultValue(input.label, "Presented By");
 
