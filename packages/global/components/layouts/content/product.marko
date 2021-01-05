@@ -25,9 +25,9 @@ $ const sections = getAsArray(input, "sections");
           <global-content-page-breadcrumbs section=primarySection />
 
           $ const labels = getAsArray(content, "labels");
-          <if(labels.includes("Sponsored by RoadPro"))>
-            <global-sponsored-label-logo logo-label="Sponsored by RoadPro" label="Presented By" modifiers=["content-page"] />
-          </if>
+          <for|label| of=labels>
+            <global-sponsored-label-logo logo-label=label prefix="Presented By" modifiers=["content-page"] />
+          </for>
 
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
