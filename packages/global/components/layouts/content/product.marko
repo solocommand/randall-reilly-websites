@@ -24,7 +24,10 @@ $ const sections = getAsArray(input, "sections");
         <div class="content-page-header">
           <global-content-page-breadcrumbs section=primarySection />
 
-          <global-sponsored-label-logo logoLabel="Sponsored by RoadPro" label="Presented By" modifiers=["content"] />
+          $ const labels = getAsArray(content, "labels");
+          <if(labels.includes("Sponsored by RoadPro"))>
+            <global-sponsored-label-logo logoLabel="Sponsored by RoadPro" label="Presented By" modifiers=["content"] />
+          </if>
 
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
