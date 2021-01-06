@@ -7,7 +7,8 @@ $ const {
 
 $ const prestitial = GAM ? GAM.getAdUnit({ name: "interstitial" }) : {};
 $ const hasPrestitial = Boolean(prestitial.path);
-$ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
+$ const enablePrestitial = hasPrestitial && `${req.get("referrer")}`.includes(req.hostname);
+$ const wrapperStyle = enablePrestitial ? "opacity: 0;" : null;
 
 <marko-web-document ...input>
   <@head>
@@ -18,7 +19,7 @@ $ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
 
     <!-- init gam -->
     <marko-web-gam-init />
-    <if(hasPrestitial)>
+    <if(enablePrestitial)>
       <global-gam-prestitial init=true adunit=prestitial />
     </if>
 
@@ -43,7 +44,7 @@ $ const wrapperStyle = hasPrestitial ? "opacity: 0;" : null;
   </@head>
   <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
   <@above-wrapper>
-    <if(hasPrestitial)>
+    <if(enablePrestitial)>
       <global-gam-prestitial display=true adunit=prestitial />
     </if>
   </@above-wrapper>
