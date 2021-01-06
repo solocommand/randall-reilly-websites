@@ -63,8 +63,9 @@ module.exports = {
     topics: topics.primary,
     more: utilities,
     newsletter: {
-      formAction: '/newsletters',
-      cta: 'Sign up for the <strong>CCJ Daily</strong> to keep up with ...',
+      href: '/newsletters',
+      name: 'Daily Newsletter',
+      description: 'Sign up for the <strong>CCJ Daily</strong> to keep up with ...',
     },
   },
 };
