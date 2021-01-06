@@ -49,9 +49,10 @@ $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
               class="form-control"
               placeholder="example@gmail.com"
               type="email"
-              name="email"
+              name="em"
               required
             />
+            <input type="hidden" name="omedasite" value="ov_subscriptions" />
             <marko-web-element block-name=blockName name="privacy-policy">
               By providing your email, you agree to our <marko-web-link href="/termsandprivacy" target="_blank">Privacy Policy</marko-web-link>.
             </marko-web-element>
