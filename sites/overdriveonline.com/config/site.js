@@ -46,16 +46,16 @@ module.exports = {
     containerId: 'GTM-NDC3FQX',
   },
   newsletterSignupBanner: {
-    href: '#',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
     description: 'Sign up for the <span class="newsletter-name">Overdrive Daily</span> to keep up with trucking news, equipment and business information.',
   },
   newsletterSignupBannerLarge: {
-    href: '#',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
     name: 'Overdrive Daily',
     description: 'Sign up for the Overdrive Daily to keep up with trucking news, equipment and business information.',
   },
   newsletterPushdown: {
-    action: '#',
+    action: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
     name: 'Inbox Overdrive',
     description: 'Sign up for the <span class="newsletter-name">Overdrive Daily</span> to keep up with trucking news, equipment and business information.',
   },
