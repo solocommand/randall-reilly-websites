@@ -46,18 +46,18 @@ module.exports = {
     containerId: 'GTM-NDC3FQX',
   },
   newsletterSignupBanner: {
-    href: '#',
-    description: 'Sign up for the <span class="newsletter-name">Overdrive Daily</span> to keep up with trucking news, equipment and business information.',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
+    description: 'Get the business tips, industry insights and trending news every owner-operator needs to know in the <span class="newsletter-name">Overdrive</span> newsletter.',
   },
   newsletterSignupBannerLarge: {
-    href: '#',
-    name: 'Overdrive Daily',
-    description: 'Sign up for the Overdrive Daily to keep up with trucking news, equipment and business information.',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
+    name: 'Don’t Miss Out',
+    description: 'Get the business tips, industry insights and trending news every owner-operator needs to know in the <span class="newsletter-name">Overdrive</span> newsletter.',
   },
   newsletterPushdown: {
-    action: '#',
-    name: 'Inbox Overdrive',
-    description: 'Sign up for the <span class="newsletter-name">Overdrive Daily</span> to keep up with trucking news, equipment and business information.',
+    action: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
+    name: 'Don’t Miss Out',
+    description: 'Join 135,000 owner-operators who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Overdrive</span> newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',
