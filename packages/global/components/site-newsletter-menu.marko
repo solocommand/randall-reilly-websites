@@ -1,18 +1,22 @@
 import { buildImgixUrl } from "@base-cms/image";
+import { get } from "@base-cms/object-path";
+import detectNewsletterState from "../utils/detect-newsletter-state";
 
 $ const blockName = "site-newsletter-menu";
-
-$ const { site } = out.global;
+$ const { site, req, res } = out.global;
 $ const pushdown = site.getAsObject("newsletterPushdown");
 $ const { name, action, description } = pushdown;
 $ const imageSrc = pushdown.imageSrc || "https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/iphone-x-mockup-noshadow-2x.png"
 
+$ const { hasCookie, fromEmail } = detectNewsletterState({ req, res });
+$ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
+
 <if(name && action)>
-  <marko-web-block tag="aside" name=blockName>
+  <marko-web-block tag="aside" name=blockName modifiers=modifiers>
     <marko-web-element block-name=blockName name="container">
       <div class="row">
         <div class=`d-none d-md-flex col-md-5 col-lg-4 ${blockName}__image-wrapper`>
-          $ const src = buildImgixUrl(imageSrc, { w: 280, auto: 'format' });
+          $ const src = buildImgixUrl(imageSrc, { w: 280, auto: "format" });
           $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
           <marko-web-img
             src=src
@@ -36,9 +40,10 @@ $ const imageSrc = pushdown.imageSrc || "https://p1-cms-assets.imgix.net/files/b
               class="form-control"
               placeholder="example@gmail.com"
               type="email"
-              name="email"
+              name="em"
               required
             />
+            <input type="hidden" name="omedasite" value="ov_subscriptions" />
             <marko-web-element block-name=blockName name="privacy-policy">
               By providing your email, you agree to our <marko-web-link href="/termsandprivacy" target="_blank">Privacy Policy</marko-web-link>.
             </marko-web-element>
