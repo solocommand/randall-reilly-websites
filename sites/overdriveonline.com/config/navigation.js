@@ -68,8 +68,9 @@ module.exports = {
     topics: topics.primary,
     more: utilities,
     newsletter: {
-      formAction: '/newsletters',
-      cta: 'Sign up for the Overdrive Daily to keep up with trucking news, equipment and business information.',
+      href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
+      name: 'Newsletter Just for Owner-Operators',
+      description: 'Sign up for the Overdrive Daily to keep up with trucking news, equipment and business information.',
     },
   },
 };

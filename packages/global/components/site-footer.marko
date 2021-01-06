@@ -37,14 +37,14 @@ $ const tagline = site.get("tagline");
           <if(newsletter.formAction)>
             <marko-web-block name=newsletterBlock>
               <marko-web-element block-name=newsletterBlock name="header">
-                Newsletter
+                $!{newsletter.name}
               </marko-web-element>
-              <if(newsletter.cta)>
+              <if(newsletter.description)>
                 <marko-web-element block-name=newsletterBlock name="description">
-                  $!{newsletter.cta}
+                  $!{newsletter.description}
                 </marko-web-element>
               </if>
-              <form action=newsletter.formAction method="GET">
+              <form action=newsletter.href method="GET">
                 <div class="form-group">
                   <label for="footer-newsletter-signup-email">Email</label>
                   <input
