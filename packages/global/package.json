@@ -24,6 +24,7 @@
     "@base-cms/object-path": "^1.37.0",
     "@base-cms/utils": "^1.37.0",
     "@base-cms/web-cli": "^1.51.1",
+    "@randall-reilly/base-browse": "^0.0.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "http-errors": "^1.7.3",

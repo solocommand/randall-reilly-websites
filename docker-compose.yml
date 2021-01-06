@@ -24,6 +24,7 @@ x-env-defaults: &env
   SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
   IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://identity-x.parameter1.com/graphql}
+  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.virgon.base.parameter1.com/graphql}
 
 x-env-leonis: &env-leonis
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
