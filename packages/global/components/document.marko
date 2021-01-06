@@ -42,7 +42,9 @@ $ const wrapperStyle = enablePrestitial ? "opacity: 0;" : null;
       <marko-web-gam-targeting key-values={ uri: req.path } />
     </if>
   </@head>
-  <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
+  <if(enablePrestitial)>
+    <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
+  </if>
   <@above-wrapper>
     <if(enablePrestitial)>
       <global-gam-prestitial display=true adunit=prestitial />
