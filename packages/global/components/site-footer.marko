@@ -34,7 +34,7 @@ $ const tagline = site.get("tagline");
         <marko-web-element block-name=blockName name="section">
           $ const newsletter = site.getAsObject("navigation.footer.newsletter");
           $ const newsletterBlock = "site-footer-newsletter";
-          <if(newsletter.formAction)>
+          <if(newsletter.href)>
             <marko-web-block name=newsletterBlock>
               <marko-web-element block-name=newsletterBlock name="header">
                 $!{newsletter.name}
