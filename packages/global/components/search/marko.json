@@ -1,0 +1,12 @@
+{
+  "<global-content-search-query>": {
+    "template": "./query.marko",
+    "@phrase": "string",
+    "@limit": "number",
+    "@skip": "number",
+    "@query-fragment": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

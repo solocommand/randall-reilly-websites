@@ -1,0 +1,30 @@
+import { getAsObject, getAsArray } from "@base-cms/object-path";
+import { BASE_BROWSE_QUERY, buildContentQuery } from "./queries";
+
+$ const { $baseBrowse, apollo, config } = out.global;
+
+$ const variables = {
+  siteId: config.website("id"),
+  now: Date.now(),
+  phrase: input.phrase || "",
+  limit: input.limit,
+  skip: input.skip,
+};
+
+<marko-web-resolve|{ resolved }| promise=$baseBrowse.query({ query: BASE_BROWSE_QUERY, variables })>
+  $ const r = getAsObject(resolved, "data.browseContent");
+  $ const totalCount = r.totalCount || 0;
+  $ const ids = getAsArray(r, "edges").map((edge) => edge.node.id);
+
+  <if(!ids.length)>
+    <${input.renderBody} nodes=[] total-count=0 />
+  </if>
+  <else>
+    $ const cmsVars = { ids, limit: ids.length };
+    $ const query = buildContentQuery({ fragment: input.queryFragment })
+    <marko-web-resolve|{ resolved: cms }| promise=apollo.query({ query, variables: cmsVars })>
+      $ const nodes = getAsArray(cms, "data.allContent.edges").map((edge) => edge.node);
+      <${input.renderBody} nodes=nodes total-count=totalCount />
+    </marko-web-resolve>
+  </else>
+</marko-web-resolve>

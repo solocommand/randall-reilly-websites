@@ -23,6 +23,7 @@
     "@base-cms/marko-web-theme-default": "^1.41.1",
     "@base-cms/object-path": "^1.37.0",
     "@base-cms/utils": "^1.37.0",
+    "@base-cms/web-common": "^1.49.0",
     "@base-cms/web-cli": "^1.51.1",
     "@randall-reilly/base-browse": "^0.0.0",
     "graphql": "^14.5.4",
