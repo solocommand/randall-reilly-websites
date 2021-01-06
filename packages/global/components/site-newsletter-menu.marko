@@ -8,7 +8,7 @@ $ const pushdown = site.getAsObject("newsletterPushdown");
 $ const { name, action, description } = pushdown;
 $ const imageSrc = pushdown.imageSrc || "https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/iphone-x-mockup-noshadow-2x.png"
 
-$ const cookieName = 'enlPrompted';
+$ const cookieName = "enlPrompted";
 $ const hasCookie = get(req, `cookies.${cookieName}`);
 $ const fromEmail = false; // @todo eventually wire up omeda detection?
 
@@ -18,14 +18,14 @@ $ const fromEmail = false; // @todo eventually wire up omeda detection?
   $ const maxAge = days * 24 * 60 * 60 * 1000;
   $ res.cookie(cookieName, true, { maxAge });
 </if>
-$ const modifiers = (!hasCookie && !fromEmail) ? ['open'] : [];
+$ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
 
 <if(name && action)>
   <marko-web-block tag="aside" name=blockName modifiers=modifiers>
     <marko-web-element block-name=blockName name="container">
       <div class="row">
         <div class=`d-none d-md-flex col-md-5 col-lg-4 ${blockName}__image-wrapper`>
-          $ const src = buildImgixUrl(imageSrc, { w: 280, auto: 'format' });
+          $ const src = buildImgixUrl(imageSrc, { w: 280, auto: "format" });
           $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
           <marko-web-img
             src=src
