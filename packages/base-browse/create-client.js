@@ -15,8 +15,8 @@ module.exports = ({
   config,
   linkConfig,
 } = {}) => {
-  if (!uri) throw new Error('A GraphQL uri must be provided.');
-  if (!tenantKey) throw new Error('A tenant key must be provided.');
+  if (!uri) throw new Error('The Base Browse GraphQL API URI must be provided.');
+  if (!tenantKey) throw new Error('The Base Browse tenant key must be provided.');
 
   return new ApolloClient({
     ...config,
