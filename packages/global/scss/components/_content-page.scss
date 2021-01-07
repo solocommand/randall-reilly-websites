@@ -21,6 +21,10 @@
 .content-page-header {
   max-width: $skin-content-body-max-width;
 
+  &--full-width {
+    max-width: 100%;
+  }
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -69,6 +73,11 @@
   &__content-body {
     padding-bottom: map-get($spacers, block);
     @include skin-typography($style: "article-text", $link-style: "content-body");
+  }
+
+  &--download-form {
+    padding: 22px 65px;
+    background-color: $gray-100;
   }
 
   &--contact {

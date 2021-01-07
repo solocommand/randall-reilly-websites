@@ -19,7 +19,7 @@ $ const { id, type, pageNode } = input;
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
-    <div class="content-page-header">
+    <div class="content-page-header content-page-header--full-width">
       <global-content-page-breadcrumbs section=primarySection />
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
@@ -33,18 +33,26 @@ $ const { id, type, pageNode } = input;
 
   <@section|{ aliases, blockName, content }|>
     $ const { primarySection } = content;
-    <div class="content-page-body">
-      <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="content-page-body">
+          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
 
-        $ const bodyId = `content-body-${content.id}`;
-        <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+            $ const bodyId = `content-body-${content.id}`;
+            <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
-        <default-theme-content-download obj=content>
-          <@wufoo user-name=site.get("wufoo.userName") />
-          <@link class="btn btn-primary" />
-        </default-theme-content-download>
+          </default-theme-page-contents>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <default-theme-page-contents|{ blockName }| modifiers=['download-form'] attrs={ "data-gallery-id": id }>
+          <default-theme-content-download obj=content>
+            <@wufoo user-name=site.get("wufoo.userName") />
+            <@link class="btn btn-primary" />
+          </default-theme-content-download>
 
-      </default-theme-page-contents>
+        </default-theme-page-contents>
+      </div>
     </div>
   </@section>
 </global-content-wrapper-layout>
