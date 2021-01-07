@@ -24,6 +24,10 @@
     @include media-breakpoint-down(sm) {
       padding-top: 24px;
     }
+
+    & .row {
+      position: relative;
+    }
   }
 
   &__form-wrapper {
@@ -78,34 +82,23 @@
     }
   }
 
-  &__nub-container {
-    position: absolute;
+  &__close-container {
     right: 0;
-    bottom: 0;
-    left: 0;
     display: flex;
   }
 
-  $skin-nub-size: 50px;
-  &__nub {
+  &__close {
     @include theme-toggle-button();
-    width: $skin-nub-size;
-    height: $skin-nub-size / 2;
-    margin-right: auto;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin-right: 0;
     margin-left: auto;
-    background-color: $gray-800;
-
-    border-top-left-radius: $skin-nub-size / 2;
-    border-top-right-radius: $skin-nub-size / 2;
-
 
     > .marko-web-icon {
       position: relative;
       top: -1px;
       @include theme-navbar-link-color($theme-site-navbar-secondary-colors);
-      svg {
-        fill: $white;
-      }
     }
   }
 

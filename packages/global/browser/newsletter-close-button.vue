@@ -3,18 +3,18 @@
     :class="className"
     type="button"
     :aria-label="buttonLabel"
-    @click="toggle"
+    @click="close"
   >
-    <icon-chevron-up :modifiers="iconModifiers" />
+    <icon-x :modifiers="iconModifiers" />
   </button>
 </template>
 
 <script>
-import IconChevronUp from '@base-cms/marko-web-icons/browser/chevron-up.vue';
+import IconX from '@base-cms/marko-web-icons/browser/x.vue';
 
 export default {
   components: {
-    IconChevronUp,
+    IconX,
   },
   props: {
     className: {
@@ -31,11 +31,11 @@ export default {
     },
     buttonLabel: {
       type: String,
-      default: 'Toggle Newsletter Menu',
+      default: 'Close Newsletter Menu',
     },
   },
   methods: {
-    toggle() {
+    close() {
       const element = document.querySelector(this.targetButton);
       if (element) element.click();
     },
