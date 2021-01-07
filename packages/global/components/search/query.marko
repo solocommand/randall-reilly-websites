@@ -1,20 +1,25 @@
 import { getAsObject, getAsArray } from "@base-cms/object-path";
-import { BASE_BROWSE_QUERY, buildContentQuery } from "./queries";
+import { buildContentQuery } from "./queries";
 
-$ const { $baseBrowse, apollo, config } = out.global;
+$ const { $algolia, apollo, config } = out.global;
 
-$ const variables = {
-  siteId: config.website("id"),
-  now: Date.now(),
-  phrase: input.phrase || "",
-  limit: input.limit,
-  skip: input.skip,
+$ const now = Math.floor(Date.now() / 1000);
+$ const options = {
+  attributesToRetrieve: ["objectID"],
+  length: input.limit,
+  offset: input.skip,
+  numericFilters: [
+    'status = 1',
+    `published < ${now}`,
+  ],
+  facetFilters: [
+    `websiteSchedules.siteIds:${config.website("id")}`,
+  ],
 };
 
-<marko-web-resolve|{ resolved }| promise=$baseBrowse.query({ query: BASE_BROWSE_QUERY, variables })>
-  $ const r = getAsObject(resolved, "data.browseContent");
-  $ const totalCount = r.totalCount || 0;
-  $ const ids = getAsArray(r, "edges").map((edge) => edge.node.id);
+<marko-web-resolve|{ resolved }| promise=$algolia.defaultIndex.search(input.phrase || "", options)>
+  $ const { hits, nbHits: totalCount } = resolved;
+  $ const ids = hits.map((hit) => parseInt(hit.objectID, 10));
 
   <if(!ids.length)>
     <${input.renderBody} nodes=[] total-count=0 />
@@ -24,7 +29,9 @@ $ const variables = {
     $ const query = buildContentQuery({ fragment: input.queryFragment })
     <marko-web-resolve|{ resolved: cms }| promise=apollo.query({ query, variables: cmsVars })>
       $ const nodes = getAsArray(cms, "data.allContent.edges").map((edge) => edge.node);
-      <${input.renderBody} nodes=nodes total-count=totalCount />
+      $ const map = nodes.reduce((m, r) => m.set(`${r.id}`, r), new Map());
+      $ const ordered = ids.map(id => map.get(`${id}`)).filter(id => id);
+      <${input.renderBody} nodes=ordered total-count=totalCount />
     </marko-web-resolve>
   </else>
 </marko-web-resolve>
