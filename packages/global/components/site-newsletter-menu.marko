@@ -43,11 +43,13 @@ $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
               name="em"
               required
             />
-            <input type="hidden" name="omedasite" value="ov_subscriptions" />
+            <for|item| of=pushdown.hiddenInputs>
+              <input type="hidden" name=item.name value=item.value />
+            </for>
             <marko-web-element block-name=blockName name="privacy-policy">
               By providing your email, you agree to our <marko-web-link href="/termsandprivacy" target="_blank">Privacy Policy</marko-web-link>.
             </marko-web-element>
-            <button class="btn btn-primary" type="submit">Signup</button>
+            <button class="btn btn-primary" type="submit">Sign Up</button>
           </form>
         </div>
       </div>
