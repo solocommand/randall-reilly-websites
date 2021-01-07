@@ -48,8 +48,19 @@ module.exports = {
     name: 'TPS Daily',
     description: 'Sign up for the TPS Daily to keep up with...',
   },
+  newsletterSignupFooter: {
+    action: 'https://randallreilly.dragonforms.com/loading.do',
+    hiddenInputs: [
+      { name: 'omedasite', value: 'ov_subscriptions' },
+    ],
+    name: 'TPS Daily',
+    description: 'Sign up for the <span class="newsletter-name">TPS Daily</span> to keep up with...',
+  },
   newsletterPushdown: {
-    action: '#',
+    action: 'https://randallreilly.dragonforms.com/loading.do',
+    hiddenInputs: [
+      { name: 'omedasite', value: 'ov_subscriptions' },
+    ],
     name: 'TPS Daily',
     description: 'Sign up for the <span class="newsletter-name">TPS Daily</span> to keep up with...',
   },

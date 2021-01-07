@@ -48,8 +48,19 @@ module.exports = {
     name: 'Equipment World Daily',
     description: 'Sign up for the Equipment World Daily to keep up with...',
   },
+  newsletterSignupFooter: {
+    action: 'https://randallreilly.dragonforms.com/loading.do',
+    hiddenInputs: [
+      { name: 'omedasite', value: 'ov_subscriptions' },
+    ],
+    name: 'Equipment World Daily',
+    description: 'Sign up for the <span class="newsletter-name">Equipment World Daily</span> to keep up with...',
+  },
   newsletterPushdown: {
-    action: '#',
+    action: 'https://randallreilly.dragonforms.com/loading.do',
+    hiddenInputs: [
+      { name: 'omedasite', value: 'ov_subscriptions' },
+    ],
     name: 'Equipment World Daily',
     description: 'Sign up for the <span class="newsletter-name">Equipment World Daily</span> to keep up with...',
   },

@@ -3,6 +3,7 @@ import { asObject } from "@base-cms/utils";
 
 $ const { config, site } = out.global;
 
+$ const newsletterConfig = site.getAsObject('newsletterSignupFooter');
 $ const blockName = input.blockName || "site-footer";
 $ const tagline = site.get("tagline");
 
@@ -32,19 +33,18 @@ $ const tagline = site.get("tagline");
 
       <div class="row">
         <marko-web-element block-name=blockName name="section">
-          $ const newsletter = site.getAsObject("navigation.footer.newsletter");
           $ const newsletterBlock = "site-footer-newsletter";
-          <if(newsletter.href)>
+          <if(newsletterConfig.action)>
             <marko-web-block name=newsletterBlock>
               <marko-web-element block-name=newsletterBlock name="header">
-                $!{newsletter.name}
+                $!{newsletterConfig.name}
               </marko-web-element>
-              <if(newsletter.description)>
+              <if(newsletterConfig.description)>
                 <marko-web-element block-name=newsletterBlock name="description">
-                  $!{newsletter.description}
+                  $!{newsletterConfig.description}
                 </marko-web-element>
               </if>
-              <form action=newsletter.href method="GET">
+              <form action=newsletterConfig.action method="GET">
                 <div class="form-group">
                   <label for="footer-newsletter-signup-email">Email</label>
                   <input
@@ -52,8 +52,12 @@ $ const tagline = site.get("tagline");
                     class="form-control"
                     type="email"
                     placeholder="example@gmail.com"
+                    name="em"
                     required
                   />
+                  <for|item| of=newsletterConfig.hiddenInputs>
+                    <input type="hidden" name=item.name value=item.value />
+                  </for>
                 </div>
                 <button class="btn btn-primary" type="submit">Sign Up</button>
               </form>
