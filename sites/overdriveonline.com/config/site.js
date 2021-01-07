@@ -11,15 +11,15 @@ module.exports = {
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {
-      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd-logo.svg?h=40',
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd_logo.svg?h=40',
       srcset: [
-        'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd-logo.svg?h=80 2x',
+        'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd_logo.svg?h=80 2x',
       ],
     },
     footer: {
-      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd-logo.svg?h=35',
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd_logo.svg?h=35',
       srcset: [
-        'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd-logo.svg?h=70 2x',
+        'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd_logo.svg?h=70 2x',
       ],
     },
   },
