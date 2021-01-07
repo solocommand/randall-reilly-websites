@@ -34,7 +34,7 @@ module.exports = {
   podcastLinks: [
     { label: 'Apple Podcasts', href: 'https://podcasts.apple.com/us/podcast/overdrive-online/id736806291' },
     // { label: 'Google Podcasts', href: '#' },
-    { label: 'Spotify', href: 'https://open.spotify.com/show/1XLBDhZg7BpJ0HVdwb4GBI?si=z4BTY9e1R7au197r3YUeQQ' },
+    { label: 'Spotify', href: 'https://open.spotify.com/show/6P7SIZeenGgvAaaIm2SOAq' },
     { label: 'Stitcher', href: 'https://www.stitcher.com/show/overdrive-radio' },
     { label: 'Soundcloud', href: 'https://soundcloud.com/overdriveradio' },
   ],
