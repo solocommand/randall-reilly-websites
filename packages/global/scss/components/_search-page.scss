@@ -1,0 +1,19 @@
+.search-form {
+  &__group {
+    @include media-breakpoint-up(md) {
+      width: 33%;
+    }
+  }
+}
+
+.page-wrapper {
+  &__section {
+    &--search-results {
+      padding-bottom: 16px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      @include marko-web-node-list-border(border-bottom);
+      @include skin-typography($style: "article-text");
+    }
+  }
+}

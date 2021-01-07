@@ -1,8 +1,14 @@
-$ const { config } = out.global;
+import gql from "graphql-tag";
+import queryFragment from "../graphql/fragments/section-feed-block";
+
+$ const { config, pagination: p, req } = out.global;
 
 $ const type = "search";
 $ const title = "Search";
 $ const description = `Search ${config.siteName()}`;
+
+$ const { phrase = "" } = req.query;
+$ const perPage = 18;
 
 <marko-web-default-page-layout type=type title=title description=description>
   <@head>
@@ -13,12 +19,87 @@ $ const description = `Search ${config.siteName()}`;
   <@page>
     <marko-web-page-wrapper>
       <@section modifiers=["first"]>
-        <div class="row">
-          <div class="col">
-            <h1 class="page-wrapper__title">NYI: ${title}</h1>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section|{ blockName }|>
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name: title }>
+          <if(p.page > 1)>${value}: Page ${p.page}</if>
+          <else>${value}</else>
+        </marko-web-website-section-name>
+
+        <form method="GET" action=req.path class="search-form">
+          <div class="form-group search-form__group">
+            <label for="search-phrase" class="sr-only">Enter search phrase</label>
+            <input
+              id="search-phrase"
+              name="phrase"
+              type="search"
+              class="form-control"
+              value=phrase
+              placeholder="Enter search phrase..."
+            >
           </div>
-        </div>
+          <button type="submit" class="btn btn-primary search-form__btn">
+            Search
+          </button>
+        </form>
       </@section>
     </marko-web-page-wrapper>
+
+    <global-content-search-query|{ nodes, totalCount }|
+      phrase=phrase
+      limit=perPage
+      skip=p.skip({ perPage })
+      query-fragment=queryFragment
+    >
+      $ const groups = [
+        nodes.slice(0, 3),
+        nodes.slice(3, 5),
+        nodes.slice(5, 8),
+        nodes.slice(8, 13),
+        nodes.slice(13),
+      ];
+      <marko-web-page-wrapper>
+        <@section modifiers=["search-results"]>
+          ${new Intl.NumberFormat().format(totalCount)} Results
+        </@section>
+        <for|group, index| of=groups>
+          $ const hasNodes = Boolean(group.length);
+          $ const isLast = groups.length === index + 1;
+          $ const hasNext = Boolean(!isLast && groups[index + 1].length);
+          <if(hasNodes)>
+            <@section>
+              <marko-web-node-list
+                inner-justified=true
+                flush-x=true
+                flush-y=false
+                modifiers=["section-feed"]
+              >
+                <@nodes nodes=group>
+                  <@slot|{ node }|>
+                    <global-section-feed-content-node node=node />
+                  </@slot>
+                </@nodes>
+              </marko-web-node-list>
+              <if(isLast || !hasNext)>
+                <global-pagination-controls
+                  per-page=perPage
+                  total-count=totalCount
+                  path=req.path
+                  query={ phrase }
+                />
+              </if>
+            </@section>
+            <@section>
+              <global-gam-define-display-ad name="rotation" modifiers=["inter-block"] />
+            </@section>
+          </if>
+        </for>
+      </marko-web-page-wrapper>
+    </global-content-search-query>
   </@page>
 </marko-web-default-page-layout>
