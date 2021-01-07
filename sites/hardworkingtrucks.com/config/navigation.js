@@ -56,13 +56,7 @@ module.exports = {
       { href: 'https://privacyportal-cdn.onetrust.com/dsarwebform/49a9a972-547e-4c49-b23c-4cc77554cacb/cddab1bc-7e58-4eca-a20d-be42716734cf.html', label: 'Do Not Sell My Personal Information', target: '_blank' },
       { href: '/page/contact-us', label: 'Contact Us' },
     ],
-
     topics: topics.primary,
     more: utilities,
-    newsletter: {
-      href: '/newsletters',
-      name: 'Daily Newsletter',
-      description: 'Sign up for the Hard Working Trucks Daily to keep up with ...',
-    },
   },
 };
