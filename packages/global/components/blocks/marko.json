@@ -42,6 +42,9 @@
   "<global-pib-featured-block>": {
     "template": "./pib-featured.marko"
   },
+  "<global-ovd-pib-manual-promo-block>": {
+    "template": "./ovd-pib-manual-promo.marko"
+  },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },

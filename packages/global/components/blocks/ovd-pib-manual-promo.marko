@@ -1,0 +1,31 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
+
+$ const blockName = "pib-page-card";
+$ const logoRoot = "https://img.overdriveonline.com/files/base/randallreilly/all/image/static";
+$ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="inner-wrapper">
+    <div>
+      <marko-web-element block-name=blockName name="title">
+        The Business Manual for Owner-Operators
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="description">
+        Overdrive editors and the experts at ATBS again have updated the industry’s best manual for prospective and committed owner-operators.
+      </marko-web-element>
+      <marko-web-link
+        class=`btn btn-primary ${blockName}__download-btn`
+        href="https://register.overdriveonline.com/pib-manual-preview/"
+        title="Free Download"
+      >
+        Free Download
+      </marko-web-link>
+    </div>
+    <marko-web-img
+      class=`${blockName}__issue-cover`
+      src=`${logoRoot}/${manualSrc}`
+      srcset=[`${logoRoot}/${manualSrc}&dpr=2 2x`]
+      alt="Partners in Business Issue Cover"
+    />
+  </marko-web-element>
+</marko-web-block>

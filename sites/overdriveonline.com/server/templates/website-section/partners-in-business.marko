@@ -70,31 +70,7 @@ $ const manualSrc = "pib-issue-cover.png?auto=format&w=120&fit=crop";
           </marko-web-block>
         </div>
         <div class="col-md-6 mt-md-0 mt-block">
-          <marko-web-block name=cardBlock>
-            <marko-web-element block-name=cardBlock name="inner-wrapper">
-              <div>
-                <marko-web-element block-name=cardBlock name="title">
-                  The Business Manual for Owner-Operators
-                </marko-web-element>
-                <marko-web-element block-name=cardBlock name="description">
-                  Overdrive editors and the experts at ATBS again have updated the industry’s best manual for prospective and committed owner-operators. You’ll find exceptional depth on many issues in the 2020 edition of Partners in Business, reflecting much of the best research and advice from ATBS and Overdrive, which has 50-plus years of experience publishing articles to help the owner-operator.
-                </marko-web-element>
-                <marko-web-link
-                  class=`btn btn-primary ${cardBlock}__download-btn`
-                  href="https://register.overdriveonline.com/pib-manual-preview/"
-                  title="Free Download"
-                >
-                  Free Download
-                </marko-web-link>
-              </div>
-              <marko-web-img
-                class=`${cardBlock}__issue-cover`
-                src=`${logoRoot}/${manualSrc}`
-                srcset=[`${logoRoot}/${manualSrc}&dpr=2 2x`]
-                alt="Partners in Business Issue Cover"
-              />
-            </marko-web-element>
-          </marko-web-block>
+          <global-ovd-pib-manual-promo-block />
         </div>
       </div>
     </if>
