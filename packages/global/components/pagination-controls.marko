@@ -1,3 +1,4 @@
+import { URLSearchParams } from "url";
 import { cleanPath } from "@base-cms/utils";
 import defaultValue from "@base-cms/marko-core/utils/default-value";
 
@@ -9,8 +10,11 @@ $ const totalPages = p.totalPages({ perPage, totalCount });
 $ const nextPage = p.nextPage({ perPage, totalCount });
 $ const prevPage = p.prevPage();
 
-$ const nextHref = `/${cleanPath(path)}?page=${nextPage}`;
-$ const prevHref = `/${cleanPath(path)}?page=${prevPage}`;
+$ const nextQuery = new URLSearchParams({ ...input.query, page: nextPage });
+$ const prevQuery = new URLSearchParams({ ...input.query, page: prevPage });
+
+$ const nextHref = `/${cleanPath(path)}?${nextQuery}`;
+$ const prevHref = `/${cleanPath(path)}?${prevQuery}`;
 
 $ const blockName = "pagination-controls";
 
