@@ -10,8 +10,9 @@ const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
+const algolia = require('./middleware/algolia');
 
-const { BASE_BROWSE_GRAPHQL_URI, TENANT_KEY } = process.env;
+const { env } = process;
 
 const routes = siteRoutes => (app) => {
   // Shared/global routes (all sites)
@@ -32,11 +33,19 @@ module.exports = (options = {}) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 
+      // Use Algolia client/index middleware
+      // Will be available on `req.$algolia` and `res.locals.$algolia`
+      app.use(algolia({
+        appId: env.ALGOLIA_APP_ID,
+        apiKey: env.ALGOLIA_API_KEY,
+        defaultIndex: env.ALGOLIA_DEFAULT_INDEX,
+      }));
+
       // Use "Base Browse" GraphQL middleware
       // Will be available on `req.$baseBrowse` and `res.locals.$baseBrowse`
       app.use(baseBrowse({
-        uri: BASE_BROWSE_GRAPHQL_URI,
-        tenantKey: TENANT_KEY,
+        uri: env.BASE_BROWSE_GRAPHQL_URI,
+        tenantKey: env.TENANT_KEY,
         config: { name: pkg.name, version: pkg.version },
       }));
 
