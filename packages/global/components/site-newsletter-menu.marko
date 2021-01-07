@@ -25,7 +25,7 @@ $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
             class=`${blockName}__image`
           />
         </div>
-        <div class=`col-12 col-md-7 col-lg-5 ${blockName}__form-wrapper`>
+        <div class=`col-12 col-md-6 col-lg-5 ${blockName}__form-wrapper`>
           <marko-web-element block-name=blockName name="name">
             ${name}
           </marko-web-element>
@@ -51,6 +51,16 @@ $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
             </marko-web-element>
             <button class="btn btn-primary" type="submit">Sign Up</button>
           </form>
+        </div>
+        <div class=`d-none d-md-flex col-md-1 col-lg-3 ${blockName}__close-container`>
+          <marko-web-browser-component
+            name="GlobalNewsletterCloseButton"
+            props={
+              className: `${blockName}__close`,
+              targetButton: ".site-navbar__newsletter-toggler",
+              iconModifiers: ["lg"],
+            }
+          />
         </div>
       </div>
     </marko-web-element>

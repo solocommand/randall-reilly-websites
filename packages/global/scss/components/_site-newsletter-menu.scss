@@ -24,6 +24,10 @@
     @include media-breakpoint-down(sm) {
       padding-top: 24px;
     }
+
+    & .row {
+      position: relative;
+    }
   }
 
   &__form-wrapper {
@@ -75,6 +79,26 @@
   &__form {
     input {
       max-width: 312px;
+    }
+  }
+
+  &__close-container {
+    right: 0;
+    display: flex;
+  }
+
+  &__close {
+    @include theme-toggle-button();
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin-right: 0;
+    margin-left: auto;
+
+    > .marko-web-icon {
+      position: relative;
+      top: -1px;
+      @include theme-navbar-link-color($theme-site-navbar-secondary-colors);
     }
   }
 
