@@ -52,17 +52,6 @@ $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
           </form>
         </div>
       </div>
-
-      <marko-web-element block-name=blockName name="nub-container">
-        <marko-web-browser-component
-          name="GlobalNewsletterNub"
-          props={
-            className: `${blockName}__nub`,
-            targetButton: ".site-navbar__newsletter-toggler",
-            iconModifiers: ["lg"],
-          }
-        />
-      </marko-web-element>
     </marko-web-element>
   </marko-web-block>
 </if>
