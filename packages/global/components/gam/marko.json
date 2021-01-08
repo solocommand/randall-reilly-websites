@@ -15,11 +15,11 @@
   },
   "<global-gam-prestitial>": {
     "template": "./prestitial.marko",
-    "@adunit": "object",
-    "@slot-id": {
+    "@name": {
       "type": "string",
-      "default-value": "div-interstitial"
+      "required": true
     },
+    "@aliases": "array",
     "@targeting": "object",
     "@init": "boolean",
     "@display": "boolean"

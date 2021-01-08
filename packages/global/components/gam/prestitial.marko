@@ -1,7 +1,8 @@
 import { getAsObject } from "@base-cms/object-path";
 
-$ const { site } = out.global;
-$ const { adunit, slotId } = input;
+$ const { site, GAM } = out.global;
+$ const slotId = "div-interstitial";
+$ const adunit = GAM.getAdUnit({ name: input.name, aliases: input.aliases });
 
 <if(adunit && adunit.path)>
   <if(input.init)>
