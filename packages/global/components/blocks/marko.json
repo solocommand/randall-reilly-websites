@@ -51,6 +51,9 @@
   "<global-reader-rigs-block>": {
     "template": "./reader-rigs.marko"
   },
+  "<global-reader-rigs-submit-block>": {
+    "template": "./reader-rigs-submit.marko"
+  },
   "<global-related-stories-block>": {
     "template": "./related-stories.marko"
   },

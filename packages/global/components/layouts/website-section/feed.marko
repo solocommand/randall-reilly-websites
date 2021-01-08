@@ -38,6 +38,14 @@ $ const perPage = 18;
       <else>${value}</else>
     </marko-web-website-section-name>
 
+    <if(input.afterName)>
+      <${input.afterName}
+        aliases=aliases
+        block-name=blockName
+        section=section
+      />
+    </if>
+
     <global-section-feed-block alias=alias>
       <@query-params limit=3 skip=p.skip({ perPage }) />
     </global-section-feed-block>
