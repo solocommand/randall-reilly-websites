@@ -5,7 +5,11 @@ $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 $ const { GAM } = out.global;
 
-<marko-web-website-section-page-layout id=id alias=alias name=name>
+<global-website-section-page id=id alias=alias name=name>
+  <@prestitial
+    name="interstitial"
+    aliases=[alias]
+  />
   <@head>
     <marko-web-gtm-website-section-context|{ context }| alias=alias>
       <marko-web-gtm-push data=context />
@@ -28,4 +32,4 @@ $ const { GAM } = out.global;
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
-</marko-web-website-section-page-layout>
+</global-website-section-page>
