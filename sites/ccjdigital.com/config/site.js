@@ -13,15 +13,15 @@ module.exports = {
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {
-      src: 'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=45',
+      src: 'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=90 2x',
+        'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=90&auto=format,compress&q=70 2x',
       ],
     },
     footer: {
-      src: 'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=60',
+      src: 'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=120 2x',
+        'https://img.ccjdigital.com/files/base/randallreilly/all/image/static/ccj-logo.svg?h=120&auto=format,compress&q=70 2x',
       ],
     },
   },
