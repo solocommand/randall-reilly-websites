@@ -7,11 +7,6 @@ $ const {
   GAM,
 } = out.global;
 
-$ const prestitial = getAsObject(input, "prestitial");
-$ const hasPrestitial = Boolean(prestitial.name && GAM.getAdUnit({ name: prestitial.name }).path);
-<!-- $ const enablePrestitial = hasPrestitial && `${req.get("referrer")}`.includes(req.hostname); -->
-$ const enablePrestitial = false;
-
 <marko-web-document ...input>
   <@head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -19,11 +14,10 @@ $ const enablePrestitial = false;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <global-script-loader-queue />
+
     <!-- init gam -->
     <marko-web-gam-init />
-    <if(enablePrestitial)>
-      <global-gam-prestitial init=true name=prestitial.name aliases=prestitial.aliases />
-    </if>
 
     <!-- init gtm -->
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
@@ -34,26 +28,14 @@ $ const enablePrestitial = false;
     <${input.head} />
 
     <!-- start gtm -->
-    <if(!Boolean(parseInt(req.query['gtm-disable'], 10)))>
-      <marko-web-gtm-start />
-    </if>
+    <global-gtm-start />
 
     <!-- start gam -->
-    <if(!Boolean(parseInt(req.query['gam-disable'], 10)))>
-      <marko-web-gam-enable>
-        <@lazy-load ...site.getAsObject("gam.lazyLoad") />
-      </marko-web-gam-enable>
-      <marko-web-gam-targeting key-values={ uri: req.path } />
-    </if>
+    <global-gam-enable>
+      <@lazy-load ...site.getAsObject("gam.lazyLoad") />
+    </global-gam-enable>
+    <marko-web-gam-targeting key-values={ uri: req.path } />
   </@head>
-  <if(enablePrestitial)>
-    <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: "opacity: 0;" } />
-  </if>
-  <@above-wrapper>
-    <if(enablePrestitial)>
-      <global-gam-prestitial display=true name=prestitial.name aliases=prestitial.aliases />
-    </if>
-  </@above-wrapper>
   <@above-container>
     <global-site-header has-user=false reg-enabled=false />
     <global-site-menu has-user=false reg-enabled=false />

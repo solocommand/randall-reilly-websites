@@ -4,11 +4,6 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 
 $ const { GAM, req } = out.global;
 
-$ let { collapseBeforeAdFetch = false } = input;
-$ if (req.query['gam-collapse-before-fetch']) {
-  collapseBeforeAdFetch = Boolean(parseInt(req.query['gam-collapse-before-fetch'], 10));
-}
-
 $ const adUnit = GAM.getAdUnit({ name: input.name, aliases: input.aliases });
 $ const { templateName } = adUnit;
 $ const showLabel = defaultValue(input.showLabel, true);
@@ -18,10 +13,9 @@ $ const modifiers = [
 ];
 $ if (templateName) modifiers.push(`template-${dasherize(templateName)}`);
 
-<marko-web-gam-define-display-ad
+<define-display-ad
   ...adUnit
   modifiers=modifiers
-  collapse-before-ad-fetch=collapseBeforeAdFetch
   with-wrapper=true
   class=input.class
 />
