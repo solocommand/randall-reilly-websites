@@ -82,7 +82,7 @@ $ if (!requestOnMediaMatch) calls.push(`googletag.display('${id}');`);
       </if>
 
       $ const script = `googletag.cmd.push(function() { ${calls.join(" ")} });`;
-      <script-loader script=script query-param="load-gam" />
+      <script-loader script=script query-param="load-gam" type="load" />
     </marko-web-gam-ad-wrapper>
   </div>
 </if>

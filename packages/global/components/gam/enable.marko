@@ -36,4 +36,4 @@ $ calls.push("googletag.enableServices();");
 
 <!-- Render the script tag -->
 $ const script = `googletag.cmd.push(function() { ${calls.join(" ")} });`;
-<script-loader script=script query-param="load-gam" />
+<script-loader script=script query-param="load-gam" type="load" />
