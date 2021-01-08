@@ -1,14 +1,14 @@
 import { getAsArray } from "@base-cms/object-path";
 
 $ const { site } = out.global;
-$ const { id, type, pageNode } = input;
+$ const { id, type, pageNode, ...rest } = input;
 
 <global-content-wrapper-layout
   id=id
   type=type
   page-node=pageNode
+  ...rest
 >
-
   <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"

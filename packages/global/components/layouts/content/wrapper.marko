@@ -1,11 +1,16 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray, get } from "@base-cms/object-path";
 
 $ const { id, type, pageNode } = input;
 $ const { GAM } = out.global;
 $ const sections = getAsArray(input, "sections");
+$ const alias = get(input, "primarySection.alias");
 
-<marko-web-content-page-layout id=id type=type>
+<global-content-page id=id type=type>
+  <@prestitial
+    name="interstitial"
+    aliases=[alias]
+  />
   <@head>
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
@@ -35,4 +40,4 @@ $ const sections = getAsArray(input, "sections");
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
-</marko-web-content-page-layout>
+</global-content-page>

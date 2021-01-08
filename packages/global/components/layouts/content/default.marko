@@ -2,7 +2,7 @@ import { getAsArray } from "@base-cms/object-path";
 import DefineDisplayAd from "../../gam/define-display-ad";
 
 $ const { site } = out.global;
-$ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock } = input;
+$ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
 $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
@@ -17,6 +17,7 @@ $ const shouldInjectAds = ["article"].includes(type);
   id=id
   type=type
   page-node=pageNode
+  ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad

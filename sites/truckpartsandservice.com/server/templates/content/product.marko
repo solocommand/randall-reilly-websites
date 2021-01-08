@@ -1,9 +1,10 @@
-$ const { id, type, pageNode } = input;
+$ const { id, type, pageNode, ...rest } = input;
 
 <global-content-product-layout
   id=id
   type=type
   page-node=pageNode
+  ...rest
 >
   <@after-body|{ content }|>
     <global-more-gear-block alias="products" params={ excludeContentIds: [content.id] } />

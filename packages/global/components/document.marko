@@ -1,3 +1,5 @@
+import { getAsObject } from "@base-cms/object-path";
+
 $ const {
   site,
   req,
@@ -5,10 +7,9 @@ $ const {
   GAM,
 } = out.global;
 
-$ const prestitial = GAM ? GAM.getAdUnit({ name: "interstitial" }) : {};
-$ const hasPrestitial = Boolean(prestitial.path);
+$ const prestitial = getAsObject(input, "prestitial");
+$ const hasPrestitial = Boolean(prestitial.name && GAM.getAdUnit({ name: prestitial.name }).path);
 $ const enablePrestitial = hasPrestitial && `${req.get("referrer")}`.includes(req.hostname);
-$ const wrapperStyle = enablePrestitial ? "opacity: 0;" : null;
 
 <marko-web-document ...input>
   <@head>
@@ -20,7 +21,7 @@ $ const wrapperStyle = enablePrestitial ? "opacity: 0;" : null;
     <!-- init gam -->
     <marko-web-gam-init />
     <if(enablePrestitial)>
-      <global-gam-prestitial init=true adunit=prestitial />
+      <global-gam-prestitial init=true name=prestitial.name aliases=prestitial.aliases />
     </if>
 
     <!-- init gtm -->
@@ -43,11 +44,11 @@ $ const wrapperStyle = enablePrestitial ? "opacity: 0;" : null;
     </if>
   </@head>
   <if(enablePrestitial)>
-    <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: wrapperStyle } />
+    <@body-wrapper enabled=true attrs={ id: "body-wrapper", style: "opacity: 0;" } />
   </if>
   <@above-wrapper>
     <if(enablePrestitial)>
-      <global-gam-prestitial display=true adunit=prestitial />
+      <global-gam-prestitial display=true name=prestitial.name aliases=prestitial.aliases />
     </if>
   </@above-wrapper>
   <@above-container>

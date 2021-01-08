@@ -1,9 +1,10 @@
-$ const { id, type, pageNode } = input;
+$ const { id, type, pageNode, ...rest } = input;
 
 <global-content-default-layout
   id=id
   type=type
   page-node=pageNode
+  ...rest
 >
   <@section>
     <global-callout-cards-block>

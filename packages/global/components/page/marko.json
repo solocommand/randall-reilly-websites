@@ -1,0 +1,11 @@
+{
+  "<global-content-page>": {
+    "template": "./content.marko"
+  },
+  "<global-default-page>": {
+    "template": "./default.marko"
+  },
+  "<global-website-section-page>": {
+    "template": "./website-section.marko"
+  }
+}
