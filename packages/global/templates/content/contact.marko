@@ -86,4 +86,31 @@ $ const perPage = 10;
       modifiers=["inter-block"]
     />
   </@section>
+
+  <@section>
+    <global-top-stories-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <global-callout-cards-block>
+      <@slot>
+        <global-latest-podcast-block alias="overdrive-radio" />
+      </@slot>
+      <@slot>
+        <global-white-papers-block />
+      </@slot>
+    </global-callout-cards-block>
+  </@section>
+
+  <@section>
+    <global-client-side-most-popular-block />
+  </@section>
 </global-content-wrapper-layout>
