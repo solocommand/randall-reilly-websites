@@ -9,7 +9,8 @@ $ const {
 
 $ const prestitial = getAsObject(input, "prestitial");
 $ const hasPrestitial = Boolean(prestitial.name && GAM.getAdUnit({ name: prestitial.name }).path);
-$ const enablePrestitial = hasPrestitial && `${req.get("referrer")}`.includes(req.hostname);
+<!-- $ const enablePrestitial = hasPrestitial && `${req.get("referrer")}`.includes(req.hostname); -->
+$ const enablePrestitial = false;
 
 <marko-web-document ...input>
   <@head>
