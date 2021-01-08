@@ -1,4 +1,4 @@
-$ const { id, type, pageNode } = input;
+$ const { id, type, pageNode, ...rest } = input;
 
 <global-content-default-layout
   id=id
@@ -7,6 +7,7 @@ $ const { id, type, pageNode } = input;
   show-read-next-block=false
   show-bottom-ad-block=false
   show-top-story-block=false
+  ...rest
 >
   <@after-body>
     <hr />

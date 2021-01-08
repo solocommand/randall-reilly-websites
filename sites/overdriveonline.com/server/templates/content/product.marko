@@ -1,11 +1,12 @@
 import { getAsArray } from "@base-cms/object-path";
 
-$ const { id, type, pageNode } = input;
+$ const { id, type, pageNode, ...rest } = input;
 
 <global-content-product-layout
   id=id
   type=type
   page-node=pageNode
+  ...rest
 >
   <@right-rail|{ content }|>
     <global-gam-define-display-ad
