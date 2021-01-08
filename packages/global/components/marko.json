@@ -37,6 +37,12 @@
   "<global-pagination-controls>": {
     "template": "./pagination-controls.marko"
   },
+  "<global-script-loader>": {
+    "template": "./script-loader/index.marko"
+  },
+  "<global-script-loader-queue>": {
+    "template": "./script-loader/queue.marko"
+  },
   "<global-site-menu>": {
     "template": "./site-menu/index.marko"
   },
