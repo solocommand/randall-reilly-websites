@@ -10,8 +10,7 @@ fragment ReaderRigsBlockContentFragment on Content {
     path
   }
   primaryImage {
-    id
-    src
+    src(input: { options: { auto: "format,compress", q: 70 } })
     alt
     isLogo
   }

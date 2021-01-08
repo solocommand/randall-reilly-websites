@@ -13,7 +13,7 @@ fragment PartnersInBusinessBlockFragment on Content {
   }
   primaryImage {
     id
-    src
+    src(input: { options: { auto: "format,compress", q: 70 } })
     alt
     isLogo
   }
