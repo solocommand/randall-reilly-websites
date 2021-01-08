@@ -68,5 +68,17 @@ module.exports = (options = {}) => {
       app.use(cleanResponse());
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
+
+    redirectHandler: ({ from }) => {
+      // redirect sized images to their sized, master versions in imgix
+      const matches = /^\/wp-content\/uploads\/.+(-([0-9]+)x([0-9]+))\.[a-z]+$/i.exec(from);
+      if (matches && matches[1]) {
+        const w = matches[2];
+        const h = matches[3];
+        const to = `${from.replace(matches[1], '')}?w=${w}&h=${h}&fit=crop&auto=format`;
+        return { to };
+      }
+      return null;
+    },
   });
 };
