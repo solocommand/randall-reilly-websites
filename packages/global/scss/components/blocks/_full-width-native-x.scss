@@ -17,6 +17,11 @@
   &--full-width-native-x {
     background-color: $gray-100;
 
+  .sponsored-content-link-url {
+    color: $primary;
+    @include skin-typography($style: "sponsored-by");
+  }
+
     #{ $self } {
       &__title {
         margin-bottom: 0;
@@ -37,10 +42,7 @@
         @include skin-typography($style: "small-body-text", $link-style: "primary");
       }
 
-      &__website-section-name a {
-        color: $primary;
-        @include skin-typography($style: "sponsored-by");
-      }
+
     }
   }
 }
