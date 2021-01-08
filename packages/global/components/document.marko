@@ -33,7 +33,9 @@ $ const enablePrestitial = hasPrestitial && `${req.get("referrer")}`.includes(re
     <${input.head} />
 
     <!-- start gtm -->
-    <marko-web-gtm-start />
+    <if(!Boolean(parseInt(req.query['gtm-disable'], 10)))>
+      <marko-web-gtm-start />
+    </if>
 
     <!-- start gam -->
     <if(!Boolean(parseInt(req.query['gam-disable'], 10)))>
