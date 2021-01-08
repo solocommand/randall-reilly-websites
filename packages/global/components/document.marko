@@ -28,17 +28,13 @@ $ const {
     <${input.head} />
 
     <!-- start gtm -->
-    <if(!Boolean(parseInt(req.query['gtm-disable'], 10)))>
-      <marko-web-gtm-start />
-    </if>
+    <global-gtm-start />
 
     <!-- start gam -->
-    <if(!Boolean(parseInt(req.query['gam-disable'], 10)))>
-      <marko-web-gam-enable>
-        <@lazy-load ...site.getAsObject("gam.lazyLoad") />
-      </marko-web-gam-enable>
-      <marko-web-gam-targeting key-values={ uri: req.path } />
-    </if>
+    <global-gam-enable>
+      <@lazy-load ...site.getAsObject("gam.lazyLoad") />
+    </global-gam-enable>
+    <marko-web-gam-targeting key-values={ uri: req.path } />
   </@head>
   <@above-container>
     <global-site-header has-user=false reg-enabled=false />
