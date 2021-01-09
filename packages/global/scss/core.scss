@@ -112,6 +112,7 @@ label {
     #{ $self } {
       &__image {
         border: $image-border;
+        object-fit: cover;
       }
     }
   }
