@@ -8,9 +8,7 @@
   "<global-gam-wallpaper-ad>": {
     "template": "./wallpaper-ad.marko",
     "@aliases": "array",
-    "<position>": {
-      "@type": "string"
-    }
+    "@position": "string"
   },
   "<global-gam-inject-ads>": {
     "template": "./inject-ads.marko",
