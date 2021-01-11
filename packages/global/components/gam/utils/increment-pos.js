@@ -1,16 +1,11 @@
-const pattern = /^(\w+)\|(\d+)$/;
-
-module.exports = ({ req, pos, inc = 1 } = {}) => {
+module.exports = ({ req, type, inc = 1 } = {}) => {
   // Do nothing if no position key is passed.
-  if (!pos) return pos;
+  if (!type) return type;
   req.pos = req.pos || {};
 
-  const matches = pattern.exec(pos);
-  const key = matches && matches[1] ? matches[1] : pos;
-  const val = matches && matches[1] ? parseInt(matches[2], 10) : (req.pos[key] || 0);
+  const val = parseInt(req.pos[type], 10) || 0;
   const n = inc + val;
+  req.pos[type] = n;
 
-  req.pos[key] = n;
-
-  return `${key}|${n}`;
+  return `${type}|${n}`;
 };

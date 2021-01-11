@@ -16,10 +16,10 @@ $ const {
   withWrapper,
   collapseBeforeAdFetch,
   requestOnMediaMatch,
-  pos,
 } = input;
 $ const id = input.id || generateId({ inc });
-$ if (pos) targeting.pos = incrementPos({ pos, inc, req })
+$ const { type } = getAsObject(input.position);
+$ if (type) targeting.pos = incrementPos({ type, inc, req });
 
 $ const collapse = defaultValue(input.collapse, true);
 $ const oop = defaultValue(input.oop, false);

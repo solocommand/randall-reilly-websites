@@ -12,7 +12,7 @@ $ const inject = getAsArray(input, "inject").filter(o => o && o.at);
 $ props.toInject = inject.reduce((o, i) => {
   const { at } = i;
   delete i.at;
-  i.pos = defaultValue(input.pos, "content_body");
+  i.position = defaultValue(input.position, { type: "content_body" });
   // Ensure closing HMTL tags are escaped.
   const html = DefineDisplayAd.renderToString({ ...i, $global: out.global }).replace(/<\/(.+?)>/g, '<\\/$1>');
   return { ...o, [at]: html };

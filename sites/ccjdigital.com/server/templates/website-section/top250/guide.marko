@@ -18,7 +18,7 @@ $ const config = get(top250, `guides.${alias}`);
       <@section|{ aliases }| modifiers=["first"]>
         <global-gam-define-display-ad
           name="leaderboard"
-          pos="section_page"
+          position={ type: "section_page" }
           aliases=aliases
           modifiers=["inter-block"]
         />
