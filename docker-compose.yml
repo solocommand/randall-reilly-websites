@@ -69,7 +69,7 @@ services:
     working_dir: /root/sites/equipmentworld.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-leonis
       PORT: 80
       EXPOSED_PORT: 9801
       LIVERELOAD_PORT: 19801
@@ -85,7 +85,7 @@ services:
     working_dir: /root/sites/totallandscapecare.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-leonis
       PORT: 80
       EXPOSED_PORT: 9802
       LIVERELOAD_PORT: 19802
@@ -101,7 +101,7 @@ services:
     working_dir: /root/sites/truckersnews.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-leonis
       PORT: 80
       EXPOSED_PORT: 9803
       LIVERELOAD_PORT: 19803
@@ -117,7 +117,7 @@ services:
     working_dir: /root/sites/ccjdigital.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-leonis
       PORT: 80
       EXPOSED_PORT: 9804
       LIVERELOAD_PORT: 19804
@@ -133,7 +133,7 @@ services:
     working_dir: /root/sites/hardworkingtrucks.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-leonis
       PORT: 80
       EXPOSED_PORT: 9805
       LIVERELOAD_PORT: 19805
@@ -165,7 +165,7 @@ services:
     working_dir: /root/sites/truckpartsandservice.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-leonis
       PORT: 80
       EXPOSED_PORT: 9807
       LIVERELOAD_PORT: 19807
