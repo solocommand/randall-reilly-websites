@@ -4,7 +4,9 @@ import defaultValue from "@base-cms/marko-core/utils/default-value";
 import generateId from "@base-cms/marko-web-gam/utils/generate-id";
 import buildSlots from "@base-cms/marko-web-gam/utils/build-slots";
 import slotStyle from "@base-cms/marko-web-gam/utils/slot-size-style";
+import incrementPos from "../utils/increment-pos";
 
+$ const { res } = out.global;
 $ const { isArray } = Array;
 $ const {
   path,
@@ -14,8 +16,10 @@ $ const {
   withWrapper,
   collapseBeforeAdFetch,
   requestOnMediaMatch,
+  position,
 } = input;
 $ const id = input.id || generateId({ inc });
+$ if (position) targeting.pos = incrementPos({ position, inc, res });
 
 $ const collapse = defaultValue(input.collapse, true);
 $ const oop = defaultValue(input.oop, false);
