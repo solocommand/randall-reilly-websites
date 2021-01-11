@@ -6,7 +6,7 @@ import buildSlots from "@base-cms/marko-web-gam/utils/build-slots";
 import slotStyle from "@base-cms/marko-web-gam/utils/slot-size-style";
 import incrementPos from "../utils/increment-pos";
 
-$ const { req } = out.global;
+$ const { res } = out.global;
 $ const { isArray } = Array;
 $ const {
   path,
@@ -19,7 +19,7 @@ $ const {
 } = input;
 $ const id = input.id || generateId({ inc });
 $ const { type } = getAsObject(input.position);
-$ if (type) targeting.pos = incrementPos({ type, inc, req });
+$ if (type) targeting.pos = incrementPos({ type, inc, res });
 
 $ const collapse = defaultValue(input.collapse, true);
 $ const oop = defaultValue(input.oop, false);
