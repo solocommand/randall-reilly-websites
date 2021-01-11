@@ -15,7 +15,7 @@ $ const description = `Log in to ${config.siteName()}`;
       <@section|{ aliases }| modifiers=["first"]>
         <global-gam-define-display-ad
           name="leaderboard"
-          pos="static_page"
+          position={ type: "static_page" }
           aliases=aliases
           modifiers=["inter-block"]
         />
@@ -29,7 +29,7 @@ $ const description = `Log in to ${config.siteName()}`;
       <@section|{ aliases }|>
         <global-gam-define-display-ad
           name="rotation"
-          pos="static_page"
+          position={ type: "static_page" }
           aliases=aliases
           modifiers=["inter-block"]
         />
