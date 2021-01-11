@@ -22,11 +22,11 @@ $ const shouldInjectAds = ["article"].includes(type);
   <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
-      position={ type: "content_page" }
+      position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-    <global-gam-wallpaper-ad aliases=aliases position={ type: "content_page" } />
+    <global-gam-wallpaper-ad aliases=aliases position="content_page" />
   </@section>
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
@@ -203,7 +203,7 @@ $ const shouldInjectAds = ["article"].includes(type);
     <@section|{ aliases }|>
       <global-gam-define-display-ad
         name="rotation"
-        position={ type: "content_page" }
+        position="content_page"
         aliases=aliases
         modifiers=["inter-block"]
       />
