@@ -1,11 +1,11 @@
-module.exports = ({ res, type, inc = 1 } = {}) => {
+module.exports = ({ res, position, inc = 1 } = {}) => {
   // Do nothing if no position key is passed.
-  if (!type) return type;
+  if (!position) return position;
   res.locals.pos = res.locals.pos || {};
 
-  const val = parseInt(res.locals.pos[type], 10) || 0;
+  const val = parseInt(res.locals.pos[position], 10) || 0;
   const n = inc + val;
-  res.locals.pos[type] = n;
+  res.locals.pos[position] = n;
 
-  return `${type}|${n}`;
+  return `${position}|${n}`;
 };
