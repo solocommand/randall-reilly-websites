@@ -79,8 +79,8 @@
 </template>
 
 <script>
-import get from '@base-cms/marko-web-identity-x/browser/utils/get';
-import Post from '@base-cms/marko-web-identity-x/browser/comments/post.vue';
+import get from '@parameter1/base-cms-marko-web-identity-x/browser/utils/get';
+import Post from '@parameter1/base-cms-marko-web-identity-x/browser/comments/post.vue';
 import Login from './login.vue';
 import Create from './create.vue';
 

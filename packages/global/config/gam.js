@@ -1,4 +1,4 @@
-const GAMConfiguration = require('@base-cms/marko-web-gam/config');
+const GAMConfiguration = require('@parameter1/base-cms-marko-web-gam/config');
 
 module.exports = ({
   accountId = '142181607',

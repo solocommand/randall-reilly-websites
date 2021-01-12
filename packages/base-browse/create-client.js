@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const { ApolloClient } = require('apollo-client');
 const { InMemoryCache } = require('apollo-cache-inmemory');
 const { createHttpLink } = require('apollo-link-http');
-const { getAsObject } = require('@base-cms/object-path');
+const { getAsObject } = require('@parameter1/base-cms-object-path');
 
 const rootConfig = {
   connectToDevTools: false,
