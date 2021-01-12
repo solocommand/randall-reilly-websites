@@ -29,6 +29,12 @@ x-env-defaults: &env
   ALGOLIA_API_KEY: ${ALGOLIA_API_KEY}
   ALGOLIA_DEFAULT_INDEX: ${ALGOLIA_DEFAULT_INDEX-randallreilly_all_platform_content}
 
+x-env-virgon-dev: &env-virgon-dev
+  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10103}
+  OEMBED_URI: ${OEMBED_URI-https://host.docker.internal:10402}
+  RSS_URI: ${RSS_URI-http://host.docker.internal:10203}
+  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10303}
+
 x-env-leonis: &env-leonis
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://leonis.oembed.base.parameter1.com}
@@ -149,7 +155,7 @@ services:
     working_dir: /root/sites/overdriveonline.com
     environment:
       <<: *env
-      <<: *env-virgon
+      <<: *env-virgon-dev
       PORT: 80
       EXPOSED_PORT: 9806
       LIVERELOAD_PORT: 19806
