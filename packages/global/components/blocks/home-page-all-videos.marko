@@ -1,35 +1,40 @@
 import defaultValue from "@base-cms/marko-core/utils/default-value";
-import queryFragment from "../../graphql/fragments/gear-block";
+import queryFragment from "../../graphql/fragments/content-list";
+import sectionFragment from "../../graphql/fragments/section-info";
 
+<!-- @todo determine how to display the sponsor logo -->
 $ const queryParams = {
+  sectionAlias: input.alias,
   includeContentTypes: ["Video"],
   limit: 3,
   queryFragment,
+  sectionFragment,
 };
+
 $ const description = defaultValue(input.description, "");
 $ const blockName = "home-page-all-videos";
 
-<marko-web-query|{ nodes, section }| name="all-published-content" params=queryParams>
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
     <marko-web-element block-name=blockName name="header">
-      Videos
+      ${section.name}
     </marko-web-element>
     <marko-web-element block-name=blockName name="description-wrapper">
       <marko-web-element block-name=blockName name="description">
-        $!{description}
+        $!{section.description || description}
       </marko-web-element>
-      <!-- <marko-web-element block-name=blockName name="view-more">
-        <marko-web-link href="/videos">
+      <marko-web-element block-name=blockName name="view-more">
+        <marko-web-link href=section.canonicalPath>
           View more &raquo;
         </marko-web-link>
-      </marko-web-element> -->
+      </marko-web-element>
     </marko-web-element>
     <div class="row">
       <div class="col col-md-9">
         <default-theme-card-deck-flow
           cols=1
           nodes=nodes.slice(0,1)
-          modifiers=[blockName]
+          modifiers=[blockName, "hero"]
         >
           <@slot|{ node }|>
             <global-content-node
@@ -71,7 +76,7 @@ $ const blockName = "home-page-all-videos";
       </div>
     </div>
     <marko-web-element block-name=blockName name="view-more-bottom">
-      <marko-web-link href="/videos">
+      <marko-web-link href=section.canonicalPath>
         View more &raquo;
       </marko-web-link>
     </marko-web-element>

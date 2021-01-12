@@ -11,6 +11,7 @@
   },
   "<global-home-page-all-videos-block>": {
     "template": "./home-page-all-videos.marko",
+    "@alias": "string",
     "@discription": "string"
   },
   "<global-latest-podcast-block>": {
