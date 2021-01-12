@@ -153,7 +153,7 @@ services:
     working_dir: /root/sites/overdriveonline.com
     environment:
       <<: *env
-      <<: *env-virgon-dev
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9806
       LIVERELOAD_PORT: 19806
