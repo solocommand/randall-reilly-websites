@@ -1,3 +1,4 @@
+import defaultValue from "@base-cms/marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/gear-block";
 
 $ const queryParams = {
@@ -5,7 +6,7 @@ $ const queryParams = {
   limit: 3,
   queryFragment,
 };
-
+$ const description = defaultValue(input.description, "");
 $ const blockName = "home-page-all-videos";
 
 <marko-web-query|{ nodes, section }| name="all-published-content" params=queryParams>
@@ -15,7 +16,7 @@ $ const blockName = "home-page-all-videos";
     </marko-web-element>
     <marko-web-element block-name=blockName name="description-wrapper">
       <marko-web-element block-name=blockName name="description">
-        $!{input.description}
+        $!{description}
       </marko-web-element>
       <marko-web-element block-name=blockName name="view-more">
         <marko-web-link href="/videos">
