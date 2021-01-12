@@ -1,4 +1,4 @@
-const { withContent } = require('@base-cms/marko-web/middleware');
+const { withContent } = require('@parameter1/base-cms-marko-web/middleware');
 const print = require('../templates/content/print');
 const queryFragment = require('../graphql/fragments/content-page');
 

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import EventBus from '@base-cms/marko-web/browser/event-bus';
+import EventBus from '@parameter1/base-cms-marko-web/browser/event-bus';
 
 export default {
   props: {

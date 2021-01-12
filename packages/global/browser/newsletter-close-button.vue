@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconX from '@base-cms/marko-web-icons/browser/x.vue';
+import IconX from '@parameter1/base-cms-marko-web-icons/browser/x.vue';
 
 export default {
   components: {

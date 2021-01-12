@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import redirect from '@base-cms/marko-web-identity-x/browser/utils/redirect';
-import cookiesEnabled from '@base-cms/marko-web-identity-x/browser/utils/cookies-enabled';
-import post from '@base-cms/marko-web-identity-x/browser/utils/post';
-import AuthenticationError from '@base-cms/marko-web-identity-x/browser/errors/authentication';
-import FeatureError from '@base-cms/marko-web-identity-x/browser/errors/feature';
+import redirect from '@parameter1/base-cms-marko-web-identity-x/browser/utils/redirect';
+import cookiesEnabled from '@parameter1/base-cms-marko-web-identity-x/browser/utils/cookies-enabled';
+import post from '@parameter1/base-cms-marko-web-identity-x/browser/utils/post';
+import AuthenticationError from '@parameter1/base-cms-marko-web-identity-x/browser/errors/authentication';
+import FeatureError from '@parameter1/base-cms-marko-web-identity-x/browser/errors/feature';
 
 export default {
   /**

@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import post from '@base-cms/marko-web-identity-x/browser/utils/post';
-import FormError from '@base-cms/marko-web-identity-x/browser/errors/form';
-import DisplayName from '@base-cms/marko-web-identity-x/browser/form/fields/display-name.vue';
-import CommentBody from '@base-cms/marko-web-identity-x/browser/form/fields/comment-body.vue';
+import post from '@parameter1/base-cms-marko-web-identity-x/browser/utils/post';
+import FormError from '@parameter1/base-cms-marko-web-identity-x/browser/errors/form';
+import DisplayName from '@parameter1/base-cms-marko-web-identity-x/browser/form/fields/display-name.vue';
+import CommentBody from '@parameter1/base-cms-marko-web-identity-x/browser/form/fields/comment-body.vue';
 
 export default {
   /**

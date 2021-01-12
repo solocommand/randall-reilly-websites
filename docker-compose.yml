@@ -16,10 +16,8 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
-  # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
   RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY-(unset)}
   RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
-  # @todo the sendgrid values should be removed once the @base-cms/mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
@@ -28,6 +26,12 @@ x-env-defaults: &env
   ALGOLIA_APP_ID: ${ALGOLIA_APP_ID-05JLREVGZ4}
   ALGOLIA_API_KEY: ${ALGOLIA_API_KEY}
   ALGOLIA_DEFAULT_INDEX: ${ALGOLIA_DEFAULT_INDEX-randallreilly_all_platform_content}
+
+x-env-virgon-dev: &env-virgon-dev
+  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10103}
+  OEMBED_URI: ${OEMBED_URI-https://host.docker.internal:10402}
+  RSS_URI: ${RSS_URI-http://host.docker.internal:10203}
+  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10303}
 
 x-env-leonis: &env-leonis
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}

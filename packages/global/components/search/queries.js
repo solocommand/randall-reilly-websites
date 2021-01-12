@@ -1,5 +1,5 @@
 const gql = require('graphql-tag');
-const { extractFragmentData } = require('@base-cms/web-common/utils');
+const { extractFragmentData } = require('@parameter1/base-cms-web-common/utils');
 
 const buildContentQuery = ({ fragment }) => {
   const { spreadFragmentName, processedFragment } = extractFragmentData(fragment);
