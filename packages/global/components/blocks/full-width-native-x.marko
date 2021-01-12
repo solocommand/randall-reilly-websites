@@ -10,23 +10,23 @@ $ const { nativeX: nxConfig } = out.global;
   >
     <if(nxNode)>
       $ const primaryImage = getAsObject(nxNode, "primaryImage");
-      <marko-web-block name='full-width-native-x'>
-        <marko-web-block name="content-list-flow" modifiers=['full-width-native-x']>
+      <marko-web-block name="full-width-native-x">
+        <marko-web-block name="content-list-flow" modifiers=["full-width-native-x"]>
           <marko-web-node
-            type=`native-x-content`
+            type="native-x-content"
             image-position="left"
             card=false
             flush=true
             full-height=false
             attrs=containerAttrs
-            modifiers=['full-width-native-x']
+            modifiers=["full-width-native-x"]
           >
             <@image
               width=250
               align="top"
               use-placeholder=false
               fluid=false
-              ar='3:2'
+              ar="3:2"
               src=primaryImage.src
               alt=primaryImage.alt
               is-logo=primaryImage.isLogo
@@ -36,7 +36,7 @@ $ const { nativeX: nxConfig } = out.global;
               <@header attrs={}>
                 <@left|{ blockName }|>
                   <marko-web-link
-                    class='sponsored-content-link-url'
+                    class="sponsored-content-link-url"
                     href=nxNode.siteContext.path
                     title=nxNode.title
                     target="_blank"
