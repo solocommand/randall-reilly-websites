@@ -20,6 +20,20 @@ $ const { id, type, pageNode, ...rest } = input;
     <if(labels.includes("Sponsored by RoadPro"))>
       <site-road-pro-facebook />
     </if>
+    <global-gam-define-display-ad
+      name="rotation-2"
+      position="section_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+    <global-gam-define-display-ad
+      name="rotation-3"
+      position="section_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
   </@right-rail>
   <@after-body|{ content }|>
     <global-more-gear-block alias="gear" params={ excludeContentIds: [content.id] } />
