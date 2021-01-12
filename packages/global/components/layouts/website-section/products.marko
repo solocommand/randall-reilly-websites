@@ -1,4 +1,4 @@
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
@@ -26,10 +26,11 @@ $ const perPage = 10;
   <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
+      position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-    <global-gam-wallpaper-ad aliases=aliases />
+    <global-gam-wallpaper-ad aliases=aliases position="section_page" />
   </@section>
 
   <@section|{ blockName, section, aliases }|>
@@ -55,6 +56,7 @@ $ const perPage = 10;
       <div class="col-lg-4 pt-block">
         <global-gam-define-display-ad
           name="rotation-1"
+          position="section_page"
           aliases=aliases
           modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
           class="mb-block"
@@ -68,6 +70,7 @@ $ const perPage = 10;
 
         <global-gam-define-display-ad
           name="rotation-2"
+          position="section_page"
           aliases=aliases
           modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
           class="mb-block"
@@ -75,6 +78,7 @@ $ const perPage = 10;
 
         <global-gam-define-display-ad
           name="rotation-3"
+          position="section_page"
           aliases=aliases
           modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
           class="mb-block"
@@ -86,6 +90,7 @@ $ const perPage = 10;
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="leaderboard-2"
+      position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
@@ -108,6 +113,7 @@ $ const perPage = 10;
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="leaderboard-2"
+      position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />

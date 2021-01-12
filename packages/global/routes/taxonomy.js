@@ -1,4 +1,4 @@
-const { asyncRoute } = require('@base-cms/utils');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const gql = require('graphql-tag');
 const createError = require('http-errors');
 const template = require('../templates/taxonomy');

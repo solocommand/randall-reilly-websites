@@ -45,12 +45,12 @@
 </template>
 
 <script>
-import Email from '@base-cms/marko-web-identity-x/browser/form/fields/email.vue';
-import cleanPath from '@base-cms/marko-web-identity-x/browser/utils/clean-path';
-import post from '@base-cms/marko-web-identity-x/browser/utils/post';
-import cookiesEnabled from '@base-cms/marko-web-identity-x/browser/utils/cookies-enabled';
-import FormError from '@base-cms/marko-web-identity-x/browser/errors/form';
-import FeatureError from '@base-cms/marko-web-identity-x/browser/errors/feature';
+import Email from '@parameter1/base-cms-marko-web-identity-x/browser/form/fields/email.vue';
+import cleanPath from '@parameter1/base-cms-marko-web-identity-x/browser/utils/clean-path';
+import post from '@parameter1/base-cms-marko-web-identity-x/browser/utils/post';
+import cookiesEnabled from '@parameter1/base-cms-marko-web-identity-x/browser/utils/cookies-enabled';
+import FormError from '@parameter1/base-cms-marko-web-identity-x/browser/errors/form';
+import FeatureError from '@parameter1/base-cms-marko-web-identity-x/browser/errors/feature';
 
 export default {
   /**

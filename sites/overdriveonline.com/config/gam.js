@@ -48,6 +48,7 @@ const aliases = [
   'maintenance',
   'technology',
   'reader-rigs',
+  'custom-rigs',
 ];
 
 aliases.forEach(alias => config.setAliasAdUnits(alias, [

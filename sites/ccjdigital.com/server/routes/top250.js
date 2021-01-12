@@ -1,5 +1,5 @@
-const { withWebsiteSection } = require('@base-cms/marko-web/middleware');
-const { get } = require('@base-cms/object-path');
+const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
+const { get } = require('@parameter1/base-cms-object-path');
 const queryFragment = require('@randall-reilly/package-global/graphql/fragments/website-section-page');
 const index = require('../templates/website-section/top250');
 const guide = require('../templates/website-section/top250/guide');

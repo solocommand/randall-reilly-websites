@@ -21,6 +21,7 @@ $ const perPage = 18;
       <@section modifiers=["first"]>
         <global-gam-define-display-ad
           name="leaderboard"
+          position="static_page"
           modifiers=["inter-block"]
         />
       </@section>
@@ -95,7 +96,11 @@ $ const perPage = 18;
               </if>
             </@section>
             <@section>
-              <global-gam-define-display-ad name="rotation" modifiers=["inter-block"] />
+              <global-gam-define-display-ad
+                name="rotation"
+                position="static_page"
+                modifiers=["inter-block"]
+              />
             </@section>
           </if>
         </for>

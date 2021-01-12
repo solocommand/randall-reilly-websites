@@ -1,27 +1,24 @@
-import { getAsArray } from "@base-cms/object-path";
-import { dasherize } from "@base-cms/inflector";
-import defaultValue from "@base-cms/marko-core/utils/default-value";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import { dasherize } from "@parameter1/base-cms-inflector";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { GAM, req } = out.global;
-
-$ let { collapseBeforeAdFetch = false } = input;
-$ if (req.query['gam-collapse-before-fetch']) {
-  collapseBeforeAdFetch = Boolean(parseInt(req.query['gam-collapse-before-fetch'], 10));
-}
 
 $ const adUnit = GAM.getAdUnit({ name: input.name, aliases: input.aliases });
 $ const { templateName } = adUnit;
 $ const showLabel = defaultValue(input.showLabel, true);
+$ const targeting = defaultValue(input.targeting, {});
 $ const modifiers = [
   ...(showLabel ? ["with-label"] : []),
   ...getAsArray(input.modifiers),
 ];
 $ if (templateName) modifiers.push(`template-${dasherize(templateName)}`);
 
-<marko-web-gam-define-display-ad
+<define-display-ad
   ...adUnit
+  position=input.position
+  targeting=targeting
   modifiers=modifiers
-  collapse-before-ad-fetch=collapseBeforeAdFetch
   with-wrapper=true
   class=input.class
 />

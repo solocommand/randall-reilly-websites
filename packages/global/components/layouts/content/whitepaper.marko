@@ -1,4 +1,4 @@
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const { site } = out.global;
 $ const { id, type, pageNode, ...rest } = input;
@@ -12,6 +12,7 @@ $ const { id, type, pageNode, ...rest } = input;
   <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
+      position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />

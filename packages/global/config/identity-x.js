@@ -1,4 +1,4 @@
-const IdentityXConfiguration = require('@base-cms/marko-web-identity-x/config');
+const IdentityXConfiguration = require('@parameter1/base-cms-marko-web-identity-x/config');
 
 module.exports = ({
   appId,

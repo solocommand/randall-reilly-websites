@@ -1,4 +1,4 @@
-const { asyncRoute } = require('@base-cms/utils');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const createError = require('http-errors');
 const MostPopular = require('../components/blocks/most-popular');
 const TopStoriesMenu = require('../components/blocks/top-stories-menu');

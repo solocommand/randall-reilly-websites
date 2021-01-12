@@ -1,5 +1,5 @@
-import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import { getAsArray, get } from "@base-cms/object-path";
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { getAsArray, get } from "@parameter1/base-cms-object-path";
 
 $ const { id, type, pageNode } = input;
 $ const { GAM } = out.global;
@@ -33,6 +33,7 @@ $ const alias = get(input, "primarySection.alias");
         <@section|{ aliases }|>
           <global-gam-define-display-ad
             name="rotation"
+            position="content_page"
             aliases=aliases
             modifiers=["inter-block"]
           />

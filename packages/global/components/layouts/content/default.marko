@@ -1,4 +1,4 @@
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray } from "@parameter1/base-cms-object-path";
 import DefineDisplayAd from "../../gam/define-display-ad";
 
 $ const { site } = out.global;
@@ -22,10 +22,11 @@ $ const shouldInjectAds = ["article"].includes(type);
   <@section|{ aliases }| modifiers=["first-sm"]>
     <global-gam-define-display-ad
       name="leaderboard"
+      position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-    <global-gam-wallpaper-ad aliases=aliases />
+    <global-gam-wallpaper-ad aliases=aliases position="content_page" />
   </@section>
 
   <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
@@ -202,6 +203,7 @@ $ const shouldInjectAds = ["article"].includes(type);
     <@section|{ aliases }|>
       <global-gam-define-display-ad
         name="rotation"
+        position="content_page"
         aliases=aliases
         modifiers=["inter-block"]
       />

@@ -1,4 +1,4 @@
-import { getAsArray } from "@base-cms/object-path"
+import { getAsArray } from "@parameter1/base-cms-object-path"
 import sectionsFragment from "../../graphql/fragments/safety-watch-sections"
 
 $ const { id, alias, name, pageNode } = input;
@@ -15,6 +15,7 @@ $ const perPage = 18;
   <@section|{ aliases }| modifiers=["first"]>
     <global-gam-define-display-ad
       name="leaderboard"
+      position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
@@ -63,6 +64,7 @@ $ const perPage = 18;
   <@section|{ aliases }|>
     <global-gam-define-display-ad
       name="rotation"
+      position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />

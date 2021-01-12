@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import EventBus from '@base-cms/marko-web/browser/event-bus';
-import get from '@base-cms/marko-web-identity-x/browser/utils/get';
-import ArrowUp from '@base-cms/marko-web-icons/browser/triangle-up.vue';
-import ArrowDown from '@base-cms/marko-web-icons/browser/triangle-down.vue';
+import EventBus from '@parameter1/base-cms-marko-web/browser/event-bus';
+import get from '@parameter1/base-cms-marko-web-identity-x/browser/utils/get';
+import ArrowUp from '@parameter1/base-cms-marko-web-icons/browser/triangle-up.vue';
+import ArrowDown from '@parameter1/base-cms-marko-web-icons/browser/triangle-down.vue';
 
 export default {
   components: { ArrowUp, ArrowDown },

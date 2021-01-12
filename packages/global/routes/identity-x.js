@@ -1,7 +1,7 @@
 const gql = require('graphql-tag');
-const IdentityX = require('@base-cms/marko-web-identity-x');
-const { getAsObject } = require('@base-cms/object-path');
-const { asyncRoute } = require('@base-cms/utils');
+const IdentityX = require('@parameter1/base-cms-marko-web-identity-x');
+const { getAsObject } = require('@parameter1/base-cms-object-path');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const authenticate = require('../templates/user/authenticate');
 const login = require('../templates/user/login');
 const logout = require('../templates/user/logout');

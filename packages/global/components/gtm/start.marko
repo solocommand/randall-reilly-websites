@@ -1,0 +1,7 @@
+$ const payload = {
+  'gtm.start': new Date().getTime(),
+  event: 'gtm.js',
+};
+$ const script = `dataLayer.push(${JSON.stringify(payload)});`;
+
+<script-loader script=script query-param="load-gtm" type="load" />

@@ -1,0 +1,29 @@
+<script>
+  window.__LISTEN_HANDLERS__ = {
+    domReady: function(callback) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function fn() {
+          document.removeEventListener('DOMContentLoaded', fn);
+          callback();
+        });
+      } else {
+        callback();
+      }
+    },
+    windowLoad: function(callback) {
+      if (document.readyState === 'complete') {
+        callback();
+      } else {
+        window.addEventListener('load', function fn() {
+          window.removeEventListener('load', fn);
+          callback();
+        });
+      }
+    }
+  };
+
+  function pushEventListener(type, callback) {
+    var fn = window.__LISTEN_HANDLERS__[type];
+    if (typeof fn === 'function') fn(callback);
+  }
+</script>

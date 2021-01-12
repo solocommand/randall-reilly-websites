@@ -15,7 +15,7 @@ const topics = {
   secondary: [
     { href: '/reader-rigs', label: 'Reader Rigs' },
     { href: '/overdrive-radio', label: 'Overdrive Radio' },
-    { href: '/whitepapers', label: 'Whitepapers' },
+    { href: '/white-papers', label: 'Whitepapers' },
   ],
 };
 
