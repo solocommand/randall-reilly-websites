@@ -1,0 +1,78 @@
+import queryFragment from "../../graphql/fragments/gear-block";
+
+$ const queryParams = {
+  includeContentTypes: ["Video"],
+  limit: 3,
+  queryFragment,
+};
+
+$ const blockName = "home-page-all-videos";
+
+<marko-web-query|{ nodes, section }| name="all-published-content" params=queryParams>
+  <marko-web-block name=blockName>
+    <marko-web-element block-name=blockName name="header">
+      Videos
+    </marko-web-element>
+    <marko-web-element block-name=blockName name="description-wrapper">
+      <marko-web-element block-name=blockName name="description">
+        $!{input.description}
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="view-more">
+        <marko-web-link href="/videos">
+          View more &raquo;
+        </marko-web-link>
+      </marko-web-element>
+    </marko-web-element>
+    <div class="row">
+      <div class="col col-md-9">
+        <default-theme-card-deck-flow
+          cols=1
+          nodes=nodes.slice(0,1)
+          modifiers=[blockName]
+        >
+          <@slot|{ node }|>
+            <global-content-node
+              image-position="top"
+              full-height=true
+              card=true
+              flush=false
+              modifiers=[blockName]
+              node=node
+              with-teaser=false
+              with-dates=false
+            >
+              <@image fluid=true width=790 ar="16:9" />
+            </global-content-node>
+          </@slot>
+        </default-theme-card-deck-flow>
+      </div>
+      <div class="col col-md-3">
+        <default-theme-card-deck-flow
+          cols=1
+          nodes=nodes.slice(1)
+          modifiers=[blockName]
+        >
+          <@slot|{ node }|>
+            <global-content-node
+              image-position="top"
+              full-height=true
+              card=true
+              flush=false
+              modifiers=[blockName]
+              node=node
+              with-teaser=false
+              with-dates=false
+            >
+              <@image fluid=true width=240 ar="16:9" />
+            </global-content-node>
+          </@slot>
+        </default-theme-card-deck-flow>
+      </div>
+    </div>
+    <marko-web-element block-name=blockName name="view-more-bottom">
+      <marko-web-link href="/videos">
+        View more &raquo;
+      </marko-web-link>
+    </marko-web-element>
+  </marko-web-block>
+</marko-web-query>

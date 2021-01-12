@@ -9,6 +9,10 @@
   "<global-gear-block>": {
     "template": "./gear.marko"
   },
+  "<global-home-page-all-videos-block>": {
+    "template": "./home-page-all-videos.marko",
+    "@discription": "string"
+  },
   "<global-latest-podcast-block>": {
     "template": "./latest-podcast.marko"
   },
