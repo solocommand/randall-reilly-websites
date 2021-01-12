@@ -1,7 +1,7 @@
 import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const { id, alias, name, pageNode } = input;
-$ const { site, pagination: p } = out.global;
+$ const { site, pagination } = out.global;
 $ const top250 = getAsObject(site, 'config.top250');
 $ const perPage = 18;
 
@@ -31,7 +31,7 @@ $ const perPage = 18;
     />
   </@section>
   <@section>
-    <if(p.page === 1)>
+    <if(pagination.page === 1)>
       <div class="spec-guide-container">
         <div class="row">
           <div class="col">
@@ -77,12 +77,12 @@ $ const perPage = 18;
   </@section>
   <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
     <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
-      <if(p.page > 1)>Latest in ${value}: Page ${p.page}</if>
+      <if(pagination.page > 1)>Latest in ${value}: Page ${pagination.page}</if>
       <else>Latest in ${value}</else>
     </marko-web-website-section-name>
 
     <global-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage }) />
+      <@query-params limit=3 skip=pagination.skip({ perPage }) />
     </global-section-feed-block>
   </@section>
 
@@ -97,7 +97,7 @@ $ const perPage = 18;
 
   <@section>
     <global-section-feed-block alias=alias>
-      <@query-params limit=2 skip=p.skip({ perPage, skip: 3 }) />
+      <@query-params limit=2 skip=pagination.skip({ perPage, skip: 3 }) />
     </global-section-feed-block>
   </@section>
 
@@ -107,7 +107,7 @@ $ const perPage = 18;
 
   <@section>
     <global-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
+      <@query-params limit=3 skip=pagination.skip({ perPage, skip: 5 }) />
     </global-section-feed-block>
   </@section>
 
@@ -122,7 +122,7 @@ $ const perPage = 18;
 
   <@section>
     <global-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
+      <@query-params limit=5 skip=pagination.skip({ perPage, skip: 8 }) />
     </global-section-feed-block>
   </@section>
 
@@ -137,7 +137,7 @@ $ const perPage = 18;
 
   <@section>
     <global-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
+      <@query-params limit=5 skip=pagination.skip({ perPage, skip: 13 }) />
     </global-section-feed-block>
     <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <global-pagination-controls
