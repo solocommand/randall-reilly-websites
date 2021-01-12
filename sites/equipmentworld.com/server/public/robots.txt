@@ -4,6 +4,7 @@
 User-agent: *
 Disallow: *
 Disallow: /__load-more
+Disallow: /search
 
 Sitemap: https://www.equipmentworld.com/sitemap.xml
 Sitemap: https://www.equipmentworld.com/sitemap-google-news.xml
