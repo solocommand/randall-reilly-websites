@@ -73,18 +73,24 @@ $ const perPage = 18;
           </div>
         </if>
         <else>
-          <div class="mb-block">
-            <if(context.hasUser)>
+          <div class="top-250__header">
+            Access the CCJ Top 250
+          </div>
+          <if(context.hasUser)>
+            <div class="top-250__profile-form">
               <marko-web-identity-x-form-profile
                 call-to-action="Complete the form below to access the CCJ Top 250."
                 reload-page-on-submit=true
               />
-            </if>
-            <else>
-              <p>To access the CCJ Top 250, you must be logged in. To sign in or create an account, enter your email address and we'll send you a one-click sign-in link.</p>
+            </div>
+          </if>
+          <else>
+            <div class="top-250__login-form">
+              <p>You must be signed in to access the CCJ Top 250.</p>
+              <p>To sign in or create an account, enter your email address and we'll send you a one-click sign-in link.</p>
               <marko-web-identity-x-form-login />
-            </else>
-          </div>
+            </div>
+          </else>
         </else>
       </@section>
     </if>
