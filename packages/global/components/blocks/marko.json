@@ -40,7 +40,8 @@
     "template": "./newsletter-signup-banner-large.marko"
   },
   "<global-opinion-block>": {
-    "template": "./opinion.marko"
+    "template": "./opinion.marko",
+    "@alias" : "string"
   },
   "<global-partners-in-business-block>": {
     "template": "./partners-in-business.marko"
@@ -55,7 +56,9 @@
     "template": "./primary-image.marko"
   },
   "<global-reader-rigs-block>": {
-    "template": "./reader-rigs.marko"
+    "template": "./reader-rigs.marko",
+    "@alias" : "string",
+    "@default-description": "string"
   },
   "<global-reader-rigs-submit-block>": {
     "template": "./reader-rigs-submit.marko"
