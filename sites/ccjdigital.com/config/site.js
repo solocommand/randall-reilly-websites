@@ -43,29 +43,29 @@ module.exports = {
     containerId: 'GTM-PHDPM24',
   },
   newsletterSignupBanner: {
-    href: '#',
-    description: 'Sign up for the <span class="newsletter-name">CCJ Daily</span> to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions',
+    description: 'Get the business tips, industry insights and trending news every trucking professional needs to know in the CCJ newsletter.',
   },
   newsletterSignupBannerLarge: {
-    href: '#',
-    name: 'CCJ Daily',
-    description: 'Sign up for the CCJ Daily to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions',
+    name: 'Newsletter Just for Trucking Professionals',
+    description: 'Get the business tips, industry insights and trending news every trucking professional needs to know in the CCJ newsletter.',
   },
   newsletterSignupFooter: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'ccj_subscriptions' },
     ],
-    name: 'CCJ Daily',
-    description: 'Sign up for the <span class="newsletter-name">CCJ Daily</span> to keep up with...',
+    name: 'Newsletter Just for Trucking Professionals',
+    description: 'Get trucking news and insights, plus management tips and regulation updates — delivered straight to your inbox.',
   },
   newsletterPushdown: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'ccj_subscriptions' },
     ],
-    name: 'CCJ Daily',
-    description: 'Sign up for the <span class="newsletter-name">CCJ Daily</span> to keep up with...',
+    name: 'Don’t Miss Out',
+    description: 'Join 80,000 trucking professionals who get helpful insights and important news delivered straight to their inbox with the CCJ newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',
