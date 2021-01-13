@@ -48,8 +48,10 @@
     }
     &--hero {
       .node {
-        &__title {
-          @include skin-typography($style: "header-2", $link-style: "primary");
+        @include media-breakpoint-up(md) {
+          &__title {
+            @include skin-typography($style: "header-2", $link-style: "primary");
+          }
         }
       }
     }
