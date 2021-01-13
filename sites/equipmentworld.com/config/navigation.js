@@ -6,7 +6,7 @@ const topics = {
     { href: '/business', label: 'Business' },
     { href: '/technology', label: 'Technology' },
     { href: '/workforce', label: 'Workforce' },
-    { href: '/safety', label: 'Safety' },
+    // { href: '/safety', label: 'Safety' },
   ],
   expanded: [
   ],
