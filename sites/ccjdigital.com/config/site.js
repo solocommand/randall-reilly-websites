@@ -48,7 +48,7 @@ module.exports = {
   },
   newsletterSignupBannerLarge: {
     href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions',
-    name: 'Newsletter Just for Trucking Professionals',
+    name: 'Don’t Miss Out',
     description: 'Get the business tips, industry insights and trending news every trucking professional needs to know in the CCJ newsletter.',
   },
   newsletterSignupFooter: {

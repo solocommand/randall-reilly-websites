@@ -45,7 +45,7 @@ module.exports = {
   },
   newsletterSignupBannerLarge: {
     href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=eqw_subscriptions',
-    name: 'Newsletter Just for Contractors',
+    name: 'Don’t Miss Out',
     description: 'Get the business tips, industry insights and trending news every contractor needs to know in the <span class="newsletter-name">Equipment World</span> newsletter.',
   },
   newsletterSignupFooter: {
