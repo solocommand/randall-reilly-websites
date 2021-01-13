@@ -19,6 +19,7 @@ fragment WhitePapersBlockFragment on Content {
     }
   }
   primarySection {
+    id
     name
   }
 }
