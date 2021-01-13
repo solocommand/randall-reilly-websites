@@ -9,10 +9,11 @@
   "<global-gear-block>": {
     "template": "./gear.marko"
   },
-  "<global-home-page-all-videos-block>": {
-    "template": "./home-page-all-videos.marko",
+  "<global-hero-card-block>": {
+    "template": "./hero-card.marko",
     "@alias": "string",
-    "@discription": "string"
+    "@discription": "string",
+    "@query-params": "object"
   },
   "<global-latest-podcast-block>": {
     "template": "./latest-podcast.marko"

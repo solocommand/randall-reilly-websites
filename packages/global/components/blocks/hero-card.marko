@@ -4,15 +4,15 @@ import sectionFragment from "../../graphql/fragments/section-info";
 
 <!-- @todo determine how to display the sponsor logo -->
 $ const queryParams = {
+  ... input.queryParams,
   sectionAlias: input.alias,
-  includeContentTypes: ["Video"],
   limit: 3,
   queryFragment,
   sectionFragment,
 };
 
 $ const description = defaultValue(input.description, "");
-$ const blockName = "home-page-all-videos";
+$ const blockName = "hero-card";
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-block name=blockName>
