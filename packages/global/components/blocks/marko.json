@@ -56,7 +56,9 @@
     "template": "./primary-image.marko"
   },
   "<global-reader-rigs-block>": {
-    "template": "./reader-rigs.marko"
+    "template": "./reader-rigs.marko",
+    "@alias" : "string",
+    "@default-description": "string"
   },
   "<global-reader-rigs-submit-block>": {
     "template": "./reader-rigs-submit.marko"
@@ -66,11 +68,6 @@
   },
   "<global-resource-library-block>": {
     "template": "./resource-library.marko"
-  },
-  "<global-vintage-equipment-block>": {
-    "template": "./vintage-equipment.marko",
-    "@alias" : "string",
-    "@default-description": "string"
   },
   "<global-white-papers-block>": {
     "template": "./white-papers.marko"
