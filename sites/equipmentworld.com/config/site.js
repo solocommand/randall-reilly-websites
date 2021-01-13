@@ -40,29 +40,29 @@ module.exports = {
     containerId: 'GTM-WBB7QN7',
   },
   newsletterSignupBanner: {
-    href: '#',
-    description: 'Sign up for the <span class="newsletter-name">Equipment World Daily</span> to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=eqw_subscriptions',
+    description: 'Get the business tips, industry insights and trending news every contractor needs to know in the <span class="newsletter-name">Equipment World</span> newsletter.',
   },
   newsletterSignupBannerLarge: {
-    href: '#',
-    name: 'Equipment World Daily',
-    description: 'Sign up for the Equipment World Daily to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=eqw_subscriptions',
+    name: 'Don’t Miss Out',
+    description: 'Get the business tips, industry insights and trending news every contractor needs to know in the <span class="newsletter-name">Equipment World</span> newsletter.',
   },
   newsletterSignupFooter: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'eqw_subscriptions' },
     ],
-    name: 'Equipment World Daily',
-    description: 'Sign up for the <span class="newsletter-name">Equipment World Daily</span> to keep up with...',
+    name: 'Newsletter Just for Contractors',
+    description: 'Get construction news and insights, plus project tips and equipment reviews — delivered straight to your inbox.',
   },
   newsletterPushdown: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'eqw_subscriptions' },
     ],
-    name: 'Equipment World Daily',
-    description: 'Sign up for the <span class="newsletter-name">Equipment World Daily</span> to keep up with...',
+    name: 'Don’t Miss Out',
+    description: 'Join 55,000 construction professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Equipment World</span> newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',
