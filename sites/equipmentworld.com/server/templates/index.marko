@@ -30,6 +30,10 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
+    <global-hero-card-block query-params={ includeContentTypes: ["Video"] } alias="videos" />
+  </@section>
+
+  <@section>
     <global-callout-cards-block>
       <@slot>
         <global-ccj-top-250-block />

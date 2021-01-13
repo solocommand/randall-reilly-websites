@@ -9,6 +9,12 @@
   "<global-gear-block>": {
     "template": "./gear.marko"
   },
+  "<global-hero-card-block>": {
+    "template": "./hero-card.marko",
+    "@alias": "string",
+    "@discription": "string",
+    "@query-params": "object"
+  },
   "<global-latest-podcast-block>": {
     "template": "./latest-podcast.marko"
   },
