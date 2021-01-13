@@ -10,10 +10,12 @@ module.exports = {
     'dedicated-contract-carriage': {
       ...all,
       initialPrimaryOperation: 'Dedicated Contract Carriage',
+      title: 'Dedicated Contract Carriage',
     },
     'flatbed-specialized-heavy-haul': {
       ...all,
       initialPrimaryOperation: 'Flatbed/Specialized/Heavy Haul',
+      title: 'Flatbed/Specialized/Heavy Haul',
     },
     'general-freight': {
       ...all,
@@ -22,26 +24,32 @@ module.exports = {
     'household-goods': {
       ...all,
       initialPrimaryOperation: 'Household Goods',
+      title: 'Household Goods',
     },
     intermodal: {
       ...all,
       initialPrimaryOperation: 'Intermodal',
+      title: 'Intermodal',
     },
     'motor-vehicles': {
       ...all,
       initialPrimaryOperation: 'Motor Vehicles',
+      title: 'Motor Vehicles',
     },
     packages: {
       ...all,
       initialPrimaryOperation: 'Packages',
+      title: 'Packages',
     },
     refrigerated: {
       ...all,
       initialPrimaryOperation: 'Refrigerated',
+      title: 'Refrigerated',
     },
     'tank-bulk-commodities': {
       ...all,
       initialPrimaryOperation: 'Tank/Bulk Commodities',
+      title: 'Tank/Bulk Commodities',
     },
   },
 };
