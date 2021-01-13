@@ -6,11 +6,13 @@ const topics = {
     { href: '/business', label: 'Business' },
     { href: '/technology', label: 'Technology' },
     { href: '/workforce', label: 'Workforce' },
-    // { href: '/safety', label: 'Safety' },
   ],
   expanded: [
   ],
   secondary: [
+    { href: '/safety', label: 'Safety' },
+    { href: '/safety-watch', label: 'Safety Watch' },
+    { href: '/white-papers', label: 'White Papers' },
   ],
 };
 
