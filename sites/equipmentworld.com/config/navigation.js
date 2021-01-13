@@ -1,6 +1,6 @@
 const topics = {
   primary: [
-    { href: '/heavy-equipment', label: 'Heavy Equipment' },
+    { href: '/equipment', label: 'Equipment' },
     { href: '/better-roads', label: 'Better Roads' },
     { href: '/big-iron-dealer', label: 'Big Iron Dealer' },
     { href: '/business', label: 'Business' },
