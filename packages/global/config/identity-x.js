@@ -2,4 +2,5 @@ const IdentityXConfiguration = require('@parameter1/base-cms-marko-web-identity-
 
 module.exports = ({
   appId,
-} = {}) => new IdentityXConfiguration({ appId });
+  requiredServerFields,
+} = {}) => new IdentityXConfiguration({ appId, requiredServerFields });
