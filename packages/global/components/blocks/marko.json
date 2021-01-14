@@ -52,6 +52,9 @@
   "<global-ovd-pib-manual-promo-block>": {
     "template": "./ovd-pib-manual-promo.marko"
   },
+  "<global-eqw-coty-promo-block>": {
+    "template": "./eqw-coty-promo.marko"
+  },
   "<global-primary-image-block>": {
     "template": "./primary-image.marko"
   },
