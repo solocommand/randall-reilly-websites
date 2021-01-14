@@ -6,11 +6,17 @@
   "<global-ccj-top-250-block>": {
     "template": "./ccj-top-250.marko"
   },
-  "<global-full-width-native-x-block>": {
-    "template": "./full-width-native-x.marko"
+  "<global-full-width-native-ad-block>": {
+    "template": "./full-width-native-ad.marko"
   },
   "<global-gear-block>": {
     "template": "./gear.marko"
+  },
+  "<global-hero-card-block>": {
+    "template": "./hero-card.marko",
+    "@alias": "string",
+    "@discription": "string",
+    "@query-params": "object"
   },
   "<global-latest-podcast-block>": {
     "template": "./latest-podcast.marko"
@@ -37,7 +43,8 @@
     "template": "./newsletter-signup-banner-large.marko"
   },
   "<global-opinion-block>": {
-    "template": "./opinion.marko"
+    "template": "./opinion.marko",
+    "@alias" : "string"
   },
   "<global-partners-in-business-block>": {
     "template": "./partners-in-business.marko"
@@ -52,7 +59,9 @@
     "template": "./primary-image.marko"
   },
   "<global-reader-rigs-block>": {
-    "template": "./reader-rigs.marko"
+    "template": "./reader-rigs.marko",
+    "@alias" : "string",
+    "@default-description": "string"
   },
   "<global-reader-rigs-submit-block>": {
     "template": "./reader-rigs-submit.marko"

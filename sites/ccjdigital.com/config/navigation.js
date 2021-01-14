@@ -6,11 +6,18 @@ const topics = {
     { href: '/workforce', label: 'Workforce' },
     { href: '/products', label: 'Products' },
     { href: '/opinion', label: 'Opinion' },
-    { href: '/ccj-top-250', label: 'Top 250' },
+    { href: '/ccj-top-250', label: 'CCJ Top 250' },
   ],
   expanded: [
   ],
   secondary: [
+    { href: '/maintenance', label: 'Maintenance' },
+    { href: '/economic-trends/indicators', label: 'Indicators' },
+    { href: '/test-drives', label: 'Test Drives' },
+    { href: '/preventable-or-not', label: 'Preventable or Not?' },
+    { href: '/ccj-innovators', label: 'CCJ Innovators' },
+    { href: '/ccj-symposiums', label: 'CCJ Symposiums' },
+    { href: '/white-papers', label: 'White Papers' },
   ],
 };
 

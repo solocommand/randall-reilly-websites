@@ -1,4 +1,6 @@
 .section-feed-content-node {
+  $self: &;
+
   $image-size: 112px;
   $image-desktop-width: 250px;
   $image-desktop-height: 167px;
@@ -10,6 +12,11 @@
     flex-direction: row-reverse;
     padding-bottom: 0;
     border-bottom: none;
+  }
+
+  &__sponsored-by {
+    margin-bottom: 6px;
+    @include skin-typography($style: "sponsored-by");
   }
 
   &__contents {
@@ -70,6 +77,17 @@
   &__content-published {
     margin-top: 10px;
     @include skin-typography($style: "date");
+  }
+
+  &--full-width-native-ad {
+    padding: 24px;
+    background-color: $gray-100;
+    border-radius: 4px;
+    #{ $self } {
+      &__content-teaser {
+        display: block;
+      }
+    }
   }
 }
 

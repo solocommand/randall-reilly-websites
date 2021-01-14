@@ -1,0 +1,173 @@
+import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const { id, alias, name, pageNode } = input;
+$ const { site, pagination } = out.global;
+$ const top250 = getAsObject(site, 'config.top250');
+$ const perPage = 18;
+
+<idx-gating|{ context, hasRequiredFields }|>
+  $ const canAccess = context.hasUser && hasRequiredFields;
+
+  <global-website-section-default-layout
+    id=id
+    alias=alias
+    name=name
+    page-node=pageNode
+  >
+    <@head>
+      <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+        <global-pagination-controls
+          per-page=perPage
+          total-count=totalCount
+          path=alias
+          as-rels=true
+        />
+      </global-section-feed-block>
+    </@head>
+
+    <@section|{ aliases }| modifiers=["first"]>
+      <global-gam-define-display-ad
+        name="leaderboard"
+        position="section_page"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+    </@section>
+    <@section>
+      <if(pagination.page === 1)>
+        <h1 class="page-wrapper__website-section-name">${top250.title}</h1>
+        <p>$!{top250.teaser}</p>
+      </if>
+    </@section>
+
+    <if(pagination.page === 1)>
+      <@section>
+        <if(canAccess)>
+          <!-- <p>
+            By clicking the button below, I agree to the Terms & Conditions and Privacy Policy,
+            and consent to receive automated marketing calls or text messages from Randall-Reilly.
+            Consent is not a condition of any purchase. You may opt out at any time.
+          </p> -->
+          <download-button />
+          <div class="card-deck-flow card-deck-flow--1-cols">
+            <div class="card-deck-flow__node">
+              <marko-web-link class="node btn btn-secondary" href=`${alias}/all` title=`View the full guide.`>
+                All
+              </marko-web-link>
+            </div>
+          </div>
+          <div class="card-deck-flow card-deck-flow--3-cols">
+            <for|key, value| in=top250.guides>
+              <if(key !== 'all')>
+                <div class="card-deck-flow__node">
+                  <marko-web-link
+                    class="node btn btn-secondary"
+                    href=`${alias}/${key}`
+                    title=`View the ${value.initialPrimaryOperation} guide.`
+                  >
+                    ${value.initialPrimaryOperation}
+                  </marko-web-link>
+                </div>
+              </if>
+            </for>
+          </div>
+        </if>
+        <else>
+          <div class="top-250__header">
+            Access the CCJ Top 250
+          </div>
+          <if(context.hasUser)>
+            <div class="top-250__profile-form">
+              <marko-web-identity-x-form-profile
+                call-to-action="Complete the form below to access the CCJ Top 250."
+                reload-page-on-submit=true
+              />
+            </div>
+          </if>
+          <else>
+            <div class="top-250__login-form">
+              <p>You must be signed in to access the CCJ Top 250.</p>
+              <p>To sign in or create an account, enter your email address and we'll send you a one-click sign-in link.</p>
+              <marko-web-identity-x-form-login />
+            </div>
+          </else>
+        </else>
+      </@section>
+    </if>
+
+    <if(canAccess)>
+      <@section|{ blockName, section }| modifiers=["mb-block-lg"]>
+        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+          <if(pagination.page > 1)>Latest in ${value}: Page ${pagination.page}</if>
+          <else>Latest in ${value}</else>
+        </marko-web-website-section-name>
+
+        <global-section-feed-block alias=alias>
+          <@query-params limit=3 skip=pagination.skip({ perPage }) />
+        </global-section-feed-block>
+      </@section>
+
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section>
+        <global-section-feed-block alias=alias>
+          <@query-params limit=2 skip=pagination.skip({ perPage, skip: 3 }) />
+        </global-section-feed-block>
+      </@section>
+
+      <@section>
+        <global-newsletter-signup-banner-large-block />
+      </@section>
+
+      <@section>
+        <global-section-feed-block alias=alias>
+          <@query-params limit=3 skip=pagination.skip({ perPage, skip: 5 }) />
+        </global-section-feed-block>
+      </@section>
+
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section>
+        <global-section-feed-block alias=alias>
+          <@query-params limit=5 skip=pagination.skip({ perPage, skip: 8 }) />
+        </global-section-feed-block>
+      </@section>
+
+      <@section|{ aliases }|>
+        <global-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section>
+        <global-section-feed-block alias=alias>
+          <@query-params limit=5 skip=pagination.skip({ perPage, skip: 13 }) />
+        </global-section-feed-block>
+        <global-section-feed-block|{ totalCount }| alias=alias count-only=true>
+          <global-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=alias
+          />
+        </global-section-feed-block>
+      </@section>
+    </if>
+  </global-website-section-default-layout>
+</idx-gating>

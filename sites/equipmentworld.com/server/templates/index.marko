@@ -9,11 +9,11 @@ $ const { id, alias, name, pageNode } = input;
   page-node=pageNode
 >
   <@section modifiers=["break-container"]>
-    <global-opinion-block alias="the-dirt" />
+    <global-opinion-block alias="editors-picks" />
   </@section>
 
   <@section>
-    <global-section-list-deck-block aliases=["heavy-equipment", "business", "technology"] />
+    <global-section-list-deck-block aliases=["equipment", "business", "technology"] />
   </@section>
 
   <@section|{ aliases }|>
@@ -26,7 +26,11 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
-    <global-partners-in-business-block alias="big-iron-dealer" default-description="Lorem ipsum dolor sit amet" />
+    <global-partners-in-business-block alias="big-iron-dealer" default-description="What’s impacting today’s dealerships" />
+  </@section>
+
+  <@section>
+    <global-hero-card-block query-params={ includeContentTypes: ["Video"] } alias="videos" />
   </@section>
 
   <@section>
@@ -54,11 +58,15 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
-    <global-gear-block alias="products" default-description="Lorem ipsum dolor sit amet" />
+    <global-gear-block alias="gear" default-description="Cool stuff for contractors" />
   </@section>
 
   <@section>
-    <global-reader-rigs-block alias="better-roads" default-description="Lorem ipsum dolor sit amet" />
+    <global-reader-rigs-block alias="vintage-equipment" default-description="Antique equipment finds" />
+  </@section>
+
+  <@section>
+    <global-reader-rigs-block alias="better-roads" default-description="Roadbuilding in focus" />
   </@section>
 
   <@section>

@@ -1,16 +1,18 @@
 const topics = {
   primary: [
-    { href: '/heavy-equipment', label: 'Heavy Equipment' },
+    { href: '/equipment', label: 'Equipment' },
     { href: '/better-roads', label: 'Better Roads' },
     { href: '/big-iron-dealer', label: 'Big Iron Dealer' },
     { href: '/business', label: 'Business' },
     { href: '/technology', label: 'Technology' },
     { href: '/workforce', label: 'Workforce' },
-    { href: '/safety', label: 'Safety' },
   ],
   expanded: [
   ],
   secondary: [
+    { href: '/safety', label: 'Safety' },
+    { href: '/safety-watch', label: 'Safety Watch' },
+    { href: '/white-papers', label: 'White Papers' },
   ],
 };
 

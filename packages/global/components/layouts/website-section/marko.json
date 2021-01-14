@@ -11,6 +11,7 @@
   "<global-website-section-feed-layout>": {
     "template": "./feed.marko",
     "@sections <section>[]": {},
+    "<before-name>": {},
     "<after-name>": {},
     "@id": "number",
     "@alias": "string",

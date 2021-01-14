@@ -1,0 +1,13 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const { context } = input;
+$ const { req } = out.global;
+$ const { identityX } = req;
+$ const fields = identityX.config.getRequiredServerFields();
+$ const hasRequiredFields = (user = {}) => fields.every((k) => user[k]);
+
+<marko-web-identity-x-context|context|>
+  $ const user = getAsObject(context, "user");
+  $ const isComplete = hasRequiredFields(user);
+  <${input.renderBody} context=context has-required-fields=isComplete ...input />
+</marko-web-identity-x-context>

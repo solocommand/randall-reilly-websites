@@ -1,0 +1,73 @@
+$ const { id, alias, name, pageNode } = input;
+
+$ const galleries = [
+  {
+    name: "2019 Contractor of the Year",
+    images: [
+      {
+        href: "https://www.flickr.com/photos/135487872@N03/sets/72157705818793471",
+        src: "https://img.equipmentworld.com/files/base/randallreilly/all/image/2019/07/eqw.47310370321_7eca934c8e_k.png?auto=format&amp;fit=max&amp;w=1440",
+      },
+      {
+        href: "https://www.flickr.com/photos/135487872@N03/sets/72157705818900261",
+        src: "https://live.staticflickr.com/7876/47258077572_9e58518afe_k.jpg",
+      },
+      {
+        href: "https://www.flickr.com/photos/135487872@N03/sets/72157679200562938",
+        src: "https://live.staticflickr.com/7912/46395507985_9dcc32f0c3_k.jpg",
+      },
+    ],
+  },
+  {
+    name: "2018 Contractor of the Year",
+    images: [
+      {
+        href: "https://www.flickr.com/photos/135487872@N03/albums/72157666691359918",
+        src: "https://img.equipmentworld.com/files/base/randallreilly/all/image/2019/07/eqw.2018-contractor-of-the-year.png?auto=format&amp;fit=max&amp;w=1440",
+      },
+    ],
+  },
+];
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+  <@section|{ blockName }|>
+    <eqw-coty-nav alias="contractor-of-the-year" />
+
+    $ const section = {
+      name: "Photo Gallery",
+    };
+    <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
+
+    <for|gallery| of=galleries>
+      <div>
+        <h3 class="mb-3">${gallery.name}</h3>
+        <div class="row">
+          <for|image| of=gallery.images>
+            <div class="col-md-4">
+              <marko-web-img
+                link={ href: image.href }
+                src=image.src
+                attrs={ style: "width: 300px;" }
+                class="mb-3"
+              />
+            </div>
+          </for>
+        </div>
+        <p class="mb-4">Click on the images above to view the gallery.</p>
+      </div>
+    </for>
+  </@section>
+</global-website-section-default-layout>

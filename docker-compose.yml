@@ -34,16 +34,16 @@ x-env-virgon-dev: &env-virgon-dev
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10303}
 
 x-env-leonis: &env-leonis
-  GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://leonis.oembed.base.parameter1.com}
-  RSS_URI: ${RSS_URI-https://leonis.rss.base.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://leonis.sitemaps.base.parameter1.com}
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://rss.leonis.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.base.parameter1.com}
 
 x-env-virgon: &env-virgon
-  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
-  OEMBED_URI: ${OEMBED_URI-https://virgon.oembed.base.parameter1.com}
-  RSS_URI: ${RSS_URI-https://virgon.rss.base.parameter1.com}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://virgon.sitemaps.base.parameter1.com}
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.virgon.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://oembed.virgon.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://rss.virgon.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.virgon.base.parameter1.com}
 
 x-site-command: &site-cmd
   entrypoint: ["node_modules/.bin/basecms-website"]
