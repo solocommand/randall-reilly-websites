@@ -18,37 +18,7 @@ $ const getImageSrcFor = (file) => `https://${config.website("imageHost")}/files
     />
   </@section>
   <@section|{ blockName }|>
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <marko-web-img
-          src=getImageSrcFor("logo.png")
-          alt="Contractor of the Year Logo"
-        />
-      </div>
-      <div class="col-md-6">
-        <marko-web-img
-          src=getImageSrcFor("sponsor.jpg")
-          alt="Sponsored by Caterpillar"
-          class="d-block ml-md-auto"
-        />
-      </div>
-    </div>
-    <nav class="navbar navbar-expand-md px-0 bg-light rounded mb-4 font-weight-bold">
-      <ul class="navbar-nav justify-content-between w-100">
-        <li class="nav-item px-md-5 text-center">
-          <a class="nav-link" href=`/${alias}`>Home</a>
-        </li>
-        <li class="nav-item px-md-5 text-center">
-          <a class="nav-link" href=`/${alias}/nominate-a-contractor`>Application</a>
-        </li>
-        <li class="nav-item px-md-5 text-center">
-          <a class="nav-link" href=`/${alias}/photo-gallery`>Photos Of Past Events</a>
-        </li>
-        <li class="nav-item px-md-5 text-center">
-          <a class="nav-link" href=`/${alias}/success-stories`>Success Stories</a>
-        </li>
-      </ul>
-    </nav>
+    <eqw-coty-nav alias=alias />
 
     $ const content = {
       name: "Apply for Equipment World’s Contractor of the Year and enter to win a free trip to ConExpo-Con/Agg 2020!",
