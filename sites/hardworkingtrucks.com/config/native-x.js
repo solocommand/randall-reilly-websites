@@ -4,7 +4,7 @@ const config = configureNativeX();
 
 config
   .setAliasPlacements('default', [
-    { name: 'default', id: 'NOT-SET' },
+    { name: 'default', id: '6000b714140b3d000104072b' },
   ]);
 
 module.exports = config;
