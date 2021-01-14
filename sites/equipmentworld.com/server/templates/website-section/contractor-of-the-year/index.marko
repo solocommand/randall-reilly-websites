@@ -1,4 +1,7 @@
 $ const { id, alias, name, pageNode } = input;
+$ const { config } = out.global;
+
+$ const getImageSrcFor = (file) => `https://${config.website("imageHost")}/files/base/randallreilly/all/image/static/eqw-coty/${file}`;
 
 <global-website-section-default-layout
   id=id
@@ -16,6 +19,38 @@ $ const { id, alias, name, pageNode } = input;
     <global-gam-wallpaper-ad aliases=aliases position="section_page" />
   </@section>
   <@section|{ blockName }|>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <marko-web-img
+          src=getImageSrcFor("logo.png")
+          alt="Contractor of the Year Logo"
+        />
+      </div>
+      <div class="col-md-6">
+        <marko-web-img
+          src=getImageSrcFor("sponsor.jpg")
+          alt="Sponsored by Caterpillar"
+          class="d-block ml-md-auto"
+        />
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-md px-0 bg-light rounded mb-4 font-weight-bold">
+      <ul class="navbar-nav justify-content-between w-100">
+        <li class="nav-item px-md-5 text-center">
+          <a class="nav-link" href=`/${alias}`>Home</a>
+        </li>
+        <li class="nav-item px-md-5 text-center">
+          <a class="nav-link" href=`/${alias}/nominate-a-contractor`>Application</a>
+        </li>
+        <li class="nav-item px-md-5 text-center">
+          <a class="nav-link" href=`/${alias}/photo-gallery`>Photos Of Past Events</a>
+        </li>
+        <li class="nav-item px-md-5 text-center">
+          <a class="nav-link" href=`/${alias}/success-stories`>Success Stories</a>
+        </li>
+      </ul>
+    </nav>
+
     $ const content = {
       name: "Apply for Equipment World’s Contractor of the Year and enter to win a free trip to ConExpo-Con/Agg 2020!",
     };
@@ -24,6 +59,14 @@ $ const { id, alias, name, pageNode } = input;
   <@section>
     <default-theme-page-contents|{ blockName }|>
       <marko-web-content-body block-name=blockName obj={ body: '__' }>
+        <p>
+          <span data-embed-type="image" data-embed-align="left">
+            <marko-web-img
+              src=getImageSrcFor("issue-cover.webp")
+              alt="2019 Contractor of the Year Issue Cover"
+            />
+          </span>
+        </p>
         <p>The <em>Equipment World</em> Contractor of the Year contest recognizes contractors who have annual revenues of between $3 million and $15 million and exemplify the highest standards of construction professionals: business acumen, equipment management expertise, attention to safety and community involvement. Contractors who meet these qualifications are invited to enter. Contractors can also be nominated by others in the construction industry.</p>
         <p>An applicant is required to complete this form in its entirety. Co-owners should submit one application, listing all owners.</p>
         <h4>All entries must be received by the deadline of Oct. 4, 2019.</h4>
