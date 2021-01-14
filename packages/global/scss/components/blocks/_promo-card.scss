@@ -33,7 +33,7 @@
       &__text--teaser {
         margin-top: 8px;
         margin-bottom: 0;
-        @include skin-typography($style: "small-body-text", $link-style: "primary");
+        @include skin-typography($style: "small-body-text", $link-style: "primary", $max-lines: 10);
       }
     }
   }

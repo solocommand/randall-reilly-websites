@@ -1,11 +1,11 @@
-<!-- import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value"; -->
+$ const { config } = out.global;
 
 $ const node = {
   type: "promotion",
   shortName: "Equipment World Contractor of the Year",
   teaser: "The Contractor of the Year contest recognizes contractors who have annual revenues of between $3 million and $15 million and exemplify the highest standards of construction professionals.",
   siteContext: {
-    path: "contractor-of-the-year",
+    path: "/contractor-of-the-year",
   },
 };
 
@@ -17,8 +17,8 @@ $ const imagePath = "files/base/randallreilly/all/image/static/eqw-coty/eqw-coty
     <marko-web-img
       class=`${blockName}__logo`
       link={ href: node.siteContext.path }
-      src=`https://img.equipmentworld.com/${imagePath}?auto=format,compress&h=48`
-      srcset=`https://img.equipmentworld.com/${imagePath}?auto=format,compress&h=96&dpr=2 2x`
+      src=`https://${config.website("imageHost")}/${imagePath}?auto=format,compress&h=48`
+      srcset=`https://${config.website("imageHost")}/${imagePath}?auto=format,compress&h=96&dpr=2 2x`
       alt="Contractor of the Year Logo"
     />
   </marko-web-element>
