@@ -20,6 +20,11 @@
       margin-left: $margin;
     }
 
+    @include media-breakpoint-down(md) {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
+
     #{ $self } {
       &__wrapper {
         padding-bottom: $container-bottom-padding;
@@ -44,6 +49,11 @@
       margin-right: $margin;
       margin-left: $margin;
     }
+
+    @include media-breakpoint-down(md) {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
   }
 
   &--inline-content {
@@ -58,6 +68,11 @@
       $margin: calc(((100vw - #{$skin-content-body-max-width}) / 2) * -1);
       margin-right: $margin;
       margin-left: $margin;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-right: -16px;
+      margin-left: -16px;
     }
   }
 
