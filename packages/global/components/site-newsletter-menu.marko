@@ -3,10 +3,10 @@ import { get } from "@parameter1/base-cms-object-path";
 import detectNewsletterState from "../utils/detect-newsletter-state";
 
 $ const blockName = "site-newsletter-menu";
-$ const { site, req, res } = out.global;
+$ const { site, req, res, config } = out.global;
 $ const pushdown = site.getAsObject("newsletterPushdown");
-$ const { name, action, description } = pushdown;
-$ const imageSrc = pushdown.imageSrc || "https://p1-cms-assets.imgix.net/files/base/randallreilly/all/image/static/iphone-x-mockup-noshadow-2x.png"
+$ const { name, action, description, imagePath } = pushdown;
+$ const imageSrc = imagePath ? `https://${config.website("imageHost")}/files/base/randallreilly/all/image/${imagePath}` : null;
 
 $ const { hasCookie, fromEmail } = detectNewsletterState({ req, res });
 $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
@@ -16,14 +16,16 @@ $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
     <marko-web-element block-name=blockName name="container">
       <div class="row">
         <div class=`d-none d-md-flex col-md-5 col-lg-4 ${blockName}__image-wrapper`>
-          $ const src = buildImgixUrl(imageSrc, { w: 280, auto: "format" });
-          $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
-          <marko-web-img
-            src=src
-            srcset=srcset
-            alt=name
-            class=`${blockName}__image`
-          />
+          <if(imageSrc)>
+            $ const src = buildImgixUrl(imageSrc, { w: 280, auto: "format,compress&q=70" });
+            $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+            <marko-web-img
+              src=src
+              srcset=srcset
+              alt=name
+              class=`${blockName}__image`
+            />
+          </if>
         </div>
         <div class=`col-12 col-md-6 col-lg-5 ${blockName}__form-wrapper`>
           <marko-web-element block-name=blockName name="name">
