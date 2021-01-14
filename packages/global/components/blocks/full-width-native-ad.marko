@@ -1,4 +1,4 @@
-import { getAsObject } from "@parameter1/base-cms-object-path";
+import { get } from "@parameter1/base-cms-object-path";
 
 $ const blockName = "full-width-native-ad";
 
@@ -7,12 +7,11 @@ $ const blockName = "full-width-native-ad";
   when=true
 >
   <if(nxNode)>
-    $ const primaryImage = getAsObject(nxNode, "primaryImage");
     <marko-web-block name=blockName>
       <global-section-feed-content-node
         modifiers=["full-width-native-ad"]
         node=nxNode
-        sponsored-by=nxNode.company.name
+        sponsored-by=get(nxNode, "company.name")
         with-dates=false
       />
     </marko-web-block>
