@@ -73,7 +73,7 @@ services:
     working_dir: /root/sites/equipmentworld.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9801
       LIVERELOAD_PORT: 19801
@@ -121,7 +121,7 @@ services:
     working_dir: /root/sites/ccjdigital.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9804
       LIVERELOAD_PORT: 19804
