@@ -8,6 +8,7 @@ const section = require('../templates/website-section');
 const cotyIndex = require('../templates/website-section/contractor-of-the-year');
 const cotyNominate = require('../templates/website-section/contractor-of-the-year/nominate-a-contractor');
 const cotyGallery = require('../templates/website-section/contractor-of-the-year/photo-gallery');
+const cotyStories = require('../templates/website-section/contractor-of-the-year/success-stories');
 
 const coty = [
   { alias: 'contractor-of-the-year', template: cotyIndex },
@@ -23,7 +24,7 @@ const coty = [
     aliasResolver: () => 'contractor-of-the-year',
     redirectOnPathMismatch: false,
   },
-  { alias: 'contractor-of-the-year/success-stories', template: section },
+  { alias: 'contractor-of-the-year/success-stories', template: cotyStories },
 ];
 
 module.exports = (app) => {
