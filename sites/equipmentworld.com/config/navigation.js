@@ -10,7 +10,7 @@ const topics = {
   expanded: [
   ],
   secondary: [
-    { href: '/safety', label: 'Safety' },
+    { href: '/workforce/safety', label: 'Safety' },
     { href: '/safety-watch', label: 'Safety Watch' },
     { href: '/white-papers', label: 'White Papers' },
   ],
@@ -19,7 +19,7 @@ const topics = {
 const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: '/newsletters', label: 'Newsletters' },
+  { href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=eqw_subscriptions', label: 'Newsletters', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -29,7 +29,7 @@ const mobileMenu = {
   ],
   secondary: [
     ...topics.secondary,
-    { href: '/newsletters', label: 'Newsletters' },
+    { href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=eqw_subscriptions', label: 'Newsletters', target: '_blank' },
   ],
 };
 

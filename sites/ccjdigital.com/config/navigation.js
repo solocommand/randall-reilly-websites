@@ -24,7 +24,7 @@ const topics = {
 const utilities = [
   { href: '/page/advertise', label: 'Advertise' },
   { href: '/page/contact-us', label: 'Contact Us' },
-  { href: '/newsletters', label: 'Newsletters' },
+  { href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions', label: 'Newsletters', target: '_blank' },
 ];
 
 const mobileMenu = {
@@ -34,7 +34,7 @@ const mobileMenu = {
   ],
   secondary: [
     ...topics.secondary,
-    { href: '/newsletters', label: 'Newsletters' },
+    { href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions', label: 'Newsletters', target: '_blank' },
   ],
 };
 
