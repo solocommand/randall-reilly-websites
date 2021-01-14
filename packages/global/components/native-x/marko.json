@@ -1,5 +1,5 @@
 {
-  "<global-native-x-comment-stream>": {
-    "template": "./comment-stream.marko"
+  "<global-native-x-render>": {
+    "template": "./render.marko"
   }
 }

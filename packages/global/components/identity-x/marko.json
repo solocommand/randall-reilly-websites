@@ -1,0 +1,5 @@
+{
+  "<global-identity-x-comment-stream>": {
+    "template": "./comment-stream.marko"
+  }
+}
