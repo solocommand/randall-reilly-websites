@@ -1,26 +1,20 @@
-.full-width-native-x {
+.full-width-native-ad {
   height: 100%;
   padding: 24px;
   background-color: $gray-100;
   border-radius: 4px;
-  .node-list {
-    &__nodes {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  }
 }
 
 .node {
   $self: &;
 
-  &--full-width-native-x {
+  &--full-width-native-ad {
     background-color: $gray-100;
 
-  .sponsored-content-link-url {
-    color: $primary;
-    @include skin-typography($style: "sponsored-by");
-  }
+    .sponsored-content-link-url {
+      color: $primary;
+      @include skin-typography($style: "sponsored-by");
+    }
 
     #{ $self } {
       &__title {

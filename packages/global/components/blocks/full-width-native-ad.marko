@@ -1,0 +1,58 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const blockName = "full-width-native-ad";
+
+<global-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
+  name="default"
+  when=true
+>
+  <if(nxNode)>
+    $ const primaryImage = getAsObject(nxNode, "primaryImage");
+    <marko-web-block name=blockName>
+      <marko-web-node
+        type=nxNode.type
+        image-position="left"
+        card=false
+        flush=true
+        full-height=false
+        attrs=containerAttrs
+        modifiers=[blockName]
+      >
+        <@image
+          width=250
+          align="top"
+          use-placeholder=false
+          fluid=false
+          ar="3:2"
+          src=primaryImage.src
+          alt=primaryImage.alt
+          is-logo=primaryImage.isLogo
+          link=nxNode.siteContext.path
+        />
+        <@body>
+          <@header attrs={}>
+            <@left|{ blockName }|>
+              <marko-web-link
+                class="sponsored-content-link-url"
+                href=nxNode.siteContext.path
+                title=nxNode.title
+                target="_blank"
+              >
+                Sponsored By ${nxNode.company.name}
+              </marko-web-link>
+            </@left>
+          </@header>
+          <@title tag="h5" ...input.title>
+            <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
+          </@title>
+          <@text
+            modifiers=["teaser"]
+            show=(Boolean(nxNode.teaser))
+          >
+            <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
+          </@text>
+        </@body>
+      </marko-web-node>
+    </marko-web-block>
+  </if>
+</global-native-x-render>
