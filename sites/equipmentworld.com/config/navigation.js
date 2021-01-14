@@ -10,7 +10,7 @@ const topics = {
   expanded: [
   ],
   secondary: [
-    { href: '/safety', label: 'Safety' },
+    { href: '/workforce/safety', label: 'Safety' },
     { href: '/safety-watch', label: 'Safety Watch' },
     { href: '/white-papers', label: 'White Papers' },
   ],
