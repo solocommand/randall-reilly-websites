@@ -9,7 +9,7 @@ $ const blockName = "full-width-native-ad";
   <if(nxNode)>
     <marko-web-block name=blockName>
       <global-section-feed-content-node
-        modifiers=["full-width-native-ad"]
+        modifiers=[blockName]
         node=nxNode
         sponsored-by=get(nxNode, "company.name")
         with-dates=false
