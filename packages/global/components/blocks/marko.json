@@ -6,6 +6,9 @@
   "<global-ccj-top-250-block>": {
     "template": "./ccj-top-250.marko"
   },
+  "<global-full-width-native-ad-block>": {
+    "template": "./full-width-native-ad.marko"
+  },
   "<global-gear-block>": {
     "template": "./gear.marko"
   },

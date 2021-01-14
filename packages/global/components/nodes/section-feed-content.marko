@@ -20,12 +20,17 @@ $ const imageOptions = {
 
 $ const blockName = "section-feed-content-node";
 
-<marko-web-block name=blockName>
+<marko-web-block name=blockName modifiers=input.modifiers>
   <marko-web-element block-name=blockName name="contents">
     <marko-web-element block-name=blockName name="body">
-      <if(withSection)>
-        <section-sponsor block-name=blockName section=primarySection labels=content.labels />
+      <if(input.sponsoredBy)>
+        <marko-web-element block-name=blockName name="sponsored-by">
+          Sponsored By ${input.sponsoredBy}
+        </marko-web-element>
       </if>
+      <else-if(withSection)>
+        <section-sponsor block-name=blockName section=primarySection labels=content.labels />
+      </else-if>
       <marko-web-content-short-name
         tag="h5"
         block-name=blockName
