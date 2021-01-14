@@ -1,0 +1,54 @@
+<!-- import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value"; -->
+
+$ const node = {
+  type: "promotion",
+  shortName: "Equipment World Contractor of the Year",
+  teaser: "The Contractor of the Year contest recognizes contractors who have annual revenues of between $3 million and $15 million and exemplify the highest standards of construction professionals.",
+  siteContext: {
+    path: "contractor-of-the-year",
+  },
+};
+
+$ const blockName = "promo-card";
+$ const imagePath = "files/base/randallreilly/all/image/static/eqw-coty/eqw-coty-logo.svg";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="header">
+    <marko-web-img
+      class=`${blockName}__logo`
+      link={ href: node.siteContext.path }
+      src=`https://img.equipmentworld.com/${imagePath}?auto=format,compress&h=48`
+      srcset=`https://img.equipmentworld.com/${imagePath}?auto=format,compress&h=96&dpr=2 2x`
+      alt="Contractor of the Year Logo"
+    />
+  </marko-web-element>
+
+  <marko-web-node
+    type=`${node.type}-content`
+    card=true
+    flush=true
+    full-height=false
+    modifiers=[blockName]
+  >
+    <@body>
+      <@title tag="h5">
+        <marko-web-content-short-name tag=null obj=node link=true />
+      </@title>
+      <@text modifiers=["teaser"] show=(Boolean(node.teaser))>
+        <marko-web-content-teaser tag=null obj=node link=true />
+      </@text>
+      <@footer modifiers=["buttons"]>
+        <@left>
+          <marko-web-link
+            class="btn btn-primary"
+            href=node.siteContext.path
+            title="Learn More"
+            target="_blank"
+          >
+            Learn More
+          </marko-web-link>
+        </@left>
+      </@footer>
+    </@body>
+  </marko-web-node>
+</marko-web-block>
