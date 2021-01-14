@@ -57,6 +57,7 @@ module.exports = {
     description: 'Get construction news and insights, plus project tips and equipment reviews — delivered straight to your inbox.',
   },
   newsletterPushdown: {
+    imagePath: 'static/newsletter-pushdown/eqw-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'eqw_subscriptions' },

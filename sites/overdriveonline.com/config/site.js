@@ -63,6 +63,7 @@ module.exports = {
     description: 'Get owner-operator news and insights, plus diesel prices and gear reviews — delivered straight to your inbox.',
   },
   newsletterPushdown: {
+    imagePath: 'static/iphone-x-mockup-noshadow-2x.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'ov_subscriptions' },
