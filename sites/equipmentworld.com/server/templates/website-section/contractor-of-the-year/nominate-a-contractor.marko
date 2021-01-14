@@ -1,0 +1,23 @@
+$ const { id, alias, name, pageNode } = input;
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+  <@section|{ blockName }|>
+    $ const section = {
+      name: "Nominations currently closed.",
+    };
+    <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
+  </@section>
+</global-website-section-default-layout>
