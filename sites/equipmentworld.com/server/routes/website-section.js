@@ -5,7 +5,26 @@ const deathByTrench = require('../templates/website-section/death-by-trench');
 const safetyWatch = require('../templates/website-section/safety-watch');
 const section = require('../templates/website-section');
 
+const cotyIndex = require('../templates/website-section/contractor-of-the-year');
+const cotyNominate = require('../templates/website-section/contractor-of-the-year/nominate-a-contractor');
+const cotyGallery = require('../templates/website-section/contractor-of-the-year/photo-gallery');
+const cotyStories = require('../templates/website-section/contractor-of-the-year/success-stories');
+
+const coty = [
+  { alias: 'contractor-of-the-year', template: cotyIndex },
+  { alias: 'contractor-of-the-year/nominate-a-contractor', template: cotyNominate },
+  { alias: 'contractor-of-the-year/photo-gallery', template: cotyGallery },
+  { alias: 'contractor-of-the-year/success-stories', template: cotyStories },
+];
+
 module.exports = (app) => {
+  coty.forEach(({ alias, template }) => {
+    app.get(`/:alias(${alias})`, withWebsiteSection({
+      template,
+      queryFragment,
+    }));
+  });
+
   app.get('/:alias(death-by-trench)', withWebsiteSection({
     template: deathByTrench,
     queryFragment,
