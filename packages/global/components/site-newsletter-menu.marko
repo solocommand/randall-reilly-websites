@@ -1,14 +1,13 @@
 import { buildImgixUrl } from "@parameter1/base-cms-image";
-import { get } from "@parameter1/base-cms-object-path";
-import detectNewsletterState from "../utils/detect-newsletter-state";
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const blockName = "site-newsletter-menu";
-$ const { site, req, res, config } = out.global;
+$ const { site, config } = out.global;
 $ const pushdown = site.getAsObject("newsletterPushdown");
 $ const { name, action, description, imagePath } = pushdown;
 $ const imageSrc = imagePath ? `https://${config.website("imageHost")}/files/base/randallreilly/all/image/${imagePath}` : null;
 
-$ const { hasCookie, fromEmail } = detectNewsletterState({ req, res });
+$ const { hasCookie, fromEmail } = getAsObject(out, "global.res.locals.newsletterState");
 $ const modifiers = (!hasCookie && !fromEmail) ? ["open"] : [];
 
 <if(name && action)>

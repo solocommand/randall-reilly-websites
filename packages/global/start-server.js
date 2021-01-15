@@ -10,6 +10,7 @@ const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
+const newsletterState = require('./middleware/newsletter-state');
 const algolia = require('./middleware/algolia');
 
 const { env } = process;
@@ -51,6 +52,9 @@ module.exports = (options = {}) => {
 
       // Use paginated middleware
       app.use(paginated());
+
+      // Use newsletterState middleware
+      app.use(newsletterState());
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
