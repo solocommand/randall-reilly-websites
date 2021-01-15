@@ -5,7 +5,7 @@ const topics = {
     { href: '/technology', label: 'Technology' },
     { href: '/workforce', label: 'Workforce' },
     { href: '/products', label: 'Products' },
-    { href: '/opinion', label: 'Opinion' },
+    { href: '/perspectives', label: 'Perspectives' },
     { href: '/ccj-top-250', label: 'CCJ Top 250' },
   ],
   expanded: [
