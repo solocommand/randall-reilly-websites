@@ -92,71 +92,28 @@ $ const shouldInjectAds = ["article"].includes(type);
         $ const bodyId = `content-body-${content.id}`;
 
         <if(shouldInjectAds)>
+          $ const desktopCounts = [1000, 3000, 5000, 7000, 9000, 11000, 13000, 15000, 17000];
+          $ const mobileCounts = [350, 1850, 3350, 4850, 6350, 7850, 9350, 10850, 12350, 13850, 15350, 16850];
           <global-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
+            <for|char| of=desktopCounts>
+              <!-- desktop/tablet only -->
+              <@inject
+                at=char
+                name="inline-content-desktop"
+                aliases=aliases
+                modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+              />
+            </for>
 
-            <!-- desktop/tablet only -->
-            <@inject
-              at=1000
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- desktop/tablet only -->
-            <@inject
-              at=3000
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- desktop/tablet only -->
-            <@inject
-              at=5000
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- desktop/tablet only -->
-            <@inject
-              at=7000
-              name="inline-content-desktop"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=350
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=1850
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=3350
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=4850
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
-            <!-- mobile only -->
-            <@inject
-              at=6350
-              name="inline-content-mobile"
-              aliases=aliases
-              modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-            />
+            <for|char| of=mobileCounts>
+              <!-- mobile only -->
+              <@inject
+                at=char
+                name="inline-content-mobile"
+                aliases=aliases
+                modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+              />
+            </for>
           </global-gam-inject-ads>
         </if>
 
