@@ -45,7 +45,7 @@ module.exports = (app) => {
     const days = parseInt(req.query.days || 0, 10);
     const timestamp = Date.now() - (days * 1000 * 60 * 60 * 24);
     const after = new Date(timestamp);
-    const limit = parseInt(req.query.limit || 10, 10);
+    const limit = parseInt(Math.min(req.query.limit, 100) || 10, 10);
     const skip = parseInt(req.query.skip || 0, 10);
     const input = {
       includeContentTypes: type.split('|').filter(v => v),
