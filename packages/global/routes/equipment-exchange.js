@@ -5,7 +5,7 @@ const gql = require('graphql-tag');
 module.exports = (app) => {
   app.get('/equipment-exchange', asyncRoute(async (req, res) => {
     const EQUIPMENT_EXCHANGE = gql`
-      query EquipmentExchange($input: WebsiteScheduledContentQueryInput = {}, $siteId: ObjectID!) {
+      query EquipmentExchange($input: WebsiteScheduledContentQueryInput = {}) {
         websiteScheduledContent(input: $input) {
           totalCount
           edges {
