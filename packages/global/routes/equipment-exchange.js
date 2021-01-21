@@ -6,10 +6,6 @@ module.exports = (app) => {
   app.get('/equipment-exchange', asyncRoute(async (req, res) => {
     const EQUIPMENT_EXCHANGE = gql`
       query EquipmentExchange($input: WebsiteScheduledContentQueryInput = {}, $siteId: ObjectID!) {
-        websiteSite(input: { id: $siteId }) {
-          id
-          shortName
-        }
         websiteScheduledContent(input: $input) {
           totalCount
           edges {
@@ -60,7 +56,6 @@ module.exports = (app) => {
     const siteId = req.app.locals.config.website('id');
     const variables = { input, siteId };
     const { data } = await req.apollo.query({ query: EQUIPMENT_EXCHANGE, variables });
-    // const { websiteSite: site } = data;
     const formatted = getAsArray(data, 'websiteScheduledContent.edges').map((edge) => {
       const { node } = edge;
       const content = {
