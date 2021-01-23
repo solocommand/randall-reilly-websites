@@ -24,6 +24,9 @@
   "<global-sponsored-section-logo>": {
     "template": "./sponsored-section-logo.marko"
   },
+  "<global-sponsored-section-name-logo>": {
+    "template": "./sponsored-section-name-logo.marko"
+  },
   "<global-document>": {
     "template": "./document.marko",
     "<head>": {},
