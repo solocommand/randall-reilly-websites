@@ -36,11 +36,15 @@ $ const perPage = 10;
   <@section|{ blockName, section, aliases }|>
     <div class="row">
       <div class="col-lg-8">
-        <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
-
         <if(alias === 'gear')>
-          <global-sponsored-label-logo logo-label="Sponsored by RoadPro" prefix="Presented By" modifiers=["section-page"] />
+          <div class="row">
+            <global-sponsored-section-name-logo section=section modifiers=["section-page"] class="col-lg-5" />
+            <global-sponsored-label-logo logo-label="Sponsored by RoadPro" prefix="Presented By" modifiers=["section-page"] class="col-lg-7" />
+          </div>
         </if>
+        <else>
+          <marko-web-website-section-name tag="h1" block-name=blockName obj=section />
+        </else>
 
         <global-latest-products-feed-block alias=alias>
           <@query-params limit=perPage skip=p.skip({ perPage }) />

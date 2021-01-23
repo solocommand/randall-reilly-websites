@@ -11,6 +11,8 @@
   &--section-page {
     margin-bottom: 30px;
     @media (max-width: 970px) {
+      justify-content: center;
+      margin-top: 0;
       margin-bottom: 24px;
     }
   }
