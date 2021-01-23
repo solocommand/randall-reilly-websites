@@ -3,7 +3,6 @@
 
 User-agent: *
 Disallow: /__load-more
-Disallow: /search
 
 Sitemap: https://www.ccjdigital.com/sitemap.xml
 Sitemap: https://www.ccjdigital.com/sitemap-google-news.xml

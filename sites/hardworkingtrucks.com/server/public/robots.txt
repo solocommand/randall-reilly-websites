@@ -4,7 +4,6 @@
 User-agent: *
 Disallow: *
 Disallow: /__load-more
-Disallow: /search
 
 Sitemap: https://www.hardworkingtrucks.com/sitemap.xml
 Sitemap: https://www.hardworkingtrucks.com/sitemap-google-news.xml
