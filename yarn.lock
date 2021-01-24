@@ -2023,14 +2023,14 @@
     marko "~4.20.0"
     yargs "^14.2.3"
 
-"@parameter1/base-cms-marko-core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-core/-/base-cms-marko-core-2.0.0.tgz#9a3095790ce0da8425f376f34af49784003633f6"
-  integrity sha512-lSRpu3+0ZYdx88OpKYmUm19ylKTbB9i9d8kSkf8nA0aNoD3J2lJM2Wg/uXv1HgG5iptDpcXw+wuEIowLY0YOrQ==
+"@parameter1/base-cms-marko-core@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-core/-/base-cms-marko-core-2.1.0.tgz#dd4d640706db6a5c48a9a42e0780227732b5fc26"
+  integrity sha512-rAQZ4WhwvpXQwSCv1qDKaZPCGoWqnLDCd2xrQ0VoGMaHodhzR1JVef76uO33FIJp75qg2iDuWtIdmnsgqUiMhw==
   dependencies:
     "@parameter1/base-cms-object-path" "^2.0.0"
     "@parameter1/base-cms-utils" "^2.0.0"
-    "@parameter1/base-cms-web-common" "^2.0.0"
+    "@parameter1/base-cms-web-common" "^2.1.0"
     marko "~4.20.0"
     moment "^2.29.1"
     moment-timezone "^0.5.32"
@@ -2105,10 +2105,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.11.0"
 
-"@parameter1/base-cms-marko-web@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.0.0.tgz#fe79b345a31482d4d972f770296efc6fed519d3b"
-  integrity sha512-ygUIQzhabWSO1wGVCOQ2Clyq86kubVd2L2jgXcSHbzb0/0lvImr4aNSyLtYNzzfEBUbndqQgkwnyXrV44rVUkw==
+"@parameter1/base-cms-marko-web@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.1.1.tgz#475c502695f8d61a644f574828c49e87618628cb"
+  integrity sha512-D2pdH4+FHoBkYMO6N/RALdorXo3hm9i7cLEXh8WqVqXLRKiRLrmuqM4pbDKfnFfsPRYZtN3LvOSb9Sdy6mhpMg==
   dependencies:
     "@godaddy/terminus" "^4.5.0"
     "@parameter1/base-cms-embedded-media" "^2.0.0"
@@ -2119,7 +2119,7 @@
     "@parameter1/base-cms-object-path" "^2.0.0"
     "@parameter1/base-cms-tenant-context" "^2.0.0"
     "@parameter1/base-cms-utils" "^2.0.0"
-    "@parameter1/base-cms-web-common" "^2.0.0"
+    "@parameter1/base-cms-web-common" "^2.1.0"
     apollo-cache-inmemory "^1.6.6"
     apollo-client "^2.6.10"
     apollo-link "^1.2.14"
@@ -2155,10 +2155,10 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-utils/-/base-cms-utils-2.0.0.tgz#0aa9f8fd9cc52d30c2527e1235b69f23a6ff689b"
   integrity sha512-RR024d8S9P9Idz7Fi6gOUGcxc2FuPSCN/iqoxjx4IGM+YaFCmaHA0fT5k8mvCRh2ul2F9jblU0fVdWjTI78XZw==
 
-"@parameter1/base-cms-web-cli@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.0.0.tgz#f05a112217255dfb1516fefe2740ec64705b2ec5"
-  integrity sha512-Htu/j1baoGXuWF9e78bmgozW+viKPgv029fKqCxsA+p55VkH0mgWCGZxCnItZSbof22fEFESgWS8sWMP5mLp9A==
+"@parameter1/base-cms-web-cli@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.1.1.tgz#3876b9bfd833a52d30b4282fcf93fb6c45176fc4"
+  integrity sha512-QL+A3F10R9Y1uCjCg/IDV8uCdjbRtDGSBL74G+51wNCio8jhNdR6MosvCyVa7CD9C6i9pNSWw43uDj2pUdT3rQ==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-runtime" "^7.12.10"
@@ -2167,7 +2167,7 @@
     "@babel/runtime-corejs2" "^7.12.5"
     "@parameter1/base-cms-cli-utils" "^2.0.0"
     "@parameter1/base-cms-express-apollo" "^2.0.0"
-    "@parameter1/base-cms-marko-web" "^2.0.0"
+    "@parameter1/base-cms-marko-web" "^2.1.1"
     autoprefixer "^9.8.6"
     babel-eslint "^10.1.0"
     babel-loader "^8.2.2"
@@ -2215,10 +2215,10 @@
     webpack-stream "^5.2.1"
     yargs "^14.2.3"
 
-"@parameter1/base-cms-web-common@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-common/-/base-cms-web-common-2.0.0.tgz#adda0de4f17ba50b6e3cfcda44ebb99b250fb1c8"
-  integrity sha512-I3tgT/19voFmatbyGDFyLH3Ypn+iWdIDeRRXIxjLw4105mCPjDSrQygKzY8beovCVm1xGux1EeCcVFY3tYoROg==
+"@parameter1/base-cms-web-common@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-common/-/base-cms-web-common-2.1.0.tgz#ef84df99c322ec57301ce8286e50f37df1f7c41c"
+  integrity sha512-w1LvC3q31b4MxA8tXKQjY6YtOpcXPgU9QgxqeOMdpMvMc/3ojW5mnlqpFnYkn7cMcio8/RH3IBkHGXyarI6hjg==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.0.0"
