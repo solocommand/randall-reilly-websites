@@ -1,12 +1,12 @@
 import { BEM, warn } from "@parameter1/base-cms-utils";
-import { getAsObject } from "@parameter1/base-cms-object-path";
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import generateId from "@parameter1/base-cms-marko-web-gam/utils/generate-id";
 import buildSlots from "@parameter1/base-cms-marko-web-gam/utils/build-slots";
 import slotStyle from "@parameter1/base-cms-marko-web-gam/utils/slot-size-style";
 import incrementPos from "../utils/increment-pos";
 
-$ const { res } = out.global;
+$ const { res, site } = out.global;
 $ const { isArray } = Array;
 $ const {
   path,
@@ -86,7 +86,9 @@ $ if (!requestOnMediaMatch) calls.push(`googletag.display('${id}');`);
       </if>
 
       $ const script = `googletag.cmd.push(function() { ${calls.join(" ")} });`;
-      <script-loader script=script query-param="load-gam" type="load" />
+      $ const gamConfig = site.getAsObject('gam');
+      $ const type = (get(gamConfig, "lazyLoad.enabled")) ? "normal" : "load";
+      <script-loader script=script query-param="load-gam" type=type />
     </marko-web-gam-ad-wrapper>
   </div>
 </if>
