@@ -1,0 +1,31 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const blockName = "pib-page-card";
+$ const logoRoot = "https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps";
+$ const manualSrc = "tps-guide-cover.png?auto=format&w=120&fit=crop";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="inner-wrapper">
+    <div>
+      <marko-web-element block-name=blockName name="title">
+        Learn how to move your used trucks faster
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="description">
+        With unsold used inventory depreciating at a rate of more than 2% monthly, efficient inventory turnover is a must for dealers. Download this eBook to access proven strategies for selling used trucks faster.
+      </marko-web-element>
+      <marko-web-link
+        class=`btn btn-primary ${blockName}__download-btn`
+        href="https://register.truckpartsandservice.com/2020_used_truck_guide/"
+        title="Download"
+      >
+        Download
+      </marko-web-link>
+    </div>
+    <marko-web-img
+      class=`${blockName}__issue-cover`
+      src=`${logoRoot}/${manualSrc}`
+      srcset=[`${logoRoot}/${manualSrc}&dpr=2 2x`]
+      alt="Used Truck Guide Cover"
+    />
+  </marko-web-element>
+</marko-web-block>
