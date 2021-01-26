@@ -1,0 +1,31 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const blockName = "pib-page-card";
+$ const logoRoot = "https://img.totallandscapecare.com/files/base/randallreilly/all/image/static/tlc";
+$ const manualSrc = "tlc-attachments-cover.png?auto=format&w=120&fit=crop";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="inner-wrapper">
+    <div>
+      <marko-web-element block-name=blockName name="title">
+        The Attachments Idea Book
+      </marko-web-element>
+      <marko-web-element block-name=blockName name="description">
+        Landscapers use a variety of attachments for doing everything from snow removal to jobsite cleanup, and regardless of how often they are used, every landscaper has a favorite attachment.
+      </marko-web-element>
+      <marko-web-link
+        class=`btn btn-primary ${blockName}__download-btn`
+        href="https://register.totallandscapecare.com/tlc-attachments-guide-2020/"
+        title="Download"
+      >
+        Download
+      </marko-web-link>
+    </div>
+    <marko-web-img
+      class=`${blockName}__issue-cover`
+      src=`${logoRoot}/${manualSrc}`
+      srcset=[`${logoRoot}/${manualSrc}&dpr=2 2x`]
+      alt="Attachments Idea Book Cover"
+    />
+  </marko-web-element>
+</marko-web-block>
