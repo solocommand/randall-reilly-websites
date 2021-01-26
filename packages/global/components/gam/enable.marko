@@ -1,8 +1,8 @@
-import { getAsObject } from "@parameter1/base-cms-object-path";
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import buildTargeting from "@parameter1/base-cms-marko-web-gam/utils/build-targeting";
 import buildLazyLoad from "@parameter1/base-cms-marko-web-gam/utils/build-lazy-load";
 
-$ const { req } = out.global;
+$ const { req, site } = out.global;
 
 <!-- Create default options and merge with input -->
 $ const options = {
@@ -36,4 +36,5 @@ $ calls.push("googletag.enableServices();");
 
 <!-- Render the script tag -->
 $ const script = `googletag.cmd.push(function() { ${calls.join(" ")} });`;
-<script-loader script=script query-param="load-gam" type="load" />
+$ const type = site.get("gam.lazyLoad.enabled") ? "normal" : "load";
+<script-loader script=script query-param="load-gam" type=type />

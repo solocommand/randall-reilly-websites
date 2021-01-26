@@ -86,8 +86,7 @@ $ if (!requestOnMediaMatch) calls.push(`googletag.display('${id}');`);
       </if>
 
       $ const script = `googletag.cmd.push(function() { ${calls.join(" ")} });`;
-      $ const gamConfig = site.getAsObject('gam');
-      $ const type = (get(gamConfig, "lazyLoad.enabled")) ? "normal" : "load";
+      $ const type = site.get("gam.lazyLoad.enabled") ? "normal" : "load";
       <script-loader script=script query-param="load-gam" type=type />
     </marko-web-gam-ad-wrapper>
   </div>
