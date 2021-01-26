@@ -18,6 +18,12 @@ config
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
     { name: 'interstitial', path: 'interstitial' },
+  ])
+  .setAliasAdUnits('contractor-of-the-year', [
+    { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'coty-leaderboard' },
+    { name: 'rotation', templateName: 'GEAR', path: 'coty-rotation' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'coty-rotation' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'coty-rotation' },
   ]);
 
 const aliases = [
