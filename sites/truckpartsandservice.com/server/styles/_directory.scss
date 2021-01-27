@@ -78,3 +78,42 @@ $directory-gray: #434146;
     @include theme-toggle-button();
   }
 }
+
+.directory-category-title {
+  margin-bottom: 4px;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  line-height: 1.375;
+  color: $directory-gray;
+}
+
+.directory-companies-header {
+  margin-bottom: 3px;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  line-height: 2.2;
+  color: $directory-gray;
+}
+
+.breadcrumbs--directory {
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  line-height: 1.11;
+  text-transform: none;
+
+  .breadcrumb {
+    padding-bottom: 14px;
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: $directory-gray;
+    content: ">";
+  }
+
+  a {
+    color: $directory-gray;
+    &:hover {
+      color: $directory-gray;
+    }
+  }
+}
