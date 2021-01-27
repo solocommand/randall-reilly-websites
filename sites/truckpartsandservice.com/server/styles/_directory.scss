@@ -135,3 +135,53 @@ $directory-gray: #434146;
     }
   }
 }
+
+.directory-company-details {
+  padding: 24px;
+  padding-bottom: 18px;
+  margin-top: 7px;
+  margin-bottom: 26px;
+  color: $directory-gray;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__title {
+    margin-bottom: 9px;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    line-height: 1.38;
+  }
+
+  .page-contact-details {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+.directory-company-categories {
+  color: $directory-gray;
+
+  &__header {
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: $font-weight-medium;
+    line-height: .83;
+  }
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 14px;
+      font-size: 20px;
+      line-height: 1.2;
+      a {
+        line-height: 1.2;
+        color: $directory-gray;
+        &:hover {
+          color: $directory-gray;
+        }
+      }
+    }
+  }
+}
