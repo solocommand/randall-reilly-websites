@@ -6,10 +6,12 @@ const product = require('../templates/content/product');
 const whitepaper = require('../templates/content/whitepaper');
 const content = require('../templates/content');
 
+const companyFragment = require('../graphql/company-page-fragment');
+
 module.exports = (app) => {
   app.get('/*?company/:id(\\d{8})*', withContent({
     template: company,
-    queryFragment,
+    queryFragment: companyFragment,
   }));
 
   app.get('/*?contact/:id(\\d{8})*', withContent({

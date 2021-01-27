@@ -1,4 +1,5 @@
 import { getAsArray } from "@parameter1/base-cms-object-path";
+import getDirectorySections from "./get-directory-sections";
 
 $ const { site } = out.global;
 $ const { id, type, pageNode } = data;
@@ -27,6 +28,18 @@ $ const { id, type, pageNode } = data;
         <site-directory-breadcrumbs section=content.primarySection />
         <h2>${content.name}</h2>
         <default-theme-content-contact-details obj=content />
+
+        $ const sections = getDirectorySections(content);
+        <if(sections.length)>
+          <h3>Associated Categories</h3>
+          <ul>
+            <for|section| of=sections>
+              <li>
+                <a href=`/${section.alias}`>${section.name}</a>
+              </li>
+            </for>
+          </ul>
+        </if>
       </div>
       <div class="col-lg-4">
         <site-directory-about />
