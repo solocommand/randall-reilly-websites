@@ -117,3 +117,21 @@ $directory-gray: #434146;
     }
   }
 }
+
+.directory-company-list {
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 1.2;
+    a {
+      line-height: 1.2;
+      color: $directory-gray;
+      &:hover {
+        color: $directory-gray;
+      }
+    }
+  }
+}
