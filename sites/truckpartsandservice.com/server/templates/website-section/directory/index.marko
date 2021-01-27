@@ -1,0 +1,65 @@
+import gql from "graphql-tag";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const { id, alias, name, pageNode } = input;
+
+$ const queryFragment = gql`
+  fragment DirectoryIndexSectionFragment on WebsiteSection {
+    id
+    children(input: {
+      sort: { field: name, order: asc }
+      pagination: { limit: 100 }
+    }) {
+      edges {
+        node {
+          id
+          name
+          alias
+          children(input: {
+            sort: { field: name, order: asc }
+            pagination: { limit: 100 }
+          }) {
+            edges {
+              node {
+                id
+                name
+                alias
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<site-directory-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@left-col>
+    <marko-web-query|{ node }| name="website-section" params={ alias, queryFragment }>
+      <ul>
+        <for|{ node: child }| of=getAsArray(node, "children.edges")>
+          $ const grandchildren = getAsArray(child, "children.edges");
+          <if(grandchildren.length)>
+            <li>
+              ${child.name}
+              <ul>
+                <for|{ node: grandchild }| of=grandchildren>
+                  <li>
+                    <a href=`/${grandchild.alias}`>
+                      ${grandchild.name}
+                    </a>
+                  </li>
+                </for>
+              </ul>
+            </li>
+          </if>
+        </for>
+      </ul>
+    </marko-web-query>
+  </@left-col>
+</site-directory-layout>

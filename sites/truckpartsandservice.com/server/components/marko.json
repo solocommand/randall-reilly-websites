@@ -1,0 +1,6 @@
+{
+  "<site-directory-layout>": {
+    "template": "./directory-layout.marko",
+    "<left-col>": {}
+  }
+}
