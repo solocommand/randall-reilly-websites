@@ -1,0 +1,35 @@
+$directory-gray: #434146;
+
+.directory-title {
+  font-size: 34px;
+  font-weight: $font-weight-bold;
+  line-height: 1.29;
+  color: $directory-gray;
+  text-align: center;
+  a {
+    color: $directory-gray;
+    &:hover {
+      color: $directory-gray;
+    }
+  }
+}
+
+.directory-about {
+  padding: 22px 18px;
+  color: $gray-800;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__header {
+    margin-bottom: 7px;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    line-height: 1.29;
+    color: $directory-gray;
+  }
+
+  &__body {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
