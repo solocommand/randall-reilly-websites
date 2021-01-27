@@ -1,0 +1,37 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const { site } = out.global;
+$ const { id, type, pageNode } = data;
+
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first-sm"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <site-directory-title />
+  </@section>
+
+  <@section|{ aliases, content }|>
+    <div class="row">
+      <div class="col-lg-8">
+        <site-directory-breadcrumbs section=content.primarySection />
+        <h2>${content.name}</h2>
+        <default-theme-content-contact-details obj=content />
+      </div>
+      <div class="col-lg-4">
+        <site-directory-about />
+        <site-directory-rail-ad aliases=aliases />
+      </div>
+    </div>
+  </@section>
+</global-content-wrapper-layout>
