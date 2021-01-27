@@ -7,10 +7,6 @@ $ const sections = getAsArray(input, "sections");
 $ const alias = get(input, "primarySection.alias");
 
 <global-content-page id=id type=type>
-  <@prestitial
-    name="interstitial"
-    aliases=[alias]
-  />
   <@head>
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
