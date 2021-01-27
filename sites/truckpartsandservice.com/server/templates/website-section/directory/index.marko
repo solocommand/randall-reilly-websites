@@ -41,25 +41,41 @@ $ const queryFragment = gql`
 >
   <@left-col>
     <marko-web-query|{ node }| name="website-section" params={ alias, queryFragment }>
-      <ul>
+      $ const blockName = "directory-categories";
+      <marko-web-block tag="ul" name=blockName>
         <for|{ node: child }| of=getAsArray(node, "children.edges")>
           $ const grandchildren = getAsArray(child, "children.edges");
           <if(grandchildren.length)>
-            <li>
-              ${child.name}
-              <ul>
+            <marko-web-element tag="li" block-name=blockName name="parent">
+              <div class="d-flex justify-content-between">
+                <a href=`/${child.alias}`>
+                  ${child.name}
+                </a>
+                <marko-web-browser-component
+                  name="GlobalMenuToggleButton"
+                  props={
+                    className: "directory-categories__toggler",
+                    targets: [`.directory-categories__child-container--${child.id}`],
+                    toggleClass: "directory-categories__child-container--open",
+                    iconModifiers: ["lg"],
+                    iconName: "chevron-down",
+                    expandedIconName: "chevron-up",
+                  }
+                />
+              </div>
+              <marko-web-element tag="ul" block-name=blockName name="child-container" modifiers=[child.id]>
                 <for|{ node: grandchild }| of=grandchildren>
-                  <li>
+                  <marko-web-element tag="li" block-name=blockName name="child">
                     <a href=`/${grandchild.alias}`>
                       ${grandchild.name}
                     </a>
-                  </li>
+                  </marko-web-element>
                 </for>
-              </ul>
-            </li>
+              </marko-web-element>
+            </marko-web-element>
           </if>
         </for>
-      </ul>
+      </marko-web-block>
     </marko-web-query>
   </@left-col>
 </site-directory-layout>

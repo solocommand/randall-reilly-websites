@@ -33,3 +33,48 @@ $directory-gray: #434146;
     line-height: 1.33;
   }
 }
+
+.directory-categories {
+  padding: 0;
+  list-style: none;
+
+  &__parent {
+    padding: 24px;
+    margin-bottom: 16px;
+    line-height: 1;
+    background-color: $gray-100;
+    border-radius: 4px;
+
+    a {
+      font-size: 24px;
+      font-weight: $font-weight-medium;
+      color: $directory-gray;
+    }
+  }
+
+  &__child {
+    margin-top: 16px;
+    line-height: 1.2;
+    a {
+      font-size: 20px;
+      font-weight: $font-weight-normal;
+      line-height: 1.2;
+      color: $directory-gray;
+    }
+  }
+
+  &__child-container {
+    display: none;
+    padding: 0;
+    margin-top: 18px;
+    list-style: none;
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &__toggler {
+    @include theme-toggle-button();
+  }
+}
