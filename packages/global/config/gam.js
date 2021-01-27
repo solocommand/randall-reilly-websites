@@ -8,11 +8,21 @@ module.exports = ({
 
   config
     .setTemplate('LEADERBOARD', {
-      size: [[970, 90], [728, 90], [320, 100], [300, 250], [320, 50]],
+      size: [
+        [1060, 596], // Featured Pushdown
+        [970, 90],
+        [736, 414], // Featured Pushdown
+        [728, 90],
+        [320, 100],
+        [300, 250],
+        [320, 50],
+        [265, 149], // Featured Pushdown
+      ],
       sizeMapping: [
-        { viewport: [980, 0], size: [[970, 90], [728, 90]] },
-        { viewport: [750, 0], size: [728, 90] },
-        { viewport: [300, 0], size: [[320, 100], [300, 250], [320, 50]] },
+        { viewport: [1070, 0], size: [[1060, 596], [970, 90], [728, 90]] },
+        { viewport: [980, 0], size: [[970, 90], [736, 414], [728, 90]] },
+        { viewport: [750, 0], size: [[736, 414], [728, 90]] },
+        { viewport: [300, 0], size: [[320, 100], [300, 250], [320, 50], [265, 149]] },
       ],
     })
     .setTemplate('ROTATION', {
