@@ -1,0 +1,16 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const breadcrumbs = [...getAsArray(input, "section.hierarchy")];
+$ breadcrumbs.shift();
+
+<if(breadcrumbs.length)>
+  <nav class="breadcrumbs breadcrumbs--directory" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <for|item| of=breadcrumbs>
+        <li class="breadcrumb-item">
+          <a href=`/${item.alias}`>${item.name}</a>
+        </li>
+      </for>
+    </ol>
+  </nav>
+</if>

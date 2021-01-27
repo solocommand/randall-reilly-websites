@@ -18,20 +18,7 @@ $ const queryFragment = gql`
   page-node=pageNode
 >
   <@left-col|{ section }|>
-    $ const breadcrumbs = [...section.hierarchy];
-    $ breadcrumbs.shift();
-
-    <if(breadcrumbs.length)>
-      <nav class="breadcrumbs" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <for|item| of=breadcrumbs>
-            <li class="breadcrumb-item">
-              <a href=`/${item.alias}`>${item.name}</a>
-            </li>
-          </for>
-        </ol>
-      </nav>
-    </if>
+    <site-directory-breadcrumbs section=section />
 
     <h2>${section.name}</h2>
     <p><strong>Companies</strong></p>

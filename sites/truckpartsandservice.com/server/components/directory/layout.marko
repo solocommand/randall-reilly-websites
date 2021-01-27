@@ -14,10 +14,8 @@
     <global-gam-wallpaper-ad aliases=aliases position="section_page" />
   </@section>
 
-  <@section|{ blockName, section }|>
-    <marko-web-website-section-name tag="h1" block-name=blockName obj=section>
-      Aftermarket Buyers’ Guide
-    </marko-web-website-section-name>
+  <@section>
+    <site-directory-title />
   </@section>
 
   <@section|props|>
@@ -27,18 +25,8 @@
         <${input.leftCol} ...props />
       </div>
       <div class="col-lg-4">
-        <div class="mb-block">
-          <div>About</div>
-          <div>The Trucks, Parts, Service Aftermarket Buyers' Guide & Directory offers a comprehensive, one-stop resource for finding components and suppliers. Simply select the product category to the right for a list of companies which manufacture parts in this area. Select the company for detailed contact information.</div>
-        </div>
-
-        <global-gam-define-display-ad
-          name="rotation-1"
-          position="section_page"
-          aliases=aliases
-          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-          class="mb-block"
-        />
+        <site-directory-about />
+        <site-directory-rail-ad aliases=aliases />
       </div>
     </div>
   </@section>

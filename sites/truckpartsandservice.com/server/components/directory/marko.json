@@ -1,0 +1,17 @@
+{
+  "<site-directory-about>": {
+    "template": "./about.marko"
+  },
+  "<site-directory-breadcrumbs>": {
+    "template": "./breadcrumbs.marko"
+  },
+  "<site-directory-layout>": {
+    "template": "./layout.marko"
+  },
+  "<site-directory-rail-ad>": {
+    "template": "./rail-ad.marko"
+  },
+  "<site-directory-title>": {
+    "template": "./title.marko"
+  }
+}

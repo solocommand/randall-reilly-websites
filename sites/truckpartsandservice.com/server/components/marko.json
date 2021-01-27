@@ -1,6 +1,5 @@
 {
-  "<site-directory-layout>": {
-    "template": "./directory-layout.marko",
-    "<left-col>": {}
-  }
+  "taglib-imports": [
+    "./directory/marko.json"
+  ]
 }
