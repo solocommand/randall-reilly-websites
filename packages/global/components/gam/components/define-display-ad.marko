@@ -6,7 +6,14 @@ import buildSlots from "@parameter1/base-cms-marko-web-gam/utils/build-slots";
 import slotStyle from "@parameter1/base-cms-marko-web-gam/utils/slot-size-style";
 import incrementPos from "../utils/increment-pos";
 
-$ const { res, site } = out.global;
+$ const { req, res, site } = out.global;
+
+$ const parseReferrer = () => {
+  const referrer = req.get('referrer');
+  if (!referrer) return 'none';
+  return `${referrer}`.includes(req.hostname) ? 'internal' : 'external';
+};
+
 $ const { isArray } = Array;
 $ const {
   path,
@@ -20,6 +27,7 @@ $ const {
 } = input;
 $ const id = input.id || generateId({ inc });
 $ if (position) targeting.pos = incrementPos({ position, inc, res });
+$ targeting.referrer = parseReferrer();
 
 $ const collapse = defaultValue(input.collapse, true);
 $ const oop = defaultValue(input.oop, false);
