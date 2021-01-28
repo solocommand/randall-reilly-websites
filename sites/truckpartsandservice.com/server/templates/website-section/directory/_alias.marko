@@ -1,0 +1,47 @@
+import gql from "graphql-tag";
+$ const { id, alias, name, pageNode } = input;
+
+$ const queryFragment = gql`
+  fragment DirectorySectionContentFragment on Content {
+    id
+    shortName
+    siteContext {
+      path
+    }
+  }
+`;
+
+<site-directory-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@left-col|{ section }|>
+    <site-directory-breadcrumbs section=section />
+
+    <h2 class="directory-category-title">${section.name}</h2>
+    <p class="directory-companies-header">Companies</p>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params={
+      sectionAlias: alias,
+      includeContentTypes: ['Company'],
+      limit: 0,
+      queryFragment,
+    }>
+      $ const sorted = nodes.sort((a, b) => {
+        const nameA = a.shortName.toLowerCase();
+        const nameB = b.shortName.toLowerCase();
+        if (nameA > nameB) return 1;
+        if (nameA < nameB) return -1;
+        return 0;
+      });
+      <ul class="directory-company-list">
+        <for|node| of=nodes>
+          <li>
+            <a href=node.siteContext.path>${node.shortName}</a>
+          </li>
+        </for>
+      </ul>
+    </marko-web-query>
+  </@left-col>
+</site-directory-layout>

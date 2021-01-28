@@ -1,0 +1,187 @@
+$directory-gray: #434146;
+
+.directory-title {
+  font-size: 34px;
+  font-weight: $font-weight-bold;
+  line-height: 1.29;
+  color: $directory-gray;
+  text-align: center;
+  a {
+    color: $directory-gray;
+    &:hover {
+      color: $directory-gray;
+    }
+  }
+}
+
+.directory-about {
+  padding: 22px 18px;
+  color: $gray-800;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__header {
+    margin-bottom: 7px;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    line-height: 1.29;
+    color: $directory-gray;
+  }
+
+  &__body {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+.directory-categories {
+  padding: 0;
+  list-style: none;
+
+  &__parent {
+    padding: 24px;
+    margin-bottom: 16px;
+    line-height: 1;
+    background-color: $gray-100;
+    border-radius: 4px;
+
+    a {
+      font-size: 24px;
+      font-weight: $font-weight-medium;
+      color: $directory-gray;
+    }
+  }
+
+  &__child {
+    margin-top: 16px;
+    line-height: 1.2;
+    a {
+      font-size: 20px;
+      font-weight: $font-weight-normal;
+      line-height: 1.2;
+      color: $directory-gray;
+    }
+  }
+
+  &__child-container {
+    display: none;
+    padding: 0;
+    margin-top: 18px;
+    list-style: none;
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &__toggler {
+    @include theme-toggle-button();
+  }
+}
+
+.directory-category-title {
+  margin-bottom: 4px;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  line-height: 1.375;
+  color: $directory-gray;
+}
+
+.directory-companies-header {
+  margin-bottom: 3px;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  line-height: 2.2;
+  color: $directory-gray;
+}
+
+.breadcrumbs--directory {
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  line-height: 1.11;
+  text-transform: none;
+
+  .breadcrumb {
+    padding-bottom: 14px;
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: $directory-gray;
+    content: ">";
+  }
+
+  a {
+    color: $directory-gray;
+    &:hover {
+      color: $directory-gray;
+    }
+  }
+}
+
+.directory-company-list {
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 1.2;
+    a {
+      line-height: 1.2;
+      color: $directory-gray;
+      &:hover {
+        color: $directory-gray;
+      }
+    }
+  }
+}
+
+.directory-company-details {
+  padding: 24px;
+  padding-bottom: 18px;
+  margin-top: 7px;
+  margin-bottom: 26px;
+  color: $directory-gray;
+  background-color: $gray-100;
+  border-radius: 4px;
+
+  &__title {
+    margin-bottom: 9px;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    line-height: 1.38;
+  }
+
+  .page-contact-details {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+.directory-company-categories {
+  color: $directory-gray;
+
+  &__header {
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: $font-weight-medium;
+    line-height: .83;
+  }
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 14px;
+      font-size: 20px;
+      line-height: 1.2;
+      a {
+        line-height: 1.2;
+        color: $directory-gray;
+        &:hover {
+          color: $directory-gray;
+        }
+      }
+    }
+  }
+}

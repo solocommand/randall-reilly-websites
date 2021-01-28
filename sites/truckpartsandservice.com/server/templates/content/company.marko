@@ -1,0 +1,61 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import getDirectorySections from "./get-directory-sections";
+
+$ const { site } = out.global;
+$ const { id, type, pageNode } = data;
+
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first-sm"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <site-directory-title />
+  </@section>
+
+  <@section|{ aliases, content }|>
+    <div class="row">
+      <div class="col-lg-8">
+        <site-directory-breadcrumbs section=content.primarySection />
+
+        $ const detailsBlock = "directory-company-details";
+        $ const listBlock = "directory-company-categories";
+        <marko-web-block name=detailsBlock>
+          <marko-web-element tag="h2" block-name=detailsBlock name="title">
+            ${content.name}
+          </marko-web-element>
+          <default-theme-content-contact-details obj=content />
+        </marko-web-block>
+
+        <marko-web-block name=listBlock>
+          $ const sections = getDirectorySections(content);
+          <if(sections.length)>
+            <marko-web-element tag="h3" block-name=listBlock name="header">
+              Associated Categories
+            </marko-web-element>
+            <marko-web-element tag="ul" block-name=listBlock name="list">
+              <for|section| of=sections>
+                <li>
+                  <a href=`/${section.alias}`>${section.name}</a>
+                </li>
+              </for>
+            </marko-web-element>
+          </if>
+        </marko-web-block>
+      </div>
+      <div class="col-lg-4">
+        <site-directory-about />
+        <site-directory-rail-ad aliases=aliases />
+      </div>
+    </div>
+  </@section>
+</global-content-wrapper-layout>

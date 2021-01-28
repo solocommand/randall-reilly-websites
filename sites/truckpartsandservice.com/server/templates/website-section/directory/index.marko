@@ -1,0 +1,81 @@
+import gql from "graphql-tag";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const { id, alias, name, pageNode } = input;
+
+$ const queryFragment = gql`
+  fragment DirectoryIndexSectionFragment on WebsiteSection {
+    id
+    children(input: {
+      sort: { field: name, order: asc }
+      pagination: { limit: 100 }
+    }) {
+      edges {
+        node {
+          id
+          name
+          alias
+          children(input: {
+            sort: { field: name, order: asc }
+            pagination: { limit: 100 }
+          }) {
+            edges {
+              node {
+                id
+                name
+                alias
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+<site-directory-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@left-col>
+    <marko-web-query|{ node }| name="website-section" params={ alias, queryFragment }>
+      $ const blockName = "directory-categories";
+      <marko-web-block tag="ul" name=blockName>
+        <for|{ node: child }| of=getAsArray(node, "children.edges")>
+          $ const grandchildren = getAsArray(child, "children.edges");
+          <if(grandchildren.length)>
+            <marko-web-element tag="li" block-name=blockName name="parent">
+              <div class="d-flex justify-content-between">
+                <a href=`/${child.alias}`>
+                  ${child.name}
+                </a>
+                <marko-web-browser-component
+                  name="GlobalMenuToggleButton"
+                  props={
+                    className: "directory-categories__toggler",
+                    targets: [`.directory-categories__child-container--${child.id}`],
+                    toggleClass: "directory-categories__child-container--open",
+                    iconModifiers: ["lg"],
+                    iconName: "chevron-down",
+                    expandedIconName: "chevron-up",
+                  }
+                />
+              </div>
+              <marko-web-element tag="ul" block-name=blockName name="child-container" modifiers=[child.id]>
+                <for|{ node: grandchild }| of=grandchildren>
+                  <marko-web-element tag="li" block-name=blockName name="child">
+                    <a href=`/${grandchild.alias}`>
+                      ${grandchild.name}
+                    </a>
+                  </marko-web-element>
+                </for>
+              </marko-web-element>
+            </marko-web-element>
+          </if>
+        </for>
+      </marko-web-block>
+    </marko-web-query>
+  </@left-col>
+</site-directory-layout>

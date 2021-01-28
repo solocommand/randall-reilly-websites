@@ -1,0 +1,42 @@
+<global-website-section-default-layout
+  id=input.id
+  alias=input.alias
+  name=input.name
+  page-node=input.pageNode
+>
+  <@section|{ aliases }| modifiers=["first"]>
+    <global-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+    <global-gam-wallpaper-ad aliases=aliases position="section_page" />
+  </@section>
+
+  <@section>
+    <site-directory-title />
+  </@section>
+
+  <@section|props|>
+    $ const { aliases } = props;
+    <div class="row">
+      <div class="col-lg-8">
+        <${input.leftCol} ...props />
+      </div>
+      <div class="col-lg-4">
+        <site-directory-about />
+        <site-directory-rail-ad aliases=aliases />
+      </div>
+    </div>
+  </@section>
+
+  <@section|{ aliases }|>
+    <global-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+</global-website-section-default-layout>
