@@ -22,7 +22,6 @@ config
     { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
-    { name: 'interstitial', path: 'interstitial' },
   ])
   .setAliasAdUnits('gear', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'gear-leaderboard' },
@@ -33,7 +32,6 @@ config
     { name: 'rotation-3', templateName: 'GEAR', path: 'gear-rotation-3' },
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'gear-wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'gear-wallpaper-right' },
-    { name: 'interstitial', path: 'gear-interstitial' },
   ]);
 
 const aliases = [
