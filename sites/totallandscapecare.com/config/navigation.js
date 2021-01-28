@@ -2,9 +2,7 @@ const topics = {
   primary: [
     { href: '/business', label: 'Business' },
     { href: '/equipment', label: 'Equipment' },
-    { href: '/maintenance', label: 'Maintenance' },
-    { href: '/landscaping-equipment', label: 'Landscaping Equipment' },
-    { href: '/products', label: 'Products' },
+    { href: '/design-build', label: 'Design-Build' },
   ],
   expanded: [
   ],

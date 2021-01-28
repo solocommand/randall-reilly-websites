@@ -7,6 +7,7 @@ const topics = {
     { href: '/products', label: 'Products' },
   ],
   expanded: [
+    { href: '/products', label: 'Aftermarket Buyers’ Guide' },
   ],
   secondary: [
   ],
