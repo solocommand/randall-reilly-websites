@@ -11,15 +11,15 @@ module.exports = {
   company: 'Randall-Reilly, LLC',
   logos: {
     navbar: {
-      src: 'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps-logo.svg?h=45&auto=format,compress&q=70',
+      src: 'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/tps-logo.svg?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps-logo.svg?h=90&auto=format,compress&q=70 2x',
+        'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/tps-logo.svg?h=90&auto=format,compress&q=70 2x',
       ],
     },
     footer: {
-      src: 'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps-logo.svg?h=60&auto=format,compress&q=70',
+      src: 'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/tps-logo.svg?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps-logo.svg?h=120&auto=format,compress&q=70 2x',
+        'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/tps-logo.svg?h=120&auto=format,compress&q=70 2x',
       ],
     },
   },
