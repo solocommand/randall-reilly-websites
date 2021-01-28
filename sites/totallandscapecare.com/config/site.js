@@ -57,6 +57,7 @@ module.exports = {
     description: 'Get landscaping news and insights, plus how-to guides and equipment reviews — delivered straight to your inbox.',
   },
   newsletterPushdown: {
+    imagePath: 'static/newsletter-pushdown/tlc-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'tps_subscriptions' },

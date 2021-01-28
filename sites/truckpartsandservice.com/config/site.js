@@ -57,6 +57,7 @@ module.exports = {
     description: 'Get dealer and aftermarket news, plus safety recalls and product reviews — delivered straight to your inbox.',
   },
   newsletterPushdown: {
+    imagePath: 'static/newsletter-pushdown/tps-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'tps_subscriptions' },
