@@ -17,7 +17,6 @@ config
     { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
-    { name: 'interstitial', path: 'interstitial' },
   ]);
 
 const aliases = [
