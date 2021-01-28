@@ -5,7 +5,13 @@
     :aria-label="buttonLabel"
     @click="toggle"
   >
+    <span v-if="before">
+      {{ before }}
+    </span>
     <component :is="icon" :modifiers="iconModifiers" />
+    <span v-if="after">
+      {{ after }}
+    </span>
   </button>
 </template>
 
@@ -65,6 +71,14 @@ export default {
       type: String,
       default: 'x',
       validator: validateIcon,
+    },
+    before: {
+      type: String,
+      default: null,
+    },
+    after: {
+      type: String,
+      default: null,
     },
   },
   data: () => ({

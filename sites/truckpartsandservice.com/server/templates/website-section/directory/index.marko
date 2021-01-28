@@ -47,22 +47,18 @@ $ const queryFragment = gql`
           $ const grandchildren = getAsArray(child, "children.edges");
           <if(grandchildren.length)>
             <marko-web-element tag="li" block-name=blockName name="parent">
-              <div class="d-flex justify-content-between">
-                <a href=`/${child.alias}`>
-                  ${child.name}
-                </a>
-                <marko-web-browser-component
-                  name="GlobalMenuToggleButton"
-                  props={
-                    className: "directory-categories__toggler",
-                    targets: [`.directory-categories__child-container--${child.id}`],
-                    toggleClass: "directory-categories__child-container--open",
-                    iconModifiers: ["lg"],
-                    iconName: "chevron-down",
-                    expandedIconName: "chevron-up",
-                  }
-                />
-              </div>
+              <marko-web-browser-component
+                name="GlobalMenuToggleButton"
+                props={
+                  before: child.name,
+                  className: "directory-categories__toggler",
+                  targets: [`.directory-categories__child-container--${child.id}`],
+                  toggleClass: "directory-categories__child-container--open",
+                  iconModifiers: ["lg"],
+                  iconName: "chevron-down",
+                  expandedIconName: "chevron-up",
+                }
+              />
               <marko-web-element tag="ul" block-name=blockName name="child-container" modifiers=[child.id]>
                 <for|{ node: grandchild }| of=grandchildren>
                   <marko-web-element tag="li" block-name=blockName name="child">
