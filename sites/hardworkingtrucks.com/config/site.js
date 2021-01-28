@@ -40,18 +40,18 @@ module.exports = {
     containerId: 'GTM-KN35FTZ',
   },
   newsletterSignupBanner: {
-    href: '#',
-    description: 'Sign up for the <span class="newsletter-name">Hardworking Trucks Daily</span> to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=hwt_subscriptions',
+    description: 'Get the business tips, industry insights and trending news every truck owner needs to know in the <em>Hard Working Trucks</em> newsletter.',
   },
   newsletterSignupBannerLarge: {
-    href: '#',
-    name: 'Hardworking Trucks Daily',
-    description: 'Sign up for the Hardworking Trucks Daily to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=hwt_subscriptions',
+    name: 'Don’t Miss Out',
+    description: 'Get the business tips, industry insights and trending news every truck owner needs to know in the <em>Hard Working Trucks</em> newsletter.',
   },
   newsletterSignupFooter: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'hwt_subscriptions' },
     ],
     name: 'Hardworking Trucks Daily',
     description: 'Sign up for the <span class="newsletter-name">Hardworking Trucks Daily</span> to keep up with...',
@@ -59,10 +59,10 @@ module.exports = {
   newsletterPushdown: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'hwt_subscriptions' },
     ],
-    name: 'Hardworking Trucks Daily',
-    description: 'Sign up for the <span class="newsletter-name">Hardworking Trucks Daily</span> to keep up with...',
+    name: 'Newsletter Just for Truck Owners',
+    description: 'Get news you need to know about pickups, commercial vans and Class 3-8 trucks — delivered straight to your inbox.',
   },
   wufoo: {
     userName: 'randallreilly',

@@ -39,29 +39,29 @@ module.exports = {
     containerId: 'GTM-KKR45JP',
   },
   newsletterSignupBanner: {
-    href: '#',
-    description: 'Sign up for the <span class="newsletter-name">Trucker\'s News Daily</span> to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tn_subscriptions',
+    description: 'Get the job alerts, industry insights and trending news every truck driver needs to know in the <em>Truckers News</em> newsletter. ',
   },
   newsletterSignupBannerLarge: {
-    href: '#',
-    name: 'Trucker\'s News Daily',
-    description: 'Sign up for the Trucker\'s News Daily to keep up with...',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tn_subscriptions',
+    name: 'Don’t Miss Out',
+    description: 'Get the job alerts, industry insights and trending news every truck driver needs to know in the <em>Truckers News</em> newsletter. ',
   },
   newsletterSignupFooter: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'ov_subscriptions' },
     ],
-    name: 'Trucker\'s News Daily',
-    description: 'Sign up for the <span class="newsletter-name">Trucker\'s News Daily</span> to keep up with...',
+    name: 'Newsletter Just for Truck Drivers',
+    description: 'Get trucking news and insights, plus job alerts and trending gear — delivered straight to your inbox.',
   },
   newsletterPushdown: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'ov_subscriptions' },
     ],
-    name: 'Trucker\'s News Daily',
-    description: 'Sign up for the <span class="newsletter-name">Trucker\'s News Daily</span> to keep up with...',
+    name: 'Don’t Miss Out',
+    description: 'Join 40,000 company drivers who get helpful insights and important news delivered straight to their inbox with the <em>Truckers News</em> newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',
