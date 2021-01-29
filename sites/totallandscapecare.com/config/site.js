@@ -40,18 +40,18 @@ module.exports = {
     containerId: 'GTM-TQW695L',
   },
   newsletterSignupBanner: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tps_subscriptions',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tlc_subscriptions',
     description: 'Get the business tips, industry insights and trending news every landscaping professional needs to know in the <em>TLC</em> newsletter. ',
   },
   newsletterSignupBannerLarge: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tps_subscriptions',
+    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tlc_subscriptions',
     name: 'Don’t Miss Out',
     description: 'Get the business tips, industry insights and trending news every landscaping professional needs to know in the <em>TLC</em> newsletter. ',
   },
   newsletterSignupFooter: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'tps_subscriptions' },
+      { name: 'omedasite', value: 'tlc_subscriptions' },
     ],
     name: 'Newsletter Just for Landscapers',
     description: 'Get landscaping news and insights, plus how-to guides and equipment reviews — delivered straight to your inbox.',
@@ -60,7 +60,7 @@ module.exports = {
     imagePath: 'static/newsletter-pushdown/tlc-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'tps_subscriptions' },
+      { name: 'omedasite', value: 'tlc_subscriptions' },
     ],
     name: 'Don’t Miss Out',
     description: 'Join 14,000 landscaping professionals who get helpful insights and important news delivered straight to their inbox with the <em>Total Landscape Care</em> newsletter.',
