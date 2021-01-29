@@ -8,12 +8,13 @@ $ const config = site.getAsObject("events");
         (i[r].q = i[r].q || []).push(arguments)
       }, a = s.createElement(o),
         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://de3t5rrdmy18m.cloudfront.net/p1-events.cf050d14.js', 'p1events');
+    })(window, document, 'script', 'https://de3t5rrdmy18m.cloudfront.net/p1-events.80af3af8.js', 'p1events');
 
     p1events('init', {
       version: 2,
       tenant: 'randallreilly',
       realm: '${core.website("id")}',
+      env: '${process.env.NODE_ENV}',
       debug: true,
       uri: 'https://db0y8smio0.execute-api.us-east-2.amazonaws.com/default/p1-website-events-enqueue',
       cookieDomain: '${config.cookieDomain}',
