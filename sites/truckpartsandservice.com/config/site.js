@@ -9,6 +9,10 @@ module.exports = {
   nativeX,
   identityX,
   company: 'Randall-Reilly, LLC',
+  events: {
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'truckpartsandservice.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/tps_logo.svg?h=45&auto=format,compress&q=70',

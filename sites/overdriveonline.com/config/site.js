@@ -9,6 +9,10 @@ module.exports = {
   nativeX,
   identityX,
   company: 'Randall-Reilly, LLC',
+  events: {
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'overdriveonline.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd_logo.svg?h=40&auto=format,compress&q=70',

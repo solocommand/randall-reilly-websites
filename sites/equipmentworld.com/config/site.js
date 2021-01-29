@@ -9,6 +9,10 @@ module.exports = {
   nativeX,
   identityX,
   company: 'Randall-Reilly, LLC',
+  events: {
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'equipmentworld.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.equipmentworld.com/files/base/randallreilly/all/image/static/eqw/eqw-logo.svg?h=45&auto=format,compress&q=70',
