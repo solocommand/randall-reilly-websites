@@ -4,10 +4,9 @@ const topics = {
     { href: '/workforce', label: 'Workforce' },
     { href: '/economic-trends', label: 'Economic Trends' },
     { href: '/maintenance', label: 'Maintenance' },
-    { href: '/products', label: 'Products' },
+    { href: '/aftermarket-truck-parts-suppliers', label: 'Buyers\' Guide' },
   ],
   expanded: [
-    { href: '/products', label: 'Aftermarket Buyers’ Guide' },
   ],
   secondary: [
   ],
