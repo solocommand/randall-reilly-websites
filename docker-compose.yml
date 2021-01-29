@@ -89,7 +89,7 @@ services:
     working_dir: /root/sites/totallandscapecare.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9802
       LIVERELOAD_PORT: 19802
@@ -169,7 +169,7 @@ services:
     working_dir: /root/sites/truckpartsandservice.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9807
       LIVERELOAD_PORT: 19807
