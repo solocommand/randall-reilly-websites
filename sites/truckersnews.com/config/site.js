@@ -9,6 +9,10 @@ module.exports = {
   nativeX,
   identityX,
   company: 'Randall-Reilly, LLC',
+  events: {
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'truckersnews.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn-logo.svg?h=45&auto=format,compress&q=70',

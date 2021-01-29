@@ -1,0 +1,13 @@
+{
+  "<global-events-init>": {
+    "template": "./init.marko"
+  },
+  "<global-events-track-content>": {
+    "template": "./track-content.marko",
+    "@node": "object"
+  },
+  "<global-events-track-website-section>": {
+    "template": "./track-website-section.marko",
+    "@node": "object"
+  }
+}

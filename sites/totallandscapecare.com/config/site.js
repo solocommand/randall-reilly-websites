@@ -9,6 +9,10 @@ module.exports = {
   nativeX,
   identityX,
   company: 'Randall-Reilly, LLC',
+  events: {
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'totallandscapecare.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.totallandscapecare.com/files/base/randallreilly/all/image/static/tlc/tlc-logo.svg?h=45&auto=format,compress&q=70',
