@@ -1,6 +1,6 @@
 {
   "name": "@randall-reilly/truckpartsandservice.com",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "author": "Jacob Bare <jacob@parameter1.com>",
   "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/sites/truckpartsandservice.com",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "@parameter1/base-cms-object-path": "^2.3.0",
     "@parameter1/base-cms-utils": "^2.3.0",
     "@parameter1/base-cms-web-cli": "^2.3.3",
-    "@randall-reilly/package-global": "^1.4.0",
+    "@randall-reilly/package-global": "^1.4.5",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
