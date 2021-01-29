@@ -3,7 +3,7 @@ const topics = {
     { href: '/business', label: 'Business' },
     { href: '/equipment', label: 'Equipment' },
     { href: '/design-build', label: 'Design-Build' },
-    { href: '/maintenance', label: 'Maintenance' },
+    { href: '/design-build/lawn-maintenance', label: 'Lawn Maintenance' },
     { href: '/workforce', label: 'Workforce' },
   ],
   expanded: [
