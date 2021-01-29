@@ -28,6 +28,7 @@ module.exports = {
     { provider: 'twitter', href: 'https://twitter.com/TLCmagazine', target: '_blank' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/total-landscape-care-partner-solutions/', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UC2oQucc3ULCnu09wude37-Q', target: '_blank' },
+    { provider: 'instagram', href: 'https://www.instagram.com/tlcmagazine/', target: '_blank' },
   ],
   gcse: {
     id: '2ffbde674775e605d',
