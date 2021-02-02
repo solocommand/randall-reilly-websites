@@ -7,6 +7,13 @@ const topics = {
     { href: '/aftermarket-truck-parts-suppliers', label: 'Buyers\' Guide' },
   ],
   expanded: [
+    { href: '/products', label: 'Products' },
+    { href: '/trucks-trailers', label: 'Trucks & Trailers' },
+    { href: '/alternative-power', label: 'Alternative Power' },
+    { href: '/technology', label: 'Technology' },
+    { href: '/regulations', label: 'Regulations' },
+    { href: '/distributor-of-the-year', label: 'Distributor of the Year' },
+    { href: '/successful-dealer-award', label: 'Successful Dealer Award' },
   ],
   secondary: [
   ],
