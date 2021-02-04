@@ -30,14 +30,14 @@ module.exports = ({
       sizeMapping: [
         { viewport: [980, 0], size: [[970, 250], [970, 90], [970, 66], [728, 90]] },
         { viewport: [750, 0], size: [[728, 90]] },
-        { viewport: [300, 0], size: [[300, 50], [320, 50], [320, 100]] },
+        { viewport: [300, 0], size: [[300, 50], [320, 100]] },
       ],
     })
     .setTemplate('INLINE-CONTENT-MOBILE', {
       size: [[970, 250], [970, 90], [728, 90], [320, 100]],
       sizeMapping: [
         { viewport: [980, 0], size: [] },
-        { viewport: [300, 0], size: [[300, 50], [320, 50], [320, 100]] },
+        { viewport: [300, 0], size: [[300, 50], [320, 100]] },
       ],
     })
     .setTemplate('INLINE-CONTENT-DESKTOP', {
