@@ -2,13 +2,13 @@ const topics = {
   primary: [
     { href: '/trucks', label: 'Trucks' },
     { href: '/news', label: 'News' },
-    { href: '/features', label: 'Features' },
-    { href: '/fun', label: 'Fun' },
-    { href: '/whats-hot', label: 'Whats Hot' },
-    { href: '/videos', label: 'Videos' },
     { href: '/jobs', label: 'Jobs' },
-    { href: '/she-drives', label: 'She Drives' },
     { href: '/gear', label: 'Gear' },
+    { href: '/how-to', label: 'How-To' },
+    { href: '/life', label: 'Life' },
+    { href: '/videos', label: 'Videos' },
+    { href: '/shedrives', label: 'SheDrives' },
+
   ],
   expanded: [
   ],

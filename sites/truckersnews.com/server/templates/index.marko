@@ -8,16 +8,16 @@ $ const { id, alias, name, pageNode } = input;
   name=name
   page-node=pageNode
 >
-  <@section modifiers=["break-container"]>
+  <!-- <@section modifiers=["break-container"]>
     <global-opinion-block alias="opinion" />
-  </@section>
+  </@section> -->
 
   <@section>
     <global-full-width-native-ad-block />
   </@section>
 
   <@section>
-    <global-section-list-deck-block aliases=["trucks", "business", "technology"] />
+    <global-section-list-deck-block aliases=["trucks", "jobs", "life"] />
   </@section>
 
   <@section|{ aliases }|>
@@ -30,7 +30,11 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
-    <global-partners-in-business-block alias="ccj-innovators" default-description="Lorem ipsum dolor sit amet" />
+    <global-partners-in-business-block alias="shedrives" default-description="Lorem ipsum dolor sit amet" />
+  </@section>
+
+  <@section>
+    <global-hero-card-block query-params={ includeContentTypes: ["Video"] } alias="videos" />
   </@section>
 
   <@section>
@@ -58,10 +62,10 @@ $ const { id, alias, name, pageNode } = input;
   </@section>
 
   <@section>
-    <global-gear-block alias="products" default-description="Lorem ipsum dolor sit amet" />
+    <global-gear-block alias="gear" default-description="" />
   </@section>
 
-  <@section>
+  <!-- <@section>
     <global-reader-rigs-block alias="workforce" default-description="Lorem ipsum dolor sit amet" />
-  </@section>
+  </@section> -->
 </global-website-section-home-layout>
