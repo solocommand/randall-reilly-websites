@@ -15,15 +15,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn-logo.svg?h=45&auto=format,compress&q=70',
+      src: 'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn/tn-logo.svg?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn-logo.svg?h=90&auto=format,compress&q=70 2x',
+        'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn/tn-logo.svg?h=90&auto=format,compress&q=70 2x',
       ],
     },
     footer: {
-      src: 'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn-logo.svg?h=60&auto=format,compress&q=70',
+      src: 'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn/tn-logo.svg?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn-logo.svg?h=120&auto=format,compress&q=70 2x',
+        'https://img.truckersnews.com/files/base/randallreilly/all/image/static/tn/tn-logo.svg?h=120&auto=format,compress&q=70 2x',
       ],
     },
   },
