@@ -11,7 +11,8 @@ module.exports = {
   identityX,
   top250,
   company: 'Randall-Reilly, LLC',
-  events: {
+  p1events: {
+    tenant: 'randallreilly',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'ccjdigital.com' : '',
   },

@@ -9,7 +9,8 @@ module.exports = {
   nativeX,
   identityX,
   company: 'Randall-Reilly, LLC',
-  events: {
+  p1events: {
+    tenant: 'randallreilly',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'equipmentworld.com' : '',
   },

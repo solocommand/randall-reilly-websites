@@ -17,7 +17,12 @@ $ const {
     <global-script-loader-queue />
 
     <!-- init p1 website events -->
-    <global-events-init />
+    <marko-web-p1-events-init
+      identity-query-builder=`
+        var id = query.oly_enc_id;
+        if (id) return 'omeda.rrpcd.customer*' + id + '~encoded';
+      `;
+    />
 
     <!-- init gam -->
     <marko-web-gam-init />
