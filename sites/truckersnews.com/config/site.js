@@ -70,4 +70,16 @@ module.exports = {
   wufoo: {
     userName: 'randallreilly',
   },
+  sponsoredLabelLogos: {
+    'Sponsored by RoadPro': {
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/road-pro-logo.png?auto=format&w=109&fit=crop',
+      width: '109px',
+    },
+  },
+  sponsoredSectionNameLogos: {
+    gear: {
+      src: 'https://img.overdriveonline.com/files/base/randallreilly/all/image/static/ovd/trucker-gear-logo.png?auto=format&w=275&fit=crop',
+      width: '275px',
+    },
+  },
 };
