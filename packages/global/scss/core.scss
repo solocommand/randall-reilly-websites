@@ -181,3 +181,9 @@ label {
     }
   }
 }
+
+// ensure all anvato embeds are treated like videos
+[data-oembed-provider="Anvato"] {
+  @extend .embed-responsive;
+  @extend .embed-responsive-16by9;
+}
