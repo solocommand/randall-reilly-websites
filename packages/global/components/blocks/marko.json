@@ -18,7 +18,7 @@
   "<global-hero-card-block>": {
     "template": "./hero-card.marko",
     "@alias": "string",
-    "@discription": "string",
+    "@description": "string",
     "@query-params": "object"
   },
   "<global-latest-podcast-block>": {
