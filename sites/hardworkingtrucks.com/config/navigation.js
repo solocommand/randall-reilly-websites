@@ -1,6 +1,7 @@
 const topics = {
   primary: [
     { href: '/trucks', label: 'Trucks' },
+    { href: '/vans', label: 'Vans' },
     { href: '/alternative-power', label: 'Alternative Power' },
     { href: '/maintenance', label: 'Maintenance' },
     { href: '/products', label: 'Products' },
