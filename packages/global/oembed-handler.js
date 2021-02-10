@@ -41,7 +41,7 @@ const facebook = (url) => {
 };
 
 /**
- * @todo determine how to force inject the FB script into the head...
+ *
  */
 module.exports = (tag, $global) => {
   // convert embeds to facebook divs, since they no longer support oembed without auth
