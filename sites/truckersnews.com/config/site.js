@@ -55,7 +55,7 @@ module.exports = {
   newsletterSignupFooter: {
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'tn_subscriptions' },
     ],
     name: 'Newsletter Just for Truck Drivers',
     description: 'Get trucking news and insights, plus job alerts and trending gear — delivered straight to your inbox.',
@@ -64,7 +64,7 @@ module.exports = {
     imagePath: 'static/newsletter-pushdown/tn-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
+      { name: 'omedasite', value: 'tn_subscriptions' },
     ],
     name: 'Don’t Miss Out',
     description: 'Join 40,000 company drivers who get helpful insights and important news delivered straight to their inbox with the <em>Truckers News</em> newsletter.',
