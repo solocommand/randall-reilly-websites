@@ -62,6 +62,7 @@ module.exports = {
     description: 'Sign up for the <span class="newsletter-name">Hardworking Trucks Daily</span> to keep up with...',
   },
   newsletterPushdown: {
+    imagePath: 'static/newsletter-pushdown/hwt-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'hwt_subscriptions' },

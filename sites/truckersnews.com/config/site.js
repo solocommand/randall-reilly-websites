@@ -61,6 +61,7 @@ module.exports = {
     description: 'Get trucking news and insights, plus job alerts and trending gear — delivered straight to your inbox.',
   },
   newsletterPushdown: {
+    imagePath: 'static/newsletter-pushdown/tn-half.png',
     action: 'https://randallreilly.dragonforms.com/loading.do',
     hiddenInputs: [
       { name: 'omedasite', value: 'ov_subscriptions' },
