@@ -1,0 +1,107 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@randall-reilly/package-global/graphql/fragments/section-feed-block";
+
+
+$ const { id, type, pageNode, ...rest } = input;
+
+<global-content-company-layout
+  id=id
+  type=type
+  page-node=pageNode
+  ...rest
+>
+  <@right-rail|{ content }|>
+    <global-gam-define-display-ad
+      name="rotation-1"
+      position="content_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+    $ const labels = getAsArray(content, "labels");
+    <if(labels.includes("Sponsored by RoadPro"))>
+      <site-road-pro-facebook />
+    </if>
+    <global-gam-define-display-ad
+      name="rotation-2"
+      position="section_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+    <global-gam-define-display-ad
+      name="rotation-3"
+      position="section_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+  </@right-rail>
+  <@after-body|{ content }|>
+    <marko-web-query|{ nodes }|
+      name="all-company-content"
+      params={
+        companyId: content.id,
+        excludeContentTypes: ['Product', "PressRelease"],
+        limit: 3,
+        queryFragment,
+      }
+    >
+      <marko-web-node-list
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=["section-feed"]
+      >
+        <@header>
+          Latest from ${content.name}
+        </@header>
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            <global-section-feed-content-node node=node />
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+    <marko-web-query|{ nodes }|
+      name="all-company-content"
+      params={
+        companyId: content.id,
+        includeContentTypes: ['Product', "PressRelease"],
+        limit: 3,
+        queryFragment,
+      }
+    >
+      <marko-web-node-list
+        inner-justified=true
+        flush-x=true
+        flush-y=false
+        modifiers=["section-feed"]
+      >
+        <@header>
+          Latest Product & Press Release from ${content.name}
+        </@header>
+        <@nodes nodes=nodes>
+          <@slot|{ node }|>
+            <global-section-feed-content-node node=node />
+          </@slot>
+        </@nodes>
+      </marko-web-node-list>
+    </marko-web-query>
+  </@after-body>
+
+  <@section>
+    <global-callout-cards-block>
+      <@slot>
+        <global-ccj-top-250-block />
+      </@slot>
+      <@slot>
+        <global-ovd-pib-manual-promo-block />
+      </@slot>
+    </global-callout-cards-block>
+  </@section>
+
+  <@section>
+    <global-client-side-most-popular-block />
+  </@section>
+</global-content-company-layout>

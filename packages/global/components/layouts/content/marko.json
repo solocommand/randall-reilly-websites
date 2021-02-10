@@ -19,6 +19,30 @@
       "default-value": true
     }
   },
+  "<global-content-company-layout>": {
+    "template": "./company.marko",
+    "<after-body>": {},
+    "<right-rail>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@type": "string",
+    "@page-node": "object"
+  },
+  "<global-content-company-details>": {
+    "template": "./company-details.marko",
+    "@obj": "object",
+    "@show-email": {
+      "type": "boolean",
+      "default-value": true
+    },
+    "@tag": {
+      "type": "string",
+      "default-value": "div"
+    },
+    "@class": "string",
+    "@modifiers": "array",
+    "@attrs": "object"
+  },
   "<global-content-product-layout>": {
     "template": "./product.marko",
     "<after-body>": {},
