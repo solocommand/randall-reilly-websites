@@ -1,6 +1,7 @@
 const withContent = require('@randall-reilly/package-global/middleware/with-content');
 const queryFragment = require('@randall-reilly/package-global/graphql/fragments/content-page');
 const contact = require('@randall-reilly/package-global/templates/content/contact');
+const company = require('../templates/content/company');
 const deathByTrench = require('../templates/content/death-by-trench');
 const product = require('../templates/content/product');
 const whitepaper = require('../templates/content/whitepaper');
@@ -14,6 +15,11 @@ module.exports = (app) => {
 
   app.get('/*?contact/:id(\\d{8})*', withContent({
     template: contact,
+    queryFragment,
+  }));
+
+  app.get('/*?company/:id(\\d{8})*', withContent({
+    template: company,
     queryFragment,
   }));
 
