@@ -37,7 +37,7 @@ const facebook = (url) => {
   // after checking for facebook plugin URLs, treat all other facebook URLs as posts.
   if (!pattern.test(host)) return null; // facebook.com appears somewhere else in the URL.
   // return facebook div element
-  return buildFacebookElement({ href });
+  return buildFacebookElement({ href, showText: true });
 };
 
 /**
