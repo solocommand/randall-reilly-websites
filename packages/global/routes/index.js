@@ -1,4 +1,3 @@
-const equipmentExchange = require('./equipment-exchange');
 const feed = require('./feed');
 const identityX = require('./identity-x');
 const printContent = require('./print-content');
@@ -9,9 +8,6 @@ const staticPage = require('./static-page');
 const taxonomy = require('./taxonomy');
 
 module.exports = (app) => {
-  // EquipmentExchange
-  equipmentExchange(app);
-
   // Feed
   feed(app);
 
