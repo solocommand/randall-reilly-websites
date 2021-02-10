@@ -31,8 +31,8 @@ module.exports = {
     },
   },
   socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/CCJMagazine/', target: '_blank' },
-    { provider: 'twitter', href: 'https://twitter.com/ccjdigital', target: '_blank' },
+    { provider: 'facebook', href: 'https://www.facebook.com/CommercialCarrierJournal', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/CCJnow', target: '_blank' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/commercial-carrier-journal/', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/user/CCJDigital', target: '_blank' },
   ],
