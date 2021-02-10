@@ -15,6 +15,7 @@ module.exports = gql`
             url
           }
           primarySite {
+            id
             shortName
           }
           primaryImage {
