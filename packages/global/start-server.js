@@ -13,6 +13,7 @@ const paginated = require('./middleware/paginated');
 const newsletterState = require('./middleware/newsletter-state');
 const algolia = require('./middleware/algolia');
 const redirectHandler = require('./redirect-handler');
+const oembedHandler = require('./oembed-handler');
 
 const { env } = process;
 
@@ -75,5 +76,9 @@ module.exports = (options = {}) => {
     onAsyncBlockError: e => newrelic.noticeError(e),
 
     redirectHandler,
+
+    embeddedMediaHandlers: {
+      oembed: oembedHandler,
+    },
   });
 };
