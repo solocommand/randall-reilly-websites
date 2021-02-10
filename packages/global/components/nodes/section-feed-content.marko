@@ -5,6 +5,8 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const primarySection = getAsObject(content, "primarySection");
+$ const containerAttrs = getAsObject(input, "containerAttrs");
+$ const linkAttrs = getAsObject(input, "linkAttrs");
 
 $ const withBody = defaultValue(input.withBody, false);
 $ const withDates = defaultValue(input.withDates, true);
@@ -20,7 +22,7 @@ $ const imageOptions = {
 
 $ const blockName = "section-feed-content-node";
 
-<marko-web-block name=blockName modifiers=input.modifiers>
+<marko-web-block name=blockName modifiers=input.modifiers attrs=containerAttrs>
   <marko-web-element block-name=blockName name="contents">
     <marko-web-element block-name=blockName name="body">
       <if(input.sponsoredBy)>
@@ -36,12 +38,14 @@ $ const blockName = "section-feed-content-node";
         block-name=blockName
         obj=content
         link=true
+        attrs=linkAttrs
       />
       <if(withTeaser)>
         <marko-web-content-teaser
           block-name=blockName
           obj=content
           link=true
+          attrs=linkAttrs
         />
       </if>
       <if(withBody)>
@@ -64,7 +68,7 @@ $ const blockName = "section-feed-content-node";
       <if(primaryImage.src)>
         $ const src = buildImgixUrl(primaryImage.src, imageOptions);
         $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
-        <marko-web-link href=get(content, "siteContext.path")>
+        <marko-web-link href=get(content, "siteContext.path") attrs=linkAttrs>
           <marko-web-img
             src=src
             srcset=srcset
