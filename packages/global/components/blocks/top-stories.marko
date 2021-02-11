@@ -55,7 +55,11 @@ $ const withHeader = defaultValue(input.withHeader, true);
       </marko-web-element>
 
       <if(cardNodes.length)>
-        <global-content-card-deck-4-col-flow nodes=cardNodes modifiers=[blockName]>
+        <global-content-card-deck-4-col-flow
+          nodes=cardNodes
+          modifiers=[blockName]
+          native-x={ name: "default", index: 3, sectionName: "Sponsor Content" }
+        >
           <@node modifiers=[`${blockName}-card`] />
         </global-content-card-deck-4-col-flow>
       </if>
