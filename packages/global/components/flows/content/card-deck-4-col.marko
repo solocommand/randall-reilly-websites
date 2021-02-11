@@ -1,16 +1,46 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const { nativeX: nxConfig } = out.global;
+$ const nativeX = getAsObject(input, "nativeX");
+
 <default-theme-card-deck-flow cols=4 nodes=input.nodes modifiers=input.modifiers>
-  <@slot|{ node }|>
-    <global-content-node
-      image-position="top"
-      card=true
-      flush=true
-      full-height=true
-      with-teaser=false
-      with-dates=false
-      node=node
-      ...input.node
-    >
-      <@image ar="3:2" fluid=true />
-    </global-content-node>
+  <@slot|{ node, index }|>
+    <if(nxConfig)>
+      <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
+        ...nativeX
+        when=(index === nativeX.index)
+        node=node
+        config=nxConfig
+      >
+        <global-content-node
+          image-position="top"
+          card=true
+          flush=true
+          full-height=true
+          with-teaser=false
+          with-dates=false
+          ...input.node
+          node=nxNode
+          link-attrs=linkAttrs
+          attrs=containerAttrs
+        >
+          <@image ar="3:2" fluid=true />
+        </global-content-node>
+      </marko-web-native-x-render>
+    </if>
+    <else>
+      <global-content-node
+        image-position="top"
+        card=true
+        flush=true
+        full-height=true
+        with-teaser=false
+        with-dates=false
+        ...input.node
+        node=node
+      >
+        <@image ar="3:2" fluid=true />
+      </global-content-node>
+    </else>
   </@slot>
 </default-theme-card-deck-flow>
