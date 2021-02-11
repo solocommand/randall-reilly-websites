@@ -10,6 +10,7 @@ $ const queryParams = {
 };
 $ const blockName = "top-stories";
 $ const withHeader = defaultValue(input.withHeader, true);
+$ const withNativeX = defaultValue(input.withNativeX, true);
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
   <if(nodes.length)>
@@ -58,7 +59,7 @@ $ const withHeader = defaultValue(input.withHeader, true);
         <global-content-card-deck-4-col-flow
           nodes=cardNodes
           modifiers=[blockName]
-          native-x={ name: "default", index: 3, sectionName: "Sponsor Content" }
+          ...(withNativeX && { nativeX: { name: "default", index: 3, sectionName: "Sponsor Content" } })
         >
           <@node modifiers=[`${blockName}-card`] />
         </global-content-card-deck-4-col-flow>
