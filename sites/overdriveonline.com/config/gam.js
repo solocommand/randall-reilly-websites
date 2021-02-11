@@ -10,11 +10,6 @@ config.lazyLoad = {
 };
 
 config
-  .setTemplate('GEAR', {
-    size: [300, 250],
-  });
-
-config
   .setAliasAdUnits('default', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'leaderboard' },
     { name: 'rotation', templateName: 'ROTATION', path: 'rotation' },
