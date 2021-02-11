@@ -32,6 +32,7 @@
     "graphql-tag": "^2.10.1",
     "http-errors": "^1.7.3",
     "newrelic": "^6.4.1",
+    "node-fetch": "^2.6.1",
     "object-path": "^0.11.5",
     "slug": "^4.0.2"
   }
