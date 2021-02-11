@@ -52,6 +52,9 @@ module.exports = ({
         { viewport: [1400, 0], size: [300, 600] },
         { viewport: [0, 0], size: [] },
       ],
+    })
+    .setTemplate('GEAR', {
+      size: [300, 250],
     });
 
   return config;
