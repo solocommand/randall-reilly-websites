@@ -26,10 +26,13 @@ $ const sections = getAsArray(input, "sections");
         <div class="content-page-header">
           <global-content-page-breadcrumbs section=primarySection />
 
-          $ const labels = getAsArray(content, "labels");
-          <for|label| of=labels>
-            <global-sponsored-label-logo logo-label=label prefix="Presented By" modifiers=["content-page"] />
-          </for>
+          <div class="row">
+            <global-sponsored-section-name-logo section=primarySection modifiers=["section-page"] class="col-lg-5" />
+            $ const labels = getAsArray(content, "labels");
+            <for|label| of=labels>
+              <global-sponsored-label-logo logo-label=label prefix="Presented By" modifiers=["content-page"] />
+            </for>
+          </div>
 
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
 
