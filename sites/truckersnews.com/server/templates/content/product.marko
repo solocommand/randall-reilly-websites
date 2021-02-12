@@ -1,3 +1,5 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
 $ const { id, type, pageNode, ...rest } = input;
 
 <global-content-product-layout
@@ -6,6 +8,33 @@ $ const { id, type, pageNode, ...rest } = input;
   page-node=pageNode
   ...rest
 >
+  <@right-rail|{ content }|>
+    <global-gam-define-display-ad
+      name="rotation-1"
+      position="content_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+    $ const labels = getAsArray(content, "labels");
+    <if(labels.includes("Sponsored by RoadPro"))>
+      <site-road-pro-facebook />
+    </if>
+    <global-gam-define-display-ad
+      name="rotation-2"
+      position="section_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+    <global-gam-define-display-ad
+      name="rotation-3"
+      position="section_page"
+      aliases=["gear"]
+      modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+      class="mb-block"
+    />
+  </@right-rail>
   <@after-body|{ content }|>
     <global-more-gear-block alias="gear" params={ excludeContentIds: [content.id] } />
   </@after-body>
@@ -16,7 +45,7 @@ $ const { id, type, pageNode, ...rest } = input;
         <global-ccj-top-250-block />
       </@slot>
       <@slot>
-        <global-white-papers-block />
+        <global-ovd-pib-manual-promo-block />
       </@slot>
     </global-callout-cards-block>
   </@section> -->
