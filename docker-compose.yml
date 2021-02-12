@@ -105,7 +105,7 @@ services:
     working_dir: /root/sites/truckersnews.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9803
       LIVERELOAD_PORT: 19803
@@ -137,7 +137,7 @@ services:
     working_dir: /root/sites/hardworkingtrucks.com
     environment:
       <<: *env
-      <<: *env-leonis
+      <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 9805
       LIVERELOAD_PORT: 19805
