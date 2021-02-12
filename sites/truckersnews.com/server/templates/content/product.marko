@@ -7,7 +7,7 @@ $ const { id, type, pageNode, ...rest } = input;
   ...rest
 >
   <@after-body|{ content }|>
-    <global-more-gear-block alias="products" params={ excludeContentIds: [content.id] } />
+    <global-more-gear-block alias="gear" params={ excludeContentIds: [content.id] } />
   </@after-body>
 
   <!-- <@section>
