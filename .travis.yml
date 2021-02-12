@@ -56,9 +56,6 @@ jobs:
     - <<: *production-job
       name: ccjdigital.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy ccjdigital.com virgon-websites
-    - <<: *production-job
-      name: ccjdigital.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy ccjdigital.com leonis-websites
     # - <<: *staging-job
     #   name: ccjdigital.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy ccjdigital.com staging-websites-virgon
@@ -66,9 +63,6 @@ jobs:
     - <<: *production-job
       name: equipmentworld.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy equipmentworld.com virgon-websites
-    - <<: *production-job
-      name: equipmentworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy equipmentworld.com leonis-websites
     # - <<: *staging-job
     #   name: equipmentworld.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy equipmentworld.com staging-websites-virgon
@@ -76,9 +70,6 @@ jobs:
     - <<: *production-job
       name: hardworkingtrucks.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy hardworkingtrucks.com virgon-websites
-    - <<: *production-job
-      name: hardworkingtrucks.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy hardworkingtrucks.com leonis-websites
     # - <<: *staging-job
     #   name: hardworkingtrucks.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy hardworkingtrucks.com staging-websites-virgon
@@ -86,9 +77,6 @@ jobs:
     - <<: *production-job
       name: overdriveonline.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy overdriveonline.com virgon-websites
-    - <<: *production-job
-      name: overdriveonline.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy overdriveonline.com leonis-websites
     # - <<: *staging-job
     #   name: overdriveonline.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy overdriveonline.com staging-websites-virgon
@@ -96,9 +84,6 @@ jobs:
     - <<: *production-job
       name: totallandscapecare.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy totallandscapecare.com virgon-websites
-    - <<: *production-job
-      name: totallandscapecare.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy totallandscapecare.com leonis-websites
     # - <<: *staging-job
     #   name: totallandscapecare.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy totallandscapecare.com staging-websites-virgon
@@ -106,9 +91,6 @@ jobs:
     - <<: *production-job
       name: truckersnews.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy truckersnews.com virgon-websites
-    - <<: *production-job
-      name: truckersnews.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy truckersnews.com leonis-websites
     # - <<: *staging-job
     #   name: truckersnews.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy truckersnews.com staging-websites-virgon
@@ -116,9 +98,6 @@ jobs:
     - <<: *production-job
       name: truckpartsandservice.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy truckpartsandservice.com virgon-websites
-    - <<: *production-job
-      name: truckpartsandservice.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy truckpartsandservice.com leonis-websites
     # - <<: *staging-job
     #   name: truckpartsandservice.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy truckpartsandservice.com staging-websites-virgon
