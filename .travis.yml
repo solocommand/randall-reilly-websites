@@ -102,16 +102,6 @@ jobs:
     #   name: truckpartsandservice.com
     #   script: npx @parameter1/base-cms-website-deployment-tool deploy truckpartsandservice.com staging-websites-virgon
 
-    - <<: *production-job
-      name: rrmarketplaceblog.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy rrmarketplaceblog.com virgon-websites
-    - <<: *production-job
-      name: rrmarketplaceblog.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy rrmarketplaceblog.com leonis-websites
-    # - <<: *staging-job
-    #   name: rrmarketplaceblog.com
-    #   script: npx @parameter1/base-cms-website-deployment-tool deploy rrmarketplaceblog.com staging-websites-virgon
-
     ##########################
     # ^^^ ADD SITES HERE ^^^ #
     ##########################

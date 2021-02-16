@@ -1,7 +1,6 @@
-const path = require('path');
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const { getAsArray, get } = require('@parameter1/base-cms-object-path');
-const query = require('../graphql/queries/equipment-exchange-content');
+const query = require('../graphql/queries/equipment-experts-content');
 
 const linkTo = (req, p, limit) => {
   const { protocol } = req;
@@ -59,11 +58,4 @@ module.exports = (app) => {
       },
     });
   }));
-
-  app.get('/robots.txt', (_, res, next) => res.sendFile('robots.txt', {
-    root: path.resolve(__dirname, '../public'),
-    dotfiles: 'deny',
-  }, (err) => { if (err) next(err); }));
-
-  app.use('*', (_, res) => res.redirect(302, 'https://equipmentexperts.com'));
 };

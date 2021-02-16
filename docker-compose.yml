@@ -178,19 +178,3 @@ services:
     ports:
       - "9807:80"
       - "19807:19807"
-
-  eeb:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/rrmarketplaceblog.com
-    environment:
-      <<: *env
-      <<: *env-leonis
-      PORT: 80
-      EXPOSED_PORT: 9808
-      LIVERELOAD_PORT: 19808
-      TENANT_KEY: randallreilly_eeb
-      SITE_ID: 60244672fb505f627f2e4c47
-    ports:
-      - "9808:80"
-      - "19808:19808"
