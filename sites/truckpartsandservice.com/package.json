@@ -15,13 +15,13 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@parameter1/base-cms-marko-core": "^2.3.3",
-    "@parameter1/base-cms-marko-web": "^2.3.3",
-    "@parameter1/base-cms-marko-web-gtm": "^2.3.0",
-    "@parameter1/base-cms-marko-web-theme-default": "^2.3.0",
-    "@parameter1/base-cms-object-path": "^2.3.0",
-    "@parameter1/base-cms-utils": "^2.3.0",
-    "@parameter1/base-cms-web-cli": "^2.3.3",
+    "@parameter1/base-cms-marko-core": "^2.4.3",
+    "@parameter1/base-cms-marko-web": "^2.4.3",
+    "@parameter1/base-cms-marko-web-gtm": "^2.4.2",
+    "@parameter1/base-cms-marko-web-theme-default": "^2.4.2",
+    "@parameter1/base-cms-object-path": "^2.4.2",
+    "@parameter1/base-cms-utils": "^2.4.2",
+    "@parameter1/base-cms-web-cli": "^2.4.3",
     "@randall-reilly/package-global": "^1.7.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
