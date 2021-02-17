@@ -15,6 +15,9 @@ module.exports = ({
         [300, 250],
         [320, 50],
         [265, 149], // Featured Pushdown / Fluid Banner
+        [1060, 596],
+        [736, 414],
+        [428, 241],
       ],
       sizeMapping: [
         { viewport: [1070, 0], size: [[970, 90], [728, 90], [265, 149]] },
