@@ -1,6 +1,6 @@
 {
   "name": "@randall-reilly/package-global",
-  "version": "1.7.3",
+  "version": "1.7.5",
   "author": "Jacob Bare <jacob@parameter1.com>",
   "repository": "https://github.com/parameter1/randall-reilly-websites/tree/master/packages/global",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "@parameter1/base-cms-utils": "^2.4.2",
     "@parameter1/base-cms-web-cli": "^2.4.3",
     "@parameter1/base-cms-web-common": "^2.4.2",
-    "@randall-reilly/base-browse": "^1.4.0",
+    "@randall-reilly/base-browse": "^1.7.5",
     "algoliasearch": "^4.8.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
