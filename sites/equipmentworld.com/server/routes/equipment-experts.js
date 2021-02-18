@@ -14,6 +14,7 @@ module.exports = (app) => {
     const skip = (page - 1) * limit;
 
     const input = {
+      sectionAlias: 'equipment-experts',
       pagination: { limit, skip },
       sort: { field: 'published', order: 'desc' },
     };
@@ -22,11 +23,11 @@ module.exports = (app) => {
     const variables = { input, siteId };
     const { data } = await req.apollo.query({ query, variables });
 
-    const totalCount = get(data, 'allPublishedContent.totalCount');
+    const totalCount = get(data, 'websiteScheduledContent.totalCount');
     const lastPage = Math.ceil(totalCount / limit) || 1;
 
     res.json({
-      data: getAsArray(data, 'allPublishedContent.edges').map((edge) => {
+      data: getAsArray(data, 'websiteScheduledContent.edges').map((edge) => {
         const { node } = edge;
         return {
           post_id: node.id,

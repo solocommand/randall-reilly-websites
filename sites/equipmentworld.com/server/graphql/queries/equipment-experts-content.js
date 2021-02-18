@@ -1,8 +1,8 @@
 const gql = require('graphql-tag');
 
 module.exports = gql`
-  query EquipmentExchange($input: AllPublishedContentQueryInput = {}) {
-    allPublishedContent(input: $input) {
+  query EquipmentExchange($input: WebsiteScheduledContentQueryInput = {}) {
+    websiteScheduledContent(input: $input) {
       totalCount
       edges {
         node {
