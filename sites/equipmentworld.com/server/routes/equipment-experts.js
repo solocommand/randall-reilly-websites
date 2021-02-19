@@ -29,6 +29,12 @@ module.exports = (app) => {
     res.json({
       data: getAsArray(data, 'websiteScheduledContent.edges').map((edge) => {
         const { node } = edge;
+        let keyPairs = [];
+        try {
+          keyPairs = JSON.parse(node.key_pairs || []);
+        } catch (e) {
+          //
+        }
         return {
           post_id: node.id,
           post_name: node.slug,
@@ -37,7 +43,7 @@ module.exports = (app) => {
           post_except: node.teaser,
           featured_image: get(node, 'primaryImage.src'),
           keywords: getAsArray(node, 'keywords.edges').map(e => get(e, 'node.name')),
-          key_pairs: [], // @todo bring these in once BASE has support.
+          key_pairs: keyPairs,
           blog: get(node, 'primarySite.shortName'),
           permalink: get(node, 'siteContext.url'),
           author: getAsArray(node, 'authors.edges').map(e => get(e, 'node.name')).join(', '),

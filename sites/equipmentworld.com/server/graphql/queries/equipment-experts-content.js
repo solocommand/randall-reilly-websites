@@ -31,6 +31,7 @@ module.exports = gql`
               }
             }
           }
+          key_pairs: customAttribute(input: { path: "eeElasticIndexes" })
           ...on Authorable {
             authors {
               totalCount
