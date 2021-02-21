@@ -2113,10 +2113,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.11.0"
 
-"@parameter1/base-cms-marko-web@^2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.4.3.tgz#eea8f381454a18fe2301d21a0d68092255554e7b"
-  integrity sha512-pHnyUdW5iiwMu5bppJjj64VkM8nw5kRx/IjqjY0XVoywwa0QW+REOCLfQtpoXQ0885tEkPohtob3UVtSbYKAhQ==
+"@parameter1/base-cms-marko-web@^2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-2.4.5.tgz#dc61da587b2944ed96605dff9d6503b6a195e3ac"
+  integrity sha512-OIzLNDkRX8NXfEByPOspusMZASzDTCn96rJgmEelXzNugC4qY3NfacbllpfxvUqhH0E/CUh4OlOPXi+upgqctQ==
   dependencies:
     "@godaddy/terminus" "^4.5.0"
     "@parameter1/base-cms-embedded-media" "^2.0.0"
@@ -2163,10 +2163,10 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-utils/-/base-cms-utils-2.4.2.tgz#0b725158462d67800e5aa19c6d8f9f66829a7b2e"
   integrity sha512-Dj6+aN95BLKh/8+zNORZfsFeESkfGJPZzL2SgWagsx9WfzYUvtbv1xvFjwdgSy1/90FXmm3+akV+xqF0HovgGQ==
 
-"@parameter1/base-cms-web-cli@^2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.4.3.tgz#bf88505d27c4cc04b787c02fcc4ae8e99b1cb528"
-  integrity sha512-Dr19bgUOHLGy9RBXv5aduEA8avo9OHc01Up6zyDtdX1g24jlLZW5kketRvD9KKvnzeA+YAhBf+D7fOipTEdkeA==
+"@parameter1/base-cms-web-cli@^2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.4.5.tgz#771eb6169fe7ffb6c7548359b79c9ac4218edb7e"
+  integrity sha512-cH71mRkL+y9O3BM2GMxU4bW8TPXnW2++treh39VS5xB0CNYX55S9mQUubrEk/ylTEXigoTLifUGywo+0FRJCXA==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-runtime" "^7.12.10"
@@ -2175,7 +2175,7 @@
     "@babel/runtime-corejs2" "^7.12.5"
     "@parameter1/base-cms-cli-utils" "^2.0.0"
     "@parameter1/base-cms-express-apollo" "^2.3.0"
-    "@parameter1/base-cms-marko-web" "^2.4.3"
+    "@parameter1/base-cms-marko-web" "^2.4.5"
     autoprefixer "^9.8.6"
     babel-eslint "^10.1.0"
     babel-loader "^8.2.2"

@@ -132,6 +132,27 @@
       }
     }
   }
+
+  .primary-image {
+    &__image-caption,
+    &__image-credit {
+      display: inline;
+      margin-right: .5rem;
+    }
+    &__image-credit::before {
+      content: "Photo credit: ";
+    }
+  }
+
+  [data-embed-type] .caption,
+  [data-embed-type] .credit {
+    display: inline;
+    margin-right: .5rem;
+  }
+
+  [data-embed-type] .credit::before {
+    content: "Photo credit: ";
+  }
 }
 
 .social-sharing {
