@@ -140,7 +140,7 @@
       margin-right: .5rem;
     }
     &__image-credit::before {
-      content: "Photo credit: ";
+      content: "Source: ";
     }
   }
 
@@ -151,7 +151,7 @@
   }
 
   [data-embed-type] .credit::before {
-    content: "Photo credit: ";
+    content: "Source: ";
   }
 }
 
