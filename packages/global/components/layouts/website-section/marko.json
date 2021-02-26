@@ -20,6 +20,7 @@
   },
   "<global-website-section-home-layout>": {
     "template": "./home.marko",
+    "<head>": {},
     "@sections <section>[]": {},
     "@id": "number",
     "@alias": "string",
