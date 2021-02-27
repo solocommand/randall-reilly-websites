@@ -4,7 +4,9 @@ const cookieName = 'enlPrompted';
 
 module.exports = () => (req, res, next) => {
   const hasCookie = get(req, `cookies.${cookieName}`);
-  const fromEmail = false; // @todo eventually wire up omeda detection?
+  const utmMedium = get(req, 'query.utm_medium');
+  const olyEncId = get(req, 'query.oly_enc_id');
+  const fromEmail = utmMedium === 'email' || olyEncId || false;
 
   if (!hasCookie) {
     // Expire in 14 days (2yr if already signed up)
