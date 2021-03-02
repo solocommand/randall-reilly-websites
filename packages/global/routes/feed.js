@@ -41,6 +41,12 @@ module.exports = (app) => {
                 alt
                 isLogo
               }
+              websiteSchedules {
+                section {
+                  id
+                  name
+                }
+              }
               ... on Authorable {
                 authors {
                   edges {
@@ -84,12 +90,17 @@ module.exports = (app) => {
       const itemPubDate = node.publishedDate;
       const itemTeaser = node.teaser;
       const itemBody = node.body;
+      const schedules = new Set(getAsArray(node, 'websiteSchedules')
+        .map(o => get(o, 'section.name'))
+        .filter(name => name !== 'Home')
+        .map(s => `<category><![CDATA[${s}]]></category>`));
       const item = [
         '<item>',
         `<title>${itemName}</title>`,
         `<link>${itemUrl}</link>`,
         `<dc:creator><![CDATA[${itemAuthors}]]></dc:creator>`,
         `<pubDate>${itemPubDate}</pubDate>`,
+        ...schedules,
         `<guid isPermaLink="false">${siteUrl}/${node.id}</guid>`,
         `<description><![CDATA[${itemTeaser}]]></description>`,
         `<content:encoded><![CDATA[${itemBody}]]></content:encoded>`,
