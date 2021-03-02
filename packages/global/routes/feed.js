@@ -1,5 +1,6 @@
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const gql = require('graphql-tag');
+const { encode } = require('html-entities');
 module.exports = (app) => {
   app.get('/feed', asyncRoute(async (req, res) => {
     const FEED = gql`
@@ -66,6 +67,9 @@ module.exports = (app) => {
     const variables = { input, siteId };
     const { data } = await req.apollo.query({ query: FEED, variables });
     const { websiteSite: site } = data;
+    const siteUrl = `https://${site.url}`;
+    const encodeOptions = { mode: 'specialChars', level: 'html5' };
+    const siteName = encode(site.name, encodeOptions);
     const rssAttributes = [
       'version="2.0"',
       'xmlns:content="http://purl.org/rss/1.0/modules/content/"',
@@ -79,6 +83,10 @@ module.exports = (app) => {
       '<?xml version="1.0" encoding="UTF-8"?>',
       `<rss ${rssAttributes}>`,
       '<channel>',
+      `<title>${siteName}</title>`,
+      `<atom:link href="${siteUrl}/feed/" rel="self" type="application/rss+xml" />`,
+      `<link>${siteUrl}</link>`,
+      `<description>${siteName}</description>`,
       '</channel>',
       '</rss>',
     ];
