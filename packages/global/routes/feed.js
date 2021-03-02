@@ -78,9 +78,11 @@ module.exports = (app) => {
     const items = getAsArray(data, 'websiteScheduledContent.edges').map((edge) => {
       const { node } = edge;
       const itemName = encode(node.name, encodeOptions);
+      const itemUrl = get(node, 'siteContext.url');
       const item = [
         '<item>',
         `<title>${itemName}</title>`,
+        `<link>${itemUrl}</link>`,
         '</item>',
       ];
       return item.join('\n');
