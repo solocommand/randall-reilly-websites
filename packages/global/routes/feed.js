@@ -89,6 +89,7 @@ module.exports = (app) => {
         `<link>${itemUrl}</link>`,
         `<dc:creator><![CDATA[${itemAuthors}]]></dc:creator>`,
         `<pubDate>${itemPubDate}</pubDate>`,
+        `<guid isPermaLink="false">${siteUrl}/${node.id}</guid>`,
         `<description><![CDATA[${itemTeaser}]]></description>`,
         `<content:encoded><![CDATA[${itemBody}]]></content:encoded>`,
         '</item>',
