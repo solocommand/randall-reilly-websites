@@ -32,6 +32,7 @@ module.exports = (app) => {
                 name
               }
               primarySite {
+                id
                 shortName
               }
               primaryImage {
