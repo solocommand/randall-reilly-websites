@@ -1,6 +1,7 @@
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const gql = require('graphql-tag');
 const { encode } = require('html-entities');
+const moment = require('moment');
 module.exports = (app) => {
   app.get('/feed', asyncRoute(async (req, res) => {
     const FEED = gql`
@@ -87,6 +88,10 @@ module.exports = (app) => {
       `<atom:link href="${siteUrl}/feed/" rel="self" type="application/rss+xml" />`,
       `<link>${siteUrl}</link>`,
       `<description>${siteName}</description>`,
+      `<lastBuildDate>${lastBuildDate}</lastBuildDate>`,
+      '<language>en-US</language>',
+      '<sy:updatePeriod>hourly</sy:updatePeriod>',
+      '<sy:updateFrequency>1</sy:updateFrequency>',
       '</channel>',
       '</rss>',
     ];
