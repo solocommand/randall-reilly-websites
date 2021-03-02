@@ -71,6 +71,7 @@ module.exports = (app) => {
     const siteUrl = `https://${site.url}`;
     const encodeOptions = { mode: 'specialChars', level: 'html5' };
     const siteName = encode(site.name, encodeOptions);
+    const lastBuildDate = moment().format('ddd, DD MMM YYYY hh:mm:ss ZZ');
     const rssAttributes = [
       'version="2.0"',
       'xmlns:content="http://purl.org/rss/1.0/modules/content/"',
