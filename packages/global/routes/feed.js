@@ -79,10 +79,12 @@ module.exports = (app) => {
       const { node } = edge;
       const itemName = encode(node.name, encodeOptions);
       const itemUrl = get(node, 'siteContext.url');
+      const itemAuthors = getAsArray(node, 'authors.edges').map(o => get(o, 'node.name')).filter(o => o).join(', ');
       const item = [
         '<item>',
         `<title>${itemName}</title>`,
         `<link>${itemUrl}</link>`,
+        `<dc:creator><![CDATA[${itemAuthors}]]></dc:creator>`,
         '</item>',
       ];
       return item.join('\n');
