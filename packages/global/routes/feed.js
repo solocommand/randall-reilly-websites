@@ -82,6 +82,7 @@ module.exports = (app) => {
       const itemAuthors = getAsArray(node, 'authors.edges').map(o => get(o, 'node.name')).filter(o => o).join(', ');
       const itemPubDate = node.publishedDate;
       const itemTeaser = node.teaser;
+      const itemBody = node.body;
       const item = [
         '<item>',
         `<title>${itemName}</title>`,
@@ -89,6 +90,7 @@ module.exports = (app) => {
         `<dc:creator><![CDATA[${itemAuthors}]]></dc:creator>`,
         `<pubDate>${itemPubDate}</pubDate>`,
         `<description><![CDATA[${itemTeaser}]]></description>`,
+        `<content:encoded><![CDATA[${itemBody}]]></content:encoded>`,
         '</item>',
       ];
       return item.join('\n');
