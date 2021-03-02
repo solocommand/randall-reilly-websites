@@ -107,6 +107,7 @@ module.exports = (app) => {
       '<language>en-US</language>',
       '<sy:updatePeriod>hourly</sy:updatePeriod>',
       '<sy:updateFrequency>1</sy:updateFrequency>',
+      ...items,
       '</channel>',
       '</rss>',
     ];
