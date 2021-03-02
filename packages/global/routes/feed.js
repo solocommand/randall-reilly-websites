@@ -3,6 +3,7 @@ const { getAsArray, get } = require('@parameter1/base-cms-object-path');
 const gql = require('graphql-tag');
 const { encode } = require('html-entities');
 const moment = require('moment');
+
 module.exports = (app) => {
   app.get('/feed', asyncRoute(async (req, res) => {
     const FEED = gql`
