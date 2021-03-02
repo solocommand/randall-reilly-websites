@@ -1,4 +1,5 @@
 const { asyncRoute } = require('@parameter1/base-cms-utils');
+const { getAsArray, get } = require('@parameter1/base-cms-object-path');
 const gql = require('graphql-tag');
 const { encode } = require('html-entities');
 const moment = require('moment');
@@ -72,6 +73,18 @@ module.exports = (app) => {
     const encodeOptions = { mode: 'specialChars', level: 'html5' };
     const siteName = encode(site.name, encodeOptions);
     const lastBuildDate = moment().format('ddd, DD MMM YYYY hh:mm:ss ZZ');
+
+    const items = getAsArray(data, 'websiteScheduledContent.edges').map((edge) => {
+      const { node } = edge;
+      const itemName = encode(node.name, encodeOptions);
+      const item = [
+        '<item>',
+        `<title>${itemName}</title>`,
+        '</item>',
+      ];
+      return item.join('\n');
+    });
+
     const rssAttributes = [
       'version="2.0"',
       'xmlns:content="http://purl.org/rss/1.0/modules/content/"',
