@@ -92,8 +92,9 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         $ const bodyId = `content-body-${content.id}`;
 
         <if(shouldInjectAds)>
-          $ const desktopCounts = [1000, 3000, 5000, 7000, 9000, 11000, 13000, 15000, 17000];
-          $ const mobileCounts = [350, 1850, 3350, 4850, 6350, 7850, 9350, 10850, 12350, 13850, 15350, 16850];
+
+          $ const desktopCounts = [1000, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
+          $ const mobileCounts = [350, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
           <global-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
             <for|char| of=desktopCounts>
               <!-- desktop/tablet only -->
