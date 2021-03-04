@@ -1,4 +1,4 @@
-const { asyncRoute } = require('@parameter1/base-cms-utils');
+const { asyncRoute, isFunction: isFn } = require('@parameter1/base-cms-utils');
 const { getAsArray, get } = require('@parameter1/base-cms-object-path');
 const query = require('../graphql/queries/equipment-experts-content');
 
@@ -8,6 +8,8 @@ const linkTo = (req, p, limit) => {
 };
 
 module.exports = (app) => {
+  const parseEmbeddedMedia = get(app, 'locals.parseEmbeddedMedia');
+  const renderBody = isFn(parseEmbeddedMedia) ? parseEmbeddedMedia : v => v;
   app.get('/api/marketplace-articles', asyncRoute(async (req, res) => {
     const page = parseInt(get(req, 'query.page', 1), 10);
     const limit = parseInt(get(req, 'query.posts_per_page', 20), 10);
@@ -39,7 +41,7 @@ module.exports = (app) => {
           post_id: node.id,
           post_name: node.slug,
           post_title: node.name,
-          post_content: node.body,
+          post_content: renderBody(node.body, res, { lazyloadImages: false }),
           post_except: node.teaser,
           featured_image: get(node, 'primaryImage.src'),
           keywords: getAsArray(node, 'keywords.edges').map(e => get(e, 'node.name')),
