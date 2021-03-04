@@ -1,10 +1,12 @@
-const { asyncRoute } = require('@parameter1/base-cms-utils');
+const { asyncRoute, isFunction: isFn } = require('@parameter1/base-cms-utils');
 const { getAsArray, get } = require('@parameter1/base-cms-object-path');
 const gql = require('graphql-tag');
 const { encode } = require('html-entities');
 const moment = require('moment');
 
 module.exports = (app) => {
+  const parseEmbeddedMedia = get(app, 'locals.parseEmbeddedMedia');
+  const renderBody = isFn(parseEmbeddedMedia) ? parseEmbeddedMedia : v => v;
   app.get('/feed', asyncRoute(async (req, res) => {
     const FEED = gql`
       query Feed($input: WebsiteScheduledContentQueryInput = {}, $siteId: ObjectID!) {
@@ -89,7 +91,7 @@ module.exports = (app) => {
       const itemAuthors = getAsArray(node, 'authors.edges').map(o => get(o, 'node.name')).filter(o => o).join(', ');
       const itemPubDate = node.publishedDate;
       const itemTeaser = node.teaser;
-      const itemBody = node.body;
+      const itemBody = renderBody(node.body, res, { lazyloadImages: false });
       const schedules = new Set(getAsArray(node, 'websiteSchedules')
         .map(o => get(o, 'section.name'))
         .filter(name => name !== 'Home')
