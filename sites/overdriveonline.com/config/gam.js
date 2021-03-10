@@ -25,6 +25,8 @@ config
     { name: 'rotation-1', templateName: 'GEAR', path: 'gear-rotation-1' },
     { name: 'rotation-2', templateName: 'GEAR', path: 'gear-rotation-2' },
     { name: 'rotation-3', templateName: 'GEAR', path: 'gear-rotation-3' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'gear-leaderboard' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'gear-leaderboard' },
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'gear-wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'gear-wallpaper-right' },
   ]);
