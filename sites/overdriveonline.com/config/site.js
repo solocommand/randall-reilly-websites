@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
+const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
   identityX,
+  newsletter,
   company: 'Randall-Reilly, LLC',
   p1events: {
     tenant: 'randallreilly',
@@ -49,32 +51,6 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-NDC3FQX',
-  },
-  newsletterSignupBanner: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
-    description: 'Get the business tips, industry insights and trending news every owner-operator needs to know in the <span class="newsletter-name">Overdrive</span> newsletter.',
-  },
-  newsletterSignupBannerLarge: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ov_subscriptions',
-    name: 'Don’t Miss Out',
-    description: 'Get the business tips, industry insights and trending news every owner-operator needs to know in the <span class="newsletter-name">Overdrive</span> newsletter.',
-  },
-  newsletterSignupFooter: {
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
-    ],
-    name: 'Newsletter Just for Owner-Operators',
-    description: 'Get owner-operator news and insights, plus diesel prices and gear reviews — delivered straight to your inbox.',
-  },
-  newsletterPushdown: {
-    imagePath: 'static/iphone-x-mockup-noshadow-2x.png',
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'ov_subscriptions' },
-    ],
-    name: 'Don’t Miss Out',
-    description: 'Join 135,000 owner-operators who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Overdrive</span> newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',

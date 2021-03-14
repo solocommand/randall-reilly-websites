@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
+const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
   identityX,
+  newsletter,
   company: 'Randall-Reilly, LLC',
   p1events: {
     tenant: 'randallreilly',
@@ -43,32 +45,6 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-KN35FTZ',
-  },
-  newsletterSignupBanner: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=hwt_subscriptions',
-    description: 'Get the business tips, industry insights and trending news every truck owner needs to know in the <em>Hard Working Trucks</em> newsletter.',
-  },
-  newsletterSignupBannerLarge: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=hwt_subscriptions',
-    name: 'Don’t Miss Out',
-    description: 'Get the business tips, industry insights and trending news every truck owner needs to know in the <em>Hard Working Trucks</em> newsletter.',
-  },
-  newsletterSignupFooter: {
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'hwt_subscriptions' },
-    ],
-    name: 'Hardworking Trucks Daily',
-    description: 'Sign up for the <span class="newsletter-name">Hardworking Trucks Daily</span> to keep up with...',
-  },
-  newsletterPushdown: {
-    imagePath: 'static/newsletter-pushdown/hwt-half.png',
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'hwt_subscriptions' },
-    ],
-    name: 'Newsletter Just for Truck Owners',
-    description: 'Get news you need to know about pickups, commercial vans and Class 3-8 trucks — delivered straight to your inbox.',
   },
   wufoo: {
     userName: 'randallreilly',

@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
+const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
   identityX,
+  newsletter,
   company: 'Randall-Reilly, LLC',
   p1events: {
     tenant: 'randallreilly',
@@ -42,32 +44,6 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-KKR45JP',
-  },
-  newsletterSignupBanner: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tn_subscriptions',
-    description: 'Get the job alerts, industry insights and trending news every truck driver needs to know in the <em>Truckers News</em> newsletter. ',
-  },
-  newsletterSignupBannerLarge: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tn_subscriptions',
-    name: 'Don’t Miss Out',
-    description: 'Get the job alerts, industry insights and trending news every truck driver needs to know in the <em>Truckers News</em> newsletter. ',
-  },
-  newsletterSignupFooter: {
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'tn_subscriptions' },
-    ],
-    name: 'Newsletter Just for Truck Drivers',
-    description: 'Get trucking news and insights, plus job alerts and trending gear — delivered straight to your inbox.',
-  },
-  newsletterPushdown: {
-    imagePath: 'static/newsletter-pushdown/tn-half.png',
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'tn_subscriptions' },
-    ],
-    name: 'Don’t Miss Out',
-    description: 'Join 40,000 company drivers who get helpful insights and important news delivered straight to their inbox with the <em>Truckers News</em> newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',
