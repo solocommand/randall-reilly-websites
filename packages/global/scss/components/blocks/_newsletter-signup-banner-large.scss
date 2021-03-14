@@ -1,9 +1,19 @@
 .newsletter-signup-banner-large {
-  display: flex;
+  display: block;
   flex-direction: column;
   padding: 16px;
   background-color: $gray-100;
   border-radius: 4px;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    input {
+      display: inline;
+      max-width: 312px;
+      margin-right: $block-spacer / 2;
+    }
+  }
 
   &__name {
     @include skin-typography($style: "header-1.5");
@@ -23,5 +33,19 @@
   &__button {
     margin-right: auto;
     margin-left: auto;
+  }
+
+  @media (max-width: 530px) {
+    &__name,
+    &__description {
+      text-align: left;
+    }
+
+    &__form {
+      display: block;
+      input {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
