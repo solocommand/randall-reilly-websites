@@ -3,7 +3,7 @@ import { get, getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const blockName = "site-newsletter-menu";
 $ const { site, config } = out.global;
-$ const pushdown = site.getAsObject("newsletterPushdown");
+$ const pushdown = site.getAsObject("newsletter.pushdown");
 $ const { name, action, description, imagePath } = pushdown;
 $ const imageSrc = imagePath ? `https://${config.website("imageHost")}/files/base/randallreilly/all/image/${imagePath}` : null;
 
