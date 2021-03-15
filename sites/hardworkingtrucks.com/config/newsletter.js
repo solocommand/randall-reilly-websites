@@ -3,7 +3,6 @@ const baseConfig = {
   hiddenInputs: [
     { name: 'omedasite', value: 'hwt_subscriptions' },
   ],
-  href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=hwt_subscriptions',
 };
 
 module.exports = {

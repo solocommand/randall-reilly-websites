@@ -3,7 +3,6 @@ const baseConfig = {
   hiddenInputs: [
     { name: 'omedasite', value: 'ccj_subscriptions' },
   ],
-  href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions',
 };
 
 module.exports = {
