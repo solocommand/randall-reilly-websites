@@ -1,17 +1,29 @@
 $ const blockName = "newsletter-signup-banner";
 
 $ const { site } = out.global;
-$ const { href, description } = site.getAsObject('newsletterSignupBanner');
+$ const { action, hiddenInputs, description } = site.getAsObject('newsletter.signupBanner');
 
-<if(href && description)>
+<if(action && description)>
   <marko-web-block name=blockName class=input.class>
-    <marko-web-element block-name=blockName name="description">
+    <marko-web-element block-name=blockName name="description" class="mb-3">
       $!{description}
     </marko-web-element>
-    <marko-web-element block-name=blockName name="button-wrapper">
-      <marko-web-link href=href title="Sign up for our newsletter" class="btn btn-primary">
-        Sign Up
-      </marko-web-link>
-    </marko-web-element>
+    <div class=`${blockName}__form-wrapper`>
+      <form method="GET" action=action class=`${blockName}__form`>
+        <label for="newsletter-signup-banner-email" class="sr-only">Email</label>
+        <input
+          id="newsletter-signup-banner-email"
+          class="form-control"
+          placeholder="example@gmail.com"
+          type="email"
+          name="em"
+          required
+        />
+        <for|item| of=hiddenInputs>
+          <input type="hidden" name=item.name value=item.value />
+        </for>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+      </form>
+    </div>
   </marko-web-block>
 </if>

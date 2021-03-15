@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
+const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
   identityX,
+  newsletter,
   company: 'Randall-Reilly, LLC',
   p1events: {
     tenant: 'randallreilly',
@@ -43,32 +45,6 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-MWZ279J',
-  },
-  newsletterSignupBanner: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tps_subscriptions',
-    description: 'Get the business tips, industry insights and trending news every dealer and distributor needs to know in the <em>TPS</em> newsletter.',
-  },
-  newsletterSignupBannerLarge: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=tps_subscriptions',
-    name: 'Don’t Miss Out',
-    description: 'Get the business tips, industry insights and trending news every dealer and distributor needs to know in the <em>TPS</em> newsletter.',
-  },
-  newsletterSignupFooter: {
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'tps_subscriptions' },
-    ],
-    name: 'Newsletter Just for Dealers and Distributors',
-    description: 'Get dealer and aftermarket news, plus safety recalls and product reviews — delivered straight to your inbox.',
-  },
-  newsletterPushdown: {
-    imagePath: 'static/newsletter-pushdown/tps-half.png',
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'tps_subscriptions' },
-    ],
-    name: 'Don’t Miss Out',
-    description: 'Join 20,000 dealer and aftermarket professionals who get helpful insights and important news delivered straight to their inbox with the <em>Trucks, Parts, Service</em> newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',

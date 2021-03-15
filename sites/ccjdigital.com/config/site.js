@@ -3,12 +3,14 @@ const gam = require('./gam');
 const nativeX = require('./native-x');
 const top250 = require('./top250');
 const identityX = require('./identity-x');
+const newsletter = require('./newsletter');
 
 module.exports = {
   navigation,
   gam,
   nativeX,
   identityX,
+  newsletter,
   top250,
   company: 'Randall-Reilly, LLC',
   p1events: {
@@ -46,32 +48,6 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-PHDPM24',
-  },
-  newsletterSignupBanner: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions',
-    description: 'Get the business tips, industry insights and trending news every trucking professional needs to know in the CCJ newsletter.',
-  },
-  newsletterSignupBannerLarge: {
-    href: 'https://randallreilly.dragonforms.com/loading.do?omedasite=ccj_subscriptions',
-    name: 'Don’t Miss Out',
-    description: 'Get the business tips, industry insights and trending news every trucking professional needs to know in the CCJ newsletter.',
-  },
-  newsletterSignupFooter: {
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'ccj_subscriptions' },
-    ],
-    name: 'Newsletter Just for Trucking Professionals',
-    description: 'Get trucking news and insights, plus management tips and regulation updates — delivered straight to your inbox.',
-  },
-  newsletterPushdown: {
-    imagePath: 'static/newsletter-pushdown/ccj-half.png',
-    action: 'https://randallreilly.dragonforms.com/loading.do',
-    hiddenInputs: [
-      { name: 'omedasite', value: 'ccj_subscriptions' },
-    ],
-    name: 'Don’t Miss Out',
-    description: 'Join 80,000 trucking professionals who get helpful insights and important news delivered straight to their inbox with the CCJ newsletter.',
   },
   wufoo: {
     userName: 'randallreilly',
