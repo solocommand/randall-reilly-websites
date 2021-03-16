@@ -1,15 +1,20 @@
 # BaseCMS Websites for Randall-Reilly
 This monorepo contains the codebase for websites managed by Randall-Reilly. All sites within this repository utilize the [@parameter1/base-cms](https://github.com/parameter1/base-cms) packages, most notably the `marko-web` and `web-cli`.
 
+----
 ## Requirements
-- [Docker Compose](https://docs.docker.com/compose/) (preferred)
+This project requires either [Docker Compose](https://docs.docker.com/compose/) (preferred) or a locally installed version of [Node.js](https://nodejs.org) (version 10.x) and the [Yarn](https://yarnpkg.com) package manager.
 
-or
+### Additional Resources
 
-- [Node.js](https://nodejs.org) v10.x or v12.x
-- [Yarn](https://yarnpkg.com) package manager
+- [Parameter1 docs](https://docs.parameter1.com) - For more details about working with the website framework, check out the docs!
+- [MarkoJS](https://markojs.com/docs/getting-started/) - Server-side templates are rendered using the Marko templating engine
+- [VueJS](https://vuejs.org) - Client-side component templating
+- [ExpressJS](https://expressjs.com) - The backend HTTP server handling routing for requests
 
-## Installation
+----
+## Getting Started
+### Installation
 After cloning the repository, execute one of the following commands from the project root:
 ```sh
 # Docker Compose
@@ -23,7 +28,7 @@ yarn install
 ```
 Once complete, the project dependencies will be available and the project will be ready to boot.
 
-## Development
+### Development
 To work in this repository, start the application instance for your chosen tenant (such as `eqw`):
 ```sh
 # Docker Compose
@@ -33,7 +38,7 @@ docker-compose up eqw
 ```sh
 # Mac/Linux native
 # Modify variables as needed, see docker-compose.yml
-set +x
+
 export PORT="80"
 export EXPOSED_PORT="9801"
 export LIVERELOAD_PORT="19801"
@@ -56,7 +61,7 @@ export ALGOLIA_DEFAULT_INDEX="randallreilly_all_platform_content"
 ```bat
 Rem Windows native
 Rem Modify variables as needed, see docker-compose.yml
-@echo OFF
+
 set "PORT=80"
 set "EXPOSED_PORT=9801"
 set "LIVERELOAD_PORT=19801"
@@ -106,12 +111,3 @@ yarn test
 ```
 
 To run the test suite, execute the `./scripts/test.sh` or `./scripts/test.bat` script from the project root.
-
-## Additional Resources
-
-For more details about working with the Marko website framework, check out the [framework docs](https://docs.parameter1.com)!
-
-The following
-- [MarkoJS](https://markojs.com/docs/getting-started/) - Server-side templates are rendered using the Marko templating engine
-- [VueJS](https://vuejs.org) - Client-side component templating
-- [ExpressJS](https://expressjs.com) - The backend HTTP server handling routing for requests
