@@ -3,7 +3,12 @@ This monorepo contains the codebase for websites managed by Randall-Reilly. All 
 
 ----
 ## Requirements
-This project requires either [Docker Compose](https://docs.docker.com/compose/) (preferred) or a locally installed version of [Node.js](https://nodejs.org) (version 10.x) and the [Yarn](https://yarnpkg.com) package manager.
+This project supports two development environments:
+- [Docker Compose](https://docs.docker.com/compose/) (preferred)
+
+or
+- [Node.js](https://nodejs.org) (version 10.x)
+- [Yarn](https://yarnpkg.com) package manager.
 
 ### Additional Resources
 
@@ -15,7 +20,7 @@ This project requires either [Docker Compose](https://docs.docker.com/compose/) 
 ----
 ## Getting Started
 ### Installation
-After cloning the repository, execute one of the following commands from the project root:
+After cloning the repository, execute one of the following commands from the project root (based on your chosen development environment):
 ```sh
 # Docker Compose
 docker-compose run --rm yarn install
