@@ -2164,10 +2164,10 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-utils/-/base-cms-utils-2.4.2.tgz#0b725158462d67800e5aa19c6d8f9f66829a7b2e"
   integrity sha512-Dj6+aN95BLKh/8+zNORZfsFeESkfGJPZzL2SgWagsx9WfzYUvtbv1xvFjwdgSy1/90FXmm3+akV+xqF0HovgGQ==
 
-"@parameter1/base-cms-web-cli@^2.8.4":
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.8.4.tgz#b127109deaa5fc28b5159f947f3096d95c4e041e"
-  integrity sha512-dOpP19ILCnUlJIEsoHH8publQHxdxd055diMCMFGwbGIWwKJlgbDx9F/LkxWljLfL5e969rjslndM1OvMYuhzg==
+"@parameter1/base-cms-web-cli@^2.8.5":
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-2.8.5.tgz#d57d4eca34212da04b1e9692ca4fc5d8ede557f1"
+  integrity sha512-PyqHf/QhcsWNCUr2gOXO1S/4Hu6tQGE24j56N8jCH17P3+93K29vvg7g9+zDQadoVq2Zg9bLaREybkTKFydv7w==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-runtime" "^7.12.10"
