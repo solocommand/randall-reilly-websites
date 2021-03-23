@@ -17,7 +17,6 @@ $ const { scriptLoaderBody } = req.query;
 
     <marko-web-deferred-script-loader-init />
     <if(!scriptLoaderBody)>
-      $ console.log("script loader in head");
       <marko-web-deferred-script-loader-load />
     </if>
 
@@ -62,7 +61,6 @@ $ const { scriptLoaderBody } = req.query;
   </@below-container>
   <@below-wrapper>
     <if(scriptLoaderBody)>
-      $ console.log("script loader in body");
       <marko-web-deferred-script-loader-load />
     </if>
   </@below-wrapper>
