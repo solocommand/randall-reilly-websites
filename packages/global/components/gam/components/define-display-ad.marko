@@ -93,9 +93,7 @@ $ if (!requestOnMediaMatch) calls.push(`googletag.display('${id}');`);
         <${input.renderBody} block-name=blockName />
       </if>
 
-      $ const script = `googletag.cmd.push(function() { ${calls.join(" ")} });`;
-      $ const type = site.get("gam.lazyLoad.enabled") ? "normal" : "load";
-      <script-loader script=script query-param="load-gam" type=type />
+      <script>googletag.cmd.push(function() { ${calls.join(" ")} });</script>
     </marko-web-gam-ad-wrapper>
   </div>
 </if>
