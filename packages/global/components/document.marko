@@ -6,6 +6,7 @@ $ const {
   nativeX,
   GAM,
 } = out.global;
+$ const { scriptLoaderBody } = req.query;
 
 <marko-web-document ...input>
   <@head>
@@ -15,6 +16,10 @@ $ const {
     <link rel="manifest" href="/site.webmanifest">
 
     <marko-web-deferred-script-loader-init />
+    <if(!scriptLoaderBody)>
+      $ console.log("script loader in head");
+      <marko-web-deferred-script-loader-load />
+    </if>
 
     <!-- init p1 website events -->
     <marko-web-p1-events-init
@@ -55,4 +60,10 @@ $ const {
     <${input.belowContainer} />
     <global-site-footer />
   </@below-container>
+  <@below-wrapper>
+    <if(scriptLoaderBody)>
+      $ console.log("script loader in body");
+      <marko-web-deferred-script-loader-load />
+    </if>
+  </@below-wrapper>
 </marko-web-document>
