@@ -23,6 +23,7 @@ x-env-defaults: &env
   YARN_CACHE_FOLDER: /.yarn-cache
   IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://identity-x.parameter1.com/graphql}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.virgon.base.parameter1.com/graphql}
+  EQUIPMENT_EXPERTS_GRAPHQL_URI: ${EQUIPMENT_EXPERTS_GRAPHQL_URI-https://equipment-experts.virgon.base.parameter1.com/graphql}
   ALGOLIA_APP_ID: ${ALGOLIA_APP_ID-05JLREVGZ4}
   ALGOLIA_API_KEY: ${ALGOLIA_API_KEY}
   ALGOLIA_DEFAULT_INDEX: ${ALGOLIA_DEFAULT_INDEX-randallreilly_all_platform_content}
