@@ -1,11 +1,15 @@
 const { asyncRoute, isFunction: isFn } = require('@parameter1/base-cms-utils');
 const { getAsArray, get } = require('@parameter1/base-cms-object-path');
 const query = require('../graphql/queries/equipment-experts-content');
+const eeQuery = require('../graphql/queries/equipment-experts-indexes');
 
 const linkTo = (req, p, limit) => {
   const { protocol } = req;
   return `${protocol}://${req.get('host')}${req.path}?page=${p}&posts_per_page=${limit}`;
 };
+const filterSearchIndexes = (data, id) => getAsArray(data, 'data.findAll')
+  .filter(index => index.contentId === id)
+  .map(({ industry, manufacturer, model }) => ({ industry, manufacturer, model }));
 
 module.exports = (app) => {
   const parseEmbeddedMedia = get(app, 'locals.parseEmbeddedMedia');
@@ -28,15 +32,15 @@ module.exports = (app) => {
     const totalCount = get(data, 'websiteScheduledContent.totalCount');
     const lastPage = Math.ceil(totalCount / limit) || 1;
 
+    const contentIds = getAsArray(data, 'websiteScheduledContent.edges').map(({ node }) => node.id);
+    const indexes = await req.$equipmentExperts.query({
+      query: eeQuery,
+      variables: { contentIds },
+    });
+
     res.json({
       data: getAsArray(data, 'websiteScheduledContent.edges').map((edge) => {
         const { node } = edge;
-        let keyPairs = [];
-        try {
-          keyPairs = JSON.parse(node.key_pairs || []);
-        } catch (e) {
-          //
-        }
         return {
           post_id: node.id,
           post_name: node.slug,
@@ -45,7 +49,7 @@ module.exports = (app) => {
           post_except: node.teaser,
           featured_image: get(node, 'primaryImage.src'),
           keywords: getAsArray(node, 'keywords.edges').map(e => get(e, 'node.name')),
-          key_pairs: keyPairs,
+          key_pairs: filterSearchIndexes(indexes, node.id),
           blog: get(node, 'primarySite.shortName'),
           permalink: get(node, 'siteContext.url'),
           author: getAsArray(node, 'authors.edges').map(e => get(e, 'node.name')).join(', '),
