@@ -4,7 +4,6 @@
     "./client-side-blocks/marko.json",
     "./flows/marko.json",
     "./gam/marko.json",
-    "./gtm/marko.json",
     "./identity-x/marko.json",
     "./layouts/marko.json",
     "./native-x/marko.json",
