@@ -1,7 +1,6 @@
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get } = require('@parameter1/base-cms-object-path');
-const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
 const baseBrowse = require('@randall-reilly/base-browse/middleware');
 
 const pkg = require('./package.json');
@@ -69,9 +68,6 @@ module.exports = (options = {}) => {
       // Setup IdentityX.
       const identityXConfig = get(options, 'siteConfig.identityX');
       set(app.locals, 'identityX', identityXConfig);
-
-      // Clean all response bodies.
-      app.use(cleanResponse());
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
 
