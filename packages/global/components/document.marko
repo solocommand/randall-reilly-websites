@@ -6,7 +6,8 @@ $ const {
   nativeX,
   GAM,
 } = out.global;
-$ const { scriptLoaderBody } = req.query;
+$ const { scriptLoaderBody, deferScriptVersion } = req.query;
+$ const deferScriptSrc = deferScriptVersion ? `https://cdn.parameter1.com/deferred-script-loader/${deferScriptVersion}.js` : "";
 
 <marko-web-document ...input>
   <@head>
@@ -17,7 +18,7 @@ $ const { scriptLoaderBody } = req.query;
 
     <marko-web-deferred-script-loader-init />
     <if(!scriptLoaderBody)>
-      <marko-web-deferred-script-loader-load />
+      <marko-web-deferred-script-loader-load src=deferScriptSrc />
     </if>
 
     <!-- init p1 website events -->
@@ -61,7 +62,7 @@ $ const { scriptLoaderBody } = req.query;
   </@below-container>
   <@below-wrapper>
     <if(scriptLoaderBody)>
-      <marko-web-deferred-script-loader-load />
+      <marko-web-deferred-script-loader-load src=deferScriptSrc />
     </if>
   </@below-wrapper>
 </marko-web-document>
