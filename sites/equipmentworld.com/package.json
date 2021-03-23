@@ -17,7 +17,7 @@
   "dependencies": {
     "@parameter1/base-cms-marko-core": "^2.5.0",
     "@parameter1/base-cms-marko-web": "^2.8.1",
-    "@parameter1/base-cms-marko-web-gtm": "^2.10.0",
+    "@parameter1/base-cms-marko-web-gtm": "^2.11.0",
     "@parameter1/base-cms-marko-web-social-sharing": "^2.4.2",
     "@parameter1/base-cms-marko-web-theme-default": "^2.7.0",
     "@parameter1/base-cms-object-path": "^2.5.0",
