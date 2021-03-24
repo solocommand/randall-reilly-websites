@@ -1,7 +1,7 @@
+const EERouter = require('@randall-reilly/equipment-experts');
 const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');
-const equipmentExperts = require('./equipment-experts');
 const search = require('./search');
 const websiteSections = require('./website-section');
 
@@ -10,7 +10,7 @@ module.exports = (app) => {
   home(app);
 
   // Equipment Experts API
-  equipmentExperts(app);
+  app.use('/api/marketplace-articles', EERouter({ sectionAlias: 'equipment-experts' }));
 
   // Dynamic Pages
   dynamicPages(app);
