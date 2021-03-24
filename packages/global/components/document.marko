@@ -6,8 +6,6 @@ $ const {
   nativeX,
   GAM,
 } = out.global;
-$ const { scriptLoaderBody, deferScriptVersion } = req.query;
-$ const deferScriptSrc = deferScriptVersion ? `https://cdn.parameter1.com/deferred-script-loader/${deferScriptVersion}.js` : "";
 
 <marko-web-document ...input>
   <@head>
@@ -17,27 +15,38 @@ $ const deferScriptSrc = deferScriptVersion ? `https://cdn.parameter1.com/deferr
     <link rel="manifest" href="/site.webmanifest">
 
     <marko-web-deferred-script-loader-init />
-    <if(!scriptLoaderBody)>
-      <marko-web-deferred-script-loader-load src=deferScriptSrc />
-    </if>
 
     <!-- init p1 website events -->
     <marko-web-p1-events-init
-      on="immediate"
-      identity-query-builder=`
-        var id = query.oly_enc_id;
-        if (id) return 'omeda.rrpcd.customer*' + id + '~encoded';
-      `;
+      on="load"
+      request-frame=true
+      target-tag="body"
+      identity-query-builder=`var id = query.oly_enc_id; if (id) { return 'omeda.rrpcd.customer*' + id + '~encoded'; };`;
     />
 
     <!-- init gam -->
-    <marko-web-gam-init on="immediate" />
+    <marko-web-gam-init
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
 
     <!-- init gtm -->
-    <marko-web-gtm-init container-id=site.get("gtm.containerId") on="load" />
+    <marko-web-gtm-init
+      container-id=site.get("gtm.containerId")
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
 
     <!-- init native-x -->
-    <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() on="immediate" />
+    <marko-web-native-x-init
+      uri=nativeX.getUri()
+      enabled=nativeX.isEnabled()
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
 
     <${input.head} />
 
@@ -61,8 +70,6 @@ $ const deferScriptSrc = deferScriptVersion ? `https://cdn.parameter1.com/deferr
     <global-site-footer />
   </@below-container>
   <@below-wrapper>
-    <if(scriptLoaderBody)>
-      <marko-web-deferred-script-loader-load src=deferScriptSrc />
-    </if>
+    <marko-web-deferred-script-loader-load />
   </@below-wrapper>
 </marko-web-document>
