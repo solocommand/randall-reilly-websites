@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "@parameter1/base-cms-marko-core": "^2.12.0",
-    "@parameter1/base-cms-marko-web": "^2.12.0",
-    "@parameter1/base-cms-marko-web-gtm": "^2.12.1",
+    "@parameter1/base-cms-marko-web": "^2.13.0",
+    "@parameter1/base-cms-marko-web-gtm": "^2.13.1",
     "@parameter1/base-cms-marko-web-theme-default": "^2.7.0",
     "@parameter1/base-cms-object-path": "^2.5.0",
     "@parameter1/base-cms-utils": "^2.4.2",
-    "@parameter1/base-cms-web-cli": "^2.12.0",
+    "@parameter1/base-cms-web-cli": "^2.13.0",
     "@randall-reilly/package-global": "^1.11.1",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
