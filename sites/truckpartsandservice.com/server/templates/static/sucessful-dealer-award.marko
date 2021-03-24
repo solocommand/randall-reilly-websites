@@ -1,0 +1,87 @@
+$ const { site } = out.global;
+$ const type = "static";
+$ const title = "Successful Dealer Award Nominations";
+$ const description = "The Successful Dealer Award was introduced in 2013 and shines a light on commercial truck dealers for their positive influence on our industry, as well as their customers, employees and their communities. All medium- and heavy-duty truck dealers are eligible for the annual award.";
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context/>
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper class="awards">
+      <@section modifiers=["first-sm"]>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          position="static_page"
+          aliases=[]
+          modifiers=["inter-block"]/>
+      </@section>
+      <@section>
+        <div class="content-page-header">
+          <div class="text-center">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/logo.png?w=340"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/logo.png?w=680 2x"
+            />
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="content-page-body">
+          <p>
+            The <i>Successful Dealer</i> Award was introduced in 2013 and shines a light on commercial truck dealers for their positive influence on our industry, as well as their customers, employees and their communities. All medium- and heavy-duty truck dealers are eligible for the annual award.
+          </p>
+          <p class="text-center">
+            <strong>Sponsored by</strong>
+          </p>
+        </div>
+        <div class="row sponsor-logos">
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award Sponsor: Interstate Billing"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/interstate-billing.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/interstate-billing.png?h=100 2x"
+            />
+          </div>
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award Sponsor: National Truck Protection"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/ntp-horizontal.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/ntp-horizontal.png?h=100 2x"
+            />
+          </div>
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award Sponsor: Premium2000+"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/premium2000.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/premium2000.png?h=100 2x"
+            />
+          </div>
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award Sponsor: Top Mark Funding"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/top-mark-funding.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/successfull-dealer-award/top-mark-funding.png?h=100 2x"
+            />
+          </div>
+        </div>
+        <div class="content-page-body">
+          <div id="wufoo-q1q5bo6l1e7fyde">
+            Fill out my
+            <a href="https://randallreilly.wufoo.com/forms/q1q5bo6l1e7fyde">online form</a>.
+          </div>
+          <script type="text/javascript">
+            var q1q5bo6l1e7fyde; (function(d, t) { var s = d.createElement(t), options = { 'userName':'randallreilly', 'formHash':'q1q5bo6l1e7fyde', 'autoResize':true, 'height':'904', 'async':true, 'host':'wufoo.com', 'header':'hide', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { q1q5bo6l1e7fyde = new WufooForm(); q1q5bo6l1e7fyde.initialize(options); q1q5bo6l1e7fyde.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script');
+          </script>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>

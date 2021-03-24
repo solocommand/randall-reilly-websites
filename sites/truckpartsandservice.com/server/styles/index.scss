@@ -12,3 +12,20 @@ $primary: #103a57;
 @import "../../node_modules/@randall-reilly/package-global/scss/core";
 
 @import "./directory";
+
+.awards {
+  .sponsor-logos {
+    display: flex;
+    align-content: center;
+    align-items: stretch; // <-- stretch vertical (default value, can be omitted here)
+    justify-content: center;
+    .logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: map-get($spacers, block) / 2;
+      margin: map-get($spacers, block) / 3;
+      background-color: #f1f1f1;
+    }
+  }
+}
