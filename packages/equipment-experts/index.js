@@ -6,7 +6,7 @@ const eeQuery = require('./graphql/equipment-experts-indexes');
 
 const linkTo = (req, p, limit) => {
   const { protocol } = req;
-  return `${protocol}://${req.get('host')}${req.path}?page=${p}&posts_per_page=${limit}`;
+  return `${protocol}://${req.get('host')}${req.baseUrl}?page=${p}&posts_per_page=${limit}`;
 };
 const filterSearchIndexes = (data, id) => getAsArray(data, 'data.findAll')
   .filter(index => index.contentId === id)
