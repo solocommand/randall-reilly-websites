@@ -1,0 +1,93 @@
+$ const { site } = out.global;
+$ const type = "static";
+$ const title = "Distributor of the Year Award Nominations";
+$ {
+  const description =
+    "The TPS Distributor of the Year award serves as one of the independent aftermarket’s highest honors. Created in 2002, the award program acknowledges independent aftermarket distributors who display excellent customer service, business acumen, market knowledge and willingness to improve and evolve their business with industry changes.";
+}
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context/>
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper class="awards">
+      <@section modifiers=["first-sm"]>
+        <global-gam-define-display-ad
+          name="leaderboard"
+          position="static_page"
+          aliases=[]
+          modifiers=["inter-block"]/>
+      </@section>
+      <@section>
+        <div class="content-page-header">
+          <div class="text-center">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/logo.png?w=340"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/logo.png?w=680 2x"/>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="content-page-body">
+          <p>
+            The TPS Distributor of the Year award serves as one of the independent aftermarket’s highest honors. Created in 2002, the award program acknowledges independent aftermarket distributors who display excellent customer service, business acumen, market knowledge and willingness to improve and evolve their business with industry changes.
+          </p>
+          <p class="text-center">
+            <strong>Sponsored by</strong>
+          </p>
+        </div>
+        <div class="row sponsor-logos">
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/cvsn.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/cvsn.png?h=100 2x"/>
+          </div>
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/interstate-billing.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/interstate-billing.png?h=100 2x"/>
+          </div>
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/karmak.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/karmak.png?h=100 2x"/>
+          </div>
+          <div class="col logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/meritor.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/meritor.png?h=100 2x"/>
+          </div>
+        </div>
+        <div class="row sponsor-logos">
+          <div class="col-3 logo">
+            <marko-web-img
+              class="img-fluid"
+              alt="Successful Dealer Award"
+              src="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/minimizer-premier-manufacturing.png?h=100"
+              srcset="https://img.truckpartsandservice.com/files/base/randallreilly/all/image/static/tps/distributor-of-the-year-award/minimizer-premier-manufacturing.png?h=100 2x"/>
+          </div>
+        </div>
+        <div class="content-page-body">
+          <div id="wufoo-qwi5aax0lscm3g">
+            Fill out my
+            <a href="https://randallreilly.wufoo.com/forms/qwi5aax0lscm3g">online form</a>.
+          </div>
+
+          <script type="text/javascript"> var qwi5aax0lscm3g; (function(d, t) { var s = d.createElement(t), options = { 'userName':'randallreilly', 'formHash':'qwi5aax0lscm3g', 'autoResize':true, 'height':'1170', 'async':true, 'host':'wufoo.com', 'header':'hide', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { qwi5aax0lscm3g = new WufooForm(); qwi5aax0lscm3g.initialize(options); qwi5aax0lscm3g.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
